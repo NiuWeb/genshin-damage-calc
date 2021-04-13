@@ -144,7 +144,6 @@ var CharacterStats = function () {
 
   CharacterStats.prototype.notify = function (stat) {};
 
-  ;
   Object.defineProperty(CharacterStats.prototype, "ATK", {
     get: function () {
       return this.ATKbase * (1 + this.ATKpercent) + this.ATKflat;
