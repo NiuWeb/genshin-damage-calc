@@ -715,7 +715,10 @@ var Modifier = function () {
       return this._value;
     },
     set: function (value) {
+      var e = this.enabled;
+      if (e) this.disable();
       this._value = value;
+      if (e) this.enable();
     },
     enumerable: false,
     configurable: true
