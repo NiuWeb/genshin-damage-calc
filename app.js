@@ -271,6 +271,9 @@ exports.CharacterStats = void 0;
 var CharacterStats = function () {
   function CharacterStats() {
     this._Level = 1;
+    this._NormalAttackLevel = 1;
+    this._ElementalSkillLevel = 1;
+    this._ElementalBurstLevel = 1;
     this._ATKbase = 1;
     this._ATKpercent = 0;
     this._ATKflat = 0;
@@ -699,6 +702,39 @@ var CharacterStats = function () {
     set: function (value) {
       this._SuperconductDMG = value;
       this.notify("SuperconductDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "NormalAttackLevel", {
+    get: function () {
+      return this._NormalAttackLevel;
+    },
+    set: function (value) {
+      this._NormalAttackLevel = value;
+      this.notify("NormalAttackLevel");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "ElementalSkillLevel", {
+    get: function () {
+      return this._ElementalSkillLevel;
+    },
+    set: function (value) {
+      this._ElementalSkillLevel = value;
+      this.notify("ElementalSkillLevel");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "ElementalBurstLevel", {
+    get: function () {
+      return this._ElementalBurstLevel;
+    },
+    set: function (value) {
+      this._ElementalBurstLevel = value;
+      this.notify("ElementalBurstLevel");
     },
     enumerable: false,
     configurable: true
