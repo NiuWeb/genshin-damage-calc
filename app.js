@@ -271,6 +271,7 @@ exports.CharacterStats = void 0;
 var CharacterStats = function () {
   function CharacterStats() {
     this._Level = 1;
+    this._Ascended = false;
     this._NormalAttackLevel = 1;
     this._ElementalSkillLevel = 1;
     this._ElementalBurstLevel = 1;
@@ -735,6 +736,16 @@ var CharacterStats = function () {
     set: function (value) {
       this._ElementalBurstLevel = value;
       this.notify("ElementalBurstLevel");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "Ascended", {
+    get: function () {
+      return this._Ascended;
+    },
+    set: function (value) {
+      this._Ascended = value;
     },
     enumerable: false,
     configurable: true
