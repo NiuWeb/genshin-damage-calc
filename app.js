@@ -204,6 +204,10 @@ var Character = function (_super) {
   };
 
   Character.prototype.createModifier = function (prop, value) {
+    if (value === void 0) {
+      value = 0;
+    }
+
     var m = new Modifier_1.Modifier(this, prop, value);
     return m;
   };
