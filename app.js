@@ -338,7 +338,16 @@ var CharacterStats = function () {
       return this._Level;
     },
     set: function (value) {
-      this._Level = value;
+      var r = 0;
+
+      if (value <= 40) {
+        r = Math.round(value / 20) * 20;
+      } else {
+        r = Math.round(value / 10) * 10;
+      }
+
+      this._Level = Math.max(1, r);
+      ;
       this.notify("Level");
     },
     enumerable: false,
