@@ -27,8 +27,13 @@ var DamageInstance = function () {
     this.subject.removeDamageInstance(this);
   };
 
-  DamageInstance.prototype.addAditive = function (value, stat) {
+  DamageInstance.prototype.addAdditive = function (value, stat) {
     this.talentAdditives.push([value, stat]);
+    return this;
+  };
+
+  DamageInstance.prototype.clearAdditives = function () {
+    this.talentAdditives.splice(0, this.talentAdditives.length);
     return this;
   };
 
@@ -218,6 +223,25 @@ var Character = function (_super) {
       this.damageInstances.splice(s, 1);
       return true;
     }
+  };
+
+  Character.prototype.infuseDamageInstance = function (type, infuse) {
+    this.damageInstances.forEach(function (e) {
+      if (e.talentDMG == type) {
+        e.infusedDMG = infuse;
+      }
+    });
+  };
+
+  Character.prototype.getDamageInstances = function (talentDMG) {
+    if (!talentDMG) return this.damageInstances;
+    var results = [];
+    this.damageInstances.forEach(function (d) {
+      if (d.talentDMG == talentDMG) {
+        results.push(d);
+      }
+    });
+    return results;
   };
 
   return Character;
@@ -840,22 +864,24 @@ var x = c.createModifier("PyroDMG", 0.466).enable();
 var m = c.createModifier("PyroDMG", 0.33);
 c.createModifier("ElementalMastery", 80).enable();
 c.createModifier("MeltDMG", 0.15).enable();
-var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAditive(1.18, "ATK");
+c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAdditive(0.7216, "ATK");
+c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("2-Hit").addAdditive(0.624, "ATK");
+c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("3-Hit").addAdditive(0.8992, "ATK");
 c.ATKbase = 561;
 c.ATKflat = 311;
 c.HPbase = 15552;
 c.HPpercent = 0.466;
 c.HPflat = 4780;
 var bonus = c.createModifier("ATKflat", c.HP * 0.0566);
-c.createSubscriptor("PyroDMG").onUpdate(function (e) {
-  console.log("Pyro DMG: ", e.PyroDMG);
-});
-c.createSubscriptor("ATKbase", "ATKflat", "ATKpercent").onUpdate(function (e) {
-  console.log("ATK: ", e.ATK);
-});
 c.createSubscriptor("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
-  console.log("HP: ", e.HP);
   bonus.value = c.HP * 0.0566;
+});
+c.createSubscriptor("any").onUpdate(function (e) {
+  console.clear();
+  c.getDamageInstances("NormalAttackDMG").forEach(function (d) {
+    var x = d.baseDMG();
+    console.log(d.name + " (" + x.ElementalDMG + "): " + x.NonCRIT + " | " + x.CRIT + " | " + x.Average);
+  });
 });
 setTimeout(function () {
   c.createModifier("HPpercent", 0.18).enable();
