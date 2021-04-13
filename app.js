@@ -841,6 +841,11 @@ var m = c.createModifier("PyroDMG", 0.33);
 c.createModifier("ElementalMastery", 80).enable();
 c.createModifier("MeltDMG", 0.15).enable();
 var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAditive(1.18, "ATK");
+c.ATKbase = 561;
+c.ATKflat = 311;
+c.HPbase = 15552;
+c.HPpercent = 0.466;
+c.HPflat = 4780;
 var bonus = c.createModifier("ATKflat", c.HP * 0.0566);
 c.createSubscriptor("PyroDMG").onUpdate(function (e) {
   console.log("Pyro DMG: ", e.PyroDMG);
@@ -852,11 +857,9 @@ c.createSubscriptor("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
   console.log("HP: ", e.HP);
   bonus.value = c.HP * 0.0566;
 });
-c.ATKbase = 561;
-c.ATKflat = 311;
-c.HPbase = 15552;
-c.HPpercent = 0.466;
-c.HPflat = 4780;
+setTimeout(function () {
+  c.createModifier("HPpercent", 0.18).enable();
+}, 5000);
 
 var App = function (_super) {
   __extends(App, _super);
