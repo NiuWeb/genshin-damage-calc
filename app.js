@@ -2,6 +2,184 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./built/characters/CharacterWrapper.js":
+/*!**********************************************!*\
+  !*** ./built/characters/CharacterWrapper.js ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterWrapper = void 0;
+
+var Character_1 = __webpack_require__(/*! ../model/Character */ "./built/model/Character.js");
+
+var characterList_1 = __webpack_require__(/*! ./characterList */ "./built/characters/characterList.js");
+
+var CharacterWrapper = function (_super) {
+  __extends(CharacterWrapper, _super);
+
+  function CharacterWrapper() {
+    return _super !== null && _super.apply(this, arguments) || this;
+  }
+
+  CharacterWrapper.create = function (name) {
+    var c = new CharacterWrapper();
+    this.createCharacter(name, c);
+    this.characters.push(c);
+    return c;
+  };
+
+  CharacterWrapper.getList = function () {
+    return this.characters;
+  };
+
+  CharacterWrapper.createCharacter = function (name, obj) {
+    var _this = this;
+
+    obj.name = name;
+    var data = characterList_1.characterList[name];
+
+    if (!data) {
+      return;
+    }
+
+    var statModifier = obj.createModifier(data.scaleStat).enable();
+    obj.createSubscriptor("Level").onUpdate(function (e) {
+      var i = _this.levelIndex(e);
+
+      e.ATKbase = data.ATKbase[i];
+      e.DEFbase = data.DEFbase[i];
+      e.HPbase = data.HPbase[i];
+      statModifier.value = data.scaleValue[i];
+    });
+  };
+
+  CharacterWrapper.levelIndex = function (c) {
+    var x = c.Level;
+    if (x == 1) return 0;
+    if (x == 90) return 13;
+    var r = 0;
+
+    if (x <= 40) {
+      r = Math.round(x / 20);
+    } else {
+      r = Math.round(x / 10) - 2;
+    }
+
+    if (c.Ascended) {
+      return 2 * r;
+    } else return 2 * r - 1;
+  };
+
+  Object.defineProperty(CharacterWrapper.prototype, "name", {
+    get: function () {
+      return this._name;
+    },
+    set: function (value) {
+      this._name = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  CharacterWrapper.characters = [];
+  return CharacterWrapper;
+}(Character_1.Character);
+
+exports.CharacterWrapper = CharacterWrapper;
+
+/***/ }),
+
+/***/ "./built/characters/characterList.js":
+/*!*******************************************!*\
+  !*** ./built/characters/characterList.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.characterList = void 0;
+
+var charHuTao_1 = __webpack_require__(/*! ./list/charHuTao */ "./built/characters/list/charHuTao.js");
+
+exports.characterList = {
+  "Hu Tao": charHuTao_1.charHuTao
+};
+
+/***/ }),
+
+/***/ "./built/characters/list/charHuTao.js":
+/*!********************************************!*\
+  !*** ./built/characters/list/charHuTao.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.charHuTao = void 0;
+exports.charHuTao = {
+  name: "Hu Tao",
+  ATKbase: [8, 21, 29, 43, 48, 55, 62, 69, 74, 81, 86, 94, 99, 106],
+  HPbase: [1211, 3141, 4179, 6253, 6990, 8042, 9026, 10089, 10826, 11899, 12637, 13721, 14459, 15552],
+  DEFbase: [68, 177, 235, 352, 394, 453, 508, 568, 610, 670, 712, 773, 815, 876],
+  scaleValue: [0, 0, 0, 0, 0.096, 0.096, 0.192, 0.192, 0.192, 0.192, 0.288, 0.288, 0.384, 0.384],
+  scaleStat: "CRITDMG",
+  talents: [{
+    name: "1-Hit",
+    talentDMG: "NormalAttackDMG",
+    elementalDMG: "PhysicalDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.4689, 0.5008, 0.5328, 0.5754, 0.6074, 0.6447, 0.6926, 0.7406, 0.7885, 0.8365, 0.8844, 0.9324, 0.9804, 1.0283, 1.0763]
+  }, {
+    name: "2-Hit",
+    talentDMG: "NormalAttackDMG",
+    elementalDMG: "PhysicalDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.4825, 0.5154, 0.5483, 0.5922, 0.6251, 0.6635, 0.7128, 0.7622, 0.8115, 0.8609, 0.9102, 0.9596, 1.0089, 1.0583, 1.1076]
+  }, {
+    name: "3-Hit",
+    talentDMG: "NormalAttackDMG",
+    elementalDMG: "PhysicalDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.6105, 0.6521, 0.6938, 0.7493, 0.7909, 0.8394, 0.9019, 0.9643, 1.0268, 1.0892, 1.1516, 1.2141, 1.2765, 1.3389, 1.4014]
+  }]
+};
+
+/***/ }),
+
 /***/ "./built/damage/DamageInstance.js":
 /*!****************************************!*\
   !*** ./built/damage/DamageInstance.js ***!
@@ -917,35 +1095,22 @@ exports.App = void 0;
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var Character_1 = __webpack_require__(/*! ../model/Character */ "./built/model/Character.js");
+var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper */ "./built/characters/CharacterWrapper.js");
 
-var c = new Character_1.Character();
-var x = c.createModifier("PyroDMG", 0.466).enable();
-var m = c.createModifier("PyroDMG", 0.33);
-c.createModifier("ElementalMastery", 80).enable();
-c.createModifier("MeltDMG", 0.15).enable();
-c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAdditive(0.7216, "ATK");
-c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("2-Hit").addAdditive(0.624, "ATK");
-c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("3-Hit").addAdditive(0.8992, "ATK");
-c.ATKbase = 561;
-c.ATKflat = 311;
-c.HPbase = 15552;
-c.HPpercent = 0.466;
-c.HPflat = 4780;
-var bonus = c.createModifier("ATKflat", c.HP * 0.0566);
-c.createSubscriptor("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
-  bonus.value = c.HP * 0.0566;
+var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
+hutao.createSubscriptor("Level").onUpdate(function (e) {
+  console.log("Level: ", e.Level);
+  console.log("ATK base:", e.ATKbase);
+  console.log("HP base:", e.HPbase);
+  console.log("DEF base:", e.DEFbase);
+  console.log("CRIT DMG:", e.CRITDMG);
+  console.log("\n");
 });
-c.createSubscriptor("any").onUpdate(function (e) {
-  console.clear();
-  c.getDamageInstances("NormalAttackDMG").forEach(function (d) {
-    var x = d.baseDMG();
-    console.log(d.name + " (" + x.ElementalDMG + "): " + x.NonCRIT + " | " + x.CRIT + " | " + x.Average);
-  });
-});
-setTimeout(function () {
-  c.createModifier("HPpercent", 0.18).enable();
-}, 5000);
+hutao.Ascended = true;
+hutao.Level = 15;
+hutao.Level = 65;
+hutao.Level = 80;
+hutao.Level = 90;
 
 var App = function (_super) {
   __extends(App, _super);
@@ -954,15 +1119,7 @@ var App = function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  App.prototype.toggleBonus = function (ev) {
-    if (ev.target.checked) {
-      m.enable();
-      bonus.enable();
-    } else {
-      m.disable();
-      bonus.disable();
-    }
-  };
+  App.prototype.toggleBonus = function (ev) {};
 
   App.prototype.render = function () {
     return React.createElement("input", {
