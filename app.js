@@ -643,7 +643,6 @@ var Character_1 = __webpack_require__(/*! ../character/Character */ "./built/cha
 
 var c = new Character_1.Character();
 var x = c.createModifier("PyroDMG", 0.466).enable();
-x.enable();
 var m = c.createModifier("PyroDMG", 0.33);
 c.createSubscriptor("any").onUpdate(function (e, stat) {
   console.log(stat + ": " + e[stat]);
