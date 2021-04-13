@@ -33,14 +33,16 @@ var DamageInstance = function () {
   };
 
   DamageInstance.prototype.baseDMG = function () {
+    var el = this.infusedDMG ? this.infusedDMG : this.elementalDMG;
     var s = this.subject;
-    var dmg = s[this._elementalDMG] + s[this._talentDMG] + s.AllDMG;
+    var dmg = s[el] + s[this._talentDMG] + s.AllDMG;
     var total = 0;
     this.talentAdditives.forEach(function (e) {
       total += e[0] * s[e[1]] * (1 + dmg);
     });
     return {
-      nonCRIT: total,
+      ElementalDMG: el,
+      NonCRIT: total,
       CRIT: total * (1 + s.CRITDMG),
       Average: total * (s.CRITDMG * s.CRITRate + 1)
     };
@@ -51,7 +53,7 @@ var DamageInstance = function () {
     var dmg = this.baseDMG();
     var EM = s.ElementalMastery;
     var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
-    dmg.nonCRIT *= amp * (1 + reactionDMG);
+    dmg.NonCRIT *= amp * (1 + reactionDMG);
     dmg.CRIT *= amp * (1 + reactionDMG);
     dmg.Average *= amp * (1 + reactionDMG);
     return dmg;
@@ -86,6 +88,16 @@ var DamageInstance = function () {
     },
     set: function (value) {
       this._talentDMG = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(DamageInstance.prototype, "infusedDMG", {
+    get: function () {
+      return this._infusedDMG;
+    },
+    set: function (value) {
+      this._infusedDMG = value;
     },
     enumerable: false,
     configurable: true
@@ -823,6 +835,7 @@ var m = c.createModifier("PyroDMG", 0.33);
 c.createModifier("ElementalMastery", 80).enable();
 c.createModifier("MeltDMG", 0.15).enable();
 var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAditive(1.18, "ATK");
+d.infusedDMG = "CryoDMG";
 c.createSubscriptor("any").onUpdate(function (e, stat) {
   console.log(stat + ": " + e[stat]);
   console.log("damage: ", d.baseDMG());
