@@ -696,15 +696,15 @@ var DamageInstance = function () {
     this.subject = subject;
     this._elementalDMG = elementalDMG;
     this._talentDMG = talentDMG;
-    this.talentMultipliers = [];
+    this.talentAdditives = [];
   }
 
   DamageInstance.prototype.remove = function () {
     this.subject.removeDamageInstance(this);
   };
 
-  DamageInstance.prototype.addMultiplier = function (value, stat) {
-    this.talentMultipliers.push([value, stat]);
+  DamageInstance.prototype.addAditive = function (value, stat) {
+    this.talentAdditives.push([value, stat]);
     return this;
   };
 
@@ -712,7 +712,7 @@ var DamageInstance = function () {
     var s = this.subject;
     var dmg = s[this._elementalDMG] + s[this._talentDMG] + s.AllDMG;
     var total = 0;
-    this.talentMultipliers.forEach(function (e) {
+    this.talentAdditives.forEach(function (e) {
       total += e[0] * s[e[1]] * (1 + dmg);
     });
     return {
