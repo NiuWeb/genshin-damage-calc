@@ -52,12 +52,10 @@ var Character = function (_super) {
     var _this = _super.call(this) || this;
 
     _this.subscriptors = [];
-    console.log("first");
     return _this;
   }
 
   Character.prototype.notify = function (stat) {
-    console.log("second", this.subscriptors);
     this.subscriptors.forEach(function (sus) {
       if (sus.stat == stat) {
         sus.update();
@@ -600,6 +598,73 @@ exports.Subscriptor = Subscriptor;
 
 /***/ }),
 
+/***/ "./built/damage/DamageInstance.js":
+/*!****************************************!*\
+  !*** ./built/damage/DamageInstance.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.DamageInstance = void 0;
+
+var DamageInstance = function () {
+  function DamageInstance(subject, scalingStat) {
+    this.subject = subject;
+    this.scalingStat = scalingStat;
+  }
+
+  DamageInstance.prototype.output = function () {
+    var damagetype = [];
+
+    for (var _i = 0; _i < arguments.length; _i++) {
+      damagetype[_i] = arguments[_i];
+    }
+
+    var s = this.subject;
+    var scale = s[this.scalingStat];
+    var dmg = 0;
+    damagetype.forEach(function (e) {
+      dmg += s[e];
+    });
+    dmg += s.AllDMG;
+    return {
+      nonCRIT: scale * (1 + dmg),
+      CRIT: scale * (1 + dmg) * (1 + s.CRITDMG),
+      Average: scale * (1 + dmg) * (s.CRITDMG * s.CRITRate + 1)
+    };
+  };
+
+  Object.defineProperty(DamageInstance.prototype, "name", {
+    get: function () {
+      return this._name;
+    },
+    set: function (value) {
+      this._name = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(DamageInstance.prototype, "talentMultiplier", {
+    get: function () {
+      return this._talentMultiplier;
+    },
+    set: function (value) {
+      this._talentMultiplier = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  return DamageInstance;
+}();
+
+exports.DamageInstance = DamageInstance;
+
+/***/ }),
+
 /***/ "./built/modules/app.js":
 /*!******************************!*\
   !*** ./built/modules/app.js ***!
@@ -641,11 +706,16 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var Character_1 = __webpack_require__(/*! ../character/Character */ "./built/character/Character.js");
 
+var DamageInstance_1 = __webpack_require__(/*! ../damage/DamageInstance */ "./built/damage/DamageInstance.js");
+
 var c = new Character_1.Character();
 var x = c.createModifier("PyroDMG", 0.466).enable();
 var m = c.createModifier("PyroDMG", 0.33);
+var hit1 = new DamageInstance_1.DamageInstance(c, "ATK");
 c.createSubscriptor("any").onUpdate(function (e, stat) {
   console.log(stat + ": " + e[stat]);
+  var dmg = hit1.output("PyroDMG", "NormalAttackDMG");
+  console.log("damage: ", dmg);
 });
 c.ATKbase = 561;
 
