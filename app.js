@@ -2,10 +2,105 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./built/character/Character.js":
-/*!**************************************!*\
-  !*** ./built/character/Character.js ***!
-  \**************************************/
+/***/ "./built/damage/DamageInstance.js":
+/*!****************************************!*\
+  !*** ./built/damage/DamageInstance.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.DamageInstance = void 0;
+
+var DamageInstance = function () {
+  function DamageInstance(subject, elementalDMG, talentDMG) {
+    this.subject = subject;
+    this._elementalDMG = elementalDMG;
+    this._talentDMG = talentDMG;
+    this.talentAdditives = [];
+  }
+
+  DamageInstance.prototype.remove = function () {
+    this.subject.removeDamageInstance(this);
+  };
+
+  DamageInstance.prototype.addAditive = function (value, stat) {
+    this.talentAdditives.push([value, stat]);
+    return this;
+  };
+
+  DamageInstance.prototype.baseDMG = function () {
+    var s = this.subject;
+    var dmg = s[this._elementalDMG] + s[this._talentDMG] + s.AllDMG;
+    var total = 0;
+    this.talentAdditives.forEach(function (e) {
+      total += e[0] * s[e[1]] * (1 + dmg);
+    });
+    return {
+      nonCRIT: total,
+      CRIT: total * (1 + s.CRITDMG),
+      Average: total * (s.CRITDMG * s.CRITRate + 1)
+    };
+  };
+
+  DamageInstance.prototype.amplifiedDMG = function (reaction, amp) {
+    var s = this.subject;
+    var dmg = this.baseDMG();
+    var EM = s.ElementalMastery;
+    var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
+    dmg.nonCRIT *= amp * (1 + reactionDMG);
+    dmg.CRIT *= amp * (1 + reactionDMG);
+    dmg.Average *= amp * (1 + reactionDMG);
+    return dmg;
+  };
+
+  Object.defineProperty(DamageInstance.prototype, "name", {
+    get: function () {
+      return this._name;
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  DamageInstance.prototype.setName = function (value) {
+    this._name = value;
+    return this;
+  };
+
+  Object.defineProperty(DamageInstance.prototype, "elementalDMG", {
+    get: function () {
+      return this._elementalDMG;
+    },
+    set: function (value) {
+      this._elementalDMG = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(DamageInstance.prototype, "talentDMG", {
+    get: function () {
+      return this._talentDMG;
+    },
+    set: function (value) {
+      this._talentDMG = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  return DamageInstance;
+}();
+
+exports.DamageInstance = DamageInstance;
+
+/***/ }),
+
+/***/ "./built/model/Character.js":
+/*!**********************************!*\
+  !*** ./built/model/Character.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
@@ -41,11 +136,11 @@ exports.Character = void 0;
 
 var DamageInstance_1 = __webpack_require__(/*! ../damage/DamageInstance */ "./built/damage/DamageInstance.js");
 
-var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/character/CharacterStats.js");
+var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/model/CharacterStats.js");
 
-var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/character/Modifier.js");
+var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/model/Modifier.js");
 
-var Subscriptor_1 = __webpack_require__(/*! ./Subscriptor */ "./built/character/Subscriptor.js");
+var Subscriptor_1 = __webpack_require__(/*! ./Subscriptor */ "./built/model/Subscriptor.js");
 
 var Character = function (_super) {
   __extends(Character, _super);
@@ -114,10 +209,10 @@ exports.Character = Character;
 
 /***/ }),
 
-/***/ "./built/character/CharacterStats.js":
-/*!*******************************************!*\
-  !*** ./built/character/CharacterStats.js ***!
-  \*******************************************/
+/***/ "./built/model/CharacterStats.js":
+/*!***************************************!*\
+  !*** ./built/model/CharacterStats.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -569,10 +664,10 @@ exports.CharacterStats = CharacterStats;
 
 /***/ }),
 
-/***/ "./built/character/Modifier.js":
-/*!*************************************!*\
-  !*** ./built/character/Modifier.js ***!
-  \*************************************/
+/***/ "./built/model/Modifier.js":
+/*!*********************************!*\
+  !*** ./built/model/Modifier.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -632,10 +727,10 @@ exports.Modifier = Modifier;
 
 /***/ }),
 
-/***/ "./built/character/Subscriptor.js":
-/*!****************************************!*\
-  !*** ./built/character/Subscriptor.js ***!
-  \****************************************/
+/***/ "./built/model/Subscriptor.js":
+/*!************************************!*\
+  !*** ./built/model/Subscriptor.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -678,101 +773,6 @@ exports.Subscriptor = Subscriptor;
 
 /***/ }),
 
-/***/ "./built/damage/DamageInstance.js":
-/*!****************************************!*\
-  !*** ./built/damage/DamageInstance.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.DamageInstance = void 0;
-
-var DamageInstance = function () {
-  function DamageInstance(subject, elementalDMG, talentDMG) {
-    this.subject = subject;
-    this._elementalDMG = elementalDMG;
-    this._talentDMG = talentDMG;
-    this.talentAdditives = [];
-  }
-
-  DamageInstance.prototype.remove = function () {
-    this.subject.removeDamageInstance(this);
-  };
-
-  DamageInstance.prototype.addAditive = function (value, stat) {
-    this.talentAdditives.push([value, stat]);
-    return this;
-  };
-
-  DamageInstance.prototype.baseDMG = function () {
-    var s = this.subject;
-    var dmg = s[this._elementalDMG] + s[this._talentDMG] + s.AllDMG;
-    var total = 0;
-    this.talentAdditives.forEach(function (e) {
-      total += e[0] * s[e[1]] * (1 + dmg);
-    });
-    return {
-      nonCRIT: total,
-      CRIT: total * (1 + s.CRITDMG),
-      Average: total * (s.CRITDMG * s.CRITRate + 1)
-    };
-  };
-
-  DamageInstance.prototype.amplifiedDMG = function (reaction, amp) {
-    var s = this.subject;
-    var dmg = this.baseDMG();
-    var EM = s.ElementalMastery;
-    var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
-    dmg.nonCRIT *= amp * (1 + reactionDMG);
-    dmg.CRIT *= amp * (1 + reactionDMG);
-    dmg.Average *= amp * (1 + reactionDMG);
-    return dmg;
-  };
-
-  Object.defineProperty(DamageInstance.prototype, "name", {
-    get: function () {
-      return this._name;
-    },
-    enumerable: false,
-    configurable: true
-  });
-
-  DamageInstance.prototype.setName = function (value) {
-    this._name = value;
-    return this;
-  };
-
-  Object.defineProperty(DamageInstance.prototype, "elementalDMG", {
-    get: function () {
-      return this._elementalDMG;
-    },
-    set: function (value) {
-      this._elementalDMG = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(DamageInstance.prototype, "talentDMG", {
-    get: function () {
-      return this._talentDMG;
-    },
-    set: function (value) {
-      this._talentDMG = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  return DamageInstance;
-}();
-
-exports.DamageInstance = DamageInstance;
-
-/***/ }),
-
 /***/ "./built/modules/app.js":
 /*!******************************!*\
   !*** ./built/modules/app.js ***!
@@ -812,14 +812,14 @@ exports.App = void 0;
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var Character_1 = __webpack_require__(/*! ../character/Character */ "./built/character/Character.js");
+var Character_1 = __webpack_require__(/*! ../model/Character */ "./built/model/Character.js");
 
 var c = new Character_1.Character();
 var x = c.createModifier("PyroDMG", 0.466).enable();
 var m = c.createModifier("PyroDMG", 0.33);
 c.createModifier("ElementalMastery", 80).enable();
 c.createModifier("MeltDMG", 0.15).enable();
-var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addMultiplier(1.18, "ATK");
+var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAditive(1.18, "ATK");
 c.createSubscriptor("any").onUpdate(function (e, stat) {
   console.log(stat + ": " + e[stat]);
   console.log("damage: ", d.baseDMG());
