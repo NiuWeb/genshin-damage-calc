@@ -167,16 +167,22 @@ var Character = function (_super) {
 
   Character.prototype.notify = function (stat) {
     this.subscriptors.forEach(function (sus) {
-      if (sus.stat == stat) {
-        sus.update();
-      } else if (sus.stat == "any") {
+      if (sus.stats.indexOf(stat) >= 0) {
+        sus.update(stat);
+      } else if (sus.stats.indexOf("any") >= 0) {
         sus.update(stat);
       }
     });
   };
 
-  Character.prototype.createSubscriptor = function (stat) {
-    var s = new Subscriptor_1.Subscriptor(this, stat);
+  Character.prototype.createSubscriptor = function () {
+    var stats = [];
+
+    for (var _i = 0; _i < arguments.length; _i++) {
+      stats[_i] = arguments[_i];
+    }
+
+    var s = new Subscriptor_1.Subscriptor(this, stats);
     this.subscriptors.push(s);
     return s;
   };
@@ -756,9 +762,9 @@ Object.defineProperty(exports, "__esModule", ({
 exports.Subscriptor = void 0;
 
 var Subscriptor = function () {
-  function Subscriptor(subject, stat) {
+  function Subscriptor(subject, stats) {
     this.subject = subject;
-    this._stat = stat;
+    this._stats = stats;
   }
 
   Subscriptor.prototype.remove = function () {
@@ -774,9 +780,9 @@ var Subscriptor = function () {
     return this;
   };
 
-  Object.defineProperty(Subscriptor.prototype, "stat", {
+  Object.defineProperty(Subscriptor.prototype, "stats", {
     get: function () {
-      return this._stat;
+      return this._stats;
     },
     enumerable: false,
     configurable: true
@@ -835,13 +841,22 @@ var m = c.createModifier("PyroDMG", 0.33);
 c.createModifier("ElementalMastery", 80).enable();
 c.createModifier("MeltDMG", 0.15).enable();
 var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addAditive(1.18, "ATK");
-d.infusedDMG = "CryoDMG";
-c.createSubscriptor("any").onUpdate(function (e, stat) {
-  console.log(stat + ": " + e[stat]);
-  console.log("damage: ", d.baseDMG());
-  console.log("amplified: ", d.amplifiedDMG("MeltDMG", 1.5));
+var bonus = c.createModifier("ATKflat", c.HP * 0.0566);
+c.createSubscriptor("PyroDMG").onUpdate(function (e) {
+  console.log("Pyro DMG: ", e.PyroDMG);
+});
+c.createSubscriptor("ATKbase", "ATKflat", "ATKpercent").onUpdate(function (e) {
+  console.log("ATK: ", e.ATK);
+});
+c.createSubscriptor("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
+  console.log("HP: ", e.HP);
+  bonus.value = c.HP * 0.0566;
 });
 c.ATKbase = 561;
+c.ATKflat = 311;
+c.HPbase = 15552;
+c.HPpercent = 0.466;
+c.HPflat = 4780;
 
 var App = function (_super) {
   __extends(App, _super);
@@ -853,7 +868,11 @@ var App = function (_super) {
   App.prototype.toggleBonus = function (ev) {
     if (ev.target.checked) {
       m.enable();
-    } else m.disable();
+      bonus.enable();
+    } else {
+      m.disable();
+      bonus.disable();
+    }
   };
 
   App.prototype.render = function () {
