@@ -39,6 +39,8 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.Character = void 0;
 
+var DamageInstance_1 = __webpack_require__(/*! ../damage/DamageInstance */ "./built/damage/DamageInstance.js");
+
 var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/character/CharacterStats.js");
 
 var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/character/Modifier.js");
@@ -52,6 +54,7 @@ var Character = function (_super) {
     var _this = _super.call(this) || this;
 
     _this.subscriptors = [];
+    _this.damageInstances = [];
     return _this;
   }
 
@@ -85,6 +88,23 @@ var Character = function (_super) {
   Character.prototype.createModifier = function (prop, value) {
     var m = new Modifier_1.Modifier(this, prop, value);
     return m;
+  };
+
+  Character.prototype.createDamageInstance = function (elementalDMG, talentDMG) {
+    var d = new DamageInstance_1.DamageInstance(this, elementalDMG, talentDMG);
+    this.damageInstances.push(d);
+    return d;
+  };
+
+  Character.prototype.removeDamageInstance = function (inst) {
+    var s = this.damageInstances.indexOf(inst);
+
+    if (s == -1) {
+      return false;
+    } else {
+      this.damageInstances.splice(s, 1);
+      return true;
+    }
   };
 
   return Character;
@@ -133,11 +153,16 @@ var CharacterStats = function () {
     this._PhysicalDMG = 0;
     this._NormalAttackDMG = 0;
     this._ChargedAttackDMG = 0;
+    this._PlungeAttackDMG = 0;
     this._ElementalSkillDMG = 0;
     this._ElementalBurstDMG = 0;
     this._AllDMG = 0;
-    this._VaporieDMG = 0;
+    this._VaporizeDMG = 0;
     this._MeltDMG = 0;
+    this._SwirlDMG = 0;
+    this._OverloadDMG = 0;
+    this._ElectrochargeDMG = 0;
+    this._SuperconductDMG = 0;
   }
 
   CharacterStats.prototype.notify = function (stat) {};
@@ -427,6 +452,17 @@ var CharacterStats = function () {
     enumerable: false,
     configurable: true
   });
+  Object.defineProperty(CharacterStats.prototype, "PlungeAttackDMG", {
+    get: function () {
+      return this._PlungeAttackDMG;
+    },
+    set: function (value) {
+      this._PlungeAttackDMG = value;
+      this.notify("PlungeAttackDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
   Object.defineProperty(CharacterStats.prototype, "ElementalSkillDMG", {
     get: function () {
       return this._ElementalSkillDMG;
@@ -460,13 +496,13 @@ var CharacterStats = function () {
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(CharacterStats.prototype, "VaporieDMG", {
+  Object.defineProperty(CharacterStats.prototype, "VaporizeDMG", {
     get: function () {
-      return this._VaporieDMG;
+      return this._VaporizeDMG;
     },
     set: function (value) {
-      this._VaporieDMG = value;
-      this.notify("VaporieDMG");
+      this._VaporizeDMG = value;
+      this.notify("VaporizeDMG");
     },
     enumerable: false,
     configurable: true
@@ -478,6 +514,50 @@ var CharacterStats = function () {
     set: function (value) {
       this._MeltDMG = value;
       this.notify("MeltDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "SwirlDMG", {
+    get: function () {
+      return this._SwirlDMG;
+    },
+    set: function (value) {
+      this._SwirlDMG = value;
+      this.notify("SwirlDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "OverloadDMG", {
+    get: function () {
+      return this._OverloadDMG;
+    },
+    set: function (value) {
+      this._OverloadDMG = value;
+      this.notify("OverloadDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "ElectrochargeDMG", {
+    get: function () {
+      return this._ElectrochargeDMG;
+    },
+    set: function (value) {
+      this._ElectrochargeDMG = value;
+      this.notify("ElectrochargeDMG");
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterStats.prototype, "SuperconductDMG", {
+    get: function () {
+      return this._SuperconductDMG;
+    },
+    set: function (value) {
+      this._SuperconductDMG = value;
+      this.notify("SuperconductDMG");
     },
     enumerable: false,
     configurable: true
@@ -612,48 +692,76 @@ Object.defineProperty(exports, "__esModule", ({
 exports.DamageInstance = void 0;
 
 var DamageInstance = function () {
-  function DamageInstance(subject, scalingStat) {
+  function DamageInstance(subject, elementalDMG, talentDMG) {
     this.subject = subject;
-    this.scalingStat = scalingStat;
+    this._elementalDMG = elementalDMG;
+    this._talentDMG = talentDMG;
+    this.talentMultipliers = [];
   }
 
-  DamageInstance.prototype.output = function () {
-    var damagetype = [];
+  DamageInstance.prototype.remove = function () {
+    this.subject.removeDamageInstance(this);
+  };
 
-    for (var _i = 0; _i < arguments.length; _i++) {
-      damagetype[_i] = arguments[_i];
-    }
+  DamageInstance.prototype.addMultiplier = function (value, stat) {
+    this.talentMultipliers.push([value, stat]);
+    return this;
+  };
 
+  DamageInstance.prototype.baseDMG = function () {
     var s = this.subject;
-    var scale = s[this.scalingStat];
-    var dmg = 0;
-    damagetype.forEach(function (e) {
-      dmg += s[e];
+    var dmg = s[this._elementalDMG] + s[this._talentDMG] + s.AllDMG;
+    var total = 0;
+    this.talentMultipliers.forEach(function (e) {
+      total += e[0] * s[e[1]] * (1 + dmg);
     });
-    dmg += s.AllDMG;
     return {
-      nonCRIT: scale * (1 + dmg),
-      CRIT: scale * (1 + dmg) * (1 + s.CRITDMG),
-      Average: scale * (1 + dmg) * (s.CRITDMG * s.CRITRate + 1)
+      nonCRIT: total,
+      CRIT: total * (1 + s.CRITDMG),
+      Average: total * (s.CRITDMG * s.CRITRate + 1)
     };
+  };
+
+  DamageInstance.prototype.amplifiedDMG = function (reaction, amp) {
+    var s = this.subject;
+    var dmg = this.baseDMG();
+    var EM = s.ElementalMastery;
+    var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
+    dmg.nonCRIT *= amp * (1 + reactionDMG);
+    dmg.CRIT *= amp * (1 + reactionDMG);
+    dmg.Average *= amp * (1 + reactionDMG);
+    return dmg;
   };
 
   Object.defineProperty(DamageInstance.prototype, "name", {
     get: function () {
       return this._name;
     },
+    enumerable: false,
+    configurable: true
+  });
+
+  DamageInstance.prototype.setName = function (value) {
+    this._name = value;
+    return this;
+  };
+
+  Object.defineProperty(DamageInstance.prototype, "elementalDMG", {
+    get: function () {
+      return this._elementalDMG;
+    },
     set: function (value) {
-      this._name = value;
+      this._elementalDMG = value;
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(DamageInstance.prototype, "talentMultiplier", {
+  Object.defineProperty(DamageInstance.prototype, "talentDMG", {
     get: function () {
-      return this._talentMultiplier;
+      return this._talentDMG;
     },
     set: function (value) {
-      this._talentMultiplier = value;
+      this._talentDMG = value;
     },
     enumerable: false,
     configurable: true
@@ -706,16 +814,16 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var Character_1 = __webpack_require__(/*! ../character/Character */ "./built/character/Character.js");
 
-var DamageInstance_1 = __webpack_require__(/*! ../damage/DamageInstance */ "./built/damage/DamageInstance.js");
-
 var c = new Character_1.Character();
 var x = c.createModifier("PyroDMG", 0.466).enable();
 var m = c.createModifier("PyroDMG", 0.33);
-var hit1 = new DamageInstance_1.DamageInstance(c, "ATK");
+c.createModifier("ElementalMastery", 80).enable();
+c.createModifier("MeltDMG", 0.15).enable();
+var d = c.createDamageInstance("PyroDMG", "NormalAttackDMG").setName("1-Hit").addMultiplier(1.18, "ATK");
 c.createSubscriptor("any").onUpdate(function (e, stat) {
   console.log(stat + ": " + e[stat]);
-  var dmg = hit1.output("PyroDMG", "NormalAttackDMG");
-  console.log("damage: ", dmg);
+  console.log("damage: ", d.baseDMG());
+  console.log("amplified: ", d.amplifiedDMG("MeltDMG", 1.5));
 });
 c.ATKbase = 561;
 
