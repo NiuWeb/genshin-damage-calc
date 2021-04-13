@@ -899,7 +899,7 @@ var CharacterStats = function () {
       return this._NormalAttackLevel;
     },
     set: function (value) {
-      this._NormalAttackLevel = value;
+      this._NormalAttackLevel = Math.min(15, Math.floor(value));
       this.notify("NormalAttackLevel");
     },
     enumerable: false,
@@ -910,7 +910,8 @@ var CharacterStats = function () {
       return this._ElementalSkillLevel;
     },
     set: function (value) {
-      this._ElementalSkillLevel = value;
+      this._ElementalSkillLevel = Math.min(15, Math.floor(value));
+      ;
       this.notify("ElementalSkillLevel");
     },
     enumerable: false,
@@ -921,7 +922,8 @@ var CharacterStats = function () {
       return this._ElementalBurstLevel;
     },
     set: function (value) {
-      this._ElementalBurstLevel = value;
+      this._ElementalBurstLevel = Math.min(15, Math.floor(value));
+      ;
       this.notify("ElementalBurstLevel");
     },
     enumerable: false,
