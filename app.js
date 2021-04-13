@@ -72,7 +72,7 @@ var CharacterWrapper = function (_super) {
     }
 
     var statModifier = obj.createModifier(data.scaleStat).enable();
-    obj.createSubscriptor("Level").onUpdate(function (e) {
+    obj.createObserver("Level").onUpdate(function (e) {
       var i = _this.levelIndex(e);
 
       e.ATKbase = data.ATKbase[i];
@@ -335,7 +335,7 @@ var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/mode
 
 var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/model/Modifier.js");
 
-var Subscriptor_1 = __webpack_require__(/*! ./Subscriptor */ "./built/model/Subscriptor.js");
+var Observer_1 = __webpack_require__(/*! ./Observer */ "./built/model/Observer.js");
 
 var Character = function (_super) {
   __extends(Character, _super);
@@ -343,13 +343,13 @@ var Character = function (_super) {
   function Character() {
     var _this = _super.call(this) || this;
 
-    _this.subscriptors = [];
+    _this.observers = [];
     _this.damageInstances = [];
     return _this;
   }
 
   Character.prototype.notify = function (stat) {
-    this.subscriptors.forEach(function (sus) {
+    this.observers.forEach(function (sus) {
       if (sus.stats.indexOf(stat) >= 0) {
         sus.update(stat);
       } else if (sus.stats.indexOf("any") >= 0) {
@@ -358,25 +358,25 @@ var Character = function (_super) {
     });
   };
 
-  Character.prototype.createSubscriptor = function () {
+  Character.prototype.createObserver = function () {
     var stats = [];
 
     for (var _i = 0; _i < arguments.length; _i++) {
       stats[_i] = arguments[_i];
     }
 
-    var s = new Subscriptor_1.Subscriptor(this, stats);
-    this.subscriptors.push(s);
+    var s = new Observer_1.Observer(this, stats);
+    this.observers.push(s);
     return s;
   };
 
-  Character.prototype.removeSubscriptor = function (sus) {
-    var p = this.subscriptors.indexOf(sus);
+  Character.prototype.removeObserver = function (sus) {
+    var p = this.observers.indexOf(sus);
 
     if (p == -1) {
       return false;
     } else {
-      this.subscriptors.splice(p, 1);
+      this.observers.splice(p, 1);
       return true;
     }
   };
@@ -1012,10 +1012,10 @@ exports.Modifier = Modifier;
 
 /***/ }),
 
-/***/ "./built/model/Subscriptor.js":
-/*!************************************!*\
-  !*** ./built/model/Subscriptor.js ***!
-  \************************************/
+/***/ "./built/model/Observer.js":
+/*!*********************************!*\
+  !*** ./built/model/Observer.js ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1023,38 +1023,38 @@ exports.Modifier = Modifier;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.Subscriptor = void 0;
+exports.Observer = void 0;
 
-var Subscriptor = function () {
-  function Subscriptor(subject, stats) {
+var Observer = function () {
+  function Observer(subject, stats) {
     this.subject = subject;
     this._stats = stats;
   }
 
-  Subscriptor.prototype.remove = function () {
-    this.subject.removeSubscriptor(this);
+  Observer.prototype.remove = function () {
+    this.subject.removeObserver(this);
   };
 
-  Subscriptor.prototype.update = function (stat) {
+  Observer.prototype.update = function (stat) {
     this._onUpdate(this.subject, stat);
   };
 
-  Subscriptor.prototype.onUpdate = function (ev) {
+  Observer.prototype.onUpdate = function (ev) {
     this._onUpdate = ev;
     return this;
   };
 
-  Object.defineProperty(Subscriptor.prototype, "stats", {
+  Object.defineProperty(Observer.prototype, "stats", {
     get: function () {
       return this._stats;
     },
     enumerable: false,
     configurable: true
   });
-  return Subscriptor;
+  return Observer;
 }();
 
-exports.Subscriptor = Subscriptor;
+exports.Observer = Observer;
 
 /***/ }),
 
@@ -1100,7 +1100,7 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper */ "./built/characters/CharacterWrapper.js");
 
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
-hutao.createSubscriptor("Level").onUpdate(function (e) {
+hutao.createObserver("Level").onUpdate(function (e) {
   console.log("Level: ", e.Level);
   console.log("ATK base:", e.ATKbase);
   console.log("HP base:", e.HPbase);
