@@ -52,7 +52,7 @@ var CharacterWrapper = function (_super) {
 
   CharacterWrapper.create = function (name) {
     var c = new CharacterWrapper();
-    this.createCharacter(name, c);
+    this.defineCharacter(name, c);
     this.characters.push(c);
     return c;
   };
@@ -61,7 +61,7 @@ var CharacterWrapper = function (_super) {
     return this.characters;
   };
 
-  CharacterWrapper.createCharacter = function (name, obj) {
+  CharacterWrapper.defineCharacter = function (name, obj) {
     var _this = this;
 
     obj.name = name;
