@@ -935,6 +935,7 @@ var CharacterStats = function () {
     },
     set: function (value) {
       this._Ascended = value;
+      this.notify("Level");
     },
     enumerable: false,
     configurable: true
