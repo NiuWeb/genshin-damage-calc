@@ -218,18 +218,14 @@ exports.charHuTao = {
   }, {
     name: "Paramita Papilo",
     description: "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-    talentDMG: "ElementalSkillDMG",
     effects: [function (e) {
       var bonuses = [0.0384, 0.0407, 0.0430, 0.0460, 0.0483, 0.0506, 0.0536, 0.0566, 0.0596, 0.0626, 0.0656, 0.0685, 0.0715, 0.0745, 0.0775];
       var bonus = bonuses[e.ElementalSkillLevel - 1];
-
-      var conversion = function (e) {
-        return Math.min(bonus * e.HP, 4 * e.ATKbase);
-      };
-
-      var ATKincrease = e.createModifier("ATKflat", conversion(e));
-      e.createObserver("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
-        ATKincrease.value = conversion(e);
+      var ATKincrease = e.createModifier("ATKflat");
+      ATKincrease.value = Math.min(bonus * e.HP, 4 * e.ATKbase);
+      e.createObserver("HPbase", "HPflat", "HPpercent", "ATKbase", "ElementalSkillLevel").onUpdate(function (e) {
+        bonus = bonuses[e.ElementalSkillLevel - 1];
+        ATKincrease.value = Math.min(bonus * e.HP, 4 * e.ATKbase);
       });
       ATKincrease.onEnable(function (e) {
         e.infuseDamageInstance("NormalAttackDMG", "PyroDMG");
