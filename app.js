@@ -84,7 +84,8 @@ var CharacterWrapper = function (_super) {
       di.name = na.name;
       obj.createObserver("NormalAttackLevel").onUpdate(function (e) {
         di.clearAdditives();
-        di.addAdditive(na.scaleValue[e.NormalAttackLevel - 1], na.scaleStat);
+        var index = Math.min(na.scaleValue.length, e.NormalAttackLevel) - 1;
+        di.addAdditive(na.scaleValue[index], na.scaleStat);
       });
 
       obj._NormalAttacks.push(di);
@@ -1248,10 +1249,11 @@ hutao.createObserver("NormalAttackLevel").onUpdate(function (e) {
   var di = hutao.NormalAttacks;
 
   for (var i = 0; i < di.length; i++) {
-    console.log(di[i].baseDMG());
+    var dmg = di[i].baseDMG();
+    console.log(di[i].name, dmg.Average, dmg.ElementalDMG);
   }
 });
-hutao.NormalAttackLevel = 1;
+hutao.NormalAttackLevel = 8;
 
 var App = function (_super) {
   __extends(App, _super);
