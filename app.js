@@ -295,11 +295,12 @@ var DamageInstance = function () {
     this.talentAdditives.forEach(function (e) {
       total += e[0] * s[e[1]] * (1 + dmg);
     });
+    var cr = Math.min(1, s.CRITRate);
     return {
       ElementalDMG: el,
       NonCRIT: total,
       CRIT: total * (1 + s.CRITDMG),
-      Average: total * (s.CRITDMG * s.CRITRate + 1)
+      Average: total * (s.CRITDMG * cr + 1)
     };
   };
 
@@ -308,6 +309,7 @@ var DamageInstance = function () {
       proc = 1;
     }
 
+    proc = Math.min(1, proc);
     var s = this.subject;
     var dmg = this.baseDMG();
     var amp = 0;
