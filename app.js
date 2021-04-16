@@ -47,7 +47,12 @@ var CharacterWrapper = function (_super) {
   __extends(CharacterWrapper, _super);
 
   function CharacterWrapper() {
-    return _super !== null && _super.apply(this, arguments) || this;
+    var _this = _super !== null && _super.apply(this, arguments) || this;
+
+    _this._NormalAttacks = [];
+    _this._ElementalSkill = [];
+    _this._ElementalBurst = [];
+    return _this;
   }
 
   CharacterWrapper.create = function (name) {
@@ -73,8 +78,20 @@ var CharacterWrapper = function (_super) {
 
     var statModifier = obj.createModifier(data.scaleStat).enable();
 
-    for (var i in data.NormalAttacks) {
-      console.log(i);
+    var _loop_1 = function (i) {
+      var na = data.NormalAttacks[i];
+      var di = obj.createDamageInstance(data.NormalAttackDMG, na.talentDMG);
+      di.name = na.name;
+      obj.createObserver("NormalAttackLevel").onUpdate(function (e) {
+        di.clearAdditives();
+        di.addAdditive(na.scaleValue[e.NormalAttackLevel - 1], na.scaleStat);
+      });
+
+      obj._NormalAttacks.push(di);
+    };
+
+    for (var i = 0; i < data.NormalAttacks.length; i++) {
+      _loop_1(i);
     }
 
     obj.createObserver("Level").onUpdate(function (e) {
@@ -85,6 +102,8 @@ var CharacterWrapper = function (_super) {
       e.HPbase = data.HPbase[i];
       statModifier.value = data.scaleValue[i];
     });
+    obj.Level = 1;
+    obj.NormalAttackLevel = 1;
   };
 
   CharacterWrapper.levelIndex = function (c) {
@@ -110,6 +129,13 @@ var CharacterWrapper = function (_super) {
     },
     set: function (value) {
       this._name = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "NormalAttacks", {
+    get: function () {
+      return this._NormalAttacks;
     },
     enumerable: false,
     configurable: true
@@ -341,15 +367,12 @@ var DamageInstance = function () {
     get: function () {
       return this._name;
     },
+    set: function (value) {
+      this._name = value;
+    },
     enumerable: false,
     configurable: true
   });
-
-  DamageInstance.prototype.setName = function (value) {
-    this._name = value;
-    return this;
-  };
-
   Object.defineProperty(DamageInstance.prototype, "elementalDMG", {
     get: function () {
       return this._elementalDMG;
@@ -1219,19 +1242,16 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper */ "./built/characters/CharacterWrapper.js");
 
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
-hutao.createObserver("Level").onUpdate(function (e) {
-  console.log("Level: ", e.Level);
-  console.log("ATK base:", e.ATKbase);
-  console.log("HP base:", e.HPbase);
-  console.log("DEF base:", e.DEFbase);
-  console.log("CRIT DMG:", e.CRITDMG);
-  console.log("\n");
-});
 hutao.Ascended = true;
-hutao.Level = 15;
-hutao.Level = 65;
-hutao.Level = 80;
 hutao.Level = 90;
+hutao.createObserver("NormalAttackLevel").onUpdate(function (e) {
+  var di = hutao.NormalAttacks;
+
+  for (var i = 0; i < di.length; i++) {
+    console.log(di[i].baseDMG());
+  }
+});
+hutao.NormalAttackLevel = 1;
 
 var App = function (_super) {
   __extends(App, _super);
