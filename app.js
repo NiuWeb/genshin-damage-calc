@@ -239,7 +239,11 @@ var DamageInstance = function () {
     };
   };
 
-  DamageInstance.prototype.amplifiedDMG = function (reaction) {
+  DamageInstance.prototype.amplifiedDMG = function (reaction, proc) {
+    if (proc === void 0) {
+      proc = 1;
+    }
+
     var s = this.subject;
     var dmg = this.baseDMG();
     var amp = 0;
@@ -256,9 +260,9 @@ var DamageInstance = function () {
 
     var EM = s.ElementalMastery;
     var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
-    dmg.NonCRIT *= amp * (1 + reactionDMG);
-    dmg.CRIT *= amp * (1 + reactionDMG);
-    dmg.Average *= amp * (1 + reactionDMG);
+    dmg.NonCRIT = dmg.NonCRIT * amp * (1 + reactionDMG) * proc + dmg.NonCRIT * (1 - proc);
+    dmg.CRIT = dmg.CRIT * amp * (1 + reactionDMG) * proc + dmg.CRIT * (1 - proc);
+    dmg.Average = dmg.Average * amp * (1 + reactionDMG) * proc + dmg.Average * (1 - proc);
     return dmg;
   };
 
