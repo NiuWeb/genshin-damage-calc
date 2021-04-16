@@ -72,6 +72,11 @@ var CharacterWrapper = function (_super) {
     }
 
     var statModifier = obj.createModifier(data.scaleStat).enable();
+
+    for (var i in data.NormalAttacks) {
+      console.log(i);
+    }
+
     obj.createObserver("Level").onUpdate(function (e) {
       var i = _this.levelIndex(e);
 
@@ -1072,8 +1077,7 @@ var Modifier = function () {
     if (!this.enabled) {
       this.subject[this._stat] += this._value;
       this._enabled = true;
-
-      this._onEnable(this.subject, this._stat);
+      if (this._onEnable) this._onEnable(this.subject, this._stat);
     }
 
     return this;
@@ -1083,8 +1087,7 @@ var Modifier = function () {
     if (this.enabled) {
       this.subject[this._stat] -= this._value;
       this._enabled = false;
-
-      this._onDisable(this.subject, this._stat);
+      if (this._onDisable) this._onDisable(this.subject, this._stat);
     }
 
     return this;
