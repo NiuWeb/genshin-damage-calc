@@ -157,24 +157,82 @@ exports.charHuTao = {
   DEFbase: [68, 177, 235, 352, 394, 453, 508, 568, 610, 670, 712, 773, 815, 876],
   scaleValue: [0, 0, 0, 0, 0.096, 0.096, 0.192, 0.192, 0.192, 0.192, 0.288, 0.288, 0.384, 0.384],
   scaleStat: "CRITDMG",
-  talents: [{
+  NormalAttackDMG: "PhysicalDMG",
+  NormalAttacks: [{
     name: "1-Hit",
     talentDMG: "NormalAttackDMG",
-    elementalDMG: "PhysicalDMG",
     scaleStat: "ATK",
     scaleValue: [0.4689, 0.5008, 0.5328, 0.5754, 0.6074, 0.6447, 0.6926, 0.7406, 0.7885, 0.8365, 0.8844, 0.9324, 0.9804, 1.0283, 1.0763]
   }, {
     name: "2-Hit",
     talentDMG: "NormalAttackDMG",
-    elementalDMG: "PhysicalDMG",
     scaleStat: "ATK",
     scaleValue: [0.4825, 0.5154, 0.5483, 0.5922, 0.6251, 0.6635, 0.7128, 0.7622, 0.8115, 0.8609, 0.9102, 0.9596, 1.0089, 1.0583, 1.1076]
   }, {
     name: "3-Hit",
     talentDMG: "NormalAttackDMG",
-    elementalDMG: "PhysicalDMG",
     scaleStat: "ATK",
     scaleValue: [0.6105, 0.6521, 0.6938, 0.7493, 0.7909, 0.8394, 0.9019, 0.9643, 1.0268, 1.0892, 1.1516, 1.2141, 1.2765, 1.3389, 1.4014]
+  }, {
+    name: "4-Hit",
+    talentDMG: "NormalAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.6564, 0.7012, 0.7459, 0.8056, 0.8503, 0.9026, 0.9697, 1.0368, 1.1040, 1.1711, 1.2382, 1.3054, 1.3725, 1.4396, 1.5068]
+  }, {
+    name: "5-Hit",
+    talentDMG: "NormalAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.6847, 0.7314, 0.7781, 0.8404, 0.8870, 0.9415, 1.0115, 1.0816, 1.1516, 1.2216, 1.2917, 1.3617, 1.4317, 1.5018, 1.5718]
+  }, {
+    name: "6-Hit",
+    talentDMG: "NormalAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.8596, 0.9182, 0.9768, 1.0549, 1.1136, 1.1819, 1.2698, 1.3578, 1.4457, 1.5336, 1.6215, 1.7094, 1.7973, 1.8852, 1.9731]
+  }, {
+    name: "Charged Attack",
+    talentDMG: "ChargedAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [1.3596, 1.4523, 1.5450, 1.6686, 1.7613, 1.8695, 2.0085, 2.1476, 2.2866, 2.4257, 2.5647, 2.7038, 2.8428, 2.9819, 3.1209]
+  }, {
+    name: "Plunge",
+    talentDMG: "PlungeAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.6542, 0.6988, 0.7434, 0.8029, 0.8475, 0.8995, 0.9664, 1.0333, 1.1002, 1.1671, 1.2340, 1.3010, 1.3679, 1.4348, 1.5017]
+  }, {
+    name: "Low Plunge",
+    talentDMG: "PlungeAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [1.3081, 1.3973, 1.4865, 1.6054, 1.6946, 1.7986, 1.9324, 2.0662, 2.2000, 2.3338, 2.4676, 2.6013, 2.7351, 2.8689, 3.0027]
+  }, {
+    name: "High Plunge",
+    talentDMG: "PlungeAttackDMG",
+    scaleStat: "ATK",
+    scaleValue: [1.6339, 1.7453, 1.8567, 2.0052, 2.1166, 2.2466, 2.4137, 2.5808, 2.7479, 2.9150, 3.0821, 3.2492, 3.4163, 3.5834, 3.7505]
+  }],
+  ElementalSkillDMG: "PyroDMG",
+  ElementalSkill: [{
+    name: "Blood Blossom",
+    talentDMG: "ElementalSkillDMG",
+    scaleStat: "ATK",
+    scaleValue: [0.6400, 0.6880, 0.7360, 0.8000, 0.8480, 0.8960, 0.9600, 1.0240, 1.0880, 1.1520, 1.2160, 1.2800, 1.3600, 1.4400, 1.5200]
+  }, {
+    name: "Paramita Papilo",
+    description: "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
+    talentDMG: "ElementalSkillDMG",
+    effects: [function (e) {
+      var bonuses = [0.0384, 0.0407, 0.0430, 0.0460, 0.0483, 0.0506, 0.0536, 0.0566, 0.0596, 0.0626, 0.0656, 0.0685, 0.0715, 0.0745, 0.0775];
+      var bonus = bonuses[e.ElementalSkillLevel - 1];
+
+      var conversion = function (e) {
+        return Math.min(bonus * e.HP, 4 * e.ATKbase);
+      };
+
+      var ATKincrease = e.createModifier("ATKflat", conversion(e));
+      e.createObserver("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
+        ATKincrease.value = conversion(e);
+      });
+      return [ATKincrease];
+    }]
   }]
 };
 
