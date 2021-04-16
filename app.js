@@ -199,6 +199,7 @@ var DamageInstance = function () {
     this._elementalDMG = elementalDMG;
     this._talentDMG = talentDMG;
     this.talentAdditives = [];
+    this._canInfuse = true;
   }
 
   DamageInstance.prototype.remove = function () {
@@ -216,7 +217,14 @@ var DamageInstance = function () {
   };
 
   DamageInstance.prototype.baseDMG = function () {
-    var el = this.infusedDMG ? this.infusedDMG : this.elementalDMG;
+    var el;
+
+    if (this.canInfuse) {
+      el = this.infusedDMG ? this.infusedDMG : this.elementalDMG;
+    } else {
+      el = this.elementalDMG;
+    }
+
     var s = this.subject;
     var dmg = s[el] + s[this._talentDMG] + s.AllDMG;
     var total = 0;
@@ -281,6 +289,16 @@ var DamageInstance = function () {
     },
     set: function (value) {
       this._infusedDMG = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(DamageInstance.prototype, "canInfuse", {
+    get: function () {
+      return this._canInfuse;
+    },
+    set: function (value) {
+      this._canInfuse = value;
     },
     enumerable: false,
     configurable: true
