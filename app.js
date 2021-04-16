@@ -239,9 +239,21 @@ var DamageInstance = function () {
     };
   };
 
-  DamageInstance.prototype.amplifiedDMG = function (reaction, amp) {
+  DamageInstance.prototype.amplifiedDMG = function (reaction) {
     var s = this.subject;
     var dmg = this.baseDMG();
+    var amp = 0;
+
+    if (reaction == "MeltDMG") {
+      if (dmg.ElementalDMG == "CryoDMG") amp = 1.5;else if (dmg.ElementalDMG == "PyroDMG") amp = 2;
+    } else if (reaction == "VaporizeDMG") {
+      if (dmg.ElementalDMG == "HydroDMG") amp = 2;else if (dmg.ElementalDMG == "PyroDMG") amp = 1.5;
+    }
+
+    if (amp == 0) {
+      return dmg;
+    }
+
     var EM = s.ElementalMastery;
     var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
     dmg.NonCRIT *= amp * (1 + reactionDMG);
