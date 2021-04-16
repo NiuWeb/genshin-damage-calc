@@ -329,10 +329,10 @@ var DamageInstance = function () {
     });
     var cr = Math.min(1, s.CRITRate);
     return {
-      ElementalDMG: el,
-      NonCRIT: total,
+      elementalDMG: el,
+      nonCRIT: total,
       CRIT: total * (1 + s.CRITDMG),
-      Average: total * (s.CRITDMG * cr + 1)
+      average: total * (s.CRITDMG * cr + 1)
     };
   };
 
@@ -347,9 +347,9 @@ var DamageInstance = function () {
     var amp = 0;
 
     if (reaction == "MeltDMG") {
-      if (dmg.ElementalDMG == "CryoDMG") amp = 1.5;else if (dmg.ElementalDMG == "PyroDMG") amp = 2;
+      if (dmg.elementalDMG == "CryoDMG") amp = 1.5;else if (dmg.elementalDMG == "PyroDMG") amp = 2;
     } else if (reaction == "VaporizeDMG") {
-      if (dmg.ElementalDMG == "HydroDMG") amp = 2;else if (dmg.ElementalDMG == "PyroDMG") amp = 1.5;
+      if (dmg.elementalDMG == "HydroDMG") amp = 2;else if (dmg.elementalDMG == "PyroDMG") amp = 1.5;
     }
 
     if (amp == 0) {
@@ -358,9 +358,9 @@ var DamageInstance = function () {
 
     var EM = s.ElementalMastery;
     var reactionDMG = s[reaction] + 2.78 * EM / (EM + 1400);
-    dmg.NonCRIT = dmg.NonCRIT * amp * (1 + reactionDMG) * proc + dmg.NonCRIT * (1 - proc);
+    dmg.nonCRIT = dmg.nonCRIT * amp * (1 + reactionDMG) * proc + dmg.nonCRIT * (1 - proc);
     dmg.CRIT = dmg.CRIT * amp * (1 + reactionDMG) * proc + dmg.CRIT * (1 - proc);
-    dmg.Average = dmg.Average * amp * (1 + reactionDMG) * proc + dmg.Average * (1 - proc);
+    dmg.average = dmg.average * amp * (1 + reactionDMG) * proc + dmg.average * (1 - proc);
     return dmg;
   };
 
@@ -1250,7 +1250,7 @@ hutao.createObserver("NormalAttackLevel").onUpdate(function (e) {
 
   for (var i = 0; i < di.length; i++) {
     var dmg = di[i].baseDMG();
-    console.log(di[i].name, dmg.Average, dmg.ElementalDMG);
+    console.log(di[i].name, dmg.average, dmg.elementalDMG);
   }
 });
 hutao.NormalAttackLevel = 8;
