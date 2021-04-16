@@ -231,6 +231,16 @@ exports.charHuTao = {
       e.createObserver("HPbase", "HPflat", "HPpercent").onUpdate(function (e) {
         ATKincrease.value = conversion(e);
       });
+      ATKincrease.onEnable(function (e) {
+        e.infuseDamageInstance("NormalAttackDMG", "PyroDMG");
+        e.infuseDamageInstance("ChargedAttackDMG", "PyroDMG");
+        e.infuseDamageInstance("PlungeAttackDMG", "PyroDMG");
+      });
+      ATKincrease.onDisable(function (e) {
+        e.infuseDamageInstance("NormalAttackDMG", null);
+        e.infuseDamageInstance("ChargedAttackDMG", null);
+        e.infuseDamageInstance("PlungeAttackDMG", null);
+      });
       return [ATKincrease];
     }]
   }]
@@ -1064,6 +1074,8 @@ var Modifier = function () {
     if (!this.enabled) {
       this.subject[this._stat] += this._value;
       this._enabled = true;
+
+      this._onEnable(this.subject, this._stat);
     }
 
     return this;
@@ -1073,6 +1085,8 @@ var Modifier = function () {
     if (this.enabled) {
       this.subject[this._stat] -= this._value;
       this._enabled = false;
+
+      this._onDisable(this.subject, this._stat);
     }
 
     return this;
@@ -1098,6 +1112,17 @@ var Modifier = function () {
     enumerable: false,
     configurable: true
   });
+
+  Modifier.prototype.onEnable = function (ev) {
+    this._onEnable = ev;
+    return this;
+  };
+
+  Modifier.prototype.onDisable = function (ev) {
+    this._onDisable = ev;
+    return this;
+  };
+
   return Modifier;
 }();
 
