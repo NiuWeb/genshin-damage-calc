@@ -1603,6 +1603,16 @@ var ElementList = function () {
     return found.item;
   };
 
+  ElementList.prototype.setByName = function (name, value) {
+    var found = this._list.find(function (e) {
+      return e.name == name;
+    });
+
+    if (!found) return false;
+    found.item = value;
+    return true;
+  };
+
   return ElementList;
 }();
 
