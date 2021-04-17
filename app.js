@@ -2,208 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./built/characters/CharacterWrapper.js":
-/*!**********************************************!*\
-  !*** ./built/characters/CharacterWrapper.js ***!
-  \**********************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var __extends = this && this.__extends || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    };
-
-    return extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CharacterWrapper = void 0;
-
-var Character_1 = __webpack_require__(/*! ../model/Character */ "./built/model/Character.js");
-
-var Effect_1 = __webpack_require__(/*! ../model/Effect */ "./built/model/Effect.js");
-
-var characterList_1 = __webpack_require__(/*! ./characterList */ "./built/characters/characterList.js");
-
-var talentMaxLevel = 15;
-
-var CharacterWrapper = function (_super) {
-  __extends(CharacterWrapper, _super);
-
-  function CharacterWrapper() {
-    var _this = _super.call(this) || this;
-
-    _this._NormalAttacks = [];
-    _this._ElementalSkills = [];
-    _this._ElementalBursts = [];
-    _this._ElementalSkillEffects = [];
-    _this._ElementalBurstEffects = [];
-    return _this;
-  }
-
-  CharacterWrapper.create = function (name) {
-    var c = new CharacterWrapper();
-    this.defineCharacter(name, c);
-    this.createdCharacters.push(c);
-    return c;
-  };
-
-  CharacterWrapper.getList = function () {
-    return this.createdCharacters;
-  };
-
-  CharacterWrapper.defineCharacter = function (name, obj) {
-    var _this = this;
-
-    obj.name = name;
-    var data = characterList_1.characterList[name];
-
-    if (!data) {
-      return;
-    }
-
-    var statModifier = obj.createModifier(data.scaleStat).enable();
-
-    for (var i = 0; i < data.NormalAttacks.length; i++) {
-      var na = data.NormalAttacks[i];
-      var di = obj.createDamageInstance(na.elementalDMG, na.talentDMG);
-      di.name = na.name;
-
-      obj._NormalAttacks.push(di);
-    }
-
-    obj.createObserver("NormalAttackLevel").onUpdate(function (e) {
-      for (var i = 0; i < obj._NormalAttacks.length; i++) {
-        var di = obj._NormalAttacks[i];
-        var na = data.NormalAttacks[i];
-        di.clearAdditives();
-        var index = Math.min(talentMaxLevel, e.NormalAttackLevel) - 1;
-
-        for (var j = 0; j < na.scaleStat.length; j++) {
-          di.addAdditive(na.scaleValue[j][index], na.scaleStat[j]);
-        }
-      }
-    });
-
-    for (var i = 0; i < data.ElementalSkills.length; i++) {
-      var es = data.ElementalSkills[i];
-
-      if (es.talentDMG && es.elementalDMG) {
-        var di = obj.createDamageInstance(es.elementalDMG, es.talentDMG);
-        di.name = es.name;
-
-        obj._ElementalSkills.push(di);
-      } else {
-        var modifiers = es.effect(obj);
-        var effect = new Effect_1.Effect("ElementalSkillEffect", modifiers);
-        effect.name = es.name;
-        effect.description = es.description;
-
-        obj._ElementalSkillEffects.push(effect);
-      }
-    }
-
-    obj.createObserver("ElementalSkillLevel").onUpdate(function (e) {
-      for (var i = 0; i < obj._ElementalSkills.length; i++) {
-        var di = obj._ElementalSkills[i];
-        var es = data.ElementalSkills[i];
-        di.clearAdditives();
-        var index = Math.min(talentMaxLevel, e.ElementalSkillLevel) - 1;
-
-        for (var j = 0; j < es.scaleStat.length; j++) {
-          di.addAdditive(es.scaleValue[j][index], es.scaleStat[j]);
-        }
-      }
-    });
-    obj.createObserver("Level").onUpdate(function (e) {
-      var i = _this.levelIndex(e);
-
-      e.ATKbase = data.ATKbase[i];
-      e.DEFbase = data.DEFbase[i];
-      e.HPbase = data.HPbase[i];
-      statModifier.value = data.scaleValue[i];
-    });
-    obj.Level = 1;
-    obj.NormalAttackLevel = 1;
-    obj.ElementalSkillLevel = 1;
-  };
-
-  CharacterWrapper.levelIndex = function (c) {
-    var x = c.Level;
-    if (x == 1) return 0;
-    if (x == 90) return 13;
-    var r = 0;
-
-    if (x <= 40) {
-      r = Math.round(x / 20);
-    } else {
-      r = Math.round(x / 10) - 2;
-    }
-
-    if (c.Ascended) {
-      return 2 * r;
-    } else return 2 * r - 1;
-  };
-
-  Object.defineProperty(CharacterWrapper.prototype, "name", {
-    get: function () {
-      return this._name;
-    },
-    set: function (value) {
-      this._name = value;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(CharacterWrapper.prototype, "NormalAttacks", {
-    get: function () {
-      return this._NormalAttacks;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkills", {
-    get: function () {
-      return this._ElementalSkills;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkillEffects", {
-    get: function () {
-      return this._ElementalSkillEffects;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  CharacterWrapper.createdCharacters = [];
-  return CharacterWrapper;
-}(Character_1.Character);
-
-exports.CharacterWrapper = CharacterWrapper;
-
-/***/ }),
-
 /***/ "./built/characters/characterList.js":
 /*!*******************************************!*\
   !*** ./built/characters/characterList.js ***!
@@ -1320,6 +1118,208 @@ exports.CharacterStats = CharacterStats;
 
 /***/ }),
 
+/***/ "./built/model/CharacterWrapper.js":
+/*!*****************************************!*\
+  !*** ./built/model/CharacterWrapper.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterWrapper = void 0;
+
+var Character_1 = __webpack_require__(/*! ./Character */ "./built/model/Character.js");
+
+var Effect_1 = __webpack_require__(/*! ./Effect */ "./built/model/Effect.js");
+
+var characterList_1 = __webpack_require__(/*! ../characters/characterList */ "./built/characters/characterList.js");
+
+var talentMaxLevel = 15;
+
+var CharacterWrapper = function (_super) {
+  __extends(CharacterWrapper, _super);
+
+  function CharacterWrapper() {
+    var _this = _super.call(this) || this;
+
+    _this._NormalAttacks = [];
+    _this._ElementalSkills = [];
+    _this._ElementalBursts = [];
+    _this._ElementalSkillEffects = [];
+    _this._ElementalBurstEffects = [];
+    return _this;
+  }
+
+  CharacterWrapper.create = function (name) {
+    var c = new CharacterWrapper();
+    this.defineCharacter(name, c);
+    this.createdCharacters.push(c);
+    return c;
+  };
+
+  CharacterWrapper.getList = function () {
+    return this.createdCharacters;
+  };
+
+  CharacterWrapper.defineCharacter = function (name, obj) {
+    var _this = this;
+
+    obj.name = name;
+    var data = characterList_1.characterList[name];
+
+    if (!data) {
+      return;
+    }
+
+    var statModifier = obj.createModifier(data.scaleStat).enable();
+
+    for (var i = 0; i < data.NormalAttacks.length; i++) {
+      var na = data.NormalAttacks[i];
+      var di = obj.createDamageInstance(na.elementalDMG, na.talentDMG);
+      di.name = na.name;
+
+      obj._NormalAttacks.push(di);
+    }
+
+    obj.createObserver("NormalAttackLevel").onUpdate(function (e) {
+      for (var i = 0; i < obj._NormalAttacks.length; i++) {
+        var di = obj._NormalAttacks[i];
+        var na = data.NormalAttacks[i];
+        di.clearAdditives();
+        var index = Math.min(talentMaxLevel, e.NormalAttackLevel) - 1;
+
+        for (var j = 0; j < na.scaleStat.length; j++) {
+          di.addAdditive(na.scaleValue[j][index], na.scaleStat[j]);
+        }
+      }
+    });
+
+    for (var i = 0; i < data.ElementalSkills.length; i++) {
+      var es = data.ElementalSkills[i];
+
+      if (es.talentDMG && es.elementalDMG) {
+        var di = obj.createDamageInstance(es.elementalDMG, es.talentDMG);
+        di.name = es.name;
+
+        obj._ElementalSkills.push(di);
+      } else {
+        var modifiers = es.effect(obj);
+        var effect = new Effect_1.Effect("ElementalSkillEffect", modifiers);
+        effect.name = es.name;
+        effect.description = es.description;
+
+        obj._ElementalSkillEffects.push(effect);
+      }
+    }
+
+    obj.createObserver("ElementalSkillLevel").onUpdate(function (e) {
+      for (var i = 0; i < obj._ElementalSkills.length; i++) {
+        var di = obj._ElementalSkills[i];
+        var es = data.ElementalSkills[i];
+        di.clearAdditives();
+        var index = Math.min(talentMaxLevel, e.ElementalSkillLevel) - 1;
+
+        for (var j = 0; j < es.scaleStat.length; j++) {
+          di.addAdditive(es.scaleValue[j][index], es.scaleStat[j]);
+        }
+      }
+    });
+    obj.createObserver("Level").onUpdate(function (e) {
+      var i = _this.levelIndex(e);
+
+      e.ATKbase = data.ATKbase[i];
+      e.DEFbase = data.DEFbase[i];
+      e.HPbase = data.HPbase[i];
+      statModifier.value = data.scaleValue[i];
+    });
+    obj.Level = 1;
+    obj.NormalAttackLevel = 1;
+    obj.ElementalSkillLevel = 1;
+  };
+
+  CharacterWrapper.levelIndex = function (c) {
+    var x = c.Level;
+    if (x == 1) return 0;
+    if (x == 90) return 13;
+    var r = 0;
+
+    if (x <= 40) {
+      r = Math.round(x / 20);
+    } else {
+      r = Math.round(x / 10) - 2;
+    }
+
+    if (c.Ascended) {
+      return 2 * r;
+    } else return 2 * r - 1;
+  };
+
+  Object.defineProperty(CharacterWrapper.prototype, "name", {
+    get: function () {
+      return this._name;
+    },
+    set: function (value) {
+      this._name = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "NormalAttacks", {
+    get: function () {
+      return this._NormalAttacks;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkills", {
+    get: function () {
+      return this._ElementalSkills;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkillEffects", {
+    get: function () {
+      return this._ElementalSkillEffects;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  CharacterWrapper.createdCharacters = [];
+  return CharacterWrapper;
+}(Character_1.Character);
+
+exports.CharacterWrapper = CharacterWrapper;
+
+/***/ }),
+
 /***/ "./built/model/Effect.js":
 /*!*******************************!*\
   !*** ./built/model/Effect.js ***!
@@ -1556,7 +1556,7 @@ exports.App = void 0;
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper */ "./built/characters/CharacterWrapper.js");
+var CharacterWrapper_1 = __webpack_require__(/*! ../model/CharacterWrapper */ "./built/model/CharacterWrapper.js");
 
 var DamageInput_1 = __webpack_require__(/*! ../damage/DamageInput */ "./built/damage/DamageInput.js");
 
