@@ -143,6 +143,7 @@ var CharacterWrapper = function (_super) {
     });
     obj.Level = 1;
     obj.NormalAttackLevel = 1;
+    obj.ElementalSkillLevel = 1;
   };
 
   CharacterWrapper.levelIndex = function (c) {
@@ -175,6 +176,13 @@ var CharacterWrapper = function (_super) {
   Object.defineProperty(CharacterWrapper.prototype, "NormalAttacks", {
     get: function () {
       return this._NormalAttacks;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkill", {
+    get: function () {
+      return this._ElementalSkill;
     },
     enumerable: false,
     configurable: true
