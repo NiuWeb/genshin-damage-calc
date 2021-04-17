@@ -1245,6 +1245,37 @@ var CharacterWrapper = function (_super) {
         }
       }
     });
+
+    for (var i = 0; i < data.ElementalBursts.length; i++) {
+      var eb = data.ElementalBursts[i];
+
+      if (eb.talentDMG && eb.elementalDMG) {
+        var di = obj.createDamageInstance(eb.elementalDMG, eb.talentDMG);
+        di.name = eb.name;
+
+        obj._ElementalBursts.push(di);
+      } else {
+        var modifiers = eb.effect(obj);
+        var effect = new Effect_1.Effect("ElementalBurstEffect", modifiers);
+        effect.name = eb.name;
+        effect.description = eb.description;
+
+        obj._ElementalBurstEffects.push(effect);
+      }
+    }
+
+    obj.createObserver("ElementalBurstLevel").onUpdate(function (e) {
+      for (var i = 0; i < obj._ElementalBursts.length; i++) {
+        var di = obj._ElementalBursts[i];
+        var eb = data.ElementalBursts[i];
+        di.clearAdditives();
+        var index = Math.min(talentMaxLevel, e.ElementalBurstLevel) - 1;
+
+        for (var j = 0; j < eb.scaleStat.length; j++) {
+          di.addAdditive(eb.scaleValue[j][index], eb.scaleStat[j]);
+        }
+      }
+    });
     obj.createObserver("Level").onUpdate(function (e) {
       var i = _this.levelIndex(e);
 
