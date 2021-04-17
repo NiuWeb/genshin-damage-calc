@@ -51,7 +51,7 @@ var CharacterWrapper = function (_super) {
   __extends(CharacterWrapper, _super);
 
   function CharacterWrapper() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
+    var _this = _super.call(this) || this;
 
     _this._NormalAttacks = [];
     _this._ElementalSkills = [];
@@ -64,12 +64,12 @@ var CharacterWrapper = function (_super) {
   CharacterWrapper.create = function (name) {
     var c = new CharacterWrapper();
     this.defineCharacter(name, c);
-    this.characters.push(c);
+    this.createdCharacters.push(c);
     return c;
   };
 
   CharacterWrapper.getList = function () {
-    return this.characters;
+    return this.createdCharacters;
   };
 
   CharacterWrapper.defineCharacter = function (name, obj) {
@@ -194,7 +194,7 @@ var CharacterWrapper = function (_super) {
     enumerable: false,
     configurable: true
   });
-  CharacterWrapper.characters = [];
+  CharacterWrapper.createdCharacters = [];
   return CharacterWrapper;
 }(Character_1.Character);
 
