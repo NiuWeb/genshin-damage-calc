@@ -116,6 +116,8 @@ var CharacterWrapper = function (_super) {
       } else {
         var modifiers = es.effect(obj);
         var effect = new Effect_1.Effect("ElementalSkillEffect", modifiers);
+        effect.name = es.name;
+        effect.description = es.description;
 
         obj._ElementalSkillEffects.push(effect);
       }
@@ -1274,6 +1276,26 @@ var Effect = function () {
     enumerable: false,
     configurable: true
   });
+  Object.defineProperty(Effect.prototype, "name", {
+    get: function () {
+      return this._name;
+    },
+    set: function (value) {
+      this._name = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(Effect.prototype, "description", {
+    get: function () {
+      return this._description;
+    },
+    set: function (value) {
+      this._description = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
   return Effect;
 }();
 
@@ -1461,6 +1483,7 @@ for (var i = 0; i < na.length; i++) {
 }
 
 es.enable();
+console.log(es.name + "\n" + es.description);
 console.log("\nES BUFF ENABLED!!!!!!\n");
 
 for (var i = 0; i < na.length; i++) {
