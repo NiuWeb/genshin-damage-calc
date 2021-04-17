@@ -227,7 +227,7 @@ exports.characterList = {
 /*!********************************************!*\
   !*** ./built/characters/list/charHuTao.js ***!
   \********************************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 
@@ -235,6 +235,9 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.charHuTao = void 0;
+
+var lang_1 = __webpack_require__(/*! ../../langs/lang */ "./built/langs/lang.js");
+
 exports.charHuTao = {
   name: "Hu Tao",
   ATKbase: [8, 21, 29, 43, 48, 55, 62, 69, 74, 81, 86, 94, 99, 106],
@@ -279,39 +282,39 @@ exports.charHuTao = {
     scaleStat: ["ATK"],
     scaleValue: [[0.8596, 0.9182, 0.9768, 1.0549, 1.1136, 1.1819, 1.2698, 1.3578, 1.4457, 1.5336, 1.6215, 1.7094, 1.7973, 1.8852, 1.9731]]
   }, {
-    name: "Charged Attack",
+    name: lang_1.Language.val("ChargedAttack"),
     elementalDMG: "PhysicalDMG",
     talentDMG: "ChargedAttackDMG",
     scaleStat: ["ATK"],
     scaleValue: [[1.3596, 1.4523, 1.5450, 1.6686, 1.7613, 1.8695, 2.0085, 2.1476, 2.2866, 2.4257, 2.5647, 2.7038, 2.8428, 2.9819, 3.1209]]
   }, {
-    name: "Plunge",
+    name: lang_1.Language.val("Plunge"),
     elementalDMG: "PhysicalDMG",
     talentDMG: "PlungeAttackDMG",
     scaleStat: ["ATK"],
     scaleValue: [[0.6542, 0.6988, 0.7434, 0.8029, 0.8475, 0.8995, 0.9664, 1.0333, 1.1002, 1.1671, 1.2340, 1.3010, 1.3679, 1.4348, 1.5017]]
   }, {
-    name: "Low Plunge",
+    name: lang_1.Language.val("LowPlunge"),
     elementalDMG: "PhysicalDMG",
     talentDMG: "PlungeAttackDMG",
     scaleStat: ["ATK"],
     scaleValue: [[1.3081, 1.3973, 1.4865, 1.6054, 1.6946, 1.7986, 1.9324, 2.0662, 2.2000, 2.3338, 2.4676, 2.6013, 2.7351, 2.8689, 3.0027]]
   }, {
-    name: "High Plunge",
+    name: lang_1.Language.val("HighPlunge"),
     elementalDMG: "PhysicalDMG",
     talentDMG: "PlungeAttackDMG",
     scaleStat: ["ATK"],
     scaleValue: [[1.6339, 1.7453, 1.8567, 2.0052, 2.1166, 2.2466, 2.4137, 2.5808, 2.7479, 2.9150, 3.0821, 3.2492, 3.4163, 3.5834, 3.7505]]
   }],
   ElementalSkill: [{
-    name: "Blood Blossom",
+    name: lang_1.Language.val("BloodBlossom"),
     elementalDMG: "PyroDMG",
     talentDMG: "ElementalSkillDMG",
     scaleStat: ["ATK"],
     scaleValue: [[0.6400, 0.6880, 0.7360, 0.8000, 0.8480, 0.8960, 0.9600, 1.0240, 1.0880, 1.1520, 1.2160, 1.2800, 1.3600, 1.4400, 1.5200]]
   }, {
-    name: "Paramita Papilo",
-    description: "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
+    name: lang_1.Language.val("ParamitaPapilio"),
+    description: lang_1.Language.val("ParamitaPapilioDesc"),
     effect: function (e) {
       var bonuses = [0.0384, 0.0407, 0.0430, 0.0460, 0.0483, 0.0506, 0.0536, 0.0566, 0.0596, 0.0626, 0.0656, 0.0685, 0.0715, 0.0745, 0.0775];
       var bonus = bonuses[e.ElementalSkillLevel - 1];
@@ -335,8 +338,26 @@ exports.charHuTao = {
       return [ATKincrease];
     }
   }],
-  ElementalBurst: [],
-  Passives: [],
+  ElementalBurst: [{
+    name: "Burst",
+    elementalDMG: "PyroDMG",
+    talentDMG: "ElementalBurstDMG",
+    scaleStat: ["ATK"],
+    scaleValue: [[3.0327, 3.2143, 3.3959, 3.6320, 3.8136, 3.9952, 4.2313, 4.4674, 4.7034, 4.9395, 5.1756, 5.4117, 5.6478, 5.8838, 6.1199]]
+  }, {
+    name: "Low HP Burst",
+    elementalDMG: "PyroDMG",
+    talentDMG: "ElementalBurstDMG",
+    scaleStat: ["ATK"],
+    scaleValue: [[3.7909, 4.0179, 4.2449, 4.5400, 4.7670, 4.9940, 5.2891, 5.5842, 5.8793, 6.1744, 6.4695, 6.7646, 7.0597, 7.3548, 7.6499]]
+  }],
+  Passives: [{
+    name: lang_1.Language.val("SanguineRouge"),
+    description: lang_1.Language.val("SanguineRougeDesc"),
+    effect: function (e) {
+      return [e.createModifier("PyroDMG", 0.33)];
+    }
+  }],
   Constellations: []
 };
 
@@ -484,6 +505,76 @@ var DamageInstance = function () {
 }();
 
 exports.DamageInstance = DamageInstance;
+
+/***/ }),
+
+/***/ "./built/langs/lang.en.js":
+/*!********************************!*\
+  !*** ./built/langs/lang.en.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.LangEN = void 0;
+exports.LangEN = {
+  "ChargedAttack": "Charged Attack",
+  "Plunge": "Plunge Attack",
+  "LowPlunge": "Low Plunge Attack",
+  "HighPlunge": "High Plunge Attack",
+  "BloodBlossom": "Blood Blossom",
+  "ParamitaPapilio": "Paramita Papilio",
+  "ParamitaPapilioDesc": "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
+  "SanguineRouge": "Sanguine Rouge",
+  "SanguineRougeDesc": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%."
+};
+
+/***/ }),
+
+/***/ "./built/langs/lang.js":
+/*!*****************************!*\
+  !*** ./built/langs/lang.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.Language = void 0;
+
+var lang_en_1 = __webpack_require__(/*! ./lang.en */ "./built/langs/lang.en.js");
+
+var Language = function () {
+  function Language() {}
+
+  Language.setLang = function (lang) {
+    this.lang = lang;
+  };
+
+  Language.getLang = function () {
+    return this.lang;
+  };
+
+  Language.val = function (tag) {
+    var s = this[this.lang][tag];
+
+    if (s) {
+      return s;
+    } else return tag;
+  };
+
+  Language.EN = lang_en_1.LangEN;
+  Language.ES = {};
+  Language.lang = "EN";
+  return Language;
+}();
+
+exports.Language = Language;
 
 /***/ }),
 
