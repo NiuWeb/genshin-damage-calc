@@ -1934,6 +1934,16 @@ var Subject = function () {
     return observer;
   };
 
+  Subject.prototype.removeObserver = function (observer) {
+    var found = this._observers.indexOf(observer);
+
+    if (found == -1) return false;else {
+      this._observers.splice(found, 1);
+
+      return true;
+    }
+  };
+
   Subject.prototype.notify = function (prop) {
     var observer;
 
