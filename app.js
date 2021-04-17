@@ -849,7 +849,7 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "DEF", {
     get: function () {
-      return this.DEFbase * (1 + this.DEFpercent) + this.DEFbase;
+      return this.DEFbase * (1 + this.DEFpercent) + this.DEFflat;
     },
     enumerable: false,
     configurable: true
