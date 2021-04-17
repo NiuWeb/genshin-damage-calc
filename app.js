@@ -320,6 +320,7 @@ exports.charHuTao = {
       e.createObserver("HPbase", "HPflat", "HPpercent", "ATKbase", "ElementalSkillLevel").onUpdate(function (e) {
         bonus = bonuses[e.ElementalSkillLevel - 1];
         ATKincrease.value = Math.min(bonus * e.HP, 4 * e.ATKbase);
+        ;
       });
       ATKincrease.onEnable(function (e) {
         e.infuseDamageInstance("NormalAttackDMG", "PyroDMG");
@@ -1359,6 +1360,7 @@ var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
 hutao.NormalAttackLevel = 10;
+hutao.ElementalSkillLevel = 10;
 var es = hutao.ElementalSkillEffects[0];
 var na = hutao.NormalAttacks;
 
