@@ -1595,14 +1595,18 @@ var App = function (_super) {
     return list;
   };
 
+  App.prototype.renderNormalAttacks = function () {
+    return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
+      colSpan: 5
+    }, "Normal Attack Damage")), React.createElement("tr", null, React.createElement("th", null, "Attack"), React.createElement("th", null, "Type"), React.createElement("th", null, "non-CRIT"), React.createElement("th", null, "CRIT"), React.createElement("th", null, "Average")), this.NormalAttacks()));
+  };
+
   App.prototype.render = function () {
     return React.createElement("div", null, React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
       colSpan: 2
     }, "Hu Tao")), React.createElement("tr", null, React.createElement("td", null, "Level"), React.createElement("td", null, hutao.Level)), React.createElement("tr", null, React.createElement("td", null, "HP"), React.createElement("td", null, hutao.HP)), React.createElement("tr", null, React.createElement("td", null, "ATK"), React.createElement("td", null, hutao.ATK)), React.createElement("tr", null, React.createElement("td", null, "DEF"), React.createElement("td", null, hutao.DEF)), React.createElement("tr", null, React.createElement("td", null, "CRIT Rate"), React.createElement("td", null, hutao.CRITRate * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "CRIT DMG"), React.createElement("td", null, hutao.CRITDMG * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "Pyro DMG Bonus"), React.createElement("td", null, hutao.PyroDMG * 100, "%")), React.createElement("tr", null, React.createElement("th", {
       colSpan: 2
-    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, hutao.NormalAttackLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, hutao.ElementalSkillLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, hutao.ElementalBurstLevel)))), React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
-      colSpan: 5
-    }, "Normal Attack Damage")), React.createElement("tr", null, React.createElement("th", null, "Attack"), React.createElement("th", null, "Type"), React.createElement("th", null, "non-CRIT"), React.createElement("th", null, "CRIT"), React.createElement("th", null, "Average")), this.NormalAttacks())));
+    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, hutao.NormalAttackLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, hutao.ElementalSkillLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, hutao.ElementalBurstLevel)))), this.renderNormalAttacks());
   };
 
   return App;
