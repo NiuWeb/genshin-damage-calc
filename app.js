@@ -697,58 +697,164 @@ exports.CharacterHelper = CharacterHelper;
 /*!***************************************!*\
   !*** ./built/model/CharacterStats.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, exports) => {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
 
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 exports.CharacterStats = void 0;
 
-var CharacterStats = function () {
-  function CharacterStats() {
-    this._Level = 1;
-    this._Ascended = false;
-    this._NormalAttackLevel = 1;
-    this._ElementalSkillLevel = 1;
-    this._ElementalBurstLevel = 1;
-    this._ATKbase = 1;
-    this._ATKpercent = 0;
-    this._ATKflat = 0;
-    this._HPbase = 1;
-    this._HPpercent = 0;
-    this._HPflat = 0;
-    this._DEFbase = 1;
-    this._DEFpercent = 0;
-    this._DEFflat = 0;
-    this._CRITRate = 0.05;
-    this._CRITDMG = 0.5;
-    this._ElementalMastery = 0;
-    this._EnergyRecharge = 1;
-    this._HealingBonus = 0;
-    this._PyroDMG = 0;
-    this._HydroDMG = 0;
-    this._CryoDMG = 0;
-    this._ElectroDMG = 0;
-    this._AnemoDMG = 0;
-    this._GeoDMG = 0;
-    this._PhysicalDMG = 0;
-    this._NormalAttackDMG = 0;
-    this._ChargedAttackDMG = 0;
-    this._PlungeAttackDMG = 0;
-    this._ElementalSkillDMG = 0;
-    this._ElementalBurstDMG = 0;
-    this._AllDMG = 0;
-    this._VaporizeDMG = 0;
-    this._MeltDMG = 0;
-    this._SwirlDMG = 0;
-    this._OverloadDMG = 0;
-    this._ElectrochargeDMG = 0;
-    this._SuperconductDMG = 0;
-  }
+var Subject_1 = __webpack_require__(/*! ./Subject/Subject */ "./built/model/Subject/Subject.js");
 
-  CharacterStats.prototype.notify = function (stat) {};
+var CharacterStats = function (_super) {
+  __extends(CharacterStats, _super);
+
+  function CharacterStats() {
+    var _this = _super.call(this) || this;
+
+    _this._Level = 1;
+    _this._Ascended = false;
+    _this._NormalAttackLevel = 1;
+    _this._ElementalSkillLevel = 1;
+    _this._ElementalBurstLevel = 1;
+    _this._ATKbase = 1;
+    _this._ATKpercent = 0;
+    _this._ATKflat = 0;
+    _this._HPbase = 1;
+    _this._HPpercent = 0;
+    _this._HPflat = 0;
+    _this._DEFbase = 1;
+    _this._DEFpercent = 0;
+    _this._DEFflat = 0;
+    _this._CRITRate = 0.05;
+    _this._CRITDMG = 0.5;
+    _this._ElementalMastery = 0;
+    _this._EnergyRecharge = 1;
+    _this._HealingBonus = 0;
+    _this._PyroDMG = 0;
+    _this._HydroDMG = 0;
+    _this._CryoDMG = 0;
+    _this._ElectroDMG = 0;
+    _this._AnemoDMG = 0;
+    _this._GeoDMG = 0;
+    _this._PhysicalDMG = 0;
+    _this._NormalAttackDMG = 0;
+    _this._ChargedAttackDMG = 0;
+    _this._PlungeAttackDMG = 0;
+    _this._ElementalSkillDMG = 0;
+    _this._ElementalBurstDMG = 0;
+    _this._AllDMG = 0;
+    _this._VaporizeDMG = 0;
+    _this._MeltDMG = 0;
+    _this._SwirlDMG = 0;
+    _this._OverloadDMG = 0;
+    _this._ElectrochargeDMG = 0;
+    _this._SuperconductDMG = 0;
+
+    _this.props.add("Level", 1);
+
+    _this.props.add("Ascended", 0);
+
+    _this.props.add("NormalAttackLevel", 1);
+
+    _this.props.add("ElementalSkillLevel", 1);
+
+    _this.props.add("ElementalBurstLevel", 1);
+
+    _this.props.add("ATKbase", 1);
+
+    _this.props.add("ATKpercent", 0);
+
+    _this.props.add("ATKflat", 0);
+
+    _this.props.add("HPbase", 1);
+
+    _this.props.add("HPpercent", 0);
+
+    _this.props.add("HPflat", 0);
+
+    _this.props.add("DEFbase", 1);
+
+    _this.props.add("DEFpercent", 0);
+
+    _this.props.add("DEFflat", 0);
+
+    _this.props.add("CRITRate", 0.05);
+
+    _this.props.add("CRITDMG", 0.5);
+
+    _this.props.add("ElementalMastery", 0);
+
+    _this.props.add("EnergyRecharge", 1);
+
+    _this.props.add("HealingBonus", 0);
+
+    _this.props.add("PyroDMG", 0);
+
+    _this.props.add("HydroDMG", 0);
+
+    _this.props.add("CryoDMG", 0);
+
+    _this.props.add("ElectroDMG", 0);
+
+    _this.props.add("AnemoDMG", 0);
+
+    _this.props.add("GeoDMG", 0);
+
+    _this.props.add("PhysicalDMG", 0);
+
+    _this.props.add("NormalAttackDMG", 0);
+
+    _this.props.add("ChargedAttackDMG", 0);
+
+    _this.props.add("PlungeAttackDMG", 0);
+
+    _this.props.add("ElementalSkillDMG", 0);
+
+    _this.props.add("ElementalBurstDMG", 0);
+
+    _this.props.add("AllDMG", 0);
+
+    _this.props.add("VaporizeDMG", 0);
+
+    _this.props.add("MeltDMG", 0);
+
+    _this.props.add("SwirlDMG", 0);
+
+    _this.props.add("OverloadDMG", 0);
+
+    _this.props.add("ElectrochargeDMG", 0);
+
+    _this.props.add("SuperconductDMG", 0);
+
+    return _this;
+  }
 
   Object.defineProperty(CharacterStats.prototype, "ATK", {
     get: function () {
@@ -773,7 +879,7 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "Level", {
     get: function () {
-      return this._Level;
+      return this.props.getByName("Level");
     },
     set: function (value) {
       var r = 0;
@@ -784,8 +890,7 @@ var CharacterStats = function () {
         r = Math.round(value / 10) * 10;
       }
 
-      this._Level = Math.max(1, r);
-      ;
+      this.props.setByName("Level", Math.max(1, r));
       this.notify("Level");
     },
     enumerable: false,
@@ -793,10 +898,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ATKbase", {
     get: function () {
-      return this._ATKbase;
+      return this.props.getByName("ATKbase");
     },
     set: function (value) {
-      this._ATKbase = value;
+      this.props.setByName("ATKbase", value);
       this.notify("ATKbase");
     },
     enumerable: false,
@@ -804,10 +909,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ATKpercent", {
     get: function () {
-      return this._ATKpercent;
+      return this.props.getByName("ATKpercent");
     },
     set: function (value) {
-      this._ATKpercent = value;
+      this.props.setByName("ATKpercent", value);
       this.notify("ATKpercent");
     },
     enumerable: false,
@@ -815,10 +920,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ATKflat", {
     get: function () {
-      return this._ATKflat;
+      return this.props.getByName("ATKflat");
     },
     set: function (value) {
-      this._ATKflat = value;
+      this.props.setByName("ATKflat", value);
       this.notify("ATKflat");
     },
     enumerable: false,
@@ -826,10 +931,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "HPbase", {
     get: function () {
-      return this._HPbase;
+      return this.props.getByName("HPbase");
     },
     set: function (value) {
-      this._HPbase = value;
+      this.props.setByName("HPbase", value);
       this.notify("HPbase");
     },
     enumerable: false,
@@ -837,10 +942,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "HPpercent", {
     get: function () {
-      return this._HPpercent;
+      return this.props.getByName("HPpercent");
     },
     set: function (value) {
-      this._HPpercent = value;
+      this.props.setByName("HPpercent", value);
       this.notify("HPpercent");
     },
     enumerable: false,
@@ -848,10 +953,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "HPflat", {
     get: function () {
-      return this._HPflat;
+      return this.props.getByName("HPflat");
     },
     set: function (value) {
-      this._HPflat = value;
+      this.props.setByName("HPflat", value);
       this.notify("HPflat");
     },
     enumerable: false,
@@ -859,10 +964,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "DEFbase", {
     get: function () {
-      return this._DEFbase;
+      return this.props.getByName("DEFbase");
     },
     set: function (value) {
-      this._DEFbase = value;
+      this.props.setByName("DEFbase", value);
       this.notify("DEFbase");
     },
     enumerable: false,
@@ -870,10 +975,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "DEFpercent", {
     get: function () {
-      return this._DEFpercent;
+      return this.props.getByName("DEFpercent");
     },
     set: function (value) {
-      this._DEFpercent = value;
+      this.props.setByName("DEFpercent", value);
       this.notify("DEFpercent");
     },
     enumerable: false,
@@ -881,10 +986,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "DEFflat", {
     get: function () {
-      return this._DEFflat;
+      return this.props.getByName("DEFflat");
     },
     set: function (value) {
-      this._DEFflat = value;
+      this.props.setByName("DEFflat", value);
       this.notify("DEFflat");
     },
     enumerable: false,
@@ -892,10 +997,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "CRITRate", {
     get: function () {
-      return this._CRITRate;
+      return this.props.getByName("CRITRate");
     },
     set: function (value) {
-      this._CRITRate = value;
+      this.props.setByName("CRITRate", value);
       this.notify("CRITRate");
     },
     enumerable: false,
@@ -903,10 +1008,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "CRITDMG", {
     get: function () {
-      return this._CRITDMG;
+      return this.props.getByName("CRITDMG");
     },
     set: function (value) {
-      this._CRITDMG = value;
+      this.props.setByName("CRITDMG", value);
       this.notify("CRITDMG");
     },
     enumerable: false,
@@ -914,10 +1019,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElementalMastery", {
     get: function () {
-      return this._ElementalMastery;
+      return this.props.getByName("ElementalMastery");
     },
     set: function (value) {
-      this._ElementalMastery = value;
+      this.props.setByName("ElementalMastery", value);
       this.notify("ElementalMastery");
     },
     enumerable: false,
@@ -925,10 +1030,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "EnergyRecharge", {
     get: function () {
-      return this._EnergyRecharge;
+      return this.props.getByName("EnergyRecharge");
     },
     set: function (value) {
-      this._EnergyRecharge = value;
+      this.props.setByName("EnergyRecharge", value);
       this.notify("EnergyRecharge");
     },
     enumerable: false,
@@ -936,10 +1041,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "HealingBonus", {
     get: function () {
-      return this._HealingBonus;
+      return this.props.getByName("HealingBonus");
     },
     set: function (value) {
-      this._HealingBonus = value;
+      this.props.setByName("HealingBonus", value);
       this.notify("HealingBonus");
     },
     enumerable: false,
@@ -947,10 +1052,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "PyroDMG", {
     get: function () {
-      return this._PyroDMG;
+      return this.props.getByName("PyroDMG");
     },
     set: function (value) {
-      this._PyroDMG = value;
+      this.props.setByName("PyroDMG", value);
       this.notify("PyroDMG");
     },
     enumerable: false,
@@ -958,10 +1063,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "HydroDMG", {
     get: function () {
-      return this._HydroDMG;
+      return this.props.getByName("HydroDMG");
     },
     set: function (value) {
-      this._HydroDMG = value;
+      this.props.setByName("HydroDMG", value);
       this.notify("HydroDMG");
     },
     enumerable: false,
@@ -969,10 +1074,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "CryoDMG", {
     get: function () {
-      return this._CryoDMG;
+      return this.props.getByName("CryoDMG");
     },
     set: function (value) {
-      this._CryoDMG = value;
+      this.props.setByName("CryoDMG", value);
       this.notify("CryoDMG");
     },
     enumerable: false,
@@ -980,10 +1085,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElectroDMG", {
     get: function () {
-      return this._ElectroDMG;
+      return this.props.getByName("ElectroDMG");
     },
     set: function (value) {
-      this._ElectroDMG = value;
+      this.props.setByName("ElectroDMG", value);
       this.notify("ElectroDMG");
     },
     enumerable: false,
@@ -991,10 +1096,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "AnemoDMG", {
     get: function () {
-      return this._AnemoDMG;
+      return this.props.getByName("AnemoDMG");
     },
     set: function (value) {
-      this._AnemoDMG = value;
+      this.props.setByName("AnemoDMG", value);
       this.notify("AnemoDMG");
     },
     enumerable: false,
@@ -1002,10 +1107,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "GeoDMG", {
     get: function () {
-      return this._GeoDMG;
+      return this.props.getByName("GeoDMG");
     },
     set: function (value) {
-      this._GeoDMG = value;
+      this.props.setByName("GeoDMG", value);
       this.notify("GeoDMG");
     },
     enumerable: false,
@@ -1013,10 +1118,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "PhysicalDMG", {
     get: function () {
-      return this._PhysicalDMG;
+      return this.props.getByName("PhysicalDMG");
     },
     set: function (value) {
-      this._PhysicalDMG = value;
+      this.props.setByName("PhysicalDMG", value);
       this.notify("PhysicalDMG");
     },
     enumerable: false,
@@ -1024,10 +1129,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "NormalAttackDMG", {
     get: function () {
-      return this._NormalAttackDMG;
+      return this.props.getByName("NormalAttackDMG");
     },
     set: function (value) {
-      this._NormalAttackDMG = value;
+      this.props.setByName("NormalAttackDMG", value);
       this.notify("NormalAttackDMG");
     },
     enumerable: false,
@@ -1035,10 +1140,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ChargedAttackDMG", {
     get: function () {
-      return this._ChargedAttackDMG;
+      return this.props.getByName("ChargedAttackDMG");
     },
     set: function (value) {
-      this._ChargedAttackDMG = value;
+      this.props.setByName("ChargedAttackDMG", value);
       this.notify("ChargedAttackDMG");
     },
     enumerable: false,
@@ -1046,10 +1151,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "PlungeAttackDMG", {
     get: function () {
-      return this._PlungeAttackDMG;
+      return this.props.getByName("PlungeAttackDMG");
     },
     set: function (value) {
-      this._PlungeAttackDMG = value;
+      this.props.setByName("PlungeAttackDMG", value);
       this.notify("PlungeAttackDMG");
     },
     enumerable: false,
@@ -1057,10 +1162,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElementalSkillDMG", {
     get: function () {
-      return this._ElementalSkillDMG;
+      return this.props.getByName("ElementalSkillDMG");
     },
     set: function (value) {
-      this._ElementalSkillDMG = value;
+      this.props.setByName("ElementalSkillDMG", value);
       this.notify("ElementalSkillDMG");
     },
     enumerable: false,
@@ -1068,10 +1173,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElementalBurstDMG", {
     get: function () {
-      return this._ElementalBurstDMG;
+      return this.props.getByName("ElementalBurstDMG");
     },
     set: function (value) {
-      this._ElementalBurstDMG = value;
+      this.props.setByName("ElementalBurstDMG", value);
       this.notify("ElementalBurstDMG");
     },
     enumerable: false,
@@ -1079,10 +1184,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "AllDMG", {
     get: function () {
-      return this._AllDMG;
+      return this.props.getByName("AllDMG");
     },
     set: function (value) {
-      this._AllDMG = value;
+      this.props.setByName("AllDMG", value);
       this.notify("AllDMG");
     },
     enumerable: false,
@@ -1090,10 +1195,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "VaporizeDMG", {
     get: function () {
-      return this._VaporizeDMG;
+      return this.props.getByName("VaporizeDMG");
     },
     set: function (value) {
-      this._VaporizeDMG = value;
+      this.props.setByName("VaporizeDMG", value);
       this.notify("VaporizeDMG");
     },
     enumerable: false,
@@ -1101,10 +1206,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "MeltDMG", {
     get: function () {
-      return this._MeltDMG;
+      return this.props.getByName("MeltDMG");
     },
     set: function (value) {
-      this._MeltDMG = value;
+      this.props.setByName("MeltDMG", value);
       this.notify("MeltDMG");
     },
     enumerable: false,
@@ -1112,10 +1217,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "SwirlDMG", {
     get: function () {
-      return this._SwirlDMG;
+      return this.props.getByName("SwirlDMG");
     },
     set: function (value) {
-      this._SwirlDMG = value;
+      this.props.setByName("SwirlDMG", value);
       this.notify("SwirlDMG");
     },
     enumerable: false,
@@ -1123,10 +1228,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "OverloadDMG", {
     get: function () {
-      return this._OverloadDMG;
+      return this.props.getByName("OverloadDMG");
     },
     set: function (value) {
-      this._OverloadDMG = value;
+      this.props.setByName("OverloadDMG", value);
       this.notify("OverloadDMG");
     },
     enumerable: false,
@@ -1134,10 +1239,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElectrochargeDMG", {
     get: function () {
-      return this._ElectrochargeDMG;
+      return this.props.getByName("ElectrochargeDMG");
     },
     set: function (value) {
-      this._ElectrochargeDMG = value;
+      this.props.setByName("ElectrochargeDMG", value);
       this.notify("ElectrochargeDMG");
     },
     enumerable: false,
@@ -1145,10 +1250,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "SuperconductDMG", {
     get: function () {
-      return this._SuperconductDMG;
+      return this.props.getByName("SuperconductDMG");
     },
     set: function (value) {
-      this._SuperconductDMG = value;
+      this.props.setByName("SuperconductDMG", value);
       this.notify("SuperconductDMG");
     },
     enumerable: false,
@@ -1156,10 +1261,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "NormalAttackLevel", {
     get: function () {
-      return this._NormalAttackLevel;
+      return this.props.getByName("NormalAttackLevel");
     },
     set: function (value) {
-      this._NormalAttackLevel = Math.min(15, Math.floor(value));
+      this.props.setByName("NormalAttackLevel", Math.min(15, Math.floor(value)));
       this.notify("NormalAttackLevel");
     },
     enumerable: false,
@@ -1167,11 +1272,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElementalSkillLevel", {
     get: function () {
-      return this._ElementalSkillLevel;
+      return this.props.getByName("ElementalSkillLevel");
     },
     set: function (value) {
-      this._ElementalSkillLevel = Math.min(15, Math.floor(value));
-      ;
+      this.props.setByName("ElementalSkillLevel", Math.min(15, Math.floor(value)));
       this.notify("ElementalSkillLevel");
     },
     enumerable: false,
@@ -1179,11 +1283,10 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "ElementalBurstLevel", {
     get: function () {
-      return this._ElementalBurstLevel;
+      return this.props.getByName("ElementalBurstLevel");
     },
     set: function (value) {
-      this._ElementalBurstLevel = Math.min(15, Math.floor(value));
-      ;
+      this.props.setByName("ElementalBurstLevel", Math.min(15, Math.floor(value)));
       this.notify("ElementalBurstLevel");
     },
     enumerable: false,
@@ -1191,17 +1294,19 @@ var CharacterStats = function () {
   });
   Object.defineProperty(CharacterStats.prototype, "Ascended", {
     get: function () {
-      return this._Ascended;
+      var v = this.props.getByName("Ascended");
+      return v == 1 ? true : false;
     },
     set: function (value) {
-      this._Ascended = value;
+      var v = value ? 1 : 0;
+      this.props.setByName("Ascended", v);
       this.notify("Level");
     },
     enumerable: false,
     configurable: true
   });
   return CharacterStats;
-}();
+}(Subject_1.Subject);
 
 exports.CharacterStats = CharacterStats;
 
@@ -1746,6 +1851,105 @@ var Observer = function () {
 }();
 
 exports.Observer = Observer;
+
+/***/ }),
+
+/***/ "./built/model/Subject/Observer.js":
+/*!*****************************************!*\
+  !*** ./built/model/Subject/Observer.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.Observer = void 0;
+
+var Observer = function () {
+  function Observer(subject, props) {
+    this._subject = subject;
+    this._props = props;
+  }
+
+  Observer.prototype.propObserved = function (prop) {
+    return this._props.indexOf(prop) >= 0;
+  };
+
+  Observer.prototype.onUpdate = function (ev) {
+    this._event = ev;
+    return this;
+  };
+
+  Observer.prototype.notify = function (prop) {
+    if (this._event) {
+      this._event(this._subject, prop);
+    }
+  };
+
+  return Observer;
+}();
+
+exports.Observer = Observer;
+
+/***/ }),
+
+/***/ "./built/model/Subject/Subject.js":
+/*!****************************************!*\
+  !*** ./built/model/Subject/Subject.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.Subject = void 0;
+
+var ElementList_1 = __webpack_require__(/*! ../ElementList */ "./built/model/ElementList.js");
+
+var Observer_1 = __webpack_require__(/*! ./Observer */ "./built/model/Subject/Observer.js");
+
+var Subject = function () {
+  function Subject() {
+    this._props = new ElementList_1.ElementList();
+    this._observers = [];
+  }
+
+  Object.defineProperty(Subject.prototype, "props", {
+    get: function () {
+      return this._props;
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  Subject.prototype._createObserver = function (props) {
+    var observer = new Observer_1.Observer(this, props);
+
+    this._observers.push(observer);
+
+    return observer;
+  };
+
+  Subject.prototype.notify = function (prop) {
+    var observer;
+
+    for (var i = 0; i < this._observers.length; i++) {
+      observer = this._observers[i];
+
+      if (observer.propObserved(prop) || observer.propObserved("any")) {
+        observer.notify(prop);
+      }
+    }
+  };
+
+  return Subject;
+}();
+
+exports.Subject = Subject;
 
 /***/ }),
 
