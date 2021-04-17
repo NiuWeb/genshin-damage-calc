@@ -1532,31 +1532,15 @@ var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
 hutao.NormalAttackLevel = 10;
-hutao.ElementalSkillLevel = 10;
-var es = hutao.ElementalSkillEffects[0];
-var na = hutao.NormalAttacks;
-
-for (var i = 0; i < na.length; i++) {
-  var dmg = na[i].baseDMG();
-  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
-}
-
-es.enable();
-console.log(es.name + "\n" + es.description);
-console.log("\nES BUFF ENABLED!!!!!!\n");
-
-for (var i = 0; i < na.length; i++) {
-  var dmg = na[i].baseDMG();
-  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
-}
-
-es.disable();
-console.log("\nES BUFF DISABLED!!!!!!\n");
-
-for (var i = 0; i < na.length; i++) {
-  var dmg = na[i].baseDMG();
-  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
-}
+hutao.ElementalSkillLevel = 8;
+hutao.ElementalBurstLevel = 6;
+hutao.createModifier("ATKbase", 454).enable();
+hutao.createModifier("CRITRate", 1 - hutao.CRITRate).enable();
+hutao.createModifier("CRITDMG", 1.801 - hutao.CRITDMG).enable();
+hutao.createModifier("HPflat", 16837).enable();
+hutao.createModifier("ATKflat", 543).enable();
+hutao.ElementalSkillEffects[0].enable();
+console.log(hutao.DEFbase, hutao.DEF);
 
 var App = function (_super) {
   __extends(App, _super);
@@ -1566,7 +1550,11 @@ var App = function (_super) {
   }
 
   App.prototype.render = function () {
-    return React.createElement("div", null);
+    return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
+      colSpan: 2
+    }, "Hu Tao")), React.createElement("tr", null, React.createElement("td", null, "Level"), React.createElement("td", null, hutao.Level)), React.createElement("tr", null, React.createElement("td", null, "HP"), React.createElement("td", null, hutao.HP)), React.createElement("tr", null, React.createElement("td", null, "ATK"), React.createElement("td", null, hutao.ATK)), React.createElement("tr", null, React.createElement("td", null, "DEF"), React.createElement("td", null, hutao.DEF)), React.createElement("tr", null, React.createElement("td", null, "CRIT Rate"), React.createElement("td", null, hutao.CRITRate * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "CRIT DMG"), React.createElement("td", null, hutao.CRITDMG * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "Pyro DMG Bonus"), React.createElement("td", null, hutao.PyroDMG * 100, "%")), React.createElement("tr", null, React.createElement("th", {
+      colSpan: 2
+    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, hutao.NormalAttackLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, hutao.ElementalSkillLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, hutao.ElementalBurstLevel))));
   };
 
   return App;
