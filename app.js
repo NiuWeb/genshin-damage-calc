@@ -390,6 +390,36 @@ exports.charHuTao = {
 
 /***/ }),
 
+/***/ "./built/damage/DamageInput.js":
+/*!*************************************!*\
+  !*** ./built/damage/DamageInput.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.DamageInput = void 0;
+
+var DamageInput = function () {
+  function DamageInput() {}
+
+  DamageInput.format = function (dmg) {
+    dmg.nonCRIT = Math.round(dmg.nonCRIT);
+    dmg.CRIT = Math.round(dmg.CRIT);
+    dmg.average = Math.round(dmg.average);
+    return dmg;
+  };
+
+  return DamageInput;
+}();
+
+exports.DamageInput = DamageInput;
+
+/***/ }),
+
 /***/ "./built/damage/DamageInstance.js":
 /*!****************************************!*\
   !*** ./built/damage/DamageInstance.js ***!
@@ -1528,6 +1558,8 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper */ "./built/characters/CharacterWrapper.js");
 
+var DamageInput_1 = __webpack_require__(/*! ../damage/DamageInput */ "./built/damage/DamageInput.js");
+
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
@@ -1554,8 +1586,10 @@ var App = function (_super) {
     var nas = hutao.NormalAttacks;
 
     for (var i = 0; i < nas.length; i++) {
-      var dmg = nas[i].baseDMG();
-      list.push(React.createElement("tr", null, React.createElement("td", null, nas[i].name), React.createElement("td", null, dmg.elementalDMG), React.createElement("td", null, dmg.nonCRIT), React.createElement("td", null, dmg.CRIT), React.createElement("td", null, dmg.average)));
+      var dmg = DamageInput_1.DamageInput.format(nas[i].baseDMG());
+      list.push(React.createElement("tr", {
+        key: nas[i].name
+      }, React.createElement("td", null, nas[i].name), React.createElement("td", null, dmg.elementalDMG), React.createElement("td", null, dmg.nonCRIT), React.createElement("td", null, dmg.CRIT), React.createElement("td", null, dmg.average)));
     }
 
     return list;
