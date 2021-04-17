@@ -360,7 +360,13 @@ exports.charHuTao = {
       return [e.createModifier("PyroDMG", 0.33)];
     }
   }],
-  Constellations: []
+  Constellations: [{
+    name: lang_1.Language.val("OminousRainfall"),
+    description: lang_1.Language.val("OminousRainfallDesc"),
+    effect: function (e) {
+      return [];
+    }
+  }]
 };
 
 /***/ }),
@@ -531,7 +537,9 @@ exports.LangEN = {
   "ParamitaPapilio": "Paramita Papilio",
   "ParamitaPapilioDesc": "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
   "SanguineRouge": "Sanguine Rouge",
-  "SanguineRougeDesc": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%."
+  "SanguineRougeDesc": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+  "OminousRainfall": "Ominous Rainfall",
+  "OminousRainfallDesc": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied. Additionally, Spirit Soother will also apply the Blood Blossom effect."
 };
 
 /***/ }),
