@@ -116,6 +116,15 @@ var CharacterWrapper = function (_super) {
       }
     }
 
+    obj.createObserver("ElementalSkillLevel").onUpdate(function (e) {
+      for (var i = 0; i < obj._ElementalSkill.length; i++) {
+        var di = obj._ElementalSkill[i];
+        var es = data.ElementalSkill[i];
+        di.clearAdditives();
+        var index = Math.min(es.scaleValue.length, e.ElementalSkillLevel) - 1;
+        di.addAdditive(es.scaleValue[index], es.scaleStat);
+      }
+    });
     obj.createObserver("Level").onUpdate(function (e) {
       var i = _this.levelIndex(e);
 
