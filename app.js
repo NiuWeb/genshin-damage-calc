@@ -1168,6 +1168,8 @@ var CharacterWrapper = function (_super) {
     _this._ElementalBursts = [];
     _this._ElementalSkillEffects = [];
     _this._ElementalBurstEffects = [];
+    _this._PassiveEffects = [];
+    _this._ConstellationEffects = [];
     return _this;
   }
 
@@ -1276,6 +1278,27 @@ var CharacterWrapper = function (_super) {
         }
       }
     });
+
+    for (var i = 0; i < data.Passives.length; i++) {
+      var p = data.Passives[i];
+      var modifiers = p.effect(obj);
+      var effect = new Effect_1.Effect("PassiveEffect", modifiers);
+      effect.name = p.name;
+      effect.description = p.description;
+
+      obj._PassiveEffects.push(effect);
+    }
+
+    for (var i = 0; i < data.Constellations.length; i++) {
+      var p = data.Constellations[i];
+      var modifiers = p.effect(obj);
+      var effect = new Effect_1.Effect("PassiveEffect", modifiers);
+      effect.name = p.name;
+      effect.description = p.description;
+
+      obj._ConstellationEffects.push(effect);
+    }
+
     obj.createObserver("Level").onUpdate(function (e) {
       var i = _this.levelIndex(e);
 
@@ -1333,6 +1356,27 @@ var CharacterWrapper = function (_super) {
   Object.defineProperty(CharacterWrapper.prototype, "ElementalSkillEffects", {
     get: function () {
       return this._ElementalSkillEffects;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalBurstEffects", {
+    get: function () {
+      return this._ElementalBurstEffects;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "PassiveEffects", {
+    get: function () {
+      return this._PassiveEffects;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ConstellationEffects", {
+    get: function () {
+      return this._ConstellationEffects;
     },
     enumerable: false,
     configurable: true
