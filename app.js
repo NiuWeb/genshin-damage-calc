@@ -362,6 +362,7 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.LangEN = void 0;
 exports.LangEN = {
+  "BaseStats": "Basic Stats",
   "ATK": "ATK",
   "ATKbase": "Base ATK",
   "ATKflat": "flat ATK",
@@ -379,10 +380,16 @@ exports.LangEN = {
   "ElementalMastery": "Elemental Mastery",
   "EnergyRecharge": "Energy Recharge",
   "HealingBonus": "Healing Bonus",
+  "DMGbonus": "DMG Bonus",
+  "ReactionDMG": "Reaction DMG",
+  "TalentLevel": "Talent Level",
+  "NormalAttack": " Normal Attack",
   "ChargedAttack": "Charged Attack",
   "Plunge": "Plunge Attack",
   "LowPlunge": "Low Plunge Attack",
   "HighPlunge": "High Plunge Attack",
+  "ElementalSkill": "Elemental Skill",
+  "ElementalBurst": "Elemental Burst",
   "BloodBlossom": "Blood Blossom",
   "ParamitaPapilio": "Paramita Papilio",
   "ParamitaPapilioDesc": "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
@@ -588,119 +595,6 @@ var Character = function (_super) {
 }(CharacterStats_1.CharacterStats);
 
 exports.Character = Character;
-
-/***/ }),
-
-/***/ "./built/model/CharacterHelper.js":
-/*!****************************************!*\
-  !*** ./built/model/CharacterHelper.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CharacterHelper = void 0;
-var $ = Math.round;
-
-var $$ = function (x) {
-  return (Math.round(x * 1000) / 10).toString() + '%';
-};
-
-var CharacterHelper = function () {
-  function CharacterHelper() {}
-
-  CharacterHelper.toObject = function (c) {
-    return {
-      name: c.name,
-      level: c.Level,
-      baseStats: {
-        ATK: $(c.ATK),
-        ATKbase: $(c.ATKbase),
-        ATKflat: $(c.ATKflat),
-        ATKpercent: $$(c.ATKpercent),
-        HP: $(c.HP),
-        HPbase: $(c.HPbase),
-        HPflat: $(c.HPflat),
-        HPpercent: $$(c.HPpercent),
-        DEF: $(c.DEF),
-        DEFbase: $(c.DEFbase),
-        DEFflat: $(c.DEFflat),
-        DEFpercent: $$(c.DEFpercent),
-        CRITRate: $$(c.CRITRate),
-        CRITDMG: $$(c.CRITDMG),
-        ElementalMastery: $(c.ElementalMastery),
-        EnergyRecharge: $$(c.EnergyRecharge),
-        HealingBonus: $(c.HealingBonus)
-      },
-      DMGbonus: {
-        PyroDMG: $$(c.PyroDMG),
-        HydroDMG: $$(c.HydroDMG),
-        CryoDMG: $$(c.CryoDMG),
-        ElectroDMG: $$(c.ElectroDMG),
-        AnemoDMG: $$(c.AnemoDMG),
-        GeoDMG: $$(c.GeoDMG),
-        PhysicalDMG: $$(c.PhysicalDMG),
-        AllDMG: $$(c.AllDMG),
-        NormalAttackDMG: $$(c.NormalAttackDMG),
-        ChargedAttackDMG: $$(c.ChargedAttackDMG),
-        PlungeAttackDMG: $$(c.PlungeAttackDMG),
-        ElementalSkillDMG: $$(c.ElementalSkillDMG),
-        ElementalBurstDMG: $$(c.ElementalBurstDMG)
-      },
-      ReactionDMGbonus: {
-        VaporizeDMG: $$(c.VaporizeDMG),
-        MeltDMG: $$(c.MeltDMG),
-        OverloadDMG: $$(c.OverloadDMG),
-        ElectrochargeDMG: $$(c.ElectrochargeDMG),
-        SuperconductDMG: $$(c.SuperconductDMG),
-        SwirlDMG: $$(c.SwirlDMG)
-      },
-      talents: {
-        NormalAttackLevel: c.NormalAttackLevel,
-        ElementalSkillLevel: c.ElementalSkillLevel,
-        ElementalBurstLevel: c.ElementalBurstLevel,
-        NormalAttacks: this.getNormalAttacks(c),
-        ElementalSkills: this.getElementalSkills(c),
-        ElementalBursts: this.getElementalBursts(c)
-      }
-    };
-  };
-
-  CharacterHelper.getNormalAttacks = function (c) {
-    var e = c.NormalAttacks;
-    var l = {};
-
-    for (var i = 0; i < e.length; i++) {
-      var dmg = e[i].baseDMG();
-      l[e[i].name] = dmg;
-    }
-
-    return l;
-  };
-
-  CharacterHelper.getElementalSkills = function (c) {
-    var e = c.ElementalSkills;
-    var l = {};
-
-    for (var i = 0; i < e.length; i++) {
-      var dmg = e[i].baseDMG();
-      l[e[i].name] = dmg;
-    }
-
-    return l;
-  };
-
-  CharacterHelper.getElementalBursts = function (c) {
-    return {};
-  };
-
-  return CharacterHelper;
-}();
-
-exports.CharacterHelper = CharacterHelper;
 
 /***/ }),
 
@@ -1658,10 +1552,6 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var CharacterWrapper_1 = __webpack_require__(/*! ../model/CharacterWrapper */ "./built/model/CharacterWrapper.js");
 
-var CharacterHelper_1 = __webpack_require__(/*! ../model/CharacterHelper */ "./built/model/CharacterHelper.js");
-
-var CharacterView_1 = __webpack_require__(/*! ./character/CharacterView */ "./built/modules/character/CharacterView.js");
-
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
@@ -1674,325 +1564,26 @@ hutao.createModifier("CRITDMG", 1.801 - hutao.CRITDMG).enable();
 hutao.createModifier("HPflat", 16837).enable();
 hutao.createModifier("ATKflat", 543).enable();
 hutao.createModifier("PyroDMG", 0.796).enable();
+hutao.createObserver("ElementalSkillLevel").onUpdate(function (e) {
+  console.log("ES Level changed to " + e.ElementalSkillLevel);
+});
 hutao.ElementalSkillEffects[0].enable();
 
 var App = function (_super) {
   __extends(App, _super);
 
   function App(props) {
-    var _this = _super.call(this, props) || this;
-
-    _this.state = CharacterHelper_1.CharacterHelper.toObject(hutao);
-    return _this;
+    return _super.call(this, props) || this;
   }
 
-  App.prototype.handler = function () {
-    this.setState(CharacterHelper_1.CharacterHelper.toObject(hutao));
-  };
-
   App.prototype.render = function () {
-    var _this = this;
-
-    return React.createElement("div", {
-      id: "Character"
-    }, React.createElement(CharacterView_1.CharacterView, {
-      character: hutao,
-      handler: function () {
-        return _this.handler();
-      }
-    }));
+    return React.createElement("div", null);
   };
 
   return App;
 }(React.Component);
 
 exports.App = App;
-
-/***/ }),
-
-/***/ "./built/modules/character/AbstractView.js":
-/*!*************************************************!*\
-  !*** ./built/modules/character/AbstractView.js ***!
-  \*************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var __extends = this && this.__extends || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    };
-
-    return extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.AbstractView = void 0;
-
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var CharacterHelper_1 = __webpack_require__(/*! ../../model/CharacterHelper */ "./built/model/CharacterHelper.js");
-
-var AbstractView = function (_super) {
-  __extends(AbstractView, _super);
-
-  function AbstractView(props) {
-    var _this = _super.call(this, props) || this;
-
-    _this.state = CharacterHelper_1.CharacterHelper.toObject(_this.props.character);
-    return _this;
-  }
-
-  AbstractView.prototype.handler = function () {
-    this.setState(CharacterHelper_1.CharacterHelper.toObject(this.props.character));
-    this.props.handler();
-  };
-
-  return AbstractView;
-}(React.Component);
-
-exports.AbstractView = AbstractView;
-
-/***/ }),
-
-/***/ "./built/modules/character/CharacterStatsView.js":
-/*!*******************************************************!*\
-  !*** ./built/modules/character/CharacterStatsView.js ***!
-  \*******************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var __extends = this && this.__extends || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    };
-
-    return extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CharacterStatsView = void 0;
-
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var lang_1 = __webpack_require__(/*! ../../langs/lang */ "./built/langs/lang.js");
-
-var AbstractView_1 = __webpack_require__(/*! ./AbstractView */ "./built/modules/character/AbstractView.js");
-
-var CharacterStatsView = function (_super) {
-  __extends(CharacterStatsView, _super);
-
-  function CharacterStatsView(props) {
-    return _super.call(this, props) || this;
-  }
-
-  CharacterStatsView.prototype.renderStatsTable = function (category) {
-    var rows = [];
-
-    for (var tag in this.state[category]) {
-      var val = this.state[category][tag];
-
-      if (typeof val == "number" || typeof val == "string") {
-        rows.push(React.createElement("tr", {
-          key: tag
-        }, React.createElement("td", null, lang_1.Language.val(tag)), React.createElement("td", null, val)));
-      }
-    }
-
-    return rows;
-  };
-
-  CharacterStatsView.prototype.render = function () {
-    return React.createElement("div", {
-      className: "Column"
-    }, React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, "Base Stats")), this.renderStatsTable("baseStats"), React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, "Damage Bonus")), this.renderStatsTable("DMGbonus"), React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, "Reaction Damage Bonus")), this.renderStatsTable("ReactionDMGbonus"))));
-  };
-
-  return CharacterStatsView;
-}(AbstractView_1.AbstractView);
-
-exports.CharacterStatsView = CharacterStatsView;
-
-/***/ }),
-
-/***/ "./built/modules/character/CharacterTalentView.js":
-/*!********************************************************!*\
-  !*** ./built/modules/character/CharacterTalentView.js ***!
-  \********************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var __extends = this && this.__extends || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    };
-
-    return extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CharacterTalentView = void 0;
-
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var AbstractView_1 = __webpack_require__(/*! ./AbstractView */ "./built/modules/character/AbstractView.js");
-
-var CharacterTalentView = function (_super) {
-  __extends(CharacterTalentView, _super);
-
-  function CharacterTalentView(props) {
-    return _super.call(this, props) || this;
-  }
-
-  CharacterTalentView.prototype.render = function () {
-    return React.createElement("div", {
-      className: "Column"
-    }, "hellooooo motooo");
-  };
-
-  return CharacterTalentView;
-}(AbstractView_1.AbstractView);
-
-exports.CharacterTalentView = CharacterTalentView;
-
-/***/ }),
-
-/***/ "./built/modules/character/CharacterView.js":
-/*!**************************************************!*\
-  !*** ./built/modules/character/CharacterView.js ***!
-  \**************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-
-var __extends = this && this.__extends || function () {
-  var extendStatics = function (d, b) {
-    extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    };
-
-    return extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.CharacterView = void 0;
-
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var AbstractView_1 = __webpack_require__(/*! ./AbstractView */ "./built/modules/character/AbstractView.js");
-
-var CharacterStatsView_1 = __webpack_require__(/*! ./CharacterStatsView */ "./built/modules/character/CharacterStatsView.js");
-
-var CharacterTalentView_1 = __webpack_require__(/*! ./CharacterTalentView */ "./built/modules/character/CharacterTalentView.js");
-
-var CharacterView = function (_super) {
-  __extends(CharacterView, _super);
-
-  function CharacterView(props) {
-    return _super.call(this, props) || this;
-  }
-
-  CharacterView.prototype.render = function () {
-    var _this = this;
-
-    return React.createElement("div", {
-      className: "Stats-View"
-    }, React.createElement(CharacterStatsView_1.CharacterStatsView, {
-      character: this.props.character,
-      handler: function () {
-        return _this.handler();
-      }
-    }), React.createElement(CharacterTalentView_1.CharacterTalentView, {
-      character: this.props.character,
-      handler: function () {
-        return _this.handler();
-      }
-    }));
-  };
-
-  return CharacterView;
-}(AbstractView_1.AbstractView);
-
-exports.CharacterView = CharacterView;
 
 /***/ }),
 
