@@ -598,6 +598,119 @@ exports.Character = Character;
 
 /***/ }),
 
+/***/ "./built/model/CharacterHelper.js":
+/*!****************************************!*\
+  !*** ./built/model/CharacterHelper.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterHelper = void 0;
+var $ = Math.round;
+
+var $$ = function (x) {
+  return (Math.round(x * 1000) / 10).toString() + '%';
+};
+
+var CharacterHelper = function () {
+  function CharacterHelper() {}
+
+  CharacterHelper.toObject = function (c) {
+    return {
+      name: c.name,
+      level: c.Level,
+      baseStats: {
+        ATK: $(c.ATK),
+        ATKbase: $(c.ATKbase),
+        ATKflat: $(c.ATKflat),
+        ATKpercent: $$(c.ATKpercent),
+        HP: $(c.HP),
+        HPbase: $(c.HPbase),
+        HPflat: $(c.HPflat),
+        HPpercent: $$(c.HPpercent),
+        DEF: $(c.DEF),
+        DEFbase: $(c.DEFbase),
+        DEFflat: $(c.DEFflat),
+        DEFpercent: $$(c.DEFpercent),
+        CRITRate: $$(c.CRITRate),
+        CRITDMG: $$(c.CRITDMG),
+        ElementalMastery: $(c.ElementalMastery),
+        EnergyRecharge: $$(c.EnergyRecharge),
+        HealingBonus: $(c.HealingBonus)
+      },
+      DMGbonus: {
+        PyroDMG: $$(c.PyroDMG),
+        HydroDMG: $$(c.HydroDMG),
+        CryoDMG: $$(c.CryoDMG),
+        ElectroDMG: $$(c.ElectroDMG),
+        AnemoDMG: $$(c.AnemoDMG),
+        GeoDMG: $$(c.GeoDMG),
+        PhysicalDMG: $$(c.PhysicalDMG),
+        AllDMG: $$(c.AllDMG),
+        NormalAttackDMG: $$(c.NormalAttackDMG),
+        ChargedAttackDMG: $$(c.ChargedAttackDMG),
+        PlungeAttackDMG: $$(c.PlungeAttackDMG),
+        ElementalSkillDMG: $$(c.ElementalSkillDMG),
+        ElementalBurstDMG: $$(c.ElementalBurstDMG)
+      },
+      ReactionDMGbonus: {
+        VaporizeDMG: $$(c.VaporizeDMG),
+        MeltDMG: $$(c.MeltDMG),
+        OverloadDMG: $$(c.OverloadDMG),
+        ElectrochargeDMG: $$(c.ElectrochargeDMG),
+        SuperconductDMG: $$(c.SuperconductDMG),
+        SwirlDMG: $$(c.SwirlDMG)
+      },
+      talents: {
+        NormalAttackLevel: c.NormalAttackLevel,
+        ElementalSkillLevel: c.ElementalSkillLevel,
+        ElementalBurstLevel: c.ElementalBurstLevel,
+        NormalAttacks: this.getNormalAttacks(c),
+        ElementalSkills: this.getElementalSkills(c),
+        ElementalBursts: this.getElementalBursts(c)
+      }
+    };
+  };
+
+  CharacterHelper.getNormalAttacks = function (c) {
+    var e = c.NormalAttacks;
+    var l = {};
+
+    for (var i = 0; i < e.length; i++) {
+      var dmg = e[i].baseDMG();
+      l[e[i].name] = dmg;
+    }
+
+    return l;
+  };
+
+  CharacterHelper.getElementalSkills = function (c) {
+    var e = c.ElementalSkills;
+    var l = {};
+
+    for (var i = 0; i < e.length; i++) {
+      var dmg = e[i].baseDMG();
+      l[e[i].name] = dmg;
+    }
+
+    return l;
+  };
+
+  CharacterHelper.getElementalBursts = function (c) {
+    return {};
+  };
+
+  return CharacterHelper;
+}();
+
+exports.CharacterHelper = CharacterHelper;
+
+/***/ }),
+
 /***/ "./built/model/CharacterStats.js":
 /*!***************************************!*\
   !*** ./built/model/CharacterStats.js ***!
@@ -1625,6 +1738,8 @@ exports.App = void 0;
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var CharacterHelper_1 = __webpack_require__(/*! ../model/CharacterHelper */ "./built/model/CharacterHelper.js");
+
 var CharacterWrapper_1 = __webpack_require__(/*! ../model/CharacterWrapper */ "./built/model/CharacterWrapper.js");
 
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
@@ -1638,11 +1753,16 @@ hutao.createModifier("CRITRate", 1 - hutao.CRITRate).enable();
 hutao.createModifier("CRITDMG", 1.801 - hutao.CRITDMG).enable();
 hutao.createModifier("HPflat", 16837).enable();
 hutao.createModifier("ATKflat", 543).enable();
-hutao.createModifier("PyroDMG", 0.796).enable();
+hutao.createModifier("PyroDMG", 0.466).enable();
 hutao.createObserver("ElementalSkillLevel").onUpdate(function (e) {
   console.log("ES Level changed to " + e.ElementalSkillLevel);
 });
 hutao.ElementalSkillEffects[0].enable();
+hutao.PassiveEffects[0].enable();
+setTimeout(function (e) {
+  hutao.PassiveEffects[0].disable();
+  console.log(CharacterHelper_1.CharacterHelper.toObject(hutao));
+}, 3000);
 
 var App = function (_super) {
   __extends(App, _super);
@@ -1652,6 +1772,7 @@ var App = function (_super) {
   }
 
   App.prototype.render = function () {
+    console.log(CharacterHelper_1.CharacterHelper.toObject(hutao));
     return React.createElement("div", null);
   };
 
