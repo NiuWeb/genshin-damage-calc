@@ -55,7 +55,7 @@ var CharacterWrapper = function (_super) {
 
     _this._NormalAttacks = [];
     _this._ElementalSkills = [];
-    _this._ElementalBurst = [];
+    _this._ElementalBursts = [];
     _this._ElementalSkillEffects = [];
     _this._ElementalBurstEffects = [];
     return _this;
@@ -105,8 +105,8 @@ var CharacterWrapper = function (_super) {
       }
     });
 
-    for (var i = 0; i < data.ElementalSkill.length; i++) {
-      var es = data.ElementalSkill[i];
+    for (var i = 0; i < data.ElementalSkills.length; i++) {
+      var es = data.ElementalSkills[i];
 
       if (es.talentDMG && es.elementalDMG) {
         var di = obj.createDamageInstance(es.elementalDMG, es.talentDMG);
@@ -126,7 +126,7 @@ var CharacterWrapper = function (_super) {
     obj.createObserver("ElementalSkillLevel").onUpdate(function (e) {
       for (var i = 0; i < obj._ElementalSkills.length; i++) {
         var di = obj._ElementalSkills[i];
-        var es = data.ElementalSkill[i];
+        var es = data.ElementalSkills[i];
         di.clearAdditives();
         var index = Math.min(talentMaxLevel, e.ElementalSkillLevel) - 1;
 
@@ -308,7 +308,7 @@ exports.charHuTao = {
     scaleStat: ["ATK"],
     scaleValue: [[1.6339, 1.7453, 1.8567, 2.0052, 2.1166, 2.2466, 2.4137, 2.5808, 2.7479, 2.9150, 3.0821, 3.2492, 3.4163, 3.5834, 3.7505]]
   }],
-  ElementalSkill: [{
+  ElementalSkills: [{
     name: lang_1.Language.val("BloodBlossom"),
     elementalDMG: "PyroDMG",
     talentDMG: "ElementalSkillDMG",
