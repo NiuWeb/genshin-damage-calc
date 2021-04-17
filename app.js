@@ -492,51 +492,15 @@ var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/mode
 
 var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/model/Modifier.js");
 
-var Observer_1 = __webpack_require__(/*! ./Observer */ "./built/model/Observer.js");
-
 var Character = function (_super) {
   __extends(Character, _super);
 
   function Character() {
     var _this = _super.call(this) || this;
 
-    _this.observers = [];
     _this.damageInstances = [];
     return _this;
   }
-
-  Character.prototype.notify = function (stat) {
-    this.observers.forEach(function (sus) {
-      if (sus.stats.indexOf(stat) >= 0) {
-        sus.update(stat);
-      } else if (sus.stats.indexOf("any") >= 0) {
-        sus.update(stat);
-      }
-    });
-  };
-
-  Character.prototype.createObserver = function () {
-    var stats = [];
-
-    for (var _i = 0; _i < arguments.length; _i++) {
-      stats[_i] = arguments[_i];
-    }
-
-    var s = new Observer_1.Observer(this, stats);
-    this.observers.push(s);
-    return s;
-  };
-
-  Character.prototype.removeObserver = function (sus) {
-    var p = this.observers.indexOf(sus);
-
-    if (p == -1) {
-      return false;
-    } else {
-      this.observers.splice(p, 1);
-      return true;
-    }
-  };
 
   Character.prototype.createModifier = function (prop, value) {
     if (value === void 0) {
@@ -1805,52 +1769,6 @@ var Modifier = function () {
 }();
 
 exports.Modifier = Modifier;
-
-/***/ }),
-
-/***/ "./built/model/Observer.js":
-/*!*********************************!*\
-  !*** ./built/model/Observer.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.Observer = void 0;
-
-var Observer = function () {
-  function Observer(subject, stats) {
-    this.subject = subject;
-    this._stats = stats;
-  }
-
-  Observer.prototype.remove = function () {
-    this.subject.removeObserver(this);
-  };
-
-  Observer.prototype.update = function (stat) {
-    this._onUpdate(this.subject, stat);
-  };
-
-  Observer.prototype.onUpdate = function (ev) {
-    this._onUpdate = ev;
-    return this;
-  };
-
-  Object.defineProperty(Observer.prototype, "stats", {
-    get: function () {
-      return this._stats;
-    },
-    enumerable: false,
-    configurable: true
-  });
-  return Observer;
-}();
-
-exports.Observer = Observer;
 
 /***/ }),
 
