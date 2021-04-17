@@ -623,90 +623,60 @@ var CharacterHelper = function () {
     return {
       name: c.name,
       level: c.Level,
-      baseStats: {
-        ATK: $(c.ATK),
-        ATKbase: $(c.ATKbase),
-        ATKflat: $(c.ATKflat),
-        ATKpercent: $$(c.ATKpercent),
-        HP: $(c.HP),
-        HPbase: $(c.HPbase),
-        HPflat: $(c.HPflat),
-        HPpercent: $$(c.HPpercent),
-        DEF: $(c.DEF),
-        DEFbase: $(c.DEFbase),
-        DEFflat: $(c.DEFflat),
-        DEFpercent: $$(c.DEFpercent),
-        CRITRate: $$(c.CRITRate),
-        CRITDMG: $$(c.CRITDMG),
-        ElementalMastery: $(c.ElementalMastery),
-        EnergyRecharge: $$(c.EnergyRecharge),
-        HealingBonus: $(c.HealingBonus)
-      },
-      DMGbonus: {
-        PyroDMG: $$(c.PyroDMG),
-        HydroDMG: $$(c.HydroDMG),
-        CryoDMG: $$(c.CryoDMG),
-        ElectroDMG: $$(c.ElectroDMG),
-        AnemoDMG: $$(c.AnemoDMG),
-        GeoDMG: $$(c.GeoDMG),
-        PhysicalDMG: $$(c.PhysicalDMG),
-        AllDMG: $$(c.AllDMG),
-        NormalAttackDMG: $$(c.NormalAttackDMG),
-        ChargedAttackDMG: $$(c.ChargedAttackDMG),
-        PlungeAttackDMG: $$(c.PlungeAttackDMG),
-        ElementalSkillDMG: $$(c.ElementalSkillDMG),
-        ElementalBurstDMG: $$(c.ElementalBurstDMG)
-      },
-      ReactionDMGbonus: {
-        VaporizeDMG: $$(c.VaporizeDMG),
-        MeltDMG: $$(c.MeltDMG),
-        OverloadDMG: $$(c.OverloadDMG),
-        ElectrochargeDMG: $$(c.ElectrochargeDMG),
-        SuperconductDMG: $$(c.SuperconductDMG),
-        SwirlDMG: $$(c.SwirlDMG)
-      },
-      talents: {
-        NormalAttackLevel: c.NormalAttackLevel,
-        ElementalSkillLevel: c.ElementalSkillLevel,
-        ElementalBurstLevel: c.ElementalBurstLevel,
-        NormalAttacks: this.getNormalAttacks(c),
-        ElementalSkills: this.getElementalSkills(c),
-        ElementalBursts: this.getElementalBursts(c)
-      }
+      ATK: $(c.ATK),
+      ATKbase: $(c.ATKbase),
+      ATKflat: $(c.ATKflat),
+      ATKpercent: $$(c.ATKpercent),
+      HP: $(c.HP),
+      HPbase: $(c.HPbase),
+      HPflat: $(c.HPflat),
+      HPpercent: $$(c.HPpercent),
+      DEF: $(c.DEF),
+      DEFbase: $(c.DEFbase),
+      DEFflat: $(c.DEFflat),
+      DEFpercent: $$(c.DEFpercent),
+      CRITRate: $$(c.CRITRate),
+      CRITDMG: $$(c.CRITDMG),
+      ElementalMastery: $(c.ElementalMastery),
+      EnergyRecharge: $$(c.EnergyRecharge),
+      HealingBonus: $(c.HealingBonus),
+      PyroDMG: $$(c.PyroDMG),
+      HydroDMG: $$(c.HydroDMG),
+      CryoDMG: $$(c.CryoDMG),
+      ElectroDMG: $$(c.ElectroDMG),
+      AnemoDMG: $$(c.AnemoDMG),
+      GeoDMG: $$(c.GeoDMG),
+      PhysicalDMG: $$(c.PhysicalDMG),
+      AllDMG: $$(c.AllDMG),
+      NormalAttackDMG: $$(c.NormalAttackDMG),
+      ChargedAttackDMG: $$(c.ChargedAttackDMG),
+      PlungeAttackDMG: $$(c.PlungeAttackDMG),
+      ElementalSkillDMG: $$(c.ElementalSkillDMG),
+      ElementalBurstDMG: $$(c.ElementalBurstDMG),
+      VaporizeDMG: $$(c.VaporizeDMG),
+      MeltDMG: $$(c.MeltDMG),
+      OverloadDMG: $$(c.OverloadDMG),
+      ElectrochargeDMG: $$(c.ElectrochargeDMG),
+      SuperconductDMG: $$(c.SuperconductDMG),
+      SwirlDMG: $$(c.SwirlDMG),
+      NormalAttackLevel: c.NormalAttackLevel,
+      ElementalSkillLevel: c.ElementalSkillLevel,
+      ElementalBurstLevel: c.ElementalBurstLevel,
+      NormalAttacks: this.getDamageInstances(c.NormalAttacks),
+      ElementalSkills: this.getDamageInstances(c.ElementalSkills),
+      ElementalBursts: this.getDamageInstances(c.ElementalBursts)
     };
   };
 
-  CharacterHelper.getNormalAttacks = function (c) {
-    var e = c.NormalAttacks;
-    var l = {};
+  CharacterHelper.getDamageInstances = function (e) {
+    var l = [];
 
     for (var i = 0; i < e.length; i++) {
       var dmg = e[i].baseDMG();
-      l[e[i].name] = dmg;
-    }
-
-    return l;
-  };
-
-  CharacterHelper.getElementalSkills = function (c) {
-    var e = c.ElementalSkills;
-    var l = {};
-
-    for (var i = 0; i < e.length; i++) {
-      var dmg = e[i].baseDMG();
-      l[e[i].name] = dmg;
-    }
-
-    return l;
-  };
-
-  CharacterHelper.getElementalBursts = function (c) {
-    var e = c.ElementalBursts;
-    var l = {};
-
-    for (var i = 0; i < e.length; i++) {
-      var dmg = e[i].baseDMG();
-      l[e[i].name] = dmg;
+      l.push({
+        name: e[i].name,
+        dmg: dmg
+      });
     }
 
     return l;
