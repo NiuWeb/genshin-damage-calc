@@ -41,6 +41,8 @@ exports.CharacterWrapper = void 0;
 
 var Character_1 = __webpack_require__(/*! ../model/Character */ "./built/model/Character.js");
 
+var Effect_1 = __webpack_require__(/*! ../model/Effect */ "./built/model/Effect.js");
+
 var characterList_1 = __webpack_require__(/*! ./characterList */ "./built/characters/characterList.js");
 
 var CharacterWrapper = function (_super) {
@@ -101,9 +103,16 @@ var CharacterWrapper = function (_super) {
     for (var i = 0; i < data.ElementalSkill.length; i++) {
       var es = data.ElementalSkill[i];
 
-      if (es.talentDMG) {
+      if (es.talentDMG && es.elementalDMG) {
         var di = obj.createDamageInstance(es.elementalDMG, es.talentDMG);
         di.name = es.name;
+
+        obj._ElementalSkill.push(di);
+      } else {
+        var modifiers = es.effect(obj);
+        var effect = new Effect_1.Effect("ElementalSkillEffect", modifiers);
+
+        obj._ElementalSkillEffects.push(effect);
       }
     }
 
@@ -264,13 +273,14 @@ exports.charHuTao = {
   }],
   ElementalSkill: [{
     name: "Blood Blossom",
+    elementalDMG: "PyroDMG",
     talentDMG: "ElementalSkillDMG",
     scaleStat: "ATK",
     scaleValue: [0.6400, 0.6880, 0.7360, 0.8000, 0.8480, 0.8960, 0.9600, 1.0240, 1.0880, 1.1520, 1.2160, 1.2800, 1.3600, 1.4400, 1.5200]
   }, {
     name: "Paramita Papilo",
     description: "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-    effects: [function (e) {
+    effect: function (e) {
       var bonuses = [0.0384, 0.0407, 0.0430, 0.0460, 0.0483, 0.0506, 0.0536, 0.0566, 0.0596, 0.0626, 0.0656, 0.0685, 0.0715, 0.0745, 0.0775];
       var bonus = bonuses[e.ElementalSkillLevel - 1];
       var ATKincrease = e.createModifier("ATKflat");
@@ -290,7 +300,7 @@ exports.charHuTao = {
         e.infuseDamageInstance("PlungeAttackDMG", null);
       });
       return [ATKincrease];
-    }]
+    }
   }],
   ElementalBurst: [],
   Passives: [],
@@ -1096,6 +1106,54 @@ var CharacterStats = function () {
 }();
 
 exports.CharacterStats = CharacterStats;
+
+/***/ }),
+
+/***/ "./built/model/Effect.js":
+/*!*******************************!*\
+  !*** ./built/model/Effect.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.Effect = void 0;
+
+var Effect = function () {
+  function Effect(type, m) {
+    this._modifiers = m;
+    this._type = type;
+  }
+
+  Effect.prototype.enable = function () {
+    this._modifiers.forEach(function (m) {
+      m.enable();
+    });
+  };
+
+  Effect.prototype.disable = function () {
+    this._modifiers.forEach(function (m) {
+      m.disable();
+    });
+  };
+
+  Object.defineProperty(Effect.prototype, "type", {
+    get: function () {
+      return this._type;
+    },
+    set: function (value) {
+      this._type = value;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  return Effect;
+}();
+
+exports.Effect = Effect;
 
 /***/ }),
 
