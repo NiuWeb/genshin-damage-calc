@@ -490,7 +490,7 @@ var DamageInstance_1 = __webpack_require__(/*! ../damage/DamageInstance */ "./bu
 
 var CharacterStats_1 = __webpack_require__(/*! ./CharacterStats */ "./built/model/CharacterStats.js");
 
-var Modifier_1 = __webpack_require__(/*! ./Modifier */ "./built/model/Modifier.js");
+var NumericModifier_1 = __webpack_require__(/*! ./Subject/NumericModifier */ "./built/model/Subject/NumericModifier.js");
 
 var Character = function (_super) {
   __extends(Character, _super);
@@ -507,7 +507,7 @@ var Character = function (_super) {
       value = 0;
     }
 
-    var m = new Modifier_1.Modifier(this, prop, value);
+    var m = new NumericModifier_1.NumericModifier(this, prop, value);
     return m;
   };
 
@@ -1689,10 +1689,10 @@ exports.ElementList = ElementList;
 
 /***/ }),
 
-/***/ "./built/model/Modifier.js":
-/*!*********************************!*\
-  !*** ./built/model/Modifier.js ***!
-  \*********************************/
+/***/ "./built/model/Subject/NumericModifier.js":
+/*!************************************************!*\
+  !*** ./built/model/Subject/NumericModifier.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
 
@@ -1700,48 +1700,58 @@ exports.ElementList = ElementList;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.Modifier = void 0;
+exports.NumericModifier = void 0;
 
-var Modifier = function () {
-  function Modifier(subject, stat, value) {
+var NumericModifier = function () {
+  function NumericModifier(subject, prop, value) {
     if (value === void 0) {
       value = 0;
     }
 
-    this.subject = subject;
-    this._stat = stat;
+    this._subject = subject;
+    this._prop = prop;
     this._value = value;
     this._enabled = false;
   }
 
-  Modifier.prototype.enable = function () {
-    if (!this.enabled) {
-      this.subject[this._stat] += this._value;
+  NumericModifier.prototype.enable = function () {
+    if (!this._enabled) {
+      var val = this._subject.getProp(this._prop);
+
+      if (val == null) return this;
+
+      this._subject.setProp(this._prop, val + this._value);
+
       this._enabled = true;
-      if (this._onEnable) this._onEnable(this.subject, this._stat);
+      if (this._eventEnable) this._eventEnable(this._subject, this._prop);
     }
 
     return this;
   };
 
-  Modifier.prototype.disable = function () {
-    if (this.enabled) {
-      this.subject[this._stat] -= this._value;
+  NumericModifier.prototype.disable = function () {
+    if (this._enabled) {
+      var val = this._subject.getProp(this._prop);
+
+      if (val == null) return this;
+
+      this._subject.setProp(this._prop, val - this._value);
+
       this._enabled = false;
-      if (this._onDisable) this._onDisable(this.subject, this._stat);
+      if (this._eventDisable) this._eventDisable(this._subject, this._prop);
     }
 
     return this;
   };
 
-  Object.defineProperty(Modifier.prototype, "enabled", {
+  Object.defineProperty(NumericModifier.prototype, "enabled", {
     get: function () {
       return this._enabled;
     },
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(Modifier.prototype, "value", {
+  Object.defineProperty(NumericModifier.prototype, "value", {
     get: function () {
       return this._value;
     },
@@ -1755,20 +1765,20 @@ var Modifier = function () {
     configurable: true
   });
 
-  Modifier.prototype.onEnable = function (ev) {
-    this._onEnable = ev;
+  NumericModifier.prototype.onEnable = function (ev) {
+    this._eventEnable = ev;
     return this;
   };
 
-  Modifier.prototype.onDisable = function (ev) {
-    this._onDisable = ev;
+  NumericModifier.prototype.onDisable = function (ev) {
+    this._eventDisable = ev;
     return this;
   };
 
-  return Modifier;
+  return NumericModifier;
 }();
 
-exports.Modifier = Modifier;
+exports.NumericModifier = NumericModifier;
 
 /***/ }),
 
@@ -1847,6 +1857,20 @@ var Subject = function () {
     enumerable: false,
     configurable: true
   });
+
+  Subject.prototype.getProp = function (prop) {
+    return this._props.getByName(prop);
+  };
+
+  Subject.prototype.setProp = function (prop, value) {
+    var val = this.getProp(prop);
+    if (val == null) return false;
+
+    var r = this._props.setByName(prop, value);
+
+    if (r) this.notify(prop);
+    return r;
+  };
 
   Subject.prototype._createObserver = function (props) {
     var observer = new Observer_1.Observer(this, props);
