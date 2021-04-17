@@ -340,7 +340,7 @@ exports.charHuTao = {
       return [ATKincrease];
     }
   }],
-  ElementalBurst: [{
+  ElementalBursts: [{
     name: "Burst",
     elementalDMG: "PyroDMG",
     talentDMG: "ElementalBurstDMG",
