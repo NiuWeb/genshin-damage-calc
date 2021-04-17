@@ -854,8 +854,7 @@ var CharacterStats = function (_super) {
         r = Math.round(value / 10) * 10;
       }
 
-      this.props.setByName("Level", Math.max(1, r));
-      this.notify("Level");
+      this.setProp("Level", Math.max(1, r));
     },
     enumerable: false,
     configurable: true
@@ -865,8 +864,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ATKbase");
     },
     set: function (value) {
-      this.props.setByName("ATKbase", value);
-      this.notify("ATKbase");
+      this.setProp("ATKbase", value);
     },
     enumerable: false,
     configurable: true
@@ -876,8 +874,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ATKpercent");
     },
     set: function (value) {
-      this.props.setByName("ATKpercent", value);
-      this.notify("ATKpercent");
+      this.setProp("ATKpercent", value);
     },
     enumerable: false,
     configurable: true
@@ -887,8 +884,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ATKflat");
     },
     set: function (value) {
-      this.props.setByName("ATKflat", value);
-      this.notify("ATKflat");
+      this.setProp("ATKflat", value);
     },
     enumerable: false,
     configurable: true
@@ -898,8 +894,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("HPbase");
     },
     set: function (value) {
-      this.props.setByName("HPbase", value);
-      this.notify("HPbase");
+      this.setProp("HPbase", value);
     },
     enumerable: false,
     configurable: true
@@ -909,8 +904,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("HPpercent");
     },
     set: function (value) {
-      this.props.setByName("HPpercent", value);
-      this.notify("HPpercent");
+      this.setProp("HPpercent", value);
     },
     enumerable: false,
     configurable: true
@@ -920,8 +914,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("HPflat");
     },
     set: function (value) {
-      this.props.setByName("HPflat", value);
-      this.notify("HPflat");
+      this.setProp("HPflat", value);
     },
     enumerable: false,
     configurable: true
@@ -931,8 +924,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("DEFbase");
     },
     set: function (value) {
-      this.props.setByName("DEFbase", value);
-      this.notify("DEFbase");
+      this.setProp("DEFbase", value);
     },
     enumerable: false,
     configurable: true
@@ -942,8 +934,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("DEFpercent");
     },
     set: function (value) {
-      this.props.setByName("DEFpercent", value);
-      this.notify("DEFpercent");
+      this.setProp("DEFpercent", value);
     },
     enumerable: false,
     configurable: true
@@ -953,8 +944,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("DEFflat");
     },
     set: function (value) {
-      this.props.setByName("DEFflat", value);
-      this.notify("DEFflat");
+      this.setProp("DEFflat", value);
     },
     enumerable: false,
     configurable: true
@@ -964,8 +954,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("CRITRate");
     },
     set: function (value) {
-      this.props.setByName("CRITRate", value);
-      this.notify("CRITRate");
+      this.setProp("CRITRate", value);
     },
     enumerable: false,
     configurable: true
@@ -975,8 +964,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("CRITDMG");
     },
     set: function (value) {
-      this.props.setByName("CRITDMG", value);
-      this.notify("CRITDMG");
+      this.setProp("CRITDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -986,8 +974,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElementalMastery");
     },
     set: function (value) {
-      this.props.setByName("ElementalMastery", value);
-      this.notify("ElementalMastery");
+      this.setProp("ElementalMastery", value);
     },
     enumerable: false,
     configurable: true
@@ -997,8 +984,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("EnergyRecharge");
     },
     set: function (value) {
-      this.props.setByName("EnergyRecharge", value);
-      this.notify("EnergyRecharge");
+      this.setProp("EnergyRecharge", value);
     },
     enumerable: false,
     configurable: true
@@ -1008,8 +994,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("HealingBonus");
     },
     set: function (value) {
-      this.props.setByName("HealingBonus", value);
-      this.notify("HealingBonus");
+      this.setProp("HealingBonus", value);
     },
     enumerable: false,
     configurable: true
@@ -1019,8 +1004,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("PyroDMG");
     },
     set: function (value) {
-      this.props.setByName("PyroDMG", value);
-      this.notify("PyroDMG");
+      this.setProp("PyroDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1030,8 +1014,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("HydroDMG");
     },
     set: function (value) {
-      this.props.setByName("HydroDMG", value);
-      this.notify("HydroDMG");
+      this.setProp("HydroDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1041,8 +1024,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("CryoDMG");
     },
     set: function (value) {
-      this.props.setByName("CryoDMG", value);
-      this.notify("CryoDMG");
+      this.setProp("CryoDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1052,8 +1034,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElectroDMG");
     },
     set: function (value) {
-      this.props.setByName("ElectroDMG", value);
-      this.notify("ElectroDMG");
+      this.setProp("ElectroDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1063,8 +1044,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("AnemoDMG");
     },
     set: function (value) {
-      this.props.setByName("AnemoDMG", value);
-      this.notify("AnemoDMG");
+      this.setProp("AnemoDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1074,8 +1054,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("GeoDMG");
     },
     set: function (value) {
-      this.props.setByName("GeoDMG", value);
-      this.notify("GeoDMG");
+      this.setProp("GeoDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1085,8 +1064,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("PhysicalDMG");
     },
     set: function (value) {
-      this.props.setByName("PhysicalDMG", value);
-      this.notify("PhysicalDMG");
+      this.setProp("PhysicalDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1096,8 +1074,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("NormalAttackDMG");
     },
     set: function (value) {
-      this.props.setByName("NormalAttackDMG", value);
-      this.notify("NormalAttackDMG");
+      this.setProp("NormalAttackDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1107,8 +1084,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ChargedAttackDMG");
     },
     set: function (value) {
-      this.props.setByName("ChargedAttackDMG", value);
-      this.notify("ChargedAttackDMG");
+      this.setProp("ChargedAttackDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1118,8 +1094,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("PlungeAttackDMG");
     },
     set: function (value) {
-      this.props.setByName("PlungeAttackDMG", value);
-      this.notify("PlungeAttackDMG");
+      this.setProp("PlungeAttackDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1129,8 +1104,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElementalSkillDMG");
     },
     set: function (value) {
-      this.props.setByName("ElementalSkillDMG", value);
-      this.notify("ElementalSkillDMG");
+      this.setProp("ElementalSkillDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1140,8 +1114,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElementalBurstDMG");
     },
     set: function (value) {
-      this.props.setByName("ElementalBurstDMG", value);
-      this.notify("ElementalBurstDMG");
+      this.setProp("ElementalBurstDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1151,8 +1124,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("AllDMG");
     },
     set: function (value) {
-      this.props.setByName("AllDMG", value);
-      this.notify("AllDMG");
+      this.setProp("AllDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1162,8 +1134,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("VaporizeDMG");
     },
     set: function (value) {
-      this.props.setByName("VaporizeDMG", value);
-      this.notify("VaporizeDMG");
+      this.setProp("VaporizeDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1173,8 +1144,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("MeltDMG");
     },
     set: function (value) {
-      this.props.setByName("MeltDMG", value);
-      this.notify("MeltDMG");
+      this.setProp("MeltDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1184,8 +1154,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("SwirlDMG");
     },
     set: function (value) {
-      this.props.setByName("SwirlDMG", value);
-      this.notify("SwirlDMG");
+      this.setProp("SwirlDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1195,8 +1164,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("OverloadDMG");
     },
     set: function (value) {
-      this.props.setByName("OverloadDMG", value);
-      this.notify("OverloadDMG");
+      this.setProp("OverloadDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1206,8 +1174,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElectrochargeDMG");
     },
     set: function (value) {
-      this.props.setByName("ElectrochargeDMG", value);
-      this.notify("ElectrochargeDMG");
+      this.setProp("ElectrochargeDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1217,8 +1184,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("SuperconductDMG");
     },
     set: function (value) {
-      this.props.setByName("SuperconductDMG", value);
-      this.notify("SuperconductDMG");
+      this.setProp("SuperconductDMG", value);
     },
     enumerable: false,
     configurable: true
@@ -1228,8 +1194,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("NormalAttackLevel");
     },
     set: function (value) {
-      this.props.setByName("NormalAttackLevel", Math.min(15, Math.floor(value)));
-      this.notify("NormalAttackLevel");
+      this.setProp("NormalAttackLevel", Math.min(15, Math.floor(value)));
     },
     enumerable: false,
     configurable: true
@@ -1239,8 +1204,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElementalSkillLevel");
     },
     set: function (value) {
-      this.props.setByName("ElementalSkillLevel", Math.min(15, Math.floor(value)));
-      this.notify("ElementalSkillLevel");
+      this.setProp("ElementalSkillLevel", Math.min(15, Math.floor(value)));
     },
     enumerable: false,
     configurable: true
@@ -1250,8 +1214,7 @@ var CharacterStats = function (_super) {
       return this.props.getByName("ElementalBurstLevel");
     },
     set: function (value) {
-      this.props.setByName("ElementalBurstLevel", Math.min(15, Math.floor(value)));
-      this.notify("ElementalBurstLevel");
+      this.setProp("ElementalBurstLevel", Math.min(15, Math.floor(value)));
     },
     enumerable: false,
     configurable: true
@@ -1263,8 +1226,7 @@ var CharacterStats = function (_super) {
     },
     set: function (value) {
       var v = value ? 1 : 0;
-      this.props.setByName("Ascended", v);
-      this.notify("Level");
+      this.setProp("Ascended", v);
     },
     enumerable: false,
     configurable: true
