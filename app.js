@@ -176,11 +176,14 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.characterList = void 0;
 
+var lang_1 = __webpack_require__(/*! ../langs/lang */ "./built/langs/lang.js");
+
+var ElementList_1 = __webpack_require__(/*! ../model/ElementList */ "./built/model/ElementList.js");
+
 var charHuTao_1 = __webpack_require__(/*! ./list/charHuTao */ "./built/datacharacters/list/charHuTao.js");
 
-exports.characterList = {
-  "Hu Tao": charHuTao_1.charHuTao
-};
+exports.characterList = new ElementList_1.ElementList();
+exports.characterList.add(lang_1.Language.val("HuTao"), charHuTao_1.charHuTao);
 
 /***/ }),
 
@@ -390,6 +393,7 @@ exports.LangEN = {
   "HighPlunge": "High Plunge Attack",
   "ElementalSkill": "Elemental Skill",
   "ElementalBurst": "Elemental Burst",
+  "HuTao": "Hu Tao",
   "BloodBlossom": "Blood Blossom",
   "ParamitaPapilio": "Paramita Papilio",
   "ParamitaPapilioDesc": "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
@@ -1279,7 +1283,7 @@ var CharacterWrapper = function (_super) {
     var _this = this;
 
     obj.name = name;
-    var data = characterList_1.characterList[name];
+    var data = characterList_1.characterList.getByName(name);
 
     if (!data) {
       return;
@@ -1552,6 +1556,57 @@ var Effect = function () {
 }();
 
 exports.Effect = Effect;
+
+/***/ }),
+
+/***/ "./built/model/ElementList.js":
+/*!************************************!*\
+  !*** ./built/model/ElementList.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.ElementList = void 0;
+
+var ElementList = function () {
+  function ElementList() {
+    this._list = [];
+  }
+
+  ElementList.prototype.add = function (name, item) {
+    this._list.push({
+      name: name,
+      item: item
+    });
+  };
+
+  ElementList.prototype.getNames = function () {
+    var names = [];
+
+    this._list.forEach(function (e) {
+      names.push(e.name);
+    });
+
+    return names;
+  };
+
+  ElementList.prototype.getByName = function (name) {
+    var found = this._list.find(function (e) {
+      return e.name == name;
+    });
+
+    if (!found) return null;
+    return found.item;
+  };
+
+  return ElementList;
+}();
+
+exports.ElementList = ElementList;
 
 /***/ }),
 
