@@ -54,7 +54,7 @@ var CharacterWrapper = function (_super) {
     var _this = _super !== null && _super.apply(this, arguments) || this;
 
     _this._NormalAttacks = [];
-    _this._ElementalSkill = [];
+    _this._ElementalSkills = [];
     _this._ElementalBurst = [];
     _this._ElementalSkillEffects = [];
     _this._ElementalBurstEffects = [];
@@ -112,7 +112,7 @@ var CharacterWrapper = function (_super) {
         var di = obj.createDamageInstance(es.elementalDMG, es.talentDMG);
         di.name = es.name;
 
-        obj._ElementalSkill.push(di);
+        obj._ElementalSkills.push(di);
       } else {
         var modifiers = es.effect(obj);
         var effect = new Effect_1.Effect("ElementalSkillEffect", modifiers);
@@ -122,8 +122,8 @@ var CharacterWrapper = function (_super) {
     }
 
     obj.createObserver("ElementalSkillLevel").onUpdate(function (e) {
-      for (var i = 0; i < obj._ElementalSkill.length; i++) {
-        var di = obj._ElementalSkill[i];
+      for (var i = 0; i < obj._ElementalSkills.length; i++) {
+        var di = obj._ElementalSkills[i];
         var es = data.ElementalSkill[i];
         di.clearAdditives();
         var index = Math.min(talentMaxLevel, e.ElementalSkillLevel) - 1;
@@ -180,9 +180,16 @@ var CharacterWrapper = function (_super) {
     enumerable: false,
     configurable: true
   });
-  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkill", {
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkills", {
     get: function () {
-      return this._ElementalSkill;
+      return this._ElementalSkills;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalSkillEffects", {
+    get: function () {
+      return this._ElementalSkillEffects;
     },
     enumerable: false,
     configurable: true
@@ -1351,15 +1358,30 @@ var CharacterWrapper_1 = __webpack_require__(/*! ../characters/CharacterWrapper 
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
-hutao.createObserver("NormalAttackLevel").onUpdate(function (e) {
-  var di = hutao.NormalAttacks;
-
-  for (var i = 0; i < di.length; i++) {
-    var dmg = di[i].baseDMG();
-    console.log(di[i].name, dmg.average, dmg.elementalDMG);
-  }
-});
 hutao.NormalAttackLevel = 10;
+var es = hutao.ElementalSkillEffects[0];
+var na = hutao.NormalAttacks;
+
+for (var i = 0; i < na.length; i++) {
+  var dmg = na[i].baseDMG();
+  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
+}
+
+es.enable();
+console.log("\nES BUFF ENABLED!!!!!!\n");
+
+for (var i = 0; i < na.length; i++) {
+  var dmg = na[i].baseDMG();
+  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
+}
+
+es.disable();
+console.log("\nES BUFF DISABLED!!!!!!\n");
+
+for (var i = 0; i < na.length; i++) {
+  var dmg = na[i].baseDMG();
+  console.log(na[i].name + " (" + dmg.elementalDMG + "): " + dmg.average);
+}
 
 var App = function (_super) {
   __extends(App, _super);
@@ -1368,13 +1390,8 @@ var App = function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
-  App.prototype.toggleBonus = function (ev) {};
-
   App.prototype.render = function () {
-    return React.createElement("input", {
-      type: "checkbox",
-      onChange: this.toggleBonus
-    });
+    return React.createElement("div", null);
   };
 
   return App;
