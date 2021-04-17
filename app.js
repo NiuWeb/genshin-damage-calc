@@ -188,36 +188,6 @@ exports.charHuTao = {
 
 /***/ }),
 
-/***/ "./built/damage/DamageInput.js":
-/*!*************************************!*\
-  !*** ./built/damage/DamageInput.js ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.DamageInput = void 0;
-
-var DamageInput = function () {
-  function DamageInput() {}
-
-  DamageInput.format = function (dmg) {
-    dmg.nonCRIT = Math.round(dmg.nonCRIT);
-    dmg.CRIT = Math.round(dmg.CRIT);
-    dmg.average = Math.round(dmg.average);
-    return dmg;
-  };
-
-  return DamageInput;
-}();
-
-exports.DamageInput = DamageInput;
-
-/***/ }),
-
 /***/ "./built/damage/DamageInstance.js":
 /*!****************************************!*\
   !*** ./built/damage/DamageInstance.js ***!
@@ -1678,9 +1648,9 @@ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var CharacterWrapper_1 = __webpack_require__(/*! ../model/CharacterWrapper */ "./built/model/CharacterWrapper.js");
 
-var DamageInput_1 = __webpack_require__(/*! ../damage/DamageInput */ "./built/damage/DamageInput.js");
-
 var CharacterHelper_1 = __webpack_require__(/*! ../model/CharacterHelper */ "./built/model/CharacterHelper.js");
+
+var CharacterView_1 = __webpack_require__(/*! ./character/CharacterView */ "./built/modules/character/CharacterView.js");
 
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
@@ -1706,75 +1676,188 @@ var App = function (_super) {
     return _this;
   }
 
-  App.prototype.NormalAttacks = function () {
-    var list = [];
-    var nas = hutao.NormalAttacks;
-
-    for (var i = 0; i < nas.length; i++) {
-      var dmg = DamageInput_1.DamageInput.format(nas[i].baseDMG());
-      list.push(React.createElement("tr", {
-        key: nas[i].name
-      }, React.createElement("td", null, nas[i].name), React.createElement("td", null, dmg.elementalDMG), React.createElement("td", null, dmg.nonCRIT), React.createElement("td", null, dmg.CRIT), React.createElement("td", null, dmg.average)));
-    }
-
-    return list;
-  };
-
-  App.prototype.changeNALevel = function (ev) {
-    hutao.NormalAttackLevel = parseInt(ev.target.value);
+  App.prototype.handler = function () {
     this.setState(CharacterHelper_1.CharacterHelper.toObject(hutao));
-  };
-
-  App.prototype.changeESLevel = function (ev) {
-    hutao.ElementalSkillLevel = parseInt(ev.target.value);
-    this.setState(CharacterHelper_1.CharacterHelper.toObject(hutao));
-  };
-
-  App.prototype.renderTalentLevels = function () {
-    var _this = this;
-
-    return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, React.createElement("input", {
-      onChange: function (ev) {
-        return _this.changeNALevel(ev);
-      },
-      defaultValue: this.state.NormalAttackLevel,
-      type: "number",
-      name: "NALevel",
-      id: "NALevel"
-    }))), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, React.createElement("input", {
-      onChange: function (ev) {
-        return _this.changeESLevel(ev);
-      },
-      defaultValue: this.state.ElementalSkillLevel,
-      type: "number",
-      name: "NALevel",
-      id: "NALevel"
-    }))), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, React.createElement("input", {
-      defaultValue: this.state.ElementalBurstLevel,
-      type: "number",
-      name: "NALevel",
-      id: "NALevel"
-    })))));
-  };
-
-  App.prototype.renderNormalAttacks = function () {
-    return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
-      colSpan: 5
-    }, "Normal Attack Damage")), React.createElement("tr", null, React.createElement("th", null, "Attack"), React.createElement("th", null, "Type"), React.createElement("th", null, "non-CRIT"), React.createElement("th", null, "CRIT"), React.createElement("th", null, "Average")), this.NormalAttacks()));
   };
 
   App.prototype.render = function () {
-    return React.createElement("div", null, React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, this.state.name)), React.createElement("tr", null, React.createElement("td", null, "Level"), React.createElement("td", null, this.state.level)), React.createElement("tr", null, React.createElement("td", null, "HP"), React.createElement("td", null, this.state.HP)), React.createElement("tr", null, React.createElement("td", null, "ATK"), React.createElement("td", null, this.state.ATK)), React.createElement("tr", null, React.createElement("td", null, "DEF"), React.createElement("td", null, this.state.DEF)), React.createElement("tr", null, React.createElement("td", null, "CRIT Rate"), React.createElement("td", null, this.state.CRITRate * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "CRIT DMG"), React.createElement("td", null, this.state.CRITDMG * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "Pyro DMG Bonus"), React.createElement("td", null, this.state.PyroDMG * 100, "%")))), this.renderTalentLevels(), this.renderNormalAttacks());
+    var _this = this;
+
+    return React.createElement("div", {
+      id: "Character"
+    }, React.createElement(CharacterView_1.CharacterView, {
+      character: hutao,
+      handler: function () {
+        return _this.handler();
+      }
+    }), "ATK: ", this.state.ATK);
   };
 
   return App;
 }(React.Component);
 
 exports.App = App;
+
+/***/ }),
+
+/***/ "./built/modules/character/CharacterStatsView.js":
+/*!*******************************************************!*\
+  !*** ./built/modules/character/CharacterStatsView.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterStatsView = void 0;
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var CharacterHelper_1 = __webpack_require__(/*! ../../model/CharacterHelper */ "./built/model/CharacterHelper.js");
+
+var CharacterStatsView = function (_super) {
+  __extends(CharacterStatsView, _super);
+
+  function CharacterStatsView(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.state = CharacterHelper_1.CharacterHelper.toObject(_this.props.character);
+    return _this;
+  }
+
+  CharacterStatsView.prototype.handler = function () {
+    this.setState(CharacterHelper_1.CharacterHelper.toObject(this.props.character));
+    this.props.handler();
+  };
+
+  CharacterStatsView.prototype.renderStatsTable = function () {
+    var rows = [];
+
+    for (var tag in this.state) {
+      var val = this.state[tag];
+
+      if (typeof val == "number") {
+        rows.push(React.createElement("tr", {
+          key: tag
+        }, React.createElement("td", null, tag), React.createElement("td", null, val)));
+      }
+    }
+
+    return rows;
+  };
+
+  CharacterStatsView.prototype.render = function () {
+    return React.createElement("table", null, React.createElement("tbody", null, this.renderStatsTable()));
+  };
+
+  return CharacterStatsView;
+}(React.Component);
+
+exports.CharacterStatsView = CharacterStatsView;
+
+/***/ }),
+
+/***/ "./built/modules/character/CharacterView.js":
+/*!**************************************************!*\
+  !*** ./built/modules/character/CharacterView.js ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __extends = this && this.__extends || function () {
+  var extendStatics = function (d, b) {
+    extendStatics = Object.setPrototypeOf || {
+      __proto__: []
+    } instanceof Array && function (d, b) {
+      d.__proto__ = b;
+    } || function (d, b) {
+      for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    };
+
+    return extendStatics(d, b);
+  };
+
+  return function (d, b) {
+    extendStatics(d, b);
+
+    function __() {
+      this.constructor = d;
+    }
+
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterView = void 0;
+
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var CharacterHelper_1 = __webpack_require__(/*! ../../model/CharacterHelper */ "./built/model/CharacterHelper.js");
+
+var CharacterStatsView_1 = __webpack_require__(/*! ./CharacterStatsView */ "./built/modules/character/CharacterStatsView.js");
+
+var CharacterView = function (_super) {
+  __extends(CharacterView, _super);
+
+  function CharacterView(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.state = CharacterHelper_1.CharacterHelper.toObject(_this.props.character);
+    return _this;
+  }
+
+  CharacterView.prototype.handler = function () {
+    this.setState(CharacterHelper_1.CharacterHelper.toObject(this.props.character));
+    this.props.handler();
+  };
+
+  CharacterView.prototype.render = function () {
+    var _this = this;
+
+    return React.createElement("div", {
+      className: "Stats-View"
+    }, React.createElement(CharacterStatsView_1.CharacterStatsView, {
+      character: this.props.character,
+      handler: function () {
+        return _this.handler();
+      }
+    }));
+  };
+
+  return CharacterView;
+}(React.Component);
+
+exports.CharacterView = CharacterView;
 
 /***/ }),
 
