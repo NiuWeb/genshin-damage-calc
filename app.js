@@ -1943,6 +1943,7 @@ hutao.ElementalSkillEffects[0].enable();
 hutao.PassiveEffects[0].enable();
 setTimeout(function (e) {
   hutao.PassiveEffects[0].disable();
+  hutao.ElementalSkillEffects[0].disable();
   console.log(CharacterHelper_1.CharacterHelper.toObject(hutao));
 }, 3000);
 
