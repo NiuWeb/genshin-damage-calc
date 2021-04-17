@@ -364,7 +364,26 @@ exports.charHuTao = {
     name: lang_1.Language.val("OminousRainfall"),
     description: lang_1.Language.val("OminousRainfallDesc"),
     effect: function (e) {
-      return [];
+      var modifier = e.createModifier("ElementalSkillDMG");
+      modifier.onEnable(function (e) {
+        var skill = e.getDamageInstance(lang_1.Language.val("BloodBlossom"));
+        if (!skill) return;
+        var n = skill.additiveCount;
+
+        if (n == 1) {
+          skill.addAdditive(0.1, "HP");
+        }
+      });
+      modifier.onDisable(function (e) {
+        var skill = e.getDamageInstance(lang_1.Language.val("BloodBlossom"));
+        if (!skill) return;
+        var n = skill.additiveCount;
+
+        if (n == 2) {
+          skill.removeAdditive(1);
+        }
+      });
+      return [modifier];
     }
   }]
 };
@@ -509,6 +528,22 @@ var DamageInstance = function () {
     enumerable: false,
     configurable: true
   });
+  Object.defineProperty(DamageInstance.prototype, "additiveCount", {
+    get: function () {
+      return this.talentAdditives.length;
+    },
+    enumerable: false,
+    configurable: true
+  });
+
+  DamageInstance.prototype.getAdditive = function (index) {
+    return this.talentAdditives[index];
+  };
+
+  DamageInstance.prototype.removeAdditive = function (index) {
+    this.talentAdditives.splice(index, 1);
+  };
+
   return DamageInstance;
 }();
 
@@ -720,6 +755,18 @@ var Character = function (_super) {
       }
     });
     return results;
+  };
+
+  Character.prototype.getDamageInstance = function (name) {
+    for (var i = 0; i < this.damageInstances.length; i++) {
+      var d = this.damageInstances[i];
+
+      if (d.name == name) {
+        return d;
+      }
+    }
+
+    return null;
   };
 
   return Character;
@@ -1326,6 +1373,10 @@ exports.Modifier = void 0;
 
 var Modifier = function () {
   function Modifier(subject, stat, value) {
+    if (value === void 0) {
+      value = 0;
+    }
+
     this.subject = subject;
     this._stat = stat;
     this._value = value;
