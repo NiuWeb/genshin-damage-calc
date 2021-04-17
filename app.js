@@ -578,23 +578,9 @@ exports.Character = Character;
 /*!****************************************!*\
   !*** ./built/model/CharacterHelper.js ***!
   \****************************************/
-/***/ (function(__unused_webpack_module, exports) {
+/***/ ((__unused_webpack_module, exports) => {
 
 
-
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-
-    return t;
-  };
-
-  return __assign.apply(this, arguments);
-};
 
 Object.defineProperty(exports, "__esModule", ({
   value: true
@@ -605,7 +591,59 @@ var CharacterHelper = function () {
   function CharacterHelper() {}
 
   CharacterHelper.toObject = function (c) {
-    return __assign(__assign(__assign(__assign({}, this.getStats(c)), this.getNormalAttacks(c)), this.getElementalSkills(c)), this.getElementalBursts(c));
+    return {
+      name: c.name,
+      level: c.Level,
+      baseStats: {
+        ATK: c.ATK,
+        ATKbase: c.ATKbase,
+        ATKflat: c.ATKflat,
+        ATKpercent: c.ATKpercent,
+        HP: c.HP,
+        HPbase: c.HPbase,
+        HPflat: c.HPflat,
+        HPpercent: c.HPpercent,
+        DEF: c.DEF,
+        DEFbase: c.DEFbase,
+        DEFflat: c.DEFflat,
+        CRITRate: c.CRITRate,
+        CRITDMG: c.CRITDMG,
+        ElementalMastery: c.ElementalMastery,
+        EnergyRecharge: c.EnergyRecharge,
+        HealingBonus: c.HealingBonus
+      },
+      DMGbonus: {
+        PyroDMG: c.PyroDMG,
+        HydroDMG: c.HydroDMG,
+        CryoDMG: c.CryoDMG,
+        ElectroDMG: c.ElectroDMG,
+        AnemoDMG: c.AnemoDMG,
+        GeoDMG: c.GeoDMG,
+        PhysicalDMG: c.PhysicalDMG,
+        AllDMG: c.AllDMG,
+        NormalAttackDMG: c.NormalAttackDMG,
+        ChargedAttackDMG: c.ChargedAttackDMG,
+        PlungeAttackDMG: c.PlungeAttackDMG,
+        ElementalSkillDMG: c.ElementalSkillDMG,
+        ElementalBurstDMG: c.ElementalBurstDMG
+      },
+      ReactionDMGbonus: {
+        VaporizeDMG: c.VaporizeDMG,
+        MeltDMG: c.MeltDMG,
+        OverloadDMG: c.OverloadDMG,
+        ElectrochargeDMG: c.ElectrochargeDMG,
+        SuperconductDMG: c.SuperconductDMG,
+        SwirlDMG: c.SwirlDMG
+      },
+      talents: {
+        NormalAttackLevel: c.NormalAttackLevel,
+        ElementalSkillLevel: c.ElementalSkillLevel,
+        ElementalBurstLevel: c.ElementalBurstLevel,
+        NormalAttacks: this.getNormalAttacks(c),
+        ElementalSkills: this.getElementalSkills(c),
+        ElementalBursts: this.getElementalBursts(c)
+      }
+    };
   };
 
   CharacterHelper.getNormalAttacks = function (c) {
@@ -617,10 +655,7 @@ var CharacterHelper = function () {
       l[e[i].name] = dmg;
     }
 
-    return {
-      NormalAttackLevel: c.NormalAttackLevel,
-      NormalAttacks: l
-    };
+    return l;
   };
 
   CharacterHelper.getElementalSkills = function (c) {
@@ -632,59 +667,11 @@ var CharacterHelper = function () {
       l[e[i].name] = dmg;
     }
 
-    return {
-      ElementalSkillLevel: c.ElementalSkillLevel,
-      ElementalSkills: l
-    };
+    return l;
   };
 
   CharacterHelper.getElementalBursts = function (c) {
-    return {
-      ElementalBurstLevel: c.ElementalBurstLevel,
-      ElementalBursts: {}
-    };
-  };
-
-  CharacterHelper.getStats = function (c) {
-    return {
-      name: c.name,
-      level: c.Level,
-      ATK: c.ATK,
-      ATKbase: c.ATKbase,
-      ATKflat: c.ATKflat,
-      ATKpercent: c.ATKpercent,
-      HP: c.HP,
-      HPbase: c.HPbase,
-      HPflat: c.HPflat,
-      HPpercent: c.HPpercent,
-      DEF: c.DEF,
-      DEFbase: c.DEFbase,
-      DEFflat: c.DEFflat,
-      CRITRate: c.CRITRate,
-      CRITDMG: c.CRITDMG,
-      ElementalMastery: c.ElementalMastery,
-      EnergyRecharge: c.EnergyRecharge,
-      HealingBonus: c.HealingBonus,
-      PyroDMG: c.PyroDMG,
-      HydroDMG: c.HydroDMG,
-      CryoDMG: c.CryoDMG,
-      ElectroDMG: c.ElectroDMG,
-      AnemoDMG: c.AnemoDMG,
-      GeoDMG: c.GeoDMG,
-      PhysicalDMG: c.PhysicalDMG,
-      AllDMG: c.AllDMG,
-      NormalAttackDMG: c.NormalAttackDMG,
-      ChargedAttackDMG: c.ChargedAttackDMG,
-      PlungeAttackDMG: c.PlungeAttackDMG,
-      ElementalSkillDMG: c.ElementalSkillDMG,
-      ElementalBurstDMG: c.ElementalBurstDMG,
-      VaporizeDMG: c.VaporizeDMG,
-      MeltDMG: c.MeltDMG,
-      OverloadDMG: c.OverloadDMG,
-      ElectrochargeDMG: c.ElectrochargeDMG,
-      SuperconductDMG: c.SuperconductDMG,
-      SwirlDMG: c.SwirlDMG
-    };
+    return {};
   };
 
   return CharacterHelper;
@@ -1690,7 +1677,7 @@ var App = function (_super) {
       handler: function () {
         return _this.handler();
       }
-    }), "ATK: ", this.state.ATK);
+    }));
   };
 
   return App;
@@ -1756,11 +1743,11 @@ var CharacterStatsView = function (_super) {
     this.props.handler();
   };
 
-  CharacterStatsView.prototype.renderStatsTable = function () {
+  CharacterStatsView.prototype.renderStatsTable = function (category) {
     var rows = [];
 
-    for (var tag in this.state) {
-      var val = this.state[tag];
+    for (var tag in this.state[category]) {
+      var val = this.state[category][tag];
 
       if (typeof val == "number") {
         rows.push(React.createElement("tr", {
@@ -1773,7 +1760,7 @@ var CharacterStatsView = function (_super) {
   };
 
   CharacterStatsView.prototype.render = function () {
-    return React.createElement("table", null, React.createElement("tbody", null, this.renderStatsTable()));
+    return React.createElement("table", null, React.createElement("tbody", null, this.renderStatsTable("baseStats")));
   };
 
   return CharacterStatsView;
