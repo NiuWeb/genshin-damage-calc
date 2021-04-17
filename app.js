@@ -701,7 +701,15 @@ var CharacterHelper = function () {
   };
 
   CharacterHelper.getElementalBursts = function (c) {
-    return {};
+    var e = c.ElementalBursts;
+    var l = {};
+
+    for (var i = 0; i < e.length; i++) {
+      var dmg = e[i].baseDMG();
+      l[e[i].name] = dmg;
+    }
+
+    return l;
   };
 
   return CharacterHelper;
@@ -1462,6 +1470,13 @@ var CharacterWrapper = function (_super) {
   Object.defineProperty(CharacterWrapper.prototype, "ElementalSkills", {
     get: function () {
       return this._ElementalSkills;
+    },
+    enumerable: false,
+    configurable: true
+  });
+  Object.defineProperty(CharacterWrapper.prototype, "ElementalBursts", {
+    get: function () {
+      return this._ElementalBursts;
     },
     enumerable: false,
     configurable: true
