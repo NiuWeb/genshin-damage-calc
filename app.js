@@ -604,6 +604,126 @@ exports.Character = Character;
 
 /***/ }),
 
+/***/ "./built/model/CharacterHelper.js":
+/*!****************************************!*\
+  !*** ./built/model/CharacterHelper.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, exports) {
+
+
+
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.CharacterHelper = void 0;
+
+var CharacterHelper = function () {
+  function CharacterHelper() {}
+
+  CharacterHelper.toObject = function (c) {
+    return __assign(__assign(__assign(__assign({}, this.getStats(c)), this.getNormalAttacks(c)), this.getElementalSkills(c)), this.getElementalBursts(c));
+  };
+
+  CharacterHelper.getNormalAttacks = function (c) {
+    var e = c.NormalAttacks;
+    var l = {};
+
+    for (var i = 0; i < e.length; i++) {
+      var dmg = e[i].baseDMG();
+      l[e[i].name] = dmg;
+    }
+
+    return {
+      NormalAttackLevel: c.NormalAttackLevel,
+      NormalAttacks: l
+    };
+  };
+
+  CharacterHelper.getElementalSkills = function (c) {
+    var e = c.ElementalSkills;
+    var l = {};
+
+    for (var i = 0; i < e.length; i++) {
+      var dmg = e[i].baseDMG();
+      l[e[i].name] = dmg;
+    }
+
+    return {
+      ElementalSkillLevel: c.ElementalSkillLevel,
+      ElementalSkills: l
+    };
+  };
+
+  CharacterHelper.getElementalBursts = function (c) {
+    return {
+      ElementalBurstLevel: c.ElementalBurstLevel,
+      ElementalBursts: {}
+    };
+  };
+
+  CharacterHelper.getStats = function (c) {
+    return {
+      name: c.name,
+      level: c.Level,
+      ATK: c.ATK,
+      ATKbase: c.ATKbase,
+      ATKflat: c.ATKflat,
+      ATKpercent: c.ATKpercent,
+      HP: c.HP,
+      HPbase: c.HPbase,
+      HPflat: c.HPflat,
+      HPpercent: c.HPpercent,
+      DEF: c.DEF,
+      DEFbase: c.DEFbase,
+      DEFflat: c.DEFflat,
+      CRITRate: c.CRITRate,
+      CRITDMG: c.CRITDMG,
+      ElementalMastery: c.ElementalMastery,
+      EnergyRecharge: c.EnergyRecharge,
+      HealingBonus: c.HealingBonus,
+      PyroDMG: c.PyroDMG,
+      HydroDMG: c.HydroDMG,
+      CryoDMG: c.CryoDMG,
+      ElectroDMG: c.ElectroDMG,
+      AnemoDMG: c.AnemoDMG,
+      GeoDMG: c.GeoDMG,
+      PhysicalDMG: c.PhysicalDMG,
+      AllDMG: c.AllDMG,
+      NormalAttackDMG: c.NormalAttackDMG,
+      ChargedAttackDMG: c.ChargedAttackDMG,
+      PlungeAttackDMG: c.PlungeAttackDMG,
+      ElementalSkillDMG: c.ElementalSkillDMG,
+      ElementalBurstDMG: c.ElementalBurstDMG,
+      VaporizeDMG: c.VaporizeDMG,
+      MeltDMG: c.MeltDMG,
+      OverloadDMG: c.OverloadDMG,
+      ElectrochargeDMG: c.ElectrochargeDMG,
+      SuperconductDMG: c.SuperconductDMG,
+      SwirlDMG: c.SwirlDMG
+    };
+  };
+
+  return CharacterHelper;
+}();
+
+exports.CharacterHelper = CharacterHelper;
+
+/***/ }),
+
 /***/ "./built/model/CharacterStats.js":
 /*!***************************************!*\
   !*** ./built/model/CharacterStats.js ***!
@@ -1560,6 +1680,8 @@ var CharacterWrapper_1 = __webpack_require__(/*! ../model/CharacterWrapper */ ".
 
 var DamageInput_1 = __webpack_require__(/*! ../damage/DamageInput */ "./built/damage/DamageInput.js");
 
+var CharacterHelper_1 = __webpack_require__(/*! ../model/CharacterHelper */ "./built/model/CharacterHelper.js");
+
 var hutao = CharacterWrapper_1.CharacterWrapper.create("Hu Tao");
 hutao.Ascended = true;
 hutao.Level = 90;
@@ -1577,8 +1699,11 @@ hutao.ElementalSkillEffects[0].enable();
 var App = function (_super) {
   __extends(App, _super);
 
-  function App() {
-    return _super !== null && _super.apply(this, arguments) || this;
+  function App(props) {
+    var _this = _super.call(this, props) || this;
+
+    _this.state = CharacterHelper_1.CharacterHelper.toObject(hutao);
+    return _this;
   }
 
   App.prototype.NormalAttacks = function () {
@@ -1595,6 +1720,45 @@ var App = function (_super) {
     return list;
   };
 
+  App.prototype.changeNALevel = function (ev) {
+    hutao.NormalAttackLevel = parseInt(ev.target.value);
+    this.setState(CharacterHelper_1.CharacterHelper.toObject(hutao));
+  };
+
+  App.prototype.changeESLevel = function (ev) {
+    hutao.ElementalSkillLevel = parseInt(ev.target.value);
+    this.setState(CharacterHelper_1.CharacterHelper.toObject(hutao));
+  };
+
+  App.prototype.renderTalentLevels = function () {
+    var _this = this;
+
+    return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
+      colSpan: 2
+    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, React.createElement("input", {
+      onChange: function (ev) {
+        return _this.changeNALevel(ev);
+      },
+      defaultValue: this.state.NormalAttackLevel,
+      type: "number",
+      name: "NALevel",
+      id: "NALevel"
+    }))), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, React.createElement("input", {
+      onChange: function (ev) {
+        return _this.changeESLevel(ev);
+      },
+      defaultValue: this.state.ElementalSkillLevel,
+      type: "number",
+      name: "NALevel",
+      id: "NALevel"
+    }))), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, React.createElement("input", {
+      defaultValue: this.state.ElementalBurstLevel,
+      type: "number",
+      name: "NALevel",
+      id: "NALevel"
+    })))));
+  };
+
   App.prototype.renderNormalAttacks = function () {
     return React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
       colSpan: 5
@@ -1604,9 +1768,7 @@ var App = function (_super) {
   App.prototype.render = function () {
     return React.createElement("div", null, React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("th", {
       colSpan: 2
-    }, "Hu Tao")), React.createElement("tr", null, React.createElement("td", null, "Level"), React.createElement("td", null, hutao.Level)), React.createElement("tr", null, React.createElement("td", null, "HP"), React.createElement("td", null, hutao.HP)), React.createElement("tr", null, React.createElement("td", null, "ATK"), React.createElement("td", null, hutao.ATK)), React.createElement("tr", null, React.createElement("td", null, "DEF"), React.createElement("td", null, hutao.DEF)), React.createElement("tr", null, React.createElement("td", null, "CRIT Rate"), React.createElement("td", null, hutao.CRITRate * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "CRIT DMG"), React.createElement("td", null, hutao.CRITDMG * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "Pyro DMG Bonus"), React.createElement("td", null, hutao.PyroDMG * 100, "%")), React.createElement("tr", null, React.createElement("th", {
-      colSpan: 2
-    }, "Talent Levels")), React.createElement("tr", null, React.createElement("td", null, "Normal Attack Level"), React.createElement("td", null, hutao.NormalAttackLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Skill Level"), React.createElement("td", null, hutao.ElementalSkillLevel)), React.createElement("tr", null, React.createElement("td", null, "Elemental Burst Level"), React.createElement("td", null, hutao.ElementalBurstLevel)))), this.renderNormalAttacks());
+    }, this.state.name)), React.createElement("tr", null, React.createElement("td", null, "Level"), React.createElement("td", null, this.state.level)), React.createElement("tr", null, React.createElement("td", null, "HP"), React.createElement("td", null, this.state.HP)), React.createElement("tr", null, React.createElement("td", null, "ATK"), React.createElement("td", null, this.state.ATK)), React.createElement("tr", null, React.createElement("td", null, "DEF"), React.createElement("td", null, this.state.DEF)), React.createElement("tr", null, React.createElement("td", null, "CRIT Rate"), React.createElement("td", null, this.state.CRITRate * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "CRIT DMG"), React.createElement("td", null, this.state.CRITDMG * 100, "%")), React.createElement("tr", null, React.createElement("td", null, "Pyro DMG Bonus"), React.createElement("td", null, this.state.PyroDMG * 100, "%")))), this.renderTalentLevels(), this.renderNormalAttacks());
   };
 
   return App;
