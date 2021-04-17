@@ -1791,6 +1791,10 @@ var Observer = function () {
     this._props = props;
   }
 
+  Observer.prototype.remove = function () {
+    return this._subject.removeObserver(this);
+  };
+
   Observer.prototype.propObserved = function (prop) {
     return this._props.indexOf(prop) >= 0;
   };
@@ -1850,6 +1854,16 @@ var Subject = function () {
     this._observers.push(observer);
 
     return observer;
+  };
+
+  Subject.prototype.createObserver = function () {
+    var props = [];
+
+    for (var _i = 0; _i < arguments.length; _i++) {
+      props[_i] = arguments[_i];
+    }
+
+    return this._createObserver(props);
   };
 
   Subject.prototype.removeObserver = function (observer) {
