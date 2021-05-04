@@ -401,6 +401,21 @@ input.hide[type=number] {
     background-color: rgba(0,0,0,0.125);
 }
 
+#About {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:1em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline dotted;
+}
+
 .small-number {
     font-size: 0.8em;
     font-style: italic;
