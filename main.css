@@ -1,4 +1,4 @@
-html, body {
+html, body, #Container, #Background {
     margin: 0;
     position: absolute;
     width: 100%;
@@ -6,8 +6,429 @@ html, body {
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #6b8292;
+    color: #CCC;
 }
 
-.Column {
-    float: left;
+#Container {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    align-items: stretch;
+}
+#Subcontainer {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    margin: 0 10%;
+}
+
+.flexbox {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+}
+.flexbox.row {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flexbox.wrap {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.flexbox.flex-start {
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+}
+.flexbox.align-center {
+    -webkit-align-items:center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+.flexbox.justify-center {
+    -webkit-justify-content:center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+
+div.StatsView {
+    width: 360px;
+    margin:0.5em;
+}
+div.StatsView table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.StatsView table {
+    background-color: #ECE5D8;
+    color: #495366;
+}
+.star5 .StatsView th {
+    background-color: #C18E55;
+    color: white
+}
+.star5 .StatsView table tr:first-child>th:first-child {
+    background-color: #BC6932;
+    color: white
+}
+.star4 .StatsView th {
+    background-color: #A156E0;
+    color: white
+}
+.star4 .StatsView table tr:first-child>th:first-child {
+    background-color: #B386C6;
+    color: white
+}
+div.StatsView td {
+    text-align: right;
+}
+table td .statName, table td.statName {
+    text-align: left;
+}
+table th .statName, table th.statName {
+    text-align: left;
+}
+
+div.Effect {
+    text-align: left;
+}
+div.Effect .name {
+    font-weight: bolder;
+}
+
+select, button {
+    background-color: rgba(0,0,0,0.25);
+    border: 1px solid rgba(0,0,0,0.5);
+	box-sizing: border-box;
+    color: white;
+}
+select option {
+    background-color: white;
+    color: black;
+}
+button:hover {
+    background-color: rgba(0,0,0,0.125);
+    color: 333;
+}
+
+input.small {
+    width: 48px;
+    background-color: rgba(0,0,0,0.15);
+    color: white;
+    font-family: inherit;
+    border: 1px solid rgba(0,0,0,0.5);
+}
+.InputTag {
+    position: relative;
+    display: inline-block;
+}
+
+.InputTag::after {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    content: attr(data-tag);
+    pointer-events: none;
+    color: rgba(255,255, 255,0.5);
+}
+
+.PopupContainer {
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+
+    overflow: auto;
+
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+}
+.paragraph {
+    max-width: 320px;
+    text-align: left;
+    margin-bottom: 0.5em;
+}
+.PopupBox {
+    background-color: white;
+    color: #333;
+    max-height: 100%;
+    overflow: auto;
+}
+.PopupBox .content {
+    margin: 0.5em;
+}
+.PopupBox .head {
+    text-align: right;
+}
+.PopupBox .head button {
+    border: none;
+    background-color: transparent;
+    color: #AAA;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin:0
+}
+
+.listView {
+    max-height: 240px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.listView table {
+    width: 100%;
+}
+.listView table tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.06125);
+}
+.listView table tr:nth-child(even) {
+    background-color: rgba(0,0,0,0.125);
+}
+.Artifact {
+    display: inline-block;
+}
+.EffectView td, .EffectView th {
+    padding:0 0.25em;
+}
+.EffectView table td {
+    text-align: right;
+}
+.EffectView .statName {
+    text-align: left;
+}
+.EffectView {
+    margin: 0.5em;
+    background-color: #ECE5D8;
+    color: #495366;
+}
+.EffectView.margin td, .EffectView.margin th {
+    padding: 0.25em;
+}
+.nomargin td, .nomargin th {
+    padding: 0;
+}
+.EffectView.margin .infotable td, .EffectView.margin .infotable th {
+    padding: 0 0.25em;
+    max-width: 72px;
+    text-align: center;
+    align-items: center;
+}
+.EffectView.margin .infotable.nolimit td, .EffectView.margin .infotable.nolimit th {
+    padding: 0;
+    max-width: initial;
+    text-align: center;
+    align-items: center;
+}
+.border td, .border th {
+    border:1px solid black;
+}
+.infotable.border td, .infotable.border th {
+    padding: 0;
+}
+.Gradiation {
+    text-align: right;
+}
+.infotable .Gradiation {
+    width:100%;
+}
+.EffectView table {
+    border-collapse: collapse;
+    width:100%;
+}
+.EffectView input, .EffectView select {
+    background-color: transparent;
+    border: none;
+    color: #495366;
+}
+.StatsView input, .StatsView select {
+    background-color: transparent;
+    border: none;
+    color: #495366;
+}
+.EffectView .InputTag::after {
+    color: #495366;
+}
+.StatsView .InputTag::after {
+    color: #495366;
+}
+.EffectView .mainhead {
+    background-color: #BC6932;
+    color: white
+}
+.color-stars5 {
+    color: white;
+    background-color: #BC6932;
+}
+.color-stars4 {
+    color: white;
+    background-color: #A156E0;
+}
+.color-stars3 {
+    color: white;
+    background-color: #517FCB;
+}
+.EffectView.stars4 .mainhead {
+    background-color: #A156E0;
+}
+.EffectView.stars4 .subhead {
+    background-color: #B386C6;
+}
+.EffectView.stars3 .mainhead {
+    background-color: #517FCB;
+}
+.EffectView.stars3 .subhead {
+    background-color: #529EB3;
+}
+
+.EffectView .subhead {
+    background-color: #C18E55;
+    color: white
+}
+.EffectView .subhead select {
+    color: white
+}
+.EffectView .mainhead, .EffectView .mainStat input, .EffectView .mainStat select {
+    font-weight: bold;
+    font-size:1em;
+}
+.clickable th {
+    cursor: pointer;
+}
+
+input.hide::-webkit-outer-spin-button,
+input.hide::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.hide[type=number] {
+  -moz-appearance: textfield;
+}
+
+.PercentContainer {
+    width: 64px;
+    background-color: #ffc65d;
+}
+.PercentContainer .PercentBar {
+    background-color: #FFA500;
+    border: 1px solid #ff6600;
+}
+
+
+#WeaponView {
+    width: 360px;
+}
+
+#PresentationView {
+    padding: 0.5em;
+}
+#PresentationView .name, #PresentationView .element {
+    display: inline-block;
+    margin-right: 1em;
+}
+#PresentationView .name {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#CharacterList .CharacterIndex {
+    display: inline-block;
+    padding:0.5em;
+}
+#CharacterList .CharacterIndex:hover {
+    cursor: pointer;
+}
+#CharacterList .CharacterIndex.current {
+    background-color: rgba(0,0,0,0.125);
+    font-weight: bold;
+}
+#CharacterList .CharacterIndex .close {
+    margin-top: 0.25em;
+    font-size: 0.8em;
+}
+#CharacterList .CharacterIndex .close:hover {
+    text-decoration: underline;
+}
+#LoaderView {
+    padding:0.25em;
+}
+#PageIndex {
+    margin-right: 1em;
+}
+#PageIndex .page {
+    padding:0.5em 1em;
+}
+#PageIndex .page:hover {
+    cursor: pointer;
+}
+#PageIndex .page.current {
+    background-color: rgba(0,0,0,0.125);
+}
+
+.small-number {
+    font-size: 0.8em;
+    font-style: italic;
+}
+/**
+    Elemental Colors!!!!!
+*/
+.background.PyroDMG {
+    background-color: #965a4f;
+}
+.background.HydroDMG {
+    background-color: #475b88;
+}
+.damage {
+    margin: 0 0.25em;
+}
+.damage:hover {
+    cursor: pointer;
+}
+.color {
+    font-weight: bolder;
+}
+.color.PyroDMG {
+    color: #b44b48;
+}
+.color.HydroDMG {
+    color: #325091;
+}
+.color.PhysicalDMG {
+    color: #666;
 }
