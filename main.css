@@ -11,7 +11,7 @@ body {
 }
 
 #Container {
-    overflow-x: hidden;
+    overflow-x: auto;
     overflow-y: auto;
 
     display: flex;
@@ -31,7 +31,6 @@ body {
     display: -webkit-flex;
     display: -ms-flex;
     display: -moz-flex;
-    margin: 0 10%;
 }
 
 .flexbox {
@@ -399,6 +398,21 @@ input.hide[type=number] {
 }
 #PageIndex .page.current {
     background-color: rgba(0,0,0,0.125);
+}
+
+#About {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:1em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline dotted;
 }
 
 .small-number {
