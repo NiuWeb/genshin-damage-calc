@@ -32,6 +32,10 @@ body {
     display: -ms-flex;
     display: -moz-flex;
 }
+.Text p {
+    margin: 0;
+    padding: 0;
+}
 
 .flexbox {
     display: flex;
