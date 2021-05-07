@@ -117,6 +117,7 @@ div.Effect {
 }
 div.Effect .name {
     font-weight: bolder;
+    font-size: 1.1em;
 }
 
 select, button {
