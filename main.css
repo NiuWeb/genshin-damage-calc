@@ -95,11 +95,11 @@ div.StatsView table {
     color: white
 }
 .star4 .StatsView th {
-    background-color: #A156E0;
+    background-color: #B386C6;
     color: white
 }
 .star4 .StatsView table tr:first-child>th:first-child {
-    background-color: #B386C6;
+    background-color: #A156E0;
     color: white
 }
 div.StatsView td {
