@@ -446,6 +446,9 @@ a:hover {
 .color {
     font-weight: bolder;
 }
+.color.ElectroDMG {
+    color: #6c32d6
+}
 .color.PyroDMG {
     color: #b44b48;
 }
