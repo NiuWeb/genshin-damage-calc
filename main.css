@@ -513,3 +513,19 @@ a:hover {
 .dropdown-check-list.visible .items {
     display: block;
 }
+
+#LoadingView {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+#LoadingBoxView {
+    font-size: 3em;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1em;
+}
