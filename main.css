@@ -187,8 +187,8 @@ input.small {
     -ms-justify-content: center;
 }
 .paragraph {
-    max-width: 320px;
-    text-align: left;
+    max-width: 420px;
+    text-align: justify;
     margin-bottom: 0.5em;
 }
 .PopupBox {
