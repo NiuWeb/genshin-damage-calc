@@ -441,6 +441,9 @@ a:hover {
 .background.HydroDMG {
     background-color: #475b88;
 }
+.background.ElectroDMG {
+    background-color: #805e99;
+}
 .damage {
     margin: 0 0.25em;
 }
@@ -449,6 +452,9 @@ a:hover {
 }
 .color {
     font-weight: bolder;
+}
+.color.CryoDMG {
+    color: #709da8;
 }
 .color.ElectroDMG {
     color: #6c32d6
