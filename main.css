@@ -125,7 +125,7 @@ div.Effect .desc {
 }
 
 select, button {
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0, 0, 0, 0.466);
     border: 1px solid rgba(0,0,0,0.5);
 	box-sizing: border-box;
     color: white;
@@ -135,7 +135,7 @@ select option {
     color: black;
 }
 button:hover {
-    background-color: rgba(0,0,0,0.125);
+    background-color: rgba(0, 0, 0, 0.288);
     color: 333;
 }
 
@@ -207,7 +207,7 @@ input.small {
     font-size: 1.5em;
     border: none;
     background-color: transparent;
-    color: #AAA;
+    color: rgb(97, 97, 97);
 }
 .PopupBox .head button:hover {
     cursor: pointer;
