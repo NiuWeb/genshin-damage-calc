@@ -236,9 +236,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 .artifact-box {
     display: inline-block;
+    margin: 0.5em;
 }
 .artifact-box.selected {
     border: 4px solid #0094ff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.artifact-box .floating {
+    position: absolute;
+}
+.artifact-box .floating:hover {
+    cursor: pointer;
+}
+.artifact-box .Artifact {
+    margin: 0;
 }
 .EffectView td, .EffectView th {
     padding:0 0.25em;
@@ -432,6 +445,7 @@ a {
 }
 a:hover {
     text-decoration: underline dotted;
+    cursor: pointer;
 }
 
 .small-number {
