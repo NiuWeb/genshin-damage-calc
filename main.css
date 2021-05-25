@@ -234,6 +234,12 @@ h1, h2, h3, h4, h5, h6 {
 .Artifact {
     display: inline-block;
 }
+.artifact-box {
+    display: inline-block;
+}
+.artifact-box.selected {
+    border: 4px solid #0094ff;
+}
 .EffectView td, .EffectView th {
     padding:0 0.25em;
 }
