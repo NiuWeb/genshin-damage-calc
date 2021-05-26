@@ -558,8 +558,12 @@ a:hover {
 }
 
 #LoadingBoxView {
-    font-size: 3em;
-    font-weight: bold;
     background-color: rgba(0,0,0,0.5);
     padding: 1em;
+}
+#LoadingBoxView h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin:0;
+    padding: 0;
 }
