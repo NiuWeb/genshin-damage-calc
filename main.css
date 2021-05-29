@@ -471,6 +471,9 @@ a:hover {
 .background.GeoDMG {
     background-color: #7c693c;
 }
+.background.AnemoDMG {
+    background-color: #407771;
+}
 .damage {
     margin: 0 0.25em;
 }
@@ -497,6 +500,9 @@ a:hover {
 }
 .color.GeoDMG {
     color: #C17E1C;
+}
+.color.AnemoDMG {
+    color: #2D998C;
 }
 
 .dropdown-check-list {
