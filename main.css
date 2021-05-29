@@ -468,6 +468,9 @@ a:hover {
 .background.ElectroDMG {
     background-color: #805e99;
 }
+.background.GeoDMG {
+    background-color: #7c693c;
+}
 .damage {
     margin: 0 0.25em;
 }
@@ -491,6 +494,9 @@ a:hover {
 }
 .color.PhysicalDMG {
     color: #666;
+}
+.color.GeoDMG {
+    color: #C17E1C;
 }
 
 .dropdown-check-list {
