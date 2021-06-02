@@ -317,6 +317,9 @@ h1, h2, h3, h4, h5, h6 {
 .dark select {
     color: #CCC;
 }
+.Artifact select {
+    color: #495366;
+}
 .StatsView input, .StatsView select {
     background-color: transparent;
     border: none;
