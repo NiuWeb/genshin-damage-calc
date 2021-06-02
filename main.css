@@ -201,6 +201,9 @@ input.small {
     background-color: #333;
     color: #CCC;
 }
+.dark select {
+    color: #CCC;
+}
 .PopupBox .content {
     margin: 0.5em;
 }
@@ -297,6 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .Gradiation {
     text-align: right;
+    color: #333;
 }
 .infotable .Gradiation {
     width:100%;
@@ -308,6 +312,12 @@ h1, h2, h3, h4, h5, h6 {
 .EffectView input, .EffectView select {
     background-color: transparent;
     border: none;
+    color: #495366;
+}
+.dark select {
+    color: #CCC;
+}
+.Artifact select {
     color: #495366;
 }
 .StatsView input, .StatsView select {
@@ -381,6 +391,7 @@ input.hide[type=number] {
     background-color: #ffc65d;
 }
 .PercentContainer .PercentBar {
+    color: #333;
     background-color: #FFA500;
     border: 1px solid #ff6600;
 }
