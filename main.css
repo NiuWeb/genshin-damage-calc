@@ -6,7 +6,7 @@ html, body, #Container, #Background {
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #6b8292;
+    background-color: #6d6d6d;
     color: #CCC;
 }
 
@@ -324,6 +324,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     border: none;
     color: #495366;
+}
+.dark table, .dark input {
+    color: #CCC;
 }
 .EffectView .InputTag::after {
     color: #495366;
