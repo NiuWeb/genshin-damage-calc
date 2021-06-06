@@ -328,11 +328,18 @@ h1, h2, h3, h4, h5, h6 {
 .dark table, .dark input {
     color: #CCC;
 }
+.dark .StatsView table, .dark .EffectView table {
+    border: none;
+    color: #495366;
+}
 .EffectView .InputTag::after {
     color: #495366;
 }
 .StatsView .InputTag::after {
     color: #495366;
+}
+.dark .InputTag::after {
+    color: #CCC;
 }
 .EffectView .mainhead {
     background-color: #BC6932;
