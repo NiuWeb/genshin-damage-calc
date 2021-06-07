@@ -341,6 +341,9 @@ h1, h2, h3, h4, h5, h6 {
 .dark .InputTag::after {
     color: #CCC;
 }
+.dark .Artifact select,.dark .Artifact input,.dark .InputTag::after {
+    color: #495366;
+}
 .EffectView .mainhead {
     background-color: #BC6932;
     color: white
