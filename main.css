@@ -332,6 +332,15 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     color: #495366;
 }
+.light table, .light input {
+    color: #333;
+}
+.light .dark table, .light .dark input {
+    color: #CCC;
+}
+.dark .light table, .dark .light input {
+    color: #333;
+}
 .EffectView .InputTag::after {
     color: #495366;
 }
