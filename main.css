@@ -397,6 +397,18 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+.preset-index {
+    padding: 0.5em 1em;
+    background-color: rgba(0,0,0,0.25);
+}
+.preset-index.selected {
+    background-color: rgba(0,0,0,0.125);
+    border: 1px solid black;
+}
+.preset-index:hover {
+    cursor: pointer;
+}
+
 input.hide::-webkit-outer-spin-button,
 input.hide::-webkit-inner-spin-button {
   -webkit-appearance: none;
