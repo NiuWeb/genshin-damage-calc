@@ -15,4 +15,4 @@
 - **Royal Weapons effective CRIT Rate:**
 - [https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution](https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution)
 
- -bygdle.
+- Bygdle#8333
