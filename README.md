@@ -2,6 +2,8 @@
  WORK IN PROGRESS
  
  Genshin Impact Damage Calculator.
+ 
+ Bygdle#8333
 
 ## Sources
 - **Game items/stats:**
@@ -14,5 +16,3 @@
 - [https://docs.google.com/spreadsheets/d/e/2PACX-1vTiAN0_E-IdKHUQYJ5EUrMD7h7Vb08J1xCYNJGmIhxXus98YBjKTP-Xb8Ljoyc3bQ7WhrcROVorcWjY/pubhtml](https://docs.google.com/spreadsheets/d/e/2PACX-1vTiAN0_E-IdKHUQYJ5EUrMD7h7Vb08J1xCYNJGmIhxXus98YBjKTP-Xb8Ljoyc3bQ7WhrcROVorcWjY/pubhtml)
 - **Royal Weapons effective CRIT Rate:**
 - [https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution](https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution)
-
-- Bygdle#8333
