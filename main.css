@@ -335,11 +335,15 @@ h1, h2, h3, h4, h5, h6 {
 .light table, .light input {
     color: #333;
 }
-.light .dark table, .light .dark input {
+.light .dark table, .light .dark input, .dark .EffectView table, .light .dark .EffectView table {
     color: #CCC;
 }
 .dark .light table, .dark .light input {
     color: #333;
+}
+
+.dark .EffectView, .dark table .EffectView,.light .EffectView, .light table .EffectView  {
+    color: #495366;
 }
 .EffectView .InputTag::after {
     color: #495366;
@@ -413,6 +417,18 @@ input.hide::-webkit-outer-spin-button,
 input.hide::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.data-box, .dark .data-box, .light .data-box, 
+.light .dark .data-box, .dark .light .databox {
+    background-color: #ECE5D8;
+    color: #495366;
+    margin: 0.5em;
+}
+.data-box table, .dark .data-box table, .light .data-box table, 
+.light .dark .data-box table, .dark .light .databox table {
+    color: inherit;
+    background-color: transparent;
 }
 
 /* Firefox */
