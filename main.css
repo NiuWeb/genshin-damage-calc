@@ -419,6 +419,18 @@ input.hide::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.data-box, .dark .data-box, .light .data-box, 
+.light .dark .data-box, .dark .light .databox {
+    background-color: #ECE5D8;
+    color: #495366;
+    margin: 0.5em;
+}
+.data-box table, .dark .data-box table, .light .data-box table, 
+.light .dark .data-box table, .dark .light .databox table {
+    color: inherit;
+    background-color: transparent;
+}
+
 /* Firefox */
 input.hide[type=number] {
   -moz-appearance: textfield;
