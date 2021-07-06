@@ -7,4 +7,5 @@ Genshin Impact Damage Calculator.
 - Added Xingqiu.
 - Added Qiqi.
 - Updated _The Flute_ passive.
+- Added preset name on _Damage Details_ view.
 - Added `changelog.md` file to repository.
