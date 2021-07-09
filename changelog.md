@@ -3,7 +3,7 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
-# [9/07/2021]
+## [9/07/2021]
 - Added _Reminiscence of Shime_ artifacts set.
 - Added _Seal of Insulation_ artifacts set.
 - Added a new default preset for Hu Tao.
