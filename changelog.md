@@ -3,7 +3,7 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
-## [14/07/21]
+## [14/07/2021]
 - Added **Talent Scaling** view for damage instances (click on instance's name to display it).
 - Fixed Xingqiu **C4** effect: multiplicative damage bonus.
 - Updated Xingqiu _default presets_: increased **Rain Swords** count.
