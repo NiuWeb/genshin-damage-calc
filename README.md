@@ -5,6 +5,10 @@
  
  Bygdle#8333
 
+ ## Notes
+ - Attack Speed buffs **ARE NOT** factorized.
+ - Energy requirements **ARE NOT** factorized.
+
 ## Sources
 - **Game items/stats:**
 - [https://genshin.honeyhunterworld.com/](https://genshin.honeyhunterworld.com/)
