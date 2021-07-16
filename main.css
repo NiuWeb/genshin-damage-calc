@@ -444,6 +444,7 @@ input.hide[type=number] {
     color: #333;
     background-color: #FFA500;
     border: 1px solid #ff6600;
+    box-sizing: border-box;
 }
 
 
