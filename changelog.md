@@ -3,6 +3,12 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [17/07/2021]
+- Updated new artifact sets names.
+- Added percent bars on weapon comparison tables.
+- Added **Select stacks** option for weapon optimizer.
+- Typos fixed.
+
 ## [14/07/2021]
 - Added **Talent Scaling** view for damage instances (click on instance's name to display it).
 - Fixed Xingqiu **C4** effect: multiplicative damage bonus.
