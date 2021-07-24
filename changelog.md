@@ -4,6 +4,7 @@ WORK IN PROGRESS
 Genshin Impact Damage Calculator.
 
 ## [24/07/2021]
+_**(please clear cache to avoid errors)**_
 - Added catalysts.
 - Added Mona.
 - Added Ayaka.
