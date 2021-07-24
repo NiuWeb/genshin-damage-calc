@@ -3,6 +3,21 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [24/07/2021]
+- Added catalysts.
+- Added Mona.
+- Added Ayaka.
+- Added **2.0** weapons:
+  - Mistsplitter Reforged.
+  - Thundering Pulse.
+  - Kitain Cross Spear.
+  - Hakushin Ring.
+  - Hamayumi.
+- Updated **Select ranks** and **Select stacks** options for weapon optimizer.
+- Added **Select stacks** option to artifact sets optimizer.
+- Added percentile ranking to comparison tables.
+- Updated weapon **hits counter** system: For weapons like The Viridescent Hunt and Skyward Atlas, weapon damage instances count is now calculated based on _hits per round_, _round cooldown_ and _time interval per hit_ properties, in order to get more accurate results.
+
 ## [17/07/2021]
 - Updated new artifact sets names.
 - Added percent bars on weapon comparison tables.
