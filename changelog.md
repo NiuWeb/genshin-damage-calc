@@ -4,6 +4,10 @@ WORK IN PROGRESS
 Genshin Impact Damage Calculator.
 
 ## [24/07/2021]
+- Added Ningguang.
+- Fixed bugs with summarized rows (multiple rows with the same weapon and the same damage) on weapon comparison table.
+
+## [24/07/2021]
 _**(please clear cache to avoid errors)**_
 - Added catalysts.
 - Added Mona.
