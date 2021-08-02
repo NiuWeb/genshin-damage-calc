@@ -3,6 +3,12 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [01/08/2021]
+- Added Yanfei.
+- Added Kaeya.
+- Added Traveler (electro).
+- Added weapon: Amenoma Kageuchi.
+
 ## [27/07/2021]
 - Added Ningguang.
 - Fixed bugs with summarized rows (multiple rows with the same weapon and the same damage) on weapon comparison table.
