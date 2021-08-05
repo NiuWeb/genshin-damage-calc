@@ -2,8 +2,9 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
-
-# [03/08/2021]
+## [05/08/2021]
+- Updated Skyward Blade effect: hits count fixed.
+## [03/08/2021]
 - Updated _default preset_ for Ayaka: Charged Attack count reduced from 9 to 8.
 
 ## [01/08/2021]
