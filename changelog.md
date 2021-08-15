@@ -2,6 +2,13 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [14/08/2021]
+- Added claymores.
+- Added Diluc.
+- Added Noelle.
+- Added Yoimiya.
+- Updated some _Party Effects_ texts.
+
 ## [05/08/2021]
 - Updated Skyward Blade effect: hits count fixed.
 ## [03/08/2021]
