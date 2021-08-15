@@ -4,6 +4,7 @@ WORK IN PROGRESS
 Genshin Impact Damage Calculator.
 
 ## [15/08/2021]
+- Added **Character Summary** view on Stats section.
 - Fixed bug with Festering Desire: Elemental Skill CRIT Rate effect.
 - Updated **Add Character** view: list of characters organized in a table.
 - Updated **Talent Scaling** view: Talent DMG and Talent CRIT Rate values are now displayed.
