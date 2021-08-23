@@ -3,6 +3,16 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [23/08/2021]
+- Added Chongyun.
+- Added Song of Broken Pines.
+- Added **Weekly boss average cost** option to Talent Optimizer.
+- Updated GUI:
+  - Enemy view moved to Stats section, removed Enemy section.
+  - reorganized Talents and Buffs sections columns.
+  - Added baseline to percent bars on comparison tables.
+  - Hidden C.V. calculation from Damage Details view.
+
 ## [15/08/2021]
 - Added **Character Summary** view on Stats section.
 - Fixed bug with Festering Desire: Elemental Skill CRIT Rate effect.
