@@ -11,6 +11,7 @@ Genshin Impact Damage Calculator.
   - Enemy view moved to Stats section, removed Enemy section.
   - reorganized Talents and Buffs sections columns.
   - Added baseline to percent bars on comparison tables.
+  - Hidden C.V. calculation from Damage Details view.
 
 ## [15/08/2021]
 - Added **Character Summary** view on Stats section.
