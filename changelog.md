@@ -3,6 +3,10 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [26/08/2021]
+- Added artifact **Substat rolls** calculator, click on 🔍 icon on an artifact to display it.
+- Fixed Skyward Pride physical hits count.
+
 ## [23/08/2021]
 - Added Chongyun.
 - Added Song of Broken Pines.
