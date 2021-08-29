@@ -245,9 +245,6 @@ h1, h2, h3, h4, h5, h6 {
 .listView table tr:nth-child(even) {
     background-color: rgba(0,0,0,0.125);
 }
-.Artifact {
-    display: inline-block;
-}
 .artifact-box {
     display: inline-block;
     margin: 0.5em;
