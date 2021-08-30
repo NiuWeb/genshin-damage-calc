@@ -14,7 +14,9 @@ _**(please clear cache to avoid errors)**_
   - Reorganized piece views.
   - Added **Substat rolls summary** view. 
 - Updated 4-star artifacts conversion system: sub stat rolls number is also reduced.
-- Fixed rolls precision for 4-star artifacts sub stats.
+- Fixed precision for artifacts sub stat rolls calculator.
+- Updated sub stat value conversion: when chaning a sub stat, the new value is calculated based on equivalent rolls, instead of minimun roll ratio.
+- Updated Sword of Descension effect for Traveler (electro).
 
 ## [26/08/2021]
 - Added artifact **Substat rolls** calculator, click on 🔍 icon on an artifact to display it.
