@@ -3,6 +3,19 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [29/08/2021]
+_**(please clear cache to avoid errors)**_
+- Added **2.1** weapons:
+  - 5★ Engulfing Lightning.
+  - 4★ The Catch.
+  - 4★ Luxurious Sea-Lord.
+  - 4★ Predator.
+- Updated Artifacts Section:
+  - Reorganized piece views.
+  - Added **Substat rolls summary** view. 
+- Updated 4-star artifacts conversion system: sub stat rolls number is also reduced.
+- Fixed rolls precision for 4-star artifacts sub stats.
+
 ## [26/08/2021]
 - Added artifact **Substat rolls** calculator, click on 🔍 icon on an artifact to display it.
 - Fixed Skyward Pride physical hits count.
