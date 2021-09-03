@@ -11,7 +11,7 @@
 
 ## Sources
 - **Game items/stats:**
-- [https://genshin.honeyhunterworld.com/](https://genshin.honeyhunterworld.com/)
+- [https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
 - **Damage formulas:**
 - [https://genshin-impact.fandom.com/wiki/Damage](https://genshin-impact.fandom.com/wiki/Damage)
 - **Transformative Reactions damage formulas (1.6):**
