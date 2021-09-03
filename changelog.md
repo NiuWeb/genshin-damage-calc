@@ -3,6 +3,24 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [02/09/2021]
+_**(please clear cache to avoid errors)**_
+- Added Raiden Shogun.
+- Added **2.1** weapons:
+  - 5★ Engulfing Lightning.
+  - 4★ The Catch.
+  - 4★ Luxurious Sea-Lord.
+  - 4★ Predator.
+- Added **DEF ignored** stat for Damage Instances. 
+- Updated Artifacts Section:
+  - Reorganized piece views.
+  - Added **Substat rolls summary** view. 
+  - Added new tool: **Substat rolls editor [EXPERIMENTAL]**: Click on a substat in the **Rolls summary** view to open the editor. 
+- Updated 4-star artifacts conversion system: sub stat rolls number is also reduced.
+- Fixed precision for artifacts sub stat rolls calculator.
+- Updated sub stat value conversion: when changing a sub stat, the new value is calculated based on equivalent rolls, instead of minimun roll ratio.
+- Updated Sword of Descension effect for Traveler (electro).
+- Updated Emblem of Severd Fate name and description [ES].
 ## [26/08/2021]
 - Added artifact **Substat rolls** calculator, click on 🔍 icon on an artifact to display it.
 - Fixed Skyward Pride physical hits count.
