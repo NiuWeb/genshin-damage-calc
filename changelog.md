@@ -3,6 +3,9 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [11/09/2021]
+- New **Resin Optimizer**: calculates the most efficient order to level up character, weapon, and talents.
+
 ## [02/09/2021]
 _**(please clear cache to avoid errors)**_
 - Added Raiden Shogun.
