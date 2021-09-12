@@ -3,6 +3,9 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [12/09/2021]
+- Added option to set **weekly boss effective materials** for Resin Optimizer.
+- Updated Raiden Shogun _default presets_: added Elemental Skill initial hit.
 ## [11/09/2021]
 - New **Resin Optimizer**: calculates the most efficient order to level up character, weapon, and talents.
 
