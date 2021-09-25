@@ -3,6 +3,13 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [24/09/2021]
+- Added Sangonomiya Kokomi.
+- Added 5★ Everlasting Moonglow (weapon).
+- Fixed Maiden Beloved (2) Healing Bonus effect.
+- Fixed rolls limit per substat on 4-star artifacts (limit increased from 3 to 4).
+- Fixed Raiden Shogun C2: effect also applies to Elemental Skill.
+
 ## [12/09/2021]
 - Added option to set **weekly boss effective materials** for Resin Optimizer.
 - Updated Raiden Shogun _default presets_: added Elemental Skill initial hit.
