@@ -3,6 +3,11 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [25/09/2021]
+- Added Beidou.
+- Added C1 _default preset_ for Sangonomiya Kokomi.
+- Updated _default presets_ for Xingqiu: removed old presets, added new presets for C0, C2 and C6. Increased Rain Swords number (assumed one wave per second).
+
 ## [24/09/2021]
 - Added Sangonomiya Kokomi.
 - Added 5★ Everlasting Moonglow (weapon).
