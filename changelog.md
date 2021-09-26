@@ -3,6 +3,11 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [26/09/2021]
+_**(please clear cache)**_
+- Added option to **Select stacks** in Artifacts optimizer.
+- Updated **Talent priority** optimizer: using new resin calculation.
+
 ## [25/09/2021]
 - Added Beidou.
 - Added C1 _default preset_ for Sangonomiya Kokomi.
