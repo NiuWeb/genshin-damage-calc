@@ -3,6 +3,13 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+## [01/10/2021]
+**IMPORTANT:** Please clear cache to avoid errors.
+- Fixed bug with incomplete substats list on Artifact views.
+- Updated Damage Section views.
+- Optimized priority queues implementation, performance increased.
+- Added new **Substats Optimizer**: compares the damage of every possible substat rolls distribution, and displays the highest 100.
+
 ## [26/09/2021]
 _**(please clear cache)**_
 - Added option to **Select stacks** in Artifacts optimizer.
