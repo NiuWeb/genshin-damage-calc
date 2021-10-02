@@ -2,13 +2,13 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
-
-## [2/10/2021]
+## [02/10/2021]
 **IMPORTANT:** Please clear cache to avoid errors.
 - Updated **Substats Optimizer**: 
     - Added option to select min/max rolls for each substat.
     - Added option to select automatically substats min/max rolls based on the character's equipped substats.
     - Added option to equip generated combinations.
+    - Fixed bug that left substats undefined when equipping generated combinations.
 - Added persistent state to optimizers' settings.
 - Fixed Beidou C6 description text on Enemy debuffs section.
 - Minor GUI changes.
