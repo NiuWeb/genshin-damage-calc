@@ -4,6 +4,7 @@ WORK IN PROGRESS
 Genshin Impact Damage Calculator.
 ## [02/10/2021]
 **IMPORTANT:** Please clear cache to avoid errors.
+- fixed mainstats transform precision.
 - Updated **Substats Optimizer**: 
     - Added option to select min/max rolls for each substat.
     - Added option to select automatically substats min/max rolls based on the character's equipped substats.
