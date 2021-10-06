@@ -2,6 +2,9 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [05/10/2021]
+- Updated **Artifacts optimizer**: improved performance.
+- Added new effect configuration for Slingshot: _no arrow effect_.
 ## [02/10/2021]
 **IMPORTANT:** Please clear cache to avoid errors.
 - fixed mainstats transform precision.
@@ -17,7 +20,7 @@ Genshin Impact Damage Calculator.
 **IMPORTANT:** Please clear cache to avoid errors.
 - Fixed bug with incomplete substats list on Artifact views.
 - Updated Damage Section views.
-- Optimized priority queues implementation, performance increased.
+- Optimized priority queues implementation, performance improved.
 - Added new **Substats Optimizer**: compares the damage of every possible substat rolls distribution, and displays the highest 100.
 
 ## [26/09/2021]
