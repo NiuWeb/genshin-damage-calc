@@ -3,6 +3,7 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 ## [05/10/2021]
+- Updated _default presets_ for Hu Tao: removed old presets, added presets for C0 and C1.
 - Updated **Artifacts optimizer**: improved performance.
 - Added new effect configuration for Slingshot: _no arrow effect_.
 ## [02/10/2021]
