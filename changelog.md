@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [06/10/2021]
+- Added new _default presets_ for Hu Tao C0.
 ## [05/10/2021]
 - Updated _default presets_ for Hu Tao: removed old presets, added presets for C0 and C1.
 - Updated **Artifacts optimizer**: improved performance.
