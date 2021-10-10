@@ -2,6 +2,19 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [09/10/2021]
+- Added **2.2** weapons:
+  - 5★ Polar Star.
+  - 4★ Akuoumaru.
+- Updated _default presets_ for Fischl: all new presets has Electro aura applied, electrocharged presets also includes A4 damage instances.
+- Updated GUI:
+  - Weapons classified by stars in Weapon view.
+  - Updated builds table.
+  - In Weapon Optimizer results: large effect strings are not displayed if all possible options are included.
+  - Hidden checkbox to disable Artifact set effects.
+  
+- Fixed bug where importing an storage file with artifacts but without _presets_ generated an error.
+- Fixed bug that generated miscalculations in Artifacts Optimizer.
 ## [06/10/2021]
 - Added new _default presets_ for Hu Tao C0.
 ## [05/10/2021]
