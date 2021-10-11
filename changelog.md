@@ -2,6 +2,9 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [11/10/2021]
+- Updated Storage view.
+- Fixed bugs with Storage Imports.
 ## [09/10/2021]
 - Added **2.2** weapons:
   - 5★ Polar Star.
