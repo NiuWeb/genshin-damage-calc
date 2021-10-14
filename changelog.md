@@ -3,6 +3,8 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 ## [13/10/2021]
+- Added Eula.
+- improved behavior of numeric inputs.
 - Fixed Base ATK for Primordial Jade Cutter.
 - Fixed Base ATK for Sword of Descension.
 ## [11/10/2021]
