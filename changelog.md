@@ -3,6 +3,7 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 ## [13/10/2021]
+_(please clear cache)_
 - Added Eula.
 - improved behavior of numeric inputs.
 - Fixed Base ATK for Primordial Jade Cutter.
