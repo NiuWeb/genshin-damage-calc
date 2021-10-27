@@ -21,4 +21,4 @@
 - **Royal Weapons effective CRIT Rate:**
 - [https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution](https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution)
 - **Rotation settings for some characters:**
-- https://docs.google.com/spreadsheets/d/1RAz3jx4x1ThWED8XWg8GKIf73RjPrZrnSukYZUCSRU8/htmlview?pru=AAABeBw8Aq4*La2pUC3CAzsXdhL0cO_JtQ#
+- [https://docs.google.com/spreadsheets/d/1RAz3jx4x1ThWED8XWg8GKIf73RjPrZrnSukYZUCSRU8/htmlview?pru=AAABeBw8Aq4*La2pUC3CAzsXdhL0cO_JtQ#](https://docs.google.com/spreadsheets/d/1RAz3jx4x1ThWED8XWg8GKIf73RjPrZrnSukYZUCSRU8/htmlview?pru=AAABeBw8Aq4*La2pUC3CAzsXdhL0cO_JtQ#)
