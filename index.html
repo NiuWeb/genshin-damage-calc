@@ -4,14 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genshin Impact Damage Calculator</title>
-    <link rel="stylesheet" href="main.css">
+
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(56, 56, 56);
+            color: white;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            margin: 0;
+        }
+        button, input {
+            background-color: rgba(0, 0, 0, 0.25);
+            color: white;
+            border: 1px solid black;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.35);
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: rgba(0, 0, 0, 0.25);
+            color: gray;
+        }
+        select {
+            background-color: rgba(0, 0, 0, 0.25);
+            border: 1px solid black;
+            color: white;
+        }
+        select option {
+            background-color: rgb(238, 225, 202);
+            color: black;
+        }
+        select optgroup {
+            background-color: rgb(240, 208, 150);
+            color: black;
+        }
+        p {
+            margin: 0;
+        }
+        p strong, p b {
+            color:rgb(97, 136, 219)
+        }
+        .p strong, .p b {
+            color:rgb(97, 136, 219)
+        }
+        a {
+            color:rgb(91, 131, 216)
+        }
+        a:hover { 
+            cursor: pointer;
+            text-decoration: underline dotted rgb(70, 112, 204);
+        }
+        label:hover {
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
+    
     <noscript>
         Necesitas activar JavaScript para poder utilizar esta aplicación.
     </noscript>
     <div id="app"></div>
-
+    
     <script src="./app.js"></script>
 </body>
 </html>
