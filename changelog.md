@@ -2,6 +2,11 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+
+## [28/10/2021]
+**New GUI!**
+Please clear cache
+
 ## [13/10/2021]
 _(please clear cache)_
 - Added Eula.
