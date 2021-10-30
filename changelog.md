@@ -3,6 +3,11 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 
+# [29/10/2021]
+- Added new weapons:
+  - 4 ★ Mouun's Moon.
+  - 4 ★ Wavebreaker's Fin.
+- Added **Damage Formula** view: click on the name of a damage instance in _Talents_ section to display it.
 ## [28/10/2021]
 **New GUI!**
 Please clear cache
