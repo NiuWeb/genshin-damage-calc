@@ -2,8 +2,9 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
-
-# [29/10/2021]
+# [03/11/2021]
+- Fixed _confirm cancel_ dialog in Substats optimizer.
+## [29/10/2021]
 - Added new weapons:
   - 4 ★ Mouun's Moon.
   - 4 ★ Wavebreaker's Fin.
