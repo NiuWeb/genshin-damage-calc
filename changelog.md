@@ -17,6 +17,14 @@ Genshin Impact Damage Calculator.
 	- Rosaria
 	- Mona
 	- Tartaglia: removed old rotations, added new rotations for N3C attack combo using **ranged burst**.
+- Updated [ES] descriptions for:
+  - 3 ★ Skyrider Greatsword.
+  - 3 ★ White Iron Greatsword.
+  - 4 ★ The bell.
+  - 5 ★ Skyward Pride.
+- Fixed substat value for:
+  - 3 ★ Skyrider Greatsword.
+  - 3 ★ White Iron Greatsword.
 ## [03/11/2021]
 - Fixed _confirm cancel_ dialog text in Substats optimizer.
 ## [29/10/2021]
