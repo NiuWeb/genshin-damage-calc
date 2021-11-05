@@ -2,7 +2,22 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
-# [03/11/2021]
+# [4/11/2021]
+- Updated **rotation damage calculation** system: there are now two different parameters to set up **amplifying reaction** consistency and **elemental aura** consistency. This update will affect calculation result for objects that applies effects conditioned by reaction and elemental aura with different uptimes, like **4 ★ Dragon's Bane** or **4 ★ Rainslasher**, but any other calculation will remain the same.
+- Updated _default rotation_ parameters for:
+	- Amber
+	- Bennett
+	- Diluc
+	- Hu Tao
+	- Xiangling: removed old rotations, added new rotations for C0 and C4 _off-field_ damage only.
+	- Yanfei
+	- Chongyun
+	- Ganyu
+	- Qiqi
+	- Rosaria
+	- Mona
+	- Tartaglia: removed old rotations, added new rotations for N3C attack combo using **ranged burst**.
+## [03/11/2021]
 - Fixed _confirm cancel_ dialog text in Substats optimizer.
 ## [29/10/2021]
 - Added new weapons:
