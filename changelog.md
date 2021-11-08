@@ -3,7 +3,7 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 # [8/11/2021]
-- Performance improved for Artifacts Optimizer.
+- Performance improved for Artifacts Optimizer. **Please clear cache**.
 ## [7/11/2021]
 - Added calculation details and expected time to Artifacts Optimizer.
 ## [4/11/2021]
