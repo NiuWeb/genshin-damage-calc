@@ -2,7 +2,9 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
-# [7/11/2021]
+# [8/11/2021]
+- Performance improved for Artifacts Optimizer.
+## [7/11/2021]
 - Added calculation details and expected time to Artifacts Optimizer.
 ## [4/11/2021]
 - Updated **rotation damage calculation** system: there are now two different parameters to set up **amplifying reaction** consistency and **elemental aura** consistency. This update will affect calculation result for objects that applies effects conditioned by reaction and elemental aura with different uptimes, like **4 ★ Dragon's Bane** or **4 ★ Rainslasher**, but any other calculation will remain the same.
