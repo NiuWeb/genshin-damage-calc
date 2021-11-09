@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+# [9/11/2021]
+- Added **rotation damage formula** view: click on the name of a damage instance in _Damage_ section to display it.
 # [8/11/2021]
 - Performance improved for Artifacts Optimizer. **Please clear cache**.
 ## [7/11/2021]
