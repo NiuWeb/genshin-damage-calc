@@ -3,6 +3,11 @@ WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
 ## [17/11/2021]
+**Please clear cache.**
+- Added **rotation rules** system: certain effects can automatically set up rotation parameters and restrictions. This affects **Shimenawa's Reminiscence**:
+  - This artifact set has now 4 effect states: Disabled (cast Q), Enabled (cast Q), Disabled (no Q), Enabled (no Q).
+  - The states marked up with _(no Q)_ will add a rotation rule that excludes all the instances of **Elemental Burst DMG** from the damage calculation.
+  - The states marked up with _(no Q)_ will also automatically disable all **Elemental Burst Effects** of the character.
 - Fixed damage calculation: Enemy DEF ignored is multiplicative with DEF reduction, not additive. This affects **Raiden Shogun C2**.
 - Fixed **Noelle C2**: Charged Attack bonus is +15%, not +20%.
 - Added new artifact set: **Husk of Opulent Dreams**.
