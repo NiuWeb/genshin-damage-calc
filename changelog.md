@@ -2,6 +2,16 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [23/11/2021]
+- Added Traveler (Geo).
+- Added Traveler (Anemo).
+- Added Lisa.
+- Added Jean.
+- Added Klee.
+- Added Kujou Sara.
+- Added 4 ★ Cinnabar Spindle.
+- Added Eula's Grimheart DEF% bonus effect.
+- Added new character attributes: Element-specific CRIT DMG.
 ## [17/11/2021]
 **Please clear cache.**
 - Added **rotation rules** system: certain effects can automatically set up rotation parameters and restrictions. This affects **Shimenawa's Reminiscence**:
