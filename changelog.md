@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [01/12/2021]
+- Fixed bug with set **Shimenawa's Reminiscence (4)** where Elemental Burst Effects remained disabled even after changing sets.
 ## [23/11/2021]
 - Added Traveler (Geo).
 - Added Traveler (Anemo).
