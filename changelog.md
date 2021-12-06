@@ -2,6 +2,13 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [06/12/2021]
+- Updated Fischl C6 default rotations: increased Oz attacks from 9 to 11.
+- Fixed Fischl damage instances' talent type:
+  - Fischl A4 is Elemental Skill DMG.
+  - Fischl C1 is Normal Attack DMG.
+  - Fischl C6 is Elemental Skill DMG.
+- Added *average roll* quality values to **Substat rolls optimizer**.
 ## [02/12/2021]
 - Fixed Superconduct DMG.
 ## [01/12/2021]
