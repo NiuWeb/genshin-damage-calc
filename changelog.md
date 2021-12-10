@@ -2,6 +2,7 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+- Added 5 ★ Redhorn Stonethresher.
 ## [06/12/2021]
 - Updated Fischl C6 default rotations: increased Oz attacks from 9 to 11.
 - Fixed Fischl damage instances' talent type:
