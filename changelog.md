@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [17/12/2021]
+- Added Arataki Itto.
 ## [10/12/2021]
 - Added 5 ★ Redhorn Stonethresher.
 ## [06/12/2021]
