@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [23/12/2021]
+- Added Gorou.
 ## [17/12/2021]
 - Added Arataki Itto.
 ## [10/12/2021]
