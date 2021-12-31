@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [31/12/2021]
+- Added 5 ★ Calamity Queller.
 ## [23/12/2021]
 - Added Gorou.
 ## [17/12/2021]
