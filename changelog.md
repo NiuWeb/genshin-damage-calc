@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [30/01/2022]
+- Updated _default rotations_ for Venti and Ganyu.
 ## [31/12/2021]
 - Added 5 ★ Calamity Queller.
 ## [23/12/2021]
