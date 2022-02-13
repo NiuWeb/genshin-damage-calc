@@ -2,6 +2,10 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [12/02/2022]
+- Added new weapons:
+  - 5 ★ Kagura's Verity.
+  - 4 ★ Oathsworn Eye.
 ## [30/01/2022]
 - Updated _default rotations_ for Venti and Ganyu.
 ## [31/12/2021]
