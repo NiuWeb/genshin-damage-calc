@@ -2,6 +2,8 @@
 WORK IN PROGRESS
 
 Genshin Impact Damage Calculator.
+## [28/02/2022]
+- Fixed Eula's **Rolling Rime**: damage must not scale with energy stacks.
 ## [12/02/2022]
 - Added new weapons:
   - 5 ★ Kagura's Verity.
