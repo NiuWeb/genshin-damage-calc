@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genshin Impact Damage Calculator</title>
 
     <style type="text/css">
@@ -55,6 +54,11 @@
         .p strong, .p b {
             color:rgb(97, 136, 219)
         }
+        p .pStrong, .p .pStrong {
+            font-weight: normal;
+            background-color: rgb(97, 136, 219);
+            color: black;
+        }
         a {
             color:rgb(91, 131, 216)
         }
@@ -63,6 +67,16 @@
             text-decoration: underline dotted rgb(70, 112, 204);
         }
         label:hover {
+            cursor: pointer;
+        }
+        #switch-version {
+            position: fixed;
+            display: inline-block;
+            padding: 0.5em;
+            background-color: rgba(0, 0, 0, 0.25);
+            font-size: 18pt;
+        }
+        #switch-version:hover {
             cursor: pointer;
         }
     </style>
@@ -75,6 +89,32 @@
     </noscript>
     <div id="app"></div>
     
-    <script src="./app.js"></script>
+    <script>
+        window.addEventListener("load", function() {
+            var src = "./app.js";
+            var version = localStorage.getItem("version");
+            var div = document.getElementById("switch-version");
+            if(version&&version.toLowerCase() == "v2") {
+                src = "./v2.app.js";
+                div.innerText = "v2";
+                div.onclick = function() {
+                    localStorage.setItem("version", "v1");
+                    location.reload();
+                }
+            }
+            else {
+                div.innerText = "v1";
+                div.onclick = function() {
+                    localStorage.setItem("version", "v2");
+                    location.reload();
+                }
+            }
+            var script = document.createElement("script");
+            document.body.appendChild(script);
+            script.src = src;
+        });
+    </script>
+
+    <div id="switch-version"></div>
 </body>
 </html>
