@@ -1,7 +1,43 @@
-# Changelog
-WORK IN PROGRESS
+## [12/03/2022] V2
+- Added new characters:
+  - Yae Miko
+  - Yun jin
+  - Shenhe
+  - Sucrose
+  - Kazuha
+- Added new artifact sets:
+  - Ocean-Hued Clam.
+- Updated default rotations for Raiden Shogun, now it includes Charged Attacks.
+- Updated formulas for the **Royal** weapon series, to include negative CRIT Rate values.
+-Fixed **Bennett C6**: The Pyro DMG Bonus should be applied to any character, regardless of their weapon type.
+- Added new damage attributes:
+  - ATK (percentage and flat) for specific elemental types (Electro ATK%, Geo Flat ATK, etc.).
+  - ATK (percentage and flat) for specific talent types (Elemental Burst ATK%, Charged Attack Flat ATK, etc.).
+  - CRIT Rate for specific elemental types (Cryo CRIT Rate, Pyro CRIT Rate, etc.).
+  - Base multiplier for specific instances.
+  - Flat damage for specific instances.
+- Updated **Damage Formula** view with new damage attributes.
+- Added option to **See more** advanced attributes in the **Attributes** section.
+- Added option to **View scaling** of skills in the **Talents** section.
+- Artifacts can now have no artifact set assigned (default).
+- Added **Filter** system in the **Optimize Substats** and **Optimize Artifacts** tools: Only those combinations that matches the conditions set by the filters will be included in the results, for example, a minimum amount of _Energy Recharge_.
+- Updated the filter system of the **Inventory** of artifacts.
+- Changed the structure of the calculator data files. Version 1 files are not directly compatible with Version 2 files.
+- Added option to import data from files in Version 1 format in the **Storage** section.
+- Added option to import artifacts from GOOD format files (_Genshin Optimizer_ and some scanners) in the **Storage** section.
+- Added new **Items** section: Lists all characters, weapons and artifact sets currently available in the calculator, along with their descriptions.
+- Fixed resin cost for character ascensions.
+- Added details view for **Resin Cost**, open it by clicking on a resin cost box in the optimizer results.
+- Added option to configure the **datasheets** of the resin optimizer, including the _drop rates_ and costs per _run_ of each domain.
+- Minor changes in the GUI.
+### New rotation system
+The new rotation system is based on three different actions:
+- **Instances:** The attacks made by the character.
+- **Effect Controls:** Allows you to dynamically configure the attributes of any effect within the rotation. For example, turning off skill bonuses before certain instances of damage are calculated.
+- **Additional Instances:** Allows you to manually include damage instances of weapons (such as _Aquila Favonia_ or _Crescent Pike_) and artifact sets (such as _Ocean-Hued Clam_).
 
-Genshin Impact Damage Calculator.
+The rotation editor has also been changed to a grid-like one, where different actions can be dragged and dropped. **Actions are executed from left to right and from top to bottom**.
+
 ## [28/02/2022]
 - Fixed Eula's **Roiling Rime**: damage must not scale with energy stacks.
 ## [12/02/2022]
