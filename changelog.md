@@ -9,7 +9,7 @@
   - Ocean-Hued Clam.
 - Updated default rotations for Raiden Shogun, now it includes Charged Attacks.
 - Updated formulas for the **Royal** weapon series, to include negative CRIT Rate values.
--Fixed **Bennett C6**: The Pyro DMG Bonus should be applied to any character, regardless of their weapon type.
+- Fixed **Bennett C6**: The Pyro DMG Bonus should be applied to any character, regardless of their weapon type.
 - Added new damage attributes:
   - ATK (percentage and flat) for specific elemental types (Electro ATK%, Geo Flat ATK, etc.).
   - ATK (percentage and flat) for specific talent types (Elemental Burst ATK%, Charged Attack Flat ATK, etc.).
