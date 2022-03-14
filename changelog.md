@@ -1,3 +1,5 @@
+## [13/03/2022]
+- Fixed resin cost calculation for Character Ascensions.
 ## [12/03/2022] V2
 - Added new characters:
   - Yae Miko
