@@ -1,3 +1,6 @@
+## [19/03/2022]
+- Added Barbara.
+- Added Razor.
 ## [13/03/2022]
 - Fixed resin cost calculation for Character Ascensions.
 ## [12/03/2022] V2
