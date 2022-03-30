@@ -4,7 +4,7 @@
   - Echoes of an Offering.
   - Vermillion Hereafter.
 - Added new weapon:
-- 5 ★ Haran Geppaku Futsu.
+  - 5 ★ Haran Geppaku Futsu.
 ## [19/03/2022]
 - Added Barbara.
 - Added Razor.
