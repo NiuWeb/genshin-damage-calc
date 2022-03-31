@@ -1,3 +1,6 @@
+## [30/03/2022]
+- Updated rotations for Kamisato Ayato: Single target and AoE.
+- Added rotation for Yoimiya vaporize.
 ## [29/03/2022]
 - Added Kamisato Ayato.
 - Added new artifact sets:
