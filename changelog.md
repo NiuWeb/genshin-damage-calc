@@ -1,3 +1,5 @@
+## [11/04/2022]
+- Updated rotations for Keqing (4xN1C).
 ## [30/03/2022]
 - Updated rotations for Kamisato Ayato: Single target and AoE.
 - Added rotation for Yoimiya vaporize.
