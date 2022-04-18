@@ -1,3 +1,6 @@
+## [17/04/2022]
+- Fixed table headers text in Resin Optimizer results that was displayed in EN language only.
+- Fixed Talent Level Upgrades text in Resin Optimier results, that was in range 2-10 even when the character had C3/C5 enabled (it must be in range 5-13). This **does not** affect the calculation results.
 ## [11/04/2022]
 - Updated rotations for Keqing (4xN1C).
 ## [30/03/2022]
