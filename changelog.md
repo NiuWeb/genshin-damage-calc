@@ -1,3 +1,7 @@
+## [28/05/2022]
+- Added new weapons of the version 2.7:
+  - 5 ★ Aqua Simulacra.
+  - 4 ★ Fading Twilight.
 ## [29/04/2022]
 - Fixed description text for Prototype Crescent.
 - Fixed [ES] description text for Lithic weapon series.

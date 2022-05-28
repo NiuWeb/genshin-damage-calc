@@ -704,11 +704,15 @@ License: MIT
 
 /*! ./weapons/bows/AmosBow */
 
+/*! ./weapons/bows/AquaSimulacra */
+
 /*! ./weapons/bows/BlackcliffWarbow */
 
 /*! ./weapons/bows/CompoundBow */
 
 /*! ./weapons/bows/ElegyForTheEnd */
+
+/*! ./weapons/bows/FadingTwilight */
 
 /*! ./weapons/bows/FavoniusWarbow */
 
@@ -1569,6 +1573,10 @@ License: MIT
   \****************************************************/
 
 /*!****************************************************!*\
+  !*** ./src/database/weapons/bows/AquaSimulacra.ts ***!
+  \****************************************************/
+
+/*!****************************************************!*\
   !*** ./src/database/weapons/bows/SacrificalBow.ts ***!
   \****************************************************/
 
@@ -1706,6 +1714,10 @@ License: MIT
 
 /*!*****************************************************!*\
   !*** ./src/database/weapons/bows/ElegyForTheEnd.ts ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/database/weapons/bows/FadingTwilight.ts ***!
   \*****************************************************/
 
 /*!*****************************************************!*\
