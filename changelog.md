@@ -1,4 +1,6 @@
 ## [28/05/2022]
+- Updated default rotation for Ayaka (quickswap rotation).
+## [28/05/2022]
 - Added new weapons of the version 2.7:
   - 5 ★ Aqua Simulacra.
   - 4 ★ Fading Twilight.
