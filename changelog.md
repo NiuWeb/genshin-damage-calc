@@ -1,3 +1,5 @@
+## [30/05/2022]
+- Added Yelan.
 ## [28/05/2022]
 - Updated default rotation for Ayaka (quickswap rotation).
 ## [28/05/2022]
