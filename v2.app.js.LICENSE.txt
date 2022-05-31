@@ -738,6 +738,8 @@ License: MIT
 
 /*! ./weapons/bows/RavenBow */
 
+/*! ./weapons/bows/RecurveBow */
+
 /*! ./weapons/bows/RoyalBow */
 
 /*! ./weapons/bows/Rust */
@@ -1414,6 +1416,10 @@ License: MIT
 
 /*!*************************************************!*\
   !*** ./src/database/weapons/bows/MouunsMoon.ts ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/database/weapons/bows/RecurveBow.ts ***!
   \*************************************************/
 
 /*!*************************************************!*\
