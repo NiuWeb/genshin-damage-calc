@@ -1,3 +1,5 @@
+## [04/06/2022]
+- Fixed condition text [ES] on Hamayumi.
 ## [31/05/2022]
 - Added Yelan.
 - Added 3 ★ Recurve Bow.
