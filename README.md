@@ -1,15 +1,14 @@
-# Genshin Impact Damage Calculator
+# Genshin Impact damage calculator (Core library)
 
-Advanced damage calculator for Genshin Impact. Developed by Bygdle#8333.
+Advanced damage calculator for Genshin Impact. 
 
-This is still a **work in progress**, if you find a bug or have any suggestion, please contact me via Discord or open a [Github issue](https://github.com/NiuWeb/genshin-damage-calc/issues).
+Written by `Bygdle#8333`. If you find a bug or have any suggestion, please contact me via Discord.
 
- ## Notes
- - Attack Speed buffs **ARE NOT** calculated.
- - Energy requirements **ARE NOT** calculated.
+## Notes
+- Attack Speed buffs are not taken into account by the calculator. If you want to include any effect of this type, consider creating modified rotations for that prupose.
+- Energy Requeriments are not directly taken into account by the calculator. Some tools like the optimizers can be configured to apply filters, so you can use that to consider the ER%.
 
 ## Sources
-
 - Game items/stats: [https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki)
 
 
@@ -23,6 +22,8 @@ This is still a **work in progress**, if you find a bug or have any suggestion, 
 
 
 - Royal Weapons effective CRIT Rate: [https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution](https://github.com/NiuWeb/Royal-Weapons-CRIT-Rate-contribution)
+
+- Echoes of an Offering average values: [https://github.com/NiuWeb/echoes-of-an-offering-simulation](https://github.com/NiuWeb/echoes-of-an-offering-simulation)
 
 
 - Rotation settings for some characters:

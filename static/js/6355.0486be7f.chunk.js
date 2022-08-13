@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[6355],{26355:function(n,i,e){e.r(i),e.d(i,{default:function(){return c},position:function(){return u},redirect:function(){return o},title:function(){return r}});var t=e(46417),r="optimizer",u=5,o="/editor/optimizer/weapons";function c(){return(0,t.jsx)("div",{children:"optimizer"})}}}]);

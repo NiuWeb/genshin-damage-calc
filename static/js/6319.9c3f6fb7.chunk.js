@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[6319],{86319:function(n,t,e){e.r(t),e.d(t,{default:function(){return s},position:function(){return u},redirect:function(){return o},title:function(){return i}});var r=e(46417),u=4,i="storage",o="/storage/export";function s(){return(0,r.jsx)(r.Fragment,{})}}}]);

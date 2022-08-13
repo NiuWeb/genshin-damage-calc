@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[6120],{56120:function(n,t,u){u.r(t),u.d(t,{default:function(){return c},position:function(){return i},redirect:function(){return e},title:function(){return r}});var e="/editor/attributes",i=0,r="editor";function c(){return null}}}]);
