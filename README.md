@@ -29,3 +29,8 @@ Written by `Bygdle#8333`. If you find a bug or have any suggestion, please conta
 - Rotation settings for some characters:
   - [https://docs.google.com/spreadsheets/d/1RAz3jx4x1ThWED8XWg8GKIf73RjPrZrnSukYZUCSRU8/htmlview?pru=AAABeBw8Aq4*La2pUC3CAzsXdhL0cO_JtQ#](https://docs.google.com/spreadsheets/d/1RAz3jx4x1ThWED8XWg8GKIf73RjPrZrnSukYZUCSRU8/htmlview?pru=AAABeBw8Aq4*La2pUC3CAzsXdhL0cO_JtQ#)
   - [https://keqingmains.com/](https://keqingmains.com/)
+
+
+## Theme
+Bootswatch Darkly.
+https://bootswatch.com/
