@@ -1,4 +1,4 @@
-# Genshin Impact damage calculator (Core library)
+# Genshin Impact damage calculator
 
 Advanced damage calculator for Genshin Impact. 
 
