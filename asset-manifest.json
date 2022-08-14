@@ -2,7 +2,7 @@
   "files": {
     "main.css": "/genshin-damage-calc/static/css/main.64efca9f.css",
     "main.js": "/genshin-damage-calc/static/js/main.fd167709.js",
-    "runtime.js": "/genshin-damage-calc/static/js/runtime.3743bf61.js",
+    "runtime.js": "/genshin-damage-calc/static/js/runtime.dddd4bd0.js",
     "static/js/7882.9c319d65.chunk.js": "/genshin-damage-calc/static/js/7882.9c319d65.chunk.js",
     "static/js/7793.2f61c9ee.chunk.js": "/genshin-damage-calc/static/js/7793.2f61c9ee.chunk.js",
     "static/js/2516.257c10ef.chunk.js": "/genshin-damage-calc/static/js/2516.257c10ef.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/7477.ddd95950.chunk.js": "/genshin-damage-calc/static/js/7477.ddd95950.chunk.js",
     "static/js/851.23f96b99.chunk.js": "/genshin-damage-calc/static/js/851.23f96b99.chunk.js",
     "static/js/4339.2dc6855b.chunk.js": "/genshin-damage-calc/static/js/4339.2dc6855b.chunk.js",
-    "static/js/3818.b9038308.chunk.js": "/genshin-damage-calc/static/js/3818.b9038308.chunk.js",
+    "static/js/3818.d55013f7.chunk.js": "/genshin-damage-calc/static/js/3818.d55013f7.chunk.js",
     "static/js/2222.ae2ab95d.chunk.js": "/genshin-damage-calc/static/js/2222.ae2ab95d.chunk.js",
     "static/js/6120.c588c61c.chunk.js": "/genshin-damage-calc/static/js/6120.c588c61c.chunk.js",
     "static/js/7527.596ee903.chunk.js": "/genshin-damage-calc/static/js/7527.596ee903.chunk.js",
@@ -162,7 +162,7 @@
     "static/media/electro.svg": "/genshin-damage-calc/static/media/electro.178efeba7aa67dca8d20a69fdcaebfaa.svg"
   },
   "entrypoints": [
-    "static/js/runtime.3743bf61.js",
+    "static/js/runtime.dddd4bd0.js",
     "static/js/npm.__babel.deb77f92.js",
     "static/js/npm.fast-deep-equal.b16d2be3.js",
     "static/js/genshin.5a4aef12.js",
