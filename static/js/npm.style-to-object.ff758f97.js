@@ -1,0 +1,1 @@
+(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[4653],{83774:function(n,e,r){var u=r(76949);n.exports=function(n,e){var r,t=null;if(!n||"string"!==typeof n)return t;for(var f,i,o=u(n),p="function"===typeof e,s=0,a=o.length;s<a;s++)f=(r=o[s]).property,i=r.value,p?e(f,i,r):i&&(t||(t={}),t[f]=i);return t}}}]);

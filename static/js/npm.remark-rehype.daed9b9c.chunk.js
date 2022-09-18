@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[5442],{47656:function(n,u,i){var t=i(47311);u.Z=function(n,u){return n&&"run"in n?function(n,u){return function(i,r,e){n.run((0,t.Q)(i,u),r,(function(n){e(n)}))}}(n,u):function(n){return function(u){return(0,t.Q)(u,n)}}(n||u)}}}]);

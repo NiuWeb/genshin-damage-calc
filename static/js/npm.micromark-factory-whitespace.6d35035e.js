@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[7492],{7646:function(n,e,i){i.d(e,{S:function(){return t}});var u=i(30914),r=i(15277);function t(n,e){var i;return function t(f){if((0,r.Ch)(f))return n.enter("lineEnding"),n.consume(f),n.exit("lineEnding"),i=!0,t;if((0,r.xz)(f))return(0,u.f)(n,t,i?"linePrefix":"lineSuffix")(f);return e(f)}}}}]);

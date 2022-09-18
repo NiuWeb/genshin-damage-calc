@@ -1,0 +1,2 @@
+/*! For license information please see npm.is-buffer.d99673f8.js.LICENSE.txt */
+(self.webpackChunkgenshin_gui=self.webpackChunkgenshin_gui||[]).push([[5999],{23110:function(n){n.exports=function(n){return null!=n&&null!=n.constructor&&"function"===typeof n.constructor.isBuffer&&n.constructor.isBuffer(n)}}}]);
