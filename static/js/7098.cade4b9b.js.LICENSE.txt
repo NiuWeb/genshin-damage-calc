@@ -1,0 +1,3463 @@
+/*! . */
+
+/*! .. */
+
+/*! ../.. */
+
+/*! ../../../../effect */
+
+/*! ../../../../effect/modifiergroup */
+
+/*! ../../../../general */
+
+/*! ../../../../model */
+
+/*! ../../../../model/values */
+
+/*! ../../../../string */
+
+/*! ../../../artifact */
+
+/*! ../../../artifact/type */
+
+/*! ../../../character */
+
+/*! ../../../character/factory */
+
+/*! ../../../damage */
+
+/*! ../../../database */
+
+/*! ../../../database/values */
+
+/*! ../../../effect */
+
+/*! ../../../effect/modifiercontrol */
+
+/*! ../../../effect/modifiergroup */
+
+/*! ../../../general */
+
+/*! ../../../general/helper */
+
+/*! ../../../loader */
+
+/*! ../../../model */
+
+/*! ../../../model/values */
+
+/*! ../../../rotation */
+
+/*! ../../../string */
+
+/*! ../../../weapon */
+
+/*! ../../../weapon/factory */
+
+/*! ../../artifact */
+
+/*! ../../artifactbonus */
+
+/*! ../../artifactbonus/bonus */
+
+/*! ../../artifactbonus/factory */
+
+/*! ../../characters/traveleranemo */
+
+/*! ../../characters/travelerdendro */
+
+/*! ../../characters/travelerelectro */
+
+/*! ../../characters/travelergeo */
+
+/*! ../../damage/instance/instance */
+
+/*! ../../damage/instance/transformative */
+
+/*! ../../database */
+
+/*! ../../effect */
+
+/*! ../../effect/effect */
+
+/*! ../../effect/modifiergroup */
+
+/*! ../../general */
+
+/*! ../../general/datamap */
+
+/*! ../../general/helper */
+
+/*! ../../helper */
+
+/*! ../../helper/filter */
+
+/*! ../../helper/ranks */
+
+/*! ../../helper/stacks */
+
+/*! ../../loader */
+
+/*! ../../model */
+
+/*! ../../model/values */
+
+/*! ../../optimizer */
+
+/*! ../../rotation/functions */
+
+/*! ../../string */
+
+/*! ../../subject */
+
+/*! ../../type */
+
+/*! ../../values */
+
+/*! ../../weapon/weapon */
+
+/*! ../artifact */
+
+/*! ../artifact/type */
+
+/*! ../calculate */
+
+/*! ../character/character */
+
+/*! ../damage/formula */
+
+/*! ../database */
+
+/*! ../effect/effect */
+
+/*! ../effect/effectgroup */
+
+/*! ../effect/groupfactory */
+
+/*! ../effect/modifiercontrol */
+
+/*! ../effect/modifiergroup */
+
+/*! ../enemy/enemy */
+
+/*! ../families/blackcliff */
+
+/*! ../families/favonius */
+
+/*! ../families/forestsanctuary */
+
+/*! ../families/frostburial */
+
+/*! ../families/goldenmajesty */
+
+/*! ../families/lithic */
+
+/*! ../families/royal */
+
+/*! ../families/sacrificial */
+
+/*! ../families/samuraiconduct */
+
+/*! ../families/watatsumiwavewalker */
+
+/*! ../formula */
+
+/*! ../functions */
+
+/*! ../general */
+
+/*! ../general/datamap */
+
+/*! ../general/helper */
+
+/*! ../loader */
+
+/*! ../model/values */
+
+/*! ../rolls */
+
+/*! ../rotation/rotation */
+
+/*! ../stats */
+
+/*! ../string */
+
+/*! ../subject */
+
+/*! ../type */
+
+/*! ./adaptwithease */
+
+/*! ./advanced */
+
+/*! ./amatsumikunitsumisanctification */
+
+/*! ./arrays */
+
+/*! ./artifact */
+
+/*! ./artifactbonus */
+
+/*! ./artifactbonus/archaicpetra */
+
+/*! ./artifactbonus/berserker */
+
+/*! ./artifactbonus/blizzardstrayer */
+
+/*! ./artifactbonus/bloodstainedchivalry */
+
+/*! ./artifactbonus/braveheart */
+
+/*! ./artifactbonus/crimsonwitchofflames */
+
+/*! ./artifactbonus/deepwoodmemories */
+
+/*! ./artifactbonus/defenderswill */
+
+/*! ./artifactbonus/echoesofanoffering */
+
+/*! ./artifactbonus/emblemofseveredfate */
+
+/*! ./artifactbonus/gambler */
+
+/*! ./artifactbonus/gildeddreams */
+
+/*! ./artifactbonus/gladiatorsfinale */
+
+/*! ./artifactbonus/heartofdepth */
+
+/*! ./artifactbonus/huskofopulentdreams */
+
+/*! ./artifactbonus/instructor */
+
+/*! ./artifactbonus/lavawalker */
+
+/*! ./artifactbonus/maidenbeloved */
+
+/*! ./artifactbonus/martialartist */
+
+/*! ./artifactbonus/noblesseoblige */
+
+/*! ./artifactbonus/oceanhuedclam */
+
+/*! ./artifactbonus/paleflame */
+
+/*! ./artifactbonus/resolutionofsojourner */
+
+/*! ./artifactbonus/retracingbolide */
+
+/*! ./artifactbonus/scholar */
+
+/*! ./artifactbonus/shimenawasreminiscence */
+
+/*! ./artifactbonus/tenacityofthemillelith */
+
+/*! ./artifactbonus/theexile */
+
+/*! ./artifactbonus/thunderingfury */
+
+/*! ./artifactbonus/thundersoother */
+
+/*! ./artifactbonus/vermillionhereafter */
+
+/*! ./artifactbonus/viridescentvenerer */
+
+/*! ./artifactbonus/wandererstroupe */
+
+/*! ./artifacts */
+
+/*! ./atk */
+
+/*! ./available */
+
+/*! ./basic */
+
+/*! ./blessingofphoenix */
+
+/*! ./bonus */
+
+/*! ./c1 */
+
+/*! ./c2 */
+
+/*! ./c3 */
+
+/*! ./c4 */
+
+/*! ./c5 */
+
+/*! ./c6 */
+
+/*! ./calcitemight */
+
+/*! ./calculate */
+
+/*! ./catalystconversion */
+
+/*! ./character */
+
+/*! ./characters/albedo */
+
+/*! ./characters/amber */
+
+/*! ./characters/ayaka */
+
+/*! ./characters/barbara */
+
+/*! ./characters/beidou */
+
+/*! ./characters/bennett */
+
+/*! ./characters/chongyun */
+
+/*! ./characters/collei */
+
+/*! ./characters/diluc */
+
+/*! ./characters/eula */
+
+/*! ./characters/fischl */
+
+/*! ./characters/ganyu */
+
+/*! ./characters/gorou */
+
+/*! ./characters/heizou */
+
+/*! ./characters/hutao */
+
+/*! ./characters/itto */
+
+/*! ./characters/jean */
+
+/*! ./characters/kaeya */
+
+/*! ./characters/kamisatoayato */
+
+/*! ./characters/kazuha */
+
+/*! ./characters/keqing */
+
+/*! ./characters/klee */
+
+/*! ./characters/kokomi */
+
+/*! ./characters/lisa */
+
+/*! ./characters/mona */
+
+/*! ./characters/ningguang */
+
+/*! ./characters/noelle */
+
+/*! ./characters/qiqi */
+
+/*! ./characters/raiden */
+
+/*! ./characters/razor */
+
+/*! ./characters/rosaria */
+
+/*! ./characters/sara */
+
+/*! ./characters/shenhe */
+
+/*! ./characters/sucrose */
+
+/*! ./characters/tartaglia */
+
+/*! ./characters/tighnari */
+
+/*! ./characters/traveleranemo */
+
+/*! ./characters/travelerdendro */
+
+/*! ./characters/travelerelectro */
+
+/*! ./characters/travelergeo */
+
+/*! ./characters/venti */
+
+/*! ./characters/xiangling */
+
+/*! ./characters/xiao */
+
+/*! ./characters/xingqiu */
+
+/*! ./characters/yae */
+
+/*! ./characters/yanfei */
+
+/*! ./characters/yelan */
+
+/*! ./characters/yoimiya */
+
+/*! ./characters/yunjin */
+
+/*! ./characters/zhongli */
+
+/*! ./chonghuaslayeredfrost */
+
+/*! ./combinations */
+
+/*! ./console */
+
+/*! ./control */
+
+/*! ./converter */
+
+/*! ./crits */
+
+/*! ./damage */
+
+/*! ./data */
+
+/*! ./data.json */
+
+/*! ./database */
+
+/*! ./datamap */
+
+/*! ./dawnpyro */
+
+/*! ./describe */
+
+/*! ./ebuff */
+
+/*! ./ecounterbonus */
+
+/*! ./editor */
+
+/*! ./effect */
+
+/*! ./effects */
+
+/*! ./egrimheart */
+
+/*! ./eholdres */
+
+/*! ./elementalbursts */
+
+/*! ./elementalskills */
+
+/*! ./elements */
+
+/*! ./enemy */
+
+/*! ./entity */
+
+/*! ./everyarrowfindsitstarget */
+
+/*! ./extradamage */
+
+/*! ./factory */
+
+/*! ./factory/artifact */
+
+/*! ./factory/bonus */
+
+/*! ./factory/effect */
+
+/*! ./factory/instances */
+
+/*! ./factory/modifiers */
+
+/*! ./factory/rotationrules */
+
+/*! ./factory/scaling */
+
+/*! ./factory/weapon */
+
+/*! ./filter */
+
+/*! ./format */
+
+/*! ./formula */
+
+/*! ./functions */
+
+/*! ./general */
+
+/*! ./generate */
+
+/*! ./good */
+
+/*! ./harmonybetweenheavenandearth */
+
+/*! ./heartstopperstrike */
+
+/*! ./helper */
+
+/*! ./homuncularnature */
+
+/*! ./hunger */
+
+/*! ./importer */
+
+/*! ./includes */
+
+/*! ./instance */
+
+/*! ./instances */
+
+/*! ./kamisatoartsenho */
+
+/*! ./kantensenmyoublessing */
+
+/*! ./keensight */
+
+/*! ./lib */
+
+/*! ./lightningfang */
+
+/*! ./lightningstorm */
+
+/*! ./list */
+
+/*! ./loader */
+
+/*! ./locales/en.json */
+
+/*! ./mainstats */
+
+/*! ./math */
+
+/*! ./model */
+
+/*! ./modifier */
+
+/*! ./modifiercontrol */
+
+/*! ./modifiergroup */
+
+/*! ./mollisfavonius */
+
+/*! ./motionvalues */
+
+/*! ./normalattacks */
+
+/*! ./numericsubject */
+
+/*! ./objects */
+
+/*! ./observer */
+
+/*! ./optimizer */
+
+/*! ./partials */
+
+/*! ./parts/mainstat */
+
+/*! ./parts/substat */
+
+/*! ./penetrativereasoning */
+
+/*! ./poeticsoffuubutsu */
+
+/*! ./preciseshot */
+
+/*! ./priorityqueue */
+
+/*! ./properties */
+
+/*! ./qbonus */
+
+/*! ./qbuff */
+
+/*! ./qstacks */
+
+/*! ./ranks */
+
+/*! ./reactions */
+
+/*! ./resin */
+
+/*! ./resources */
+
+/*! ./rimechaserblade */
+
+/*! ./rolls */
+
+/*! ./rotation */
+
+/*! ./rotations */
+
+/*! ./schema */
+
+/*! ./scholarlyblade */
+
+/*! ./stacks */
+
+/*! ./stat */
+
+/*! ./stats */
+
+/*! ./string */
+
+/*! ./strings */
+
+/*! ./subject */
+
+/*! ./substats */
+
+/*! ./talents */
+
+/*! ./tools */
+
+/*! ./transformative */
+
+/*! ./turncontrol */
+
+/*! ./type */
+
+/*! ./undividedheart */
+
+/*! ./upgrades */
+
+/*! ./values */
+
+/*! ./values/functions */
+
+/*! ./verdantluxury */
+
+/*! ./verdantovergrowth */
+
+/*! ./weapon */
+
+/*! ./weapons/bows/alleyhunter */
+
+/*! ./weapons/bows/amosbow */
+
+/*! ./weapons/bows/aquasimulacra */
+
+/*! ./weapons/bows/blackcliffwarbow */
+
+/*! ./weapons/bows/compoundbow */
+
+/*! ./weapons/bows/elegyfortheend */
+
+/*! ./weapons/bows/endoftheline */
+
+/*! ./weapons/bows/fadingtwilight */
+
+/*! ./weapons/bows/favoniuswarbow */
+
+/*! ./weapons/bows/hamayumi */
+
+/*! ./weapons/bows/hunterspath */
+
+/*! ./weapons/bows/kingssquire */
+
+/*! ./weapons/bows/mitternachtswaltz */
+
+/*! ./weapons/bows/mouunsmoon */
+
+/*! ./weapons/bows/polarstar */
+
+/*! ./weapons/bows/predator */
+
+/*! ./weapons/bows/prototypecrescent */
+
+/*! ./weapons/bows/ravenbow */
+
+/*! ./weapons/bows/recurvebow */
+
+/*! ./weapons/bows/royalbow */
+
+/*! ./weapons/bows/rust */
+
+/*! ./weapons/bows/sacrificalbow */
+
+/*! ./weapons/bows/sharpshootersoath */
+
+/*! ./weapons/bows/skywardharp */
+
+/*! ./weapons/bows/slingshot */
+
+/*! ./weapons/bows/thestringless */
+
+/*! ./weapons/bows/theviridescenthunt */
+
+/*! ./weapons/bows/thunderingpulse */
+
+/*! ./weapons/bows/windblumeode */
+
+/*! ./weapons/catalysts/blackcliffagate */
+
+/*! ./weapons/catalysts/dodocotales */
+
+/*! ./weapons/catalysts/emeraldorb */
+
+/*! ./weapons/catalysts/everlastingmoonglow */
+
+/*! ./weapons/catalysts/eyeofperception */
+
+/*! ./weapons/catalysts/favoniuscodex */
+
+/*! ./weapons/catalysts/frostbearer */
+
+/*! ./weapons/catalysts/fruitoffulfillment */
+
+/*! ./weapons/catalysts/hakushinring */
+
+/*! ./weapons/catalysts/kagurasverity */
+
+/*! ./weapons/catalysts/lostprayertothesacredwinds */
+
+/*! ./weapons/catalysts/magicguide */
+
+/*! ./weapons/catalysts/mappamare */
+
+/*! ./weapons/catalysts/memoryofdust */
+
+/*! ./weapons/catalysts/oathsworneye */
+
+/*! ./weapons/catalysts/otherworldlystory */
+
+/*! ./weapons/catalysts/prototypeamber */
+
+/*! ./weapons/catalysts/royalgrimoire */
+
+/*! ./weapons/catalysts/sacrificialfragments */
+
+/*! ./weapons/catalysts/skywardatlas */
+
+/*! ./weapons/catalysts/solarpearl */
+
+/*! ./weapons/catalysts/thewidsith */
+
+/*! ./weapons/catalysts/thrillingtalesofdragonslayers */
+
+/*! ./weapons/catalysts/twinnephrite */
+
+/*! ./weapons/catalysts/wineandsong */
+
+/*! ./weapons/claymores/akuoumaru */
+
+/*! ./weapons/claymores/blackcliffslasher */
+
+/*! ./weapons/claymores/bloodtaintedgreatsword */
+
+/*! ./weapons/claymores/debateclub */
+
+/*! ./weapons/claymores/favoniusgreatsword */
+
+/*! ./weapons/claymores/ferrousshadow */
+
+/*! ./weapons/claymores/forestregalia */
+
+/*! ./weapons/claymores/katsuragikirinagamasa */
+
+/*! ./weapons/claymores/lithicblade */
+
+/*! ./weapons/claymores/luxurioussealord */
+
+/*! ./weapons/claymores/makhairaaquamarine */
+
+/*! ./weapons/claymores/missivewindspear */
+
+/*! ./weapons/claymores/prototypearchaic */
+
+/*! ./weapons/claymores/rainslasher */
+
+/*! ./weapons/claymores/redhornstonethresher */
+
+/*! ./weapons/claymores/royalgreatsword */
+
+/*! ./weapons/claymores/sacrificialgreatsword */
+
+/*! ./weapons/claymores/serpentspine */
+
+/*! ./weapons/claymores/skyridergreatsword */
+
+/*! ./weapons/claymores/skywardpride */
+
+/*! ./weapons/claymores/snowtombedstarsilver */
+
+/*! ./weapons/claymores/songofbrokenpines */
+
+/*! ./weapons/claymores/thebell */
+
+/*! ./weapons/claymores/theunforged */
+
+/*! ./weapons/claymores/whiteblind */
+
+/*! ./weapons/claymores/whiteirongreatsword */
+
+/*! ./weapons/claymores/wolfsgravestone */
+
+/*! ./weapons/polearms/blackcliffpole */
+
+/*! ./weapons/polearms/blacktassel */
+
+/*! ./weapons/polearms/calamityqueller */
+
+/*! ./weapons/polearms/crescentpike */
+
+/*! ./weapons/polearms/deathmatch */
+
+/*! ./weapons/polearms/dragonsbane */
+
+/*! ./weapons/polearms/dragonspinespear */
+
+/*! ./weapons/polearms/engulfinglightning */
+
+/*! ./weapons/polearms/favoniuslance */
+
+/*! ./weapons/polearms/halberd */
+
+/*! ./weapons/polearms/kitaincrossspear */
+
+/*! ./weapons/polearms/lithicspear */
+
+/*! ./weapons/polearms/moonpiercer */
+
+/*! ./weapons/polearms/primordialjadewingedspear */
+
+/*! ./weapons/polearms/prototypestarglitter */
+
+/*! ./weapons/polearms/royalspear */
+
+/*! ./weapons/polearms/skywardspine */
+
+/*! ./weapons/polearms/staffofhoma */
+
+/*! ./weapons/polearms/staffofthescarletsands */
+
+/*! ./weapons/polearms/thecatch */
+
+/*! ./weapons/polearms/vortexvanquisher */
+
+/*! ./weapons/polearms/wavebreakersfin */
+
+/*! ./weapons/polearms/whitetassel */
+
+/*! ./weapons/swords/amenomakageuchi */
+
+/*! ./weapons/swords/aquilafavonia */
+
+/*! ./weapons/swords/blackclifflongsword */
+
+/*! ./weapons/swords/cinnabarspindle */
+
+/*! ./weapons/swords/coolsteel */
+
+/*! ./weapons/swords/darkironsword */
+
+/*! ./weapons/swords/favoniussword */
+
+/*! ./weapons/swords/festeringdesire */
+
+/*! ./weapons/swords/filletblade */
+
+/*! ./weapons/swords/freedomsworn */
+
+/*! ./weapons/swords/harangeppakufutsu */
+
+/*! ./weapons/swords/harbingerofdawn */
+
+/*! ./weapons/swords/ironsting */
+
+/*! ./weapons/swords/kagotsurubeisshin */
+
+/*! ./weapons/swords/lionsroar */
+
+/*! ./weapons/swords/mistsplitterreforged */
+
+/*! ./weapons/swords/primordialjadecutter */
+
+/*! ./weapons/swords/prototyperancour */
+
+/*! ./weapons/swords/royallongsword */
+
+/*! ./weapons/swords/sacrificialsword */
+
+/*! ./weapons/swords/sapwoodblade */
+
+/*! ./weapons/swords/skyridersword */
+
+/*! ./weapons/swords/skywardblade */
+
+/*! ./weapons/swords/summitshaper */
+
+/*! ./weapons/swords/swordofdescension */
+
+/*! ./weapons/swords/thealleyflash */
+
+/*! ./weapons/swords/theblacksword */
+
+/*! ./weapons/swords/theflute */
+
+/*! ./weapons/swords/travelershandysword */
+
+/*! @bygdle/javascript-lp-solver */
+
+/*! ajv */
+
+/*! js-priority-queue */
+
+/*! to-json-schema */
+
+/*!********************!*\
+          !*** ./src/lib.ts ***!
+          \********************/
+
+/*!**********************!*\
+          !*** ./src/index.ts ***!
+          \**********************/
+
+/*!**********************!*\
+          !*** external "ajv" ***!
+          \**********************/
+
+/*!***************************!*\
+          !*** ./src/enemy/type.ts ***!
+          \***************************/
+
+/*!****************************!*\
+          !*** ./src/effect/type.ts ***!
+          \****************************/
+
+/*!****************************!*\
+          !*** ./src/enemy/enemy.ts ***!
+          \****************************/
+
+/*!****************************!*\
+          !*** ./src/enemy/index.ts ***!
+          \****************************/
+
+/*!****************************!*\
+          !*** ./src/model/index.ts ***!
+          \****************************/
+
+/*!****************************!*\
+          !*** ./src/weapon/type.ts ***!
+          \****************************/
+
+/*!*****************************!*\
+          !*** ./src/damage/index.ts ***!
+          \*****************************/
+
+/*!*****************************!*\
+          !*** ./src/effect/index.ts ***!
+          \*****************************/
+
+/*!*****************************!*\
+          !*** ./src/loader/enemy.ts ***!
+          \*****************************/
+
+/*!*****************************!*\
+          !*** ./src/loader/index.ts ***!
+          \*****************************/
+
+/*!*****************************!*\
+          !*** ./src/string/index.ts ***!
+          \*****************************/
+
+/*!*****************************!*\
+          !*** ./src/weapon/index.ts ***!
+          \*****************************/
+
+/*!******************************!*\
+          !*** ./src/artifact/type.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/console/index.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/effect/effect.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/general/index.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/importer/good.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/loader/effect.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/loader/weapon.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/rotation/type.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/subject/index.ts ***!
+          \******************************/
+
+/*!******************************!*\
+          !*** ./src/weapon/weapon.ts ***!
+          \******************************/
+
+/*!*******************************!*\
+          !*** ./src/artifact/index.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/character/type.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/console/format.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/database/index.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/importer/index.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/rotation/index.ts ***!
+          \*******************************/
+
+/*!*******************************!*\
+          !*** ./src/weapon/factory.ts ***!
+          \*******************************/
+
+/*!********************************!*\
+          !*** ./src/character/index.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/character/stats.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/database/values.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/general/datamap.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/loader/artifact.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/loader/rotation.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/model/stats/atk.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/optimizer/index.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/string/describe.ts ***!
+          \********************************/
+
+/*!********************************!*\
+          !*** ./src/subject/subject.ts ***!
+          \********************************/
+
+/*!*********************************!*\
+          !*** ./src/database/effects.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** ./src/database/objects.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** ./src/loader/character.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** ./src/rotation/control.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** ./src/subject/modifier.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** ./src/subject/observer.ts ***!
+          \*********************************/
+
+/*!*********************************!*\
+          !*** external "to-json-schema" ***!
+          \*********************************/
+
+/*!**********************************!*\
+          !*** ./src/artifact/artifact.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/importer/artifact.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/importer/rotation.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/model/stats/basic.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/model/stats/crits.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/model/stats/index.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/rotation/includes.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/rotation/instance.ts ***!
+          \**********************************/
+
+/*!**********************************!*\
+          !*** ./src/rotation/rotation.ts ***!
+          \**********************************/
+
+/*!***********************************!*\
+          !*** ./src/artifact/functions.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/artifactbonus/type.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/database/rotations.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/effect/effectgroup.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/importer/character.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/model/stats/entity.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/model/stats/weapon.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/model/values/index.ts ***!
+          \***********************************/
+
+/*!***********************************!*\
+          !*** ./src/rotation/functions.ts ***!
+          \***********************************/
+
+/*!************************************!*\
+          !*** ./src/artifact/parts/stat.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/artifactbonus/bonus.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/artifactbonus/index.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/character/character.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/effect/groupfactory.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/general/helper/math.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/model/stats/talents.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/model/values/values.ts ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/string/locales/en.json ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** ./src/string/locales/es.json ***!
+          \************************************/
+
+/*!************************************!*\
+          !*** external "js-priority-queue" ***!
+          \************************************/
+
+/*!*************************************!*\
+          !*** ./src/artifact/rolls/index.ts ***!
+          \*************************************/
+
+/*!*************************************!*\
+          !*** ./src/damage/formula/index.ts ***!
+          \*************************************/
+
+/*!*************************************!*\
+          !*** ./src/damage/instance/type.ts ***!
+          \*************************************/
+
+/*!*************************************!*\
+          !*** ./src/effect/modifiergroup.ts ***!
+          \*************************************/
+
+/*!*************************************!*\
+          !*** ./src/general/helper/index.ts ***!
+          \*************************************/
+
+/*!*************************************!*\
+          !*** ./src/model/stats/elements.ts ***!
+          \*************************************/
+
+/*!**************************************!*\
+          !*** ./src/artifactbonus/factory.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/damage/instance/basic.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/damage/instance/index.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/general/helper/arrays.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/general/priorityqueue.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/model/stats/reactions.ts ***!
+          \**************************************/
+
+/*!**************************************!*\
+          !*** ./src/optimizer/tools/index.ts ***!
+          \**************************************/
+
+/*!***************************************!*\
+          !*** ./src/artifact/parts/substat.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/damage/formula/formula.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/effect/modifiercontrol.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/general/helper/strings.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/model/values/functions.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/optimizer/helper/index.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/optimizer/helper/ranks.ts ***!
+          \***************************************/
+
+/*!***************************************!*\
+          !*** ./src/subject/numericsubject.ts ***!
+          \***************************************/
+
+/*!****************************************!*\
+          !*** ./src/artifact/parts/mainstat.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/character/factory/bonus.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/character/factory/index.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/damage/formula/rotation.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/database/resources/data.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/optimizer/helper/filter.ts ***!
+          \****************************************/
+
+/*!****************************************!*\
+          !*** ./src/optimizer/helper/stacks.ts ***!
+          \****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/artifact/rolls/calculate.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/character/factory/effect.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/character/factory/weapon.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/damage/instance/instance.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/damage/instance/partials.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/database/resources/index.ts ***!
+          \*****************************************/
+
+/*!*****************************************!*\
+          !*** ./src/optimizer/optimizer/type.ts ***!
+          \*****************************************/
+
+/*!******************************************!*\
+          !*** ./src/character/factory/scaling.ts ***!
+          \******************************************/
+
+/*!******************************************!*\
+          !*** ./src/database/resources/data.json ***!
+          \******************************************/
+
+/*!******************************************!*\
+          !*** ./src/database/resources/schema.ts ***!
+          \******************************************/
+
+/*!******************************************!*\
+          !*** ./src/optimizer/optimizer/index.ts ***!
+          \******************************************/
+
+/*!******************************************!*\
+          !*** ./src/string/locales/ sync \.json$ ***!
+          \******************************************/
+
+/*!*******************************************!*\
+          !*** ./src/character/factory/artifact.ts ***!
+          \*******************************************/
+
+/*!*******************************************!*\
+          !*** ./src/damage/instance/properties.ts ***!
+          \*******************************************/
+
+/*!*******************************************!*\
+          !*** ./src/database/weapons/bows/rust.ts ***!
+          \*******************************************/
+
+/*!*******************************************!*\
+          !*** ./src/optimizer/tools/resin/type.ts ***!
+          \*******************************************/
+
+/*!********************************************!*\
+          !*** ./src/artifact/rolls/editor/index.ts ***!
+          \********************************************/
+
+/*!********************************************!*\
+          !*** ./src/character/factory/instances.ts ***!
+          \********************************************/
+
+/*!********************************************!*\
+          !*** ./src/character/factory/modifiers.ts ***!
+          \********************************************/
+
+/*!********************************************!*\
+          !*** ./src/optimizer/tools/resin/index.ts ***!
+          \********************************************/
+
+/*!********************************************!*\
+          !*** ./src/optimizer/tools/weapon/type.ts ***!
+          \********************************************/
+
+/*!*********************************************!*\
+          !*** ./src/artifact/rolls/editor/editor.ts ***!
+          \*********************************************/
+
+/*!*********************************************!*\
+          !*** ./src/damage/instance/motionvalues.ts ***!
+          \*********************************************/
+
+/*!*********************************************!*\
+          !*** ./src/optimizer/tools/weapon/index.ts ***!
+          \*********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/damage/formula/transformative.ts ***!
+          \**********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/database/characters/yae/index.ts ***!
+          \**********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/database/weapons/bows/amosbow.ts ***!
+          \**********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/optimizer/helper/combinations.ts ***!
+          \**********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/optimizer/optimizer/optimizer.ts ***!
+          \**********************************************/
+
+/*!**********************************************!*\
+          !*** ./src/optimizer/tools/substats/type.ts ***!
+          \**********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/artifact/rolls/editor/observer.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/damage/instance/transformative.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/artifactbonus/gambler.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/artifactbonus/scholar.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/eula/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/itto/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/jean/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/klee/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/lisa/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/mona/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/qiqi/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/sara/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/characters/xiao/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/weapons/bows/hamayumi.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/weapons/bows/predator.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/weapons/bows/ravenbow.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/database/weapons/bows/royalbow.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/optimizer/tools/artifacts/type.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/optimizer/tools/mainstats/type.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/optimizer/tools/resin/upgrades.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** ./src/optimizer/tools/substats/index.ts ***!
+          \***********************************************/
+
+/*!***********************************************!*\
+          !*** external "@bygdle/javascript-lp-solver" ***!
+          \***********************************************/
+
+/*!************************************************!*\
+          !*** ./src/artifact/rolls/editor/available.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/character/factory/rotationrules.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/artifactbonus/theexile.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/amber/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/ayaka/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/diluc/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/ganyu/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/gorou/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/hutao/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/kaeya/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/razor/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/venti/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/characters/yelan/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/weapons/bows/polarstar.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/weapons/bows/slingshot.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/database/weapons/families/royal.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/optimizer/tools/artifacts/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/optimizer/tools/mainstats/index.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/optimizer/tools/resin/calculate.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/optimizer/tools/resin/optimizer.ts ***!
+          \************************************************/
+
+/*!************************************************!*\
+          !*** ./src/optimizer/tools/weapon/advanced.ts ***!
+          \************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/artifactbonus/berserker.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/artifactbonus/paleflame.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/albedo/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/beidou/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/collei/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/fischl/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/heizou/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/kazuha/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/keqing/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/kokomi/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/noelle/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/raiden/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/shenhe/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/yanfei/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/characters/yunjin/index.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/weapons/bows/mouunsmoon.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/weapons/bows/recurvebow.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/weapons/families/lithic.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/database/weapons/swords/theflute.ts ***!
+          \*************************************************/
+
+/*!*************************************************!*\
+          !*** ./src/optimizer/tools/weapon/optimizer.ts ***!
+          \*************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/artifactbonus/braveheart.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/artifactbonus/instructor.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/artifactbonus/lavawalker.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/barbara/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/bennett/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/rosaria/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/sucrose/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/xingqiu/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/yoimiya/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/characters/zhongli/index.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/bows/alleyhunter.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/bows/compoundbow.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/bows/hunterspath.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/bows/kingssquire.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/bows/skywardharp.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/polearms/halberd.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/swords/coolsteel.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/swords/ironsting.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/database/weapons/swords/lionsroar.ts ***!
+          \**************************************************/
+
+/*!**************************************************!*\
+          !*** ./src/optimizer/tools/substats/generate.ts ***!
+          \**************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/characters/chongyun/index.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/characters/tighnari/index.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/weapons/bows/endoftheline.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/weapons/bows/windblumeode.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/weapons/claymores/thebell.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/weapons/families/favonius.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/database/weapons/polearms/thecatch.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/optimizer/tools/artifactbonus/type.ts ***!
+          \***************************************************/
+
+/*!***************************************************!*\
+          !*** ./src/optimizer/tools/substats/optimizer.ts ***!
+          \***************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/artifactbonus/archaicpetra.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/artifactbonus/gildeddreams.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/artifactbonus/heartofdepth.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/eula/effects/c1.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/eula/effects/c3.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/eula/effects/c4.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/eula/effects/c5.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/ningguang/index.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/tartaglia/index.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/characters/xiangling/index.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/weapons/bows/aquasimulacra.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/weapons/bows/sacrificalbow.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/weapons/bows/thestringless.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/database/weapons/swords/filletblade.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/optimizer/tools/artifactbonus/index.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/optimizer/tools/artifacts/converter.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/optimizer/tools/artifacts/optimizer.ts ***!
+          \****************************************************/
+
+/*!****************************************************!*\
+          !*** ./src/optimizer/tools/mainstats/optimizer.ts ***!
+          \****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/artifactbonus/defenderswill.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/artifactbonus/maidenbeloved.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/artifactbonus/martialartist.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/artifactbonus/oceanhuedclam.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/amber/effects/c2.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/amber/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/amber/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/amber/effects/c6.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/c4.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/c6.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c1.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c2.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c4.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/diluc/effects/c6.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/c1.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/c4.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/razor/effects/c1.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/razor/effects/c2.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/razor/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/razor/effects/c4.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/razor/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/yelan/effects/c3.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/yelan/effects/c4.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/characters/yelan/effects/c5.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/bows/elegyfortheend.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/bows/fadingtwilight.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/bows/favoniuswarbow.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/catalysts/mappamare.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/claymores/akuoumaru.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/families/blackcliff.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/polearms/deathmatch.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/polearms/royalspear.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/swords/freedomsworn.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/swords/sapwoodblade.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/swords/skywardblade.ts ***!
+          \*****************************************************/
+
+/*!*****************************************************!*\
+          !*** ./src/database/weapons/swords/summitshaper.ts ***!
+          \*****************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/artifactbonus/noblesseoblige.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/artifactbonus/thunderingfury.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/artifactbonus/thundersoother.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/albedo/effects/c2.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/albedo/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/albedo/effects/c4.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/albedo/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/albedo/effects/c6.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/beidou/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/beidou/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/beidou/effects/c6.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/collei/effects/c1.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/collei/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/collei/effects/c4.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/collei/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/fischl/effects/c2.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/fischl/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/fischl/effects/c4.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/fischl/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/heizou/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/heizou/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/heizou/effects/c6.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/c2.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/c3.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/c5.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/c6.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/characters/travelergeo/index.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/bows/thunderingpulse.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/catalysts/emeraldorb.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/catalysts/magicguide.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/catalysts/solarpearl.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/catalysts/thewidsith.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/claymores/debateclub.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/claymores/whiteblind.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/families/frostburial.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/families/sacrificial.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/blacktassel.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/dragonsbane.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/lithicspear.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/moonpiercer.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/staffofhoma.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/polearms/whitetassel.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/aquilafavonia.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/darkironsword.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/favoniussword.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/skyridersword.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/thealleyflash.ts ***!
+          \******************************************************/
+
+/*!******************************************************!*\
+          !*** ./src/database/weapons/swords/theblacksword.ts ***!
+          \******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/artifactbonus/blizzardstrayer.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/artifactbonus/retracingbolide.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/artifactbonus/wandererstroupe.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/barbara/effects/c2.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/barbara/effects/c3.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/barbara/effects/c5.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/bennett/effects/c1.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/bennett/effects/c2.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/bennett/effects/c3.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/bennett/effects/c5.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/bennett/effects/c6.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/eula/effects/index.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/c3.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/c5.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/c6.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/bows/blackcliffwarbow.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/catalysts/dodocotales.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/catalysts/frostbearer.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/catalysts/wineandsong.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/claymores/lithicblade.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/claymores/rainslasher.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/claymores/theunforged.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/polearms/crescentpike.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/polearms/skywardspine.ts ***!
+          \*******************************************************/
+
+/*!*******************************************************!*\
+          !*** ./src/database/weapons/swords/royallongsword.ts ***!
+          \*******************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/artifactbonus/deepwoodmemories.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/artifactbonus/gladiatorsfinale.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/amber/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/c3.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/c5.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/c6.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/diluc/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/eula/rotations/list.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/razor/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/c1.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/c2.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/c3.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/c4.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/c5.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/traveleranemo/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/characters/yelan/effects/index.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/bows/mitternachtswaltz.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/bows/prototypecrescent.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/bows/sharpshootersoath.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/catalysts/hakushinring.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/catalysts/memoryofdust.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/catalysts/oathsworneye.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/catalysts/skywardatlas.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/catalysts/twinnephrite.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/claymores/serpentspine.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/claymores/skywardpride.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/families/goldenmajesty.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/polearms/favoniuslance.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/swords/amenomakageuchi.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/swords/cinnabarspindle.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/swords/festeringdesire.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/database/weapons/swords/harbingerofdawn.ts ***!
+          \********************************************************/
+
+/*!********************************************************!*\
+          !*** ./src/optimizer/tools/artifactbonus/optimizer.ts ***!
+          \********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/albedo/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/amber/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/ayaka/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/beidou/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/collei/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/diluc/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/eula/effects/qstacks.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/eula/instances/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/eula/rotations/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/fischl/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/ganyu/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/heizou/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/razor/effects/hunger.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/razor/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/travelerdendro/index.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/characters/yelan/rotations/list.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/bows/theviridescenthunt.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/catalysts/favoniuscodex.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/catalysts/kagurasverity.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/catalysts/royalgrimoire.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/claymores/ferrousshadow.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/claymores/forestregalia.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/families/samuraiconduct.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/polearms/blackcliffpole.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/swords/prototyperancour.ts ***!
+          \*********************************************************/
+
+/*!*********************************************************!*\
+          !*** ./src/database/weapons/swords/sacrificialsword.ts ***!
+          \*********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/artifactbonus/echoesofanoffering.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/artifactbonus/viridescentvenerer.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/albedo/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/amber/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/amber/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/ayaka/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/ayaka/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/barbara/effects/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/beidou/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/bennett/effects/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/collei/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/diluc/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/diluc/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/eula/effects/eholdres.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/fischl/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/ganyu/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/ganyu/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/heizou/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/kazuha/rotations/list.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/razor/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/razor/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/travelerelectro/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/yelan/instances/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/characters/yelan/rotations/index.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/catalysts/prototypeamber.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/families/forestsanctuary.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/polearms/calamityqueller.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/polearms/wavebreakersfin.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/swords/harangeppakufutsu.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/swords/kagotsurubeisshin.ts ***!
+          \**********************************************************/
+
+/*!**********************************************************!*\
+          !*** ./src/database/weapons/swords/swordofdescension.ts ***!
+          \**********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/artifactbonus/emblemofseveredfate.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/artifactbonus/huskofopulentdreams.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/artifactbonus/vermillionhereafter.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/albedo/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/albedo/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/barbara/rotations/list.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/beidou/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/beidou/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/bennett/effects/qbonus.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/bennett/rotations/list.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/collei/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/collei/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/diluc/effects/dawnpyro.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/fischl/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/fischl/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/heizou/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/heizou/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/kazuha/instances/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/kazuha/rotations/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/sucrose/rotations/list.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/index.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/catalysts/blackcliffagate.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/catalysts/eyeofperception.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/claymores/royalgreatsword.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/claymores/wolfsgravestone.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/polearms/dragonspinespear.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/polearms/kitaincrossspear.ts ***!
+          \***********************************************************/
+
+/*!***********************************************************!*\
+          !*** ./src/database/weapons/polearms/vortexvanquisher.ts ***!
+          \***********************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/artifactbonus/bloodstainedchivalry.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/artifactbonus/crimsonwitchofflames.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/barbara/instances/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/barbara/rotations/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/bennett/instances/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/bennett/rotations/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/chongyun/rotations/list.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/eula/effects/egrimheart.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/sucrose/instances/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/sucrose/rotations/index.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/characters/tighnari/rotations/list.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/weapons/claymores/luxurioussealord.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/weapons/claymores/missivewindspear.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/weapons/claymores/prototypearchaic.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/weapons/swords/blackclifflongsword.ts ***!
+          \************************************************************/
+
+/*!************************************************************!*\
+          !*** ./src/database/weapons/swords/travelershandysword.ts ***!
+          \************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/artifactbonus/resolutionofsojourner.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/chongyun/instances/index.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/chongyun/rotations/index.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/c1.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/c2.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/c3.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/c5.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/tighnari/instances/index.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/characters/tighnari/rotations/index.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/catalysts/otherworldlystory.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/claymores/blackcliffslasher.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/claymores/songofbrokenpines.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/polearms/engulfinglightning.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/swords/mistsplitterreforged.ts ***!
+          \*************************************************************/
+
+/*!*************************************************************!*\
+          !*** ./src/database/weapons/swords/primordialjadecutter.ts ***!
+          \*************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/artifactbonus/shimenawasreminiscence.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/artifactbonus/tenacityofthemillelith.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/characters/amber/effects/preciseshot.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/c3.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/c5.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/c6.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/characters/yelan/effects/turncontrol.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/weapons/catalysts/fruitoffulfillment.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/weapons/claymores/favoniusgreatsword.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/weapons/claymores/makhairaaquamarine.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/weapons/claymores/skyridergreatsword.ts ***!
+          \**************************************************************/
+
+/*!**************************************************************!*\
+          !*** ./src/database/weapons/families/watatsumiwavewalker.ts ***!
+          \**************************************************************/
+
+/*!***************************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/keensight.ts ***!
+          \***************************************************************/
+
+/*!***************************************************************!*\
+          !*** ./src/database/weapons/catalysts/everlastingmoonglow.ts ***!
+          \***************************************************************/
+
+/*!***************************************************************!*\
+          !*** ./src/database/weapons/claymores/whiteirongreatsword.ts ***!
+          \***************************************************************/
+
+/*!***************************************************************!*\
+          !*** ./src/database/weapons/polearms/prototypestarglitter.ts ***!
+          \***************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/albedo/effects/calcitemight.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/ebuff.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/index.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/effects/qbuff.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/razor/effects/lightningfang.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/yelan/effects/adaptwithease.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/characters/yelan/instances/extradamage.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/weapons/catalysts/sacrificialfragments.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/weapons/claymores/redhornstonethresher.ts ***!
+          \****************************************************************/
+
+/*!****************************************************************!*\
+          !*** ./src/database/weapons/claymores/snowtombedstarsilver.ts ***!
+          \****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/beidou/effects/ecounterbonus.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/beidou/instances/extradamage.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/collei/instances/extradamage.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/eula/instances/normalattacks.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/fischl/instances/extradamage.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/undividedheart.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/rotations/list.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/index.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/weapons/claymores/katsuragikirinagamasa.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/weapons/claymores/sacrificialgreatsword.ts ***!
+          \*****************************************************************/
+
+/*!*****************************************************************!*\
+          !*** ./src/database/weapons/polearms/staffofthescarletsands.ts ***!
+          \*****************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/amber/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/ayaka/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/beidou/effects/lightningstorm.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/diluc/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/ganyu/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/instances/index.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/rotations/index.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/razor/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/rotations/list.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/characters/yelan/instances/normalattacks.ts ***!
+          \******************************************************************/
+
+/*!******************************************************************!*\
+          !*** ./src/database/weapons/claymores/bloodtaintedgreatsword.ts ***!
+          \******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/albedo/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/kamisatoartsenho.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/beidou/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/chongyun/instances/extradamage.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/collei/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/eula/instances/elementalbursts.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/eula/instances/elementalskills.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/fischl/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/heizou/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/kazuha/instances/normalattacks.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/mollisfavonius.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/instances/index.ts ***!
+          \*******************************************************************/
+
+/*!*******************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/rotations/index.ts ***!
+          \*******************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/albedo/effects/homuncularnature.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/amber/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/amber/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/ayaka/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/ayaka/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/barbara/instances/normalattacks.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/bennett/instances/normalattacks.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/diluc/effects/blessingofphoenix.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/diluc/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/diluc/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/ganyu/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/ganyu/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/razor/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/razor/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/sucrose/instances/normalattacks.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/tighnari/effects/scholarlyblade.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/yelan/instances/elementalbursts.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/characters/yelan/instances/elementalskills.ts ***!
+          \********************************************************************/
+
+/*!********************************************************************!*\
+          !*** ./src/database/weapons/polearms/primordialjadewingedspear.ts ***!
+          \********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/albedo/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/albedo/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/beidou/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/beidou/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/rimechaserblade.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/chongyun/instances/normalattacks.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/collei/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/collei/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/fischl/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/fischl/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/heizou/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/heizou/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/kazuha/effects/poeticsoffuubutsu.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/kazuha/instances/elementalbursts.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/kazuha/instances/elementalskills.ts ***!
+          \*********************************************************************/
+
+/*!*********************************************************************!*\
+          !*** ./src/database/characters/tighnari/instances/normalattacks.ts ***!
+          \*********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/barbara/instances/elementalbursts.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/barbara/instances/elementalskills.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/bennett/instances/elementalbursts.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/bennett/instances/elementalskills.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/heizou/effects/heartstopperstrike.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/sucrose/instances/elementalbursts.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/characters/sucrose/instances/elementalskills.ts ***!
+          \**********************************************************************/
+
+/*!**********************************************************************!*\
+          !*** ./src/database/weapons/catalysts/lostprayertothesacredwinds.ts ***!
+          \**********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ./src/database/characters/chongyun/instances/elementalbursts.ts ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ./src/database/characters/chongyun/instances/elementalskills.ts ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ./src/database/characters/sucrose/effects/catalystconversion.ts ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ./src/database/characters/tighnari/instances/elementalbursts.ts ***!
+          \***********************************************************************/
+
+/*!***********************************************************************!*\
+          !*** ./src/database/characters/tighnari/instances/elementalskills.ts ***!
+          \***********************************************************************/
+
+/*!************************************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/kantensenmyoublessing.ts ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ./src/database/characters/heizou/effects/penetrativereasoning.ts ***!
+          \************************************************************************/
+
+/*!************************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/instances/extradamage.ts ***!
+          \************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/verdantluxury.ts ***!
+          \*************************************************************************/
+
+/*!*************************************************************************!*\
+          !*** ./src/database/weapons/catalysts/thrillingtalesofdragonslayers.ts ***!
+          \*************************************************************************/
+
+/*!**************************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/instances/normalattacks.ts ***!
+          \**************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ./src/database/characters/amber/effects/everyarrowfindsitstarget.ts ***!
+          \***************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ./src/database/characters/chongyun/effects/chonghuaslayeredfrost.ts ***!
+          \***************************************************************************/
+
+/*!***************************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/instances/normalattacks.ts ***!
+          \***************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/instances/elementalbursts.ts ***!
+          \****************************************************************************/
+
+/*!****************************************************************************!*\
+          !*** ./src/database/characters/kamisatoayato/instances/elementalskills.ts ***!
+          \****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/effects/verdantovergrowth.ts ***!
+          \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/instances/elementalbursts.ts ***!
+          \*****************************************************************************/
+
+/*!*****************************************************************************!*\
+          !*** ./src/database/characters/travelerdendro/instances/elementalskills.ts ***!
+          \*****************************************************************************/
+
+/*!*******************************************************************************!*\
+          !*** ./src/database/characters/ganyu/effects/harmonybetweenheavenandearth.ts ***!
+          \*******************************************************************************/
+
+/*!**********************************************************************************!*\
+          !*** ./src/database/characters/ayaka/effects/amatsumikunitsumisanctification.ts ***!
+          \**********************************************************************************/
