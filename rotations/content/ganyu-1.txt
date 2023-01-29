@@ -1,0 +1,13 @@
+/*
+@title: Ganyu Melt: 5xCA + E
+@characters: Ganyu C0
+@description:
+Simple rotation for Melt Ganyu assuming pyro aura uptime of 90%
+*/
+
+rotation duration 15
+rotation do enemy aura pyro
+
+rotation hit Ganyu Frostflake *5      aura=90%
+rotation hit Ganyu FrostflakeBloom *5 aura=90%
+rotation hit Ganyu E                  aura=90%

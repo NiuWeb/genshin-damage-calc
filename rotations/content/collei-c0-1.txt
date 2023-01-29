@@ -1,0 +1,12 @@
+/*
+@title: Collei Q + 6x Q hits + 2x E + 3x A1 hits
+@characters: Collei C0
+@description:
+Simple rotation for Collei C0, assuming 3 hits of A1 passive talent.
+No elemental aura applied.
+*/
+rotation duration 15
+rotation hit Collei Q
+rotation hit Collei Q_DOT *6
+rotation hit Collei E *2
+rotation hit Collei A1 *3

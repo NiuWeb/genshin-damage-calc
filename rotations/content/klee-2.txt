@@ -1,0 +1,21 @@
+/*
+@title: Klee (pyro) Q + 5x(N2C) + 2x E + 4x Mines
+@characters: Klee C0
+@description:
+Simple rotation for Klee solo damage in mono-pyro.
+Assuming pyro aura uptime of 100%.
+*/
+const $aura 100%
+
+rotation duration 15
+
+rotation do enemy aura PYRO
+
+rotation hit Klee Q *18 aura=$aura
+rotation hit Klee N1 *5 aura=$aura
+rotation hit Klee N2 *5 aura=$aura
+
+rotation hit Klee Charged *5 aura=$aura
+
+rotation hit Klee E *2     aura=$aura
+rotation hit Klee E_Dot *4 aura=$aura

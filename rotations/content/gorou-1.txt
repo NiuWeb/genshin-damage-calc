@@ -1,0 +1,9 @@
+/*
+@title: Gorou Q + E + 6x Q hits
+@characters: Gorou C0
+@description: Simple rotation for Gorou solo damage.
+*/
+rotation duration 15
+rotation hit Gorou Q
+rotation hit Gorou E
+rotation hit Gorou Q_DOT *6

@@ -1,0 +1,1 @@
+export * as strings from "./_index"

@@ -1,0 +1,15 @@
+/*
+@title: Sucrose E + 3x Q + 8x pyro swirls
+@characters: Sucrose C0
+@description:
+Simple rotation for Sucrose C0 solo damage while off-field,
+casting only skill/bursts. 
+
+Assumed **pyro** swirls; if absorbed another element,
+you should also change the swirls element.
+*/
+rotation duration 20
+rotation hit Sucrose E
+rotation hit Sucrose Q_Dot *3
+rotation hit Sucrose Q_Additional *3
+rotation hit Sucrose Swirl_pyro *8

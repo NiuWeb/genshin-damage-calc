@@ -1,0 +1,24 @@
+/*
+@title: Tartaglia AoE: Ranged Q (Vape) + E + 4x(N3C + 3x Riptide)
+@characters: Tartaglia C0
+@description:
+Simple rotation for Tartaglia C0 against 3 grouped enemies.
+Assuming vaporized burst (enemy with pyro aura) and then 
+enemy affected by hydro.
+*/
+
+rotation duration 10
+
+rotation do enemy aura pyro
+
+rotation hit Tartaglia Q_Ranged
+
+rotation do enemy aura hydro
+
+rotation hit Tartaglia N1_E *4
+rotation hit Tartaglia N2_E *4
+rotation hit Tartaglia N3_E *4
+rotation hit Tartaglia charged_1_E *4
+rotation hit Tartaglia charged_2_E *4
+
+rotation hit Tartaglia RiptideSlash *12

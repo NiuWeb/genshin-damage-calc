@@ -1,0 +1,10 @@
+/*
+@title: Yae C0: 20x E (lv. 3) + Q + 3x Q hits
+@characters: Yae C0
+@description:
+Simple rotation for Yae C0
+*/
+rotation duration 22
+rotation hit Yae E_3 *20
+rotation hit Yae Q
+rotation hit Yae Q_Dot *3

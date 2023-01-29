@@ -1,0 +1,282 @@
+/*
+@title: Xingqiu QEE > Yelan EQ > Zhongli E > Hu Tao 9x(N1C) + Q
+@characters: Hu Tao C1, Xingqiu C6, Yelan C0, Zhongli C0
+@description:
+A full-team rotation for Hu Tao.
+
+- Assumed Xingqiu with Sacrificial Sword, for that reason is the double E cast.
+- Configured Yelan for activating Elegy buff.
+- Configured Zhongli for activating Instructor buff.
+- Assumed hydro aura with 100% uptime.
+- Assumed Hu Tao vaporizes all her charged attacks (reaction uptime 100%).
+- Assumed Zhongli doesn't cast his Q and his Pilar resonance doesn't hit the enemy.
+- Assumed Hu Tao casts her Q every other rotation.
+
+Note that Elegy and Instructor should be equipped on their corresponding characters
+for the effect activation to be done. Otherwise, the action will just be skipped.
+
+> This rotation will work even if any of the 4 characters is missing from the party,
+so you can still use it to calculate solo damage.
+*/
+rotation duration 21
+const $aura         100% // hydro aura uptime for all attacks
+const $tao_N1_vape  40%  // reaction uptime for Hu Tao normals
+const $tao_CA_vape  100% // reaction uptime for Hu Tao chargeds
+const $tao_Q_vape   90%  // reaction uptime for Hu Tao Q
+const $tao_E_vape   90%  // reaction uptime for Hu Tao E (blossoms)
+
+const $tao_Q_count 0.5 // Number of Bursts per rotation (1 = burst every rotation, 0.5 = 1 Burst every other rotation and so on)
+
+/*
+=============================================================================================================================
+== Let's get started by doing an initial forced setup: some effects should start disabled at the beginning of the rotation ==
+=============================================================================================================================
+*/
+
+# Disable Hu Tao E
+rotation do character set HuTao
+rotation do effect set HuTaoE
+rotation do effect disable
+rotation do effect unset
+rotation do character unset
+
+# Disable Elegy buff
+rotation do character set Yelan
+rotation do effect set ElegyForTheEnd2
+rotation do effect disable
+
+# Disable Yelan A4
+rotation do effect set YelanA4
+rotation do effect disable
+rotation do effect unset
+rotation do character unset
+
+# Disable Instructor buff
+rotation do character set Zhongli
+rotation do effect set Instructor4
+rotation do effect disable
+
+# Disable Zhongli E
+rotation do effect set ZhongliE
+rotation do effect disable
+rotation do effect unset
+rotation do character unset
+
+# Disable Xingqiu C2
+rotation do character set Xingqiu
+rotation do effect set XingqiuC2
+rotation do effect disable
+rotation do effect unset
+rotation do character unset
+
+
+/*
+===================================
+== Now the actual rotation steps ==
+===================================
+*/
+
+# Start with Xingqiu Q cast > N1 > 2x Q hits
+rotation hit Xingqiu N1   aura=$aura reaction=0 // remember we're assuming an hydro aura uptime of 90%
+rotation hit Xingqiu Q *2 aura=$aura reaction=0
+
+# The Q hits applies hydro and enables C2
+rotation do enemy aura hydro
+
+rotation do character set Xingqiu
+rotation do effect set XingqiuC2
+rotation do effect enable
+rotation do effect apply all  // Apply the C2 to all members in the party
+
+/*
+Is a good idea to type the `effect unset` and `character unset` commands
+when we are no longer using the previously set character and/or effect.
+This avoid unwanted modifications if a later `character set` or `effect set`
+doesn't work because of that character/effect not being found.
+*/
+rotation do effect unset
+rotation do character unset
+
+# Cast Double E
+/*
+The *2 multipliers are to consider the Sacrificial Sword passive is
+triggered. You could instead use an average value, for example, 
+Sacrificial R3 against a single enemy has a total activation probability 
+of 84% (1-(1-0.6)^2 = 0.84), so the multiplier would be *1.84.
+*/
+rotation hit Xingqiu E_1 *2 aura=$aura
+rotation hit Xingqiu E_2 *2 aura=$aura
+
+# Now we continue with Yelan E > Q cast
+rotation hit Yelan E aura=$aura
+rotation hit Yelan Q aura=$aura
+
+# The Q cast activates her A4 for the on-field character, currently herself
+rotation do character set Yelan
+rotation do effect set YelanA4
+rotation do effect enable
+rotation do effect unapply all // ensure that the effect will only be applied to whoever we want to
+rotation do effect apply Yelan // apply to Yelan
+rotation do effect stacks 1
+
+# Yelan N2 > 3x Q hits > Xingqiu 3x Q hits
+rotation hit Yelan N1 aura=$aura reaction=0
+rotation hit Yelan N2 aura=$aura reaction=0
+
+rotation hit Yelan Q_throw *3  aura=$aura
+rotation hit Xingqiu Q     *3  aura=$aura
+
+# This sequence now activates the Elegy buff in Yelan
+rotation do effect set ElegyForTheEnd2 // Elegy has two effects: (1) the 60+ em for the holder, and (2) the party buff
+rotation do effect apply all            // Elegy buff applies to all party members
+rotation do effect enable
+
+# Now we swap to Zhongli, so Yelan A4 should be applied to him
+rotation do effect set YelanA4
+rotation do effect unapply all   // ensure that the effect will only be applied to whoever we want to
+rotation do effect apply Zhongli // apply to Zhongli
+rotation do effect stacks 2      // Let's assume that 2s has passed since Yelan Q cast
+
+rotation do effect unset
+rotation do character unset
+
+# Next, cast Zhongli E hold
+rotation hit Zhongli E_HOLD
+
+# This will enable Instructor 4
+rotation do character set Zhongli
+rotation do effect set Instructor4
+rotation do effect apply all // Instructor applies to the entire party
+rotation do effect enable
+
+# And the Zhongli Jade Shield
+rotation do effect set zhongliE
+rotation do effect apply all
+rotation do effect enable
+
+rotation do effect unset
+rotation do character unset
+
+# Now we swap to Hu Tao, so Yelan A4 should be applied to her
+rotation do character set Yelan
+rotation do effect set YelanA4
+rotation do effect unapply all // ensure that the effect will only be applied to whoever we want to
+rotation do effect apply HuTao // Apply to Hu Tao
+rotation do effect stacks 3    // Let's assume that 3s has passed since Yelan Q cast
+
+rotation do effect unset
+rotation do character unset
+
+# A "skill issue" addition: we do a first physical N1 with Hu Tao before activating her E.
+rotation hit hutao N1 aura=$aura reaction=0
+
+rotation hit xingqiu Q     *5 aura=$aura
+rotation hit yelan Q_throw *3 aura=$aura
+
+# And then, we do activate her E
+rotation do character set HuTao
+rotation do effect set HuTaoE
+rotation do effect enable
+rotation do effect lock HuTao // lock HP->ATK conversion (snapshot)
+rotation do effect unset
+rotation do character unset
+
+# From now we're controlling Yelan A4 stacks
+rotation do character set Yelan
+rotation do effect set YelanA4
+rotation do effect stacks 5 // Let's assume that 5s has passed since Yelan Q cast
+
+
+# (1) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *2 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 6
+
+# (2) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *3 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 7
+
+# (3) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *5 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 8
+
+# (4) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *2 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 9
+
+# (5) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *3 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 10
+
+# (6) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *5 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 11
+
+# A hit of the Hu Tao E, a blossom. Let's assume it has a reaction uptime of 90%
+rotation hit hutao E aura=$aura reaction=$tao_E_vape
+
+# (7) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *2 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 12
+
+# (8) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *3 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 13
+
+# (9) Hu Tao N1C + Xingqiu Q + Yelan Q
+rotation hit hutao   N1         aura=$aura reaction=$tao_N1_vape
+rotation hit xingqiu Q       *5 aura=$aura
+rotation hit yelan   Q_throw *3 aura=$aura
+rotation hit hutao   Charged    aura=$aura reaction=$tao_CA_vape
+
+# Increment Yelan A4 stacks
+rotation do effect stacks 14
+
+# Cast the Hu Tao Q
+// Number of bursts as configured at the beginning of the rotation
+rotation hit hutao Q *$tao_Q_count aura=$aura reaction=$tao_Q_vape
+
+# Yelan buff ends
+rotation do effect stacks 0
+
+# And end with another blossom
+rotation hit hutao E aura=$aura reaction=$tao_E_vape

@@ -1,0 +1,20 @@
+/*
+@title: Ayaka Freeze: N1 + E + Q + 2x(N2C) + E
+@characters: Ayaka C0
+@description: 
+Simple rotation for Ayaka Freeze DPS. Assuming enemy frozen with 90% uptime. 
+
+C2 hits are NOT included, you'll have to add them in the rotation code.
+*/
+
+const $aura 90%
+
+rotation duration 20
+
+rotation do enemy aura frozen
+rotation hit Ayaka Q_DOT *18   aura=$aura
+rotation hit Ayaka Q_explosion aura=$aura
+rotation hit Ayaka E *2        aura=$aura
+rotation hit Ayaka N1 *3       aura=$aura
+rotation hit Ayaka N2 *2       aura=$aura
+rotation hit Ayaka Charged *6  aura=$aura

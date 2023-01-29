@@ -1,0 +1,7 @@
+/*
+@title: Zhongli Q
+@characters: Zhongli C0
+@description: A single Q without any auras applied on the enemy
+*/
+rotation duration 12
+rotation hit Zhongli Q

@@ -1,0 +1,12 @@
+/*
+@title: Jean DPS: E > Q > N3C > E > N3C > E > N3C > E
+@characters: Jean C0
+@description: Simple rotation for Jean solo damage as DPS, using N3C combos.
+*/
+rotation duration 20
+rotation hit Jean E *4
+rotation hit Jean Q
+rotation hit Jean N1 *3
+rotation hit Jean N2 *3
+rotation hit Jean N3 *3
+rotation hit Jean Charged *3

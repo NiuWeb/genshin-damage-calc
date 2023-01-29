@@ -1,0 +1,24 @@
+/*
+@title: Keqing Aggravate: E + Q + E + 4x(N1C)
+@characters: Keqing C0
+@description: 
+Simple rotation for Keqing aggravate.
+Assuming quicken aura uptime of 90%.
+Normal Attack 1 triggers aggravate but charged attacks don't.
+*/
+
+const $aura 90%
+
+rotation duration 12
+
+rotation do enemy aura QUICKEN ELECTRO
+
+rotation hit Keqing E           aura=$aura reaction=1
+rotation hit Keqing Q           aura=$aura reaction=1
+rotation hit Keqing Q_DOT *8    aura=$aura reaction=33%
+rotation hit Keqing Q_Explosion aura=$aura reaction=1
+rotation hit Keqing E_Slash     aura=$aura reaction=1
+
+rotation hit Keqing N1 *4        aura=$aura reaction=1
+rotation hit Keqing Charged_2 *4 aura=$aura reaction=0
+rotation hit Keqing Charged_2 *4 aura=$aura reaction=0

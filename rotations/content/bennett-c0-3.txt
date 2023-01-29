@@ -1,0 +1,18 @@
+/*
+@title: Bennett (Melt) Q + 5x(N3 + E)
+@characters: Bennett C0
+@description: 
+Simple DPS rotation for Bennett Melt DPS. Assumed cryo aura with an uptime of 90%,
+
+**IMPORTANT:** This rotation should **not** be used with Bennett C6 since he
+overrides chongyun cryo.
+*/
+rotation duration 15
+rotation do enemy aura cryo
+rotation hit Bennett Q aura=90% reaction=90%
+
+rotation hit Bennett N1 aura=90% reaction=0  *5
+rotation hit Bennett N2 aura=90% reaction=0  *5
+rotation hit Bennett N3 aura=90% reaction=0  *5
+
+rotation hit Bennett E_press aura=90% reaction=90% *5

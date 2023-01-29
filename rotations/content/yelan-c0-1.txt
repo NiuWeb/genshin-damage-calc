@@ -1,0 +1,10 @@
+/*
+@title: Yelan E + Q + 45x Q hits
+@characters: Yelan C0
+@description: Simple rotation for Yelan C0
+*/
+rotation duration 18
+rotation do enemy aura hydro
+rotation hit Yelan E
+rotation hit Yelan Q
+rotation hit Yelan Q_Throw *45

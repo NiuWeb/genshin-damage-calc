@@ -1,0 +1,10 @@
+/*
+@title: Albedo Q + 3x Q hits + E + 7x E hits
+@characters: Albedo C0
+@description: Simple rotation for Albedo including his Elemental Burst
+*/
+rotation duration 16
+rotation hit Albedo Q
+rotation hit Albedo Q_Dot *3
+rotation hit Albedo E
+rotation hit Albedo E_Dot *7

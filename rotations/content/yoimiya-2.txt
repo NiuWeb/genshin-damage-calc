@@ -1,0 +1,24 @@
+/*
+@title: Yoimiya (pyro): Q + E + 3x(N5) + 5x Q hits
+@characters: Yoimiya C0
+@description:
+Simple rotation for Yoimiya in pyro team. Assuming pyro aura uptime of 90%.
+*/
+
+const $aura 90%
+
+rotation duration 15
+
+rotation do enemy aura PYRO
+
+rotation hit Yoimiya Q        aura=$aura
+rotation hit Yoimiya Q_Dot *5 aura=$aura
+
+// N1 fires two arrows
+rotation hit Yoimiya N1 *3 aura=$aura
+rotation hit Yoimiya N1 *3 aura=$aura
+
+rotation hit Yoimiya N2 *3 aura=$aura
+rotation hit Yoimiya N3 *3 aura=$aura
+rotation hit Yoimiya N4 *3 aura=$aura
+rotation hit Yoimiya N5 *3 aura=$aura

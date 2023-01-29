@@ -1,0 +1,23 @@
+/*
+@title: Hu Tao 4x(N3C) + N1C + Q
+@characters: Hu Tao C0
+@description:
+A simple rotation for calculating Hu Tao solo damage, with no dynamic
+effect modifications such as Jade Spear or Yelan A4 stacks over the time.
+
+You can see more complex example rotations on this folder.
+
+- Assumed Hu Tao is C0 so she uses more Normal Attacks to save stamina.
+- Assumed Hu Tao Chargeds and Burst hit the enemy with a 90% of Hydro Aura uptime, 
+  and a 90% of reaction (vaporize) uptime.
+- Assumed Hu Tao Normals hit the enemy with a 90% of Hydro Aura uptime, but
+  a reaction (vaporize) uptime of 40%.
+*/
+rotation duration 21
+rotation do enemy aura hydro
+rotation hit HuTao N1      *5 aura=90% reaction=40%
+rotation hit HuTao N2      *4 aura=90% reaction=40%
+rotation hit HuTao N3      *4 aura=90% reaction=40%
+rotation hit HuTao Charged *5 aura=90% reaction=90%
+rotation hit HuTao Q       *1 aura=90% reaction=90%
+rotation hit HuTao E       *2 aura=90% reaction=90%

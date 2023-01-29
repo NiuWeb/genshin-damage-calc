@@ -1,0 +1,8 @@
+/*
+@title: Chongyun Nuke: 3x Q + E
+@characters: Chongyun C0
+@description: Simple rotation for Chongyun C0.
+*/
+rotation duration 12
+rotation hit Chongyun Q *3
+rotation hit Chongyun E

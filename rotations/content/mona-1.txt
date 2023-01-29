@@ -1,0 +1,7 @@
+/*
+@title: Mona Q
+@characters: Mona C0
+@description: Simple Mona Q rotation, no enemy aura configured.
+*/
+rotation duration 15
+rotation hit Mona Q

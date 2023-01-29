@@ -1,0 +1,10 @@
+/*
+@title: Sara  E (C2) + Q + 4x Q hits
+@characters: Sara C2
+@description: Simple E>Q cast for Sara C2, enemy affected by electro with 90% uptime
+*/
+rotation duration 20
+rotation do enemy aura electro
+rotation hit Sara C2       aura=90%
+rotation hit Sara Q        aura=90%
+rotation hit Sara Q_DoT *4 aura=90%

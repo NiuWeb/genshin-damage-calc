@@ -1,0 +1,14 @@
+/*
+@title: Itto Q + E + 5CA + 2N4
+@characters: Itto C0
+@description: Simple rotation for Itto C0.
+*/
+rotation duration 18
+
+rotation hit Itto E
+rotation hit Itto KesagiriSlash *5
+rotation hit Itto KesagiriFinal
+rotation hit Itto N1 *2
+rotation hit Itto N2 *2
+rotation hit Itto N3 *2
+rotation hit Itto N4 *2

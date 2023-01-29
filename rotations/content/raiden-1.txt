@@ -1,0 +1,16 @@
+/*
+@title: Raiden Q + 6x(N1C) + 10x E
+@characters: Raiden C0
+@description: A simple rotation for Raiden, with no dynamic
+effect modifications such as Jade Spear or Yelan A4 stacks over the time.
+
+- Assumed enemy is affected by electro with an uptime of 90%
+*/
+rotation duration 20
+rotation do enemy aura electro
+
+rotation hit Raiden Q aura=90%
+rotation hit Raiden N1_Q *6 aura=90%
+rotation hit Raiden Charged_1_Q *6 aura=90%
+rotation hit Raiden Charged_2_Q *6 aura=90%
+rotation hit Raiden E aura=90%

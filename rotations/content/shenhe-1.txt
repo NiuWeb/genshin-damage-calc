@@ -1,0 +1,11 @@
+/*
+@title: Shenhe Q + 12x Q hits + hold E
+@characters: Shenhe C0
+@description:
+Simple rotation for Shenhe solo damage.
+*/
+
+rotation duration 20
+rotation hit Shenhe Q
+rotation hit Shenhe Q_DOT *12
+rotation hit Shenhe E_Hold

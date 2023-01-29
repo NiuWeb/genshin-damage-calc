@@ -1,0 +1,29 @@
+/*
+@title: Cyno 4TF: EQ > N2E > N4E > N4E > N5E > N4E > N4E
+@characters: Cyno C0
+@description:
+Simple rotation for Cyno (Quicken), **using** Thundering Fury.
+Assuming 2 instances of A1 hit.
+Assuming quicken aura uptime of 90%.
+Summarizes in:
++ 1x Normal E
++ 6x MortuaryRite E
++ 6x Hit 1
++ 6x Hit 2
++ 5x Hit 3 
++ 10x Hit 4 (each Hit4 has two instances)
++ 1x Hit 5
++ 2x Hit A1
+*/
+
+rotation duration 20
+rotation do enemy aura QUICKEN ELECTRO
+
+rotation hit Cyno E       aura=90% reaction=1 // E hits has no ICD
+rotation hit Cyno E_2 *6  aura=90% reaction=1 // E hits has no ICD
+rotation hit Cyno N1_Q *6 aura=90% reaction=83.3%
+rotation hit Cyno N2_Q *6 aura=90% reaction=16.7%
+rotation hit Cyno N3_Q *5 aura=90% reaction=60%
+rotation hit Cyno N4_Q *10 aura=90% reaction=20%
+rotation hit Cyno N5_Q *1 aura=90% reaction=90%
+rotation hit Cyno A1 *2   aura=90% reaction=50%

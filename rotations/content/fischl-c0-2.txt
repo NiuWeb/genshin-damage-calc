@@ -1,0 +1,16 @@
+/*
+@title: Fischl E + 9x Oz + Q + 3x EC + 6x A4
+@characters: Fischl C0
+@description:
+Simple rotation for C0 Fischl with a fixed amount of electrocharges triggered by her,
+assuming electro aura uptime of 100%. A fixed amount of A4 hits also included.
+*/
+rotation duration 15
+rotation do enemy aura electro
+rotation hit Fischl E     aura=100%
+rotation hit Fischl Oz *9 aura=100%
+rotation hit Fischl Q     aura=100%
+
+rotation hit Fischl Electrocharge *3 aura=100%
+
+rotation hit Fischl A4 *6 aura=100%

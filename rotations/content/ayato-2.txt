@@ -1,0 +1,14 @@
+/*
+@title: Ayato (AoE): 35x Q + E + 5N3 + E + 5N3
+@characters: Ayato C0
+@description: Simple rotation for Ayato against multiple enemies. No enemy aura assumed.
+*/
+
+rotation duration 20
+
+rotation hit Ayato Q *35
+rotation hit Ayato E *2
+
+rotation hit Ayato N1_E *10
+rotation hit Ayato N2_E *10
+rotation hit Ayato N3_E *10

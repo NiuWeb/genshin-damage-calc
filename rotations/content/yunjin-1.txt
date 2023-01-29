@@ -1,0 +1,9 @@
+/*
+@title: Yun Jin Q + press E
+@characters: Yun Jin C0
+@description:
+Simple rotation for Yunjin solo damage.
+*/
+rotation duration 15
+rotation hit Yunjin Q
+rotation hit Yunjin E_Press

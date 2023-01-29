@@ -1,0 +1,30 @@
+/*
+@title: Yoimiya vape: Q + E + 3x(N5) + 5x Q hits
+@characters: Yoimiya C0
+@description:
+Simple rotation for Yoimiya in vaporize team. Assuming:
+
+- Hydro aura uptime of 90%.
+- Q hits vaporize rate of 50%.
+- Only N1 (x1), N3 and N5 can vaporize.
+
+N1: Normal attack 1 and so on...
+*/
+
+const $aura 90%
+
+rotation duration 15
+
+rotation do enemy aura HYDRO
+
+rotation hit Yoimiya Q        aura=$aura
+rotation hit Yoimiya Q_Dot *5 aura=$aura reaction=50%
+
+// N1 fires two arrows
+rotation hit Yoimiya N1 *3 aura=$aura            // vaporized N1 attacks
+rotation hit Yoimiya N1 *3 aura=$aura reaction=0 // non-vaporized N1 attacks
+
+rotation hit Yoimiya N2 *3 aura=$aura reaction=0 // Non-vaporized N1
+rotation hit Yoimiya N3 *3 aura=$aura            // vaporized N3
+rotation hit Yoimiya N4 *3 aura=$aura reaction=0 // Non-vaporized N4
+rotation hit Yoimiya N5 *3 aura=$aura            // vaporized N5

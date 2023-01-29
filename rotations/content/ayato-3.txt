@@ -1,0 +1,19 @@
+/*
+@title: Ayato (AoE, electro aura): 35x Q + E + 5N3 + E + 5N3
+@characters: Ayato C0
+@description: Simple rotation for Ayato against multiple enemies. 
+Assumed 100% electro aura uptime (for electrocharged teams).
+*/
+
+const $aura 100%
+
+rotation duration 20
+
+rotation do enemy aura ELECTRO
+
+rotation hit Ayato Q *35 aura=$aura
+rotation hit Ayato E *2  aura=$aura
+
+rotation hit Ayato N1_E *10 aura=$aura
+rotation hit Ayato N2_E *10 aura=$aura
+rotation hit Ayato N3_E *10 aura=$aura

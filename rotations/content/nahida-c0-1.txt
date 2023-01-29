@@ -1,0 +1,20 @@
+/*
+@title: Nahida Spread (on field): 2x E hold + 6x E ticks + 4xN4
+@characters: Nahida C0
+@description:
+Simple rotation for Nahida solo damage when on-field in a quicken team.
+Assumed quicken aura with a 100% uptime, and all E hits triggers spread.
+
+Note that rotations are static and the number of E hits won't
+increase automatically with talent levels.
+*/
+rotation duration 15
+rotation do enemy aura quicken
+
+rotation hit Nahida E_hold aura=1 reaction=1 *2
+rotation hit Nahida E_DoT aura=1 reaction=1  *6
+
+rotation hit Nahida N1 aura=1 reaction=1   *4
+rotation hit Nahida N2 aura=1 reaction=25% *4
+rotation hit Nahida N3 aura=1 reaction=25% *4
+rotation hit Nahida N4 aura=1 reaction=75% *4

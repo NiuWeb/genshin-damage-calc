@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+blockquote {
+    @apply p-1 m-1 bg-black/10 border-l-4 border-l-black/25
+}

@@ -1,0 +1,13 @@
+/*
+@title: Venti AoE: 2x press E + 20x Anemo hits + 16x additional hits + 14x pyro swirl
+@characters: Venti C0
+@description: 
+Simple rotation for Venti against 2+ enemies.
+
+Included only pyro swirls. If a different absorption occurs, you should edit the rotation.
+*/
+
+rotation hit Venti E_PRESS *2
+rotation hit Venti Q_DOT *20
+rotation hit Venti Q_ADDITIONAL *16
+rotation hit Venti SWIRL_PYRO *14

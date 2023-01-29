@@ -1,0 +1,18 @@
+/*
+@title: Rosaria (Melt) 2x E + Q + 4x Q hits
+@characters: Rosaria C0
+@description:
+Simple rotation for Rosaria melt. Assumed all hits triggers melt,
+additional Q hits from C2 are not included.
+*/
+
+rotation duration 15
+
+rotation do enemy aura pyro
+
+rotation hit Rosaria E_1 *2
+rotation hit Rosaria E_2 *2
+
+rotation hit Rosaria Q_1
+rotation hit Rosaria Q_2
+rotation hit Rosaria Q_Dot *4

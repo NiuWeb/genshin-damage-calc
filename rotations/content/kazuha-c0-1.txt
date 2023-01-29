@@ -1,0 +1,20 @@
+/*
+@title: Kazuha EP + Q + 5x Q hits + 20x Pyro swirls
+@characters: Kazuha C0
+@description: 
+Simple rotation for Kazuha **personal damage** against 2+ enemies.
+- Used E press, not hold.
+- Assumed enemy affected by pyro with an uptime of 80%.
+- Assumed 20 triggers of pyro swirl.
+
+**IMPORTANT:** Elemental absorption of Q and A1 damage is not configured
+on this rotation, you'll have to do it in the application or editing the code.
+*/
+rotation duration 15
+rotation do enemy aura pyro
+rotation hit Kazuha E_Press       aura=80%
+rotation hit Kazuha Plunge_High_E aura=80%
+rotation hit Kazuha A1            aura=80%
+rotation hit Kazuha Q             aura=80%
+rotation hit Kazuha Q_Additional  aura=80%  *5
+rotation hit Kazuha Swirl_Pyro    aura=80%  *20

@@ -1,0 +1,18 @@
+/*
+@title: Fischl E + 11x Oz + Q + 15x C6 + 3x EC + 6x A4
+@characters: Fischl C6
+@description:
+Simple rotation for C6 Fischl with electrocharges, assuming electro aura uptime of 100%
+and 15 hits of her C6. This number depends on the specific team so you should consider 
+to change it.
+*/
+rotation duration 15
+rotation do enemy aura electro
+rotation hit Fischl E      aura=100%
+rotation hit Fischl Oz *11 aura=100%
+rotation hit Fischl C6 *15 aura=100%
+rotation hit Fischl Q      aura=100%
+
+rotation hit Fischl Electrocharge *3 aura=100%
+
+rotation hit Fischl A4 *6 aura=100%

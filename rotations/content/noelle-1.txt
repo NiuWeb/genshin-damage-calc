@@ -1,0 +1,12 @@
+/*
+@title: Noelle E + Q + 5x(N3)
+@characters: Noelle C0
+@description: Simple rotation for DPS Noelle, C4 hit not included.
+*/
+rotation duration 15
+rotation hit Noelle E
+rotation hit Noelle Q_1
+rotation hit Noelle Q_2
+rotation hit Noelle N1 *5
+rotation hit Noelle N2 *5
+rotation hit Noelle N3 *5

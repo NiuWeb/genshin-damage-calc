@@ -1,0 +1,3591 @@
+{
+  "ACTION.ACCEPT": "Aceptar",
+  "ACTION.ADD": "Añadir",
+  "ACTION.ARTIFACTS_ADD": "Añadir artefactos",
+  "ACTION.ARTIFACT_ADD": "Añadir artefacto",
+  "ACTION.ARTIFACT_ROLLS_SUMMARY": "Resumen de rolls",
+  "ACTION.ARTIFACT_ROLLS_SUMMARY_VIEW": "Ver resumen de rolls",
+  "ACTION.ARTIFACT_ROLLS_VIEW": "Ver rolls",
+  "ACTION.CANCEL": "Cancelar",
+  "ACTION.CHARACTER_ADD": "Añadir personaje",
+  "ACTION.CHARACTER_REMOVE": "Borrar personaje",
+  "ACTION.CLEAR": "Limpiar",
+  "ACTION.CONSOLE_TOGGLE": "Abrir/cerrar console",
+  "ACTION.COPY": "Copiar",
+  "ACTION.EDITOR_CLOSE": "Cerrar editor",
+  "ACTION.EDITOR_GO": "Ir al Editor",
+  "ACTION.EDITOR_OPEN": "Abrir editor",
+  "ACTION.ENKA_IMPORT": "Importar desde Enka.Network",
+  "ACTION.FILTER_ADD": "Añadir filtro",
+  "ACTION.GOOD_IMPORT": "Import from GOOD format",
+  "ACTION.GOTO_PAGE": "Ir a la pág.",
+  "ACTION.IMPORT": "Importar",
+  "ACTION.LOAD_TO_EDITOR": "Cargar al editor",
+  "ACTION.OPTIMIZE": "Optimizar",
+  "ACTION.OPTIMIZER_USE_OPTIMAL_SUBSTATS": "Usar secundarias óptimas para cada combinación",
+  "ACTION.REMOVE": "Borrar",
+  "ACTION.RESULTS_CLEAR": "Limpiar resultados",
+  "ACTION.RESULTS_SHOW": "Mostrar resultados",
+  "ACTION.ROTATION_DETAIL_SHOW": "Mostrar detalles golpe-a-golpe",
+  "ACTION.RUN": "Ejecutar",
+  "ARTIFACT.CIRCLET": "Tiara",
+  "ARTIFACT.FLOWER": "Flor",
+  "ARTIFACT.GOBLET": "Cáliz",
+  "ARTIFACT.PLUME": "Pluma",
+  "ARTIFACT.SANDS": "Arenas",
+  "AURA.CRYO": "Cryo",
+  "AURA.DENDRO": "Dendro",
+  "AURA.ELECTRO": "Electro",
+  "AURA.FROZEN": "Frozen",
+  "AURA.HYDRO": "Hydro",
+  "AURA.NONE": "No auras",
+  "AURA.PYRO": "Pyro",
+  "AURA.QUICKEN": "Aceleración",
+  "CONDITION.ARIA": "Aria (Daño%)",
+  "CONDITION.AVERAGE": "Promedio",
+  "CONDITION.CAST_BURST": "Lanzar Q",
+  "CONDITION.ENEMY_1": "1 Enemigo",
+  "CONDITION.ENEMY_2": "2+ Enemigos",
+  "CONDITION.FAR": "Lejos",
+  "CONDITION.HIT_CHARGED": "Golpes cargados",
+  "CONDITION.HIT_NORMAL": "Golpes normales",
+  "CONDITION.HIT_SKILL": "Golpes de habilidad",
+  "CONDITION.INTERLUDE": "Interludio (ME)",
+  "CONDITION.MAXIMUM": "Máximo",
+  "CONDITION.MECHA": "Mecanoid",
+  "CONDITION.NEAR": "Cerca",
+  "CONDITION.NO_BURST": "No Q",
+  "CONDITION.NO_SLIME": "No slimes",
+  "CONDITION.OFF_FIELD": "Fuera del campo",
+  "CONDITION.ON_FIELD": "Dentro del campo",
+  "CONDITION.RECITATIVE": "Recitative (ATQ%)",
+  "CONDITION.SLIMES": "Slimes",
+  "CONDITION.SNAPSHOT": "Snapshot",
+  "CONDITION.WEAK_SPOT": "Punto débil",
+  "HIT_AGGRAVATE": "Intensificación",
+  "HIT_AIMED_CHARGED": "Fully-Charged Aimed Shot",
+  "HIT_AIMED_NORMAL": "Aimed Shot",
+  "HIT_BLOOM": "Florecimiento",
+  "HIT_BURGEON": "Crepitar",
+  "HIT_BURNING": "Quemadura",
+  "HIT_CHARGED": "Ataque Cargado",
+  "HIT_CHARGED_1": "Ataque Cargado (x1)",
+  "HIT_CHARGED_1_Q": "Ataque Cargado (x1)",
+  "HIT_CHARGED_2": "Ataque Cargado (x2)",
+  "HIT_CHARGED_2_Q": "Ataque Cargado (x2)",
+  "HIT_CHARGED_3": "Ataque Cargado (x3)",
+  "HIT_CHARGED_4": "Ataque Cargado (x4)",
+  "HIT_CHARGED_FINAL": "Ataque Cargado (Golpe final)",
+  "HIT_CHARGED_Q": "Ataque Cargado",
+  "HIT_CHARGED_SPIN": "Ataque Cargado (Giro)",
+  "HIT_E": "Habilidad Elemental",
+  "HIT_ELECTROCHARGE": "Electrocarga",
+  "HIT_E_1": "Habilidad Elemental (x1)",
+  "HIT_E_2": "Habilidad Elemental (x2)",
+  "HIT_E_3": "Habilidad Elemental (x3)",
+  "HIT_E_4": "Habilidad Elemental (x4)",
+  "HIT_E_EXPLOSION": "Habilidad Elemental (Explosión)",
+  "HIT_E_HOLD": "Habilidad Elemental (Mantener pulsado)",
+  "HIT_E_PRESS": "Habilidad Elemental (Presionar)",
+  "HIT_HYPERBLOOM": "Sobreflorecimiento",
+  "HIT_N1": "Primer golpe",
+  "HIT_N1_1": "Primer golpe (x1)",
+  "HIT_N1_2": "Primer golpe (x2)",
+  "HIT_N1_3": "Primer golpe (x3)",
+  "HIT_N1_4": "Primer golpe (x4)",
+  "HIT_N1_Q": "Primer golpe",
+  "HIT_N2": "Segundo golpe",
+  "HIT_N2_1": "Segundo golpe (x1)",
+  "HIT_N2_2": "Segundo golpe (x2)",
+  "HIT_N2_3": "Segundo golpe (x3)",
+  "HIT_N2_4": "Segundo golpe (x4)",
+  "HIT_N2_Q": "Segundo golpe",
+  "HIT_N3": "Tercer golpe",
+  "HIT_N3_1": "Tercer golpe (x1)",
+  "HIT_N3_2": "Tercer golpe (x2)",
+  "HIT_N3_3": "Tercer golpe (x3)",
+  "HIT_N3_4": "Tercer golpe (x4)",
+  "HIT_N3_Q": "Tercer golpe",
+  "HIT_N4": "Cuarto golpe",
+  "HIT_N4_1": "Cuarto golpe (x1)",
+  "HIT_N4_2": "Cuarto golpe (x2)",
+  "HIT_N4_3": "Cuarto golpe (x3)",
+  "HIT_N4_4": "Cuarto golpe (x4)",
+  "HIT_N4_Q": "Cuarto golpe",
+  "HIT_N5": "Quinto golpe",
+  "HIT_N5_1": "Quinto golpe (x1)",
+  "HIT_N5_2": "Quinto golpe (x2)",
+  "HIT_N5_3": "Quinto golpe (x3)",
+  "HIT_N5_4": "Quinto golpe (x4)",
+  "HIT_N5_Q": "Quinto golpe",
+  "HIT_N6": "Sexto golpe",
+  "HIT_N6_1": "Sexto golpe (x1)",
+  "HIT_N6_2": "Sexto golpe (x2)",
+  "HIT_N6_3": "Sexto golpe (x3)",
+  "HIT_N6_4": "Sexto golpe (x4)",
+  "HIT_N6_Q": "Sexto golpe",
+  "HIT_OVERLOAD": "Sobrecarga",
+  "HIT_PLUNGE": "Ataque descendente",
+  "HIT_PLUNGE_HIGH": "Ataque descendente (caída alta)",
+  "HIT_PLUNGE_HIGH_Q": "Ataque descendente (caída alta)",
+  "HIT_PLUNGE_LOW": "Ataque descendente (caída baja)",
+  "HIT_PLUNGE_LOW_Q": "Ataque descendente (caída baja)",
+  "HIT_PLUNGE_Q": "Ataque descendente",
+  "HIT_Q": "Elemental Burst",
+  "HIT_Q_1": "Habilidad Definitiva (x1)",
+  "HIT_Q_2": "Habilidad Definitiva (x2)",
+  "HIT_Q_3": "Habilidad Definitiva (x3)",
+  "HIT_Q_4": "Habilidad Definitiva (x4)",
+  "HIT_Q_ADDITIONAL": "Habilidad Definitiva (Adicional)",
+  "HIT_Q_DOT": "Habilidad Definitiva (Daño continuo)",
+  "HIT_SHATTER": "Rompehielo",
+  "HIT_SPREAD": "Propagación",
+  "HIT_SUPERCONDUCT": "Superconductor",
+  "HIT_SWIRL": "Torbellino",
+  "HIT_SWIRL_CRYO": "Torbellino Cryo",
+  "HIT_SWIRL_ELECTRO": "Torbellino Electro",
+  "HIT_SWIRL_HYDRO": "Torbellino Hydro",
+  "HIT_SWIRL_PYRO": "Torbellino Pyro",
+  "ITEM.Akuoumaru": {
+    "title": "Akuoumaru"
+  },
+  "ITEM.Akuoumaru1": {
+    "description": [
+      "For every point of the entire party's combined maximum ",
+      "Energy, the Elemental Burst DMG of the character ",
+      "equipping this weapon is increased by ",
+      "**#rank{0.12|0.15|0.18|0.21|0.24}%**. A maximum of ",
+      "**#rank{40|50|60|70|80}%** increased Elemental ",
+      "Burst DMG can be achieved this way. "
+    ],
+    "title": "Akuoumaru (1)"
+  },
+  "ITEM.AlleyHunter": {
+    "title": "Alley Hunter"
+  },
+  "ITEM.AlleyHunter1": {
+    "description": [
+      "While the character equipped with this weapon is in the ",
+      "party but not on the field, their DMG increases by ",
+      "**#rank{2|2.5|3|3.5|4}%** every second up to a max of ",
+      "**#rank{20|25|30|35|40}%**. When the character is on ",
+      "the field for more than 4s, the aforementioned DMG buff ",
+      "decreases by **#rank{4|5|6|7|8}%** per second until it ",
+      "reaches 0%. "
+    ],
+    "title": "Alley Hunter (1)"
+  },
+  "ITEM.AmberBead": "Amber Bead",
+  "ITEM.AmberBead1": {
+    "description": [
+      "Normal Attack hits increase all Elemental DMG by **#rank{6|7.5|9|10.5|12}%**",
+      "for 6s. Max 2 stacks."
+    ],
+    "title": "Amber Bead (1)"
+  },
+  "ITEM.AmenomaKageuchi": {
+    "title": "Amenoma Kageuchi"
+  },
+  "ITEM.AmenomaKageuchi1": {
+    "description": [
+      "After casting an Elemental Skill, gain 1 Succession ",
+      "Seed. This effect can be triggered once every 5s. The ",
+      "Succession Seed lasts for 30s. Up to 3 Succession Seeds ",
+      "may exist simultaneously. After using an Elemental ",
+      "Burst, all Succession Seeds are consumed and after 2s, ",
+      "the character regenerates ",
+      "**#rank{6|7.5|9|10.5|12}** Energy for each seed ",
+      "consumed. "
+    ],
+    "title": "Amenoma Kageuchi (1)"
+  },
+  "ITEM.AmosBow": {
+    "title": "Amos' Bow"
+  },
+  "ITEM.AmosBow1": {
+    "description": [
+      "Increases Normal Attack DMG and Charged Attack DMG by ",
+      "**#rank{12|15|18|21|24}%**. After a Normal Attack or ",
+      "Charged Attack is fired, DMG dealt increases by a further ",
+      "**#rank{8|10|12|14|16}%** every 0.1s the arrow is in ",
+      "the air. This stacks up to 5 times. "
+    ],
+    "title": "Amos' Bow (1)"
+  },
+  "ITEM.AquaSimulacra": "Aqua Simulacra",
+  "ITEM.AquaSimulacra1": {
+    "description": [
+      "HP is increased by **#rank{16|20|24|28|32}%**. When there are opponents nearby,",
+      "the DMG dealt by the wielder of this weapon is increased by **#rank{20|25|30|35|40}%**.",
+      "This will take effect whether the character is on-field or not."
+    ],
+    "title": "Aqua Simulacra (1)"
+  },
+  "ITEM.AquilaFavonia": {
+    "title": "Aquila Favonia"
+  },
+  "ITEM.AquilaFavonia1": {
+    "description": [
+      "ATK is increased by **#rank{20|25|30|35|40}%**. ",
+      "Triggers on taking DMG: the soul of the Falcon of the West ",
+      "awakens, holding the banner of resistance aloft, ",
+      "regenerating HP equal to #rank{100|115|130|145|160}% ",
+      "of ATK and dealing **#rank{200|230|260|290|320}%** of ",
+      "ATK as DMG to surrounding opponents. This effect can only ",
+      "occur once every 15s. "
+    ],
+    "title": "Aquila Favonia (1)"
+  },
+  "ITEM.ArchaicPetra": {
+    "title": "Archaic Petra"
+  },
+  "ITEM.ArchaicPetra2": {
+    "description": [
+      "Geo DMG Bonus: +15%. "
+    ],
+    "title": "Archaic Petra (2)"
+  },
+  "ITEM.ArchaicPetra4": {
+    "description": [
+      "Upon obtaining an Elemental Shard created through a ",
+      "Crystallize Reaction, all party members gain a 35% DMG ",
+      "Bonus for that particular element for 10s. Only one form ",
+      "of Elemental DMG Bonus can be gained in this manner at any ",
+      "one time. "
+    ],
+    "title": "Archaic Petra (4)"
+  },
+  "ITEM.BOW": "Bow",
+  "ITEM.Bennett": "Bennett",
+  "ITEM.Bennett.HIT_C4": "Unexpected Odyssey",
+  "ITEM.Bennett.HIT_E_1_1": "Charge Level 1 (x1)",
+  "ITEM.Bennett.HIT_E_1_2": "Charge Level 1 (x2)",
+  "ITEM.Bennett.HIT_E_2_1": "Charge Level 2 (x1)",
+  "ITEM.Bennett.HIT_E_2_2": "Charge Level 2 (x2)",
+  "ITEM.BennettC1": {
+    "description": [
+      "**Fantastic Voyage**'s ATK increase no longer has an HP ",
+      "restriction, and gains an additional 20% of Bennett's ",
+      "Base ATK. "
+    ],
+    "title": "Grand Expectation"
+  },
+  "ITEM.BennettC2": {
+    "description": [
+      "When Bennett's HP falls below 70%, his Energy Recharge is ",
+      "increased by 30%. "
+    ],
+    "title": "Impasse Conqueror"
+  },
+  "ITEM.BennettC3": {
+    "description": [
+      "Increases the Level of **Passion Overload** by 3. ",
+      "Maximum upgrade level is 15. "
+    ],
+    "title": "Unstoppable Fervor"
+  },
+  "ITEM.BennettC5": {
+    "description": [
+      "Increases the Level of **Fantastic Voyage** by 3. ",
+      "Maximum upgrade level is 15. "
+    ],
+    "title": "True Explorer"
+  },
+  "ITEM.BennettC6": {
+    "description": [
+      "Sword, Claymore, or Polearm-wielding characters ",
+      "inside **Fantastic Voyage**'s radius gain a 15% Pyro DMG ",
+      "Bonus and their weapons are infused with Pyro. "
+    ],
+    "title": "Fire Ventures with Me"
+  },
+  "ITEM.BennettQ": {
+    "description": [
+      "If the health of a character within the AoE is higher than ",
+      "70%, they gain an ATK Bonus that is based on Bennett's Base ",
+      "ATK. "
+    ],
+    "title": "Fantastic Voyage"
+  },
+  "ITEM.Berserker": {
+    "title": "Berserker"
+  },
+  "ITEM.Berserker2": {
+    "description": [
+      "CRIT Rate: +12%. "
+    ],
+    "title": "Berserker (2)"
+  },
+  "ITEM.Berserker4": {
+    "description": [
+      "When HP is below 70%, CRIT Rate increases by an additional ",
+      "24%. "
+    ],
+    "title": "Berserker (4)"
+  },
+  "ITEM.BlackTassel": {
+    "title": "Black Tassel"
+  },
+  "ITEM.BlackTassel1": {
+    "description": [
+      "Increases DMG against slimes by ",
+      "**#rank{40|50|60|70|80}%**. "
+    ],
+    "title": "Black Tassel (1)"
+  },
+  "ITEM.BlackcliffAgate": {
+    "title": "Blackcliff Agate"
+  },
+  "ITEM.BlackcliffAgate1": {
+    "description": [
+      "After defeating an enemy, ATK is increased by ",
+      "**#rank{12|15|18|21|24}%** for 30s. This effect has a ",
+      "maximum of 3 stacks, and the duration of each stack is ",
+      "independent of the others. "
+    ],
+    "title": "Blackcliff Agate (1)"
+  },
+  "ITEM.BlackcliffLongsword": {
+    "title": "Blackcliff Longsword"
+  },
+  "ITEM.BlackcliffLongsword1": {
+    "description": [
+      "After defeating an enemy, ATK is increased by ",
+      "**#rank{12|15|18|21|24}%** for 30s. This effect has a ",
+      "maximum of 3 stacks, and the duration of each stack is ",
+      "independent of the others. "
+    ],
+    "title": "Blackcliff Longsword (1)"
+  },
+  "ITEM.BlackcliffPole": {
+    "title": "Blackcliff Pole"
+  },
+  "ITEM.BlackcliffPole1": {
+    "description": [
+      "After defeating an enemy, ATK is increased by ",
+      "**#rank{12|15|18|21|24}%** for 30s. This effect has a ",
+      "maximum of 3 stacks, and the duration of each stack is ",
+      "independent of the others. "
+    ],
+    "title": "Blackcliff Pole (1)"
+  },
+  "ITEM.BlackcliffSlasher": {
+    "title": "Blackcliff Slasher"
+  },
+  "ITEM.BlackcliffSlasher1": {
+    "description": [
+      "After defeating an enemy, ATK is increased by ",
+      "**#rank{12|15|18|21|24}%** for 30s. This effect has a ",
+      "maximum of 3 stacks, and the duration of each stack is ",
+      "independent of the others. "
+    ],
+    "title": "Blackcliff Slasher (1)"
+  },
+  "ITEM.BlackcliffWarbow": {
+    "title": "Blackcliff Warbow"
+  },
+  "ITEM.BlackcliffWarbow1": {
+    "description": [
+      "After defeating an enemy, ATK is increased by ",
+      "**#rank{12|15|18|21|24}%** for 30s. This effect has a ",
+      "maximum of 3 stacks, and the duration of each stack is ",
+      "independent of the others. "
+    ],
+    "title": "Blackcliff Warbow (1)"
+  },
+  "ITEM.BlizzardStrayer": {
+    "title": "Blizzard Strayer"
+  },
+  "ITEM.BlizzardStrayer2": {
+    "description": [
+      "Cryo DMG Bonus: +15%. "
+    ],
+    "title": "Blizzard Strayer (2)"
+  },
+  "ITEM.BlizzardStrayer4": {
+    "description": [
+      "When a character attacks an opponent affected by Cryo, ",
+      "their CRIT Rate is increased by 20%. If the opponent is ",
+      "Frozen, CRIT Rate is increased by an additional 20%. "
+    ],
+    "title": "Blizzard Strayer (4)"
+  },
+  "ITEM.BloodstainedChivalry": {
+    "title": "Bloodstained Chivalry"
+  },
+  "ITEM.BloodstainedChivalry2": {
+    "description": [
+      "Physical DMG Bonus: +25% "
+    ],
+    "title": "Bloodstained Chivalry (2)"
+  },
+  "ITEM.BloodstainedChivalry4": {
+    "description": [
+      "After defeating an opponent, increases Charged Attack ",
+      "DMG by 50%, and reduces its Stamina cost to 0 for 10s. "
+    ],
+    "title": "Bloodstained Chivalry (4)"
+  },
+  "ITEM.BloodtaintedGreatsword": {
+    "title": "Bloodtainted Greatsword"
+  },
+  "ITEM.BloodtaintedGreatsword1": {
+    "description": [
+      "Increases DMG dealt against opponents affected by Pyro ",
+      "or Electro by **#rank{12|15|18|21|24}%**. "
+    ],
+    "title": "Bloodtainted Greatsword (1)"
+  },
+  "ITEM.BraveHeart": {
+    "title": "Brave Heart"
+  },
+  "ITEM.BraveHeart2": {
+    "description": [
+      "ATK:+18%. "
+    ],
+    "title": "Brave Heart (2)"
+  },
+  "ITEM.BraveHeart4": {
+    "description": [
+      "Increases DMG by 30% against opponents with more than 50% ",
+      "HP. "
+    ],
+    "title": "Brave Heart (4)"
+  },
+  "ITEM.CATALYST": "Catalyst",
+  "ITEM.CLAYMORE": "Claymore",
+  "ITEM.CalamityQueller": {
+    "title": "Calamity Queller"
+  },
+  "ITEM.CalamityQueller1": {
+    "description": [
+      "Gain **#rank{12|15|18|21|24}%** All Elemental DMG ",
+      "Bonus. Obtain Consummation for 20s after using an ",
+      "Elemental Skill, causing ATK to increase by ",
+      "**#rank{3.2|4.0|4.8|5.6|6.4}%** per second. This ATK ",
+      "increase has a maximum of 6 stacks. When the character ",
+      "equipped with this weapon is not on the field, ",
+      "Consummation's ATK increase is doubled. "
+    ],
+    "title": "Calamity Queller (1)"
+  },
+  "ITEM.CinnabarSpindle": {
+    "title": "Cinnabar Spindle"
+  },
+  "ITEM.CinnabarSpindle1": {
+    "description": [
+      "Elemental Skill DMG is increased by ",
+      "**#rank{40|50|60|70|80}%** of DEF. The effect will be ",
+      "triggered no more than once every 1.5s and will be cleared ",
+      "0.1s after the Elemental Skill deals DMG. "
+    ],
+    "title": "Cinnabar Spindle (1)"
+  },
+  "ITEM.CompoundBow": {
+    "title": "Compound Bow"
+  },
+  "ITEM.CompoundBow1": {
+    "description": [
+      "Normal Attack and Charged Attack hits increase ATK by ",
+      "**#rank{4|5|6|7|8}%** and Normal ATK SPD by ",
+      "**#rank{1.2|1.5|1.8|2.1|2.4}%** for 6s. Max 4 stacks. ",
+      "Can only occur once every 0.3s. "
+    ],
+    "title": "Compound Bow (1)"
+  },
+  "ITEM.CoolSteel": {
+    "title": "Cool Steel"
+  },
+  "ITEM.CoolSteel1": {
+    "description": [
+      "Increases DMG against opponents affected by Hydro or ",
+      "Cryo by **#rank{12|15|18|21|24}%**.  "
+    ],
+    "title": "Cool Steel (1)"
+  },
+  "ITEM.CrescentPike": {
+    "title": "Crescent Pike"
+  },
+  "ITEM.CrescentPike1": {
+    "description": [
+      "After picking up an Elemental Orb/Particle, Normal ",
+      "Attacks and Charged Attacks deal additional DMG equal to ",
+      "**#rank{20|25|30|35|40}%** of ATK for 5s. "
+    ],
+    "title": "Crescent Pike (1)"
+  },
+  "ITEM.CrimsonWitchOfFlames": {
+    "title": "Crimson Witch of Flames"
+  },
+  "ITEM.CrimsonWitchOfFlames2": {
+    "description": [
+      "Pyro DMG Bonus: +15%. "
+    ],
+    "title": "Crimson Witch of Flames (2)"
+  },
+  "ITEM.CrimsonWitchOfFlames4": {
+    "description": [
+      "Increases Overloaded DMG and Burning, and Burgeon DMG by 40%. ",
+      "Increases Vaporize and Melt DMG by 15%. Using Elemental ",
+      "Skill increases the 2-Piece Set Bonus by 50% of its ",
+      "starting value for 10s. Max 3 stacks.  "
+    ],
+    "title": "Crimson Witch of Flames (4)"
+  },
+  "ITEM.DarkIronSword": {
+    "title": "Dark Iron Sword"
+  },
+  "ITEM.DarkIronSword1": {
+    "description": [
+      "Upon causing an Overloaded, Superconduct, ",
+      "Electro-Charged, or an Electro-infused Swirl ",
+      "reaction, ATK is increased by ",
+      "**#rank{20|25|30|35|40}%** for 12s. "
+    ],
+    "title": "Dark Iron Sword (1)"
+  },
+  "ITEM.Deathmatch": {
+    "title": "Deathmatch"
+  },
+  "ITEM.Deathmatch1": {
+    "description": [
+      "If there are at least 2 opponents nearby, ATK is increased ",
+      "by **#rank{16|20|24|28|32}%** and DEF is increased by ",
+      "**#rank{16|20|24|28|32}%**.If there are fewer than 2 ",
+      "opponents nearby, ATK is increased by ",
+      "**#rank{24|30|36|42|48}%**.  "
+    ],
+    "title": "Deathmatch (1)"
+  },
+  "ITEM.DebateClub": {
+    "title": "Debate Club"
+  },
+  "ITEM.DebateClub1": {
+    "description": [
+      "After using an Elemental Skill, on hit, Normal and ",
+      "Charged Attacks deal additional DMG equal to ",
+      "**#rank{60|75|90|105|120}%** of ATK in a small AoE. ",
+      "Effect lasts 15s. DMG can only occur once every 3s. "
+    ],
+    "title": "Debate Club (1)"
+  },
+  "ITEM.DeepwoodMemories": {
+    "title": "Deepwood Memories"
+  },
+  "ITEM.DeepwoodMemories2": {
+    "description": "Dendro DMG Bonus +15%.",
+    "title": "Deepwood Memories (2)"
+  },
+  "ITEM.DeepwoodMemories4": {
+    "description": [
+      "After Elemental Skills or Bursts hit opponents, the ",
+      "targets’ Dendro RES will be decreased by 30% for 8s. This ",
+      "effect can be triggered even if the equipping character ",
+      "is not on the field."
+    ],
+    "title": "Deepwood Memories (4)"
+  },
+  "ITEM.DefendersWill": {
+    "title": "Defender's Will"
+  },
+  "ITEM.DefendersWill2": {
+    "description": [
+      "DEF: +30%. "
+    ],
+    "title": "Defender's Will (2)"
+  },
+  "ITEM.DefendersWill4": {
+    "description": [
+      "For each different element present in your own party, the ",
+      "wearer's Elemental RES to that corresponding element is ",
+      "increased by 30%. "
+    ],
+    "title": "Defender's Will (4)"
+  },
+  "ITEM.DesertPavilionChronicle": "Desert Pavilion Chronicle",
+  "ITEM.DesertPavilionChronicle2": {
+    "description": "Anemo DMG Bonus +15%",
+    "title": "Desert Pavilion Chronicle (2)"
+  },
+  "ITEM.DesertPavilionChronicle4": {
+    "description": [
+      "When Charged Attacks hit opponents, the equipping character's",
+      "Normal Attack SPD will increase by 10% while Normal, Charged,",
+      "and Plunging Attack DMG will increase by 40% for 15s."
+    ],
+    "title": "Desert Pavilion Chronicle (4)"
+  },
+  "ITEM.DodocoTales": {
+    "title": "Dodoco Tales"
+  },
+  "ITEM.DodocoTales1": {
+    "description": [
+      "Normal Attack hits on opponents increase Charged Attack ",
+      "DMG by **#rank{16|20|24|28|32}%** for 6s. Charged ",
+      "Attack hits on opponents increase ATK by ",
+      "**#rank{8|10|12|14|16}%** for 6s. "
+    ],
+    "title": "Dodoco Tales (1)"
+  },
+  "ITEM.DragonsBane": {
+    "title": "Dragon's Bane"
+  },
+  "ITEM.DragonsBane1": {
+    "description": [
+      "Increases DMG against opponents affected by Hydro or ",
+      "Pyro by **#rank{20|24|28|32|36}%**.  "
+    ],
+    "title": "Dragon's Bane (1)"
+  },
+  "ITEM.DragonspineSpear": {
+    "title": "Dragonspine Spear"
+  },
+  "ITEM.DragonspineSpear1": {
+    "description": [
+      "Hitting an opponent with Normal Attacks and Charged ",
+      "Attacks has a **#rank{60|70|80|90|100}%** chance of ",
+      "forming and dropping an Everfrost Icicle above them, ",
+      "dealing AoE DMG equal to ",
+      "**#rank{80|95|110|125|140}%** of ATK. Opponents ",
+      "affected by Cryo are instead dealt DMG equal to ",
+      "**#rank{200|240|280|320|360}%** of ATK. Can only ",
+      "occur once every 10s. "
+    ],
+    "title": "Dragonspine Spear (1)"
+  },
+  "ITEM.EbonyBow": "Ebony Bow",
+  "ITEM.EbonyBow1": {
+    "description": [
+      "Increases DMG against mechanoid Ruin opponents by",
+      "**#rank{40|50|60|70|80}%**."
+    ],
+    "title": "Ebony Bow"
+  },
+  "ITEM.EchoesOfAnOffering": "Echoes of an Offering",
+  "ITEM.EchoesOfAnOffering2": {
+    "description": [
+      "ATK: +18%. "
+    ],
+    "title": "Echoes of an Offering (2)"
+  },
+  "ITEM.EchoesOfAnOffering4": {
+    "description": [
+      "When Normal Attacks hit opponents, there is a 36% chance ",
+      "that it will trigger Valley Rite, which will increase ",
+      "Normal Attack DMG by 70% of ATK. This effect will be ",
+      "dispelled 0.05s after a Normal Attack deals DMG. If a ",
+      "Normal Attack fails to trigger Valley Rite, the odds of it ",
+      "triggering the next time will increase by 20%. This ",
+      "trigger can occur once every 0.2s. "
+    ],
+    "title": "Echoes of an Offering (4)"
+  },
+  "ITEM.ElegyForTheEnd": {
+    "title": "Elegy for the End"
+  },
+  "ITEM.ElegyForTheEnd1": {
+    "description": [
+      "A part of the \"Millennial Movement\" that wanders amidst ",
+      "the winds. Increases Elemental Mastery by ",
+      "**#rank{60|75|90|105|120}**.  "
+    ],
+    "title": "Elegy for the End (1)"
+  },
+  "ITEM.ElegyForTheEnd2": {
+    "description": [
+      "When the Elemental Skills or Elemental Bursts of the ",
+      "character wielding this weapon hit opponents, that ",
+      "character gains a Sigil of Remembrance. This effect can ",
+      "be triggered once every 0.2s and can be triggered even if ",
+      "said character is not on the field. When you possess 4 ",
+      "Sigils of Remembrance, all of them will be consumed and ",
+      "all nearby party members will obtain the \"Millennial ",
+      "Movement: Farewell Song\" effect for 12s. \"Millennial ",
+      "Movement: Farewell Song\" increases Elemental Mastery ",
+      "by **#rank{100|125|150|175|200}** and increases ATK ",
+      "by **#rank{20|25|30|35|40}%**. Once this effect is ",
+      "triggered, you will not gain Sigils of Remembrance for ",
+      "20s. Of the many effects of the \"Millennial Movement\", ",
+      "buffs of the same type will not stack. "
+    ],
+    "title": "Elegy for the End (2)"
+  },
+  "ITEM.EmblemOfSeveredFate": {
+    "title": "Emblem of Severed Fate"
+  },
+  "ITEM.EmblemOfSeveredFate2": {
+    "description": [
+      "Energy Recharge: +20%. "
+    ],
+    "title": "Emblem of Severed Fate (2)"
+  },
+  "ITEM.EmblemOfSeveredFate4": {
+    "description": [
+      "Increases Elemental Burst DMG by 25% of Energy Recharge. ",
+      "A maximum 75% DMG increase can be obtained in this way. "
+    ],
+    "title": "Emblem of Severed Fate (4)"
+  },
+  "ITEM.EmeraldOrb": {
+    "title": "Emerald Orb"
+  },
+  "ITEM.EmeraldOrb1": {
+    "description": [
+      "Upon causing a Vaporize, Electro-Charged, Frozen, or a ",
+      "Hydro-infused Swirl reaction, increases ATK by ",
+      "**#rank{20|25|30|35|40}%** for 12s. "
+    ],
+    "title": "Emerald Orb (1)"
+  },
+  "ITEM.EndOfTheLine": {
+    "title": "End of the Line"
+  },
+  "ITEM.EndOfTheLine1": {
+    "description": [
+      "Triggers the Flowrider effect after using an Elemental ",
+      "Skill, dealing **#rank{80|100|120|140|160}%** ATK as ",
+      "AoE DMG upon hitting an opponent with an attack. ",
+      "Flowrider will be removed after 15s or after causing 3 ",
+      "instances of AoE DMG. Only 1 instance of AoE DMG can be ",
+      "caused every 2s in this way. Flowrider can be triggered ",
+      "once every 12s."
+    ],
+    "title": "End of the Line (1)"
+  },
+  "ITEM.EngulfingLightning": {
+    "title": "Engulfing Lightning"
+  },
+  "ITEM.EngulfingLightning1": {
+    "description": [
+      "ATK increased by **#rank{28|35|42|49|56}%** of Energy ",
+      "Recharge over the base 100%. You can gain a maximum bonus ",
+      "of **#rank{80|90|100|110|120}%** ATK.Gain ",
+      "**#rank{30|35|40|45|50}%** Energy Recharge for 12s ",
+      "after using an Elemental Burst.. "
+    ],
+    "title": "Engulfing Lightning (1)"
+  },
+  "ITEM.EverlastingMoonglow": {
+    "title": "Everlasting Moonglow"
+  },
+  "ITEM.EverlastingMoonglow1": {
+    "description": [
+      "Healing Bonus increased by ",
+      "**#rank{10|12.5|15|17.5|20}%**.Normal Attack DMG is ",
+      "increased by **#rank{1|1.5|2|2.5|3}%** of the Max HP of ",
+      "the character equipping this weapon. For 12s after using ",
+      "an Elemental Burst, Normal Attacks that hit opponents ",
+      "will restore 0.6 Energy. Energy can be restored this way ",
+      "once every 0.1s. "
+    ],
+    "title": "Everlasting Moonglow (1)"
+  },
+  "ITEM.EyeOfPerception": {
+    "title": "Eye of Perception"
+  },
+  "ITEM.EyeOfPerception1": {
+    "description": [
+      "Normal and Charged Attacks have a 50% chance to fire a Bolt ",
+      "of Perception, dealing ",
+      "**#rank{240|270|300|330|360}%** ATK as DMG. This bolt ",
+      "can bounce between opponents a maximum of 4 times. This ",
+      "effect can occur once every **#rank{12|11|10|9|8}s**.  "
+    ],
+    "title": "Eye of Perception (1)"
+  },
+  "ITEM.FadingTwilight": "Fading Twilight",
+  "ITEM.FadingTwilight1": {
+    "description": [
+      "Has three states, Evengleam, Afterglow, and Dawnblaze, which increase DMG dealt by",
+      "**#rank{6|7.5|9|10.5|12}%**/**#rank{10|12.5|15|17.5|20}%**/**#rank{14|17.5|21|24.5|28}%**",
+      "respectively. When attacks hit opponents, this weapon will switch to the next state.",
+      "This weapon can change states once every 7s. The character equipping this weapon can",
+      "still trigger the state switch while not on the field."
+    ],
+    "title": "Fading Twilight (1)"
+  },
+  "ITEM.FavoniusCodex": {
+    "title": "Favonius Codex"
+  },
+  "ITEM.FavoniusCodex1": {
+    "description": [
+      "CRIT Hits have a **#rank{60|70|80|90|100}%** chance to ",
+      "generate a small amount of Elemental Particles, which ",
+      "will regenerate 6 Energy for the character. Can only ",
+      "occur once every **#rank{12|10.5|9|7.5|6}s**. "
+    ],
+    "title": "Favonius Codex (1)"
+  },
+  "ITEM.FavoniusGreatsword": {
+    "title": "Favonius Greatsword"
+  },
+  "ITEM.FavoniusGreatsword1": {
+    "description": [
+      "CRIT Hits have a **#rank{60|70|80|90|100}%** chance to ",
+      "generate a small amount of Elemental Particles, which ",
+      "will regenerate 6 Energy for the character. Can only ",
+      "occur once every **#rank{12|10.5|9|7.5|6}s**. "
+    ],
+    "title": "Favonius Greatsword (1)"
+  },
+  "ITEM.FavoniusLance": {
+    "title": "Favonius Lance"
+  },
+  "ITEM.FavoniusLance1": {
+    "description": [
+      "CRIT Hits have a **#rank{60|70|80|90|100}%** chance to ",
+      "generate a small amount of Elemental Particles, which ",
+      "will regenerate 6 Energy for the character. Can only ",
+      "occur once every **#rank{12|10.5|9|7.5|6}s**. "
+    ],
+    "title": "Favonius Lance (1)"
+  },
+  "ITEM.FavoniusSword": {
+    "title": "Favonius Sword"
+  },
+  "ITEM.FavoniusSword1": {
+    "description": [
+      "CRIT Hits have a **#rank{60|70|80|90|100}%** chance to ",
+      "generate a small amount of Elemental Particles, which ",
+      "will regenerate 6 Energy for the character. Can only ",
+      "occur once every **#rank{12|10.5|9|7.5|6}s**. "
+    ],
+    "title": "Favonius Sword (1)"
+  },
+  "ITEM.FavoniusWarbow": {
+    "title": "Favonius Warbow"
+  },
+  "ITEM.FavoniusWarbow1": {
+    "description": [
+      "CRIT Hits have a **#rank{60|70|80|90|100}%** chance to ",
+      "generate a small amount of Elemental Particles, which ",
+      "will regenerate 6 Energy for the character. Can only ",
+      "occur once every **#rank{12|10.5|9|7.5|6}s**. "
+    ],
+    "title": "Favonius Warbow (1)"
+  },
+  "ITEM.FerrousShadow": {
+    "title": "Ferrous Shadow"
+  },
+  "ITEM.FerrousShadow1": {
+    "description": [
+      "When HP falls below **#rank{70|75|80|85|90}%**, ",
+      "increases Charged Attack DMG by ",
+      "**#rank{30|35|40|45|50}%** and Charged Attacks ",
+      "become harder to interrupt.  "
+    ],
+    "title": "Ferrous Shadow (1)"
+  },
+  "ITEM.FesteringDesire": {
+    "title": "Festering Desire"
+  },
+  "ITEM.FesteringDesire1": {
+    "description": [
+      "Increases Elemental Skill DMG by ",
+      "**#rank{16|20|24|28|32}%** and Elemental Skill CRIT ",
+      "Rate by **#rank{6|7.5|9|10.5|12}%**.  "
+    ],
+    "title": "Festering Desire (1)"
+  },
+  "ITEM.FilletBlade": {
+    "title": "Fillet Blade"
+  },
+  "ITEM.FilletBlade1": {
+    "description": [
+      "On hit, has a 50% chance to deal ",
+      "**#rank{240|280|320|360|400}%** ATK DMG to a single ",
+      "opponent. Can only occur once every ",
+      "**#rank{15|14|13|12|11}s**.  "
+    ],
+    "title": "Fillet Blade (1)"
+  },
+  "ITEM.Fischl": "Fischl",
+  "ITEM.Fischl.HIT_A1": "Stellar Predator",
+  "ITEM.Fischl.HIT_A4": "Undone Be Thy Sinful Hex",
+  "ITEM.Fischl.HIT_C1": "Gaze of the Deep",
+  "ITEM.Fischl.HIT_C4": "Her Pilgrimage of Bleak",
+  "ITEM.Fischl.HIT_C6": "Evernight Raven",
+  "ITEM.Fischl.HIT_E": "Oz (Summon)",
+  "ITEM.Fischl.HIT_OZ": "Oz Attack",
+  "ITEM.FischlA1": {
+    "description": [
+      "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down",
+      "Thundering Retribution, dealing AoE Electro DMG equal to 152.7% of",
+      "the arrow’s DMG."
+    ],
+    "title": "Stellar Predator"
+  },
+  "ITEM.FischlA4": {
+    "description": [
+      "If your current active character triggers an Electro-related Elemental",
+      "Reaction when Oz is on the field, the opponent shall be stricken with",
+      "Thundering Retribution, dealing Electro DMG equal to 80% of Fischl’s ATK."
+    ],
+    "title": "Undone Be Thy Sinful Hex"
+  },
+  "ITEM.FischlC1": {
+    "description": [
+      "Even when Oz is not present in combat, he can still watch over Fischl",
+      "through his raven eyes. When Fischl performs a Normal Attack against",
+      "an opponent, Oz fires a joint attack, dealing DMG equal to 22% of ",
+      "Fischl’s ATK."
+    ],
+    "title": "Gaze of the Deep"
+  },
+  "ITEM.FischlC2": {
+    "description": [
+      "When **Nightrider** is used, it deals an additional 200% ",
+      "ATK as DMG, and its AoE is increased by 50%. "
+    ],
+    "title": "Devourer of All Sins"
+  },
+  "ITEM.FischlC3": {
+    "description": [
+      "Increases the Level of **Nightrider** by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Wings of Nightmare"
+  },
+  "ITEM.FischlC4": {
+    "description": [
+      "When **Midnight Phantasmagoria** is used, it deals 222% ",
+      "of ATK as Electro DMG to surrounding opponents. When the ",
+      "skill duration ends, Fischl regenerates 20% of her HP. "
+    ],
+    "title": "Her Pilgrimage of Bleak"
+  },
+  "ITEM.FischlC5": {
+    "description": [
+      "Increases the Level of **Midnight Phantasmagoria** by 3. ",
+      "Maximum upgrade level is 15. "
+    ],
+    "title": "Against The Fleeing Light"
+  },
+  "ITEM.FischlC6": {
+    "description": [
+      "Extends the duration of Oz’s presence on the field by 2s.",
+      "Additionally, Oz performs joint attacks with your active",
+      "character when present, dealing 30% of Fischl’s ATK as Electro DMG."
+    ],
+    "title": "Evernight Raven"
+  },
+  "ITEM.FlowerOfParadiseLost": "Flower of Paradise Lost",
+  "ITEM.FlowerOfParadiseLost2": {
+    "description": "Increases Elemental Mastery by 80.",
+    "title": "Flower of Paradise Lost (2)"
+  },
+  "ITEM.FlowerOfParadiseLost4": {
+    "description": [
+      "The equipping character's Bloom, Hyperbloom, and Burgeon reaction DMG",
+      "are increased by 40%. Additionally, after the equipping character triggers",
+      "Bloom, Hyperbloom, or Burgeon, they will gain another 25% bonus to the effect",
+      "mentioned prior. Each stack of this lasts 10s. Max 4 stacks simultaneously.",
+      "This effect can only be triggered once per second. The character who equips",
+      "this can still trigger its effects when not on the field."
+    ],
+    "title": "Flower of Paradise Lost (4)"
+  },
+  "ITEM.ForestRegalia": {
+    "title": "Forest Regalia"
+  },
+  "ITEM.ForestSanctuary1": {
+    "description": [
+      "After triggering Burning, Quicken, Aggravate, Spread, ",
+      "Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness ",
+      "will be created around the character for a maximum of 10s. ",
+      "When picked up, the Leaf will grant the character ",
+      "**#rank{60|75|90|105|120}** Elemental Mastery for ",
+      "12s. Only 1 Leaf can be generated this way every 20s. This ",
+      "effect can still be triggered if the character is not on ",
+      "the field. The Leaf of Consciousness’ effect cannot ",
+      "stack."
+    ],
+    "title": "undefined (1)"
+  },
+  "ITEM.FreedomSworn": {
+    "title": "Freedom-Sworn"
+  },
+  "ITEM.FreedomSworn1": {
+    "description": [
+      "A part of the \"Millennial Movement\" that wanders amidst ",
+      "the winds. Increases DMG by ",
+      "**#rank{10|12.5|15|17.5|20}%**. "
+    ],
+    "title": "Freedom-Sworn (1)"
+  },
+  "ITEM.FreedomSworn2": {
+    "description": [
+      "When the character wielding this weapon triggers ",
+      "Elemental Reactions, they gain a Sigil of Rebellion. ",
+      "This effect can be triggered once every 0.5s and can be ",
+      "triggered even if said character is not on the field. When ",
+      "you possess 2 Sigils of Rebellion, all of them will be ",
+      "consumed and all nearby party members will obtain ",
+      "\"Millennial Movement: Song of Resistance\" for 12s. ",
+      "\"Millennial Movement: Song of Resistance\" increases ",
+      "Normal, Charged and Plunging Attack DMG by ",
+      "**#rank{16|20|24|28|32}%** and increases ATK by ",
+      "**#rank{20|25|30|35|40}%**. Once this effect is ",
+      "triggered, you will not gain Sigils of Rebellion for 20s. ",
+      "Of the many effects of the \"Millennial Movement\", buffs ",
+      "of the same type will not stack. "
+    ],
+    "title": "Freedom-Sworn (2)"
+  },
+  "ITEM.Frostbearer": {
+    "title": "Frostbearer"
+  },
+  "ITEM.Frostbearer1": {
+    "description": [
+      "Hitting an opponent with Normal Attacks and Charged ",
+      "Attacks has a **#rank{60|70|80|90|100}%** chance of ",
+      "forming and dropping an Everfrost Icicle above them, ",
+      "dealing AoE DMG equal to ",
+      "**#rank{80|95|110|125|140}%** of ATK. Opponents ",
+      "affected by Cryo are instead dealt DMG equal to ",
+      "**#rank{200|240|280|320|360}%** of ATK. Can only ",
+      "occur once every 10s. "
+    ],
+    "title": "Frostbearer (1)"
+  },
+  "ITEM.FruitOfFulfillment": "Fruit of Fulfillment",
+  "ITEM.FruitOfFulfillment1": {
+    "description": [
+      "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered,",
+      "gaining **#rank{24|27|30|33|36}** Elemental Mastery while losing 5% ATK. ",
+      "For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks.",
+      "For every 6s that go by without",
+      "an Elemental Reaction being triggered, 1 stack will be lost. This effect can",
+      "be triggered even when the character is off-field."
+    ],
+    "title": "Fruit of Fulfillment (1)"
+  },
+  "ITEM.FruitofFulfillment": {
+    "title": "Fruit of Fulfillment"
+  },
+  "ITEM.FruitofFulfillment1": {
+    "description": [
+      "Obtain the “Wax and Wane” effect after an Elemental ",
+      "Reaction is triggered, gaining ",
+      "**#rank{24|27|30|33|36}** Elemental Mastery while ",
+      "losing 5% ATK. For every 0.3s, 1 stack of Wax and Wane can be ",
+      "gained. Max 5 stacks. For every 6s that go by without an ",
+      "Elemental Reaction being triggered, 1 stack will be ",
+      "lost. This effect can be triggered even when the ",
+      "character is off-field."
+    ],
+    "title": "Fruit of Fulfillment (1)"
+  },
+  "ITEM.Gambler": {
+    "title": "Gambler"
+  },
+  "ITEM.Gambler2": {
+    "description": [
+      "Increases Elemental Skill DMG by 20%. "
+    ],
+    "title": "Gambler (2)"
+  },
+  "ITEM.Gambler4": {
+    "description": [
+      "Defeating an opponent has a 100% chance to remove ",
+      "Elemental Skill CD. Can only occur once every 15s.  "
+    ],
+    "title": "Gambler (4)"
+  },
+  "ITEM.GildedDreams": {
+    "title": "Gilded Dreams"
+  },
+  "ITEM.GildedDreams2": {
+    "description": "Elemental Mastery +80.",
+    "title": "Gilded Dreams (2)"
+  },
+  "ITEM.GildedDreams4": {
+    "description": [
+      "Within 8s of triggering an Elemental Reaction, the ",
+      "character equipping this will obtain buffs based on the ",
+      "Elemental Type of the other party members. ATK is ",
+      "increased by 14% for each party member whose Elemental ",
+      "Type is the same as the equipping character, and ",
+      "Elemental Mastery is increased by 50 for every party ",
+      "member with a different Elemental Type. Each of the ",
+      "aforementioned buffs will count up to 3 characters. This ",
+      "effect can be triggered once every 8s. The character who ",
+      "equips this can still trigger its effects when not on the ",
+      "field."
+    ],
+    "title": "Gilded Dreams (4)"
+  },
+  "ITEM.GladiatorsFinale": {
+    "title": "Gladiator's Finale"
+  },
+  "ITEM.GladiatorsFinale2": {
+    "description": [
+      "ATK: +18%. "
+    ],
+    "title": "Gladiator's Finale (2)"
+  },
+  "ITEM.GladiatorsFinale4": {
+    "description": [
+      "If the wielder of this artifact set uses a Sword, Claymore ",
+      "or Polearm, increases their Normal Attack DMG by 35%. "
+    ],
+    "title": "Gladiator's Finale (4)"
+  },
+  "ITEM.HakushinRing": {
+    "title": "Hakushin Ring"
+  },
+  "ITEM.HakushinRing1": {
+    "description": [
+      "After the character equipped with this weapon triggers ",
+      "an Electro elemental reaction, nearby party members of ",
+      "an Elemental Type involved in the elemental reaction ",
+      "receive a **#rank{10|12.5|15|17.5|20}%** Elemental ",
+      "DMG Bonus for their element, lasting 6s. Elemental ",
+      "Bonuses gained in this way cannot be stacked. "
+    ],
+    "title": "Hakushin Ring (1)"
+  },
+  "ITEM.Halberd": {
+    "title": "Halberd"
+  },
+  "ITEM.Halberd1": {
+    "description": [
+      "Normal Attacks deal an additional ",
+      "**#rank{160|200|240|280|320}%** ATK as DMG. Can only ",
+      "occur once every 10s. "
+    ],
+    "title": "Halberd (1)"
+  },
+  "ITEM.Hamayumi": {
+    "title": "Hamayumi"
+  },
+  "ITEM.Hamayumi1": {
+    "description": [
+      "Increases Normal Attack DMG by ",
+      "**#rank{16|20|24|28|32}%** and Charged Attack DMG by ",
+      "**#rank{12|15|18|21|24}%**. When the equipping ",
+      "character's Energy reaches 100%, this effect is ",
+      "increased by 100%. "
+    ],
+    "title": "Hamayumi (1)"
+  },
+  "ITEM.HaranGeppakuFutsu": "Haran Geppaku Futsu",
+  "ITEM.HarbingerOfDawn": {
+    "title": "Harbinger of Dawn"
+  },
+  "ITEM.HarbingerOfDawn1": {
+    "description": [
+      "When HP is above 90%, increases CRIT Rate by ",
+      "**#rank{14|17.5|21|24.5|28}%**.  "
+    ],
+    "title": "Harbinger of Dawn (1)"
+  },
+  "ITEM.HeartOfDepth": {
+    "title": "Heart of Depth"
+  },
+  "ITEM.HeartOfDepth2": {
+    "description": [
+      "Hydro DMG Bonus: +15%. "
+    ],
+    "title": "Heart of Depth (2)"
+  },
+  "ITEM.HeartOfDepth4": {
+    "description": [
+      "After using Elemental Skill, increases Normal Attack ",
+      "DMG and Charged Attack DMG by 30% for 15s. "
+    ],
+    "title": "Heart of Depth (4)"
+  },
+  "ITEM.HuTao": "Hu Tao",
+  "ITEM.HuTao.HIT_E": "Blood Blossom",
+  "ITEM.HuTao.HIT_Q": "Spirit Soother",
+  "ITEM.HuTaoA1": {
+    "description": [
+      "When a Paramita Papilio state activated by **Guide to ",
+      "Afterlife** ends, all allies in the party (excluding Hu ",
+      "Tao herself) will have their CRIT Rate increased by 12% ",
+      "for 8s. "
+    ],
+    "title": "Flutter By"
+  },
+  "ITEM.HuTaoA4": {
+    "description": [
+      "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG ",
+      "Bonus is increased by 33%. "
+    ],
+    "title": "Sanguine Rouge"
+  },
+  "ITEM.HuTaoC2": {
+    "description": [
+      "Increases the Blood Blossom DMG by an amount equal to 10% ",
+      "of Hu Tao's Max HP at the time the effect is applied. ",
+      "Additionally, **Spirit Soother** will also apply the ",
+      "Blood Blossom effect. "
+    ],
+    "title": "Ominous Rainfall"
+  },
+  "ITEM.HuTaoC3": {
+    "description": [
+      "Increases the Level of **Guide to Afterlife** by 3. ",
+      "Maximum upgrade level is 15. "
+    ],
+    "title": "Lingering Carmine"
+  },
+  "ITEM.HuTaoC4": {
+    "description": [
+      "Upon defeating an enemy affected by a Blood Blossom that ",
+      "Hu Tao applied herself, all nearby allies in the party ",
+      "(excluding Hu Tao herself) will have their CRIT Rate ",
+      "increased by 12% for 15s. "
+    ],
+    "title": "Garden of eternal rest"
+  },
+  "ITEM.HuTaoC5": {
+    "description": [
+      "Increases the Level of **Spirit Soother** by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Floral Incense"
+  },
+  "ITEM.HuTaoC6": {
+    "description": [
+      "Triggers when Hu Tao's HP drops below 25%, or when she ",
+      "suffers a lethal strike: Hu Tao will not fall as a result of ",
+      "the DMG sustained. Additionally, for the next 10s, all of ",
+      "her Elemental RES and Physical RES is increased by 200%, ",
+      "her CRIT Rate is increased by 100%, and her resistance to ",
+      "interruption is greatly increased. This effect ",
+      "triggers automatically when Hu Tao has 1 HP left. Can only ",
+      "occur once every 60s. "
+    ],
+    "title": "Butterfly's Embrace"
+  },
+  "ITEM.HuTaoE": {
+    "description": [
+      "Increases Hu Tao's ATK based on her Max HP at the time of ",
+      "entering this state. ATK Bonus gained this way cannot ",
+      "exceed 400% of Hu Tao's Base ATK. Converts attack DMG to ",
+      "Pyro DMG, which cannot be overridden by any other ",
+      "elemental infusion. "
+    ],
+    "title": "Paramita Papilio"
+  },
+  "ITEM.HuTaoQ": {
+    "description": [
+      "If Hu Tao’s HP is below or equal to 50% when the enemy is hit,",
+      "both the DMG and HP Regeneration are increased."
+    ],
+    "title": "Spirit Soother"
+  },
+  "ITEM.HuntersPath": {
+    "title": "Hunter's Path"
+  },
+  "ITEM.HuntersPath1": {
+    "description": [
+      "Gain **#rank{12|15|18|21|24}%** All Elemental DMG ",
+      "Bonus. Obtain the Tireless Hunt effect after hitting an ",
+      "opponent with a Charged Attack. This effect increases ",
+      "Charged Attack DMG by **#rank{160|200|240|280|320}%** ",
+      "of Elemental Mastery. This effect will be removed after ",
+      "12 Charged Attacks or 10s. Only 1 instance of Tireless ",
+      "Hunt can be gained every 12s."
+    ],
+    "title": "Hunter's Path (1)"
+  },
+  "ITEM.HuskOfOpulentDreams": {
+    "title": "Husk of Opulent Dreams"
+  },
+  "ITEM.HuskOfOpulentDreams2": {
+    "description": [
+      "DEF +30%. "
+    ],
+    "title": "Husk of Opulent Dreams (2)"
+  },
+  "ITEM.HuskOfOpulentDreams4": {
+    "description": [
+      "A character equipped with this Artifact set will obtain ",
+      "the Curiosity effect in the following conditions: When ",
+      "on the field, the character gains 1 stack after hitting an ",
+      "opponent with a Geo attack, triggering a maximum of once ",
+      "every 0.3s. When off the field, the character gains 1 ",
+      "stack every 3s. Curiosity can stack up to 4 times, each ",
+      "providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass ",
+      "without gaining a Curiosity stack, 1 stack is lost.  "
+    ],
+    "title": "Husk of Opulent Dreams (4)"
+  },
+  "ITEM.Instructor": {
+    "title": "Instructor"
+  },
+  "ITEM.Instructor2": {
+    "description": [
+      "Elemental Mastery: +80. "
+    ],
+    "title": "Instructor (2)"
+  },
+  "ITEM.Instructor4": {
+    "description": [
+      "Upon triggering an Elemental Reaction, increases all ",
+      "party members' Elemental Mastery by 120 for 8s.  "
+    ],
+    "title": "Instructor (4)"
+  },
+  "ITEM.IronSting": {
+    "title": "Iron Sting"
+  },
+  "ITEM.IronSting1": {
+    "description": [
+      "Dealing Elemental DMG increases all DMG by ",
+      "**#rank{6|7.5|9|10.5|12}%** for 6s. Max 2 stacks. Can ",
+      "occur once every 1s. "
+    ],
+    "title": "Iron Sting (1)"
+  },
+  "ITEM.JadeCutter": {
+    "title": "Primordial Jade Cutter"
+  },
+  "ITEM.JadeCutter1": {
+    "description": [
+      "HP increased by ",
+      "**#rank{20|25|30|35|40}%**.Additionally, provides ",
+      "an ATK Bonus based on **#rank{1.2|1.5|1.8|2.1|2.4}%** ",
+      "of the wielder's Max HP. "
+    ],
+    "title": "Primordial Jade Cutter (1)"
+  },
+  "ITEM.JadeSpear": {
+    "title": "Primordial Jade Winged-Spear"
+  },
+  "ITEM.JadeSpear1": {
+    "description": [
+      "On hit, increases ATK by ",
+      "**#rank{3.2|3.9|4.6|5.3|6}%** for 6s. Max 7 stacks. ",
+      "This effect can only occur once every 0.3s.While in ",
+      "possession of the maximum possible stacks, DMG dealt is ",
+      "increased by **#rank{12|15|18|21|24}%**.  "
+    ],
+    "title": "Primordial Jade Winged-Spear (1)"
+  },
+  "ITEM.KagotsurubeIsshin": {
+    "title": "Kagotsurube Isshin"
+  },
+  "ITEM.KagotsurubeIsshin1": {
+    "description": [
+      "When a Normal, Charged, or Plunging Attack hits an ",
+      "opponent, it will whip up a Hewing Gale, dealing AoE DMG ",
+      "equal to 180% of ATK and increasing ATK by 15% for 8s. This ",
+      "effect can be triggered once every 8s."
+    ],
+    "title": "Kagotsurube Isshin (1)"
+  },
+  "ITEM.KagurasVerity": {
+    "title": "Kagura's Verity"
+  },
+  "ITEM.KagurasVerity1": {
+    "description": [
+      "Gains the Kagura Dance effect when using an Elemental ",
+      "Skill, causing the Elemental Skill DMG of the character ",
+      "wielding this weapon to increase by ",
+      "**#rank{12|15|18|21|24}%** for 12s. Max 3 stacks. This ",
+      "character will gain **#rank{12|15|18|21|24}%** All ",
+      "Elemental DMG Bonus when they possess 3 stacks. "
+    ],
+    "title": "Kagura's Verity (1)"
+  },
+  "ITEM.KatsuragikiriNagamasa": {
+    "title": "Katsuragikiri Nagamasa"
+  },
+  "ITEM.KatsuragikiriNagamasa1": {
+    "description": [
+      "Increases Elemental Skill DMG by ",
+      "**#rank{6|7.5|9|10.5|12}%**. After Elemental Skill ",
+      "hits an opponent, the character loses 3 Energy but ",
+      "regenerates **#rank{3|3.5|4|4.5|5}** Energy every 2s ",
+      "for the next 6s. This effect can occur once every 10s. Can ",
+      "be triggered even when the character is not on the field. "
+    ],
+    "title": "Katsuragikiri Nagamasa (1)"
+  },
+  "ITEM.Kazuha": "Kazuha",
+  "ITEM.Kazuha.HIT_A1": "Soumon Swordsmanship",
+  "ITEM.Kazuha.HIT_PLUNGE_E": "Plunge (Midare Ranzan)",
+  "ITEM.Kazuha.HIT_PLUNGE_HIGH_E": "High Plunge (Midare Ranzan)",
+  "ITEM.Kazuha.HIT_PLUNGE_LOW_E": "Low Plunge (Midare Ranzan)",
+  "ITEM.KazuhaA1": {
+    "description": [
+      "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro",
+      "when cast, this Chihayaburu will absorb that element and if",
+      "Plunging Attack: Midare Ranzan is used before the effect expires,",
+      "it will deal an additional 200% ATK of the absorbed elemental type",
+      "as DMG. This will be considered Plunging Attack DMG.\n",
+      "Elemental Absorption may only occur once per use of Chihayaburu."
+    ],
+    "title": "Soumon Swordsmanship"
+  },
+  "ITEM.KazuhaA4": {
+    "description": [
+      "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant all",
+      "party members a 0.04% Elemental DMG Bonus to the element absorbed",
+      "by Swirl for every point of Elemental Mastery he has for 8s. Bonuses",
+      "for different elements obtained through this method can co-exist."
+    ],
+    "title": "Poetics of Fuubutsu"
+  },
+  "ITEM.KazuhaC2": {
+    "description": [
+      "The Autumn Whirlwind field created by Kazuha Slash has ",
+      "the following effects: \n• Increases Kaedehara Kazuha's ",
+      "own Elemental Mastery by 200. \n• Increases the Elemental ",
+      "Mastery of characters within the field by 200. The ",
+      "Elemental Mastery-increasing effects of this ",
+      "Constellation do not stack. "
+    ],
+    "title": "Yamaarashi Tailwind"
+  },
+  "ITEM.KazuhaC3": {
+    "description": [
+      "Increases the Level of Chihayaburu by 3. Maximum upgrade ",
+      "level is 15. "
+    ],
+    "title": "Maple Monogatari"
+  },
+  "ITEM.KazuhaC5": {
+    "description": [
+      "Increases the Level of Kazuha Slash by 3. Maximum upgrade ",
+      "level is 15. "
+    ],
+    "title": "Wisdom of Bansei"
+  },
+  "ITEM.KazuhaC6": {
+    "description": [
+      "After using Chihayaburu or Kazuha Slash, Kaedehara ",
+      "Kazuha gains an Anemo Infusion for 5s. Additionally, ",
+      "each point of Elemental Mastery will increase the DMG ",
+      "dealt by Kaedehara Kazuha's Normal, Charged, and ",
+      "Plunging Attack by 0.2%. "
+    ],
+    "title": "Crimson Momiji"
+  },
+  "ITEM.KazuhaE": {
+    "description": [
+      "When a Plunging Attack is performed using the effects of the",
+      "Elemental Skill Chihayaburu, Plunging Attack DMG is converted",
+      "to Anemo DMG. On landing, Kazuha creates a small wind tunnel",
+      "via a secret blade technique that pulls in nearby objects and opponents.\n",
+      "Midare Ranzan’s DMG is considered Plunging Attack DMG."
+    ],
+    "title": "Plunging Attack: Midare Ranzan"
+  },
+  "ITEM.KazuhaQ": {
+    "description": [
+      "If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro,",
+      "it will deal additional elemental DMG of that type.\n",
+      "Elemental Absorption may only occur once per use."
+    ],
+    "title": "Kazuha Slash: Elemental Absorption"
+  },
+  "ITEM.KeyOfKhajNisut": "Key of Khaj-Nisut",
+  "ITEM.KeyOfKhajNisut1": {
+    "description": "HP increased by 20%.",
+    "title": "Key of Khaj-Nisut (1)"
+  },
+  "ITEM.KeyOfKhajNisut2": {
+    "description": [
+      "When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s.",
+      "This effect increases the equipping character’s Elemental Mastery by",
+      "**#rank{0.12|0.15|0.18|0.21|0.24}%** of their Max HP. This effect can trigger once",
+      "every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack’s",
+      "duration is refreshed, the Elemental Mastery of all nearby party members will be",
+      "increased by **#rank{0.2|0.25|0.3|0.35|0.4}%** of the equipping character’s max HP for 20s."
+    ],
+    "title": "Key of Khaj-Nisut (2)"
+  },
+  "ITEM.KingsSquire": {
+    "title": "King's Squire"
+  },
+  "ITEM.KingsSquire1": {
+    "description": [
+      "Obtain the Teachings of the Forest effect when ",
+      "unleashing Elemental Skills and Bursts, increasing ",
+      "Elemental Mastery by **#rank{60|80|100|120|140}** ",
+      "for 12s. This effect will be removed when switching ",
+      "characters. When the Teachings of the Forest effect ends ",
+      "or is removed, it will deal ",
+      "**#rank{100|120|140|160|180}%** of ATK as DMG to 1 ",
+      "nearby opponent. The Teachings of the Forest effect can ",
+      "be triggered once every 20s."
+    ],
+    "title": "King's Squire (1)"
+  },
+  "ITEM.KitainCrossSpear": {
+    "title": "Kitain Cross Spear"
+  },
+  "ITEM.KitainCrossSpear1": {
+    "description": [
+      "Increases Elemental Skill DMG by ",
+      "**#rank{6|7.5|9|10.5|12}%**. After Elemental Skill ",
+      "hits an opponent, the character loses 3 Energy but ",
+      "regenerates **#rank{3|3.5|4|4.5|5}** Energy every 2s ",
+      "for the next 6s. This effect can occur once every 10s. Can ",
+      "be triggered even when the character is not on the field. "
+    ],
+    "title": "Kitain Cross Spear (1)"
+  },
+  "ITEM.Lavawalker": {
+    "title": "Lavawalker"
+  },
+  "ITEM.Lavawalker2": {
+    "description": [
+      "Pyro RES increased by 40%. "
+    ],
+    "title": "Lavawalker (2)"
+  },
+  "ITEM.Lavawalker4": {
+    "description": [
+      "Increases DMG against opponents affected by Pyro by 35%.  "
+    ],
+    "title": "Lavawalker (4)"
+  },
+  "ITEM.LightOfFoliarIncision": "Light of Foliar Incision",
+  "ITEM.LightOfFoliarIncision1": {
+    "description": [
+      "CRIT Rate is increased by **#rank{4|5|6|7|8}%**. After Normal Attacks deal",
+      "Elemental DMG, the Foliar Incision effect will be obtained, increasing DMG",
+      "dealt by Normal Attacks and Elemental Skills by **#rank{120|150|180|210|240}%**",
+      "of Elemental Mastery. This effect will disappear after 28 DMG instances or 12s.",
+      "You can obtain Foliar Incision once every 12s."
+    ],
+    "title": "Light of Foliar Incision (1)"
+  },
+  "ITEM.LionsRoar": {
+    "title": "Lion's Roar"
+  },
+  "ITEM.LionsRoar1": {
+    "description": [
+      "Increases DMG against opponents affected by Pyro or ",
+      "Electro by **#rank{20|24|28|32|36}%**. "
+    ],
+    "title": "Lion's Roar (1)"
+  },
+  "ITEM.LithicBlade": {
+    "title": "Lithic Blade"
+  },
+  "ITEM.LithicBlade1": {
+    "description": [
+      "For every character in the party who hails from Liyue, the ",
+      "character who equips this weapon gains a ",
+      "**#rank{7|8|9|10|11}%** ATK increase and a ",
+      "**#rank{3|4|5|6|7}%** CRIT Rate increase. This effect ",
+      "stacks up to 4 times. "
+    ],
+    "title": "Lithic Blade (1)"
+  },
+  "ITEM.LithicSpear": {
+    "title": "Lithic Spear"
+  },
+  "ITEM.LithicSpear1": {
+    "description": [
+      "For every character in the party who hails from Liyue, the ",
+      "character who equips this weapon gains a ",
+      "**#rank{7|8|9|10|11}%** ATK increase and a ",
+      "**#rank{3|4|5|6|7}%** CRIT Rate increase. This effect ",
+      "stacks up to 4 times. "
+    ],
+    "title": "Lithic Spear (1)"
+  },
+  "ITEM.LostPrayer": {
+    "title": "Lost Prayer to the Sacred Winds"
+  },
+  "ITEM.LostPrayer1": {
+    "description": [
+      "Increases Movement SPD by 10%. When in battle, gain an ",
+      "**#rank{8|10|12|14|16}%** Elemental DMG Bonus every ",
+      "4s. Max 4 stacks. Lasts until the character falls or ",
+      "leaves combat. "
+    ],
+    "title": "Lost Prayer to the Sacred Winds (1)"
+  },
+  "ITEM.LuxuriousSeaLord": {
+    "title": "Luxurious Sea-Lord"
+  },
+  "ITEM.LuxuriousSeaLord1": {
+    "description": [
+      "Increases Elemental Burst DMG by ",
+      "**#rank{12|15|18|21|24}%**. When Elemental Burst ",
+      "hits opponents, there is a 100% chance of summoning a ",
+      "titanic tuna that charges and deals ",
+      "**#rank{100|125|150|175|200}%** ATK as AoE DMG. This ",
+      "effect can occur once every 15s. "
+    ],
+    "title": "Luxurious Sea-Lord (1)"
+  },
+  "ITEM.MagicGuide": {
+    "title": "Magic Guide"
+  },
+  "ITEM.MagicGuide1": {
+    "description": [
+      "Increases DMG against opponents affected by Hydro or ",
+      "Electro by **#rank{12|15|18|21|24}%**. "
+    ],
+    "title": "Magic Guide (1)"
+  },
+  "ITEM.MaidenBeloved": {
+    "title": "Maiden Beloved"
+  },
+  "ITEM.MaidenBeloved2": {
+    "description": [
+      "Healing Bonus: +15%. "
+    ],
+    "title": "Maiden Beloved (2)"
+  },
+  "ITEM.MaidenBeloved4": {
+    "description": [
+      "Using an Elemental Skill or Burst increases healing ",
+      "received by all party members by 20% for 10s. "
+    ],
+    "title": "Maiden Beloved (4)"
+  },
+  "ITEM.MakhairaAquamarine": {
+    "title": "Makhaira Aquamarine"
+  },
+  "ITEM.MakhairaAquamarine1": {
+    "description": [
+      "The following effect will trigger every 10s: The ",
+      "equipping character will gain ",
+      "**#rank{24|30|36|42|48}%** of their Elemental ",
+      "Mastery as bonus ATK for 12s, with nearby party members ",
+      "gaining 30% of this buff for the same duration. Multiple ",
+      "instances of this weapon can allow this buff to stack. ",
+      "This effect will still trigger even if the character is ",
+      "not on the field."
+    ],
+    "title": "Makhaira Aquamarine (1)"
+  },
+  "ITEM.MappaMare": {
+    "title": "Mappa Mare"
+  },
+  "ITEM.MappaMare1": {
+    "description": [
+      "Triggering an Elemental reaction grants a ",
+      "**#rank{8|10|12|14|16}%** Elemental DMG Bonus for ",
+      "10s. Max 2 stacks.  "
+    ],
+    "title": "Mappa Mare (1)"
+  },
+  "ITEM.MartialArtist": {
+    "title": "Martial Artist"
+  },
+  "ITEM.MartialArtist2": {
+    "description": [
+      "Increases Normal Attack and Charged Attack DMG by 15%. "
+    ],
+    "title": "Martial Artist (2)"
+  },
+  "ITEM.MartialArtist4": {
+    "description": [
+      "After using Elemental Skill, increases Normal Attack ",
+      "and Charged Attack DMG by 25% for 8s. "
+    ],
+    "title": "Martial Artist (4)"
+  },
+  "ITEM.MemoryOfDust": {
+    "title": "Memory of Dust"
+  },
+  "ITEM.MemoryOfDust1": {
+    "description": [
+      "Increases Shield Strength by 20%. Scoring hits on ",
+      "opponents increases ATK by **#rank{4|5|6|7|8}%** for ",
+      "8s. Max 5 stacks. Can only occur once every 0.3s. While ",
+      "protected by a shield, this ATK increase effect is ",
+      "increased by 100%. "
+    ],
+    "title": "Memory of Dust (1)"
+  },
+  "ITEM.Messenger": "Messenger",
+  "ITEM.Messenger1": {
+    "description": [
+      "Charged Attack hits on weak points deal an additional",
+      "**#rank{100|125|150|175|200}%** ATK DMG as CRIT DMG.",
+      "Can only occur once every 10s."
+    ],
+    "title": "Messenger (1)"
+  },
+  "ITEM.MissiveWindspear": {
+    "title": "Missive Windspear"
+  },
+  "ITEM.MissiveWindspear1": {
+    "description": [
+      "Within 10s after an Elemental Reaction is triggered, ATK ",
+      "is increased by **#rank{12|15|18|21|24}%** and ",
+      "Elemental Mastery is increased by ",
+      "**#rank{48|60|72|84|96}**."
+    ],
+    "title": "Missive Windspear (1)"
+  },
+  "ITEM.MistsplitterReforged": {
+    "title": "Mistsplitter Reforged"
+  },
+  "ITEM.MistsplitterReforged1": {
+    "description": [
+      "Gain a **#rank{12|15|18|21|24}%** Elemental DMG Bonus ",
+      "for all element and receive the might of the ",
+      "Mistsplitter's Emblem.At stack levels 1/2/3, the ",
+      "Mistsplitter's Emblem provides a ",
+      "**#rank{8|10|12|14|16}/#rank{16|20|24|28|32}/#rank{28|35|42|49|56}%** ",
+      "Elemental DMG Bonus for the character's Elemental Type. ",
+      "The character will obtain 1 stack of Mistsplitter's ",
+      "Emblem in each of the following scenarios: Normal Attack ",
+      "deals Elemental DMG (stack lasts 5s), casting Elemental ",
+      "Burst (stack lasts 10s); Energy is less than 100% (stack ",
+      "disappears when Energy is full). Each stack's duration ",
+      "is calculated independently. "
+    ],
+    "title": "Mistsplitter Reforged (1)"
+  },
+  "ITEM.MitternachtsWaltz": {
+    "title": "Mitternachts Waltz"
+  },
+  "ITEM.MitternachtsWaltz1": {
+    "description": [
+      "Normal Attack hits on opponents increase Elemental ",
+      "Skill DMG by **#rank{20|25|30|35|40}%** for 5s. ",
+      "Elemental Skill hits on opponents increase Normal ",
+      "Attack DMG by **#rank{20|25|30|35|40}%** for 5s. "
+    ],
+    "title": "Mitternachts Waltz (1)"
+  },
+  "ITEM.Moonpiercer": {
+    "title": "Moonpiercer"
+  },
+  "ITEM.Moonpiercer1": {
+    "description": [
+      "After triggering Burning, Quicken, Aggravate, Spread, ",
+      "Bloom, Hyperbloom, or Burgeon, a Leaf of Revival will be ",
+      "created around the character for a maximum of 10s. When ",
+      "picked up, the Leaf will grant the character ",
+      "**rank{16/20/24/28/32}%** ATK for 12s. Only 1 Leaf can ",
+      "be generated this way every 20s. This effect can still be ",
+      "triggered if the character is not on the field."
+    ],
+    "title": "Moonpiercer (1)"
+  },
+  "ITEM.MouunsMoon": {
+    "title": "Mouun's Moon"
+  },
+  "ITEM.MouunsMoon1": {
+    "description": [
+      "For every point of the entire party's combined maximum ",
+      "Energy, the Elemental Burst DMG of the character ",
+      "equipping this weapon is increased by ",
+      "**#rank{0.12|0.15|0.18|0.21|0.24}%**. A maximum of ",
+      "**#rank{40|50|60|70|80}%** increased Elemental ",
+      "Burst DMG can be achieved this way. "
+    ],
+    "title": "Mouun's Moon (1)"
+  },
+  "ITEM.Nahida": "Nahida",
+  "ITEM.Nahida.HIT_C6": "Tri-Karma Purification: Karmic Oblivion",
+  "ITEM.Nahida.HIT_E_DOT": "Tri-Karma Purification",
+  "ITEM.NahidaA1": {
+    "description": [
+      "When unleashing Illusory Heart, the Shrine of Maya will gain the",
+      "following effects:\nThe Elemental Mastery of the active character",
+      "within the field will be increased by 25% of the Elemental Mastery",
+      "of the party member with the highest Elemental Mastery.\n",
+      "You can gain a maximum of 250 Elemental Mastery in this manner."
+    ],
+    "title": "Compassion Illuminated"
+  },
+  "ITEM.NahidaA4": {
+    "description": [
+      "Each point of Nahida’s Elemental Mastery beyond 200 will grant",
+      "0.1% Bonus DMG and 0.03% CRIT Rate to Tri-Karma Purification from",
+      "All Schemes to Know.\nA maximum of 80% Bonus DMG and 24% CRIT Rate",
+      "can be granted to Tri-Karma Purification in this manner."
+    ],
+    "title": "Awakening Elucidated"
+  },
+  "ITEM.NahidaC1": {
+    "description": [
+      "When the Shrine of Maya is unleashed and the Elemental Types",
+      "of the party members are being tabulated, the count will add 1",
+      "to the number of Pyro, Electro, and Hydro characters respectively."
+    ],
+    "title": "The Seed of Stored Knowledge"
+  },
+  "ITEM.NahidaC2": {
+    "description": [
+      "Opponents that are marked by Seeds of Skandha applied by Nahida herself",
+      "will be affected by the following effects:\n",
+      "·Burning, Bloom, Hyperbloom, and Burgeon Reaction DMG they receive can",
+      "score CRIT Hits. CRIT Rate and CRIT DMG are fixed at 20% and 100% respectively.",
+      "·Within 8s of being affected by Quicken, Aggravate, Spread, DEF is decreased by 30%."
+    ],
+    "title": "The Root of All Fullness"
+  },
+  "ITEM.NahidaC3": {
+    "description": [
+      "Increases the Level of All Schemes to Know by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "The Shoot of Conscious Attainment"
+  },
+  "ITEM.NahidaC4": {
+    "description": [
+      "When 1/2/3/4 (or more) nearby opponents are affected by All Schemes",
+      "to Know‘s Seeds of Skandha, Nahida’s Elemental Mastery will be",
+      "increased by 100/120/140/160."
+    ],
+    "title": "The Stem of Manifest Inference"
+  },
+  "ITEM.NahidaC5": {
+    "description": [
+      "Increases the Level of Illusory Heart by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "The Leaves of Enlightening Speech"
+  },
+  "ITEM.NahidaC6": {
+    "description": [
+      "When Nahida hits an opponent affected by All Schemes to Know‘s",
+      "Seeds of Skandha with Normal or Charged Attacks after unleashing",
+      "Illusory Heart, she will use Tri-Karma Purification: Karmic Oblivion",
+      "on this opponent and all connected opponents, dealing Dendro DMG based",
+      "on 200% of Nahida’s ATK and 400% of her Elemental Mastery.\n",
+      "DMG dealt by Tri-Karma Purification: Karmic Oblivion is considered",
+      "Elemental Skill DMG and can be triggered once every 0.2s.\n",
+      "This effect can last up to 10s and will be removed after Nahida has",
+      "unleashed 6 instances of Tri-Karma Purification: Karmic Oblivion."
+    ],
+    "title": "The Fruit of Reason’s Culmination"
+  },
+  "ITEM.NahidaQ": {
+    "description": [
+      "When the Shrine of Maya field is unleashed, the following effects will be separately",
+      "unleashed based on the Elemental Types present within the party.\n",
+      "· Pyro: While Nahida remains within the Shrine of Maya, the DMG dealt by Tri-Karma",
+      "Purification from “All Schemes to Know” is increased.\n",
+      "· Electro: While Nahida remains within the Shrine of Maya, the interval between each",
+      "Tri-Karma Purification from “All Schemes to Know” is decreased.\n",
+      "· Hydro: The Shrine of Maya’s duration is increased.\n",
+      "If there are at least 2 party members of the aforementioned Elemental Types present when",
+      "the field is deployed, the aforementioned effects will be increased further.\n",
+      "Even if Nahida is not on the field, these bonuses will still take effect so long as party",
+      "members are within the Shrine of Maya."
+    ],
+    "title": "Illusory Heart"
+  },
+  "ITEM.NoblesseOblige": {
+    "title": "Noblesse Oblige"
+  },
+  "ITEM.NoblesseOblige2": {
+    "description": [
+      "Elemental Burst DMG: +20%. "
+    ],
+    "title": "Noblesse Oblige (2)"
+  },
+  "ITEM.NoblesseOblige4": {
+    "description": [
+      "Using an Elemental Burst increases all party members' ",
+      "ATK by 20% for 12s. This effect cannot stack.  "
+    ],
+    "title": "Noblesse Oblige (4)"
+  },
+  "ITEM.OathswornEye": {
+    "title": "Oathsworn Eye"
+  },
+  "ITEM.OathswornEye1": {
+    "description": [
+      "Increases Energy Recharge by ",
+      "**#rank{24|30|36|42|48}%** for 10s after using an ",
+      "Elemental Skill. "
+    ],
+    "title": "Oathsworn Eye (1)"
+  },
+  "ITEM.OceanHuedClam": {
+    "title": "Ocean-Hued Clam"
+  },
+  "ITEM.OceanHuedClam2": {
+    "description": [
+      "Healing Bonus: +15%. "
+    ],
+    "title": "Ocean-Hued Clam (2)"
+  },
+  "ITEM.OceanHuedClam4": {
+    "description": [
+      "When the character equipping this artifact set heals a ",
+      "character in the party, a Sea-Dyed Foam will appear for 3 ",
+      "seconds, accumulating the amount of HP recovered from ",
+      "healing (including overflow healing). At the end of the ",
+      "duration, the Sea-Dyed Foam will explode, dealing DMG to ",
+      "nearby opponents based on 90% of the accumulated ",
+      "healing. (This DMG is calculated similarly to Reactions ",
+      "such as Electro-Charged, and Superconduct, but is not ",
+      "affected by Elemental Mastery, Character Levels, or ",
+      "Reaction DMG Bonuses). Only one Sea-Dyed Foam can be ",
+      "produced every 3.5 seconds. Each Sea-Dyed Foam can ",
+      "accumulate up to 30,000 HP (including overflow ",
+      "healing). There can be no more than one Sea-Dyed Foam ",
+      "active at any given time. This effect can still be ",
+      "triggered even when the character who is using this ",
+      "artifact set is not on the field. "
+    ],
+    "title": "Ocean-Hued Clam (4)"
+  },
+  "ITEM.OtherworldlyStory": {
+    "title": "Otherworldly Story"
+  },
+  "ITEM.OtherworldlyStory1": {
+    "description": [
+      "Picking up an Elemental Energy Orb/Particle recovers ",
+      "**#rank{1|1.25|1.5|1.75|2}%** HP. "
+    ],
+    "title": "Otherworldly Story (1)"
+  },
+  "ITEM.POLEARM": "Polearm",
+  "ITEM.PaleFlame": {
+    "title": "Pale Flame"
+  },
+  "ITEM.PaleFlame2": {
+    "description": [
+      "Physical DMG Bonus: +25%. "
+    ],
+    "title": "Pale Flame (2)"
+  },
+  "ITEM.PaleFlame4": {
+    "description": [
+      "When an Elemental Skill hits an opponent, ATK is ",
+      "increased by 9% for 7s. This effect stacks up to 2 times and ",
+      "can be triggered once every 0.3s.Once 2 stacks are ",
+      "reached, the 2-set effect is increased by 100%. "
+    ],
+    "title": "Pale Flame (4)"
+  },
+  "ITEM.PolarStar": {
+    "title": "Polar Star"
+  },
+  "ITEM.PolarStar1": {
+    "description": [
+      "Elemental Skill and Elemental Burst DMG increased by ",
+      "**#rank{12|15|18|21|24}%**. After a Normal Attack, ",
+      "Charged Attack, Elemental Skill or Elemental Burst hits ",
+      "an opponent, 1 stack of Byakuya Kyousei will be gained for ",
+      "12s. When 1/2/3/4 stacks of Byakuya Kyousei are present, ",
+      "ATK is increased by ",
+      "**#rank{10|12.5|15|17.5|20}**/**#rank{20|25|30|35|40}**/**#rank{30|37.5|45|52.5|60}**/**#rank{48|60|72|84|96}%**. ",
+      "The stack of Byakuya Kyousei created by the Normal ",
+      "Attack, Charged Attack, Elemental Skill or Elemental ",
+      "Burst will be counted independently of the others. "
+    ],
+    "title": "Polar Star (1)"
+  },
+  "ITEM.Predator": {
+    "title": "Predator"
+  },
+  "ITEM.Predator1": {
+    "description": [
+      "Exclusively available when playing on \"Playstation ",
+      "Network\".",
+      "Dealing Cryo DMG to opponents increases this ",
+      "character's Normal and Charged Attack DMG by 10% for 6s. ",
+      "This effect can have a maximum of 2 stacks. Additionally, ",
+      "when Aloy equips Predator, ATK is increased by 66. "
+    ],
+    "title": "Predator (1)"
+  },
+  "ITEM.PrototypeAmber": {
+    "title": "Prototype Amber"
+  },
+  "ITEM.PrototypeAmber1": {
+    "description": [
+      "Using an Elemental Burst regenerates ",
+      "**#rank{4|4.5|5|5.5|6}** Energy every 2s for 6s. All ",
+      "party members will regenerate ",
+      "**#rank{4|4.5|5|5.5|6}%** HP every 2s for this ",
+      "duration. "
+    ],
+    "title": "Prototype Amber (1)"
+  },
+  "ITEM.PrototypeArchaic": {
+    "title": "Prototype Archaic"
+  },
+  "ITEM.PrototypeArchaic1": {
+    "description": [
+      "On hit, Normal or Charged Attacks have a 50% chance to deal ",
+      "an additional **#rank{240|300|360|420|480}%** ATK ",
+      "DMG to opponents within a small AoE. Can only occur once ",
+      "every 15s. "
+    ],
+    "title": "Prototype Archaic (1)"
+  },
+  "ITEM.PrototypeCrescent": {
+    "title": "Prototype Crescent"
+  },
+  "ITEM.PrototypeCrescent1": {
+    "description": [
+      "Charged Attack hits on weak points increase Movement SPD ",
+      "by 10% and ATK by **#rank{36|45|54|63|72}%** for 10s. "
+    ],
+    "title": "Prototype Crescent (1)"
+  },
+  "ITEM.PrototypeRancour": {
+    "title": "Prototype Rancour"
+  },
+  "ITEM.PrototypeRancour1": {
+    "description": [
+      "On hit, Normal or Charged Attacks increase ATK and DEF by ",
+      "**#rank{4|5|6|7|8}%** for 6s. Max 4 stacks. This effect ",
+      "can only occur once every 0.3s. "
+    ],
+    "title": "Prototype Rancour (1)"
+  },
+  "ITEM.PrototypeStarglitter": {
+    "title": "Prototype Starglitter"
+  },
+  "ITEM.PrototypeStarglitter1": {
+    "description": [
+      "After using an Elemental Skill, increases Normal Attack ",
+      "DMG and Charged Attack DMG by ",
+      "**#rank{8|10|12|14|16}%** for 12s. Max 2 stacks. "
+    ],
+    "title": "Prototype Starglitter (1)"
+  },
+  "ITEM.Raiden": "Raiden",
+  "ITEM.Raiden.HIT_E": "Eye of Stormy Judgment",
+  "ITEM.Raiden.HIT_E_COORDINATED": "Coordinated Attack",
+  "ITEM.Raiden.HIT_Q": "Musou no Hitotachi",
+  "ITEM.RaidenA4": {
+    "description": [
+      "Each 1% above 100% Energy Recharge that the Raiden Shogun ",
+      "possesses grants her: \n• 0.6% greater Energy ",
+      "restoration from **Musou Isshin** \n• 0.4% Electro DMG ",
+      "Bonus. "
+    ],
+    "title": "Enlightened One"
+  },
+  "ITEM.RaidenC2": {
+    "description": [
+      "**Secret Art: Musou Shinsetsu**'s **Musou no ",
+      "Hitotachi** and **Musou Isshin** attacks will ignore ",
+      "60% of opponents' DEF. "
+    ],
+    "title": "Steelbreaker"
+  },
+  "ITEM.RaidenC3": {
+    "description": [
+      "Increases the Level of **Secret Art: Musou Shinsetsu** ",
+      "by 3. Maximum upgrade level is 15. "
+    ],
+    "title": "Shinkage Bygones"
+  },
+  "ITEM.RaidenC4": {
+    "description": [
+      "When the Musou Isshin state applied by **Secret Art: ",
+      "Musou Shinsetsu** expires, all nearby party members ",
+      "(excluding the Raiden Shogun) gain 30% bonus ATK for 10s. "
+    ],
+    "title": "Pledge of Propriety"
+  },
+  "ITEM.RaidenC5": {
+    "description": [
+      "Increases the Level of **Transcendence: Baleful Omen** ",
+      "by 3. Maximum upgrade level is 15. "
+    ],
+    "title": "Shogun's Descent"
+  },
+  "ITEM.RaidenE": {
+    "description": [
+      "Characters who gain the Eye of Stormy Judgment will have ",
+      "their Elemental Burst DMG increased based on the Energy ",
+      "Cost of the Elemental Burst during the Eye's duration. "
+    ],
+    "title": "Eye of Stormy Judgment"
+  },
+  "ITEM.RaidenQ": {
+    "description": [
+      "When nearby party members (excluding the Raiden Shogun ",
+      "herself) use their Elemental Bursts, the Raiden Shogun ",
+      "will build up Resolve stacks based on the Energy Cost of ",
+      "these Elemental Bursts. The maximum number of Resolve ",
+      "stacks is 60.\n&nbsp;\nThe DMG dealt by **Musou no ",
+      "Hitotachi** and **Musou Isshin**'s attacks will be ",
+      "increased based on the number of Chakra Desiderata's ",
+      "Resolve stacks consumed when this skill is used. "
+    ],
+    "title": "Chakra Desiderata"
+  },
+  "ITEM.Rainslasher": {
+    "title": "Rainslasher"
+  },
+  "ITEM.Rainslasher1": {
+    "description": [
+      "Increases DMG against opponents affected by Hydro or ",
+      "Electro by **#rank{20|24|28|32|36}%**. "
+    ],
+    "title": "Rainslasher (1)"
+  },
+  "ITEM.RavenBow": {
+    "title": "Raven Bow"
+  },
+  "ITEM.RavenBow1": {
+    "description": [
+      "Increases DMG against opponents affected by Hydro or ",
+      "Pyro by **#rank{12|15|18|21|24}%**.  "
+    ],
+    "title": "Raven Bow (1)"
+  },
+  "ITEM.RecurveBow": "Recurve Bow",
+  "ITEM.RedhornStonethresher": {
+    "title": "Redhorn Stonethresher"
+  },
+  "ITEM.RedhornStonethresher1": {
+    "description": [
+      "DEF is increased by **#rank{28|35|42|49|56}%**. ",
+      "Normal and Charged Attack DMG is increased by ",
+      "**#rank{40|50|60|70|80}%** of DEF. "
+    ],
+    "title": "Redhorn Stonethresher (1)"
+  },
+  "ITEM.ResolutionOfSojourner": {
+    "title": "Resolution of Sojourner"
+  },
+  "ITEM.ResolutionOfSojourner2": {
+    "description": [
+      "ATK:+18%. "
+    ],
+    "title": "Resolution of Sojourner (2)"
+  },
+  "ITEM.ResolutionOfSojourner4": {
+    "description": [
+      "Increases Charged Attack CRIT Rate by 30%. "
+    ],
+    "title": "Resolution of Sojourner (4)"
+  },
+  "ITEM.ResonanceHydro": {
+    "description": "Affected by Pyro for 40% less time. Increases Max HP by 25%.",
+    "title": "Hydro Resonance"
+  },
+  "ITEM.RetracingBolide": {
+    "title": "Retracing Bolide"
+  },
+  "ITEM.RetracingBolide2": {
+    "description": [
+      "Increases Shield Strength by 35%. "
+    ],
+    "title": "Retracing Bolide (2)"
+  },
+  "ITEM.RetracingBolide4": {
+    "description": [
+      "While protected by a shield, gain an additional 40% ",
+      "Normal and Charged Attack DMG. "
+    ],
+    "title": "Retracing Bolide (4)"
+  },
+  "ITEM.RoyalBow": {
+    "title": "Royal Bow"
+  },
+  "ITEM.RoyalBow1": {
+    "description": [
+      "Upon damaging an opponent, increases CRIT Rate by ",
+      "**#rank{8|10|12|14|16}%**. Max 5 stacks. A CRIT Hit ",
+      "removes all stacks. "
+    ],
+    "title": "Royal Bow (1)"
+  },
+  "ITEM.RoyalGreatsword": {
+    "title": "Royal Greatsword"
+  },
+  "ITEM.RoyalGreatsword1": {
+    "description": [
+      "Upon damaging an opponent, increases CRIT Rate by ",
+      "**#rank{8|10|12|14|16}%**. Max 5 stacks. A CRIT Hit ",
+      "removes all stacks. "
+    ],
+    "title": "Royal Greatsword (1)"
+  },
+  "ITEM.RoyalGrimoire": {
+    "title": "Royal Grimoire"
+  },
+  "ITEM.RoyalGrimoire1": {
+    "description": [
+      "Upon damaging an opponent, increases CRIT Rate by ",
+      "**#rank{8|10|12|14|16}%**. Max 5 stacks. A CRIT Hit ",
+      "removes all stacks. "
+    ],
+    "title": "Royal Grimoire (1)"
+  },
+  "ITEM.RoyalLongsword": {
+    "title": "Royal Longsword"
+  },
+  "ITEM.RoyalLongsword1": {
+    "description": [
+      "Upon damaging an opponent, increases CRIT Rate by ",
+      "**#rank{8|10|12|14|16}%**. Max 5 stacks. A CRIT Hit ",
+      "removes all stacks. "
+    ],
+    "title": "Royal Longsword (1)"
+  },
+  "ITEM.RoyalSpear": {
+    "title": "Royal Spear"
+  },
+  "ITEM.RoyalSpear1": {
+    "description": [
+      "Upon damaging an opponent, increases CRIT Rate by ",
+      "**#rank{8|10|12|14|16}%**. Max 5 stacks. A CRIT Hit ",
+      "removes all stacks. "
+    ],
+    "title": "Royal Spear (1)"
+  },
+  "ITEM.Rust": {
+    "title": "Rust"
+  },
+  "ITEM.Rust1": {
+    "description": [
+      "Increases Normal Attack DMG by ",
+      "**#rank{40|50|60|70|80}%** but decreases Charged ",
+      "Attack DMG by 10%. "
+    ],
+    "title": "Rust (1)"
+  },
+  "ITEM.SWORD": "Sword",
+  "ITEM.SacrificialBow": {
+    "title": "Sacrificial Bow"
+  },
+  "ITEM.SacrificialBow1": {
+    "description": [
+      "After damaging an opponent with an Elemental Skill, the ",
+      "skill has a **#rank{40|50|60|70|80}%** chance to end ",
+      "its own CD. Can only occur once every ",
+      "**#rank{30|26|22|19|16}s**. "
+    ],
+    "title": "Sacrificial Bow (1)"
+  },
+  "ITEM.SacrificialFragments": {
+    "title": "Sacrificial Fragments"
+  },
+  "ITEM.SacrificialFragments1": {
+    "description": [
+      "After damaging an opponent with an Elemental Skill, the ",
+      "skill has a **#rank{40|50|60|70|80}%** chance to end ",
+      "its own CD. Can only occur once every ",
+      "**#rank{30|26|22|19|16}s**. "
+    ],
+    "title": "Sacrificial Fragments (1)"
+  },
+  "ITEM.SacrificialGreatsword": {
+    "title": "Sacrificial Greatsword"
+  },
+  "ITEM.SacrificialGreatsword1": {
+    "description": [
+      "After damaging an opponent with an Elemental Skill, the ",
+      "skill has a **#rank{40|50|60|70|80}%** chance to end ",
+      "its own CD. Can only occur once every ",
+      "**#rank{30|26|22|19|16}s**. "
+    ],
+    "title": "Sacrificial Greatsword (1)"
+  },
+  "ITEM.SacrificialSword": {
+    "title": "Sacrificial Sword"
+  },
+  "ITEM.SacrificialSword1": {
+    "description": [
+      "After damaging an opponent with an Elemental Skill, the ",
+      "skill has a **#rank{40|50|60|70|80}%** chance to end ",
+      "its own CD. Can only occur once every ",
+      "**#rank{30|26|22|19|16}s**. "
+    ],
+    "title": "Sacrificial Sword (1)"
+  },
+  "ITEM.SapwoodBlade": "Sapwood Blade",
+  "ITEM.SapwoodBlade1": {
+    "description": [
+      "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon,",
+      "a Leaf of Consciousness will be created around the character for a maximum of 10s.",
+      "When picked up, the Leaf will grant the character **#rank{60|75|90|105|120}**",
+      "Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s.",
+      "This effect can still be triggered if the character is not on the field.",
+      "The Leaf of Consciousness’ effect cannot stack."
+    ],
+    "title": "Sapwood Blade (1)"
+  },
+  "ITEM.Sara": "Sara",
+  "ITEM.Sara.HIT_C2": "Dark Wings",
+  "ITEM.Sara.HIT_E": "Tengu Juurai: Ambush",
+  "ITEM.Sara.HIT_Q": "Tengu Juurai: Titanbreaker",
+  "ITEM.Sara.HIT_Q_DOT": "Tengu Juurai: Stormcluster",
+  "ITEM.SaraC2": {
+    "description": [
+      "Unleashing Tengu Stormcall will leave a weaker Crowfeather at",
+      "Kujou Sara’s original position that will deal 30% of its original DMG."
+    ],
+    "title": "Dark Wings"
+  },
+  "ITEM.SaraC3": {
+    "description": [
+      "Increases the Level of **Subjugation: Koukou Sendou** ",
+      "by 3. Maximum upgrade level is 15. "
+    ],
+    "title": "The War Within"
+  },
+  "ITEM.SaraC5": {
+    "description": [
+      "Increases the Level of **Tengu Stormcall** by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Spellsinger"
+  },
+  "ITEM.SaraC6": {
+    "description": [
+      "The Electro DMG of characters who have had their ATK ",
+      "increased by **Tengu Juurai** has its Crit DMG increased ",
+      "by 60%. "
+    ],
+    "title": "Sin of Pride"
+  },
+  "ITEM.SaraE": {
+    "description": [
+      "Crowfeathers will trigger **Tengu Juurai: Ambush** ",
+      "after a short time, dealing Electro DMG and granting the ",
+      "active character within its AoE an ATK Bonus based on ",
+      "Kujou Sara's Base ATK. "
+    ],
+    "title": "Tengu Juurai: Ambush (ATK bonus)"
+  },
+  "ITEM.Scholar": {
+    "title": "Scholar"
+  },
+  "ITEM.Scholar2": {
+    "description": [
+      "Energy Recharge: +20%. "
+    ],
+    "title": "Scholar (2)"
+  },
+  "ITEM.Scholar4": {
+    "description": [
+      "Gaining Elemental Particles or Orbs gives 3 Energy to all ",
+      "party members who have a bow or a catalyst equipped. Can ",
+      "only occur once every 3s. "
+    ],
+    "title": "Scholar (4)"
+  },
+  "ITEM.SerpentSpine": {
+    "title": "Serpent Spine"
+  },
+  "ITEM.SerpentSpine1": {
+    "description": [
+      "Every 4s a character is on the field, they will deal ",
+      "**#rank{6|7|8|9|10}%** more DMG and take ",
+      "**#rank{3|2.7|2.4|2.2|2}%** more DMG. This effect has ",
+      "a maximum of 5 stacks and will not be reset if the character ",
+      "leaves the field, but will be reduced by 1 stack when the ",
+      "character takes DMG. "
+    ],
+    "title": "Serpent Spine (1)"
+  },
+  "ITEM.SharpshootersOath": {
+    "title": "Sharpshooter's Oath"
+  },
+  "ITEM.SharpshootersOath1": {
+    "description": [
+      "Increases DMG against weak spots by ",
+      "**#rank{24|30|36|42|48}%**. "
+    ],
+    "title": "Sharpshooter's Oath (1)"
+  },
+  "ITEM.ShimenawasReminiscence": {
+    "title": "Shimenawa's Reminiscence"
+  },
+  "ITEM.ShimenawasReminiscence2": {
+    "description": [
+      "ATK: +18%. "
+    ],
+    "title": "Shimenawa's Reminiscence (2)"
+  },
+  "ITEM.ShimenawasReminiscence4": {
+    "description": [
+      "When casting an Elemental Skill, if the character has 15 ",
+      "or more Energy, they lose 15 Energy and Normal/Charged/ ",
+      "Plunging Attack DMG is increased by 50% for 10s. "
+    ],
+    "title": "Shimenawa's Reminiscence (4)"
+  },
+  "ITEM.SkyriderGreatsword": {
+    "title": "Skyrider Greatsword"
+  },
+  "ITEM.SkyriderGreatsword1": {
+    "description": [
+      "On hit, Normal or Charged Attacks increase ATK by ",
+      "**#rank{6|7|8|9|10}%** for 6s. Max 4 stacks. Can occur ",
+      "once every 0.5s. "
+    ],
+    "title": "Skyrider Greatsword (1)"
+  },
+  "ITEM.SkyriderSword": {
+    "title": "Skyrider Sword"
+  },
+  "ITEM.SkyriderSword1": {
+    "description": [
+      "Using an Elemental Burst grants a ",
+      "**#rank{12|15|18|21|24}%** increase in ATK and ",
+      "Movement SPD for 15s.  "
+    ],
+    "title": "Skyrider Sword (1)"
+  },
+  "ITEM.SkywardAtlas": {
+    "title": "Skyward Atlas"
+  },
+  "ITEM.SkywardAtlas1": {
+    "description": [
+      "Increases Elemental DMG Bonus by ",
+      "**#rank{12|15|18|21|24}%**.Normal Attack hits have a ",
+      "50% chance to earn the favor of the clouds, which actively ",
+      "seek out nearby opponents to attack for 15s, dealing ",
+      "**#rank{160|200|240|280|320}%** ATK DMG. Can only ",
+      "occur once every 30s. "
+    ],
+    "title": "Skyward Atlas (1)"
+  },
+  "ITEM.SkywardBlade": {
+    "title": "Skyward Blade"
+  },
+  "ITEM.SkywardBlade1": {
+    "description": [
+      "CRIT Rate increased by **#rank{4|5|6|7|8}%**.Gains ",
+      "Skypiercing Might upon using an Elemental Burst: ",
+      "Increases Movement SPD by 10%, increases ATK SPD by 10%, ",
+      "and Normal and Charged hits deal additional DMG equal to ",
+      "**#rank{20|25|30|35|40}%** of ATK. Skypiercing Might ",
+      "lasts for 12s.  "
+    ],
+    "title": "Skyward Blade (1)"
+  },
+  "ITEM.SkywardHarp": {
+    "title": "Skyward Harp"
+  },
+  "ITEM.SkywardHarp1": {
+    "description": [
+      "Increases CRIT DMG by ",
+      "**#rank{20|25|30|35|40}%**.Hits have a ",
+      "**#rank{60|70|80|90|100}%** chance to inflict a small ",
+      "AoE attack, dealing 125% ATK as Physical DMG. Can only ",
+      "occur once every **#rank{4|3.5|3|2.5|2}s**. "
+    ],
+    "title": "Skyward Harp (1)"
+  },
+  "ITEM.SkywardPride": {
+    "title": "Skyward Pride"
+  },
+  "ITEM.SkywardPride1": {
+    "description": [
+      "Increases all DMG by **#rank{8|10|12|14|16}%**.After ",
+      "using an Elemental Burst, Normal or Charged Attack, on ",
+      "hit, creates a vacuum blade that does ",
+      "**#rank{80|100|120|140|160}%** of ATK as DMG to ",
+      "opponents along its path. Lasts for 20s or 8 vacuum ",
+      "blades. "
+    ],
+    "title": "Skyward Pride (1)"
+  },
+  "ITEM.SkywardSpine": {
+    "title": "Skyward Spine"
+  },
+  "ITEM.SkywardSpine1": {
+    "description": [
+      "Increases CRIT Rate by **#rank{8|10|12|14|16}%** and ",
+      "increases Normal ATK SPD by 12%.Additionally, Normal ",
+      "Attacks and Charged Attacks hits on opponents have a 50% ",
+      "chance to trigger a vacuum blade that deals ",
+      "**#rank{40|55|70|85|100}%** of ATK as DMG in a small ",
+      "AoE. This effect can occur no more than once every 2s. "
+    ],
+    "title": "Skyward Spine (1)"
+  },
+  "ITEM.Slingshot": {
+    "title": "Slingshot"
+  },
+  "ITEM.Slingshot1": {
+    "description": [
+      "If a Normal Attack or Charged Attack hits a target within ",
+      "0.3s of being fired, increases DMG by ",
+      "**#rank{36|42|48|54|60}%**.Otherwise, decreases ",
+      "DMG by 10%. "
+    ],
+    "title": "Slingshot (1)"
+  },
+  "ITEM.SnowTombedStarsilver": {
+    "title": "Snow-Tombed Starsilver"
+  },
+  "ITEM.SnowTombedStarsilver1": {
+    "description": [
+      "Hitting an opponent with Normal Attacks and Charged ",
+      "Attacks has a **#rank{60|70|80|90|100}%** chance of ",
+      "forming and dropping an Everfrost Icicle above them, ",
+      "dealing AoE DMG equal to ",
+      "**#rank{80|95|110|125|140}%** of ATK. Opponents ",
+      "affected by Cryo are instead dealt DMG equal to ",
+      "**#rank{200|240|280|320|360}%** of ATK. Can only ",
+      "occur once every 10s. "
+    ],
+    "title": "Snow-Tombed Starsilver (1)"
+  },
+  "ITEM.SolarPearl": {
+    "title": "Solar Pearl"
+  },
+  "ITEM.SolarPearl1": {
+    "description": [
+      "Normal Attack hits increase Elemental Skill and ",
+      "Elemental Burst DMG by **#rank{20|25|30|35|40}%** for ",
+      "6s. Likewise, Elemental Skill or Elemental Burst hits ",
+      "increase Normal Attack DMG by ",
+      "**#rank{20|25|30|35|40}%** for 6s. "
+    ],
+    "title": "Solar Pearl (1)"
+  },
+  "ITEM.SongOfBrokenPines": {
+    "title": "Song of Broken Pines"
+  },
+  "ITEM.SongOfBrokenPines1": {
+    "description": [
+      "A part of the \"Millennial Movement\" that wanders amidst ",
+      "the winds. Increases ATK by ",
+      "**#rank{16|20|24|28|32}%**, and when Normal or ",
+      "Charged Attacks hit opponents, the character gains a ",
+      "Sigil of Whispers. This effect can be triggered once ",
+      "every 0.3s. "
+    ],
+    "title": "Song of Broken Pines (1)"
+  },
+  "ITEM.SongOfBrokenPines2": {
+    "description": [
+      "When you possess 4 Sigils of Whispers, all of them will be ",
+      "consumed and all nearby party members will obtain the ",
+      "\"Millennial Movement: Banner-Hymn\" effect for 12s. ",
+      "\"Millennial Movement: Banner-Hymn\" increases Normal ",
+      "ATK SPD by **#rank{12|15|18|21|24}%** and increases ",
+      "ATK by **#rank{20¨|25|30|35|40}%**. Once this effect ",
+      "is triggered, you will not gain Sigils of Whispers for ",
+      "20s. Of the many effects of the \"Millennial Movement\", ",
+      "buffs of the same type will not stack. "
+    ],
+    "title": "Song of Broken Pines (2)"
+  },
+  "ITEM.StaffOfHoma": {
+    "title": "Staff of Homa"
+  },
+  "ITEM.StaffOfHoma1": {
+    "description": [
+      "HP increased by **#rank{20|25|30|35|40}%**. ",
+      "Additionally, provides an ATK Bonus based on ",
+      "**#rank{0.8|1|1.2|1.4|1.6}%** of the wielder's Max ",
+      "HP. When the wielder's HP is less than 50%, this ATK Bonus ",
+      "is increased by an additional ",
+      "**#rank{1|1.2|1.4|1.6|1.8}%** of Max HP. "
+    ],
+    "title": "Staff of Homa (1)"
+  },
+  "ITEM.StaffOfTheScarletSands": {
+    "title": "Staff of the Scarlet Sands"
+  },
+  "ITEM.StaffOfTheScarletSands1": {
+    "description": [
+      "The equipping character gains ",
+      "**#rank{52|65|78|91|104}%** of their Elemental ",
+      "Mastery as bonus ATK. When an Elemental Skill hits ",
+      "opponents, the Dream of the Scarlet Sands effect will be ",
+      "gained for 10s: The equipping character will gain ",
+      "**#rank{28|35|42|49|56}%** of their Elemental ",
+      "Mastery as bonus ATK. Max 3 stacks."
+    ],
+    "title": "Staff of the Scarlet Sands (1)"
+  },
+  "ITEM.SummitShaper": {
+    "title": "Summit Shaper"
+  },
+  "ITEM.SummitShaper1": {
+    "description": [
+      "Increases Shield Strength by 20%. Scoring hits on ",
+      "opponents increases ATK by **#rank{4|5|6|7|8}%** for ",
+      "8s. Max 5 stacks. Can only occur once every 0.3s. While ",
+      "protected by a shield, this ATK increase effect is ",
+      "increased by 100%. "
+    ],
+    "title": "Summit Shaper (1)"
+  },
+  "ITEM.SwordOfDescension": {
+    "title": "Sword of Descension"
+  },
+  "ITEM.SwordOfDescension1": {
+    "description": [
+      "Hitting opponents with Normal and Charged Attacks ",
+      "grants a 50% chance to deal 200% ATK as DMG in a small AoE. ",
+      "This effect can only occur once every 10s. Additionally, ",
+      "if the Traveler equips the Sword of Descension, their ATK ",
+      "is increased by 66. "
+    ],
+    "title": "Sword of Descension (1)"
+  },
+  "ITEM.TenacityOfTheMillelith": {
+    "title": "Tenacity of the Millelith"
+  },
+  "ITEM.TenacityOfTheMillelith2": {
+    "description": [
+      "HP increased by 20%. "
+    ],
+    "title": "Tenacity of the Millelith (2)"
+  },
+  "ITEM.TenacityOfTheMillelith4": {
+    "description": [
+      "When an Elemental Skill hits an opponent, the ATK of all ",
+      "nearby party members is increased by 20% and their Shield ",
+      "Strength is increased by 30% for 3s. This effect can be ",
+      "triggered once every 0.5s. This effect can still be ",
+      "triggered even when the character who is using this ",
+      "artifact set is not on the field. "
+    ],
+    "title": "Tenacity of the Millelith (4)"
+  },
+  "ITEM.TheAlleyFlash": {
+    "title": "The Alley Flash"
+  },
+  "ITEM.TheAlleyFlash1": {
+    "description": [
+      "Increases DMG dealt by the character equipping this ",
+      "weapon by **#rank{12|15|18|21|24}%**. Taking DMG ",
+      "disables this effect for 5s.  "
+    ],
+    "title": "The Alley Flash (1)"
+  },
+  "ITEM.TheBell": {
+    "title": "The Bell"
+  },
+  "ITEM.TheBell1": {
+    "description": [
+      "Taking DMG generates a shield which absorbs DMG up to ",
+      "**#rank{20|23|26|29|32}%** of Max HP. This shield ",
+      "lasts for 10s or until broken, and can only be triggered ",
+      "once every 45s. While protected by the shield, the ",
+      "character gains **#rank{12|15|18|21|24}%** ",
+      "increased DMG. "
+    ],
+    "title": "The Bell (1)"
+  },
+  "ITEM.TheBlackSword": {
+    "title": "The Black Sword"
+  },
+  "ITEM.TheBlackSword1": {
+    "description": [
+      "Increases DMG dealt by Normal and Charged Attacks by ",
+      "**#rank{20|25|30|35|40}%**. Additionally, ",
+      "regenerates 60% of ATK as HP when Normal and Charged ",
+      "Attacks score a CRIT Hit. This effect can occur once every ",
+      "5s. "
+    ],
+    "title": "The Black Sword (1)"
+  },
+  "ITEM.TheCatch": {
+    "title": "The Catch"
+  },
+  "ITEM.TheCatch1": {
+    "description": [
+      "Increases Elemental Burst DMG by ",
+      "**#rank{16|20|24|28|32}%** and Elemental Burst CRIT ",
+      "Rate by **#rank{6|7.5|9|10.5|12}%**.  "
+    ],
+    "title": "The Catch (1)"
+  },
+  "ITEM.TheExile": {
+    "title": "The Exile"
+  },
+  "ITEM.TheExile2": {
+    "description": [
+      "Energy Recharge: +20%. "
+    ],
+    "title": "The Exile (2)"
+  },
+  "ITEM.TheExile4": {
+    "description": [
+      "Using an Elemental Burst regenerates 2 Energy for all ",
+      "party members (excluding the wearer) every 2s for 6s. ",
+      "This effect cannot stack. "
+    ],
+    "title": "The Exile (4)"
+  },
+  "ITEM.TheFlute": {
+    "title": "The Flute"
+  },
+  "ITEM.TheFlute1": {
+    "description": [
+      "Normal or Charged Attacks grant a Harmonic on hits. ",
+      "Gaining 5 Harmonics triggers the power of music and deals ",
+      "**#rank{100|125|150|175|200}%** ATK DMG to ",
+      "surrounding opponents. Harmonics last up to 30s, and a ",
+      "maximum of 1 can be gained every 0.5s. "
+    ],
+    "title": "The Flute (1)"
+  },
+  "ITEM.TheStringless": {
+    "title": "The Stringless"
+  },
+  "ITEM.TheStringless1": {
+    "description": [
+      "Increases Elemental Skill DMG and Elemental Burst DMG by ",
+      "**#rank{24|30|36|42|48}%**.  "
+    ],
+    "title": "The Stringless (1)"
+  },
+  "ITEM.TheUnforged": {
+    "title": "The Unforged"
+  },
+  "ITEM.TheUnforged1": {
+    "description": [
+      "Increases Shield Strength by 20%. Scoring hits on ",
+      "opponents increases ATK by **#rank{4|5|6|7|8}%** for ",
+      "8s. Max 5 stacks. Can only occur once every 0.3s. While ",
+      "protected by a shield, this ATK increase effect is ",
+      "increased by 100%. "
+    ],
+    "title": "The Unforged (1)"
+  },
+  "ITEM.TheViridescentHunt": {
+    "title": "The Viridescent Hunt"
+  },
+  "ITEM.TheViridescentHunt1": {
+    "description": [
+      "Upon hit, Normal Attacks and Aimed Shot Attacks have a 50% ",
+      "chance to generate a Cyclone, which will continuously ",
+      "attract surrounding opponents, dealing ",
+      "**#rank{40|50|60|70|80}%** of ATK as DMG to these ",
+      "opponents every 0.5s for 4s. This effect can only occur ",
+      "once every **#rank{14|13|12|11|10}s**. "
+    ],
+    "title": "The Viridescent Hunt (1)"
+  },
+  "ITEM.TheWidsith": {
+    "title": "The Widsith"
+  },
+  "ITEM.TheWidsith1": {
+    "description": [
+      "When the character takes the field, they will gain a ",
+      "random theme song for 10s. This can only occur once every ",
+      "30s.\n",
+      "· **Recitative:** ATK is increased by **#rank{60|75|90|105|120}%**.\n",
+      "· **Aria:** Increases all Elemental DMG by **#rank{48|60|72|84|96}%**.\n",
+      "· **Interlude:** Elemental Mastery is increased by **#rank{240|300|360|420|480}**."
+    ],
+    "title": "The Widsith (1)"
+  },
+  "ITEM.ThousandFloatingDreams": "A Thousand Floating Dreams",
+  "ITEM.ThousandFloatingDreams1": {
+    "description": [
+      "Party members other than the equipping character will provide",
+      "the equipping character with buffs based on whether their Elemental Type",
+      "is the same as the latter or not. If their Elemental Types are the same,",
+      "increase Elemental Mastery by **#rank{32|40|48|56|64}**. If not, increase",
+      "the equipping character’s DMG Bonus from their Elemental Type by",
+      "**#rank{10|14|18|22|26}%**. Each of the aforementioned effects can have up to 3 stacks."
+    ],
+    "title": "A Thousand Floating Dreams (1)"
+  },
+  "ITEM.ThousandFloatingDreams2": {
+    "description": [
+      "Additionally, all nearby party members other than the equipping character will have",
+      "their Elemental Mastery increased by **#rank{40|42|44|46|48}**. Multiple such effects",
+      "from multiple such weapons can stack."
+    ],
+    "title": "A Thousand Floating Dreams (2)"
+  },
+  "ITEM.ThrillingTalesOfDragonSlayers": {
+    "title": "Thrilling Tales of Dragon Slayers"
+  },
+  "ITEM.ThrillingTalesOfDragonSlayers1": {
+    "description": [
+      "When switching characters, the new character taking the ",
+      "field has their ATK increased by ",
+      "**#rank{24|30|36|42|48}%** for 10s. This effect can ",
+      "only occur once every 20s. "
+    ],
+    "title": "Thrilling Tales of Dragon Slayers (1)"
+  },
+  "ITEM.ThunderingFury": {
+    "title": "Thundering Fury"
+  },
+  "ITEM.ThunderingFury2": {
+    "description": [
+      "Electro DMG Bonus: +15%. "
+    ],
+    "title": "Thundering Fury (2)"
+  },
+  "ITEM.ThunderingFury4": {
+    "description": [
+      "Increases DMG caused by Overloaded, Electro-Charged, ",
+      "Superconduct, and Hyperbloom by 40%, and the DMG Bonus ",
+      "conferred by Aggravate is increased by 20%. When Quicken ",
+      "or the aforementioned Elemental Reactions are ",
+      "triggered, Elemental Skill CD is decreased by 1s. Can ",
+      "only occur once every 0.8s."
+    ],
+    "title": "Thundering Fury (4)"
+  },
+  "ITEM.ThunderingPulse": {
+    "title": "Thundering Pulse"
+  },
+  "ITEM.ThunderingPulse1": {
+    "description": [
+      "Increases ATK by **#rank{20|25|30|35|40}%** and ",
+      "grants the might of the Thunder Emblem.At stack levels ",
+      "1/2/3, the Thunder Emblem increases Normal Attack DMG by ",
+      "**#rank{12|15|18|21|24}/#rank{24|30|36|42|48}/#rank{40|50|60|70|80}%**. ",
+      "The character will obtain 1 stack of Thunder Emblem in ",
+      "each of the following scenarios: Normal Attack deals DMG ",
+      "(stack lasts 5s), casting Elemental Skill (stack lasts ",
+      "10s); Energy is less than 100% (stack disappears when ",
+      "Energy is full). Each stack's duration is calculated ",
+      "independently. "
+    ],
+    "title": "Thundering Pulse (1)"
+  },
+  "ITEM.Thundersoother": {
+    "title": "Thundersoother"
+  },
+  "ITEM.Thundersoother2": {
+    "description": [
+      "Electro RES increased by 40%. "
+    ],
+    "title": "Thundersoother (2)"
+  },
+  "ITEM.Thundersoother4": {
+    "description": [
+      "Increases DMG against opponents affected by Electro by ",
+      "35%. "
+    ],
+    "title": "Thundersoother (4)"
+  },
+  "ITEM.ToukabouShigure": "Toukabou Shigure",
+  "ITEM.ToukabouShigure1": {
+    "description": [
+      "After an attack hits opponents, it will inflict an instance of Cursed Parasol",
+      "upon one of them for 10s. This effect can be triggered once every 15s. If this",
+      "opponent is taken out during Cursed Parasol’s duration, Cursed Parasol’s CD will",
+      "be refreshed immediately. The character wielding this weapon will deal",
+      "**#rank{16|20|24|28|32}%** more DMG to the opponent affected by Cursed Parasol."
+    ],
+    "title": "Toukabou Shigure (1)"
+  },
+  "ITEM.TravelersHandySword": "Traveler's Handy Sword",
+  "ITEM.TravelersHandySword1": {
+    "description": [
+      "Each Elemental Orb or Particle collected restores ",
+      "**#rank{1|1.25|1.5|1.75|2}%** HP. "
+    ],
+    "title": "Traveler's Handy Sword (1)"
+  },
+  "ITEM.TulaytullahsRemembrance": "Tulaytullah’s Remembrance",
+  "ITEM.TulaytullahsRemembrance1": {
+    "description": [
+      "Normal Attack SPD is increased by **#rank{10|12.5|15|17.5|20}%**.",
+      "After the wielder unleashes an Elemental Skill, Normal Attack DMG",
+      "will increase by **#rank{4.8|6|7.2|8.4|9.6}%** every second for 14s.",
+      "After hitting an opponent with a Normal Attack during this duration,",
+      "Normal Attack DMG will be increased by **#rank{9.6|12|14.4|16.8|19.2}%**.",
+      "This increase can be triggered once every 0.3s. The maximum Normal Attack",
+      "DMG increase per single duration of the overall effect is **#rank{48|60|72|84|96}%**.",
+      "The effect will be removed when the wielder leaves the field, and using the Elemental",
+      "Skill again will reset all DMG buffs."
+    ],
+    "title": "Tulaytullah’s Remembrance (1)"
+  },
+  "ITEM.TwinNephrite": {
+    "title": "Twin Nephrite"
+  },
+  "ITEM.TwinNephrite1": {
+    "description": [
+      "Defeating an opponent increases Movement SPD and ATK by ",
+      "**#rank{12|14|16|18|20}%** for 15s. "
+    ],
+    "title": "Twin Nephrite (1)"
+  },
+  "ITEM.VermillionHereafter": "Vermillion Hereafter",
+  "ITEM.VermillionHereafter2": {
+    "description": [
+      "ATK: +18%."
+    ],
+    "title": "Vermillion Hereafter (2)"
+  },
+  "ITEM.VermillionHereafter4": {
+    "description": [
+      "After using an Elemental Burst, this character will gain ",
+      "the Nascent Light effect, increasing their ATK by 8% for ",
+      "16s. When the character's HP decreases, their ATK will ",
+      "further increase by 10%. This increase can occur this way ",
+      "a maximum of 4 times. This effect can be triggered once ",
+      "every 0.8s. Nascent Light will be dispelled when the ",
+      "character leaves the field. If an Elemental Burst is used ",
+      "again during the duration of Nascent Light, the original ",
+      "Nascent Light will be dispelled. "
+    ],
+    "title": "Vermillion Hereafter (4)"
+  },
+  "ITEM.ViridescentVenerer": {
+    "title": "Viridescent Venerer"
+  },
+  "ITEM.ViridescentVenerer2": {
+    "description": [
+      "Anemo DMG Bonus: +15%. "
+    ],
+    "title": "Viridescent Venerer (2)"
+  },
+  "ITEM.ViridescentVenerer4": {
+    "description": [
+      "Decreases opponent's Elemental RES to the element ",
+      "infused in the Swirl by 40% for 10s. "
+    ],
+    "title": "Viridescent Venerer (4)"
+  },
+  "ITEM.ViridescentVenerer4_1": {
+    "description": [
+      "Increases Swirl DMG by 60%. "
+    ],
+    "title": "Viridescent Venerer (4)"
+  },
+  "ITEM.VortexVanquisher": "Vortex Vanquisher",
+  "ITEM.VortexVanquisher1": {
+    "description": [
+      "Increases Shield Strength by 20%. Scoring hits on ",
+      "opponents increases ATK by **#rank{4|5|6|7|8}%** for ",
+      "8s. Max 5 stacks. Can only occur once every 0.3s. While ",
+      "protected by a shield, this ATK increase effect is ",
+      "increased by 100%. "
+    ],
+    "title": "Vortex Vanquisher (1)"
+  },
+  "ITEM.WanderersTroupe": {
+    "title": "Wanderer's Troupe"
+  },
+  "ITEM.WanderersTroupe2": {
+    "description": [
+      "Increases Elemental Mastery by 80. "
+    ],
+    "title": "Wanderer's Troupe (2)"
+  },
+  "ITEM.WanderersTroupe4": {
+    "description": [
+      "Increases Charged Attack DMG by 35% if the character uses ",
+      "a Catalyst or a Bow. "
+    ],
+    "title": "Wanderer's Troupe (4)"
+  },
+  "ITEM.WanderingEvenstar": "Wandering Evenstar",
+  "ITEM.WanderingEvenstar1": {
+    "description": [
+      "The following effect will trigger every 10s: The equipping character will gain",
+      "**#rank{24|30|36|42|48}%** of their Elemental Mastery as bonus ATK for 12s,",
+      "with nearby party members gaining 30% of this buff for the same duration.",
+      "Multiple instances of this weapon can allow this buff to stack. This effect",
+      "will still trigger even if the character is not on the field."
+    ],
+    "title": "Wandering Evenstar (1)"
+  },
+  "ITEM.WavebreakerFin": "Wavebreaker's Fin",
+  "ITEM.WavebreakerFin1": {
+    "description": [
+      "For every point of the entire party's combined maximum ",
+      "Energy, the Elemental Burst DMG of the character ",
+      "equipping this weapon is increased by ",
+      "**#rank{0.12|0.15|0.18|0.21|0.24}%**. A maximum of ",
+      "**#rank{40|50|60|70|80}%** increased Elemental ",
+      "Burst DMG can be achieved this way. "
+    ],
+    "title": "Wavebreaker's Fin (1)"
+  },
+  "ITEM.WhiteIronGreatsword": {
+    "title": "White Iron Greatsword"
+  },
+  "ITEM.WhiteIronGreatsword1": {
+    "description": [
+      "Defeating an opponent restores ",
+      "**#rank{8|10|12|14|16}%** HP. "
+    ],
+    "title": "White Iron Greatsword (1)"
+  },
+  "ITEM.WhiteTassel": "White Tassel",
+  "ITEM.WhiteTassel1": {
+    "description": [
+      "Increases Normal Attack DMG by ",
+      "**#rank{24|30|36|42|48}%**.  "
+    ],
+    "title": "White Tassel (1)"
+  },
+  "ITEM.Whiteblind": {
+    "title": "Whiteblind"
+  },
+  "ITEM.Whiteblind1": {
+    "description": [
+      "On hit, Normal or Charged Attacks increase ATK and DEF by ",
+      "**#rank{6|7.5|9|10.5|12}%** for 6s. Max 4 stacks. This ",
+      "effect can only occur once every 0.5s. "
+    ],
+    "title": "Whiteblind (1)"
+  },
+  "ITEM.WindblumeOde": "Windblume Ode",
+  "ITEM.WindblumeOde1": {
+    "description": [
+      "After using an Elemental Skill, receive a boon from the ",
+      "ancient wish of the Windblume, increasing ATK by ",
+      "**#rank{16|20|24|28|32}%** for 6s. "
+    ],
+    "title": "Windblume Ode (1)"
+  },
+  "ITEM.WineAndSong": {
+    "title": "Wine and Song"
+  },
+  "ITEM.WineAndSong1": {
+    "description": [
+      "Hitting an opponent with a Normal Attack decreases the ",
+      "Stamina consumption of Sprint or Alternate Sprint by ",
+      "**#rank{14|16|18|20|22}%** for 5s. Additionally, ",
+      "using a Sprint or Alternate Sprint ability increases ATK ",
+      "by **#rank{20|25|30|35|40}%** for 5s.  "
+    ],
+    "title": "Wine and Song (1)"
+  },
+  "ITEM.WolfsGravestone": {
+    "title": "Wolf's Gravestone"
+  },
+  "ITEM.WolfsGravestone1": {
+    "description": [
+      "Increases ATK by **#rank{20|25|30|35|40}%**. "
+    ],
+    "title": "Wolf's Gravestone (1)"
+  },
+  "ITEM.WolfsGravestone2": {
+    "description": [
+      "On hit, attacks against opponents with less than 30% HP ",
+      "increase all party members' ATK by ",
+      "**#rank{40|50|60|70|80}%** for 12s. Can only occur ",
+      "once every 30s. "
+    ],
+    "title": "Wolf's Gravestone (2)"
+  },
+  "ITEM.Xingqiu": "Xingqiu",
+  "ITEM.Xingqiu.HIT_E_1": {
+    "title": "Guhua Sword: Fatal Rainscreen (x1)"
+  },
+  "ITEM.Xingqiu.HIT_E_2": {
+    "title": "Guhua Sword: Fatal Rainscreen (x2)"
+  },
+  "ITEM.Xingqiu.HIT_Q": {
+    "title": "Guhua Sword: Raincutter"
+  },
+  "ITEM.XingqiuA4": {
+    "description": [
+      "Xingqiu gains a 20% Hydro DMG Bonus. "
+    ],
+    "title": "Blades Amidst Raindrops"
+  },
+  "ITEM.XingqiuC2": {
+    "description": [
+      "Extends the duration of **Guhua Sword: Raincutter** by ",
+      "3s. Decreases the Hydro RES of opponents hit by sword rain ",
+      "attacks by 15% for 4s. "
+    ],
+    "title": "Rainbow Upon the Azure Sky"
+  },
+  "ITEM.XingqiuC3": {
+    "description": [
+      "Increases the Level of **Guhua Sword: Raincutter** by 3. ",
+      "Maximum upgrade level is 15. "
+    ],
+    "title": "Weaver of Verses"
+  },
+  "ITEM.XingqiuC4": {
+    "description": [
+      "Throughout the duration of **Guhua Sword: ",
+      "Raincutter**, the DMG dealt by **Guhua Sword: Fatal ",
+      "Rainscreen** is increased by 50%. "
+    ],
+    "title": "Evilsoother"
+  },
+  "ITEM.XingqiuC5": {
+    "description": [
+      "Increases the Level of **Guhua Sword: Fatal ",
+      "Rainscreen** by 3. Maximum upgrade level is 15. "
+    ],
+    "title": "Embrace of Rain"
+  },
+  "ITEM.XiphosMoonlight": "Xiphos’ Moonlight",
+  "ITEM.XiphosMoonlight1": {
+    "description": [
+      "The following effect will trigger every 10s: The equipping character",
+      "will gain **#rank{0.036|0.045|0.054|0.063|0.072}%** Energy Recharge",
+      "for each point of Elemental Mastery they possess for 12s, with nearby",
+      "party members gaining 30% of this buff for the same duration.",
+      "Multiple instances of this weapon can allow this buff to stack.",
+      "This effect will still trigger even if the character is not on the field."
+    ],
+    "title": "Xiphos’ Moonlight (1)"
+  },
+  "ITEM.Yelan": "Yelan",
+  "ITEM.Yelan.HIT_BREAKTHROUGH_BARB": {
+    "title": "Breakthrough Barb DMG"
+  },
+  "ITEM.Yelan.HIT_C2": {
+    "title": "Taking All Comers"
+  },
+  "ITEM.Yelan.HIT_C6": {
+    "title": "Winner Takes All"
+  },
+  "ITEM.Yelan.HIT_E": {
+    "title": "Lingering Lifeline"
+  },
+  "ITEM.Yelan.HIT_Q": {
+    "title": "Depth-Clarion Dice"
+  },
+  "ITEM.Yelan.HIT_Q_THROW": {
+    "title": "Exquisite Throw"
+  },
+  "ITEM.YelanA1": {
+    "description": [
+      "When the party has 1/2/3/4 Elemental Types, Yelan's Max ",
+      "HP is increased by 6%/12%/18%/30%. "
+    ],
+    "title": "Turn Control"
+  },
+  "ITEM.YelanA4": {
+    "description": [
+      "So long as an Exquisite Throw is in play, your own active ",
+      "character deals 1% more DMG. This increases by a further ",
+      "3.5% DMG every second. The maximum increase to DMG dealt ",
+      "is 50%.\nThe pre-existing effect will be dispelled if ",
+      "Depth-Clarion Dice is recast during its duration. "
+    ],
+    "title": "Adapt With Ease"
+  },
+  "ITEM.YelanC2": {
+    "description": [
+      "When Exquisite Throw conducts a coordinated attack, it will fire",
+      "an additional water arrow that will deal 14% of Yelan’s Max HP as Hydro DMG.",
+      "This effect can trigger once every 1.8s."
+    ],
+    "title": "Taking All Comers"
+  },
+  "ITEM.YelanC3": {
+    "description": [
+      "Increases the Level of Depth-Clarion Dice by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Beware the Trickster's Dice"
+  },
+  "ITEM.YelanC4": {
+    "description": [
+      "Increases all party members' Max HP by 10% for 25s for ",
+      "every opponent marked by Lifeline when the Lifeline ",
+      "explodes. A maximum increase of 40% Max HP can be attained ",
+      "in this manner. "
+    ],
+    "title": "Bait-and-Switch"
+  },
+  "ITEM.YelanC5": {
+    "description": [
+      "Increases the Level of Lingering Lifeline by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Caution: Standard Flask"
+  },
+  "ITEM.YelanC6": {
+    "description": [
+      "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.",
+      "In this state, all of Yelan’s Normal Attacks will be special",
+      "Breakthrough Barbs. These Breakthrough Barbs will have similar abilities",
+      "to normal ones and the DMG dealt will be considered Charged Attack DMG,",
+      "dealing 156% of a normal Breakthrough Barb’s DMG.\n",
+      "The Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows."
+    ],
+    "title": "Winner Takes All"
+  },
+  "ITEM.Zhongli": "Zhongli",
+  "ITEM.Zhongli.HIT_E_RESONANCE": "Resonance",
+  "ITEM.Zhongli.HIT_Q": "Planet Befall",
+  "ITEM.ZhongliA4": {
+    "description": [
+      "Zhongli deals bonus DMG based on his Max HP:\n • Normal ",
+      "Attack, Charged Attack, and Plunging Attack DMG is ",
+      "increased by 1.39% of Max HP.\n • **Dominus Lapidis**' ",
+      "Stone Stele, resonance, and hold DMG is increased by 1.9% ",
+      "of Max HP.\n • **Planet Befall**'s DMG is increased by 33% ",
+      "of Max HP. "
+    ],
+    "title": "Dominance of Earth"
+  },
+  "ITEM.ZhongliC3": {
+    "description": [
+      "Increases the Level of **Dominus Lapidis** by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Jade, Shimmering through Darkness"
+  },
+  "ITEM.ZhongliC5": {
+    "description": [
+      "Increases the Level of **Planet Befall** by 3. Maximum ",
+      "upgrade level is 15. "
+    ],
+    "title": "Lazuli, Herald of the Order"
+  },
+  "ITEM.ZhongliE": {
+    "description": [
+      "Characters protected by the **Jade Shield** will ",
+      "decrease the Elemental RES and Physical RES of opponents ",
+      "in a small AoE by 20%. This effect cannot be stacked. "
+    ],
+    "title": "Jade Shield"
+  },
+  "ITEM.__party__": "(Equipo)",
+  "LABEL.ACTION": "Acción",
+  "LABEL.ALERT": "Alerta",
+  "LABEL.ALL": "Todos",
+  "LABEL.APPLIES_TO": "Applica a",
+  "LABEL.ARTIFACT_NONE": "Sin artefactos",
+  "LABEL.ARTIFACT_SETS": "Conjuntos",
+  "LABEL.ARTIFACT_SET_NONE": "Sin conjunto",
+  "LABEL.ARTIFACT_TIER_X": "Tier @tier",
+  "LABEL.ASCENDED": "Ascendido",
+  "LABEL.ASCENDED_NOT": "No ascendido",
+  "LABEL.ATTRIBUTES": "Atributos",
+  "LABEL.AURA": "Afectado por",
+  "LABEL.AVERAGE": "Promedio",
+  "LABEL.BASE": "Base",
+  "LABEL.CHARACTER": "Personaje",
+  "LABEL.CHARACTER_LEVEL": "Nivel de personaje",
+  "LABEL.COMMAND": "Comando",
+  "LABEL.CONDITION": "Condición",
+  "LABEL.CONDITIONS": "Condiciones",
+  "LABEL.CONFIRM": "Confirmar",
+  "LABEL.CONSTANT": "Constante",
+  "LABEL.COPIED": "Copiado",
+  "LABEL.DAMAGE": "Daño",
+  "LABEL.DAMAGE_AVG": "Promedio",
+  "LABEL.DAMAGE_CHARACTER": "Daño del personaje",
+  "LABEL.DAMAGE_CRIT": "Crit",
+  "LABEL.DAMAGE_FORMULA": "Fórmula de daño",
+  "LABEL.DAMAGE_NOAURA_NOREACTION": "Daño (Enemigo sin aura, sin reacción)",
+  "LABEL.DAMAGE_NOAURA_YESREACTION": "Daño (enemy sin aura, con reacción)",
+  "LABEL.DAMAGE_NOCRIT": "No-Crit",
+  "LABEL.DAMAGE_QUICKEN": "Aceleración",
+  "LABEL.DAMAGE_ROTATION": "Daño de la rotación",
+  "LABEL.DAMAGE_YESAURA_NOREACTION": "Daño (Enemigo con aura, sin reacción)",
+  "LABEL.DAMAGE_YESAURA_YESREACTION": "Daño (Enemigo con aura, con reacción)",
+  "LABEL.DESCRIPTION_NONE": "No hay descripción disponibles",
+  "LABEL.DETAILS_MORE": "Más detallas",
+  "LABEL.DETAILS_NONE": "No hay detalles para mostrar",
+  "LABEL.DISABLED": "Desactivado",
+  "LABEL.DMG_AMP_BONUS": "Bono de daño de amplificación",
+  "LABEL.DMG_BASE_MULTIPLIER": "Multiplicador base",
+  "LABEL.DMG_BONUS": "Bono de daño",
+  "LABEL.DMG_QUICKEN_BONUS": "Bono de daño de aceleración",
+  "LABEL.DMG_TR_BONUS": "Bono de daño transformativo",
+  "LABEL.DPS": "DPS",
+  "LABEL.EFFECT": "Efecto",
+  "LABEL.EFFECT_NAME_TEMPLATE": "(@prefix) @name",
+  "LABEL.EFFECT_PARTY": "Este es un efecto para el equipo",
+  "LABEL.EFFICIENCY": "Eficiencia",
+  "LABEL.ELEMENT": "Elemento",
+  "LABEL.ENABLED": "Activado",
+  "LABEL.ENEMY": "Enemigo",
+  "LABEL.ENEMY_AURA": "Enemigo afectado por",
+  "LABEL.ENEMY_LEVEL": "Nivel enemigo",
+  "LABEL.ENEMY_RES": "RES enemiga",
+  "LABEL.EQUIP": "Equipar",
+  "LABEL.EXPECTED_VALUE": "Valor esperado",
+  "LABEL.HELP": "Ayuda",
+  "LABEL.INSTANCE": "Instancia",
+  "LABEL.INSTANCE_BURSTS": "Habilidades definitivas",
+  "LABEL.INSTANCE_EXTRA": "Daño extra",
+  "LABEL.INSTANCE_NORMALS": "Ataques normales",
+  "LABEL.INSTANCE_SKILLS": "Habilidades elementales",
+  "LABEL.INSTANCE_TR": "Transformativas",
+  "LABEL.LOADING": "Cargando",
+  "LABEL.MAX_SHORT": "Máx",
+  "LABEL.MIN_SHORT": "Mín",
+  "LABEL.NAME": "Nombre",
+  "LABEL.NONE": "Ninguno",
+  "LABEL.OF_X": "de @x",
+  "LABEL.OWNER": "Dueño",
+  "LABEL.PROCESS_ENDED_TIME_X": "Proceso terminado en @time",
+  "LABEL.RELATIVE": "Relativo",
+  "LABEL.RESULTS": "Resultados",
+  "LABEL.RESULT_NONE": "Sin resultados",
+  "LABEL.ROTATION_AURA_UPTIME": "Uptime de aura elemental",
+  "LABEL.ROTATION_MULTIPLIER": "Multiplicador",
+  "LABEL.ROTATION_NONE": "No se han encontrado rotaciones",
+  "LABEL.ROTATION_REACTION_UPTIME": "Uptime de reacción elemental",
+  "LABEL.ROTATION_SEARCH_EVERY": "Buscar rotaciones con todos los personajes solicitados",
+  "LABEL.ROTATION_SEARCH_SOME": "Buscar rotaciones con cualquiera de los personajes solicitados",
+  "LABEL.SET": "Conjunto",
+  "LABEL.STACKS": "Cargas",
+  "LABEL.STAT": "Stat",
+  "LABEL.STAT_MORE": "Más stats",
+  "LABEL.STAT_MORE_SEE": "Ver más stats...",
+  "LABEL.TALENT": "Talento",
+  "LABEL.TALENTS": "Talentos",
+  "LABEL.TARGET": "Objetivo",
+  "LABEL.TARGETS": "Objetivos",
+  "LABEL.TIER": "Tier",
+  "LABEL.TIER_X": "Tier @tier",
+  "LABEL.TIME_ELAPSED_X": "Tiempo transcurrido: @time",
+  "LABEL.TOTAL": "Total",
+  "LABEL.VALUE": "Valor",
+  "LABEL.WEAPON": "Arma",
+  "LABEL.WEAPON_NONE": "Sin arma",
+  "LABEL.WEAPON_RANK": "Rango del arma",
+  "LABEL.WORKERS": "Workers",
+  "LABEL.X_HIT": "@name (Golpe)",
+  "MSG.ALERT_ROTATION_DB": [
+    "Por favor tenga en cuenta que las rotaciones encontradas aquí",
+    "**NO están pensadas para** comparar o clasificar DPS entre diferentes",
+    "personajes o equipos, solo son configuraciones de muestra que pueden",
+    "ser utilizadas para medir y optimizar rápidamente su daño.",
+    "Si quiere obtener resultados más precisos, por favor considere escribir",
+    "sus propias rotaciones específicas."
+  ],
+  "MSG.ALERT_ROTATION_NO_AUTO_UPDATE": [
+    "Tenga en cuenta que este tablero muestra el resultado de la **última**",
+    "ejecución del a rotación. **No** se va a re-calcular automáticamente el daño.",
+    "Para actualizar los resultados, ejecute nuevamente la rotación en el **Editor**."
+  ],
+  "MSG.CONFIRM_CANCEL": [
+    "¿Está seguro de que desea cancelar este proceso? Todo el progreso se perderá"
+  ],
+  "MSG.CONFIRM_CHARACTER_REMOVE": "¿Está seguro de que desea borrar este personaje (@name) del equipo?",
+  "MSG.CONFIRM_COMMAND_RUN": [
+    "Está a punto de ejecutar un comando, ¿desea continuar?"
+  ],
+  "MSG.CONFIRM_RESULTS_CLEAR": [
+    "¿Está seguro de que desea eliminar los resultados? Los datos se perderán y tendrá",
+    "que volver a ejecutar los cálculos."
+  ],
+  "MSG.CONFIRM_ROTATION_LOAD_TO_EDITOR": [
+    "¿Está seguro de que desea cargar esta rotación? Esto sobre-escribirá el código",
+    "guardado actualmente en el editor."
+  ],
+  "OPTIMIZER.MAINSTAT": {
+    "description": [
+      "Esta herramienta evalúa todas las diferentes combinaciones de estadística",
+      "principal para Arenas, Cáliz y Tiara, encontrando aquella combinación con",
+      "el mayor daño. Usted puede especificar grupos de principales a evaluar,",
+      "en lugar de evaluarlas todas.\n\n&nbsp;\n\nPara cada combinación, el",
+      "optimizador utilizará las mismas secundarias de su personaje seleccionado como",
+      "objetivo, reemplazando las que se repiten con la principal cuando sea necesario.\n\n&nbsp;\n\n",
+      "También puede generar un conjunto de secundarias óptimas para cada combinación de principales,",
+      "utilizando el optimizador de secundarias. Tenga en cuenta que esta función ralentizará considerablemente",
+      "el proceso.\n\n&nbsp;\n\nPara más información acerca del optimizador de secundarias, diríjase a su",
+      "sección correspondiente."
+    ],
+    "title": "Optimizar principales"
+  },
+  "OPTIMIZER.NEXTROLL": {
+    "description": [
+      "Esta herramienta calcula el beneficio de daño obtenido al añadir un único roll de cada secundaria.",
+      "También se incluyen _rolls_ de daño elemental/físico y bono curación como una referencia."
+    ],
+    "title": "Optimizar siguiente roll"
+  },
+  "OPTIMIZER.NEXTROLL_BENEFIT": "Benficio del siguiente roll",
+  "OPTIMIZER.SET": {
+    "description": [
+      "Esta herramienta evalúa todas las diferentes combinaciones de conjuntos de artefacto,",
+      "incluyendo tanto 4 estrellas como 5 estrellas. Por defecto, cada conjunto se calcula",
+      "con diferentes valores de cargas y condiciones, pero se pueden crear configuraciones",
+      "personalizadas en el editor de abajo"
+    ],
+    "title": "Optimizar conjuntos"
+  },
+  "OPTIMIZER.SUBSTATS": {
+    "description": [
+      "Esta herramienta evalúa todas las formas de repartir una cantidad dada de _rolls_",
+      "entre un grupo de secundarias, encontrando aquella combinación con el mayor daño.\n",
+      "- **Total:** el número de rolls a repartir.\n",
+      "- **Tier:** Qué valor de la secundarias usar. El tier 1 también se conoce como _min rolls_,",
+      "mientras que el Tier 4 son _max rolls_. También hay un tier adicional que es el promedio entre los 4",
+      "tiers disponibles.\n\n",
+      "Se pueden seleccionar diferentes secundarias para optimizar, cada una con su propio rango de `[min, max]`.",
+      "Por motivos de rendimiento, el límite de secundarias que se pueden seleccionar es 5. Asimismo, el máximo de rolls",
+      "es 45, y el máximo de rolls por secundaria es 30.\n\n",
+      "Añada filtros para restringir valores mínimos o máximos de cada stat. Puede usar esto, por ejemplo,",
+      "para optimizar considerando requisitos de Recarga de Energía. También se podría definir un máximo de prob. crit",
+      "o daño crit para omitir combinaciones (que se sabe no son óptimas) y aumentar el rendimiento.\n\n",
+      "**Notas:**\n",
+      "- Entre más rolls o secundarias se deban optimizar, mayor será la cantidad de combinaciones a evaluar,",
+      "ralentizando el proceso\n",
+      "- Este optimizador siempre asumirá artefactos 5 estrellas. Si el personaje seleccionado como objetivo tiene",
+      "artefactos 4 estrellas, estos se convertirán a 5 estrellas antes de ejecutar los cálculos. Los personajes",
+      "en el equipo que no sean el objetivo de la optimización no se verán afectados."
+    ],
+    "title": "Optimizar secundarias"
+  },
+  "PATH:/optimize": "Optimizar",
+  "PATH:/optimize/mainstat": "Principales",
+  "PATH:/optimize/nextroll": "Siguiente roll",
+  "PATH:/optimize/set": "Conjuntos",
+  "PATH:/optimize/substats": "Secundarias",
+  "PATH:/rotation": "Rotaciones",
+  "PATH:/rotation/editor": "Editor",
+  "PATH:/rotation/result": "Resultados",
+  "PATH:/scenario": "Equipo",
+  "PATH:/scenario/artifacts": "Artefactos",
+  "PATH:/scenario/attributes": "Atributos",
+  "PATH:/scenario/damage": "Daño",
+  "PATH:/scenario/effects": "Efectos",
+  "PATH:/scenario/enemy": "Enemigo",
+  "PLACEHOLDER.CONSOLE_INPUT": "Escriba \"help\" para ver la lista de comandos disponibles...",
+  "PLACEHOLDER.SEARCH": "Buscar...",
+  "STAT.AGGRAVATE_DMG": "Daño de Intensificación",
+  "STAT.AIMED_SHOT_ATK": "ATQ de Disparo Preciso",
+  "STAT.AIMED_SHOT_ATK_FLAT": "ATQ Plano de Disparo Preciso",
+  "STAT.AIMED_SHOT_ATK_PERCENT": "ATQ% de Disparo Preciso",
+  "STAT.AIMED_SHOT_CRIT_DMG": "Daño CRIT de Disparo Preciso",
+  "STAT.AIMED_SHOT_CRIT_RATE": "Prob. CRIT de Disparo Preciso",
+  "STAT.AIMED_SHOT_DMG": "Daño de Disparo Preciso",
+  "STAT.AIMED_SHOT_DMG_FLAT": "Daño plano de Disparo Preciso",
+  "STAT.ALL_DMG": "Todo el daño",
+  "STAT.ANEMO_ATK_FLAT": "ATQ Plano Anemo",
+  "STAT.ANEMO_ATK_PERCENT": "ATQ% Anemo",
+  "STAT.ANEMO_CRIT_DMG": "Daño CRIT Anemo",
+  "STAT.ANEMO_CRIT_RATE": "Prob. CRIT Anemo",
+  "STAT.ANEMO_DMG": "Daño Anemo",
+  "STAT.ANEMO_DMG_FLAT": "Daño plano Anemo",
+  "STAT.ANEMO_RES": "RES Anemo",
+  "STAT.ASCENSION": "Ascensión",
+  "STAT.ATK": "ATQ",
+  "STAT.ATK_BASE": "ATQ Base",
+  "STAT.ATK_FLAT": "ATQ Plano",
+  "STAT.ATK_PERCENT": "ATQ%",
+  "STAT.BLOOM_DMG": "Daño de Florecimiento",
+  "STAT.BURGEON_DMG": "Daño de Crepitar",
+  "STAT.BURNING_DMG": "Daño de Quemadura",
+  "STAT.CHARGED_AIMED_SHOT_ATK_FLAT": "ATQ Plano de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_AIMED_SHOT_ATK_PERCENT": "ATQ% de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_AIMED_SHOT_CRIT_DMG": "Daño CRIT de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_AIMED_SHOT_CRIT_RATE": "Prob. CRIT de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_AIMED_SHOT_DMG": "Daño de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_AIMED_SHOT_DMG_FLAT": "Daño plano de Disparo Preciso (carga completa)",
+  "STAT.CHARGED_ATTACK_ATK": "ATQ de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_ATK_FLAT": "ATQ Plano de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_ATK_PERCENT": "ATQ% de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_CRIT_DMG": "Daño CRIT de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_CRIT_RATE": "Prob. CRIT de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_DMG": "Daño de Ataque Cargado",
+  "STAT.CHARGED_ATTACK_DMG_FLAT": "Daño plano de Ataque Cargado",
+  "STAT.CRIT_DMG": "Daño CRIT",
+  "STAT.CRIT_RATE": "Prob. CRIT",
+  "STAT.CRYO_ATK_FLAT": "ATQ Plano Cryo",
+  "STAT.CRYO_ATK_PERCENT": "ATQ% Cryo",
+  "STAT.CRYO_CRIT_DMG": "Daño CRIT Cryo",
+  "STAT.CRYO_CRIT_RATE": "Prob. CRIT Cryo",
+  "STAT.CRYO_DMG": "Daño Cryo",
+  "STAT.CRYO_DMG_FLAT": "Daño plano Cryo",
+  "STAT.CRYO_RES": "RES Cryo",
+  "STAT.DEF": "DEF",
+  "STAT.DEFIGNORED": "DEF ignorada",
+  "STAT.DEFREDUCTION": "DEF reducida",
+  "STAT.DEF_BASE": "DEF Base",
+  "STAT.DEF_FLAT": "DEF Plana",
+  "STAT.DEF_PERCENT": "DEF%",
+  "STAT.DENDRO_ATK_FLAT": "ATQ Plano Dendro",
+  "STAT.DENDRO_ATK_PERCENT": "ATQ% Dendro",
+  "STAT.DENDRO_CRIT_DMG": "Daño CRIT Dendro",
+  "STAT.DENDRO_CRIT_RATE": "Prob. CRIT Dendro",
+  "STAT.DENDRO_DMG": "Daño Dendro",
+  "STAT.DENDRO_DMG_FLAT": "Daño plano Dendro",
+  "STAT.DENDRO_RES": "RES Dendro",
+  "STAT.DMG_FLAT": "Daño plano",
+  "STAT.ELECTROCHARGE_DMG": "Daño de Electrocarga",
+  "STAT.ELECTRO_ATK_FLAT": "ATQ Plano Electro",
+  "STAT.ELECTRO_ATK_PERCENT": "ATQ% Electro",
+  "STAT.ELECTRO_CRIT_DMG": "Daño CRIT Electro",
+  "STAT.ELECTRO_CRIT_RATE": "Prob. CRIT Electro",
+  "STAT.ELECTRO_DMG": "Daño Electro",
+  "STAT.ELECTRO_DMG_FLAT": "Daño plano Electro",
+  "STAT.ELECTRO_RES": "RES Electro",
+  "STAT.ELEMENTAL_BURST_ATK": "ATQ de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_ATK_FLAT": "ATQ Plano de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_ATK_PERCENT": "ATQ% de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_CRIT_DMG": "Daño CRIT de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_CRIT_RATE": "Prob. CRIT de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_DMG": "Daño de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_DMG_FLAT": "Daño plano de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_LEVEL": "Nivel de Habilidad Definitiva",
+  "STAT.ELEMENTAL_BURST_LEVEL_UP": "Nivel de Habilidad Definitiva (Extra)",
+  "STAT.ELEMENTAL_MASTERY": "Elemental Mastery",
+  "STAT.ELEMENTAL_SKILL_ATK": "ATQ de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_ATK_FLAT": "ATQ Plano de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_ATK_PERCENT": "ATQ% de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_CRIT_DMG": "Daño CRIT de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_CRIT_RATE": "Prob. CRIT de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_DMG": "Daño de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_DMG_FLAT": "Daño plano de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_LEVEL": "Nivel de Habilidad Elemental",
+  "STAT.ELEMENTAL_SKILL_LEVEL_UP": "Nivel de Habilidad Elemental (Extra)",
+  "STAT.ENERGY_CURRENT": "Energía actual",
+  "STAT.ENERGY_RECHARGE": "Recarga de Energía",
+  "STAT.EXTRA_CRIT_RATE": "Prob. CRIT Extra",
+  "STAT.GEO_ATK_FLAT": "ATQ Plano Geo",
+  "STAT.GEO_ATK_PERCENT": "ATQ% Geo",
+  "STAT.GEO_CRIT_DMG": "Daño CRIT Geo",
+  "STAT.GEO_CRIT_RATE": "Prob. CRIT Geo",
+  "STAT.GEO_DMG": "Daño Geo",
+  "STAT.GEO_DMG_FLAT": "Daño Plano Geo",
+  "STAT.GEO_RES": "RES Geo",
+  "STAT.HEALING_BONUS": "Bono Curación",
+  "STAT.HP": "HP",
+  "STAT.HP_BASE": "HP Base",
+  "STAT.HP_CURRENT": "Vida actual",
+  "STAT.HP_FLAT": "HP Plana",
+  "STAT.HP_PERCENT": "HP%",
+  "STAT.HYDRO_ATK_FLAT": "ATQ Plano Hydro",
+  "STAT.HYDRO_ATK_PERCENT": "ATQ% Hydro",
+  "STAT.HYDRO_CRIT_DMG": "Daño CRIT Hydro",
+  "STAT.HYDRO_CRIT_RATE": "Prob. CRIT Hydro",
+  "STAT.HYDRO_DMG": "Daño Hydro",
+  "STAT.HYDRO_DMG_FLAT": "Daño Plano Hydro",
+  "STAT.HYDRO_RES": "RES Hydro",
+  "STAT.HYPERBLOOM_DMG": "Daño de Sobreflorecimiento",
+  "STAT.LEVEL": "Nivel",
+  "STAT.MELT_DMG": "Daño de Derretido",
+  "STAT.NONE": "Ninguno",
+  "STAT.NORMAL_ATTACK_ATK": "ATQ de Ataque Normal",
+  "STAT.NORMAL_ATTACK_ATK_FLAT": "ATQ Plano de Ataque Normal",
+  "STAT.NORMAL_ATTACK_ATK_PERCENT": "ATQ% de Ataque Normal",
+  "STAT.NORMAL_ATTACK_CRIT_DMG": "Daño CRIT de Ataque Normal",
+  "STAT.NORMAL_ATTACK_CRIT_RATE": "Prob. CRIT de Ataque Normal",
+  "STAT.NORMAL_ATTACK_DMG": "Daño de Ataque Normal",
+  "STAT.NORMAL_ATTACK_DMG_FLAT": "Daño plano de Ataque Normal",
+  "STAT.NORMAL_ATTACK_LEVEL": "Nivel de Ataque Normal",
+  "STAT.NORMAL_ATTACK_LEVEL_UP": "Nivel de Ataque Normal (Extra)",
+  "STAT.OVERLOAD_DMG": "Daño de Sobrecarga",
+  "STAT.PHYSICAL_ATK_FLAT": "ATQ Plano Físico",
+  "STAT.PHYSICAL_ATK_PERCENT": "ATQ% Físico",
+  "STAT.PHYSICAL_CRIT_DMG": "Daño CRIT Físico",
+  "STAT.PHYSICAL_CRIT_RATE": "Prob. CRIT Física",
+  "STAT.PHYSICAL_DMG": "Daño Físico",
+  "STAT.PHYSICAL_DMG_FLAT": "Daño plano Físico",
+  "STAT.PHYSICAL_RES": "RES Física",
+  "STAT.PLUNGE_ATTACK_ATK": "Plunge ATK",
+  "STAT.PLUNGE_ATTACK_ATK_FLAT": "ATQ Plano de Ataque Descendente",
+  "STAT.PLUNGE_ATTACK_ATK_PERCENT": "ATQ% de Ataque Descendente",
+  "STAT.PLUNGE_ATTACK_CRIT_DMG": "Daño CRIT de Ataque Descendente",
+  "STAT.PLUNGE_ATTACK_CRIT_RATE": "Prob. CRIT de Ataque Descendente",
+  "STAT.PLUNGE_ATTACK_DMG": "Daño de Ataque Descendente",
+  "STAT.PLUNGE_ATTACK_DMG_FLAT": "Daño plano de Ataque Descendente",
+  "STAT.PYRO_ATK_FLAT": "ATQ Plano Pyro",
+  "STAT.PYRO_ATK_PERCENT": "ATQ% Pyro",
+  "STAT.PYRO_CRIT_DMG": "Daño CRIT Pyro",
+  "STAT.PYRO_CRIT_RATE": "Prob. CRIT Pyro",
+  "STAT.PYRO_DMG": "Daño Pyro",
+  "STAT.PYRO_DMG_FLAT": "Daño plano Pyro",
+  "STAT.PYRO_RES": "RES Pyro",
+  "STAT.SHATTER_DMG": "Daño de Rompehielo",
+  "STAT.SHIELDED": "Escudado",
+  "STAT.SPREAD_DMG": "Daño de Propagación",
+  "STAT.SUPERCONDUCT_DMG": "Daño de Superconductor",
+  "STAT.SWIRL_DMG": "Daño de Torbellino",
+  "STAT.VAPORIZE_DMG": "Daño de Vaporizado"
+}

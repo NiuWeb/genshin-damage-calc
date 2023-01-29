@@ -1,0 +1,19 @@
+/*
+@title: Kokomi Q + 5x E + 2x(N3C)
+@characters: Kokomi C0
+@description: 
+Simple rotation for on-field Kokomi, without C1 hits. No enemy aura considered.
+*/
+
+rotation duration 10
+
+rotation hit Kokomi OceanHuedClam *3 // OHC bubbles
+
+rotation hit Kokomi Q
+rotation hit Kokomi E *5
+
+rotation hit Kokomi N1 *2
+rotation hit Kokomi N2 *2
+rotation hit Kokomi N3 *2
+
+rotation hit Kokomi charged *2

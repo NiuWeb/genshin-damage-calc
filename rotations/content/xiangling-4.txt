@@ -1,0 +1,21 @@
+/*
+@title: Xiangling C4 (pyro) 4 x E hits + Q + 10x Q hits
+@characters: Xiangling C4
+@description:
+Simple rotation for Xiangling C4 solo damage in a pyro team.
+Assuming pyro aura uptime of 90% for all attacks.
+*/
+
+const $aura 90%
+
+rotation duration 20
+
+rotation do enemy aura pyro
+
+rotation hit Xiangling E *4 aura=$aura
+
+rotation hit Xiangling Q_1  aura=$aura
+rotation hit Xiangling Q_2  aura=$aura
+rotation hit Xiangling Q_3  aura=$aura
+
+rotation hit Xiangling pyronado *10 aura=$aura

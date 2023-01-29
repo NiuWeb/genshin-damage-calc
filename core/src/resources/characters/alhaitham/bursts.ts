@@ -1,0 +1,22 @@
+import { charbox, scaling, stats } from "@src/core"
+import { strings } from "@src/strings"
+
+export const Bursts: charbox.PartialInstanceOptions[] = [
+    {
+        Name: strings.hits.HIT_Q,
+        Element: stats.stat.DENDRO_DMG,
+        Talent: stats.stat.ELEMENTAL_BURST_DMG,
+        Scaling: [
+            {
+                Scaling: scaling.TalentScaling.ELEMENTAL_1,
+                Stat: stats.stat.ATK,
+                Initial: 1.216,
+            },
+            {
+                Scaling: scaling.TalentScaling.ELEMENTAL_1,
+                Stat: stats.stat.ELEMENTAL_MASTERY,
+                Initial: 0.9728,
+            },
+        ],
+    },
+]

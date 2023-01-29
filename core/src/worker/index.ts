@@ -1,0 +1,1 @@
+export * as worker from "./_index"

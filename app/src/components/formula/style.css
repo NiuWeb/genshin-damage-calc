@@ -1,0 +1,14 @@
+.formula .parenthesis {
+    @apply text-4xl
+}
+
+.formula .operator {
+    @apply inline-flex items-center
+}
+
+.formula .align {
+    @apply relative
+}
+.formula {
+    min-height: 12px;
+}

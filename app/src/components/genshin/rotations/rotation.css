@@ -1,0 +1,6 @@
+.rotation ul {
+    @apply flex flex-col gap-1 py-1
+}
+.rotation ul li {
+    @apply ml-5 list-disc
+}

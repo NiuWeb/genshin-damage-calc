@@ -1,0 +1,3 @@
+import "./langs/genshin"
+
+export { }

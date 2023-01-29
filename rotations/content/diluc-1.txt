@@ -1,0 +1,19 @@
+/*
+@title: Diluc Vape: Q + 3x(N2E)
+@characters: Diluc C0
+@description: 
+Simple rotation for diluc vaporize. 
+Assuming only the Q initial damage hits the enemy.
+Assuming hydro aura uptime of 90%
+*/
+const $aura 90%
+
+rotation duration 12
+
+rotation do enemy aura HYDRO
+rotation hit Diluc Q   aura=$aura reaction=90%
+rotation hit Diluc N1  aura=$aura reaction=$aura  *3
+rotation hit Diluc N2  aura=$aura reaction=0      *3
+rotation hit Diluc E_1 aura=$aura reaction=$aura
+rotation hit Diluc E_2 aura=$aura reaction=$aura
+rotation hit Diluc E_3 aura=$aura reaction=$aura

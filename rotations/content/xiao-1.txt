@@ -1,0 +1,12 @@
+/*
+@title: Xiao 11x(N1 + hP) + 2x E
+@characters: Xiao C0
+@description:
+Simple rotation for Xiao C0 using combos of 1 Normal Attack + 1 High plunge.
+*/
+
+rotation duration 20
+
+rotation hit Xiao N1 *11
+rotation hit Xiao plunge_high *11
+rotation hit Xiao E *2

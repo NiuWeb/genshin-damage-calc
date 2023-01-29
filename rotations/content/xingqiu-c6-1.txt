@@ -1,0 +1,10 @@
+/*
+@title: Xingqiu 60x Q + E
+@characters: Xingqiu C6
+@description:
+Simple rotation for Xingqiu C6 assuming 1 rainsword per second.
+*/
+rotation duration 21
+rotation hit Xingqiu Q *60
+rotation hit Xingqiu E_1
+rotation hit Xingqiu E_2

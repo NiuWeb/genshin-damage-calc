@@ -1,0 +1,10 @@
+/*
+@title: Bennett Q (vape) + E
+@characters: Bennett C0
+@description: 
+Simple rotation for support bennett. Assumed vaporized Q
+*/
+rotation duration 15
+rotation do enemy aura hydro
+rotation hit Bennett Q aura=1 reaction=1
+rotation hit Bennett E_press aura=0 reaction=0

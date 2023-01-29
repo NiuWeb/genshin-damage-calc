@@ -1,0 +1,20 @@
+/*
+@title: Rosaria (Freeze) 2x E + Q + 4x Q hits
+@characters: Rosaria C0
+@description:
+Simple rotation for Rosaria freeze. Assumed enemy frozen with 90% uptime,
+additional Q hits from C2 are not included.
+*/
+
+const $aura 90%
+
+rotation duration 15
+
+rotation do enemy aura FROZEN
+
+rotation hit Rosaria E_1 *2 aura=$aura
+rotation hit Rosaria E_2 *2 aura=$aura
+
+rotation hit Rosaria Q_1 aura=$aura
+rotation hit Rosaria Q_2 aura=$aura
+rotation hit Rosaria Q_Dot *4 aura=$aura

@@ -1,0 +1,10 @@
+/*
+@title: Chongyun Melt: 3x Q + E
+@characters: Chongyun C0
+@description: Simple rotation for Chongyun C0, melting Q and E hits.
+*/
+rotation duration 12
+
+rotation do enemy aura pyro
+rotation hit Chongyun Q *3 aura=1 reaction=1
+rotation hit Chongyun E    aura=1 reaction=1

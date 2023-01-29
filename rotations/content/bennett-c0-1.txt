@@ -1,0 +1,9 @@
+/*
+@title: Bennett Q + E
+@characters: Bennett C0
+@description: 
+Simple rotation for support bennett. No elemental auras considered
+*/
+rotation duration 15
+rotation hit Bennett Q
+rotation hit Bennett E_press

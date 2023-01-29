@@ -1,0 +1,30 @@
+/*
+@title: Yanfei Vape: Q + E + 4x(N3C) + E + N3C + 3x A4 hits
+@characters: Yanfei C0
+@description:
+Simple rotation for Yanfei vaporize, assuming:
+
+- 90% hydro aura uptime.
+- normal attack vaporize uptime of 30%.
+- charged attack, E and Q vaporize uptime of 90%.
+
+Note that the A4 hits are assumed to a fixed amount.
+*/
+
+const $aura 90%
+const $normal_vape 30%
+
+rotation duration 20
+
+rotation do enemy aura hydro
+
+rotation hit Yanfei Q    aura=$aura
+rotation hit Yanfei E *2 aura=$aura
+
+rotation hit Yanfei N1 *5 aura=$aura reaction=$normal_vape
+rotation hit Yanfei N2 *5 aura=$aura reaction=$normal_vape
+rotation hit Yanfei N3 *5 aura=$aura reaction=$normal_vape
+
+rotation hit Yanfei charged *5 aura=$aura
+
+rotation hit Yanfei A4 *3 aura=$aura

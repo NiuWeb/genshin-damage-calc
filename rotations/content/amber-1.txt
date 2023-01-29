@@ -1,0 +1,18 @@
+/*
+@title: Amber 18x Q Arrows (no melt) + 6x Aimed Shot (melt) + 1x E (melt)
+@characters: Amber C0
+@description: 
+Simple rotation for Amber as Main DPS using charged attacks,
+assuming her Q does not melt, but charged attacks and the bunny does.
+Assumed charged and E melt uptime of 90%.
+*/
+rotation duration 15
+
+// Q hits applies pyro
+rotation do enemy aura pyro
+rotation hit Amber Q *18 aura=90%
+
+// after Q enemy will be affected by cryo
+rotation do enemy aura cryo
+rotation hit Amber E                aura=90% reaction=90%
+rotation hit Amber Aimed_Charged *6 aura=90% reaction=90%

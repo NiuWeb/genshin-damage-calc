@@ -1,0 +1,26 @@
+/*
+@title: Klee Vape: 18x Q + 5x(N2C) + 2x E + 4x Mines
+@characters: Klee C0
+@description:
+Simple vaporize rotation for Klee solo damage, 
+assuming **Xingqiu C6** to get enough hydro.
+
+Note that C1/C4 damage instances are not included, 
+you'll have to include them manually in the rotation
+code.
+*/
+
+const $aura 90%
+
+rotation duration 15
+
+rotation do enemy aura hydro
+
+rotation hit Klee Q *18 aura=$aura reaction=20%
+rotation hit Klee N1 *5 aura=$aura reaction=30%
+rotation hit Klee N2 *5 aura=$aura reaction=30%
+
+rotation hit Klee Charged *5 aura=$aura reaction=1
+
+rotation hit Klee E *2     aura=$aura reaction=1
+rotation hit Klee E_Dot *4 aura=$aura reaction=20%

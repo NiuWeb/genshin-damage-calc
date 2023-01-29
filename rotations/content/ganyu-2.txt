@@ -1,0 +1,18 @@
+/*
+@title: Ganyu Freeze: 3xCA + E + 40x Q
+@characters: Ganyu C0
+@description:
+Simple rotation for Freeze Ganyu (against multiple enemies) assuming:
+
+- Three charged attacks per rotation.
+- Enemies are grouped so each Ice Shard hits multiple enemies.
+- Frozen uptime of 90%
+*/
+const $aura 90%
+rotation duration 15
+rotation do enemy aura FROZEN
+
+rotation hit Ganyu Frostflake *3      aura=$aura
+rotation hit Ganyu FrostflakeBloom *3 aura=$aura
+rotation hit Ganyu E                  aura=$aura
+rotation hit Ganyu Q *40              aura=$aura

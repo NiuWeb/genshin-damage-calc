@@ -1,0 +1,10 @@
+/*
+@title: Xingqiu 37x Q + E
+@characters: Xingqiu C0
+@description:
+Simple rotation for Xingqiu C0 assuming 1 rainsword per second.
+*/
+rotation duration 21
+rotation hit Xingqiu Q *37
+rotation hit Xingqiu E_1
+rotation hit Xingqiu E_2

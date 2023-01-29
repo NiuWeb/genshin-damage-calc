@@ -1,0 +1,11 @@
+/*
+@title: Beidou (AoE) 50x Q hits + 2x E
+@characters: Beidou C2
+@description:
+Simple rotation for Beidou C0 against multiple targets, assuming enemy affected by electro.
+*/
+rotation duration 20
+rotation do enemy aura electro
+rotation hit Beidou Q
+rotation hit Beidou Q_DoT *50
+rotation hit Beidou E *2

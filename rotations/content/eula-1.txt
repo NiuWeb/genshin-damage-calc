@@ -1,0 +1,21 @@
+/*
+@title: Eula E + Q + N4 + Hold E + N4 (up to 14 stacks)
+@characters: Eula C0
+@description:
+Simple rotation for Eula C0 that allows up to 14 Lightfall Sword stacks.
+
+You must configure the exact stacks amount in the application, or directly in the rotation code.
+*/
+rotation duration 20
+rotation hit Eula E_Press
+rotation hit Eula Q
+rotation hit Eula N1 *2
+rotation hit Eula N2 *2
+rotation hit Eula N3 *4
+rotation hit Eula N4 *2
+
+rotation hit Eula E_hold
+rotation hit Eula Icewhirl *2
+
+rotation hit Eula A1
+rotation hit Eula LightfallSword

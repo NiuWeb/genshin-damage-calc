@@ -1,0 +1,11 @@
+/*
+@title: Ningguang C0: E + 10x Q + 6x (N1C + 1 Star jade)
+@characters: Ningguang C0
+@description: Simple rotation for Ningguang C0.
+*/
+rotation duration 12
+rotation hit Ningguang E
+rotation hit Ningguang Q *10
+rotation hit Ningguang N1 *6 *2 // each N1 has two damage instances
+rotation hit Ningguang Charged *6
+rotation hit Ningguang Jade *6

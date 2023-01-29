@@ -1,0 +1,55 @@
+{
+  "name": "genshin-calculator",
+  "version": "4.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/NiuWeb/genshin-calculator/app"
+  },
+  "keywords": [
+    "genshin",
+    "calculator",
+    "simulation"
+  ],
+  "author": "@Bygdle#8333",
+  "license": "MIT",
+  "dependencies": {
+    "@bygdle/genshin-calculator-core": "file:../core",
+    "@bygdle/search-js": "github:NiuWeb/search-js",
+    "ansi-to-html": "^0.7.2",
+    "apexcharts": "^3.36.3",
+    "html-react-parser": "^2.0.0",
+    "monaco-editor": "^0.34.1",
+    "pretty-ms": "^8.0.0",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
+    "react-bootstrap-icons": "^1.10.2",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.4",
+    "react-router": "^6.4.5",
+    "react-router-dom": "^6.4.5",
+    "vite-plugin-monaco-editor": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.13",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.28.0",
+    "express": "^4.18.2",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3",
+    "vite-tsconfig-paths": "^3.6.0"
+  }
+}

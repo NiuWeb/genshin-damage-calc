@@ -1,0 +1,14 @@
+/*
+@title: Amber 18x Q Arrows + 1x E
+@characters: Amber C0
+@description: 
+Simple rotation for support Amber, only casting skills and applying pyro to enemy.
+Assumed pyro aura uptime of 90%.
+*/
+rotation duration 15
+
+// Q hits applies pyro
+
+rotation do enemy aura pyro
+rotation hit Amber Q *18 aura=90%
+rotation hit Amber E     aura=90%
