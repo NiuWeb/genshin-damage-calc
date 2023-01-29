@@ -19,7 +19,10 @@ There are three projects in this repository:
 
 ## Installation
 ```shell
-cd ./app
+cd ./core
+npm install
+npm run build
+cd ../app
 npm install
 npm run dev
 ```
