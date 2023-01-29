@@ -1,0 +1,49 @@
+reset // this command removes all previously added characters and leaves everything as new
+
+# We're adding a Nahida here
+character add Nahida
+character level 90
+character talent 6 9 7
+
+# Add the weapon
+weapon set TheWidsith
+weapon level 90
+weapon rank 5
+
+# Add a build of artifacts
+artifact add
+artifact stars 5  // set all artifacts as 5-stars
+artifact level 20 // set all artifacts to level 20
+
+artifact main elemental_mastery dendro_dmg crit_rate // mainstats of the Sands, Goblet and Circlet, respectively
+artifact sets DeepwoodMemories 4 // Use the 4-piece set of Deepwood memories
+
+// add the substats of the flower
+flower sub add crit_dmg 13.2%
+flower sub add crit_rate 10.5%
+flower sub add atk_flat 14
+flower sub add elemental_mastery 37
+
+// add the substats of the plume
+plume sub add energy_recharge 6.5%
+plume sub add crit_dmg 12.4%
+plume sub add crit_rate 10.5%
+plume sub add elemental_mastery 61
+
+// add the substats of the sands
+sands sub add def_flat 16
+sands sub add energy_recharge 13.6%
+sands sub add crit_rate 7%
+sands sub add crit_dmg 21.8%
+
+// add the substats of the goblet
+goblet sub add crit_rate 3.1%
+goblet sub add atk_percent 5.3%
+goblet sub add energy_recharge 16.2%
+goblet sub add hp_flat 807
+
+// add the substats of the circlet
+circlet sub add crit_dmg 7%
+circlet sub add atk_percent 15.2%
+circlet sub add elemental_mastery 40
+circlet sub add def_percent 12.4%
