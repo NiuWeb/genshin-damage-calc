@@ -29,3 +29,10 @@ cd ./rotations
 npm install
 node server.js
 ```
+
+## Credits
+- Some character/rotations data: [keginqmains.com](https://keqingmains.com).
+- Damage formulas, stats and more data: [Genshin wiki](https://genshin-impact.fandom.com/wiki/Damage).
+- [Enka.Network](https://enka.network) service for character imports.
+
+Project dependences can be found inside the repo's package.json files.
