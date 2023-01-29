@@ -1,4 +1,4 @@
-import { fetchRotationsDev } from "./fetch/fetch-dev"
+import { fetchRotations } from "./fetch/fetch"
 import { parseRotation, RotationContent } from "./parse"
 
 const AppMode = import.meta.env.MODE
@@ -8,9 +8,9 @@ const AppMode = import.meta.env.MODE
 export async function getRotations(): Promise<RotationContent[]> {
   const files = await (() => {
     if (AppMode === "development") {
-      return fetchRotationsDev()
+      return fetchRotations("dev")
     } else {
-      throw new Error("No method defined to get the rotations in production mode")
+      return fetchRotations("prod")
     }
   })()
 
