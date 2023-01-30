@@ -1,6 +1,8 @@
 # genshin-damage-calc
 Advanced damage calculator for genshin impact.
 
+https://niuweb.github.io/genshin-damage-calc/v4
+
 ## Notes
 - The rotations system is static, which means that no effects able to change it
 are taken into account, this includes Attack Speed buffs, cooldown reductions and similar.
@@ -34,7 +36,7 @@ node server.js
 ```
 
 ## Credits
-- Some character/rotations data: [keginqmains.com](https://keqingmains.com).
+- Some character/rotations data: [keqingmains.com](https://keqingmains.com).
 - Damage formulas, stats and more data: [Genshin wiki](https://genshin-impact.fandom.com/wiki/Damage).
 - [Enka.Network](https://enka.network) service for character imports.
 
