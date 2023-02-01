@@ -1,16 +1,14 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  
-  testEnvironment: "jsdom",
+  preset: "ts-jest",
   transform: {
-    "\\.[jt]sx?$": "esbuild-jest",
+    "node_modules/((@bygdle.*)/)": "esbuild-jest",
   },
   transformIgnorePatterns: [
     "node_modules/(?!(@bygdle.*)/)"
   ],
-
   moduleNameMapper: {
     "^@src/(.*)": "<rootDir>/src/$1",
     "^@core/(.*)": "<rootDir>/src/core/$1",
-  },
-};
+  }
+}
