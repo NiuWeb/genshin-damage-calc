@@ -20,7 +20,7 @@
   "ACTION.ENKA_IMPORT": "Importar desde Enka.Network",
   "ACTION.EXPORT": "Exportar",
   "ACTION.FILTER_ADD": "Añadir filtro",
-  "ACTION.GOOD_IMPORT": "Import from GOOD format",
+  "ACTION.GOOD_IMPORT": "Importar desde formato GOOD",
   "ACTION.GOTO_PAGE": "Ir a la pág.",
   "ACTION.IMPORT": "Importar",
   "ACTION.LOAD": "Cargar",
@@ -66,7 +66,7 @@
   "CONDITION.HYPERBLOOM": "Sobreflorecimiento",
   "CONDITION.INTERLUDE": "Interludio (ME)",
   "CONDITION.MAXIMUM": "Máximo",
-  "CONDITION.MECHA": "Mecanoid",
+  "CONDITION.MECHA": "Mecanoide",
   "CONDITION.NEAR": "Cerca",
   "CONDITION.NO_BURST": "No Q",
   "CONDITION.NO_SLIME": "No slimes",
@@ -81,8 +81,8 @@
   "CONDITION.SPREAD": "Propagación",
   "CONDITION.WEAK_SPOT": "Punto débil",
   "HIT_AGGRAVATE": "Intensificación",
-  "HIT_AIMED_CHARGED": "Fully-Charged Aimed Shot",
-  "HIT_AIMED_NORMAL": "Aimed Shot",
+  "HIT_AIMED_CHARGED": "Disparo Preciso (carga completa)",
+  "HIT_AIMED_NORMAL": "Disparo Preciso",
   "HIT_BLOOM": "Florecimiento",
   "HIT_BURGEON": "Crepitar",
   "HIT_BURNING": "Quemadura",
@@ -160,7 +160,7 @@
   "HIT_PLUNGE_LOW": "Ataque descendente (caída baja)",
   "HIT_PLUNGE_LOW_Q": "Ataque descendente (caída baja)",
   "HIT_PLUNGE_Q": "Ataque descendente",
-  "HIT_Q": "Elemental Burst",
+  "HIT_Q": "Habilidad Definitiva",
   "HIT_Q_1": "Habilidad Definitiva (x1)",
   "HIT_Q_2": "Habilidad Definitiva (x2)",
   "HIT_Q_3": "Habilidad Definitiva (x3)",
@@ -698,55 +698,57 @@
     "title": "Invocadora de mareas: mantener pulsado"
   },
   "ITEM.Bennett": "Bennett",
-  "ITEM.Bennett.HIT_C4": "Unexpected Odyssey",
-  "ITEM.Bennett.HIT_E_1_1": "Charge Level 1 (x1)",
-  "ITEM.Bennett.HIT_E_1_2": "Charge Level 1 (x2)",
-  "ITEM.Bennett.HIT_E_2_1": "Charge Level 2 (x1)",
-  "ITEM.Bennett.HIT_E_2_2": "Charge Level 2 (x2)",
+  "ITEM.Bennett.HIT_C4": "Calidez inagotable",
+  "ITEM.Bennett.HIT_E_1_1": "Carga 1 (x1)",
+  "ITEM.Bennett.HIT_E_1_2": "Carga 1 (x2)",
+  "ITEM.Bennett.HIT_E_2_1": "Carga 2 (x1)",
+  "ITEM.Bennett.HIT_E_2_2": "Carga 2 (x2)",
   "ITEM.BennettC1": {
     "description": [
-      "**Fantastic Voyage**'s ATK increase no longer has an HP ",
-      "restriction, and gains an additional 20% of Bennett's ",
-      "Base ATK. "
+      "El aumento de ATQ de **Aventura maravillosa** ya no se ve ",
+      "restringido por la cantidad de Vida, y aumenta en un 20% ",
+      "adicional en proporción al ATQ Básico de Bennett. "
     ],
-    "title": "Grand Expectation"
+    "title": "Visión de Aventura"
   },
   "ITEM.BennettC2": {
     "description": [
-      "When Bennett's HP falls below 70%, his Energy Recharge is ",
-      "increased by 30%. "
+      "Aumenta la Recarga de Energía de Bennett en un 30% cuando ",
+      "su Vida es inferior al 70%. "
     ],
-    "title": "Impasse Conqueror"
+    "title": "Huida desesperada"
   },
   "ITEM.BennettC3": {
     "description": [
-      "Increases the Level of **Passion Overload** by 3. ",
-      "Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Sobrecarga de pasión ",
+      "+3.** Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Unstoppable Fervor"
+    "title": "Pasión Ardiente"
   },
   "ITEM.BennettC5": {
     "description": [
-      "Increases the Level of **Fantastic Voyage** by 3. ",
-      "Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Aventura ",
+      "maravillosa** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "True Explorer"
+    "title": "Explorador Verdadero"
   },
   "ITEM.BennettC6": {
     "description": [
-      "Sword, Claymore, or Polearm-wielding characters ",
-      "inside **Fantastic Voyage**'s radius gain a 15% Pyro DMG ",
-      "Bonus and their weapons are infused with Pyro. "
+      "Si los personajes en uso utilizan espada ligera, ",
+      "mandoble o lanza y se encuentran en el AdE de **Aventura ",
+      "maravillosa**, dichos personajes obtendrán un 15% de ",
+      "Bono de Daño Pyro. Además, serán imbuidos del elemento ",
+      "Pyro. "
     ],
-    "title": "Fire Ventures with Me"
+    "title": "Fuego y Coraje"
   },
   "ITEM.BennettQ": {
     "description": [
-      "If the health of a character within the AoE is higher than ",
-      "70%, they gain an ATK Bonus that is based on Bennett's Base ",
-      "ATK. "
+      "Si la Vida de un personaje dentro del círculo es superior ",
+      "al 70%, obtendrá un Bono de ATQ en proporción al ATQ Básico ",
+      "de Bennett. "
     ],
-    "title": "Fantastic Voyage"
+    "title": "Aventura Maravillosa"
   },
   "ITEM.Berserker": {
     "title": "Berserker"
@@ -1663,74 +1665,74 @@
     "title": "Fillet Blade (1)"
   },
   "ITEM.Fischl": "Fischl",
-  "ITEM.Fischl.HIT_A1": "Stellar Predator",
-  "ITEM.Fischl.HIT_A4": "Undone Be Thy Sinful Hex",
-  "ITEM.Fischl.HIT_C1": "Gaze of the Deep",
-  "ITEM.Fischl.HIT_C4": "Her Pilgrimage of Bleak",
-  "ITEM.Fischl.HIT_C6": "Evernight Raven",
-  "ITEM.Fischl.HIT_E": "Oz (Summon)",
-  "ITEM.Fischl.HIT_OZ": "Oz Attack",
+  "ITEM.Fischl.HIT_A1": "Cuervo devoraestrellas",
+  "ITEM.Fischl.HIT_A4": "Juicio de los pecadores",
+  "ITEM.Fischl.HIT_C1": "Ojo de cuervo penetrante",
+  "ITEM.Fischl.HIT_C4": "Fantasía de la princesa",
+  "ITEM.Fischl.HIT_C6": "Ave de la Noche Eterna",
+  "ITEM.Fischl.HIT_E": "Oz (Invocación)",
+  "ITEM.Fischl.HIT_OZ": "Ataque de Oz",
   "ITEM.FischlA1": {
     "description": [
-      "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down",
-      "Thundering Retribution, dealing AoE Electro DMG equal to 152.7% of",
-      "the arrow’s DMG."
+      "Cuando Fischl golpea a Oz con un Disparo Preciso completamente cargado,",
+      "Oz lanza una retribución del trueno, infligiendo Daño Electro en el AdE",
+      "igual al 152.7% del daño de la flecha."
     ],
-    "title": "Stellar Predator"
+    "title": "Cuervo devoraestrellas"
   },
   "ITEM.FischlA4": {
     "description": [
-      "If your current active character triggers an Electro-related Elemental",
-      "Reaction when Oz is on the field, the opponent shall be stricken with",
-      "Thundering Retribution, dealing Electro DMG equal to 80% of Fischl’s ATK."
+      "Si el personaje en uso desencadena una Reacción Elemental Electro cuando Oz",
+      "está en combate, el enemigo será golpeado con retribución del trueno,",
+      "infligiendo Daño Electro igual al 80% del ATQ de Fischl."
     ],
-    "title": "Undone Be Thy Sinful Hex"
+    "title": "Juicio de los pecadores"
   },
   "ITEM.FischlC1": {
     "description": [
-      "Even when Oz is not present in combat, he can still watch over Fischl",
-      "through his raven eyes. When Fischl performs a Normal Attack against",
-      "an opponent, Oz fires a joint attack, dealing DMG equal to 22% of ",
-      "Fischl’s ATK."
+      "Cuando Oz no está en el campo de batalla, seguirá vigilando a Fischl a través",
+      "de su ojo de cuervo. Cuando Fischl ataca a un enemigo con Ataque Normal, Oz",
+      "atacará simultáneamente con su ojo e infligirá un 22% de daño."
     ],
-    "title": "Gaze of the Deep"
+    "title": "Ojo de cuervo penetrante"
   },
   "ITEM.FischlC2": {
     "description": [
-      "When **Nightrider** is used, it deals an additional 200% ",
-      "ATK as DMG, and its AoE is increased by 50%. "
+      "**Vigía de la noche** inflige un 200% de daño adicional, y ",
+      "su AdE aumenta en un 50%. "
     ],
-    "title": "Devourer of All Sins"
+    "title": "Devorador de pecados"
   },
   "ITEM.FischlC3": {
     "description": [
-      "Increases the Level of **Nightrider** by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Vigía de la noche** +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Wings of Nightmare"
+    "title": "Alas sombrías"
   },
   "ITEM.FischlC4": {
     "description": [
-      "When **Midnight Phantasmagoria** is used, it deals 222% ",
-      "of ATK as Electro DMG to surrounding opponents. When the ",
-      "skill duration ends, Fischl regenerates 20% of her HP. "
+      "Al lanzar **Ilusión nocturna**, inflige un 222% de daño ",
+      "de ATQ como Daño Electro a los enemigos cercanos. Cuando ",
+      "termina la duración de la habilidad, Fischl recupera el ",
+      "20% de su Vida. "
     ],
-    "title": "Her Pilgrimage of Bleak"
+    "title": "Fantasía de la princesa"
   },
   "ITEM.FischlC5": {
     "description": [
-      "Increases the Level of **Midnight Phantasmagoria** by 3. ",
-      "Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de Ilusión nocturna +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Against The Fleeing Light"
+    "title": "Noche silenciosa"
   },
   "ITEM.FischlC6": {
     "description": [
-      "Extends the duration of Oz’s presence on the field by 2s.",
-      "Additionally, Oz performs joint attacks with your active",
-      "character when present, dealing 30% of Fischl’s ATK as Electro DMG."
+      "#Aumenta la duración de la invocación de Oz en 2 s. Mientras",
+      "Oz esté presente, atacará junto a tu personaje en uso e",
+      "infligirá un 30% del ATQ de Fischl como Daño Electro."
     ],
-    "title": "Evernight Raven"
+    "title": "Ave de la Noche Eterna"
   },
   "ITEM.FlowerOfParadiseLost": "Flower of Paradise Lost",
   "ITEM.FlowerOfParadiseLost2": {
@@ -2109,85 +2111,89 @@
     "title": "Heart of Depth (4)"
   },
   "ITEM.HuTao": "Hu Tao",
-  "ITEM.HuTao.HIT_E": "Blood Blossom",
-  "ITEM.HuTao.HIT_Q": "Spirit Soother",
+  "ITEM.HuTao.HIT_E": "Pétalos sangrientos",
+  "ITEM.HuTao.HIT_Q": "Calma de los espíritus",
   "ITEM.HuTaoA1": {
     "description": [
-      "When a Paramita Papilio state activated by **Guide to ",
-      "Afterlife** ends, all allies in the party (excluding Hu ",
-      "Tao herself) will have their CRIT Rate increased by 12% ",
-      "for 8s. "
+      "Al terminar la duración del estado de mariposa excelsa ",
+      "aplicado mediante **Guía hacia el más allá**, la Prob. ",
+      "CRIT de todos los miembros del equipo (a excepción de Hu ",
+      "Tao) aumenta en un 12% durante 8 s. "
     ],
-    "title": "Flutter By"
+    "title": "Aleteo sutil"
   },
   "ITEM.HuTaoA4": {
     "description": [
-      "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG ",
-      "Bonus is increased by 33%. "
+      "Cuando su Vida es inferior o igual al 50%, Hu Tao obtiene un ",
+      "33% de Bono de Daño Pyro. "
     ],
-    "title": "Sanguine Rouge"
+    "title": "Baño de sangre"
   },
   "ITEM.HuTaoC2": {
     "description": [
-      "Increases the Blood Blossom DMG by an amount equal to 10% ",
-      "of Hu Tao's Max HP at the time the effect is applied. ",
-      "Additionally, **Spirit Soother** will also apply the ",
-      "Blood Blossom effect. "
+      "Aumenta el daño infligido por pétalos sangrientos en una ",
+      "cantidad equivalente al 10% de la Vida Máx. que tenía Hu ",
+      "Tao al aplicar dicho efecto. Además, **Calma de los ",
+      "espíritus** aplicará sobre los enemigos atacados el ",
+      "efecto de pétalos sangrientos. "
     ],
-    "title": "Ominous Rainfall"
+    "title": "Mal presagio"
   },
   "ITEM.HuTaoC3": {
     "description": [
-      "Increases the Level of **Guide to Afterlife** by 3. ",
-      "Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Guía hacia el más ",
+      "allá** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Lingering Carmine"
+    "title": "Persistencia escarlata"
   },
   "ITEM.HuTaoC4": {
     "description": [
-      "Upon defeating an enemy affected by a Blood Blossom that ",
-      "Hu Tao applied herself, all nearby allies in the party ",
-      "(excluding Hu Tao herself) will have their CRIT Rate ",
-      "increased by 12% for 15s. "
+      "Al derrotar a un enemigo que está bajo los efectos de ",
+      "pétalos sangrientos aplicados por Hu Tao, la Prob. CRIT ",
+      "de todos los miembros del equipo (a excepción de Hu Tao) ",
+      "aumenta en un 12% durante 15 s. "
     ],
-    "title": "Garden of eternal rest"
+    "title": "Jardín del reposo eterno"
   },
   "ITEM.HuTaoC5": {
     "description": [
-      "Increases the Level of **Spirit Soother** by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Calma de los ",
+      "espíritus** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Floral Incense"
+    "title": "Ofrenda de incienso"
   },
   "ITEM.HuTaoC6": {
     "description": [
-      "Triggers when Hu Tao's HP drops below 25%, or when she ",
-      "suffers a lethal strike: Hu Tao will not fall as a result of ",
-      "the DMG sustained. Additionally, for the next 10s, all of ",
-      "her Elemental RES and Physical RES is increased by 200%, ",
-      "her CRIT Rate is increased by 100%, and her resistance to ",
-      "interruption is greatly increased. This effect ",
-      "triggers automatically when Hu Tao has 1 HP left. Can only ",
-      "occur once every 60s. "
+      "Cuando la Vida de Hu Tao esté por debajo del 25% o cuando ",
+      "vaya a recibir una cantidad de daño suficiente como para ",
+      "ser derrotada, esta habilidad se activará y tendrá los ",
+      "siguientes efectos: Dicho daño no hará que Hu Tao sea ",
+      "derrotada, y durante 10 s aumentará en un 200% todas sus ",
+      "RES Elementales y su RES Física, así como su Prob. CRIT en ",
+      "un 100%. Además, su RES a interrupción se incrementará en ",
+      "gran medida. Este efecto se activará automáticamente ",
+      "cuando Hu Tao tenga 1 pt. de Vida. Solo puede ocurrir una ",
+      "vez cada 60 s. "
     ],
-    "title": "Butterfly's Embrace"
+    "title": "Último suspiro"
   },
   "ITEM.HuTaoE": {
     "description": [
-      "Increases Hu Tao's ATK based on her Max HP at the time of ",
-      "entering this state. ATK Bonus gained this way cannot ",
-      "exceed 400% of Hu Tao's Base ATK. Converts attack DMG to ",
-      "Pyro DMG, which cannot be overridden by any other ",
-      "elemental infusion. "
+      "Aumenta el ATQ de Hu Tao en función de la Vida Máx. que tenía ",
+      "al entrar en este estado. El bono de ATQ obtenido de esta ",
+      "forma no podrá ser superior al 400% del ATQ Básico de Hu ",
+      "Tao. El daño de ATQ se convierte en Daño Pyro. Este cambio ",
+      "elemental no puede sustituirse imbuyéndose de otro ",
+      "elemento. "
     ],
-    "title": "Paramita Papilio"
+    "title": "Mariposa excelsa"
   },
   "ITEM.HuTaoQ": {
     "description": [
-      "If Hu Tao’s HP is below or equal to 50% when the enemy is hit,",
-      "both the DMG and HP Regeneration are increased."
+      "Si la Vida de Hu Tao es inferior o igual al 50% en el momento de",
+      "golpear con esta habilidad, infligirá mayor daño y regenerará más Vida."
     ],
-    "title": "Spirit Soother"
+    "title": "Calma de los espíritus"
   },
   "ITEM.HuntersPath": {
     "title": "Hunter's Path"
@@ -2413,82 +2419,87 @@
     "title": "Katsuragikiri Nagamasa (1)"
   },
   "ITEM.Kazuha": "Kazuha",
-  "ITEM.Kazuha.HIT_A1": "Soumon Swordsmanship",
-  "ITEM.Kazuha.HIT_PLUNGE_E": "Plunge (Midare Ranzan)",
-  "ITEM.Kazuha.HIT_PLUNGE_HIGH_E": "High Plunge (Midare Ranzan)",
-  "ITEM.Kazuha.HIT_PLUNGE_LOW_E": "Low Plunge (Midare Ranzan)",
+  "ITEM.Kazuha.HIT_A1": "Espada de la erosión",
+  "ITEM.Kazuha.HIT_PLUNGE_E": "Ataque Descendente: Contención del caos",
+  "ITEM.Kazuha.HIT_PLUNGE_HIGH_E": "Ataque Descendente: Contención del caos (caída alta)",
+  "ITEM.Kazuha.HIT_PLUNGE_LOW_E": "Ataque Descendente: Contención del caos (caída baja)",
   "ITEM.KazuhaA1": {
     "description": [
-      "If Chihayaburu comes into contact with Hydro/Pyro/Cryo/Electro",
-      "when cast, this Chihayaburu will absorb that element and if",
-      "Plunging Attack: Midare Ranzan is used before the effect expires,",
-      "it will deal an additional 200% ATK of the absorbed elemental type",
-      "as DMG. This will be considered Plunging Attack DMG.\n",
-      "Elemental Absorption may only occur once per use of Chihayaburu."
+      "Si al usar Vehemencia estremecedora, esta entra en contacto con",
+      "Hydro/Pyro/Cryo/Electro, el siguiente Ataque Descendente: Contención",
+      "del caos realizado gracias a Vehemencia estremecedora experimentará",
+      "un cambio elemental e infligirá adicionalmente un 200% de daño del",
+      "elemento al que cambió. Este daño se considera daño de Ataque Descendente.",
+      "El cambio elemental solo puede ocurrir una vez por cada uso de Vehemencia estremecedora."
     ],
-    "title": "Soumon Swordsmanship"
+    "title": "Espada de la erosión"
   },
   "ITEM.KazuhaA4": {
     "description": [
-      "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant all",
-      "party members a 0.04% Elemental DMG Bonus to the element absorbed",
-      "by Swirl for every point of Elemental Mastery he has for 8s. Bonuses",
-      "for different elements obtained through this method can co-exist."
+      "Cuando Kaedehara Kazuha provoca una reacción de ",
+      "Torbellino, otorga durante 8 s a todos los miembros del ",
+      "equipo un 0.04% de Bono de Daño Elemental del elemento al ",
+      "que cambió Torbellino por cada punto de Maestría ",
+      "Elemental que él tenga. Puede haber al mismo tiempo ",
+      "distintos Bonos de Daño Elemental obtenidos de esta ",
+      "manera. "
     ],
-    "title": "Poetics of Fuubutsu"
+    "title": "Haiku de la brisa"
   },
   "ITEM.KazuhaC2": {
     "description": [
-      "The Autumn Whirlwind field created by Kazuha Slash has ",
-      "the following effects: \n• Increases Kaedehara Kazuha's ",
-      "own Elemental Mastery by 200. \n• Increases the Elemental ",
-      "Mastery of characters within the field by 200. The ",
-      "Elemental Mastery-increasing effects of this ",
-      "Constellation do not stack. "
+      "Dentro del área de viento del otoño creada mediante Filo ",
+      "de las diez mil hojas ocurren los siguientes efectos: \n• ",
+      "Mientras dure el área, la Maestría Elemental de ",
+      "Kaedehara Kazuha aumenta 200 pts. \n• La Maestría ",
+      "Elemental de los personajes dentro del área de viento del ",
+      "otoño aumenta 200 pts. Los efectos de incremento de ",
+      "Maestría Elemental que proporciona esta constelación ",
+      "no son acumulables. "
     ],
-    "title": "Yamaarashi Tailwind"
+    "title": "Viento en las colinas"
   },
   "ITEM.KazuhaC3": {
     "description": [
-      "Increases the Level of Chihayaburu by 3. Maximum upgrade ",
-      "level is 15. "
+      "Aumenta el nivel de habilidad de Vehemencia ",
+      "estremecedora +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Maple Monogatari"
+    "title": "Leyenda de los arces"
   },
   "ITEM.KazuhaC5": {
     "description": [
-      "Increases the Level of Kazuha Slash by 3. Maximum upgrade ",
-      "level is 15. "
+      "Aumenta el nivel de habilidad de Filo de las diez mil hojas ",
+      "+3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Wisdom of Bansei"
+    "title": "Sabiduría eterna"
   },
   "ITEM.KazuhaC6": {
     "description": [
-      "After using Chihayaburu or Kazuha Slash, Kaedehara ",
-      "Kazuha gains an Anemo Infusion for 5s. Additionally, ",
-      "each point of Elemental Mastery will increase the DMG ",
-      "dealt by Kaedehara Kazuha's Normal, Charged, and ",
-      "Plunging Attack by 0.2%. "
+      "Tras utilizar Vehemencia estremecedora o Filo de las ",
+      "diez mil hojas, Kazuha se imbuye del elemento Anemo ",
+      "durante 5 s. Además, el daño que inflige con sus Ataques ",
+      "Normales, Cargados y Descendentes aumenta en un 0.2% por ",
+      "cada punto de Maestría Elemental que tenga."
     ],
-    "title": "Crimson Momiji"
+    "title": "Hojas escarlata"
   },
   "ITEM.KazuhaE": {
     "description": [
-      "When a Plunging Attack is performed using the effects of the",
-      "Elemental Skill Chihayaburu, Plunging Attack DMG is converted",
-      "to Anemo DMG. On landing, Kazuha creates a small wind tunnel",
-      "via a secret blade technique that pulls in nearby objects and opponents.\n",
-      "Midare Ranzan’s DMG is considered Plunging Attack DMG."
+      "Al realizar un Ataque Descendente mediante la Habilidad Elemental,",
+      "Vehemencia estremecedora, el daño que inflige el Ataque Descendente",
+      "se convertirá en Daño Anemo y, al aterrizar, creará un pequeño túnel",
+      "de viento que atrae a los objetos y enemigos cercanos.\n",
+      "El daño de Contención del caos se considera daño de Ataque Descendente."
     ],
-    "title": "Plunging Attack: Midare Ranzan"
+    "title": "Ataque Descendente: Contención del caos"
   },
   "ITEM.KazuhaQ": {
     "description": [
-      "If Autumn Whirlwind comes into contact with Hydro/Pyro/Cryo/Electro,",
-      "it will deal additional elemental DMG of that type.\n",
-      "Elemental Absorption may only occur once per use."
+      "Si viento del otoño entra en contacto con Hydro/Pyro/Cryo/Electro",
+      "mientras dure, infligirá Daño Elemental adicional de ese tipo.",
+      "Este cambio elemental solo puede ocurrir una vez durante la habilidad."
     ],
-    "title": "Kazuha Slash: Elemental Absorption"
+    "title": "Filo de las diez mil hojas: Cambio elemental"
   },
   "ITEM.Keqing": "Keching",
   "ITEM.Keqing.HIT_C1": "Fuerza atronadora",
@@ -3389,68 +3400,74 @@
     "title": "Prototype Starglitter (1)"
   },
   "ITEM.Raiden": "Raiden",
-  "ITEM.Raiden.HIT_E": "Eye of Stormy Judgment",
-  "ITEM.Raiden.HIT_E_COORDINATED": "Coordinated Attack",
-  "ITEM.Raiden.HIT_Q": "Musou no Hitotachi",
+  "ITEM.Raiden.HIT_E": "Ojo del castigo atronador",
+  "ITEM.Raiden.HIT_E_COORDINATED": "Ataque coordinado",
+  "ITEM.Raiden.HIT_Q": "Corte onírico",
   "ITEM.RaidenA4": {
     "description": [
-      "Each 1% above 100% Energy Recharge that the Raiden Shogun ",
-      "possesses grants her: \n• 0.6% greater Energy ",
-      "restoration from **Musou Isshin** \n• 0.4% Electro DMG ",
-      "Bonus. "
+      "Si la Shogun Raiden tiene más de un 100% de Recarga de ",
+      "Energía, por cada 1% adicional obtiene los siguientes ",
+      "efectos: \n• Aumenta en un 0.6% adicional la regeneración ",
+      "de Energía Elemental otorgada por mente onírica. \n• ",
+      "Aumenta en un 0.4% adicional su Bono de Daño Electro. "
     ],
-    "title": "Enlightened One"
+    "title": "La iluminada"
   },
   "ITEM.RaidenC2": {
     "description": [
-      "**Secret Art: Musou Shinsetsu**'s **Musou no ",
-      "Hitotachi** and **Musou Isshin** attacks will ignore ",
-      "60% of opponents' DEF. "
+      "Tanto el corte onírico de **Técnica secreta: Verdad ",
+      "onírica** como los ataques realizados bajo el estado de ",
+      "mente onírica ignoran el 60% de la DEF de los enemigos. "
     ],
-    "title": "Steelbreaker"
+    "title": "Asoladora del acero"
   },
   "ITEM.RaidenC3": {
     "description": [
-      "Increases the Level of **Secret Art: Musou Shinsetsu** ",
-      "by 3. Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Técnica secreta: ",
+      "Verdad onírica** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Shinkage Bygones"
+    "title": "Reflejo del pasado"
   },
   "ITEM.RaidenC4": {
     "description": [
-      "When the Musou Isshin state applied by **Secret Art: ",
-      "Musou Shinsetsu** expires, all nearby party members ",
-      "(excluding the Raiden Shogun) gain 30% bonus ATK for 10s. "
+      "Al terminar la duración de mente onírica activada ",
+      "mediante **Técnica secreta: Verdad onírica**, el ATQ de ",
+      "todos los miembros del equipo cercanos (a excepción de la ",
+      "Shogun Raiden) aumenta en un 30% durante 10 s. "
     ],
-    "title": "Pledge of Propriety"
+    "title": "Ofrenda de la eternidad"
   },
   "ITEM.RaidenC5": {
     "description": [
-      "Increases the Level of **Transcendence: Baleful Omen** ",
-      "by 3. Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Trascendencia: ",
+      "Presagio maligno** +3. Puede ser aumentado hasta Niv. ",
+      "15. "
     ],
-    "title": "Shogun's Descent"
+    "title": "Descenso de la Shogun"
   },
   "ITEM.RaidenE": {
     "description": [
-      "Characters who gain the Eye of Stormy Judgment will have ",
-      "their Elemental Burst DMG increased based on the Energy ",
-      "Cost of the Elemental Burst during the Eye's duration. "
+      "Mientras un personaje esté bajo los efectos de ojo del ",
+      "castigo atronador, el daño que inflige con su Habilidad ",
+      "Definitiva aumenta en proporción a la Energía Elemental ",
+      "consumida para realizar dicha habilidad. "
     ],
-    "title": "Eye of Stormy Judgment"
+    "title": "Ojo del castigo atronador"
   },
   "ITEM.RaidenQ": {
     "description": [
-      "When nearby party members (excluding the Raiden Shogun ",
-      "herself) use their Elemental Bursts, the Raiden Shogun ",
-      "will build up Resolve stacks based on the Energy Cost of ",
-      "these Elemental Bursts. The maximum number of Resolve ",
-      "stacks is 60.\n&nbsp;\nThe DMG dealt by **Musou no ",
-      "Hitotachi** and **Musou Isshin**'s attacks will be ",
-      "increased based on the number of Chakra Desiderata's ",
-      "Resolve stacks consumed when this skill is used. "
+      "Cuando un personaje cercano del equipo (a excepción de la ",
+      "Shogun Raiden) realiza una Habilidad Definitiva, la ",
+      "Shogun Raiden acumula ambición en proporción a la ",
+      "cantidad de Energía Elemental que ese personaje ",
+      "consumió para realizar su Habilidad Definitiva. Solo se ",
+      "puede acumular un máximo de 60 cargas de ",
+      "ambición.\n&nbsp;\nEl daño infligido con **corte ",
+      "onírico** y con los ataques de **mente onírica** ",
+      "dependerá de las cargas de rueda de la ambición ",
+      "consumidas cuando esta habilidad sea utilizada. "
     ],
-    "title": "Chakra Desiderata"
+    "title": "Rueda de la ambición"
   },
   "ITEM.Rainslasher": {
     "title": "Rainslasher"
@@ -3707,47 +3724,49 @@
     "title": "Sapwood Blade (1)"
   },
   "ITEM.Sara": "Sara",
-  "ITEM.Sara.HIT_C2": "Dark Wings",
-  "ITEM.Sara.HIT_E": "Tengu Juurai: Ambush",
-  "ITEM.Sara.HIT_Q": "Tengu Juurai: Titanbreaker",
-  "ITEM.Sara.HIT_Q_DOT": "Tengu Juurai: Stormcluster",
+  "ITEM.Sara.HIT_C2": "Alas azabache",
+  "ITEM.Sara.HIT_E": "Daño de maldición tengu: emboscada",
+  "ITEM.Sara.HIT_Q": "Daño de maldición tengu: masacratitanes",
+  "ITEM.Sara.HIT_Q_DOT": "Daño de maldición tengu: tormenta pétrea",
   "ITEM.SaraC2": {
     "description": [
-      "Unleashing Tengu Stormcall will leave a weaker Crowfeather at",
-      "Kujou Sara’s original position that will deal 30% of its original DMG."
+      "Kujou Sara deja en la ubicación en la que realizó Electroinvocación tengu",
+      "una pluma de cuervo que causa una maldición tengu: emboscada de menor poder,",
+      "la cual inflige un 30% del daño de la original."
     ],
-    "title": "Dark Wings"
+    "title": "Alas azabache"
   },
   "ITEM.SaraC3": {
     "description": [
-      "Increases the Level of **Subjugation: Koukou Sendou** ",
-      "by 3. Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Aplacamiento: Camino ",
+      "de la luz** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "The War Within"
+    "title": "Conflicto interno"
   },
   "ITEM.SaraC5": {
     "description": [
-      "Increases the Level of **Tengu Stormcall** by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Electroinvocación ",
+      "tengu** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Spellsinger"
+    "title": "Canto maldito"
   },
   "ITEM.SaraC6": {
     "description": [
-      "The Electro DMG of characters who have had their ATK ",
-      "increased by **Tengu Juurai** has its Crit DMG increased ",
-      "by 60%. "
+      "Aumenta en un 60% el Daño CRIT Electro de los personajes ",
+      "que han obtenido un Bono de ATQ mediante una maldición ",
+      "tengu. "
     ],
-    "title": "Sin of Pride"
+    "title": "Pecado del orgullo"
   },
   "ITEM.SaraE": {
     "description": [
-      "Crowfeathers will trigger **Tengu Juurai: Ambush** ",
-      "after a short time, dealing Electro DMG and granting the ",
-      "active character within its AoE an ATK Bonus based on ",
-      "Kujou Sara's Base ATK. "
+      "Al poco tiempo, la pluma de cuervo provocará una ",
+      "maldición tengu: emboscada que inflige Daño Electro ",
+      "contra los enemigos en un área, además de otorgar al ",
+      "personaje en uso que estaba en esa área un Bono de ATQ ",
+      "proporcional al ATQ Básico de Kujou Sara. "
     ],
-    "title": "Tengu Juurai: Ambush (ATK bonus)"
+    "title": "Maldición tengu: emboscada (bono de ATQ)"
   },
   "ITEM.Scholar": {
     "title": "Scholar"
@@ -4887,51 +4906,52 @@
     ],
     "title": "Azote de todos los males"
   },
-  "ITEM.Xingqiu": "Xingqiu",
+  "ITEM.Xingqiu": "Xingchiu",
   "ITEM.Xingqiu.HIT_E_1": {
-    "title": "Guhua Sword: Fatal Rainscreen (x1)"
+    "title": "Espada Guhua: Lluvia torrencial mortal (x1)"
   },
   "ITEM.Xingqiu.HIT_E_2": {
-    "title": "Guhua Sword: Fatal Rainscreen (x2)"
+    "title": "Espada Guhua: Lluvia torrencial mortal (x2)"
   },
   "ITEM.Xingqiu.HIT_Q": {
-    "title": "Guhua Sword: Raincutter"
+    "title": "Espada Guhua: Sable de lluvia"
   },
   "ITEM.XingqiuA4": {
     "description": [
-      "Xingqiu gains a 20% Hydro DMG Bonus. "
+      "Xingchiu obtiene un 20% de Bono de Daño Hydro. "
     ],
-    "title": "Blades Amidst Raindrops"
+    "title": "Cuchillas a cántaros"
   },
   "ITEM.XingqiuC2": {
     "description": [
-      "Extends the duration of **Guhua Sword: Raincutter** by ",
-      "3s. Decreases the Hydro RES of opponents hit by sword rain ",
-      "attacks by 15% for 4s. "
+      "Extiende la duración de **Espada Guhua: Sable de ",
+      "lluvia** en 3 s y reduce en un 15% la RES Hydro de los ",
+      "enemigos golpeados por la lluvia de espadas durante 4 s. "
     ],
-    "title": "Rainbow Upon the Azure Sky"
+    "title": "Arcoíris brillante"
   },
   "ITEM.XingqiuC3": {
     "description": [
-      "Increases the Level of **Guhua Sword: Raincutter** by 3. ",
-      "Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Espada Guhua: Sable de ",
+      "lluvia** +3. Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Weaver of Verses"
+    "title": "Tejedor de versos"
   },
   "ITEM.XingqiuC4": {
     "description": [
-      "Throughout the duration of **Guhua Sword: ",
-      "Raincutter**, the DMG dealt by **Guhua Sword: Fatal ",
-      "Rainscreen** is increased by 50%. "
+      "A lo largo de la duración de **Espada Guhua: Sable de ",
+      "lluvia**, el daño infligido por **Espada Guhua: Lluvia ",
+      "torrencial mortal** aumenta en un 50%. "
     ],
-    "title": "Evilsoother"
+    "title": "Pacificador del mal"
   },
   "ITEM.XingqiuC5": {
     "description": [
-      "Increases the Level of **Guhua Sword: Fatal ",
-      "Rainscreen** by 3. Maximum upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Espada Guhua: Lluvia ",
+      "torrencial mortal** +3. Puede ser aumentado hasta Niv. ",
+      "15. "
     ],
-    "title": "Embrace of Rain"
+    "title": "Baile bajo la lluvia"
   },
   "ITEM.XiphosMoonlight": "Xiphos’ Moonlight",
   "ITEM.XiphosMoonlight1": {
@@ -5056,81 +5076,85 @@
   },
   "ITEM.Yelan": "Yelan",
   "ITEM.Yelan.HIT_BREAKTHROUGH_BARB": {
-    "title": "Breakthrough Barb DMG"
+    "title": "Daño de flecha irruptora"
   },
   "ITEM.Yelan.HIT_C2": {
-    "title": "Taking All Comers"
+    "title": "Aprisionamiento masivo"
   },
   "ITEM.Yelan.HIT_C6": {
-    "title": "Winner Takes All"
+    "title": "Mano ganadora"
   },
   "ITEM.Yelan.HIT_E": {
-    "title": "Lingering Lifeline"
+    "title": "Atadura salvavidas"
   },
   "ITEM.Yelan.HIT_Q": {
-    "title": "Depth-Clarion Dice"
+    "title": "Dado clarividente"
   },
   "ITEM.Yelan.HIT_Q_THROW": {
-    "title": "Exquisite Throw"
+    "title": "Dado intrincado"
   },
   "ITEM.YelanA1": {
     "description": [
-      "When the party has 1/2/3/4 Elemental Types, Yelan's Max ",
-      "HP is increased by 6%/12%/18%/30%. "
+      "Cuando en el equipo haya 1/2/3/4 personajes de tipos ",
+      "elementales distintos, la Vida Máx. de Yelan aumenta en ",
+      "un 6/12/18/30% respectivamente. "
     ],
-    "title": "Turn Control"
+    "title": "Control estratégico"
   },
   "ITEM.YelanA4": {
     "description": [
-      "So long as an Exquisite Throw is in play, your own active ",
-      "character deals 1% more DMG. This increases by a further ",
-      "3.5% DMG every second. The maximum increase to DMG dealt ",
-      "is 50%.\nThe pre-existing effect will be dispelled if ",
-      "Depth-Clarion Dice is recast during its duration. "
+      "Mientras el dado intrincado esté activo, el daño de tu ",
+      "personaje en uso aumenta en un 1%, e irá aumentando en un ",
+      "3.5% adicional por segundo hasta un máximo de un 50%. Si ",
+      "vuelves a usar Dado clarividente mientras el dado ",
+      "intrincado está activo, el efecto anterior se disipará. "
     ],
-    "title": "Adapt With Ease"
+    "title": "Adaptación maestra"
   },
   "ITEM.YelanC2": {
     "description": [
-      "When Exquisite Throw conducts a coordinated attack, it will fire",
-      "an additional water arrow that will deal 14% of Yelan’s Max HP as Hydro DMG.",
-      "This effect can trigger once every 1.8s."
+      "Cuando el dado intrincado activa un ataque coordinado, lanzará",
+      "una flecha Hydro adicional que inflige Daño Hydro equivalente",
+      "al 14% de la Vida Máx. de Yelan.",
+      "Esto solo puede ocurrir una vez cada 1.8 s."
     ],
-    "title": "Taking All Comers"
+    "title": "Aprisionamiento masivo"
   },
   "ITEM.YelanC3": {
     "description": [
-      "Increases the Level of Depth-Clarion Dice by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de Dado clarividente +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Beware the Trickster's Dice"
+    "title": "Dado trucado"
   },
   "ITEM.YelanC4": {
     "description": [
-      "Increases all party members' Max HP by 10% for 25s for ",
-      "every opponent marked by Lifeline when the Lifeline ",
-      "explodes. A maximum increase of 40% Max HP can be attained ",
-      "in this manner. "
+      "Por cada enemigo marcado con la cuerda salvavidas, la ",
+      "explosión de cada marca aumenta la Vida Máx. de todos los ",
+      "miembros del equipo en un 10% durante 25 s. La Vida Máx. ",
+      "solo podrá aumentar hasta un máximo del 40% de esta ",
+      "manera. "
     ],
-    "title": "Bait-and-Switch"
+    "title": "Intercambio encubierto"
   },
   "ITEM.YelanC5": {
     "description": [
-      "Increases the Level of Lingering Lifeline by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de Atadura salvavidas +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Caution: Standard Flask"
+    "title": "Artificio de crupier"
   },
   "ITEM.YelanC6": {
     "description": [
-      "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.",
-      "In this state, all of Yelan’s Normal Attacks will be special",
-      "Breakthrough Barbs. These Breakthrough Barbs will have similar abilities",
-      "to normal ones and the DMG dealt will be considered Charged Attack DMG,",
-      "dealing 156% of a normal Breakthrough Barb’s DMG.\n",
-      "The Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows."
+      "Tras usar Dado clarividente, Yelan entra en el estado de “planificación táctica”.",
+      "En este estado, sus Ataques Normales se convierten en flechas irruptoras",
+      "especiales con unas características similares a las de las flechas irruptoras",
+      "normales y que infligen un 156% de su daño original. Este daño es considerado",
+      "daño de Ataque Cargado.\n",
+      "El estado de planificación táctica dura un máximo de 20 s y se anulará después",
+      "de que Yelan haya disparado 5 flechas."
     ],
-    "title": "Winner Takes All"
+    "title": "Mano ganadora"
   },
   "ITEM.Yoimiya": "Yoimiya",
   "ITEM.Yoimiya.HIT_C6": "Lluvia de meteoros Naganohara",
@@ -5264,40 +5288,43 @@
     "title": "Banderines de las nubes"
   },
   "ITEM.Zhongli": "Zhongli",
-  "ITEM.Zhongli.HIT_E_RESONANCE": "Resonance",
-  "ITEM.Zhongli.HIT_Q": "Planet Befall",
+  "ITEM.Zhongli.HIT_E_RESONANCE": "Resonancia",
+  "ITEM.Zhongli.HIT_Q": "Lluvia estelar",
   "ITEM.ZhongliA4": {
     "description": [
-      "Zhongli deals bonus DMG based on his Max HP:\n • Normal ",
-      "Attack, Charged Attack, and Plunging Attack DMG is ",
-      "increased by 1.39% of Max HP.\n • **Dominus Lapidis**' ",
-      "Stone Stele, resonance, and hold DMG is increased by 1.9% ",
-      "of Max HP.\n • **Planet Befall**'s DMG is increased by 33% ",
-      "of Max HP. "
+      "El daño infligido por los siguientes ataques de Zhongli ",
+      "aumenta en proporción a su Vida Máx.:\n • Aumenta el daño de ",
+      "Ataque Normal, Ataque Cargado y Ataque Descendente en un ",
+      "1.39% de su Vida Máx.\n • Aumenta en un 1.9% de su Vida Máx. el ",
+      "daño de resonancia de la cresta de piedra de **Dominus ",
+      "lapidis**, así como el daño de mantener pulsado.\n • ",
+      "Aumenta el daño de **Lluvia estelar** en un 33% de la Vida ",
+      "Máx. de Zhongli. "
     ],
-    "title": "Dominance of Earth"
+    "title": "Dominio de la Tierra"
   },
   "ITEM.ZhongliC3": {
     "description": [
-      "Increases the Level of **Dominus Lapidis** by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Dominus lapidis** +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Jade, Shimmering through Darkness"
+    "title": "Jade, el brillo del crepúsculo"
   },
   "ITEM.ZhongliC5": {
     "description": [
-      "Increases the Level of **Planet Befall** by 3. Maximum ",
-      "upgrade level is 15. "
+      "Aumenta el nivel de habilidad de **Lluvia estelar** +3. ",
+      "Puede ser aumentado hasta Niv. 15. "
     ],
-    "title": "Lazuli, Herald of the Order"
+    "title": "Lapislázuli, el heraldo del orden"
   },
   "ITEM.ZhongliE": {
     "description": [
-      "Characters protected by the **Jade Shield** will ",
-      "decrease the Elemental RES and Physical RES of opponents ",
-      "in a small AoE by 20%. This effect cannot be stacked. "
+      "Cuando un personaje se encuentra protegido por este ",
+      "escudo, todas las RES Elementales y la RES Física de los ",
+      "enemigos cercanos a él en una pequeña AdE se reducen en un ",
+      "20%. Este efecto no puede acumularse. "
     ],
-    "title": "Jade Shield"
+    "title": "Escudo de Jade"
   },
   "ITEM.__party__": "(Equipo)",
   "LABEL.ACTION": "Acción",
