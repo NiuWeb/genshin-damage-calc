@@ -2,6 +2,7 @@ import { AppPaths } from "@src/components/paths/paths"
 import { classes } from "@src/utils/classes"
 import { useState } from "react"
 import { List } from "react-bootstrap-icons"
+import { SidebarButtons } from "./bar"
 
 export function LeftSidebar() {
   const [open, setOpen] = useState(false)
@@ -11,6 +12,7 @@ export function LeftSidebar() {
       display: open ? "block" : undefined
     }}>
       <AppPaths parent="/" levels={2} />
+      <SidebarButtons />
     </div>
   </>
 }

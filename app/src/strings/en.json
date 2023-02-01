@@ -5368,6 +5368,7 @@
   "LABEL.EXPECTED_VALUE": "Expected value",
   "LABEL.FILTERS": "Filters",
   "LABEL.FILTERS_N": "Filters (@n)",
+  "LABEL.GITHUB": "Github",
   "LABEL.HELP": "Help",
   "LABEL.INSTANCE": "Instance",
   "LABEL.INSTANCE_BURSTS": "Elemental Bursts",
@@ -5416,6 +5417,8 @@
   "LABEL.WEAPON_RANK": "Weapon rank",
   "LABEL.WORKERS": "Workers",
   "LABEL.X_HIT": "@name (Hit)",
+  "LANGUAGE.EN": "English",
+  "LANGUAGE.ES": "Español",
   "MSG.ALERT_ROTATION_DB": [
     "Please note that the rotations found here are **not meant to be**",
     "used to compare or rank DPS between different characters,",

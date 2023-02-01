@@ -31,6 +31,13 @@ export function SetLanguage(lang: string): void {
 export function GetLanguages(): string[] {
     return Object.keys(langs)
 }
+/** gets the current language */
+export function GetLanguage(): string {
+    const entries = Object.entries(langs)
+        .find(([, obj]) => obj === language)
+
+    return entries?.[0] || "EN"
+}
 
 /** Checks if a key exists in the current language */
 export function HasKey(key: string): boolean {

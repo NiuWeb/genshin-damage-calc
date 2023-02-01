@@ -2648,7 +2648,8 @@
       "Si Klee se retira de combate mientras la habilidad Chispas",
       "explosivas está activa, creará una explosión que inflige un",
       "555% de Daño Pyro en el AdE."
-    ]
+    ],
+    "title": "¡Bomba va!"
   },
   "ITEM.KleeC5": {
     "description": [
@@ -4467,7 +4468,8 @@
     "description": [
       "Dispara 2 flechas adicionales por cada Disparo Preciso.",
       "Cada una inflige un 33% del daño de la flecha original."
-    ]
+    ],
+    "title": "Vendaval feroz"
   },
   "ITEM.VentiC2": {
     "description": [
@@ -5378,6 +5380,7 @@
   "LABEL.EXPECTED_VALUE": "Valor esperado",
   "LABEL.FILTERS": "Filtros",
   "LABEL.FILTERS_N": "Filtros (@n)",
+  "LABEL.GITHUB": "Github",
   "LABEL.HELP": "Ayuda",
   "LABEL.INSTANCE": "Instancia",
   "LABEL.INSTANCE_BURSTS": "Habilidades definitivas",
@@ -5426,6 +5429,8 @@
   "LABEL.WEAPON_RANK": "Rango del arma",
   "LABEL.WORKERS": "Workers",
   "LABEL.X_HIT": "@name (Golpe)",
+  "LANGUAGE.EN": "English",
+  "LANGUAGE.ES": "Español",
   "MSG.ALERT_ROTATION_DB": [
     "Por favor tenga en cuenta que las rotaciones encontradas aquí",
     "**NO están pensadas para** comparar o clasificar DPS entre diferentes",
@@ -5667,7 +5672,7 @@
   "STAT.ELEMENTAL_BURST_DMG_FLAT": "Daño plano de Habilidad Definitiva",
   "STAT.ELEMENTAL_BURST_LEVEL": "Nivel de Habilidad Definitiva",
   "STAT.ELEMENTAL_BURST_LEVEL_UP": "Nivel de Habilidad Definitiva (Extra)",
-  "STAT.ELEMENTAL_MASTERY": "Elemental Mastery",
+  "STAT.ELEMENTAL_MASTERY": "Maestría Elemental",
   "STAT.ELEMENTAL_SKILL_ATK": "ATQ de Habilidad Elemental",
   "STAT.ELEMENTAL_SKILL_ATK_FLAT": "ATQ Plano de Habilidad Elemental",
   "STAT.ELEMENTAL_SKILL_ATK_PERCENT": "ATQ% de Habilidad Elemental",

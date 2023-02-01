@@ -10,13 +10,13 @@ function App() {
   const rots = useRotationsProvider()
   return (
     <HashRouter>
-      <CalcContext.Provider value={calc}>
-        <LanguageContext.Provider value={lang}>
+      <LanguageContext.Provider value={lang}>
+        <CalcContext.Provider value={calc}>
           <RotationsContext.Provider value={rots}>
             <AppContent />
           </RotationsContext.Provider>
-        </LanguageContext.Provider>
-      </CalcContext.Provider>
+        </CalcContext.Provider>
+      </LanguageContext.Provider>
     </HashRouter>
   )
 }
