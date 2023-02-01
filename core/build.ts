@@ -23,7 +23,7 @@ esbuild.build({
     outdir: "lib",
     format: "esm",
     bundle: true,
-    sourcemap: "external",
+    sourcemap: "linked",
     plugins: [nodeExternalsPlugin({
         allowList: [
             "@bygdle/javascript-lp-solver"
