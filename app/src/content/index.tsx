@@ -1,3 +1,4 @@
+import { GithubLatest } from "@src/components/github/latest"
 import { classes } from "@src/utils/classes"
 import { BottomFixed } from "./bottom-fixed"
 import { LeftSidebar } from "./left-sidebar"
@@ -16,5 +17,6 @@ export function AppContent() {
       <AppRouter />
     </div>
     <BottomFixed />
+    <GithubLatest />
   </div>
 }
