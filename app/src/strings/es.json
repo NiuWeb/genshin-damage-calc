@@ -1027,30 +1027,12 @@
     ],
     "title": "Pica Luna Creciente (1)"
   },
-  "ITEM.CrimsonWitchOfFlames": {
-    "title": "Crimson Witch of Flames"
-  },
+  "ITEM.CrimsonWitchOfFlames": "Bruja carmesí en llamas",
   "ITEM.CrimsonWitchOfFlames2": {
-    "description": [
-      "Pyro DMG Bonus: +15%. "
-    ],
-    "title": "Crimson Witch of Flames (2)"
-  },
-  "ITEM.CrimsonWitchOfFlames4": {
-    "description": [
-      "Increases Overloaded DMG and Burning, and Burgeon DMG by 40%. ",
-      "Increases Vaporize and Melt DMG by 15%. Using Elemental ",
-      "Skill increases the 2-Piece Set Bonus by 50% of its ",
-      "starting value for 10s. Max 3 stacks.  "
-    ],
-    "title": "Crimson Witch of Flames (4)"
-  },
-  "ITEM.CrimsonWitchofFlames": "Bruja carmesí en llamas",
-  "ITEM.CrimsonWitchofFlames2": {
     "description": "Bono de Daño Pyro: +15%. ",
     "title": "Bruja carmesí en llamas (2)"
   },
-  "ITEM.CrimsonWitchofFlames4": {
+  "ITEM.CrimsonWitchOfFlames4": {
     "description": [
       "Aumenta el daño causado por Sobrecarga, Quemadura y",
       "Crepitar en un 40%, y el de Vaporización y Derretido en un",
@@ -1359,28 +1341,12 @@
     ],
     "title": "Elegía del Fin (2)"
   },
-  "ITEM.EmblemOfSeveredFate": {
-    "title": "Emblem of Severed Fate"
-  },
+  "ITEM.EmblemOfSeveredFate": "Emblema del Destino",
   "ITEM.EmblemOfSeveredFate2": {
-    "description": [
-      "Energy Recharge: +20%. "
-    ],
-    "title": "Emblem of Severed Fate (2)"
-  },
-  "ITEM.EmblemOfSeveredFate4": {
-    "description": [
-      "Increases Elemental Burst DMG by 25% of Energy Recharge. ",
-      "A maximum 75% DMG increase can be obtained in this way. "
-    ],
-    "title": "Emblem of Severed Fate (4)"
-  },
-  "ITEM.EmblemofSeveredFate": "Emblema del Destino",
-  "ITEM.EmblemofSeveredFate2": {
     "description": "Recarga de energía: +20%. ",
     "title": "Emblema del Destino (2)"
   },
-  "ITEM.EmblemofSeveredFate4": {
+  "ITEM.EmblemOfSeveredFate4": {
     "description": [
       "Aumenta el daño infligido con la Habilidad Definitiva en",
       "una cantidad equivalente al 25% de la Recarga de Energía.",
@@ -2242,31 +2208,6 @@
       "retirado de combate. "
     ],
     "title": "Rey oni maligno: ¡Itto contra todos!"
-  },
-  "ITEM.JadeCutter": {
-    "title": "Primordial Jade Cutter"
-  },
-  "ITEM.JadeCutter1": {
-    "description": [
-      "HP increased by ",
-      "**#rank{20|25|30|35|40}%**.Additionally, provides ",
-      "an ATK Bonus based on **#rank{1.2|1.5|1.8|2.1|2.4}%** ",
-      "of the wielder's Max HP. "
-    ],
-    "title": "Primordial Jade Cutter (1)"
-  },
-  "ITEM.JadeSpear": {
-    "title": "Primordial Jade Winged-Spear"
-  },
-  "ITEM.JadeSpear1": {
-    "description": [
-      "On hit, increases ATK by ",
-      "**#rank{3.2|3.9|4.6|5.3|6}%** for 6s. Max 7 stacks. ",
-      "This effect can only occur once every 0.3s.While in ",
-      "possession of the maximum possible stacks, DMG dealt is ",
-      "increased by **#rank{12|15|18|21|24}%**.  "
-    ],
-    "title": "Primordial Jade Winged-Spear (1)"
   },
   "ITEM.Jean": "Jean",
   "ITEM.JeanC1": {
@@ -3220,8 +3161,8 @@
     ],
     "title": "Depredador (1)"
   },
-  "ITEM.PrimordialJadeCutter": "Cortador de Jade Primordial",
-  "ITEM.PrimordialJadeCutter1": {
+  "ITEM.JadeCutter": "Cortador de Jade Primordial",
+  "ITEM.JadeCutter1": {
     "description": [
       "Aumenta la Vida en un",
       "**#rank{20|25|30|35|40}%**.Además, el personaje que",
@@ -3231,8 +3172,8 @@
     ],
     "title": "Cortador de Jade Primordial (1)"
   },
-  "ITEM.PrimordialJadeWingedSpear": "Halcón de Jade",
-  "ITEM.PrimordialJadeWingedSpear1": {
+  "ITEM.JadeSpear": "Halcón de Jade",
+  "ITEM.JadeSpear1": {
     "description": [
       "Al atacar a un enemigo, aumenta el ATQ en un",
       "**#rank{3.2|3.9|4.6|5.3|6}%** durante 6 s y puede",
@@ -3398,27 +3339,12 @@
     ],
     "title": "Espadón Cornirrojo (1)"
   },
-  "ITEM.ResolutionOfSojourner": {
-    "title": "Resolution of Sojourner"
-  },
+  "ITEM.ResolutionOfSojourner": "Corazón del viajero",
   "ITEM.ResolutionOfSojourner2": {
-    "description": [
-      "ATK:+18%. "
-    ],
-    "title": "Resolution of Sojourner (2)"
-  },
-  "ITEM.ResolutionOfSojourner4": {
-    "description": [
-      "Increases Charged Attack CRIT Rate by 30%. "
-    ],
-    "title": "Resolution of Sojourner (4)"
-  },
-  "ITEM.ResolutionofSojourner": "Corazón del viajero",
-  "ITEM.ResolutionofSojourner2": {
     "description": "ATQ: +18%. ",
     "title": "Corazón del viajero (2)"
   },
-  "ITEM.ResolutionofSojourner4": {
+  "ITEM.ResolutionOfSojourner4": {
     "description": [
       "La Prob. CRIT de los Ataques Cargados aumenta en un 30%. "
     ],
