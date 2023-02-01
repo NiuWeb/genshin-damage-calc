@@ -1310,31 +1310,12 @@
     ],
     "title": "Ebony Bow"
   },
-  "ITEM.EchoesOfAnOffering": "Echoes of an Offering",
+  "ITEM.EchoesOfAnOffering": "Eco del Sacrificio",
   "ITEM.EchoesOfAnOffering2": {
-    "description": [
-      "ATK: +18%. "
-    ],
-    "title": "Echoes of an Offering (2)"
-  },
-  "ITEM.EchoesOfAnOffering4": {
-    "description": [
-      "When Normal Attacks hit opponents, there is a 36% chance ",
-      "that it will trigger Valley Rite, which will increase ",
-      "Normal Attack DMG by 70% of ATK. This effect will be ",
-      "dispelled 0.05s after a Normal Attack deals DMG. If a ",
-      "Normal Attack fails to trigger Valley Rite, the odds of it ",
-      "triggering the next time will increase by 20%. This ",
-      "trigger can occur once every 0.2s. "
-    ],
-    "title": "Echoes of an Offering (4)"
-  },
-  "ITEM.EchoesofanOffering": "Eco del Sacrificio",
-  "ITEM.EchoesofanOffering2": {
     "description": "ATQ: +18%. ",
     "title": "Eco del Sacrificio (2)"
   },
-  "ITEM.EchoesofanOffering4": {
+  "ITEM.EchoesOfAnOffering4": {
     "description": [
       "Al golpear a un enemigo con un Ataque Normal, hay una",
       "probabilidad del 36% de activar el efecto de “ritual del",
@@ -1417,23 +1398,8 @@
     ],
     "title": "Orbe Esmeralda (1)"
   },
-  "ITEM.EndOfTheLine": {
-    "title": "End of the Line"
-  },
+  "ITEM.EndOfTheLine": "Fin de las Aguas",
   "ITEM.EndOfTheLine1": {
-    "description": [
-      "Triggers the Flowrider effect after using an Elemental ",
-      "Skill, dealing **#rank{80|100|120|140|160}%** ATK as ",
-      "AoE DMG upon hitting an opponent with an attack. ",
-      "Flowrider will be removed after 15s or after causing 3 ",
-      "instances of AoE DMG. Only 1 instance of AoE DMG can be ",
-      "caused every 2s in this way. Flowrider can be triggered ",
-      "once every 12s."
-    ],
-    "title": "End of the Line (1)"
-  },
-  "ITEM.EndoftheLine": "Fin de las Aguas",
-  "ITEM.EndoftheLine1": {
     "description": [
       "Al usar una Habilidad Elemental, el personaje obtiene el",
       "efecto de “deriva”, con el cual, al golpear a un enemigo,",
@@ -1812,20 +1778,8 @@
     ],
     "title": "Frío Eterno (1)"
   },
-  "ITEM.FruitOfFulfillment": "Fruit of Fulfillment",
+  "ITEM.FruitOfFulfillment": "Fruto de la Culminación",
   "ITEM.FruitOfFulfillment1": {
-    "description": [
-      "Obtain the “Wax and Wane” effect after an Elemental Reaction is triggered,",
-      "gaining **#rank{24|27|30|33|36}** Elemental Mastery while losing 5% ATK. ",
-      "For every 0.3s, 1 stack of Wax and Wane can be gained. Max 5 stacks.",
-      "For every 6s that go by without",
-      "an Elemental Reaction being triggered, 1 stack will be lost. This effect can",
-      "be triggered even when the character is off-field."
-    ],
-    "title": "Fruit of Fulfillment (1)"
-  },
-  "ITEM.FruitofFulfillment": "Fruto de la Culminación",
-  "ITEM.FruitofFulfillment1": {
     "description": [
       "Al causar una Reacción Elemental, obtienes el efecto de",
       "“fase lunar”, el cual aumenta la Maestría Elemental en",
@@ -2071,28 +2025,12 @@
     ],
     "title": "Espada del Alba (1)"
   },
-  "ITEM.HeartOfDepth": {
-    "title": "Heart of Depth"
-  },
+  "ITEM.HeartOfDepth": "Corazón de las Profundidades",
   "ITEM.HeartOfDepth2": {
-    "description": [
-      "Hydro DMG Bonus: +15%. "
-    ],
-    "title": "Heart of Depth (2)"
-  },
-  "ITEM.HeartOfDepth4": {
-    "description": [
-      "After using Elemental Skill, increases Normal Attack ",
-      "DMG and Charged Attack DMG by 30% for 15s. "
-    ],
-    "title": "Heart of Depth (4)"
-  },
-  "ITEM.HeartofDepth": "Corazón de las Profundidades",
-  "ITEM.HeartofDepth2": {
     "description": "Bono de Daño Hydro: +15%. ",
     "title": "Corazón de las Profundidades (2)"
   },
-  "ITEM.HeartofDepth4": {
+  "ITEM.HeartOfDepth4": {
     "description": [
       "Tras usar la Habilidad Elemental, aumenta el daño de",
       "Ataque Normal y Ataque Cargado en un 30% durante 15 s. "
@@ -2199,34 +2137,12 @@
     ],
     "title": "Senda de la Cazadora (1)"
   },
-  "ITEM.HuskOfOpulentDreams": {
-    "title": "Husk of Opulent Dreams"
-  },
+  "ITEM.HuskOfOpulentDreams": "Cáscara de Sueños Opulentos",
   "ITEM.HuskOfOpulentDreams2": {
-    "description": [
-      "DEF +30%. "
-    ],
-    "title": "Husk of Opulent Dreams (2)"
-  },
-  "ITEM.HuskOfOpulentDreams4": {
-    "description": [
-      "A character equipped with this Artifact set will obtain ",
-      "the Curiosity effect in the following conditions: When ",
-      "on the field, the character gains 1 stack after hitting an ",
-      "opponent with a Geo attack, triggering a maximum of once ",
-      "every 0.3s. When off the field, the character gains 1 ",
-      "stack every 3s. Curiosity can stack up to 4 times, each ",
-      "providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass ",
-      "without gaining a Curiosity stack, 1 stack is lost.  "
-    ],
-    "title": "Husk of Opulent Dreams (4)"
-  },
-  "ITEM.HuskofOpulentDreams": "Cáscara de Sueños Opulentos",
-  "ITEM.HuskofOpulentDreams2": {
     "description": "DEF +30%. ",
     "title": "Cáscara de Sueños Opulentos (2)"
   },
-  "ITEM.HuskofOpulentDreams4": {
+  "ITEM.HuskOfOpulentDreams4": {
     "description": [
       "El personaje que equipe este conjunto de artefactos",
       "obtendrá el efecto de \\\"curiosidad\\\" en las siguientes",
@@ -2790,20 +2706,8 @@
     ],
     "title": "Lanza Lítica (1)"
   },
-  "ITEM.LostPrayer": {
-    "title": "Lost Prayer to the Sacred Winds"
-  },
+  "ITEM.LostPrayer": "Oración Perdida a los Vientos Sagrados ",
   "ITEM.LostPrayer1": {
-    "description": [
-      "Increases Movement SPD by 10%. When in battle, gain an ",
-      "**#rank{8|10|12|14|16}%** Elemental DMG Bonus every ",
-      "4s. Max 4 stacks. Lasts until the character falls or ",
-      "leaves combat. "
-    ],
-    "title": "Lost Prayer to the Sacred Winds (1)"
-  },
-  "ITEM.LostPrayerToTheSacredWinds": "Oración Perdida a los Vientos Sagrados ",
-  "ITEM.LostPrayerToTheSacredWinds1": {
     "description": [
       "Aumenta la Vel. Movimiento en un 10%. Mientras estés en",
       "combate, obtienes un **#rank{8|10|12|14|16}%** de",
@@ -3657,8 +3561,8 @@
     "title": "Herrumbre (1)"
   },
   "ITEM.SWORD": "Sword",
-  "ITEM.SacrificalBow": "Arco del Sacrificio",
-  "ITEM.SacrificalBow1": {
+  "ITEM.SacrificialBow": "Arco del Sacrificio",
+  "ITEM.SacrificialBow1": {
     "description": [
       "Al hacer daño por medio de una Habilidad Elemental, hay un",
       "**#rank{40|50|60|70|80}%** de probabilidad de",
@@ -3666,18 +3570,6 @@
       "activarse una vez cada **#rank{30|26|22|19|16} s**. "
     ],
     "title": "Arco del Sacrificio (1)"
-  },
-  "ITEM.SacrificialBow": {
-    "title": "Sacrificial Bow"
-  },
-  "ITEM.SacrificialBow1": {
-    "description": [
-      "After damaging an opponent with an Elemental Skill, the ",
-      "skill has a **#rank{40|50|60|70|80}%** chance to end ",
-      "its own CD. Can only occur once every ",
-      "**#rank{30|26|22|19|16}s**. "
-    ],
-    "title": "Sacrificial Bow (1)"
   },
   "ITEM.SacrificialFragments": "Memorias de Sacrificios",
   "ITEM.SacrificialFragments1": {
@@ -4054,23 +3946,8 @@
     ],
     "title": "Staff of Homa (1)"
   },
-  "ITEM.StaffOfTheScarletSands": {
-    "title": "Staff of the Scarlet Sands"
-  },
+  "ITEM.StaffOfTheScarletSands": "Báculo de las Arenas Escarlatas",
   "ITEM.StaffOfTheScarletSands1": {
-    "description": [
-      "The equipping character gains ",
-      "**#rank{52|65|78|91|104}%** of their Elemental ",
-      "Mastery as bonus ATK. When an Elemental Skill hits ",
-      "opponents, the Dream of the Scarlet Sands effect will be ",
-      "gained for 10s: The equipping character will gain ",
-      "**#rank{28|35|42|49|56}%** of their Elemental ",
-      "Mastery as bonus ATK. Max 3 stacks."
-    ],
-    "title": "Staff of the Scarlet Sands (1)"
-  },
-  "ITEM.StaffoftheScarletSands": "Báculo de las Arenas Escarlatas",
-  "ITEM.StaffoftheScarletSands1": {
     "description": [
       "Otorga al portador de esta arma un Bono de ATQ en",
       "proporción al **#rank{52|65|78|91|104}%** de su",
@@ -4190,32 +4067,12 @@
     ],
     "title": "Caos: Corte Líquido"
   },
-  "ITEM.TenacityOfTheMillelith": {
-    "title": "Tenacity of the Millelith"
-  },
+  "ITEM.TenacityOfTheMillelith": "Tenacidad de la Geoarmada",
   "ITEM.TenacityOfTheMillelith2": {
-    "description": [
-      "HP increased by 20%. "
-    ],
-    "title": "Tenacity of the Millelith (2)"
-  },
-  "ITEM.TenacityOfTheMillelith4": {
-    "description": [
-      "When an Elemental Skill hits an opponent, the ATK of all ",
-      "nearby party members is increased by 20% and their Shield ",
-      "Strength is increased by 30% for 3s. This effect can be ",
-      "triggered once every 0.5s. This effect can still be ",
-      "triggered even when the character who is using this ",
-      "artifact set is not on the field. "
-    ],
-    "title": "Tenacity of the Millelith (4)"
-  },
-  "ITEM.TenacityoftheMillelith": "Tenacidad de la Geoarmada",
-  "ITEM.TenacityoftheMillelith2": {
     "description": "Vida Máxima: +20%. ",
     "title": "Tenacidad de la Geoarmada (2)"
   },
-  "ITEM.TenacityoftheMillelith4": {
+  "ITEM.TenacityOfTheMillelith4": {
     "description": [
       "Cuando una Habilidad Elemental golpea a un enemigo, el",
       "ATQ de todos los personajes del equipo cercanos aumenta",
@@ -4687,20 +4544,8 @@
     ],
     "title": "Wandering Evenstar (1)"
   },
-  "ITEM.WavebreakerFin": "Wavebreaker's Fin",
+  "ITEM.WavebreakerFin": "Aleta Cortaolas",
   "ITEM.WavebreakerFin1": {
-    "description": [
-      "For every point of the entire party's combined maximum ",
-      "Energy, the Elemental Burst DMG of the character ",
-      "equipping this weapon is increased by ",
-      "**#rank{0.12|0.15|0.18|0.21|0.24}%**. A maximum of ",
-      "**#rank{40|50|60|70|80}%** increased Elemental ",
-      "Burst DMG can be achieved this way. "
-    ],
-    "title": "Wavebreaker's Fin (1)"
-  },
-  "ITEM.WavebreakersFin": "Aleta Cortaolas",
-  "ITEM.WavebreakersFin1": {
     "description": [
       "El daño infligido por la Habilidad Definitiva del",
       "portador de esta arma aumenta en un",
