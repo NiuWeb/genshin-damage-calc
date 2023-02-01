@@ -5442,7 +5442,7 @@
   "MSG.CONFIRM_EQUIP_ARTIFACT": "Are you sure you want to equip these artifacts to the current character?",
   "MSG.CONFIRM_LOCK_ARTIFACT": "Do you want to equip lock these artifacts in your inventory?",
   "MSG.CONFIRM_PROJECT_OVERRIDE": [
-    "There is already a project saved with the name @name. Do you want to override it?"
+    "There is already a project saved with the name \"@name\". Do you want to override it?"
   ],
   "MSG.CONFIRM_PROJECT_REMOVE": "Are you sure you want to remove this project (@name) from the inventory?",
   "MSG.CONFIRM_RESULTS_CLEAR": [
