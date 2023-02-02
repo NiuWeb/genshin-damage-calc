@@ -1,6 +1,7 @@
 import type { Character } from "@core/character"
 import type { Effect } from "../effect"
 import { stat } from "@core/stats"
+import { Charbox } from "@src/core/charbox"
 
 /** numeric relations */
 interface RelationQuery {
@@ -48,7 +49,7 @@ interface AuraEntity {
 }
 
 /** query object to limit effects application */
-export interface BuilderQuery {
+interface builderQuery {
     /** Negate the query */
     not?: boolean
     /** Query for the target character */
@@ -63,6 +64,11 @@ export interface BuilderQuery {
         conditions?: string[]
     }
 }
+/** custom query function  */
+type builderQueryFn = (target: Charbox, owner: Charbox, ef: Effect) => boolean
+
+/** query object to limit effects application */
+export type BuilderQuery = builderQuery | builderQueryFn
 
 /** Runs a relation query */
 function runRelationQuery(value: number, q: RelationQuery): boolean {
@@ -145,7 +151,7 @@ function runAuraQuery(object: AuraEntity, q: AuraQuery): boolean {
     return true
 }
 
-function runQuery(q: BuilderQuery, owner: Character, target: Character, ef: Effect): boolean {
+function runQuery(q: builderQuery, owner: Character, target: Character, ef: Effect): boolean {
     if (q.target) {
         if (!runCharacterQuery(target, owner, q.target)) {
             return false
@@ -178,8 +184,12 @@ function runQuery(q: BuilderQuery, owner: Character, target: Character, ef: Effe
 /**
  * Evaluates a query and returns its boolean result
  */
-export function RunQuery(q: BuilderQuery, owner: Character, target: Character, ef: Effect): boolean {
-    let query = runQuery(q, owner, target, ef)
-    if (q.not) { query = !query }
-    return query
+export function RunQuery(q: BuilderQuery, owner: Charbox, target: Charbox, ef: Effect): boolean {
+    if (typeof q === "function") {
+        return q(target, owner, ef)
+    } else {
+        let query = runQuery(q, owner.GetCharacter(), target.GetCharacter(), ef)
+        if (q.not) { query = !query }
+        return query
+    }
 }

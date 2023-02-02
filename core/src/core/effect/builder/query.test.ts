@@ -17,21 +17,24 @@ describe("Effect builder query", () => {
         })(char)
         ef.Apply(char)
 
-        let query = RunQuery({ target: { ascension: 4 } }, char.GetCharacter(), char.GetCharacter(), ef)
+        let query = RunQuery({ target: { ascension: 4 } }, char, char, ef)
         expect(query).toBe(false)
 
         char.GetCharacter().SetLevel(65)
-        query = RunQuery({ target: { ascension: 4 } }, char.GetCharacter(), char.GetCharacter(), ef)
+        query = RunQuery({ target: { ascension: 4 } }, char, char, ef)
         expect(query).toBe(true)
 
-        query = RunQuery({ target: { shielded: true } }, char.GetCharacter(), char.GetCharacter(), ef)
+        query = RunQuery({ target: { shielded: true } }, char, char, ef)
         expect(query).toBe(false)
 
-        query = RunQuery({ target: { shielded: false } }, char.GetCharacter(), char.GetCharacter(), ef)
+        query = RunQuery({ target: { shielded: false } }, char, char, ef)
         expect(query).toBe(true)
 
         char.GetCharacter().SetShield(true)
-        query = RunQuery({ target: { shielded: true } }, char.GetCharacter(), char.GetCharacter(), ef)
+        query = RunQuery({ target: { shielded: true } }, char, char, ef)
+        expect(query).toBe(true)
+
+        query = RunQuery((target) => target.GetCharacter().Options.Stars === 4, char, char, ef)
         expect(query).toBe(true)
     })
 })

@@ -31,7 +31,7 @@ export class Builder implements BuilderType {
         const enable = () => parts.forEach(part => part.onEnable(target, ef, reg))
         const disable = () => parts.forEach(part => part.onDisable(target, ef, reg))
         const update = () => {
-            if (ef.Enabled() && RunQuery(this.query, ef.Owner.GetCharacter(), target.GetCharacter(), ef)) {
+            if (ef.Enabled() && RunQuery(this.query, ef.Owner, target, ef)) {
                 enable()
             } else {
                 disable()
