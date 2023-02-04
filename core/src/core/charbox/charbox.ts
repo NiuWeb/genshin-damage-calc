@@ -316,6 +316,7 @@ export class Charbox {
     RemoveModifier(mod: Modifier): Charbox {
         const index = this.modifiers.indexOf(mod)
         if (index >= 0) {
+            mod.Disable()
             this.modifiers.splice(index, 1)
         }
         return this
