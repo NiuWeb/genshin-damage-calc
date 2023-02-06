@@ -10,7 +10,7 @@ const EnkaUrl = "https://enka.network"
  */
 export async function FetchEnka(uid: string | number): Promise<Enka | undefined> {
     try {
-        const request = await fetch(EnkaUrl + "/u/" + uid + "/__data.json")
+        const request = await fetch(EnkaUrl + "/api/uid/" + uid)
         const json = await request.json()
         return json
     } catch (e) {
