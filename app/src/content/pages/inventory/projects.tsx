@@ -1,12 +1,13 @@
 import { SavedProject } from "@src/components/genshin/project/saved"
 import { useCalc } from "@src/genshin/context"
-import { downloadFile } from "@src/genshin/utils/file"
+import { downloadFile, loadFile } from "@src/genshin/utils/file"
 import { useSearch } from "@src/hooks/search"
-import { ExportProjects, GetProjects } from "@src/storage/projects"
+import { Alert } from "@src/popup/alert"
+import { ExportProjects, GetProjects, ImportProjects } from "@src/storage/projects"
 import { GetString } from "@src/strings/strings"
 
 export function PageProjects() {
-  useCalc()
+  const [,exec] = useCalc()
   const values = GetProjects()
   const search = useSearch({
     values,
@@ -24,8 +25,26 @@ export function PageProjects() {
     downloadFile("projects.json", ExportProjects())
   }
 
+  async function imports() {
+    const file = await loadFile(".json")
+    if (!file) { return }
+    try {
+      ImportProjects(file)
+    } catch(e) {
+      Alert({
+        content: String(e).valueOf()
+      })
+    }
+    exec()
+  }
+
   return <div className="page-projects p-2 flex flex-col gap-2">
     <div className="flex lg:flex-row flex-col">
+      <button
+        onClick={imports}
+        className="p-2 text-black bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700">
+        {GetString("ACTION.IMPORT")}
+      </button>
       <button
         onClick={exports}
         className="p-2 text-black bg-green-500 hover:bg-green-600 active:bg-green-700">
