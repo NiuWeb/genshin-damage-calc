@@ -1,11 +1,12 @@
 import { Tooltip } from "@src/components/tooltip/tooltip"
 import { useCalc } from "@src/genshin/context"
 import { genshin } from "@src/genshin/core"
+import { downloadFile } from "@src/genshin/utils/file"
 import { Confirm } from "@src/popup/confirm"
 import { RemoveProject } from "@src/storage/projects"
 import { GetString } from "@src/strings/strings"
 import { useMemo } from "react"
-import { Upload, XCircle } from "react-bootstrap-icons"
+import { Download, Upload, XCircle } from "react-bootstrap-icons"
 import { useNavigate } from "react-router"
 import { ElementIcon } from "../auras/icon"
 
@@ -30,6 +31,10 @@ export function SavedProject({ name, project }: {
       return label
     })
   ), [name, project])
+
+  function download() {
+    downloadFile(name + ".json", JSON.stringify({ [name]: project }))
+  }
 
   function load() {
     const party = genshin.store.PartyFrom(project)
@@ -58,8 +63,14 @@ export function SavedProject({ name, project }: {
       ))}
     </div>
     <button
+      onClick={download}
+      data-tooltip={id + "-export"}
+      className="p-2 text-black bg-green-500 hover:bg-green-600 active:bg-green-700">
+      <Download />
+    </button>
+    <button
       onClick={load}
-      data-tooltip={id}
+      data-tooltip={id + "-load"}
       className="p-2 text-black bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700">
       <Upload />
     </button>
@@ -69,7 +80,10 @@ export function SavedProject({ name, project }: {
       className="p-2 bg-red-500 hover:bg-red-600 active:bg-red-700">
       <XCircle />
     </button>
-    <Tooltip id={id}>
+    <Tooltip id={id + "-export"}>
+      {GetString("ACTION.EXPORT")}
+    </Tooltip>
+    <Tooltip id={id + "-load"}>
       {GetString("ACTION.LOAD")}
     </Tooltip>
     <Tooltip id={id + "-remove"}>

@@ -18,6 +18,11 @@ function save() {
     StorageSave(prefix, JSON.stringify(saved))
 }
 
+/** exports all projects as string */
+export function ExportProjects(): string {
+    return JSON.stringify(saved)
+}
+
 export function HasProject(name: string): boolean {
     return Object.keys(saved).includes(name)
 }

@@ -1,7 +1,8 @@
 import { SavedProject } from "@src/components/genshin/project/saved"
 import { useCalc } from "@src/genshin/context"
+import { downloadFile } from "@src/genshin/utils/file"
 import { useSearch } from "@src/hooks/search"
-import { GetProjects } from "@src/storage/projects"
+import { ExportProjects, GetProjects } from "@src/storage/projects"
 import { GetString } from "@src/strings/strings"
 
 export function PageProjects() {
@@ -19,8 +20,17 @@ export function PageProjects() {
     ignoreCase: true
   })
 
+  function exports() {
+    downloadFile("projects.json", ExportProjects())
+  }
+
   return <div className="page-projects p-2 flex flex-col gap-2">
     <div className="flex lg:flex-row flex-col">
+      <button
+        onClick={exports}
+        className="p-2 text-black bg-green-500 hover:bg-green-600 active:bg-green-700">
+        {GetString("ACTION.EXPORT")}
+      </button>
       <input
         type="text"
         autoFocus
@@ -34,5 +44,5 @@ export function PageProjects() {
         <SavedProject key={i} {...{ name, project }} />
       ))}
     </div>
-  </div>
+  </div >
 }
