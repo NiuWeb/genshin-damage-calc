@@ -153,19 +153,13 @@ export function ImportParty(data: ExportedParty, party: Party): void {
         const targetNames = targetsData[effectName]
         if (!targetNames) { continue }
 
-        const targets = targetNames.map((name) => (
-            members.find(memb => memb.GetCharacter().Options.Name === name)
-        ))
-
-        const currentTargets = ef.GetTargets()
+        const targets: Charbox[] = []
         for (const member of members) {
-            if (targets.includes(member)) {
-                if (!currentTargets.includes(member)) {
-                    ef.Apply(member)
-                }
-            } else {
-                ef.Unapply(member)
+            if (targetNames.includes(member.GetCharacter().Options.Name)) {
+                targets.push(member)
             }
         }
+
+        ef.ApplyMultiple(targets)
     }
 }
