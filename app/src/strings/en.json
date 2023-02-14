@@ -3117,7 +3117,6 @@
 	"ITEM.Nilou.HIT_E_3_2": "Water Wheel DMG",
 	"ITEM.Nilou.HIT_Q_2": "Lingering Aeon DMG",
 	"ITEM.NilouA1": {
-		"title": "Court of Dancing Petals",
 		"description": [
 			"When all characters in the party are all Dendro or Hydro,",
 			"and there are at least one Dendro character and one Hydro character:\n",
@@ -3133,27 +3132,27 @@
 			"by Dendro Cores produced by Bloom.\n",
 			"Should the party not meet the conditions for this Passive Talent, any existing",
 			"Golden Chalice’s Bounty effects will be canceled."
-		]
+		],
+		"title": "Court of Dancing Petals"
 	},
 	"ITEM.NilouA4": {
-		"title": "Dreamy Dance of Aeons",
 		"description": [
 			"Every 1,000 points of Nilou’s Max HP above 30,000 will cause the DMG",
 			"dealt by Bountiful Cores created by characters affected by Golden Chalice’s",
 			"Bounty to increase by 9%.\n",
 			"The maximum increase in Bountiful Core DMG that can be achieved this way is 400%."
-		]
+		],
+		"title": "Dreamy Dance of Aeons"
 	},
 	"ITEM.NilouC1": {
-		"title": "Dance of the Waning Moon",
 		"description": [
 			"Dance of Haftkarsvar will be enhanced as follows:\n",
 			"·Luminous Illusion DMG is increased by 65%.\n",
 			"·The Tranquility Aura’s duration is extended by 6s."
-		]
+		],
+		"title": "Dance of the Waning Moon"
 	},
 	"ITEM.NilouC2": {
-		"title": "The Starry Skies Their Flowers Rain",
 		"description": [
 			"After characters affected by the Golden Chalice’s",
 			"Bounty deal Hydro DMG to an opponent, that opponent’s",
@@ -3161,39 +3160,40 @@
 			"triggered Bloom reaction deals DMG to opponents,",
 			"their Dendro RES will be decreased by 35% for 10s.\n",
 			"You need to have unlocked the “Court of Dancing Petals” Talent."
-		]
+		],
+		"title": "The Starry Skies Their Flowers Rain"
 	},
 	"ITEM.NilouC3": {
-		"title": "Beguiling Shadowstep",
 		"description": [
 			"Increases the Level of Dance of Abzendegi: Distant Dreams, Listening Spring by 3.",
 			"Maximum upgrade level is 15."
-		]
+		],
+		"title": "Beguiling Shadowstep"
 	},
 	"ITEM.NilouC4": {
-		"title": "Fricative Pulse",
 		"description": [
 			"After the third dance step of Dance of Haftkarsvar‘s Pirouette",
 			"hits opponents, Nilou will gain 15 Elemental Energy, and DMG",
 			"from her Dance of Abzendegi: Distant Dreams, Listening Spring",
 			"will be increased by 50% for 8s."
-		]
+		],
+		"title": "Fricative Pulse"
 	},
 	"ITEM.NilouC5": {
-		"title": "Twirling Light",
 		"description": [
 			"Increases the Level of Dance of Haftkarsvar by 3.",
 			"Maximum upgrade level is 15."
-		]
+		],
+		"title": "Twirling Light"
 	},
 	"ITEM.NilouC6": {
-		"title": "Frostbreaker’s Melody",
 		"description": [
 			"For every 1,000 points of Max HP, Nilou’s CRIT Rate and",
 			"CRIT DMG will increase by 0.6% and 1.2% respectively.",
 			"The maximum increase in CRIT Rate and CRIT DMG via",
 			"this method is 30% and 60% respectively."
-		]
+		],
+		"title": "Frostbreaker’s Melody"
 	},
 	"ITEM.Ningguang": {
 		"title": "Ningguang"

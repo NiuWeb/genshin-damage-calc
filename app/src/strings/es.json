@@ -2209,6 +2209,29 @@
     ],
     "title": "Rey oni maligno: ¡Itto contra todos!"
   },
+  "ITEM.JadeCutter": "Cortador de Jade Primordial",
+  "ITEM.JadeCutter1": {
+    "description": [
+      "Aumenta la Vida en un",
+      "**#rank{20|25|30|35|40}%**.Además, el personaje que",
+      "lleve esta arma equipada obtendrá un",
+      "**#rank{1.2|1.5|1.8|2.1|2.4}%** de Bono de ATQ en",
+      "proporción a su Vida Máx. "
+    ],
+    "title": "Cortador de Jade Primordial (1)"
+  },
+  "ITEM.JadeSpear": "Halcón de Jade",
+  "ITEM.JadeSpear1": {
+    "description": [
+      "Al atacar a un enemigo, aumenta el ATQ en un",
+      "**#rank{3.2|3.9|4.6|5.3|6}%** durante 6 s y puede",
+      "acumularse hasta 7 veces. Este efecto solo puede ocurrir",
+      "una vez cada 0.3 s.Cuando se alcanza el máximo de",
+      "acumulaciones, el daño aumenta en un",
+      "**#rank{12|15|18|21|24}%**. "
+    ],
+    "title": "Halcón de Jade (1)"
+  },
   "ITEM.Jean": "Jean",
   "ITEM.JeanC1": {
     "description": [
@@ -2981,16 +3004,15 @@
     "title": "Illusory Heart"
   },
   "ITEM.Nilou": "Nilou",
-	"ITEM.Nilou.HIT_E_1_1": "Daño de 1er golpe de danza de espadas",
-	"ITEM.Nilou.HIT_E_1_2": "Daño de 1er golpe de danza espiral",
-	"ITEM.Nilou.HIT_E_2_1": "Daño de 2do golpe de danza de espadas",
-	"ITEM.Nilou.HIT_E_2_2": "Daño de 2do golpe de danza espiral",
-	"ITEM.Nilou.HIT_E_3_1": "Daño de luna de agua",
-	"ITEM.Nilou.HIT_E_3_2": "Daño de rueda de agua",
-	"ITEM.Nilou.HIT_Q_2": "Daño de eón perpetuo",
-	"ITEM.NilouA1": {
-		"title": "Corte de los pétalos danzantes",
-		"description": [
+  "ITEM.Nilou.HIT_E_1_1": "Daño de 1er golpe de danza de espadas",
+  "ITEM.Nilou.HIT_E_1_2": "Daño de 1er golpe de danza espiral",
+  "ITEM.Nilou.HIT_E_2_1": "Daño de 2do golpe de danza de espadas",
+  "ITEM.Nilou.HIT_E_2_2": "Daño de 2do golpe de danza espiral",
+  "ITEM.Nilou.HIT_E_3_1": "Daño de luna de agua",
+  "ITEM.Nilou.HIT_E_3_2": "Daño de rueda de agua",
+  "ITEM.Nilou.HIT_Q_2": "Daño de eón perpetuo",
+  "ITEM.NilouA1": {
+    "description": [
       "Si el equipo está formado únicamente por personajes",
       "Dendro o Hydro y hay al menos un personaje Dendro y",
       "uno Hydro en él, cuando Nilou completa el tercer paso",
@@ -3012,31 +3034,31 @@
       "Cuando el equipo no cumple con los requisitos de los tipos",
       "elementales necesarios para este talento pasivo, se eliminarán",
       "los efectos de cáliz de la abundancia existentes."
-		]
-	},
-	"ITEM.NilouA4": {
-		"title": "Sueño de la danza eónica",
-		"description": [
-			"Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados",
+    ],
+    "title": "Corte de los pétalos danzantes"
+  },
+  "ITEM.NilouA4": {
+    "description": [
+      "Por cada 1000 pts. de Vida Máx. que Nilou tenga una vez superados",
       "los 30 000 pts. de Vida Máx., el daño de los núcleos feraces",
       "creados por los personajes en el estado de cáliz de la abundancia",
       "aumenta en un 9%.\n",
       "El daño infligido con los núcleos feraces solo puede aumentar",
       "un máximo del 400% de esta manera."
-		]
-	},
-	"ITEM.NilouC1": {
-		"title": "Danza de la luna menguante",
-		"description": [
-			"Danza de los siete reinos obtiene los siguientes fortalecimientos:\n",
+    ],
+    "title": "Sueño de la danza eónica"
+  },
+  "ITEM.NilouC1": {
+    "description": [
+      "Danza de los siete reinos obtiene los siguientes fortalecimientos:\n",
       "·Aumenta en un 65% el daño infligido con la luna de agua.\n",
       "·Aumenta en 6 s la duración del aura de quietud."
-		]
-	},
-	"ITEM.NilouC2": {
-		"title": "Lluvia florestelar",
-		"description": [
-			"Cuando un personaje en el estado de cáliz de la abundancia",
+    ],
+    "title": "Danza de la luna menguante"
+  },
+  "ITEM.NilouC2": {
+    "description": [
+      "Cuando un personaje en el estado de cáliz de la abundancia",
       "inflige Daño Hydro contra un enemigo, la RES Hydro de dicho",
       "enemigo se reduce en un 35% durante 10 s. Además, tras",
       "infligir daño contra un enemigo con una reacción de",
@@ -3044,40 +3066,41 @@
       "reduce en un 35% durante 10 s.\n",
       "Es necesario desbloquear el talento pasivo “Corte de los",
       "pétalos danzantes”."
-		]
-	},
-	"ITEM.NilouC3": {
-		"title": "Loto embelesador",
-		"description": [
-			"Aumenta el nivel de habilidad de Danza del loto: Manantial onírico +3.",
+    ],
+    "title": "Lluvia florestelar"
+  },
+  "ITEM.NilouC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Danza del loto: Manantial onírico +3.",
       "Puede ser aumentado hasta Niv. 15."
-		]
-	},
-	"ITEM.NilouC4": {
-		"title": "Sonido ondulante",
-		"description": [
-			"Al golpear a un enemigo con el tercer paso de baile del estado de",
+    ],
+    "title": "Loto embelesador"
+  },
+  "ITEM.NilouC4": {
+    "description": [
+      "Al golpear a un enemigo con el tercer paso de baile del estado de",
       "pirueta de Danza de los siete reinos, Nilou recupera 15 pts. de",
       "Energía Elemental, y el daño de Danza del loto: Manantial onírico",
       "aumenta en un 50% durante 8 s."
-		]
-	},
-	"ITEM.NilouC5": {
-		"title": "Pirueta luminosa",
-		"description": [
-			"Aumenta el nivel de habilidad de Danza de los siete reinos +3.",
+    ],
+    "title": "Sonido ondulante"
+  },
+  "ITEM.NilouC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Danza de los siete reinos +3.",
       "Puede ser aumentado hasta Niv. 15."
-		]
-	},
-	"ITEM.NilouC6": {
-		"title": "Canción rompescarcha",
-		"description": [
-			"Por cada 1000 pts. de Vida Máx. que tenga Nilou, su Prob. CRIT",
+    ],
+    "title": "Pirueta luminosa"
+  },
+  "ITEM.NilouC6": {
+    "description": [
+      "Por cada 1000 pts. de Vida Máx. que tenga Nilou, su Prob. CRIT",
       "aumenta en un 0.6% y su Daño CRIT aumenta en un 1.2%.\n",
       "El aumento máximo que se puede conseguir de esta manera es del",
       "30% para la Prob. CRIT y del 60% para el Daño CRIT."
-		]
-	},
+    ],
+    "title": "Canción rompescarcha"
+  },
   "ITEM.Ningguang": "Ninguang",
   "ITEM.Ningguang.HIT_Jade": "Jade Estelar",
   "ITEM.NingguangA4": {
@@ -3258,29 +3281,6 @@
       "66 pts. "
     ],
     "title": "Depredador (1)"
-  },
-  "ITEM.JadeCutter": "Cortador de Jade Primordial",
-  "ITEM.JadeCutter1": {
-    "description": [
-      "Aumenta la Vida en un",
-      "**#rank{20|25|30|35|40}%**.Además, el personaje que",
-      "lleve esta arma equipada obtendrá un",
-      "**#rank{1.2|1.5|1.8|2.1|2.4}%** de Bono de ATQ en",
-      "proporción a su Vida Máx. "
-    ],
-    "title": "Cortador de Jade Primordial (1)"
-  },
-  "ITEM.JadeSpear": "Halcón de Jade",
-  "ITEM.JadeSpear1": {
-    "description": [
-      "Al atacar a un enemigo, aumenta el ATQ en un",
-      "**#rank{3.2|3.9|4.6|5.3|6}%** durante 6 s y puede",
-      "acumularse hasta 7 veces. Este efecto solo puede ocurrir",
-      "una vez cada 0.3 s.Cuando se alcanza el máximo de",
-      "acumulaciones, el daño aumenta en un",
-      "**#rank{12|15|18|21|24}%**. "
-    ],
-    "title": "Halcón de Jade (1)"
   },
   "ITEM.PrototypeAmber": "Prototipo Ámbar",
   "ITEM.PrototypeAmber1": {
