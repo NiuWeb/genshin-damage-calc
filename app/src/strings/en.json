@@ -1544,6 +1544,52 @@
 		],
 		"title": "Fading Twilight (1)"
 	},
+	"ITEM.Faruzan": "Faruzan",
+	"ITEM.Faruzan.HIT_E_2": "Pressurized Collapse Vortex DMG",
+	"ITEM.FaruzanA4": {
+		"description": [
+			"When characters affected by The Wind’s Secret Ways‘ Prayerful Wind’s Gift deal",
+			"Anemo DMG using Normal, Charged, Plunging Attacks, Elemental Skills, or Elemental",
+			"Bursts to opponents, they will gain the Hurricane Guard effect: This DMG will be",
+			"increased based on 32% of Faruzan’s Base ATK. 1 instance of Hurricane Guard can",
+			"occur once every 0.8s. This DMG Bonus will be cleared after Prayerful Wind’s",
+			"Benefit expires or after the effect is triggered once."
+		],
+		"title": "Lost Wisdom of the Seven Caverns"
+	},
+	"ITEM.FaruzanC3": {
+		"description": [
+			"Increases the Level of Wind Realm of Nasamjnin by 3.",
+			"Maximum upgrade level is 15."
+		],
+		"title": "Spirit-Orchard Stroll"
+	},
+	"ITEM.FaruzanC5": {
+		"description": [
+			"Increases the Level of The Wind’s Secret Ways by 3.",
+			"Maximum upgrade level is 15."
+		],
+		"title": "Wonderland of Rumination"
+	},
+	"ITEM.FaruzanC6": {
+		"description": [
+			"Characters affected by The Wind’s Secret Ways‘ Prayerful Wind’s Benefit",
+			"have 40% increased CRIT DMG when they deal Anemo DMG. When the active",
+			"character deals DMG while affected by Prayerful Wind’s Benefit, they",
+			"will apply Pressurized Collapse to the opponent damaged. This effect",
+			"can be triggered once every 3s. This CD is shared between all party members."
+		],
+		"title": "The Wondrous Path of Truth"
+	},
+	"ITEM.FaruzanQ": {
+		"description": [
+			"·When the Whirlwind Pulse is unleashed, it will apply Perfidious Wind’s",
+			"Bale to nearby opponents, decreasing their Anemo RES.\n",
+			"·The Whirlwind Pulse will also apply Prayerful Wind’s Benefit to all",
+			"nearby party members when it is unleashed, granting them an Anemo DMG Bonus."
+		],
+		"title": "The Wind’s Secret Ways"
+	},
 	"ITEM.FavoniusCodex": {
 		"title": "Favonius Codex"
 	},

@@ -1501,6 +1501,56 @@
     ],
     "title": "Desvanecimiento del Crepúsculo (1)"
   },
+  "ITEM.Faruzan": "Faruzán",
+  "ITEM.Faruzan.HIT_E_2": "Daño de vórtice de derribo tormentoso",
+  "ITEM.FaruzanA4": {
+    "description": [
+      "Cuando un personaje bajo los efectos de la bendición vientosacro",
+      "de Camino del ascenso inflige Daño Anemo contra un enemigo con un",
+      "Ataque Normal, Cargado, Descendente o una Habilidad Elemental o",
+      "Definitiva, se produce el efecto de “bendición tempestuosa”, el",
+      "cual aumenta dicho daño en un 32% del ATQ Básico de Faruzán.",
+      "Este efecto solo se puede generar una vez cada 0.8 s y se anula",
+      "cuando termina la duración de la bendición vientosacro o después",
+      "de que esta se haya activado una vez."
+    ],
+    "title": "Sabiduría del pasado"
+  },
+  "ITEM.FaruzanC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Cielo ventoso del Nasamjñin +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Sosiego en el jardín"
+  },
+  "ITEM.FaruzanC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Camino del ascenso +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Plano de la reflexión"
+  },
+  "ITEM.FaruzanC6": {
+    "description": [
+      "Cuando un personaje bajo los efectos de la bendición vientosacro de",
+      "Camino del ascenso inflige Daño Anemo, el Daño CRIT de ese ataque",
+      "aumenta en un 40%. Por otro lado, cuando tu personaje en combate",
+      "inflige daño contra un enemigo mientras está bajo los efectos de",
+      "la bendición vientosacro, aplicará el efecto de derribo tormentoso",
+      "sobre dicho enemigo. Este efecto solo se puede activar una vez",
+      "cada 3 s y su TdE se comparte entre todos los miembros del equipo."
+    ],
+    "title": "Esencia de la verdad"
+  },
+  "ITEM.FaruzanQ": {
+    "description": [
+      "·Al ser liberada, aplica a los enemigos de alrededor el efecto de",
+      "“maldición vientotraidor”, el cual reduce su RES Anemo.\n",
+      "·Al ser liberada, aplica el efecto de “bendición vientosacro” sobre",
+      "todos los miembros del equipo cercanos, quienes obtienen un Bono de Daño Anemo."
+    ],
+    "title": "Camino del ascenso"
+  },
   "ITEM.FavoniusCodex": "Códice de Favonius",
   "ITEM.FavoniusCodex1": {
     "description": [
