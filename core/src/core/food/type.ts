@@ -21,6 +21,8 @@ export interface Options {
     Type: FoodType
     /** food name */
     Name: string
+    /** food rarity stars */
+    Stars: number
     /** Food modifiers */
     Effects: FoodMod[]
 }

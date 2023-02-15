@@ -26,6 +26,7 @@ describe("Food effects", () => {
     const gen = Factory({
         Type: FoodType.OFFENSIVE,
         Name: "Adeptus Temptation",
+        Stars: 5,
         Effects: [
             [stat.ATK_FLAT, 260, 372],
             [stat.CRIT_RATE, 0.08, 0.12]
