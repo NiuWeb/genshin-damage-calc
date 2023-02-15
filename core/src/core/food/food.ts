@@ -1,6 +1,7 @@
 import type { FoodType, Generator, Options } from "./type"
 import { Charbox, CharboxEvent } from "../charbox"
 import * as effect from "../effect"
+import { EffectEvent } from "../effect"
 
 /** a food contains multiple stat modifiers */
 export class Food {
@@ -9,6 +10,17 @@ export class Food {
     constructor(public readonly Options: Options, public readonly Effect: effect.Effect) {
         this.Name = Options.Name
         this.Type = Options.Type
+    }
+    /** Gets the food rank (1 = suspicious, 2 = normal, 3 = delicious) */
+    GetRank(): number {
+        return this.Effect.GetRank()
+    }
+
+    /** Sets the food rank (1 = suspicious, 2 = normal, 3 = delicious) */
+    SetRank(rank: number): void {
+        // clamp rank
+        rank = Math.max(1, Math.min(3, rank))
+        this.Effect.SetRank(rank)
     }
 
     /** unapplies the food from all characters */
@@ -21,13 +33,33 @@ export class Food {
  * Creates a generator function for foods using the given options
  */
 export function Factory(options: Options): Generator {
+    const effects = options.Effects
     const efGenerator = effect.Factory({
         Name: options.Name,
         ApplyOther: true,
+        MaxRank: 3,
         OnApply(target, ef, reg) {
-            for (const [stat, value] of options.Effects) {
-                reg.Modifier(target.GetCharacter().CreateModifier(stat, value))
+            // create modifiers
+            const mods = effects.map(([stat]) => (
+                target.GetCharacter().CreateModifier(stat, 0)
+            ))
+
+            // update modifier values per rank
+            const update = () => {
+                const rank = ef.GetRank()
+                for (let i = 0; i < effects.length; i++) {
+                    const [, min, max] = effects[i]
+                    //x0 = 1, y0 = min; x1 = 3, y1 = max
+                    const value = min + (max - min) * (rank - 1) / 2
+                    mods[i].SetValue(value)
+                }
             }
+
+            update()
+
+            // update modifiers when rank changes
+            reg.Observer(ef.Event.CreateObserver(EffectEvent.CHANGE_RANK, update))
+
 
             // automatically apply to the entire party every time the party changes
             reg.Observer(target.Event.CreateObserver(CharboxEvent.CHANGE_PARTY, () => {

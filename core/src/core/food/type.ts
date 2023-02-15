@@ -13,7 +13,7 @@ export enum FoodType {
     ELEMENTAL,
 }
 
-export type FoodMod = [stat: number, value: number]
+export type FoodMod = [stat: number, min: number, max: number]
 
 /** options to create a food */
 export interface Options {
