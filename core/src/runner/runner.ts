@@ -5,6 +5,7 @@ import { cmd_character } from "./character/character"
 import { cmd_effect } from "./effect/effect"
 import { cmd_enemy } from "./enemy/enemy"
 import { cmd_enka } from "./enka/enka"
+import { cmd_food } from "./food/food"
 import { cmd_rotation } from "./rotation/rotation"
 import { Scenario } from "./scenario"
 import { cmd_state } from "./state/state"
@@ -37,6 +38,10 @@ export class Runner {
             "enemy": {
                 description: "Controls all enemies in the party.",
                 children: cmd_enemy()
+            },
+            "food": {
+                description: "Controls food buffs",
+                children: cmd_food()
             },
             "rotation": {
                 description: "Controls the rotation",
