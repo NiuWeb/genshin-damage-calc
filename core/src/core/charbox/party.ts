@@ -7,21 +7,31 @@ import { FindByElement } from "@src/resources/resonances"
 import { EnemyConnector } from "@core/enemy"
 import { region } from "@core/stats"
 import { MapList } from "@src/utils/lists/list"
+import { Foodbox } from "../food"
 
 /** A party is a groups of characters */
 export class Party {
     constructor(...members: Charbox[]) {
+        this.handler = new Charbox(new Character({
+            Name: "__party__",
+            Region: region.NONE,
+            Stars: 4,
+            Element: 0,
+            Weapon: 0,
+            BurstCost: 0,
+        }))
+        this.handler.SetParty(this)
+
+        this.foods = new Foodbox(this.handler)
+
         members.forEach(member => this.Add(member))
     }
     /** An additional empty character that will be the owner of elemental resonances */
-    private handler = new Charbox(new Character({
-        Name: "__party__",
-        Region: region.NONE,
-        Stars: 4,
-        Element: 0,
-        Weapon: 0,
-        BurstCost: 0,
-    }))
+    private handler: Charbox
+
+    /** foods store */
+    private foods: Foodbox
+
     private members = new MapList<Charbox>(c => c.GetCharacter().Options.Name)
     private resonances: Effect[] = []
     private enemies = new EnemyConnector()
@@ -95,6 +105,11 @@ export class Party {
     /** Finds a member by its name */
     FindMember(name: string): Charbox | undefined {
         return this.members.Find(name)
+    }
+
+    /** Gets the foods box of the party */
+    GetFoods(): Foodbox {
+        return this.foods
     }
 
     /** Update the resonance effects */
