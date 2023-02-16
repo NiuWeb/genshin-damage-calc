@@ -123,4 +123,20 @@ Which means that "the 50% of pyronado attacks will hit the enemy affected by hyd
 
 - By default, the value of the aura uptime is 100%.
 
+### 2.2.2. Reaction uptime
+Even is the enemy **is** affected by an elemental aura, it is not always possible for an attack to trigger an amplifying reaction, mainly due to that attack having an ICD (internal cooldown) for reactions.
+
+This can be represented in the code with the following structure:
+```js
+rotation do enemy aura hydro
+rotation hit HuTao N1 reaction=40%
+```
+In this code, only 40% of Hu Tao normal attacks (Hit 1) can trigger vaporize, even if the enemy is always affected by hydro (as it's by default).
+
+This value must be between 0 and the aura uptime. If not, it will be clamped to those bounds. For example, in this code:
+```js
+rotation hit HuTao N1 reaction=80% aura=30%
+```
+The value of reaction uptime will be set to 30%, not 80%.
+
 > You can read about the maths behind these values [here](./rotations_model.md).
