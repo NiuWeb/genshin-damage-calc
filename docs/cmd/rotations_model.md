@@ -10,7 +10,7 @@ Here i'll describe the maths behind aura uptime and reaction uptime in the `rota
 $$
 \text{damage} = 
 a(\text{damage with aura}) + 
-r(\text{damage without aura})
+(1-a)(\text{damage without aura})
 $$
 
 ## Reaction uptime
