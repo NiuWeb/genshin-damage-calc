@@ -140,3 +140,53 @@ rotation hit HuTao N1 reaction=80% aura=30%
 The value of reaction uptime will be set to 30%, not 80%.
 
 > You can read about the maths behind these values [here](./rotations_model.md).
+
+## 3. Dynamic configurations
+Sometimes you need to configure an effect in a given part of the rotation. For example, Jade Spear gains a stack when an attack hits the enemy.
+
+To do this, you use the command `rotation do`. This command allows you to run any other command, but inside the sequence of the rotation. 
+You can read more about commanda [here](./index.md).
+
+For example:
+```js
+rotation do character set HuTao
+rotation do effect set JadeSpear
+rotation hit HuTao N1
+rotation do effect stacks 1
+rotation hit HuTao N2
+rotation do effect stacks 2
+rotation hit HuTao N3
+rotation do effect stacks 3
+// ...
+```
+
+### 3.1. Why to use `rotation do`?
+Is there a difference between using this, and simply writting the desired command normally?
+
+The difference is that the code of a rotation is executed **only once**, at the beginning of any calculation.
+What the command `rotation hit` do is not calculating the damage, but **saving the hit** and its parameters
+to be calculated later. 
+
+The same applies to `rotation do`: this **does not** execute the commands, but saves them to be
+executed with the rotation run.
+
+For example:
+```js
+rotation do character set HuTao
+rotation do effect set JadeSpear
+rotation hit HuTao N1
+rotation do effect stacks 1 // then this
+rotation hit HuTao N2
+effect stacks 2 // this will be executed FIRST
+rotation hit HuTao N3
+rotation do effect stacks 3 // and finally this
+// ...
+```
+Adding commands without `rotation do` is useful when you want to do an initial setup (only once, at the beginning of the process) before running the calculations. For example, overriding character levels/equipment, or forcely enabling/disabling effects. You could even setup the entire party through commands in the same code editor.
+
+As mentioned [here](./index.md), I recommend to run `character unset` and `effect unset` (preceeded with `rotation do` when needed) after you no longer need to edit characters or effects.
+
+## Examples
+You can find several sample rotations here:
+
+https://github.com/NiuWeb/genshin-damage-calc/tree/master/rotations/content
