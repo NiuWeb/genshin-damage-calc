@@ -110,11 +110,7 @@ However, there is a simpler way to do this, by introducing the concept of **aura
 
 This is a value between 0 and 100% that means: "for what percentage of the hits the enemy will be affected by the aura".
 
-Mathematically, this is calculated as:
-
-$$
-\text{damage} = (\text{damage with aura}) * (\text{aura uptime}) + (\text{damage without aura}) * (1 - \text{aura uptime})
-$$
+> You can read about the maths behind these values [here](./rotations_model.md).
 
 As an equivalent to the previous example, you could set this value once per hit as follows:
 ```js
@@ -123,6 +119,8 @@ rotation hit Xiangling Pyronado aura=50%
 ```
 Which means that "the 50% of pyronado attacks will hit the enemy affected by hydro".
 
-Note that `50%` is equivalent to `0.5`, you can use both formats.
+- Note that `50%` is equivalent to `0.5`, you can use both formats.
 
-By default, the value of the aura uptime is 100%.
+- By default, the value of the aura uptime is 100%.
+
+> You can read about the maths behind these values [here](./rotations_model.md).
