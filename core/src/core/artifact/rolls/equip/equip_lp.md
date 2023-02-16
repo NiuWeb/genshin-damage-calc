@@ -26,7 +26,7 @@ So, for each artifact, we will have $n$ variables representing the number of rol
 
 Let $S_{i,j}$ the number of rolls of the stat $i$ that will be put in the artifact $j$.
 
-In total, we will have $5i$ decision variables.
+In total, we will have $5n$ decision variables.
 
 ### Constraints
 C1. Each substat in an artifact can have 6 rolls at most:
@@ -159,7 +159,7 @@ Which means that, if a substat is selected, it must have 1 roll at least and 6 r
 
 Those extra variables $A_{i,j}$ can just be added to the objective the same way as $S_{i,j}$.
 
-With this approach, we'll have a total of $10i$ decision variables.
+With this approach, we'll have a total of $10n$ decision variables.
 
 
 ### Solving the model
