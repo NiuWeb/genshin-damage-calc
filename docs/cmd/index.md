@@ -133,5 +133,6 @@ const $my_cmd add xiangling
 character $my_cmd // equivalent to `character add xiangling`
 ```
 
-## 6. Examples
-You can find some code examples [here](./examples/index.md).
+## 6. More reading
+- Documentation about writting rotations in code [here](./rotations.md).
+- You can find some code examples [here](./examples/index.md).
