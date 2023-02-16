@@ -12,7 +12,7 @@ DEF_FLAT| 1
 
 Let $n$ the number of substats, and $m_i$ the number of rolls for the _i-th_ substat, where $0\leq i < n$.
 
-In the example input, $n=7$, $m_1=15$, $m_2=13$ and so on.
+In the example input, $n=7$, $m_0=15$, $m_1=13$ and so on.
 
 So, the question is: how can those rolls be distributed in 5 artifacts?
 
