@@ -3,6 +3,14 @@ import { FoodType } from "@src/core/food"
 
 export const foods: readonly food.Options[] = [
     {
+        Name: "SakuraShrimpCrackers",
+        Type: FoodType.DEFENSIVE,
+        Effects: [
+            [stats.stat.HP_PERCENT, 0.2, 0.25],
+        ],
+        Stars: 3
+    },
+    {
         Name: "PileEmUp",
         Type: FoodType.OFFENSIVE,
         Effects: [
