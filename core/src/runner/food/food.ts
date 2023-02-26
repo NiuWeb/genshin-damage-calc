@@ -1,5 +1,6 @@
 import { foods } from "@src/resources"
 import { strings } from "@src/strings"
+import { toNumber } from "@src/utils/conversions"
 import { RunnerCmd } from "../cmd"
 
 export const cmd_food = RunnerCmd(() => ({
@@ -16,17 +17,19 @@ export const cmd_food = RunnerCmd(() => ({
         }
     },
     "add": {
-        description: "Adds a food to the party",
-        arguments: ["name"],
-        example: "food add adeptustemptation",
-        compile({ Value, Log }, [name]) {
+        description: "Adds a food to the party. Rank is the food quality (1 = suspicious, 2 = normal, 3 = delicious)",
+        arguments: ["name", "rank"],
+        example: "food add adeptustemptation 3",
+        compile({ Value, Log }, [name, _rank]) {
             const gen = foods.FindByName(name)
+            const rank = Math.floor(toNumber(_rank))
             if (!gen) {
                 throw Log.Throwf("Cannot find food %s", name)
             }
             return function food_add() {
                 const foods = Value.Party.GetFoods()
-                foods.Add(gen)
+                const food = foods.Add(gen)
+                food.SetRank(rank)
                 Log.Logf("Food %s added", gen.Name)
             }
         }
@@ -48,9 +51,7 @@ export const cmd_food = RunnerCmd(() => ({
         arguments: [],
         compile({ Value, Log }) {
             return function food_show() {
-                const foods = Value.Party.GetFoods()
-                    .GetAll()
-                    .map(food => food.Options)
+                const foods = Value.Party.GetFoods().GetAll()
                 Log.Log("\n" + strings.Food(...foods))
             }
         }

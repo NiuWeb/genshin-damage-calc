@@ -7,9 +7,12 @@ import { EffectEvent } from "../effect"
 export class Food {
     readonly Name: string
     readonly Type: FoodType
+    readonly Stars: number
+
     constructor(public readonly Options: Options, public readonly Effect: effect.Effect) {
         this.Name = Options.Name
         this.Type = Options.Type
+        this.Stars = Options.Stars
     }
     /** Gets the food rank (1 = suspicious, 2 = normal, 3 = delicious) */
     GetRank(): number {

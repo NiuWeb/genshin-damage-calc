@@ -16,7 +16,6 @@ export class Foodbox {
     /** 
      * Adds a food to the target using its generator.
      * A previous food of the same type will be removed.
-     * If the food is already added, nothing will happen.
      */
     Add(gen: Generator) {
         // find previous food of the same type
@@ -28,6 +27,7 @@ export class Foodbox {
         const food = gen(this.target)
         this.byName.Add(food)
         this.byType.set(gen.Type, food)
+        return food
     }
 
     /** Removes a food from the target. */
