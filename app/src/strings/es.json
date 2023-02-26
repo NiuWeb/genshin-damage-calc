@@ -56,6 +56,7 @@
   "CONDITION.BURGEON": "Crepitar",
   "CONDITION.BURNING": "Quemadura",
   "CONDITION.CAST_BURST": "Lanzar Q",
+  "CONDITION.DMG_TAKEN": "Daño recibido",
   "CONDITION.ENEMY_1": "1 Enemigo",
   "CONDITION.ENEMY_2": "2+ Enemigos",
   "CONDITION.FAR": "Lejos",
@@ -633,6 +634,19 @@
     "title": "Estilo Kamisato: Jardín ácueo"
   },
   "ITEM.BOW": "Bow",
+  "ITEM.BeaconOfTheReedSea": "Emblema del Mar de Juncos",
+  "ITEM.BeaconOfTheReedSea1": {
+    "description": [
+      "Tras golpear a un enemigo con una Habilidad Elemental, el ATQ aumenta",
+      "en un **#rank{20|25|30|35|40}%** durante 8 s. Asimismo, cuando el",
+      "personaje recibe daño, su ATQ aumenta en un **#rank{20|25|30|35|40}%**",
+      "durante 8 s. Estos dos efectos se pueden activar incluso",
+      "cuando el personaje está en tu equipo pero no en combate. Además, si",
+      "el portador de esta arma no está bajo la protección de un escudo,",
+      "su Vida Máx. aumenta en un **#rank{32|40|48|56|64}%**."
+    ],
+    "title": "Emblema del Mar de Juncos (1)"
+  },
   "ITEM.Beidou": "Beidou",
   "ITEM.Beidou.HIT_C4": "Venganza súbita",
   "ITEM.BeidouA4": {

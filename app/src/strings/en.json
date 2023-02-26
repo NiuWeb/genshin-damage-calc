@@ -56,6 +56,7 @@
   "CONDITION.BURGEON": "Burgeon",
   "CONDITION.BURNING": "Burning",
   "CONDITION.CAST_BURST": "Cast burst",
+  "CONDITION.DMG_TAKEN": "Damage taken",
   "CONDITION.ENEMY_1": "1 Enemy",
   "CONDITION.ENEMY_2": "2+ Enemies",
   "CONDITION.FAR": "Far",
@@ -625,6 +626,17 @@
     "title": "Kamisato Art: Suiyuu"
   },
   "ITEM.BOW": "Bow",
+  "ITEM.BeaconOfTheReedSea": "Beacon of the Reed Sea",
+  "ITEM.BeaconOfTheReedSea1": {
+    "description": [
+      "After the character’s Elemental Skill hits an opponent,their ATK will be increased",
+      "by **#rank{20|25|30|35|40}%** for 8s. After the character takes DMG, their ATK",
+      "will be increased by **#rank{20|25|30|35|40}%** for 8s. The 2 aforementioned effects",
+      "can be triggered even when the character is not on the field. Additionally, when not",
+      "protected by a shield, the character’s Max HP will be increased by **#rank{32|40|48|56|64}%**."
+    ],
+    "title": "Beacon of the Reed Sea (1)"
+  },
   "ITEM.Beidou": "Beidou",
   "ITEM.Beidou.HIT_C4": "Stunning Revenge",
   "ITEM.BeidouA4": {

@@ -1,3 +1,4 @@
+export { BeaconOfTheReedSea } from "./claymores/beacon"
 export { TheBlackSword } from "./swords/theblacksword"
 export { TheCatch } from "./polearms/catch"
 export { Akuoumaru } from "./claymores/akuoumaru"
