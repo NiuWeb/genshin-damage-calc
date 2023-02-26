@@ -1,3 +1,4 @@
+export { MailedFlower } from "./claymores/mailedflower"
 export { BeaconOfTheReedSea } from "./claymores/beacon"
 export { TheBlackSword } from "./swords/theblacksword"
 export { TheCatch } from "./polearms/catch"
