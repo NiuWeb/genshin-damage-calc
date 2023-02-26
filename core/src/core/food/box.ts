@@ -27,6 +27,7 @@ export class Foodbox {
         const prev = this.byType.get(gen.Type)
         if (prev) { // remove it
             prev.Unapply()
+            this.Remove(prev.Name)
         }
         const food = gen(this.target)
         this.byName.Add(food)
