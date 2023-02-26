@@ -5,6 +5,7 @@ import { Exported as ExportedArtifact, Export as ExportArtifact, Import as Impor
 import type { Charbox } from "./charbox"
 import type { Party } from "./party"
 import { piece } from "@core/stats"
+import { FindByName as FindFoodByName } from "@src/resources/foods"
 
 /** An exported charbox */
 export interface Exported {
@@ -106,6 +107,8 @@ export interface ExportedParty {
             [effectName: string]: string[]
         }
     }
+    /** food data */
+    foods?: [name: string, rank: number][]
 }
 
 /** Exports data of a party */
@@ -124,7 +127,10 @@ export function ExportParty(party: Party): ExportedParty {
         if (!targets[owner]) targets[owner] = {}
         targets[owner][ef.Options.Name] = ef.GetTargets().map(c => c.GetCharacter().Options.Name)
     }
-    return { characters, resonances, targets }
+    // save foods
+    const foods = party.GetFoods().GetAll().map(f => [f.Name, f.GetRank()] as [string, number])
+
+    return { characters, resonances, targets, foods }
 }
 
 /** Exports data from a party */
@@ -161,5 +167,14 @@ export function ImportParty(data: ExportedParty, party: Party): void {
         }
 
         ef.ApplyMultiple(targets)
+    }
+
+    // load foods
+    party.GetFoods().Clear()
+    if (data.foods) for (const [name, rank] of data.foods) {
+        const gen = FindFoodByName(name)
+        if (!gen) continue
+        const food = party.GetFoods().Add(gen)
+        food.SetRank(rank)
     }
 }
