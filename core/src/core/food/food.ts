@@ -25,6 +25,7 @@ export class Food {
 
     /** unapplies the food from all characters */
     Unapply() {
+        this.Effect.Disable()
         this.Effect.UnapplyAll()
     }
 }
@@ -41,7 +42,7 @@ export function Factory(options: Options): Generator {
         OnApply(target, ef, reg) {
             // create modifiers
             const mods = effects.map(([stat]) => (
-                target.GetCharacter().CreateModifier(stat, 0)
+                reg.Modifier(target.GetCharacter().CreateModifier(stat, 0))
             ))
 
             // update modifier values per rank

@@ -19,10 +19,6 @@ export class Foodbox {
      * If the food is already added, nothing will happen.
      */
     Add(gen: Generator) {
-        if (this.byName.Find(gen.Name)) { // already added
-            return
-        }
-
         // find previous food of the same type
         const prev = this.byType.get(gen.Type)
         if (prev) { // remove it
