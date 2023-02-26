@@ -55,5 +55,16 @@ export const cmd_food = RunnerCmd(() => ({
                 Log.Log("\n" + strings.Food(...foods))
             }
         }
+    },
+    "clear": {
+        description: "Clears all the foods from the party",
+        arguments: [],
+        compile({ Value, Log }) {
+            return function food_clear() {
+                const foods = Value.Party.GetFoods()
+                foods.Clear()
+                Log.Log("Cleared all foods")
+            }
+        }
     }
 }))
