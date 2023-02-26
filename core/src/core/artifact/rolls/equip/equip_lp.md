@@ -251,3 +251,5 @@ $$
 Now we have to modify the objective function again, adding the variables $D_{ij}$ with a higher coefficient to minimize them. 
 
 Unfortunately, the huge amount of new constraints makes the model extremely slow, non-viable for execution in a web browser. This means that we need a different method, one that doesn't rely on adding constraints to the model, using the "unbalanced" result (which is solved _fast enough_) as starting point.
+
+A different approach is explained [here](equip_lp2.md).
