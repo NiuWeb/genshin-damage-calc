@@ -249,7 +249,7 @@ export const Characters: { readonly [key: number]: string } = {
     10000055: "Gorou",
     10000056: "Sara",
     10000057: "Itto",
-    10000058: "Yae Miko",
+    10000058: "Yae",
     10000059: "Heizou",
     10000060: "Yelan",
     10000062: "Aloy",
@@ -267,4 +267,5 @@ export const Characters: { readonly [key: number]: string } = {
     10000074: "Layla",
     10000075: "Wanderer",
     10000076: "Faruzan",
+    10000078: "Alhaitham"
 }
