@@ -5427,6 +5427,14 @@
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_0": "Evaluar combinaciones sin conjuntos",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_2": "Evaluar combinaciones con conjuntos de 2 piezas",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_4": "Evaluar combinaciones con conjuntos de 4 piezas",
+  "OPTIMIZER.FOOD": {
+    "description": [
+      "Esta herramienta evalúa todas las combinaciones entre comida ofensiva, defensiva",
+      "y elemental (pociones) para encontrar la combinación con el mayor daño. Todas",
+      "las comidas se establecen en deliciosas por defecto."
+    ],
+    "title": "Optimizar comida"
+  },
   "OPTIMIZER.MAINSTAT": {
     "description": [
       "Esta herramienta evalúa todas las diferentes combinaciones de estadística",
@@ -5497,6 +5505,7 @@
   "PATH:/inventory/projects": "Proyectos",
   "PATH:/optimize": "Optimizar",
   "PATH:/optimize/artifacts": "Artefactos",
+  "PATH:/optimize/food": "Comida",
   "PATH:/optimize/mainstat": "Principales",
   "PATH:/optimize/nextroll": "Siguiente roll",
   "PATH:/optimize/set": "Conjuntos",

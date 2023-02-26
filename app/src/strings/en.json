@@ -5632,6 +5632,14 @@
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_0": "Evaluate combinations with no set effects",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_2": "Evaluate combinations with 2-piece set effects",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_4": "Evaluate combinations with 4-piece set effects",
+  "OPTIMIZER.FOOD": {
+    "description": [
+      "This tool evaluates all the combination between offensive, defensive and elemental",
+      "(potions) food to find the combination with the highest damage. All foods",
+      "are set to delicious by default."
+    ],
+    "title": "Optimize food"
+  },
   "OPTIMIZER.MAINSTAT": {
     "description": [
       "This tool evaluates all the different combination of mainstats for Sands,",
@@ -5701,6 +5709,7 @@
   "PATH:/inventory/projects": "Projects",
   "PATH:/optimize": "Optimize",
   "PATH:/optimize/artifacts": "Artifacts",
+  "PATH:/optimize/food": "Food",
   "PATH:/optimize/mainstat": "Mainstat",
   "PATH:/optimize/nextroll": "Next roll",
   "PATH:/optimize/set": "Artifact set",
