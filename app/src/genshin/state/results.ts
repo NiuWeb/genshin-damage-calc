@@ -11,4 +11,5 @@ export class CalcResults {
     Set?: genshin.optimizer.set.Result[]
     Weapon?: genshin.optimizer.weapon.Result[]
     Artifacts?: (genshin.optimizer.artifacts.Result | undefined)[]
+    Food?: genshin.optimizer.food.Result[]
 }
