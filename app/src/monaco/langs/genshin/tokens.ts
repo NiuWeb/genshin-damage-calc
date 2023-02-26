@@ -21,6 +21,7 @@ monaco.languages.setMonarchTokensProvider("genshin-cmd", {
                     "@characters": "resource",
                     "@weapons": "resource",
                     "@sets": "resource",
+                    "@foods": "resource",
                     "@effects": "effect",
                     "@stats": "stat",
                     "@auras": "stat",

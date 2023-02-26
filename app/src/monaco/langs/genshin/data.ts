@@ -5,6 +5,7 @@ export const characters = genshin.characters.GetList().map(char => char.Name)
 export const weapons = genshin.weapons.GetList().map(wp => wp.Name)
 export const sets = genshin.sets.GetList().map(s => s.Name)
 export const effects = genshin.effects.GetList().map(s => s.Name)
+export const foods = genshin.foods.GetList().map(s => s.Name)
 
 export const stats = genshin.stats.stat.Values()
     .map(v => genshin.stats.stat.Name(v))
@@ -25,6 +26,7 @@ export const groups: { [x: string]: string[] } = {
     weapons,
     sets,
     auras,
+    foods
 }
 export const groupLabels: { [x: string]: string } = {
     characters: "LABEL.CHARACTER",
@@ -34,6 +36,7 @@ export const groupLabels: { [x: string]: string } = {
     weapons: "LABEL.WEAPON",
     sets: "LABEL.SET",
     auras: "LABEL.AURA",
+    foods: "LABEL.EFFECTS_FOOD",
 }
 export const suggestions = Object
     .values(groups)
