@@ -1,4 +1,5 @@
-import { food } from "@src/core"
+import type { Generator } from "@src/core/food/type"
+import { Factory } from "@src/core/food/food"
 import { MapList } from "@src/utils/lists/list"
 import { foods } from "./list"
 
@@ -8,14 +9,12 @@ const sorted = [...foods].sort((a, b) => {
         return a.Name.localeCompare(b.Name)
     }
     return b.Stars - a.Stars
-})
-// create generators
-    .map(f => food.Factory(f))
+}).map(f => Factory(f))
 
-const map = new MapList<food.Generator>(f => f.Name)
+const map = new MapList<Generator>(f => f.Name)
 map.AddList(sorted)
 
-const types = new Map<number, food.Generator[]>()
+const types = new Map<number, Generator[]>()
 for (const f of sorted) {
     if (!types.has(f.Type)) {
         types.set(f.Type, [])
@@ -24,16 +23,16 @@ for (const f of sorted) {
 }
 
 /** gets all the registered foods */
-export function GetList(): readonly food.Generator[] {
+export function GetList(): readonly Generator[] {
     return sorted
 }
 
 /** finds a registered food by its name. Case insensitive */
-export function FindByName(name: string): food.Generator | undefined {
+export function FindByName(name: string): Generator | undefined {
     return map.Find(name)
 }
 
 /** gets the list of foods of a given type */
-export function GetByType(type: number): food.Generator[] {
+export function GetByType(type: number): Generator[] {
     return types.get(type) || []
 }

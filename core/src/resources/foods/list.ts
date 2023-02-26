@@ -1,12 +1,12 @@
-import { food, stats } from "@src/core"
-import { FoodType } from "@src/core/food"
+import { Options, FoodType } from "@src/core/food"
+import { stat } from "@src/core/stats"
 
-export const foods: readonly food.Options[] = [
+export const foods: readonly Options[] = [
     {
         Name: "SakuraShrimpCrackers",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.HP_PERCENT, 0.2, 0.25],
+            [stat.HP_PERCENT, 0.2, 0.25],
         ],
         Stars: 3
     },
@@ -14,7 +14,7 @@ export const foods: readonly food.Options[] = [
         Name: "PileEmUp",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.1, 0.2]
+            [stat.CRIT_RATE, 0.1, 0.2]
         ],
         Stars: 3
     },
@@ -22,8 +22,8 @@ export const foods: readonly food.Options[] = [
         Name: "AdeptusTemptation",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 260, 372],
-            [stats.stat.CRIT_RATE, 0.08, 0.12]
+            [stat.ATK_FLAT, 260, 372],
+            [stat.CRIT_RATE, 0.08, 0.12]
         ],
         Stars: 5
     },
@@ -31,7 +31,7 @@ export const foods: readonly food.Options[] = [
         Name: "AdventurersBreakfastSandwich",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -39,7 +39,7 @@ export const foods: readonly food.Options[] = [
         Name: "AlmondTofu",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -47,7 +47,7 @@ export const foods: readonly food.Options[] = [
         Name: "Baklava",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.1, 0.2]
+            [stat.CRIT_RATE, 0.1, 0.2]
         ],
         Stars: 3
     },
@@ -55,7 +55,7 @@ export const foods: readonly food.Options[] = [
         Name: "BerryMintBurst",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.16, 0.16]
+            [stat.CRIT_RATE, 0.16, 0.16]
         ],
         Stars: 2
     },
@@ -63,8 +63,8 @@ export const foods: readonly food.Options[] = [
         Name: "Biryani",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 215, 308],
-            [stats.stat.HEALING_BONUS, 0.06, 0.1]
+            [stat.DEF_FLAT, 215, 308],
+            [stat.HEALING_BONUS, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -72,8 +72,8 @@ export const foods: readonly food.Options[] = [
         Name: "BountifulYear",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -81,7 +81,7 @@ export const foods: readonly food.Options[] = [
         Name: "BraisedMeat",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.2, 0.4]
+            [stat.PHYSICAL_DMG, 0.2, 0.4]
         ],
         Stars: 3
     },
@@ -89,7 +89,7 @@ export const foods: readonly food.Options[] = [
         Name: "ButterChicken",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -97,8 +97,8 @@ export const foods: readonly food.Options[] = [
         Name: "ButterCrab",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 215, 308],
-            [stats.stat.HEALING_BONUS, 0.06, 0.1]
+            [stat.DEF_FLAT, 215, 308],
+            [stat.HEALING_BONUS, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -106,7 +106,7 @@ export const foods: readonly food.Options[] = [
         Name: "CallaLilySeafoodSoup",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 165, 235]
+            [stat.DEF_FLAT, 165, 235]
         ],
         Stars: 3
     },
@@ -114,7 +114,7 @@ export const foods: readonly food.Options[] = [
         Name: "CandiedAjilenakhNut",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 165, 235]
+            [stat.DEF_FLAT, 165, 235]
         ],
         Stars: 3
     },
@@ -122,8 +122,8 @@ export const foods: readonly food.Options[] = [
         Name: "ChickenTofuPudding",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -131,7 +131,7 @@ export const foods: readonly food.Options[] = [
         Name: "ColdCutPlatter",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.2, 0.4],
+            [stat.PHYSICAL_DMG, 0.2, 0.4],
         ],
         Stars: 3
     },
@@ -139,7 +139,7 @@ export const foods: readonly food.Options[] = [
         Name: "ComeandGetIt",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.1, 0.2]
+            [stat.CRIT_RATE, 0.1, 0.2]
         ],
         Stars: 3
     },
@@ -147,7 +147,7 @@ export const foods: readonly food.Options[] = [
         Name: "CrabRoeKourayaki",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -155,7 +155,7 @@ export const foods: readonly food.Options[] = [
         Name: "CrocodileJerky",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 114, 114]
+            [stat.ATK_FLAT, 114, 114]
         ],
         Stars: 2
     },
@@ -163,7 +163,7 @@ export const foods: readonly food.Options[] = [
         Name: "CuredPorkDryHotpot",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.1, 0.2]
+            [stat.CRIT_RATE, 0.1, 0.2]
         ],
         Stars: 3
     },
@@ -171,7 +171,7 @@ export const foods: readonly food.Options[] = [
         Name: "DragonBeardNoodles",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -179,7 +179,7 @@ export const foods: readonly food.Options[] = [
         Name: "FishermansToast",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 88, 126]
+            [stat.DEF_FLAT, 88, 126]
         ],
         Stars: 2
     },
@@ -187,7 +187,7 @@ export const foods: readonly food.Options[] = [
         Name: "FlamingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.PYRO_DMG, 0.25, 0.25]
+            [stat.PYRO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -195,7 +195,7 @@ export const foods: readonly food.Options[] = [
         Name: "ForestEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.DENDRO_DMG, 0.25, 0.25]
+            [stat.DENDRO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -203,7 +203,7 @@ export const foods: readonly food.Options[] = [
         Name: "FragrantMashedPotatoes",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -211,7 +211,7 @@ export const foods: readonly food.Options[] = [
         Name: "FriedRadishBalls",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -219,7 +219,7 @@ export const foods: readonly food.Options[] = [
         Name: "FrostingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.CRYO_DMG, 0.25, 0.25]
+            [stat.CRYO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -227,7 +227,7 @@ export const foods: readonly food.Options[] = [
         Name: "FruitsoftheFestival",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.HEALING_BONUS, 0.15, 0.2]
+            [stat.HEALING_BONUS, 0.15, 0.2]
         ],
         Stars: 3
     },
@@ -235,8 +235,8 @@ export const foods: readonly food.Options[] = [
         Name: "GoldenCrab",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 215, 308],
-            [stats.stat.HEALING_BONUS, 0.06, 0.1]
+            [stat.DEF_FLAT, 215, 308],
+            [stat.HEALING_BONUS, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -244,8 +244,8 @@ export const foods: readonly food.Options[] = [
         Name: "GoldenFriedChicken",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -253,7 +253,7 @@ export const foods: readonly food.Options[] = [
         Name: "GushingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.ANEMO_DMG, 0.25, 0.25]
+            [stat.ANEMO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -261,7 +261,7 @@ export const foods: readonly food.Options[] = [
         Name: "ImportedPoultry",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.1, 0.2]
+            [stat.CRIT_RATE, 0.1, 0.2]
         ],
         Stars: 3
     },
@@ -269,8 +269,8 @@ export const foods: readonly food.Options[] = [
         Name: "JadeParcels",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -278,7 +278,7 @@ export const foods: readonly food.Options[] = [
         Name: "JewelrySoup",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 88, 126]
+            [stat.DEF_FLAT, 88, 126]
         ],
         Stars: 2
     },
@@ -286,7 +286,7 @@ export const foods: readonly food.Options[] = [
         Name: "JueyunChiliChicken",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.06, 0.12]
+            [stat.CRIT_RATE, 0.06, 0.12]
         ],
         Stars: 2
     },
@@ -294,7 +294,7 @@ export const foods: readonly food.Options[] = [
         Name: "JueyunGuoba",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.2, 0.4]
+            [stat.PHYSICAL_DMG, 0.2, 0.4]
         ],
         Stars: 3
     },
@@ -302,7 +302,7 @@ export const foods: readonly food.Options[] = [
         Name: "KatsuSandwich",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -310,7 +310,7 @@ export const foods: readonly food.Options[] = [
         Name: "LanternRiteSpecialComeandGetIt",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.2, 0.2]
+            [stat.CRIT_RATE, 0.2, 0.2]
         ],
         Stars: 3
     },
@@ -318,7 +318,7 @@ export const foods: readonly food.Options[] = [
         Name: "LanternRiteSpecialFriedRadishBalls",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 95, 95]
+            [stat.ATK_FLAT, 95, 95]
         ],
         Stars: 2
     },
@@ -326,7 +326,7 @@ export const foods: readonly food.Options[] = [
         Name: "LanternRiteSpecialJewelrySoup",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 126, 126]
+            [stat.DEF_FLAT, 126, 126]
         ],
         Stars: 2
     },
@@ -334,7 +334,7 @@ export const foods: readonly food.Options[] = [
         Name: "LotusFlowerCrisp",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 165, 235]
+            [stat.DEF_FLAT, 165, 235]
         ],
         Stars: 3
     },
@@ -342,7 +342,7 @@ export const foods: readonly food.Options[] = [
         Name: "MasalaCheeseBalls",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.06, 0.12]
+            [stat.CRIT_RATE, 0.06, 0.12]
         ],
         Stars: 2
     },
@@ -350,8 +350,8 @@ export const foods: readonly food.Options[] = [
         Name: "MeatLoversMushroomPizza",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -359,7 +359,7 @@ export const foods: readonly food.Options[] = [
         Name: "MintSalad",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -367,7 +367,7 @@ export const foods: readonly food.Options[] = [
         Name: "MoonPie",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 165, 235]
+            [stat.DEF_FLAT, 165, 235]
         ],
         Stars: 4
     },
@@ -375,7 +375,7 @@ export const foods: readonly food.Options[] = [
         Name: "MoreandMore",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.2, 0.4]
+            [stat.PHYSICAL_DMG, 0.2, 0.4]
         ],
         Stars: 3
     },
@@ -383,7 +383,7 @@ export const foods: readonly food.Options[] = [
         Name: "MushroomHodgepodge",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 88, 126]
+            [stat.DEF_FLAT, 88, 126]
         ],
         Stars: 2
     },
@@ -391,7 +391,7 @@ export const foods: readonly food.Options[] = [
         Name: "QingceStirFry",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -399,7 +399,7 @@ export const foods: readonly food.Options[] = [
         Name: "RadishandFishStew",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.06, 0.12]
+            [stat.CRIT_RATE, 0.06, 0.12]
         ],
         Stars: 2
     },
@@ -407,7 +407,7 @@ export const foods: readonly food.Options[] = [
         Name: "RiceCakeSoup",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 165, 235]
+            [stat.DEF_FLAT, 165, 235]
         ],
         Stars: 3
     },
@@ -415,8 +415,8 @@ export const foods: readonly food.Options[] = [
         Name: "SashimiPlatter",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -424,7 +424,7 @@ export const foods: readonly food.Options[] = [
         Name: "SatisfyingSalad",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.06, 0.12]
+            [stat.CRIT_RATE, 0.06, 0.12]
         ],
         Stars: 2
     },
@@ -432,7 +432,7 @@ export const foods: readonly food.Options[] = [
         Name: "SautedMatsutake",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -440,7 +440,7 @@ export const foods: readonly food.Options[] = [
         Name: "ShawarmaWrap",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 66, 95]
+            [stat.ATK_FLAT, 66, 95]
         ],
         Stars: 2
     },
@@ -448,7 +448,7 @@ export const foods: readonly food.Options[] = [
         Name: "ShockingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.ELECTRO_DMG, 0.25, 0.25]
+            [stat.ELECTRO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -456,7 +456,7 @@ export const foods: readonly food.Options[] = [
         Name: "StoneHarborDelicacies",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.06, 0.12]
+            [stat.CRIT_RATE, 0.06, 0.12]
         ],
         Stars: 2
     },
@@ -464,7 +464,7 @@ export const foods: readonly food.Options[] = [
         Name: "StreamingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.HYDRO_DMG, 0.25, 0.25]
+            [stat.HYDRO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -472,7 +472,7 @@ export const foods: readonly food.Options[] = [
         Name: "SunsetBerryTea",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -480,8 +480,8 @@ export const foods: readonly food.Options[] = [
         Name: "TandooriRoastChicken",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 224, 320],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.ATK_FLAT, 224, 320],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -489,8 +489,8 @@ export const foods: readonly food.Options[] = [
         Name: "TianshuMeat",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.25, 0.45],
-            [stats.stat.CRIT_RATE, 0.06, 0.1]
+            [stat.PHYSICAL_DMG, 0.25, 0.45],
+            [stat.CRIT_RATE, 0.06, 0.1]
         ],
         Stars: 4
     },
@@ -498,7 +498,7 @@ export const foods: readonly food.Options[] = [
         Name: "TriFlavoredSkewer",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 160, 228]
+            [stat.ATK_FLAT, 160, 228]
         ],
         Stars: 3
     },
@@ -506,7 +506,7 @@ export const foods: readonly food.Options[] = [
         Name: "UnagiChazuke",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.HEALING_BONUS, 0.15, 0.2]
+            [stat.HEALING_BONUS, 0.15, 0.2]
         ],
         Stars: 3
     },
@@ -514,7 +514,7 @@ export const foods: readonly food.Options[] = [
         Name: "UnmovingEssentialOil",
         Type: FoodType.ELEMENTAL,
         Effects: [
-            [stats.stat.GEO_DMG, 0.25, 0.25]
+            [stat.GEO_DMG, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -522,7 +522,7 @@ export const foods: readonly food.Options[] = [
         Name: "Wakatakeni",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 88, 126]
+            [stat.DEF_FLAT, 88, 126]
         ],
         Stars: 2
     },
@@ -530,7 +530,7 @@ export const foods: readonly food.Options[] = [
         Name: "WolfhookJuice",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 114, 114]
+            [stat.ATK_FLAT, 114, 114]
         ],
         Stars: 2
     },
@@ -538,8 +538,8 @@ export const foods: readonly food.Options[] = [
         Name: "OnceUponaTimeinMondstadt",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.2, 0.2],
-            [stats.stat.CRIT_DMG, 0.2, 0.2]
+            [stat.CRIT_RATE, 0.2, 0.2],
+            [stat.CRIT_DMG, 0.2, 0.2]
         ],
         Stars: 3
     },
@@ -547,7 +547,7 @@ export const foods: readonly food.Options[] = [
         Name: "SweetDream",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 114, 114]
+            [stat.ATK_FLAT, 114, 114]
         ],
         Stars: 2
     },
@@ -555,7 +555,7 @@ export const foods: readonly food.Options[] = [
         Name: "APrizeCatch",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 282, 282]
+            [stat.DEF_FLAT, 282, 282]
         ],
         Stars: 3
     },
@@ -563,7 +563,7 @@ export const foods: readonly food.Options[] = [
         Name: "DerWeisheitLetzterSchlussLife",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.16, 0.16]
+            [stat.CRIT_RATE, 0.16, 0.16]
         ],
         Stars: 2
     },
@@ -571,7 +571,7 @@ export const foods: readonly food.Options[] = [
         Name: "DieHeiligeSinfonie",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.PHYSICAL_DMG, 0.55, 0.55]
+            [stat.PHYSICAL_DMG, 0.55, 0.55]
         ],
         Stars: 3
     },
@@ -579,7 +579,7 @@ export const foods: readonly food.Options[] = [
         Name: "FishFlavoredToast",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 151, 151]
+            [stat.DEF_FLAT, 151, 151]
         ],
         Stars: 2
     },
@@ -587,7 +587,7 @@ export const foods: readonly food.Options[] = [
         Name: "ForestWatchersChoice",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 151, 151]
+            [stat.DEF_FLAT, 151, 151]
         ],
         Stars: 2
     },
@@ -595,7 +595,7 @@ export const foods: readonly food.Options[] = [
         Name: "Halvamazd",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.DEF_FLAT, 282, 282]
+            [stat.DEF_FLAT, 282, 282]
         ],
         Stars: 3
     },
@@ -603,7 +603,7 @@ export const foods: readonly food.Options[] = [
         Name: "HeartstringNoodles",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 274, 274]
+            [stat.ATK_FLAT, 274, 274]
         ],
         Stars: 3
     },
@@ -611,8 +611,8 @@ export const foods: readonly food.Options[] = [
         Name: "NoTomorrow",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.2, 0.2],
-            [stats.stat.CRIT_DMG, 0.2, 0.2]
+            [stat.CRIT_RATE, 0.2, 0.2],
+            [stat.CRIT_DMG, 0.2, 0.2]
         ],
         Stars: 3
     },
@@ -620,7 +620,7 @@ export const foods: readonly food.Options[] = [
         Name: "QingceHouseholdDish",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 274, 274]
+            [stat.ATK_FLAT, 274, 274]
         ],
         Stars: 3
     },
@@ -628,7 +628,7 @@ export const foods: readonly food.Options[] = [
         Name: "RockinRiffinChicken",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.CRIT_RATE, 0.16, 0.16]
+            [stat.CRIT_RATE, 0.16, 0.16]
         ],
         Stars: 2
     },
@@ -636,7 +636,7 @@ export const foods: readonly food.Options[] = [
         Name: "ShimiChazuke",
         Type: FoodType.DEFENSIVE,
         Effects: [
-            [stats.stat.HEALING_BONUS, 0.25, 0.25]
+            [stat.HEALING_BONUS, 0.25, 0.25]
         ],
         Stars: 3
     },
@@ -644,7 +644,7 @@ export const foods: readonly food.Options[] = [
         Name: "ShowMetheMora",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 274, 274]
+            [stat.ATK_FLAT, 274, 274]
         ],
         Stars: 3
     },
@@ -652,7 +652,7 @@ export const foods: readonly food.Options[] = [
         Name: "TheOnlyTruth",
         Type: FoodType.OFFENSIVE,
         Effects: [
-            [stats.stat.ATK_FLAT, 114, 114]
+            [stat.ATK_FLAT, 114, 114]
         ],
         Stars: 2
     },

@@ -1,7 +1,8 @@
 import type { FoodType, Generator, Options } from "./type"
-import { Charbox, CharboxEvent } from "../charbox"
-import * as effect from "../effect"
-import { EffectEvent } from "../effect"
+import type { Charbox } from "../charbox"
+import type { Effect } from "../effect"
+import { CharboxEvent } from "../charbox/event"
+import { EffectEvent, Factory as efFactory } from "../effect"
 
 /** a food contains multiple stat modifiers */
 export class Food {
@@ -9,7 +10,7 @@ export class Food {
     readonly Type: FoodType
     readonly Stars: number
 
-    constructor(public readonly Options: Options, public readonly Effect: effect.Effect) {
+    constructor(public readonly Options: Options, public readonly Effect: Effect) {
         this.Name = Options.Name
         this.Type = Options.Type
         this.Stars = Options.Stars
@@ -38,7 +39,7 @@ export class Food {
  */
 export function Factory(options: Options): Generator {
     const effects = options.Effects
-    const efGenerator = effect.Factory({
+    const efGenerator = efFactory({
         Name: options.Name,
         ApplyOther: true,
         MaxRank: 3,
