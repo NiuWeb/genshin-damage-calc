@@ -76,8 +76,29 @@ $$
 
 Also note that, if artifact $j$ has as mainstat the stat $i$, then the same stat can't be selected as a substat, which means $S_{ijk} = 0$.
 
-C5. Finally, the total rolls sum per stat must be greater than or equal to the input.
+C5. The total rolls sum per stat must be greater than or equal to the input.
 
 $$
 \text{For each i:} \sum_{j=0}^{4} \sum_{k=0}^{5} S_{ijk} \geq m_i
 $$
+
+C6. If a roll was not selected at upgrade 0, it can't be selected at any other upgrade. This can be modeled as:
+
+$$
+\begin{split}
+\text{For each i, j:}
+\sum_{k=1}^{5} S_{ijk} & \leq 5 S_{ij0}\\
+\left(\sum_{k=1}^{5} S_{ijk}\right) - 5 S_{ij0} & \leq 0
+\end{split}
+$$
+
+### Results
+For the same input as example, an optimal solution is:
+```
+Piece 0     | # rolls |  Piece 1           | # rolls |  Piece 2           | # rolls |  Piece 3           | # rolls |  Piece 4           | # rolls |  
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+CRIT_RATE   | 4.00    |  CRIT_RATE         | 4.00    |  CRIT_RATE         | 4.00    |  CRIT_RATE         | 3.00    |  CRIT_DMG          | 3.00    |  
+CRIT_DMG    | 3.00    |  CRIT_DMG          | 2.00    |  CRIT_DMG          | 2.00    |  CRIT_DMG          | 3.00    |  ELEMENTAL_MASTERY | 2.00    |  
+ATK_PERCENT | 1.00    |  ELEMENTAL_MASTERY | 2.00    |  ELEMENTAL_MASTERY | 2.00    |  ELEMENTAL_MASTERY | 2.00    |  HP_PERCENT        | 2.00    |  
+DEF_FLAT    | 1.00    |  ATK_PERCENT       | 1.00    |  HP_FLAT           | 1.00    |  HP_PERCENT        | 1.00    |  HP_FLAT           | 2.00    |
+```

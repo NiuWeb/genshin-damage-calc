@@ -64,6 +64,8 @@ export function EquipRollsLp(options: Options): Result {
         for (let i = 0; i < n; i++) {
             // c2. max 6 rolls per substat per artifact
             const c2 = model.Constraint({}, 6)
+            // c6. only rolls if selected at level 0
+            const c6 = model.Constraint({ [getvar("S", i, j, 0)]: -5 }, 0)
             for (let k = 0; k < 6; k++) {
                 c2[getvar("S", i, j, k)] = 1
                 c4[getvar("S", i, j, k)] = 1
@@ -72,6 +74,9 @@ export function EquipRollsLp(options: Options): Result {
                 if (!available(i, j)) {
                     model.Constraint({ [getvar("S", i, j, k)]: 1 }, 0)
                 }
+            }
+            for(let k = 1; k < 6; k++) {
+                c6[getvar("S", i, j, k)] = 1
             }
         }
 
@@ -100,18 +105,7 @@ export function EquipRollsLp(options: Options): Result {
         throw new Error("[LP] Cannot find a feasible solution")
     }
 
-    console.log(model.toString())
-
     // extract solution
-    /**
-     * how many rolls of each substat in each artifact
-     * 
-     * The result is in the form
-     * 
-     * - a list of lists, each sub-list represent an artifact
-     * - each sub-list is a list of pairs
-     * - each pair is a substat and the number of rolls
-     */
     const result: Result = []
     for (let j = 0; j < 5; j++) {
         const artifact: [number, number][] = []
@@ -126,44 +120,6 @@ export function EquipRollsLp(options: Options): Result {
         }
         result.push(artifact)
     }
-
-    /**
-     * a more detailed result
-     * for each artifact, create a table that shows
-     * how many rolls of each substat at each upgrade level
-     * 
-     * in the form
-     * 
-     * artifact 0 | u0 | u1 | u2 | u3 | u4 | u5
-     * ----------------------------------------
-     * substat 0  |  0 |  0 |  0 |  1 |  0 |  0
-     * substat 1  |  0 |  1 |  0 |  0 |  0 |  0
-     * ...
-     * 
-     * artifact 1 ...
-     * ... ...
-     */
-    let str = ""
-    for (let j = 0; j < 5; j++) {
-        str += "piece " + j + "\n"
-        str += " ".repeat(24)
-        for (let k = 0; k < 6; k++) {
-            str += " | " + k
-        }
-        str += "\n"
-        str += "-".repeat(64)
-        str += "\n"
-        for (let i = 0; i < n; i++) {
-            const name = stat.Name(substats[i])
-            str += name + " ".repeat(24 - name.length)
-            for (let k = 0; k < 6; k++) {
-                str += " | " + (solution[getvar("S", i, j, k)] || 0)
-            }
-            str += "\n"
-        }
-        str += "\n"
-    }
-    console.log(str)
 
     return result
 }
