@@ -67,6 +67,13 @@ describe("Equip 28 rolls using the LP solver", () => {
             [stat.CRIT_DMG, 13],
         ]
     })
+    const results = solution.map((subs, i) => {
+        const table = new Table("Piece " + i, "# rolls")
+        subs.forEach(sub => table.AddRow(stat.Name(sub[0]), sub[1]))
+        return table.toString()
+    })
+    console.log(Horizontal(...results))
+
     const mainstats = [stat.HP_FLAT, stat.ATK_FLAT, stat.HP_PERCENT, stat.PYRO_DMG, stat.CRIT_RATE]
 
     const total = solution
@@ -109,6 +116,13 @@ describe("Equip 25 rolls using the LP solver", () => {
             [stat.ELEMENTAL_MASTERY, 3],
         ]
     })
+    const results = solution.map((subs, i) => {
+        const table = new Table("Piece " + i, "# rolls")
+        subs.forEach(sub => table.AddRow(stat.Name(sub[0]), sub[1]))
+        return table.toString()
+    })
+    console.log(Horizontal(...results))
+
     const mainstats = [stat.HP_FLAT, stat.ATK_FLAT, stat.HP_PERCENT, stat.PYRO_DMG, stat.CRIT_RATE]
 
     const total = solution
