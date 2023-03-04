@@ -1,5 +1,5 @@
 /*
-@title: E > Q > 10x Q hits > E
+@title: Dehya E > Q > 10x Q hits > E
 @characters: Dehya C0
 @description:
 Simple rotation for Dehya C0. Assuming enemy affected by pyro aura with uptime of 90%
