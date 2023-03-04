@@ -2590,7 +2590,7 @@
   },
   "ITEM.KeyOfKhajNisut": "Key of Khaj-Nisut",
   "ITEM.KeyOfKhajNisut1": {
-    "description": "HP increased by 20%.",
+    "description": "HP increased by **#rank{20|25|30|35|40}%**.",
     "title": "Key of Khaj-Nisut (1)"
   },
   "ITEM.KeyOfKhajNisut2": {

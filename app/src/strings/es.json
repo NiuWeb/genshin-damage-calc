@@ -342,13 +342,13 @@
   "ITEM.AlleyHunter": "Cazador del Callejón",
   "ITEM.AlleyHunter1": {
     "description": [
-      "While the character equipped with this weapon is in the ",
-      "party but not on the field, their DMG increases by ",
-      "**#rank{2|2.5|3|3.5|4}%** every second up to a max of ",
-      "**#rank{20|25|30|35|40}%**. When the character is on ",
-      "the field for more than 4s, the aforementioned DMG buff ",
-      "decreases by **#rank{4|5|6|7|8}%** per second until it ",
-      "reaches 0%. "
+      "Cuando el personaje que lleva esta arma equipada está en tu",
+      "equipo pero no en combate, el daño de dicho personaje",
+      "aumenta en un **#rank{2|2.5|3|3.5|4}%** cada 1 s. Como máximo,",
+      "solo se puede obtener un aumento del **#rank{20|25|30|35|40}%**",
+      "de daño de esta manera. 4 s después de que dicho personaje esté",
+      "en uso, el aumento de daño irá reduciéndose en un **#rank{4|5|6|7|8}%**",
+      "cada 1 s hasta llegar al 0%."
     ],
     "title": "Alley Hunter (1)"
   },
@@ -368,13 +368,14 @@
     ],
     "title": "Flecha precisa"
   },
-  "ITEM.AmberBead": "Amber Bead",
+  "ITEM.AmberBead": "Catalizador de Ámbar",
   "ITEM.AmberBead1": {
     "description": [
-      "Normal Attack hits increase all Elemental DMG by **#rank{6|7.5|9|10.5|12}%**",
-      "for 6s. Max 2 stacks."
+      "Al atacar con un Ataque Normal, aumenta todo el Daño Elemental",
+      "en un **#rank{6|7.5|9|10.5|12}%** durante 6 s. Puede acumularse",
+      "hasta un máximo de 2 veces."
     ],
-    "title": "Amber Bead (1)"
+    "title": "Catalizador de Ámbar (1)"
   },
   "ITEM.AmberC1": {
     "description": [
@@ -1651,7 +1652,7 @@
     "description": [
       "Al golpear a un enemigo con un ataque, hay un 50% de",
       "probabilidad de infligir un",
-      "**#rank{240|280|320|360|400}%* de daño a un solo",
+      "**#rank{240|280|320|360|400}%** de daño a un solo",
       "enemigo. Este efecto puede ocurrir una vez cada",
       "**#rank{15|14|13|12|11}s**. "
     ],
@@ -2513,21 +2514,24 @@
     ],
     "title": "Estrella tenaz"
   },
-  "ITEM.KeyOfKhajNisut": "Key of Khaj-Nisut",
+  "ITEM.KeyOfKhajNisut": "Llave de la Coronación",
   "ITEM.KeyOfKhajNisut1": {
-    "description": "HP increased by 20%.",
-    "title": "Key of Khaj-Nisut (1)"
+    "description": "Aumenta la Vida en un **#rank{20|25|30|35|40}%**.",
+    "title": "Llave de la Coronación (1)"
   },
   "ITEM.KeyOfKhajNisut2": {
     "description": [
-      "When an Elemental Skill hits opponents, you gain the Grand Hymn effect for 20s.",
-      "This effect increases the equipping character’s Elemental Mastery by",
-      "**#rank{0.12|0.15|0.18|0.21|0.24}%** of their Max HP. This effect can trigger once",
-      "every 0.3s. Max 3 stacks. When this effect gains 3 stacks, or when the third stack’s",
-      "duration is refreshed, the Elemental Mastery of all nearby party members will be",
-      "increased by **#rank{0.2|0.25|0.3|0.35|0.4}%** of the equipping character’s max HP for 20s."
+      "Golpear a un enemigo con una Habilidad Elemental activa el efecto de “gran poema”,",
+      "el cual dura 20 s. Mientras este efecto está activo, la Maestría Elemental del",
+      "personaje que lleva esta arma equipada aumenta en una cantidad equivalente al",
+      "**#rank{0.12|0.15|0.18|0.21|0.24}%** de su Vida Máx. Este efecto solo puede",
+      "activarse una vez cada 0.3 s y acumularse un máximo de 3 veces. Al alcanzar 3",
+      "acumulaciones o cuando se reinicia la duración de la tercera, la Maestría Elemental",
+      "de todos los miembros del equipo cercanos aumenta durante 20 s en una cantidad",
+      "equivalente al **#rank{0.2|0.25|0.3|0.35|0.4}%** de la Vida Máx. del personaje",
+      "que porta esta arma."
     ],
-    "title": "Key of Khaj-Nisut (2)"
+    "title": "Llave de la Coronación (2)"
   },
   "ITEM.KingsSquire": "Vasalla del Rey",
   "ITEM.KingsSquire1": {
@@ -2699,16 +2703,17 @@
     ],
     "title": "Virtuoso Corredor de Lava (4)"
   },
-  "ITEM.LightOfFoliarIncision": "Light of Foliar Incision",
+  "ITEM.LightOfFoliarIncision": "Clorofilo Refulgente",
   "ITEM.LightOfFoliarIncision1": {
     "description": [
-      "CRIT Rate is increased by **#rank{4|5|6|7|8}%**. After Normal Attacks deal",
-      "Elemental DMG, the Foliar Incision effect will be obtained, increasing DMG",
-      "dealt by Normal Attacks and Elemental Skills by **#rank{120|150|180|210|240}%**",
-      "of Elemental Mastery. This effect will disappear after 28 DMG instances or 12s.",
-      "You can obtain Foliar Incision once every 12s."
+      "La Prob. CRIT aumenta en un **#rank{4|5|6|7|8}%**. Tras infligir Daño",
+      "Elemental con un Ataque Normal, el personaje obtiene el efecto de",
+      "\"corte foliáceo\", el cual aumenta el daño del Ataque Normal y de",
+      "la Habilidad Elemental en una cantidad equivalente al **#rank{120|150|180|210|240}%**",
+      "de la Maestría Elemental. Este efecto desaparece tras activarse 28 veces o",
+      "después de 12 s, y solo se puede obtener una vez cada 12 s."
     ],
-    "title": "Light of Foliar Incision (1)"
+    "title": "Clorofilo Refulgente (1)"
   },
   "ITEM.LionsRoar": "Rugido del León",
   "ITEM.LionsRoar1": {
@@ -2843,14 +2848,14 @@
     ],
     "title": "Candado Terrenal (1)"
   },
-  "ITEM.Messenger": "Messenger",
+  "ITEM.Messenger": "Mensajero",
   "ITEM.Messenger1": {
     "description": [
-      "Charged Attack hits on weak points deal an additional",
-      "**#rank{100|125|150|175|200}%** ATK DMG as CRIT DMG.",
-      "Can only occur once every 10s."
+      "Al golpear un punto débil con un Ataque Cargado, inflige un",
+      "**#rank{100|125|150|175|200}%** adicional de daño de ATQ como",
+      "Daño CRIT. Este efecto puede activarse una vez cada 10 s."
     ],
-    "title": "Messenger (1)"
+    "title": "Mensajero (1)"
   },
   "ITEM.MissiveWindspear": "Alabarda del Viento Epistolar",
   "ITEM.MissiveWindspear1": {
@@ -3707,12 +3712,14 @@
   "ITEM.SapwoodBlade": "Espada de Madera",
   "ITEM.SapwoodBlade1": {
     "description": [
-      "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon,",
-      "a Leaf of Consciousness will be created around the character for a maximum of 10s.",
-      "When picked up, the Leaf will grant the character **#rank{60|75|90|105|120}**",
-      "Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s.",
-      "This effect can still be triggered if the character is not on the field.",
-      "The Leaf of Consciousness’ effect cannot stack."
+      "Al causar una reacción de Quemadura, Aceleración, Intensificación,",
+      "Propagación, Florecimiento, Sobreflorecimiento o Crepitar, se crea",
+      "cerca del personaje una hoja alayavijñana que existirá durante 10 s.",
+      "La Maestría Elemental del personaje que la recoja aumentará en",
+      "**#rank{60|75|90|105|120}** pts. durante 12 s. Solo se puede crear",
+      "una hoja alayavijñana cada 20 s de esta manera. Este efecto también",
+      "se puede activar cuando el personaje está en tu equipo pero no",
+      "en combate, y no se puede acumular."
     ],
     "title": "Sapwood Blade (1)"
   },
@@ -4040,12 +4047,11 @@
   "ITEM.StaffOfHoma": "Báculo de Homa",
   "ITEM.StaffOfHoma1": {
     "description": [
-      "HP increased by **#rank{20|25|30|35|40}%**. ",
-      "Additionally, provides an ATK Bonus based on ",
-      "**#rank{0.8|1|1.2|1.4|1.6}%** of the wielder's Max ",
-      "HP. When the wielder's HP is less than 50%, this ATK Bonus ",
-      "is increased by an additional ",
-      "**#rank{1|1.2|1.4|1.6|1.8}%** of Max HP. "
+      "Aumenta la Vida en un **#rank{20|25|30|35|40}%**. Además, el personaje",
+      "que lleve esta arma equipada obtendrá un **#rank{0.8|1|1.2|1.4|1.6}%**",
+      "de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho",
+      "personaje esté por debajo del 50%, el ATQ aumentará en un **#rank{1|1.2|1.4|1.6|1.8}%**",
+      "adicional en proporción a su Vida Máx."
     ],
     "title": "Staff of Homa (1)"
   },
@@ -4290,29 +4296,27 @@
     "description": [
       "Al entrar en combate, el personaje obtiene una canción",
       "aleatoria durante 10 s. Puede ocurrir una vez cada 30 s.",
-      "Aumenta el ATQ en un **#rank{60|75|90|105|120}%**.Al",
-      "entrar en combate, el personaje obtiene una canción",
-      "aleatoria durante 10 s. Puede ocurrir una vez cada 30 s.",
-      "Aumenta todo el Daño elemental en un",
-      "**#rank{48|60|72|84|96}%**.Al entrar en combate, el",
-      "personaje obtiene una canción aleatoria durante 10 s.",
-      "Puede ocurrir una vez cada 30 s. La Maestría Elemental",
-      "aumenta **#rank{240|300|360|420|480}** pts.Recital",
-      "(ATQ%)Aria (Daño%)Interludio (ME) "
+      "· **Recital (ATQ%)**: Aumenta el ATQ en un **#rank{60|75|90|105|120}%**.\n",
+      "· **Aria (Daño%)**: Aumenta todo el Daño elemental en un **#rank{48|60|72|84|96}%**.\n",
+      "· **Interludio (ME):** La Maestría Elemental aumenta **#rank{240|300|360|420|480}** pts."
     ],
     "title": "Sinfonía de los Merodeadores (1)"
   },
-  "ITEM.ThousandFloatingDreams": "A Thousand Floating Dreams",
+  "ITEM.ThousandFloatingDreams": "Sueños de las Mil Noches",
   "ITEM.ThousandFloatingDreams1": {
     "description": [
-      "Party members other than the equipping character will provide",
-      "the equipping character with buffs based on whether their Elemental Type",
-      "is the same as the latter or not. If their Elemental Types are the same,",
-      "increase Elemental Mastery by **#rank{32|40|48|56|64}**. If not, increase",
-      "the equipping character’s DMG Bonus from their Elemental Type by",
-      "**#rank{10|14|18|22|26}%**. Each of the aforementioned effects can have up to 3 stacks."
+      "Otorga al portador de esta arma distintas bonificaciones dependiendo de",
+      "si el resto de los personajes del equipo son del mismo tipo elemental que",
+      "él o no. Por cada personaje con el mismo tipo elemental: aumenta en",
+      "**#rank{32|40|48|56|64}** pts. la Maestría Elemental. Por cada personaje",
+      "con distinto tipo elemental: aumenta en un **#rank{10|14|18|22|26}%** el",
+      "Bono de Daño Elemental del tipo elemental que sea el portador de esta arma.",
+      "Cada una de estas bonificaciones se puede acumular hasta 3 veces. Además,",
+      "la Maestría Elemental de los personajes del equipo cercanos (a excepción",
+      "del portador de esta arma) aumenta en 40 pts. Este efecto se puede acumular",
+      "con los de otros personajes del equipo que lleven esta arma equipada."
     ],
-    "title": "A Thousand Floating Dreams (1)"
+    "title": "Sueños de las Mil Noches (1)"
   },
   "ITEM.ThousandFloatingDreams2": {
     "description": [
@@ -4379,16 +4383,17 @@
     ],
     "title": "Domador de Truenos (4)"
   },
-  "ITEM.ToukabouShigure": "Toukabou Shigure",
+  "ITEM.ToukabouShigure": "Diluvio Florífero",
   "ITEM.ToukabouShigure1": {
     "description": [
-      "After an attack hits opponents, it will inflict an instance of Cursed Parasol",
-      "upon one of them for 10s. This effect can be triggered once every 15s. If this",
-      "opponent is taken out during Cursed Parasol’s duration, Cursed Parasol’s CD will",
-      "be refreshed immediately. The character wielding this weapon will deal",
-      "**#rank{16|20|24|28|32}%** more DMG to the opponent affected by Cursed Parasol."
+      "Tras golpear a los enemigos con un ataque, aplica sobre uno de ellos",
+      "el estado de “paraguas encantado” durante 10 s. Solo se puede activar",
+      "una vez cada 15 s y, si el enemigo es derrotado mientras el efecto",
+      "está activo, su TdE se anulará. El daño que inflige el portador de",
+      "esta arma contra los enemigos afectados por el estado de paraguas",
+      "encantado aumenta en un **#rank{16|20|24|28|32}%**."
     ],
-    "title": "Toukabou Shigure (1)"
+    "title": "Diluvio Florífero (1)"
   },
   "ITEM.TravelersHandySword": "Espada del Viajero",
   "ITEM.TravelersHandySword1": {
@@ -4398,20 +4403,20 @@
     ],
     "title": "Espada del Viajero (1)"
   },
-  "ITEM.TulaytullahsRemembrance": "Tulaytullah’s Remembrance",
+  "ITEM.TulaytullahsRemembrance": "Reminiscencia de Tulaytulah",
   "ITEM.TulaytullahsRemembrance1": {
     "description": [
-      "Normal Attack SPD is increased by **#rank{10|12.5|15|17.5|20}%**.",
-      "After the wielder unleashes an Elemental Skill, Normal Attack DMG",
-      "will increase by **#rank{4.8|6|7.2|8.4|9.6}%** every second for 14s.",
-      "After hitting an opponent with a Normal Attack during this duration,",
-      "Normal Attack DMG will be increased by **#rank{9.6|12|14.4|16.8|19.2}%**.",
-      "This increase can be triggered once every 0.3s. The maximum Normal Attack",
-      "DMG increase per single duration of the overall effect is **#rank{48|60|72|84|96}%**.",
-      "The effect will be removed when the wielder leaves the field, and using the Elemental",
-      "Skill again will reset all DMG buffs."
+      "La Vel. de Ataque Normal aumenta en un **#rank{10|12.5|15|17.5|20}%**.",
+      "Tras usar una Habilidad Elemental, el daño de Ataque Normal aumenta en",
+      "un **#rank{4.8|6|7.2|8.4|9.6}%** cada segundo durante 14 s. Además,",
+      "tras golpear a un enemigo con un Ataque Normal, el daño de dicho ataque",
+      "aumenta en un **#rank{9.6|12|14.4|16.8|19.2}%**, lo cual se puede activar",
+      "una vez cada 0.3 s. Mientras este efecto está activo, el daño de Ataque",
+      "Normal solo puede aumentar hasta un **#rank{48|60|72|84|96}%** de esta manera.",
+      "Cuando el personaje abandona el campo de batalla, este efecto se elimina y,",
+      "si se vuelve a usar la Habilidad Elemental, se eliminará el efecto anterior."
     ],
-    "title": "Tulaytullah’s Remembrance (1)"
+    "title": "Reminiscencia de Tulaytulah (1)"
   },
   "ITEM.TwinNephrite": "Nefrita Gemela",
   "ITEM.TwinNephrite1": {
@@ -4636,16 +4641,16 @@
     ],
     "title": "Orquesta del Errante (4)"
   },
-  "ITEM.WanderingEvenstar": "Wandering Evenstar",
+  "ITEM.WanderingEvenstar": "Estrella Errabunda",
   "ITEM.WanderingEvenstar1": {
     "description": [
-      "The following effect will trigger every 10s: The equipping character will gain",
-      "**#rank{24|30|36|42|48}%** of their Elemental Mastery as bonus ATK for 12s,",
-      "with nearby party members gaining 30% of this buff for the same duration.",
-      "Multiple instances of this weapon can allow this buff to stack. This effect",
-      "will still trigger even if the character is not on the field."
+      "Cada 10 s, el ATQ del personaje que lleve esta arma equipada aumenta durante",
+      "12 s en un **#rank{24|30|36|42|48}%** de su Maestría Elemental, y los personajes",
+      "del equipo cercanos obtienen un 30% de este bono. Este efecto se puede acumular",
+      "con los de otros personajes del equipo que lleven esta arma equipada, y se puede",
+      "activar incluso cuando el personaje está en tu equipo pero no en combate."
     ],
-    "title": "Wandering Evenstar (1)"
+    "title": "Estrella Errabunda (1)"
   },
   "ITEM.WavebreakerFin": "Aleta Cortaolas",
   "ITEM.WavebreakerFin1": {
@@ -4879,17 +4884,17 @@
     ],
     "title": "Baile bajo la lluvia"
   },
-  "ITEM.XiphosMoonlight": "Xiphos’ Moonlight",
+  "ITEM.XiphosMoonlight": "Luz Lunar de Xifos",
   "ITEM.XiphosMoonlight1": {
     "description": [
-      "The following effect will trigger every 10s: The equipping character",
-      "will gain **#rank{0.036|0.045|0.054|0.063|0.072}%** Energy Recharge",
-      "for each point of Elemental Mastery they possess for 12s, with nearby",
-      "party members gaining 30% of this buff for the same duration.",
-      "Multiple instances of this weapon can allow this buff to stack.",
-      "This effect will still trigger even if the character is not on the field."
+      "Cada 10 s, la Recarga de Energía del personaje que lleve esta arma",
+      "equipada aumenta durante 12 s en un **#rank{0.036|0.045|0.054|0.063|0.072}%**",
+      "por cada punto de Maestría Elemental que tenga, y los personajes del equipo",
+      "cercanos obtienen un 30% de este bono. Este efecto se puede acumular con los",
+      "de otros personajes del equipo que lleven esta arma equipada, y se puede activar",
+      "incluso cuando el personaje está en tu equipo pero no en combate."
     ],
-    "title": "Xiphos’ Moonlight (1)"
+    "title": "Luz Lunar de Xifos (1)"
   },
   "ITEM.Yae": "Yae",
   "ITEM.Yae.HIT_E_1": "Daño de cerezo kitsune niv. 1",
