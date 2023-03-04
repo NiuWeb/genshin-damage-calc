@@ -1,0 +1,15 @@
+/*
+@title: E > Q > 10x Q hits > E
+@characters: Dehya C0
+@description:
+Simple rotation for Dehya C0. Assuming enemy affected by pyro aura with uptime of 90%
+*/
+
+const $aura 90%
+
+rotation do enemy aura PYRO
+
+rotation hit Dehya E_1      aura=$aura
+rotation hit Dehya N1_Q *10 aura=$aura
+rotation hit Dehya Q        aura=$aura
+rotation hit Dehya E_2      aura=$aura

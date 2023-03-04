@@ -21,6 +21,7 @@ yoimiya-1.txt
 amber-1.txt
 beidou-c2-1.txt
 cyno-2.txt
+dehya-1.txt
 ganyu-2.txt
 keqing-2.txt
 ningguang-3.txt
