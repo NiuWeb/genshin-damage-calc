@@ -1,5 +1,5 @@
 import { GetSubstatValue } from "@core/scaling"
-import { EquipRollsLp } from "./equip_lp"
+import { EquipRollsLp } from "./equip_lp2"
 import { Options, Result } from "./type"
 
 /** 
