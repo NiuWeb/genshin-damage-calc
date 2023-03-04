@@ -7,6 +7,8 @@ Simple rotation for Dehya C0. Assuming enemy affected by pyro aura with uptime o
 
 const $aura 90%
 
+rotation duration 20
+
 rotation do enemy aura PYRO
 
 rotation hit Dehya E_1      aura=$aura
