@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@bygdle/genshin-calculator-core": "file:../core",
+    "@bygdle/genshin-calculator-strings": "file:../strings",
     "@bygdle/search-js": "github:NiuWeb/search-js",
     "ansi-to-html": "^0.7.2",
     "apexcharts": "^3.36.3",
