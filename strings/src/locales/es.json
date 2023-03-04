@@ -1189,6 +1189,58 @@
     ],
     "title": "Corazón del Guardián (4)"
   },
+  "ITEM.Dehya": "Dehya",
+  "ITEM.Dehya.HIT_E_1": "Daño de llama indómita",
+  "ITEM.Dehya.HIT_E_2": "Daño de acometida ardiente",
+  "ITEM.Dehya.HIT_E_DOT": "Daño del área",
+  "ITEM.Dehya.HIT_N1_Q": "Daño de puñetazo leonino",
+  "ITEM.Dehya.HIT_Q": "Daño de patada incineradora",
+  "ITEM.DehyaC1": {
+    "description": [
+      "La Vida Máx. de Dehya aumenta en un 20%. Además, el daño infligido",
+      "por sus siguientes ataques aumenta en proporción a su Vida Máx.:\n",
+      "·El daño de Fundición infernal aumenta en un 3.6% de su Vida Máx.\n",
+      "·El daño de Dentellada ignívoma de la Leona aumenta en un 6% de su Vida Máx."
+    ],
+    "title": "Filoígneo impoluto"
+  },
+  "ITEM.DehyaC2": {
+    "description": [
+      "Cuando Dehya libera la acometida ardiente de Fundición infernal, la",
+      "duración del cerco ígneo recién creado aumenta en 6 s.\n",
+      "Además, cuando en el campo de batalla ya existe un cerco ígneo y un",
+      "personaje en uso es atacado dentro de él, el daño infligido por el",
+      "siguiente ataque coordinado del cerco ígneo aumentará en un 50%."
+    ],
+    "title": "Hoja de las arenas rutilantes"
+  },
+  "ITEM.DehyaC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Dentellada ignívoma de la Leona +3.\n",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Furia calcinadora"
+  },
+  "ITEM.DehyaC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Fundición infernal +3.\n",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Leona desmelenada"
+  },
+  "ITEM.DehyaC6": {
+    "description": [
+      "La Prob. CRIT de Dentellada ignívoma de la Leona aumenta en un 10%.\n",
+      "Además, después de que un puñetazo leonino golpee a un enemigo e inflija",
+      "un crítico mientras el estado de Leona fogosa está activo, el Daño CRIT",
+      "de Dentellada ignívoma de la Leona aumenta en un 15% mientras dura la",
+      "habilidad, y la duración de Leona fogosa aumenta en 0.5 s. Este efecto",
+      "solo puede ocurrir una vez cada 0.2 s. La duración de Leona fogosa solo",
+      "puede aumentar en 2 s y el Daño CRIT de Dentellada ignívoma puede aumentar",
+      "hasta un máximo de un 60% de esta manera."
+    ],
+    "title": "Zarpazo flamígero"
+  },
   "ITEM.DesertPavilionChronicle": "Desert Pavilion Chronicle",
   "ITEM.DesertPavilionChronicle2": {
     "description": "Anemo DMG Bonus +15%",

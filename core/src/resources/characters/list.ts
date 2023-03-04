@@ -1,3 +1,4 @@
+export { Dehya } from "./dehya"
 export { Faruzan } from "./faruzan"
 export { Nilou } from "./nilou"
 export { Yunjin } from "./yunjin"
