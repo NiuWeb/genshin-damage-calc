@@ -2909,6 +2909,49 @@
     ],
     "title": "Mensajero (1)"
   },
+  "ITEM.Mika": "Mika",
+  "ITEM.Mika.HIT_E_DOT": "Daño de saeta de escarcha",
+  "ITEM.Mika.HIT_E_HOLD": "Daño de señal astrogélida",
+  "ITEM.Mika.HIT_E_PRESS": "Daño de esquirlas astrogélidas",
+  "ITEM.MikaA1": {
+    "description": [
+      "En los siguientes casos, el estado de aeroánima otorgado por Vórtice hieloastral",
+      "concederá el efecto amplificador de “detección”, el cual aumenta en un 10% el Daño",
+      "Físico de los personajes en uso:\n",
+      "·Cuando la saeta de escarcha golpea a más de un enemigo, se genera 1 carga de detección",
+      "por cada enemigo adicional golpeado.\n",
+      "·Las esquirlas astrogélidas generan 1 carga de detección por cada enemigo golpeado.",
+      "Cada esquirla astrogélida solo puede activar una vez este efecto.\n",
+      "El efecto de detección solo puede acumularse hasta 3 veces en el estado de aeroánima.",
+      "Si se vuelve a liberar Vórtice hieloastral antes de que concluya este estado, se",
+      "eliminará el estado de aeroánima anterior y todas sus cargas de detección."
+    ],
+    "title": "Supresión fuegorrápido"
+  },
+  "ITEM.MikaC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Himno plumiceleste +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Batidor veterano"
+  },
+  "ITEM.MikaC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Vórtice hieloastral +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Flecha tintineante"
+  },
+  "ITEM.MikaC6": {
+    "description": [
+      "Aumenta en 1 el máximo de cargas de detección acumulables en el estado de",
+      "aeroánima de Vórtice hieloastral.\n",
+      "Es necesario desbloquear el talento pasivo “Supresión fuegorrápido”.\n",
+      "Además, cuando un personaje en uso está bajo los efectos de aeroánima,",
+      "el Daño CRIT de sus ataques que infligen Daño Físico aumenta en un 60%."
+    ],
+    "title": "Asistencia táctica"
+  },
   "ITEM.MissiveWindspear": "Alabarda del Viento Epistolar",
   "ITEM.MissiveWindspear1": {
     "description": [

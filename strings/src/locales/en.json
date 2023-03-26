@@ -3002,6 +3002,47 @@
     ],
     "title": "Messenger (1)"
   },
+  "ITEM.Mika": "Mika",
+  "ITEM.Mika.HIT_E_DOT": "Rimestar Shard DMG",
+  "ITEM.Mika.HIT_E_HOLD": "Rimestar Flare DMG",
+  "ITEM.Mika.HIT_E_PRESS": "Flowfrost Arrow DMG",
+  "ITEM.MikaA1": {
+    "description": [
+      "Per the following circumstances, the Soulwind state caused by Starfrost",
+      "Swirl will grant characters the Detector effect, increasing their Physical",
+      "DMG by 10% when they are on the field.\n",
+      "·If the Flowfrost Arrow hits more than one opponent, each additional opponent",
+      "hit will generate 1 Detector stack.\n",
+      "·When a Rimestar Shard hits an opponent, it will generate 1 Detector stack.",
+      "Each Rimestar Shard can trigger the effect 1 time.\n",
+      "The Soulwind state can have a maximum of 3 Detector stacks, and if Starfrost",
+      "Swirl is cast again during this duration, the pre-existing Soulwind state",
+      "and all its Detector stacks will be cleared."
+    ],
+    "title": "Suppressive Barrage"
+  },
+  "ITEM.MikaC3": {
+    "description": [
+      "Increases the Level of Skyfeather Song by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Reconnaissance Experience"
+  },
+  "ITEM.MikaC5": {
+    "description": [
+      "Increases the Level of Starfrost Swirl by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Signal Arrow"
+  },
+  "ITEM.MikaC6": {
+    "description": [
+      "The maximum number of Detector stacks that Starfrost Swirl's Soulwind can gain is",
+      "increased by 1. You need to have unlocked the Passive Talent \"Suppressive Barrage\" first.",
+      "Additionally, active characters affected by Soulwind will deal 60% more Physical CRIT DMG."
+    ],
+    "title": "Companion's Counsel"
+  },
   "ITEM.MissiveWindspear": {
     "title": "Missive Windspear"
   },
