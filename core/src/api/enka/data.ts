@@ -53,6 +53,7 @@ export const Weapons: { readonly [key: number | string]: string } = {
     1089950259: "SkywardPride",
     1154009435: "PrototypeStarglitter",
     1163263227: "TheWidsith",
+    1148024603: "TheCatch",
     1240067179: "FavoniusWarbow",
     1321135667: "LionsRoar",
     1348687251: "HuntersPath",
