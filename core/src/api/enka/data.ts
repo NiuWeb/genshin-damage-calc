@@ -271,5 +271,6 @@ export const Characters: { readonly [key: number]: string } = {
     10000074: "Layla",
     10000075: "Wanderer",
     10000076: "Faruzan",
-    10000078: "Alhaitham"
+    10000078: "Alhaitham",
+    10000080: "Mika",
 }
