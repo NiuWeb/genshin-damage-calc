@@ -181,7 +181,9 @@ export const Sets: { readonly [key: number | string]: string } = {
     3890292467: "Instructor",
     4082302819: "DefendersWill",
     4144069251: "ShimenawasReminiscence",
-    4145306051: "GildedDreams"
+    4145306051: "GildedDreams",
+    3094139291: "FlowerOfParadiseLost",
+    2538235187: "DesertPavilionChronicle",
 }
 
 export const Props: { readonly [key: string]: number } = {
