@@ -3457,6 +3457,23 @@
     ],
     "title": "Sweeping Time"
   },
+  "ITEM.NymphsDream": "Nymph's Dream",
+  "ITEM.NymphsDream2": {
+    "description": "Hydro DMG Bonus +15%",
+    "title": "Nymph's Dream (2)"
+  },
+  "ITEM.NymphsDream4": {
+    "description": [
+      "After Normal, Charged, and Plunging Attacks, Elemental Skills,",
+      "and Elemental Bursts hit opponents, 1 stack of Mirrored Nymph",
+      "will be triggered, lasting 8s. When under the effect of 1, 2, or",
+      "3 or more Mirrored Nymph stacks, ATK will be increased by 7%/16%/25%,",
+      "and Hydro DMG will be increased by 4%/9%/15%. Mirrored Nymph stacks",
+      "created by Normal, Charged, and Plunging Attacks, Elemental Skills,",
+      "and Elemental Bursts exist independently."
+    ],
+    "title": "Nymph's Dream (4)"
+  },
   "ITEM.OathswornEye": {
     "title": "Oathsworn Eye"
   },
@@ -4829,6 +4846,22 @@
       "increased by 100%. "
     ],
     "title": "Vortex Vanquisher (1)"
+  },
+  "ITEM.VourukashasGlow": "Vourukasha's Glow",
+  "ITEM.VourukashasGlow2": {
+    "description": "HP: +20%",
+    "title": "Vourukasha's Glow (2)"
+  },
+  "ITEM.VourukashasGlow4": {
+    "description": [
+      "Elemental Skill and Elemental Burst DMG will be increased by 10%.",
+      "After the equipping character takes DMG, the aforementioned DMG",
+      "Bonus is increased by 80% for 5s. This effect increase can have 5",
+      "stacks. The duration of each stack is counted independently.",
+      "These effects can be triggered even when the equipping character",
+      "is not on the field."
+    ],
+    "title": "Vourukasha's Glow (4)"
   },
   "ITEM.Wanderer": "Wanderer",
   "ITEM.Wanderer.HIT_N1_C6": "Hit 1",
