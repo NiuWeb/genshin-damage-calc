@@ -11,7 +11,7 @@ export const Royal = (Name: string) => effect.Factory({
                 char.MapCritRate = x => x
             } else {
                 const rank = ef.GetRank()
-                char.MapCritRate = x => x + royalCrit(rank, x)
+                char.MapCritRate = x => royalCrit(rank, x)
             }
         }
         trigger(true)
@@ -24,45 +24,16 @@ export const Royal = (Name: string) => effect.Factory({
     }
 })
 
-/** polynomial regression for Royal passive critrate scaling */
-function royalCrit(rank: number, critrate: number) {
-    if (critrate < -1 || critrate > 1) return 0
-    const x = critrate
-    const u = 0.08 + 0.02 * (rank - 1)
-    const section = x < 0 ? 0 : (
-        x < 1 - u ? 1 : 2
-    )
-    const poly = coefficients[rank - 1][section]
-    const value = poly
-        .map((coef, i) => (
-            x < -5 * u ? 0 : ( // values lower than -5u are set to 0
-                coef * x ** (poly.length - i - 1) // ax^n
-            )
-        ))
-        .reduce((a, b) => a + b, 0) // SUM(ax^n)
-
-    return Math.max(0, value)
+/** 
+ * crit rate provided by Royal Weapons.
+ * Read more at:
+ * https://github.com/NiuWeb/genshin-damage-calc/blob/master/notebooks/royal-weapons/royal-positive.ipynb
+ */
+function royalCrit(rank: number, r: number) {
+    const max = Math.max
+    const p = 0.08 + 0.02 * (rank - 1) // crit rate per stack per rank
+    if(r < 0)
+        return ((5*p + r)*max(0, r) - (5*p*r - 5*p + r**2 - r)*max(0, p + r) + (5*p**2*r - 5*p**2 + 6*p*r**2 - 11*p*r + 5*p + r**3 - 2*r**2 + r)*max(0, 2*p + r) - (10*p**3*r - 10*p**3 + 17*p**2*r**2 - 32*p**2*r + 15*p**2 + 8*p*r**3 - 21*p*r**2 + 18*p*r - 5*p + r**4 - 3*r**3 + 3*r**2 - r)*max(0, 3*p + r) + (30*p**4*r - 30*p**4 + 61*p**3*r**2 - 116*p**3*r + 55*p**3 + 41*p**2*r**3 - 112*p**2*r**2 + 101*p**2*r - 30*p**2 + 11*p*r**4 - 38*p*r**3 + 48*p*r**2 - 26*p*r + 5*p + r**5 - 4*r**4 + 6*r**3 - 4*r**2 + r)*max(0, 4*p + r) - (24*p**4*r - 24*p**4 + 50*p**3*r**2 - 100*p**3*r + 50*p**3 + 35*p**2*r**3 - 105*p**2*r**2 + 105*p**2*r - 35*p**2 + 10*p*r**4 - 40*p*r**3 + 60*p*r**2 - 40*p*r + 10*p + r**5 - 5*r**4 + 10*r**3 - 10*r**2 + 5*r - 1)*max(0, 5*p + r))/(6*p**4*r - 6*p**4 + 11*p**3*r**2 - 26*p**3*r + 15*p**3 + 6*p**2*r**3 - 24*p**2*r**2 + 33*p**2*r - 15*p**2 + p*r**4 - 6*p*r**3 + 15*p*r**2 - 20*p*r + 15*p + 1)
+    else
+        return (5*p + r)/(6*p**4*r - 6*p**4 + 11*p**3*r**2 - 26*p**3*r + 15*p**3 + 6*p**2*r**3 - 24*p**2*r**2 + 33*p**2*r - 15*p**2 + p*r**4 - 6*p*r**3 + 15*p*r**2 - 20*p*r + 15*p + 1)
 }
-/** polynomial regression coefficients for Royal passive critrate scaling */
-const coefficients = [
-    // r1
-    [[-128.4499, -138.4761, -59.75334, -11.00387, -0.4655975, 0.4539864, 0.189614], // poly for x <= 0
-    [-0.10036, 0.30971, -0.39967, 0.18932], // poly for 0 < x < 1 - u
-    [0.86583, -1.7362, 0.87032]], // poly for x >= 1 - u
-    // r2
-    [[-51.0823, -67.9198, -35.7478, -8.08299, -0.414222, 0.417227, 0.211754],
-    [-0.097754, 0.31144, -0.42638, 0.21147],
-    [0.85002, -1.7068, 0.85672]],
-    // r3
-    [[-23.0139, -36.3491, -22.6081, -6.08691, -0.374257, 0.388127, 0.230281],
-    [-0.092576, 0.30589, -0.44477, 0.23006],
-    [0.81059, -1.6312, 0.82054]],
-    // r4
-    [[-12.3361, -22.796, -16.482, -5.21919, -0.421051, 0.360611, 0.246312],
-    [-0.087477, 0.29824, -0.45863, 0.24612],
-    [0.80621, -1.623, 0.81666]],
-    // r5
-    [[-6.99091, -14.7677, -12.1447, -4.39816, -0.424118, 0.340408, 0.260555],
-    [-0.077554, 0.28287, -0.46728, 0.2603],
-    [0.79212, -1.5973, 0.805]],
-]
