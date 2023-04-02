@@ -124,7 +124,7 @@ export class BaseDamage {
             }
         }
         for (const v of this.multipliers) {
-            if (v.Enabled) {
+            if (v.Enabled && Math.abs(v.Value) > 1e-6) {
                 r *= v.Value
             }
         }
