@@ -82,7 +82,7 @@ export class MvBuilder extends BuilderPart {
             mv.Value = 0
         }
         if (mult) {
-            mult.Value = 0
+            mult.Value = 1
         }
     }
 
