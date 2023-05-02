@@ -1,3 +1,4 @@
+export { JadefallSplendor } from "./catalysts/jadefall"
 export { MailedFlower } from "./claymores/mailedflower"
 export { BeaconOfTheReedSea } from "./claymores/beacon"
 export { TheBlackSword } from "./swords/theblacksword"

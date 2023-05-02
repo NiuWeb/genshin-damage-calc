@@ -2429,6 +2429,20 @@
     ],
     "title": "Primordial Jade Winged-Spear (1)"
   },
+  "ITEM.JadefallSplendor": "Jadefall's Splendor",
+  "ITEM.JadefallSplendor1": {
+    "description": [
+      "For 3s after using an Elemental Burst or creating a shield,",
+      "the equipping character can gain the Primordial Jade Regalia",
+      "effect: Restore **#rank{4.5|5|5.5|6|6.5}** Energy every 2.5s,",
+      "and gain **#rank{0.3|0.5|0.7|0.9|1.1}%** Elemental DMG Bonus",
+      "for their corresponding Elemental Type for every 1,000 Max HP",
+      "they possess, up to **#rank{12|20|28|36|44}%**. Primordial",
+      "Jade Regalia will still take effect even if the equipping",
+      "character is not on the field."
+    ],
+    "title": "Jadefall's Splendor (1)"
+  },
   "ITEM.Jean": {
     "title": "Jean"
   },
