@@ -2246,6 +2246,16 @@
     ],
     "title": "Cáscara de Sueños Opulentos (4)"
   },
+  "ITEM.IbisPiercer": "Perforaibis",
+  "ITEM.IbisPiercer1": {
+    "description": [
+      "Tras golpear a un enemigo con un Ataque Cargado, la",
+      "Maestría Elemental del personaje aumenta en **#rank{40|50|60|70|80}**",
+      "pts. durante 6 s. Este efecto puede acumularse hasta 2 veces y solo",
+      "puede activarse una vez cada 0.5 s."
+    ],
+    "title": "Perforaibis (1)"
+  },
   "ITEM.Instructor": "Instructor",
   "ITEM.Instructor2": {
     "description": "Maestría Elemental: +80. ",

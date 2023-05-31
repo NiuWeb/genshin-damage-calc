@@ -2310,6 +2310,16 @@
     ],
     "title": "Husk of Opulent Dreams (4)"
   },
+  "ITEM.IbisPiercer": "Ibis Piercer",
+  "ITEM.IbisPiercer1": {
+    "description": [
+      "The character's Elemental Mastery will increase by",
+      "**#rank{40|50|60|70|80}** within 6s after Charged",
+      "Attacks hit opponents. Max 2 stacks. This effect",
+      "can be triggered once every 0.5s."
+    ],
+    "title": "Ibis Piercer (1)"
+  },
   "ITEM.Instructor": {
     "title": "Instructor"
   },

@@ -1,3 +1,4 @@
+export { IbisPiercer } from "./bows/ibispiercer"
 export { JadefallSplendor } from "./catalysts/jadefall"
 export { MailedFlower } from "./claymores/mailedflower"
 export { BeaconOfTheReedSea } from "./claymores/beacon"
