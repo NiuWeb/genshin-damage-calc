@@ -11,7 +11,7 @@ import { Enka } from "./type"
 export function ParseEnka(enka: Enka): charbox.Charbox[] {
     const result: charbox.Charbox[] = []
     for (const avatarInfo of enka.avatarInfoList) {
-        const charName = Characters[avatarInfo.avatarId]
+        const charName = Characters[avatarInfo.avatarId as keyof typeof Characters]
         if (!charName) {
             console.error(`[ENKA ERROR] Cannot find character by avatarId ${avatarInfo.avatarId}`)
             continue
@@ -65,7 +65,7 @@ export function ParseEnka(enka: Enka): charbox.Charbox[] {
                 continue
             }
 
-            artifact.SetMainstat(Props[flat.reliquaryMainstat.mainPropId])
+            artifact.SetMainstat(Props[flat.reliquaryMainstat.mainPropId as keyof typeof Props])
 
             const subs = flat.reliquarySubstats
             if (!subs) {
@@ -74,7 +74,7 @@ export function ParseEnka(enka: Enka): charbox.Charbox[] {
             }
 
             for (const subInfo of subs) {
-                const prop = Props[subInfo.appendPropId]
+                const prop = Props[subInfo.appendPropId as keyof typeof Props]
                 let value = subInfo.statValue
 
                 if (!stats.FlatStats.includes(prop)) {
@@ -85,14 +85,16 @@ export function ParseEnka(enka: Enka): charbox.Charbox[] {
 
             const setKey = artifactInfo.flat.setNameTextMapHash
             if (setKey) {
-                const set = Sets[setKey]
+                const hashStr = parseInt(setKey)
+                const set = Sets[hashStr as keyof typeof Sets]
                 artifact.SetSet(set)
             }
         }
         artifacts.GetArtifacts().forEach(art => art.FillSubstats())
 
         for (const info of weaponInfo) {
-            const wpName = Weapons[info.flat.nameTextMapHash]
+            const hashStr = parseInt(info.flat.nameTextMapHash)
+            const wpName = Weapons[hashStr as keyof typeof Weapons]
             if (!wpName) {
                 console.error("[ENKA ERROR] Cannot find weapon by key " + info.flat.nameTextMapHash)
                 continue

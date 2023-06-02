@@ -1,24 +1,24 @@
 import { stats } from "@src/core"
-import { EquipType } from "./type"
+import { ReadOnly } from "@src/utils"
 
 export enum PropMapStat {
     Ascension = 1002,
     Level = 4001,
 }
-export const Pieces: { readonly [key in EquipType]: number } = {
+export const Pieces = ReadOnly({
     EQUIP_BRACER: stats.piece.FLOWER,
     EQUIP_NECKLACE: stats.piece.PLUME,
     EQUIP_SHOES: stats.piece.SANDS,
     EQUIP_RING: stats.piece.GOBLET,
     EQUIP_DRESS: stats.piece.CIRCLET,
-}
+})
 
-export const Weapons: { readonly [key: number | string]: string } = {
+export const Weapons = ReadOnly({
     20848859: "BlackcliffSlasher",
     37147251: "SolarPearl",
     160493219: "DarkIronSword",
     197755235: "VortexVanquisher",
-    231836963: "PrimordialJadeCutter",
+    231836963: "JadeCutter",
     310247243: "KagurasVerity",
     313300315: "SapwoodBlade",
     342097547: "CinnabarSpindle",
@@ -77,12 +77,12 @@ export const Weapons: { readonly [key: number | string]: string } = {
     1997709467: "JadeSpear",
     2006422931: "LithicBlade",
     2195665683: "SacrificialFragments",
-    2267978875: "FruitofFulfillment",
+    2267978875: "FruitOfFulfillment",
     2279290283: "MagicGuide",
     2324146259: "HakushinRing",
     2359799475: "Akuoumaru",
     2375993851: "RoyalLongsword",
-    2400012995: "SacrificalBow",
+    2400012995: "SacrificialBow",
     2417717595: "AlleyHunter",
     2425414923: "FadingTwilight",
     2474354867: "FavoniusSword",
@@ -139,16 +139,30 @@ export const Weapons: { readonly [key: number | string]: string } = {
     4090429643: "BloodtaintedGreatsword",
     4103022435: "IronSting",
     4103766499: "BlackTassel",
-    4122509083: "WavebreakersFin",
+    4122509083: "WavebreakerFin",
     4124851547: "MistsplitterReforged",
     4158505619: "SkywardSpine",
     4186179883: "Hamayumi",
     4193089947: "KatsuragikiriNagamasa",
     4230231107: "AquaSimulacra",
     4238339131: "StaffOfTheScarletSands",
-    4267718859: "RecurveBow"
-}
-export const Sets: { readonly [key: number | string]: string } = {
+    4267718859: "RecurveBow",
+    302691299: "AmberBead",
+    2834063555: "BeaconOfTheReedSea",
+    316078811: "IbisPiercer",
+    4007372867: "JadefallSplendor",
+    454086795: "KeyOfKhajNisut",
+    275622963: "LightOfFoliarIncision",
+    1200948859: "MailedFlower",
+    4139294531: "Messenger",
+    1201790667: "ThousandFloatingDreams",
+    2448629019: "ToukabouShigure",
+    359484419: "TulaytullahsRemembrance",
+    426363739: "WanderingEvenstar",
+    143051931: "XiphosMoonlight",
+})
+
+export const Sets = ReadOnly({
     83115355: "MaidenBeloved",
     147298547: "WanderersTroupe",
     156294403: "HeartOfDepth",
@@ -184,9 +198,11 @@ export const Sets: { readonly [key: number | string]: string } = {
     4145306051: "GildedDreams",
     3094139291: "FlowerOfParadiseLost",
     2538235187: "DesertPavilionChronicle",
-}
+    1925210475: "NymphsDream",
+    235897163: "VourukashasGlow"
+})
 
-export const Props: { readonly [key: string]: number } = {
+export const Props = ReadOnly({
     FIGHT_PROP_BASE_ATTACK: stats.stat.ATK_BASE,
     FIGHT_PROP_HP: stats.stat.HP_FLAT,
     FIGHT_PROP_ATTACK: stats.stat.ATK_FLAT,
@@ -207,9 +223,9 @@ export const Props: { readonly [key: string]: number } = {
     FIGHT_PROP_ICE_ADD_HURT: stats.stat.CRYO_DMG,
     FIGHT_PROP_ROCK_ADD_HURT: stats.stat.GEO_DMG,
     FIGHT_PROP_GRASS_ADD_HURT: stats.stat.DENDRO_DMG,
-}
+})
 
-export const Characters: { readonly [key: number]: string } = {
+export const Characters = ReadOnly({
     10000002: "Ayaka",
     10000003: "Jean",
     10000006: "Lisa",
@@ -257,7 +273,7 @@ export const Characters: { readonly [key: number]: string } = {
     10000060: "Yelan",
     10000062: "Aloy",
     10000063: "Shenhe",
-    10000064: "YunJin",
+    10000064: "Yunjin",
     10000065: "Kuki",
     10000066: "Ayato",
     10000067: "Collei",
@@ -273,4 +289,4 @@ export const Characters: { readonly [key: number]: string } = {
     10000076: "Faruzan",
     10000078: "Alhaitham",
     10000080: "Mika",
-}
+})
