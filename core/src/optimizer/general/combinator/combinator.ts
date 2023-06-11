@@ -1,6 +1,6 @@
 import { CombinateArrays } from "@src/utils/combinations/arrays"
-import { ArrayObject, ArrayObjectDeep, CombinateArrayObjects } from "@src/utils/combinations/array_objects"
-import { Artifacts, Combination, Weapon } from "./type"
+import { ArrayObject, CombinateArrayObjects } from "@src/utils/combinations/array_objects"
+import { Artifacts, Combination, Weapon, CombinationGroup } from "./type"
 
 /**
  * Configures the combinations to be generated.
@@ -40,6 +40,11 @@ export class Combinator {
         }
     }
 
+    /** gets the combination groups */
+    public get(): CombinationGroup {
+        return { weapon: this.weapons, artifact: this.artifacts }
+    }
+
     public clear() {
         this.weapons = []
         this.artifacts = []
@@ -50,11 +55,15 @@ export class Combinator {
      * Using this method, the results of two or more groups will be concatenated,
      * not combined.
      */
-    public static * Generate(...combinations: ArrayObjectDeep<Combination>[]) {
+    public static * Generate(...combinations: CombinationGroup[]) {
         const combinator = new Combinator()
         for (const combination of combinations) {
-            combinator.addWeapon(combination.weapon)
-            combinator.addArtifacts(combination.artifact)
+            for (const weapon of combination.weapon) {
+                combinator.addWeapon(weapon)
+            }
+            for (const artifact of combination.artifact) {
+                combinator.addArtifacts(artifact)
+            }
             yield* combinator.generate()
             combinator.clear()
         }

@@ -4,26 +4,26 @@ describe("Combination of multiple groups of weapons and artifacts", () => {
 
     const generator = Combinator.Generate(
         {
-            weapon: {
+            weapon: [{
                 name: ["A", "B"],
                 rank: [1, 2]
-            },
-            artifact: {
-                sands: ["C", "D"],
-                goblet: ["E", "F"],
-                circlet: ["G", "H"]
-            }
+            }],
+            artifact: [{
+                sands: [3, 4],
+                goblet: [5, 6],
+                circlet: [7, 8]
+            }]
         },
         {
-            weapon: {
+            weapon: [{
                 name: ["I", "J", "K"],
                 rank: [3]
-            },
-            artifact: {
-                sands: ["L", "M"],
-                goblet: ["N", "O", "P"],
-                circlet: ["O", "P"]
-            }
+            }],
+            artifact: [{
+                sands: [9, 10],
+                goblet: [11, 12, 13],
+                circlet: [14, 15]
+            }]
         }
     )
 
@@ -46,9 +46,9 @@ describe("Combination of multiple groups of weapons and artifacts", () => {
 
             expect(typeof combination.weapon.name).toBe("string")
             expect(typeof combination.weapon.rank).toBe("number")
-            expect(typeof combination.artifact.sands).toBe("string")
-            expect(typeof combination.artifact.goblet).toBe("string")
-            expect(typeof combination.artifact.circlet).toBe("string")
+            expect(typeof combination.artifact.sands).toBe("number")
+            expect(typeof combination.artifact.goblet).toBe("number")
+            expect(typeof combination.artifact.circlet).toBe("number")
         }
     })
 })

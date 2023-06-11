@@ -1,5 +1,6 @@
 import { Filter } from "@src/optimizer/filter"
 import { SubstatRange } from "@src/optimizer/substats"
+import { ArrayObject } from "@src/utils/combinations/array_objects"
 
 export interface Effect {
     stacks: number
@@ -13,9 +14,9 @@ export interface Weapon extends Partial<Effect> {
 }
 
 export interface Artifacts extends Partial<Effect> {
-    sands: string
-    goblet: string
-    circlet: string
+    sands: number
+    goblet: number
+    circlet: number
     set?: string
     substats?: SubstatRange[]
     filter?: Filter[]
@@ -24,4 +25,9 @@ export interface Artifacts extends Partial<Effect> {
 export interface Combination {
     weapon: Weapon
     artifact: Artifacts
+}
+
+export interface CombinationGroup {
+    weapon: ArrayObject<Weapon>[]
+    artifact: ArrayObject<Artifacts>[]
 }

@@ -7,9 +7,9 @@ describe("Combination of multiple weapons and artifacts", () => {
         rank: [1, 2]
     })
     combinator.addArtifacts({
-        sands: ["C", "D"],
-        goblet: ["E", "F"],
-        circlet: ["G", "H"]
+        sands: [3, 4],
+        goblet: [5, 6],
+        circlet: [7, 8]
     })
 
     const count = (2 ** 2) * (2 ** 3)
@@ -31,9 +31,9 @@ describe("Combination of multiple weapons and artifacts", () => {
 
             expect(typeof combination.weapon.name).toBe("string")
             expect(typeof combination.weapon.rank).toBe("number")
-            expect(typeof combination.artifact.sands).toBe("string")
-            expect(typeof combination.artifact.goblet).toBe("string")
-            expect(typeof combination.artifact.circlet).toBe("string")
+            expect(typeof combination.artifact.sands).toBe("number")
+            expect(typeof combination.artifact.goblet).toBe("number")
+            expect(typeof combination.artifact.circlet).toBe("number")
         }
     })
 })
