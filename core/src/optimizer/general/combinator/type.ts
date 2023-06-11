@@ -3,7 +3,7 @@ import { SubstatRange } from "@src/optimizer/substats"
 
 export interface Effect {
     stacks: number
-    condition: string
+    condition: string[]
     aura: string[]
 }
 
