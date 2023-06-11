@@ -4,6 +4,11 @@ export type ArrayObject<T> = {
     [K in keyof T]: T[K][]
 }
 
+export type ArrayObjectDeep<T> = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [K in keyof T]: T[K] extends Record<string | number | symbol, any> ? ArrayObjectDeep<T[K]> : T[K][]
+}
+
 /**
  * Given an object which properties are arrays, returns an array of objects
  * which properties are single values, generating all possible combinations.
