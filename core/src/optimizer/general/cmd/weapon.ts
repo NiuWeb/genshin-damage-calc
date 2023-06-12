@@ -23,7 +23,7 @@ export function parseWeaponArgs([name, ...args]: string[]): ArrayObject<Weapon> 
 /**
  * Gets the weapon names that are similar to the given name.
  */
-export function parseWeaponName(name: string): string[] {
+function parseWeaponName(name: string): string[] {
     if (name === "all") return weaponNames
 
     if (name === "4*") {

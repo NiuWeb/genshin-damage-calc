@@ -61,7 +61,7 @@ prog.CompileString(`
     # substats range cr=0:10 cd=0:12 atk%=0:12 em=0:12
 
     weapon blackcliffbow stacks=0,3
-    artifact main=atk%/em,pyro,cr set=gladiators*4,gladiators+shimenawa
+    artifact main=atk%/em,pyro,cr set=gladiator*4,gladiator+crimson
     add
 
     # substats range cr=0:12 cd=0:10 atk%=0:12 em=0:12

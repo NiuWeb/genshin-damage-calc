@@ -17,7 +17,7 @@ export interface Artifacts extends Partial<Effect> {
     sands: number
     goblet: number
     circlet: number
-    set?: string
+    set?: string[]
     substats?: SubstatRange[]
     filter?: Filter[]
 }
