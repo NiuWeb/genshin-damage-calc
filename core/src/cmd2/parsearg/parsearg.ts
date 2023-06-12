@@ -12,6 +12,25 @@ export interface ParsedArg {
  * - `arg=min:max:step`: only for numeric values
  * If no = is found, the parsed name will be an empty string.
  * The argument value will always be an array of strings.
+ * @returns a map of argument names to their values
+ */
+export function parseArgsmap(args: string[]): Map<string, string[]> {
+    const argsmap = new Map<string, string[]>()
+    for (const arg of args) {
+        const parsed = parseArg(arg)
+        argsmap.set(parsed.name, parsed.value)
+    }
+    return argsmap
+}
+
+/**
+ * Parses an argumen in one of the following formats:
+ * - `arg=value`
+ * - `arg=value1,value2,value3`
+ * - `arg=min:max`: only for numeric values
+ * - `arg=min:max:step`: only for numeric values
+ * If no = is found, the parsed name will be an empty string.
+ * The argument value will always be an array of strings.
  */
 export function parseArg(arg: string): ParsedArg {
     const parts = arg.split("=")
@@ -39,7 +58,7 @@ export function parseArg(arg: string): ParsedArg {
  * - `min:max`: inclusive both min and max
  * - `min:max:step`: inclusive both min and max, with a step
  */
-export function parseArgRange(arg: string): string[] {
+function parseArgRange(arg: string): string[] {
     const range = arg.split(":")
     if (range.length === 1) return range
 

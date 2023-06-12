@@ -1,8 +1,9 @@
+import { parseArgsmap } from "@src/cmd2/parsearg"
 import { weapons } from "@src/resources"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
 import { searchSimilarStrings } from "@src/utils/search/similarity"
 import { Weapon } from "../combinator"
-import { getEffectArgs, parseArgsmap } from "./effect"
+import { getEffectArgs } from "./effect"
 
 const weaponNames = weapons.GetList().map(x => x.Name.toLowerCase())
 const weapon4 = weapons.GetList().filter(x => x.Stars === 4).map(x => x.Name.toLowerCase())

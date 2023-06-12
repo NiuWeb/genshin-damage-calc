@@ -1,9 +1,10 @@
+import { parseArgsmap } from "@src/cmd2/parsearg"
 import { sets } from "@src/resources"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
 import { searchSimilarStrings } from "@src/utils/search/similarity"
 import { Artifacts } from "../combinator"
 import { getStat } from "./artifactnames"
-import { getEffectArgs, parseArgsmap } from "./effect"
+import { getEffectArgs } from "./effect"
 
 const setNames = sets.GetList().map(x => x.Name.toLowerCase())
 
