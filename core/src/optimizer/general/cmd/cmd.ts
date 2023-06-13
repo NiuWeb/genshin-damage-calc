@@ -29,8 +29,8 @@ export class CombinatorCmd {
                 }
             },
             "weapon": {
-                description: "Adds weapons to be combined. In the form:\n\n" +
-                    "weapon <name> [rank=1] [stacks=1] [condition=] [aura=]`\n\n" +
+                description: "Adds weapons to be combined, in the form:\n" +
+                    "```\nweapon <name> [rank=] [stacks=] [condition=] [aura=]\n```\n" +
                     "- The weapon name can be a partial or similar name, and can be `all`, `4*`, or `5*`.\n" +
                     "- Rank and stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +
                     "- Conditions and auras can also be lists, e.g. `aura=pyro,hydro`.\n",
@@ -55,9 +55,8 @@ export class CombinatorCmd {
                 }
             },
             "artifact": {
-                description: "Adds artifacts to be combined." +
-                    "In the form:\n\n" +
-                    "artifact [main=] [set=] [stacks=] [condition=] [aura=]`\n\n" +
+                description: "Adds artifacts to be combined, in the form:\n" +
+                    "```\nartifact [main=] [set=] [stacks=] [condition=] [aura=]\n```\n" +
                     "- The main stat is in the form `main=sands,goblet,circlet`, where each slot can " +
                     "have multiple options separated by `/`.\n" +
                     "- Stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +

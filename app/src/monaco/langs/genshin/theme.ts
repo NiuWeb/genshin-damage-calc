@@ -1,6 +1,5 @@
 import * as monaco from "monaco-editor"
 
-// Define a new theme that contains only rules that match this language
 monaco.editor.defineTheme("genshin-cmd-theme", {
     base: "vs-dark",
     inherit: true,

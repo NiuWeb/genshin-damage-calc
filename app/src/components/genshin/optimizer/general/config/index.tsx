@@ -9,7 +9,7 @@ export function GeneralConfig({ config, onChange }: {
     <div className="h-[640px]">
       <MonacoEditor
         path="/optimizer/general/config"
-        language="genshin-cmd"
+        language="genshin-cmd-general-optimizer"
         theme="genshin-cmd-theme"
         value={config.ConfigCmd}
         onChange={value => {

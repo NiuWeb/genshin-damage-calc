@@ -1,7 +1,11 @@
 import * as monaco from "monaco-editor"
-monaco.languages.register({ id: "genshin-cmd" })
-
-import "./tokens"
-import "./autocomplete"
-import "./hover"
+import { registerGenshinLang } from "./lang"
+import { Calc } from "@src/genshin/calc"
 import "./theme"
+import { genshin } from "@src/genshin/core"
+
+monaco.languages.register({ id: "genshin-cmd" })
+monaco.languages.register({ id: "genshin-cmd-general-optimizer" })
+
+registerGenshinLang("genshin-cmd", Calc.Get().Program)
+registerGenshinLang("genshin-cmd-general-optimizer", new genshin.optimizer.general.CombinatorCmd().Program)

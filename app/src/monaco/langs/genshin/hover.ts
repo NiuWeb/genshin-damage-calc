@@ -1,89 +1,32 @@
 import { genshin } from "@src/genshin/core"
 import { GetString } from "@src/strings/strings"
-import { Calc } from "@src/genshin/calc"
-import { FindGroup, fullCommands, groupLabels } from "./data"
+import { getGroups, groupLabels } from "./data"
 import * as monaco from "monaco-editor"
 
-const Program = Calc.Get().Program
 
-// Register hover provider
-monaco.languages.registerHoverProvider("genshin-cmd", {
-    provideHover(model, position) {
-        const word = model.getWordAtPosition(position)
-        if (!word) {
-            return undefined
-        }
+export function registerGenshinHover(langName: string, program: genshin.cmd2.Program<unknown>) {
+    const fullCommands = program.GetCommands()
+    const { findGroup } = getGroups(program)
 
-        const start = model.getValueInRange({
-            startLineNumber: position.lineNumber,
-            endLineNumber: position.lineNumber,
-            startColumn: word.startColumn - 1,
-            endColumn: word.startColumn
-        })
-        if (start === "$") {
-            const [, constants] = genshin.cmd2.FindConstants(model.getValue())
-            const value = constants[word.word.toLowerCase()]
-            if (!value) {
+    monaco.languages.registerHoverProvider(langName, {
+        provideHover(model, position) {
+            const word = model.getWordAtPosition(position)
+            if (!word) {
                 return undefined
             }
-            return {
-                range: {
-                    startLineNumber: position.lineNumber,
-                    endLineNumber: position.lineNumber,
-                    startColumn: word.startColumn,
-                    endColumn: word.endColumn
-                },
-                contents: [
-                    { value: "**" + GetString("LABEL.CONSTANT") + "**: `" + word.word + "`" },
-                    { value: "**" + GetString("LABEL.VALUE") + "**: `" + value + "`" }
-                ]
-            }
-        } else {
-            const cmdRange = {
+
+            const start = model.getValueInRange({
                 startLineNumber: position.lineNumber,
                 endLineNumber: position.lineNumber,
-                startColumn: 1,
-                endColumn: word.endColumn
-            }
-            // try with full command
-            let cmd = model.getValueInRange(cmdRange)
-                .replace(/\s+/g, " ")
-                .trim()
-
-            if (cmd.startsWith("rotation do") && cmd !== "rotation do") {
-                cmd = cmd.replace(/^rotation do/, "")
-                    .replace(/\s+/g, " ")
-                    .trim()
-            }
-            if (fullCommands.includes(cmd)) {
-                const help = Program.Help(cmd.split(" ")) || ""
-                return {
-                    range: cmdRange,
-                    contents: [
-                        {
-                            value: help.replace(/^\t+/gm, "")
-                        }
-                    ]
-                }
-            } else {
-                const group = FindGroup(word.word)
-                if (!group) {
+                startColumn: word.startColumn - 1,
+                endColumn: word.startColumn
+            })
+            if (start === "$") {
+                const [, constants] = genshin.cmd2.FindConstants(model.getValue())
+                const value = constants[word.word.toLowerCase()]
+                if (!value) {
                     return undefined
                 }
-                const description = (() => {
-                    if (group === "effects") {
-                        const ef = genshin.effects.FindByName(word.word)
-                        if (ef) {
-                            const json = JSON.stringify(ef.Options, null, 2)
-                            return (
-                                "**" + GetString("ITEM." + ef.Name) + "**\n\n" +
-                                GetString("ITEM." + ef.Name, { description: true }) + "\n" +
-                                "```json\n" + json + "\n```"
-                            )
-                        }
-                    }
-                    return GetString("LABEL.DESCRIPTION_NONE")
-                })()
                 return {
                     range: {
                         startLineNumber: position.lineNumber,
@@ -92,11 +35,70 @@ monaco.languages.registerHoverProvider("genshin-cmd", {
                         endColumn: word.endColumn
                     },
                     contents: [
-                        { value: "**" + GetString(groupLabels[group] || group) + "**: `" + word.word + "`" },
-                        { value: description }
+                        { value: "**" + GetString("LABEL.CONSTANT") + "**: `" + word.word + "`" },
+                        { value: "**" + GetString("LABEL.VALUE") + "**: `" + value + "`" }
                     ]
                 }
+            } else {
+                const cmdRange = {
+                    startLineNumber: position.lineNumber,
+                    endLineNumber: position.lineNumber,
+                    startColumn: 1,
+                    endColumn: word.endColumn
+                }
+                // try with full command
+                let cmd = model.getValueInRange(cmdRange)
+                    .replace(/\s+/g, " ")
+                    .trim()
+
+                if (cmd.startsWith("rotation do") && cmd !== "rotation do") {
+                    cmd = cmd.replace(/^rotation do/, "")
+                        .replace(/\s+/g, " ")
+                        .trim()
+                }
+                if (fullCommands.includes(cmd)) {
+                    const help = program.Help(cmd.split(" ")) || ""
+                    return {
+                        range: cmdRange,
+                        contents: [
+                            {
+                                value: help.replace(/^\t+/gm, "")
+                            }
+                        ]
+                    }
+                } else {
+                    const group = findGroup(word.word)
+                    if (!group) {
+                        return undefined
+                    }
+                    const description = (() => {
+                        if (group === "effects") {
+                            const ef = genshin.effects.FindByName(word.word)
+                            if (ef) {
+                                const json = JSON.stringify(ef.Options, null, 2)
+                                return (
+                                    "**" + GetString("ITEM." + ef.Name) + "**\n\n" +
+                                    GetString("ITEM." + ef.Name, { description: true }) + "\n" +
+                                    "```json\n" + json + "\n```"
+                                )
+                            }
+                        }
+                        return GetString("LABEL.DESCRIPTION_NONE")
+                    })()
+                    return {
+                        range: {
+                            startLineNumber: position.lineNumber,
+                            endLineNumber: position.lineNumber,
+                            startColumn: word.startColumn,
+                            endColumn: word.endColumn
+                        },
+                        contents: [
+                            { value: "**" + GetString(groupLabels[group] || group) + "**: `" + word.word + "`" },
+                            { value: description }
+                        ]
+                    }
+                }
             }
-        }
-    },
-})
+        },
+    })
+}

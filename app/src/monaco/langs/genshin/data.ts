@@ -1,4 +1,3 @@
-import { Calc } from "@src/genshin/calc"
 import { genshin } from "@src/genshin/core"
 
 export const characters = genshin.characters.GetList().map(char => char.Name)
@@ -14,20 +13,46 @@ export const auras = genshin.stats.aura.Values()
     .map(v => genshin.stats.aura.Name(v))
     .filter(s => s !== "LEVEL")
 
-export const cmd = Calc.Get().Program
-export const commands = Object.keys(cmd.Get())
-export const fullCommands = cmd.GetCommands()
+/**
+ * Gets the groups of tokens for the language
+ * @param commands The program to get the commands from
+ */
+export function getGroups(program: genshin.cmd2.Program<unknown>) {
+    const commands = Object.keys(program.Get())
+    const groups: { [x: string]: string[] } = {
+        characters,
+        stats,
+        effects,
+        commands,
+        weapons,
+        sets,
+        auras,
+        foods
+    }
 
-export const groups: { [x: string]: string[] } = {
-    characters,
-    stats,
-    effects,
-    commands,
-    weapons,
-    sets,
-    auras,
-    foods
+    const suggestions = Object
+        .values(groups)
+        .reduce((a, b) => {
+            b.forEach(b => a.push(b))
+            return a
+        }, [])
+
+    function findGroup(word: string): string | undefined {
+        word = word.toLowerCase().trim()
+        for (const group in groups) {
+            for (let key of groups[group]) {
+                key = key.toLowerCase().trim()
+                if (key === word) {
+                    return group
+                }
+            }
+        }
+        return undefined
+    }
+
+    return { groups, suggestions, findGroup }
 }
+
 export const groupLabels: { [x: string]: string } = {
     characters: "LABEL.CHARACTER",
     stats: "LABEL.STAT",
@@ -37,23 +62,4 @@ export const groupLabels: { [x: string]: string } = {
     sets: "LABEL.SET",
     auras: "LABEL.AURA",
     foods: "LABEL.EFFECTS_FOOD",
-}
-export const suggestions = Object
-    .values(groups)
-    .reduce((a, b) => {
-        b.forEach(b => a.push(b))
-        return a
-    }, [])
-
-export function FindGroup(word: string): string | undefined {
-    word = word.toLowerCase().trim()
-    for (const group in groups) {
-        for (let key of groups[group]) {
-            key = key.toLowerCase().trim()
-            if (key === word) {
-                return group
-            }
-        }
-    }
-    return undefined
 }
