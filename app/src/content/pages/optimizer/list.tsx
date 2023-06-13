@@ -1,5 +1,6 @@
 import { PageArtifactsOptimizer } from "./artifacts"
 import { PageFoodOptimizer } from "./food"
+import { PageGeneralOptimizer } from "./general"
 import { PageMainstatsOptimizer } from "./mainstats"
 import { PageNextRollOptimizer } from "./nextroll"
 import { PageSetOptimizer } from "./set"
@@ -31,6 +32,11 @@ export const OptimizerList = [
     path: "weapon",
     string: "OPTIMIZER.WEAPON",
     element: <PageWeaponOptimizer />
+  },
+  {
+    path: "general",
+    string: "OPTIMIZER.GENERAL",
+    element: <PageGeneralOptimizer />
   },
   {
     path: "food",
