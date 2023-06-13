@@ -1,38 +1,62 @@
+import { CombinationGroup } from "./type"
 import { Combinator } from "./combinator"
 
 describe("Combination of multiple groups of weapons and artifacts", () => {
-
-    const generator = Combinator.Generate(
+    const groups: CombinationGroup[] = [
         {
-            weapon: [{
-                name: ["A", "B"],
-                rank: [1, 2]
-            }],
-            artifact: [{
-                sands: [3, 4],
-                goblet: [5, 6],
-                circlet: [7, 8]
-            }]
+            weapon: [
+                // (2*2
+                {
+                    name: ["A", "B"],
+                    rank: [1, 2]
+                },
+                // + 3*3)
+                {
+                    name: ["X", "Y", "Z"],
+                    rank: [33, 44, 11]
+                }],
+            // * 
+            artifact: [
+                // (2*2*2)
+                {
+                    sands: [3, 4],
+                    goblet: [5, 6],
+                    circlet: [7, 8]
+                }
+            ]
         },
+        // +
         {
-            weapon: [{
-                name: ["I", "J", "K"],
-                rank: [3]
-            }],
-            artifact: [{
-                sands: [9, 10],
-                goblet: [11, 12, 13],
-                circlet: [14, 15]
-            }]
+            weapon: [
+                // (3*1)
+                {
+                    name: ["I", "J", "K"],
+                    rank: [3]
+                }
+            ],
+            // *
+            artifact: [
+                // (2*3*2)
+                {
+                    sands: [9, 10],
+                    goblet: [11, 12, 13],
+                    circlet: [14, 15]
+                }
+            ]
         }
-    )
+    ]
+    const generator = Combinator.Generate(...groups)
 
-    const count = ((2 ** 2) * (2 ** 3)) + (3 * 2 * 2 * 3)
+    const count = (2 * 2 + 3 * 3) * (2 * 2 * 2) + (3 * 1) * (2 * 3 * 2)
     const result = Array.from(generator)
 
     test("should generate all combinations", () => (
         expect(result.length).toBe(count)
     ))
+
+    test("counting is correct", () => {
+        expect(result.length).toBe(Combinator.Count(...groups))
+    })
 
     test("should generate all combinations with the correct types", () => {
         for (const combination of result) {

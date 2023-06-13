@@ -1,5 +1,5 @@
 import { CombinateArrays } from "@src/utils/combinations/arrays"
-import { ArrayObject, CombinateArrayObjects } from "@src/utils/combinations/array_objects"
+import { ArrayObject, CombinateArrayObject, CountArrayObject } from "@src/utils/combinations/array_objects"
 import { Artifacts, Combination, Weapon, CombinationGroup } from "./type"
 
 /**
@@ -30,9 +30,9 @@ export class Combinator {
     public * generate() {
         const groups = CombinateArrays(this.weapons, this.artifacts)
         for (const group of groups) {
-            const weapons = CombinateArrayObjects(group[0])
+            const weapons = CombinateArrayObject(group[0])
             for (const weapon of weapons) {
-                const artifacts = CombinateArrayObjects(group[1])
+                const artifacts = CombinateArrayObject(group[1])
                 for (const artifact of artifacts) {
                     yield { weapon, artifact } as Combination
                 }
@@ -67,5 +67,22 @@ export class Combinator {
             yield* combinator.generate()
             combinator.clear()
         }
+    }
+
+    /**
+     * Counts the number of combinations that will be generated in the given groups.
+     */
+    public static Count(...combinations: CombinationGroup[]) {
+        let result = 0
+        for (const combination of combinations) {
+            const weapons = combination.weapon
+                .map(weapon => CountArrayObject(weapon))
+                .reduce((a, b) => a + b, 0)
+            const artifacts = combination.artifact
+                .map(artifact => CountArrayObject(artifact))
+                .reduce((a, b) => a + b, 0)
+            result += weapons * artifacts
+        }
+        return result
     }
 }

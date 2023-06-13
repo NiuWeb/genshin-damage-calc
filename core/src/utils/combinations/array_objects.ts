@@ -30,7 +30,7 @@ export type ArrayObjectDeep<T> = {
  * ]
  * ```
  */
-export function* CombinateArrayObjects<T>(group: ArrayObject<T>) {
+export function* CombinateArrayObject<T>(group: ArrayObject<T>) {
     const keys = Object.keys(group) as (keyof T)[]
     const values = keys.map(key => group[key])
 
@@ -47,4 +47,16 @@ export function* CombinateArrayObjects<T>(group: ArrayObject<T>) {
 
         yield result as T
     }
+}
+
+/**
+ * Counts the number of combinations that will be generated in the given object of arrays.
+ */
+export function CountArrayObject<T>(group: ArrayObject<T>): number {
+    let count = 1
+    const keys = Object.keys(group) as (keyof T)[]
+    for (const key of keys) {
+        count *= group[key].length
+    }
+    return count
 }

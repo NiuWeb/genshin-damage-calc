@@ -1,7 +1,7 @@
-import { CombinateArrayObjects } from "./array_objects"
+import { CombinateArrayObject, CountArrayObject } from "./array_objects"
 
 describe("combinations of array objects", () => {
-    const gen = CombinateArrayObjects({
+    const gen = CombinateArrayObject({
         a: [1, 2, 3, 4],
         b: ["a", "b"],
         c: [{ a: 8 }, { a: 9 }, { a: 10 }],
@@ -18,5 +18,16 @@ describe("combinations of array objects", () => {
             expect(typeof combi.b).toBe("string")
             expect(typeof combi.c).toBe("object")
         }
+    })
+})
+
+describe("Count combinations withouth generating them", () => {
+    test("count array object", () => {
+        const count = CountArrayObject({
+            a: [1, 2, 3, 4],
+            b: ["a", "b"],
+            c: [{ a: 8 }, { a: 9 }, { a: 10 }],
+        })
+        expect(count).toBe(4 * 2 * 3)
     })
 })
