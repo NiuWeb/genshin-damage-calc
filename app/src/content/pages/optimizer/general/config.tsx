@@ -1,9 +1,7 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
 import { OptimizerButton } from "@src/components/genshin/optimizer/button"
 import { GeneralConfig } from "@src/components/genshin/optimizer/general/config"
 import { useCalc } from "@src/genshin/context"
 import { RunOptimizer } from "@src/genshin/run/optimizer"
-import { Alert } from "@src/popup/alert"
 import { GetString } from "@src/strings/strings"
 import { PrettyMs } from "@src/utils/pretty-ms"
 
@@ -12,14 +10,10 @@ export function Config() {
 
   async function optimize() {
 
-    // run in client to get logs
-    calc.ConsoleVisible = true
-    calc.Log("[CLIENT] General optimizer log:")
-    const prog = new genshin.optimizer.general.CombinatorCmd()
-    prog.Program.Log.Out = () => void 0
-    prog.Program.CompileString(calc.Config.General.ConfigCmd)()
-
-    const { time, result, error } = await RunOptimizer("GeneralOptimizer", calc.Config.General, { chunk: 10 })
+    const { time, result } = await RunOptimizer("GeneralOptimizer", {
+      Target: calc.Get().Scenario.Character?.GetCharacter().Options.Name,
+      ...calc.Config.General,
+    }, { chunk: 10 })
 
     exec(calc => {
       calc.Log("[WORKER] General optimizer:", GetString("LABEL.PROCESS_ENDED_TIME_X", {
@@ -30,9 +24,6 @@ export function Config() {
     })
 
     console.log(result)
-    if (error) {
-      Alert({ content: error })
-    }
   }
 
   return <div className="flex flex-col gap-1">
