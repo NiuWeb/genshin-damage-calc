@@ -30,7 +30,7 @@ export class CombinatorCmd {
             },
             "weapon": {
                 description: "Adds weapons to be combined, in the form:\n" +
-                    "```\nweapon <name> [rank=] [stacks=] [condition=] [aura=]\n```\n" +
+                    "```\nweapon <name> [rank=] [stacks=] [condition=] [aura=] [target=]\n```\n" +
                     "- The weapon name can be a partial or similar name, and can be `all`, `4*`, or `5*`.\n" +
                     "- Rank and stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +
                     "- Conditions and auras can also be lists, e.g. `aura=pyro,hydro`.\n",
@@ -44,19 +44,21 @@ export class CombinatorCmd {
                             "  Rank: %s\n" +
                             "  Stacks: %s\n" +
                             "  Condition: %s\n" +
-                            "  Aura: %s",
+                            "  Aura: %s\n" +
+                            "  Target: %s\n",
                             combi.name.join(", "),
                             combi.rank.join(", "),
                             combi.stacks?.join(", "),
                             combi.condition?.join(", ") ?? "",
                             combi.aura?.join(", ") ?? "",
+                            combi.target?.join(", ") ?? "",
                         )
                     }
                 }
             },
             "artifact": {
                 description: "Adds artifacts to be combined, in the form:\n" +
-                    "```\nartifact [main=] [set=] [stacks=] [condition=] [aura=]\n```\n" +
+                    "```\nartifact [main=] [set=] [stacks=] [condition=] [aura=] [target=]\n```\n" +
                     "- The main stat is in the form `main=sands,goblet,circlet`, where each slot can " +
                     "have multiple options separated by `/`.\n" +
                     "- Stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +
@@ -76,13 +78,15 @@ export class CombinatorCmd {
                             "  Circlet: %s\n" +
                             "  Stacks: %s\n" +
                             "  Condition: %s\n" +
-                            "  Aura: %s",
+                            "  Aura: %s\n" +
+                            "  Target: %s\n",
                             combi.sands.map(x => stats.stat.Name(x)).join(", "),
                             combi.goblet.map(x => stats.stat.Name(x)).join(", "),
                             combi.circlet.map(x => stats.stat.Name(x)).join(", "),
                             combi.stacks?.join(", "),
                             combi.condition?.join(", ") ?? "",
                             combi.aura?.join(", ") ?? "",
+                            combi.target?.join(", ") ?? "",
                         )
                         if (subs) {
                             Log.Log("Applied substats optimization to artifacts")

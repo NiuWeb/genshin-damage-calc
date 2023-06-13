@@ -6,6 +6,7 @@ export interface Effect {
     stacks: number
     condition: string[]
     aura: string[]
+    target: string[]
 }
 
 export interface Weapon extends Partial<Effect> {
