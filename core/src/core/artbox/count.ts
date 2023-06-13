@@ -1,4 +1,12 @@
 export type Grouped = [name: string, count: number][]
+
+/**
+ * Counts the artifact sets bonus enabled in the given sets list.
+ * The input list is meant to represent individual artifacts, and
+ * the result will be the sets with 2 or 4 pieces.
+ * @param sets 
+ * @returns two items: sets grouped in the form `[name, count]`, and the names of the sets.
+ */
 export function CountSets(sets: (string | undefined)[]): [Grouped, string[]] {
     const base: [name: string, count: number][] = []
 
