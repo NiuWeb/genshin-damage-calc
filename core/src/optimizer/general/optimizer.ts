@@ -8,7 +8,9 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
     private generator: Generator<Combination> | undefined = undefined
     protected init(config: Config): void {
         const cmd = new CombinatorCmd()
-        cmd.Program.CompileString(config.ConfigCmd)()
+        cmd.Program.CompileString(config.ConfigCmd, {
+            constants: this.getConstants()
+        })()
         this.generator = Combinator.Generate(...cmd.Groups())
         this.setTotal(Combinator.Count(...cmd.Groups()))
     }
