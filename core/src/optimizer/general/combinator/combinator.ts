@@ -18,6 +18,17 @@ export class Combinator {
     }
 
     /**
+     * Gets the weapons, or an array with a single empty item 
+     * if no weapons are defined.
+     */
+    public getWeapons(): ArrayObject<Weapon>[] {
+        if (this.weapons.length > 0) {
+            return this.weapons
+        }
+        return [{ empty: [true], name: [""], rank: [0] }]
+    }
+
+    /**
      * Adds a group of artifacts to be combined.
      */
     public addArtifacts(artifacts: ArrayObject<Artifacts>) {
@@ -25,10 +36,21 @@ export class Combinator {
     }
 
     /**
+     * Gets the artifacts, or an array with a single empty item
+     * if no artifacts are defined.
+     */
+    public getArtifacts(): ArrayObject<Artifacts>[] {
+        if (this.artifacts.length > 0) {
+            return this.artifacts
+        }
+        return [{ empty: [true], sands: [0], goblet: [0], circlet: [0] }]
+    }
+
+    /**
      * Generates all combinations.
      */
     public * generate() {
-        const groups = CombinateArrays(this.weapons, this.artifacts)
+        const groups = CombinateArrays(this.getWeapons(), this.getArtifacts())
         for (const group of groups) {
             const weapons = CombinateArrayObject(group[0])
             for (const weapon of weapons) {

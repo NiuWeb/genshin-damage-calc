@@ -9,11 +9,13 @@ export interface Effect {
 }
 
 export interface Weapon extends Partial<Effect> {
+    empty?: boolean
     name: string
     rank: number
 }
 
 export interface Artifacts extends Partial<Effect> {
+    empty?: boolean
     sands: number
     goblet: number
     circlet: number

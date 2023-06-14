@@ -6,6 +6,93 @@ const createCmd = () => {
     cmd.Program.Log.Out = () => void 0
     return cmd
 }
+describe("combinations generation", () => {
+    test("can generate if no artifacts defined", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon thecatch rank=1,5
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(2)
+    })    
+    test("can generate if no weapon defined", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            artifact main=atk%,atk%,cr/cd
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(2)
+    })
+    
+    test("can generate single weapon", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon thecatch rank=1
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(1)
+    })  
+    test("can generate single artifact", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            artifact main=atk%,atk%,cr
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(1)
+    })    
+    test("can generate single weapon and artifact", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon thecatch rank=1
+            artifact main=atk%,atk%,cr
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(1)
+    })    
+    test("can generate multiple weapons and single artifact", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon thecatch rank=1,5
+            artifact main=atk%,atk%,cr
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(2)
+    })     
+    test("can generate single weapon and multiple artifacts", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon thecatch rank=1
+            artifact main=atk%/em,atk%,cr/cd
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(4)
+    }) 
+       
+    test("no combinations will work", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            add
+        `)()
+
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(1)
+    }) 
+})
+
 
 describe("Substats and filters are applied only when enabled", () => {
     test("disabled by default", () => {
@@ -26,7 +113,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.Program.CompileString(`
             substats enable
-            weapon thecatch rank=1
+            artifact main=atk%,atk%,atk%
             add
         `)()
 
@@ -41,7 +128,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.Program.CompileString(`
             substats range cr=0:10 cd=0:12
-            weapon thecatch rank=1
+            artifact main=atk%,atk%,atk%
             add
         `)()
 
@@ -55,7 +142,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.Program.CompileString(`
             substats default
-            weapon thecatch rank=1
+            artifact main=atk%,atk%,atk%
             add
         `)()
 
@@ -71,11 +158,11 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.Program.CompileString(`
             substats range cr=0:10 cd=0:12
-            weapon thecatch rank=1
+            artifact main=atk%,atk%,atk%
             add
 
             substats disable
-            weapon thecatch rank=5
+            artifact main=atk%,atk%,atk%
             add
         `)()
 

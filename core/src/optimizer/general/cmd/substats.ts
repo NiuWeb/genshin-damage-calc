@@ -204,6 +204,8 @@ export class CombinatorSubstats {
                     return () => {
                         const table = this.DefaultRange()
                         Log.Log("Substat optimization ranges reset to default:\n" + table)
+                        this.Enabled = true
+                        Log.Log("Substat optimization enabled")
                     }
                 }
             }
