@@ -1,7 +1,8 @@
-import { Constants } from "@src/cmd2"
+import { Constants, Logger } from "@src/cmd2"
 import { Exported, Export, Import } from "@src/core/charbox"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
+import { GetThreadType, THREAD_TYPE } from "@src/worker/actions/optimizer/config"
 import { Optimizer } from "../optimizer"
 import { CombinatorCmd } from "./cmd"
 import { Combination, Combinator, equipCombinationCmd } from "./combinator"
@@ -17,17 +18,25 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
     private results = new PriorityQueue<Result>()
 
     protected init(config: Config): void {
-        const cmd = new CombinatorCmd()
         this.constants = this.getConstants()
+
+        const cmd = new CombinatorCmd()
+        cmd.Program.Log = new Logger()
+        cmd.Program.Log.Out = () => void 0
         cmd.Program.CompileString(config.ConfigCmd, {
             constants: this.constants
         })()
+
         this.generator = Combinator.Generate(...cmd.Groups())
         this.setTotal(Combinator.Count(...cmd.Groups()))
 
         if (this.target) {
             this.initState = Export(this.target)
             this.initDamage = this.Run()
+        }
+
+        if (GetThreadType() === THREAD_TYPE.MAIN_WORKER) {
+            console.log("[MAIN WORKER INIT LOG]\n" + cmd.Program.Log)
         }
     }
     *Generate() {

@@ -4,8 +4,6 @@ import { BackendAction } from "@src/worker/action"
 import { FromWorker, WORKER_PATHS, Register, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
 import { OptimizerChild } from "./frontend-child"
 
-SetThreadType(THREAD_TYPE.MAIN_WORKER)
-
 /**
  * The main worker will spawn a number of child workers
  * and distribute the rows to evaluate between them.
@@ -28,6 +26,8 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
     }
 
     async Run(id: string, data: ToWorker) {
+        SetThreadType(THREAD_TYPE.MAIN_WORKER)
+
         // disable logs
         Logger.Global.SaveLogs = false
         Logger.Global.Out = () => void 0
@@ -83,8 +83,6 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         children.forEach(child => child.Kill())
         this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result })
     }
-
-
 }
 
 function Spawn(children: number) {

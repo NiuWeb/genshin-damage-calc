@@ -4,8 +4,6 @@ import { OptimizerConfig } from "@src/optimizer/type"
 import { BackendAction } from "@src/worker/action"
 import { FromWorker, WORKER_PATHS, Register, ToChildWorker, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
 
-SetThreadType(THREAD_TYPE.CHILD_WORKER)
-
 /**
  * The child workers will recieve a "fragment" of the
  * total rows to evaluate, called a chunk.
@@ -25,6 +23,8 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
     optimizer?: Optimizer<unknown, unknown, OptimizerConfig>
 
     Init(id: string, data: ToWorker): void {
+        SetThreadType(THREAD_TYPE.CHILD_WORKER)
+
         // disable logs
         Logger.Global.SaveLogs = false
         Logger.Global.Out = () => void 0
