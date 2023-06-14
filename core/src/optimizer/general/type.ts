@@ -1,5 +1,6 @@
 import { OptimizerConfig } from "../type"
 import { Combination } from "./combinator"
+import { Result as SubstatsResult } from "../substats"
 
 /** base config for the optimizer */
 export interface BaseConfig {
@@ -19,4 +20,5 @@ export interface Result {
     combination: Combination
     damage: number
     relative: number
+    substats?: SubstatsResult
 }

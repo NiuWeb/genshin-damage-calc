@@ -4,6 +4,7 @@ import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { GetThreadType, THREAD_TYPE } from "@src/worker/actions/optimizer/config"
 import { Optimizer } from "../optimizer"
+import { SubstatsOptimizer, Result as SubstatsResult } from "../substats"
 import { CombinatorCmd } from "./cmd"
 import { Combination, Combinator, equipCombinationCmd } from "./combinator"
 import { Config, Result } from "./type"
@@ -52,11 +53,20 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
         const config = runner.Program.CompileString(cmd, this.constants)
         config()
 
+        let damage = 0
+        let substats: SubstatsResult | undefined = undefined
         if (combination.artifact.substats) {
-            void "optimize substats"
+            const subsOptimizer = new SubstatsOptimizer()
+            subsOptimizer.Init({ ...this.GetConfig(), ...combination.artifact.substats })
+            for (const combi of subsOptimizer.Generate()) {
+                subsOptimizer.Insert(subsOptimizer.Evaluate(combi))
+            }
+            substats = subsOptimizer.Get()[0]
+            damage = substats.damage
+        } else {
+            damage = this.Run()
         }
 
-        const damage = this.Run()
         const relative = damage / this.initDamage
 
         if (combination.artifact.substats) {
@@ -64,7 +74,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
             Import(this.initState!, target)
         }
 
-        return { combination, damage, relative }
+        return { combination, ...substats, damage, relative }
     }
     Insert(result: Result): void {
         this.results.Push(result, result.damage)
