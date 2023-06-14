@@ -124,6 +124,7 @@ export class CombinatorSubstats {
                 description: "Sets the total substat rolls to optimize. " +
                     "Values must be between 0 and 45.",
                 arguments: ["total"],
+                example: "substats total 25 // optimize for 25 substat rolls",
                 compile: ({ Log }, [strval]) => {
                     const total = parseInt(strval)
                     if (isNaN(total) || total < 0 || total > 45) {
@@ -140,6 +141,8 @@ export class CombinatorSubstats {
             "tier": {
                 description: "Sets the tier of substat rolls to optimize. \n",
                 arguments: ["0 | 1 | 2 | 3 | avg = 4"],
+                example: "substats tier 3 // optimize max-rolls\n" +
+                    "substats tier avg // optimize average rolls",
                 compile: ({ Log }, [str]) => {
                     let tier: number
                     let msg: string
@@ -166,6 +169,7 @@ export class CombinatorSubstats {
                     "`range <stat>=<min>:<max> [stat2=<min>:<max> ...]`\n\n" +
                     "When executed, the substats optimization will be enabled.",
                 arguments: ["..."],
+                example: "substats range atk=2:12 cr=2:10 cd=2:12 em=2:12 // standard range",
                 compile: ({ Log }, args) => {
                     return () => {
                         const table = this.ParseRange(args)

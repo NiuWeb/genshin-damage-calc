@@ -42,6 +42,10 @@ export class CombinatorCmd {
                     "- Rank and stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +
                     "- Conditions and auras can also be lists, e.g. `aura=pyro,hydro`.\n",
                 arguments: ["name", "opts..."],
+                example: "weapon all // all weapons\n" +
+                    "weapon 4* // all 4* weapons\n" +
+                    "weapon jadespear rank=1,5 stacks=0:7 // Jade Spear, rank 1 or 5, all stacks\n" +
+                    "weapon thrillingtales rank=5 target=mona // Thrilling Tales, rank 5, apply to Mona\n",
                 compile: ({ Log }, args) => {
                     const combi = parser.Parse(args)
                     return () => {
@@ -71,6 +75,9 @@ export class CombinatorCmd {
                     "- Stacks can be defined as a list, e.g. `rank=1,2,3`, or a range, e.g. `rank=1:3`.\n" +
                     "- Conditions and auras can also be lists, e.g. `aura=pyro,hydro`.\n",
                 arguments: ["..."],
+                example: "// compare 4pc Crimson Witch and Emblem of Severed Fate,\n" +
+                    "// with ATK% vs EM sands, Pyro goblet, and CR vs CD circlet\n" +
+                    "artifact main=atk%/em,pyro,cr/cd set=crimson*4,emblem*4",
                 compile: ({ Log }, args) => {
                     const origin = parseArtifactArgs(args)
 
