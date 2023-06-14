@@ -6,6 +6,20 @@ import { OptimizerChild } from "./frontend-child"
 
 SetThreadType(THREAD_TYPE.MAIN_WORKER)
 
+/**
+ * The main worker will spawn a number of child workers
+ * and distribute the rows to evaluate between them.
+ * 
+ * The size of the chunk will be split into the number
+ * of child workers, and the worker will wait for all
+ * child workers to finish their fragment before
+ * requesting another chunk.
+ * 
+ * This main worker also sends to the main thread
+ * the progress of the evaluation once each chunk
+ * is evaluated, and is terminated once all the
+ * rows are evaluated.
+ */
 export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
     constructor() {
         super({
@@ -18,8 +32,11 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         Logger.Global.SaveLogs = false
         Logger.Global.Out = () => void 0
 
+        // initialize the requested optimizer
         const optimizer = new Register[data.tool]()
         optimizer.Init(data.config as never)
+
+        // send initialization message to main thread including the total number of rows
         const total = optimizer.GetTotal()
         this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress: 0, total })
 
@@ -27,9 +44,14 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
 
         console.log(`[WORKER] Spawning ${data.children} child workers`)
 
+        // spawn all the child workers before continuing
         const children = Spawn(data.children)
         await Promise.all(children.map(child => child.Init({ ...data, rows: [] })))
 
+        // the optimizer initialized in this main worker will be in charge of
+        // generating the combinations to evaluate.
+
+        // get the type of the generator
         type gen = ReturnType<typeof optimizer.Generate> extends Generator<infer T, void, void> ? T : never
         // group the combinations in chunks
         const generator = GenerateChunks<gen>(CHUNKS * children.length, optimizer.Generate())
@@ -47,11 +69,13 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
                 return a
             }, [])
 
+            // insert the results in the optimizer
             for (const result of results) {
                 optimizer.Insert(result as never)
             }
-            progress += chunk.length
 
+            // send the progress to the main thread
+            progress += chunk.length
             this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress, total })
         }
         const result = optimizer.Get()

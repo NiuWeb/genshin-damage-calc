@@ -6,6 +6,11 @@ export type OptimizerKey = keyof Register
 export type OptimizerConfig<Tool extends OptimizerKey> = ToWorker<Tool>["config"]
 export type OptimizerResult<Tool extends OptimizerKey> = FromWorker<Tool>["result"]
 
+/**
+ * The optimizer client is meant to run in the main thread,
+ * and will spawn a single worker (the main worker) that
+ * will spawn a number of child workers.
+ */
 export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
 
     Children = 1
@@ -23,11 +28,14 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
     Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<FromWorker<Tool>["result"]> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
         return new Promise<FromWorker<Tool>["result"]>((resolve, reject) => {
+            // send the optimization request to the worker
             const id1 = this.worker.Post(WORKER_PATHS.BACKEND_RUN, {
                 tool, config,
                 children: this.Children,
                 chunk: this.Chunk
             })
+
+            // listen for the result
             const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN, (_, { id, result, progress, total }) => {
                 if (id !== id1) {
                     if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
@@ -39,6 +47,7 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
                 this.worker.RemoveListener(listener)
             })
 
+            // listen for errors
             const errListener = this.worker.AddErrorListener((error) => {
                 this.worker.RemoveErrorListener(errListener)
                 reject(error)
