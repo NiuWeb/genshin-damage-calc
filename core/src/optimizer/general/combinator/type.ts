@@ -1,5 +1,4 @@
-import { Filter } from "@src/optimizer/filter"
-import { SubstatRange } from "@src/optimizer/substats"
+import { BaseConfig } from "@src/optimizer/substats"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
 
 export interface Effect {
@@ -19,8 +18,7 @@ export interface Artifacts extends Partial<Effect> {
     goblet: number
     circlet: number
     set?: string[]
-    substats?: SubstatRange[]
-    filter?: Filter[]
+    substats?: BaseConfig
 }
 
 export interface Combination {

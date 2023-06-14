@@ -3,10 +3,19 @@ import { Config } from "./type"
 export const defaultConfig = (): Config => ({
     ConfigCmd: `
 # Uncomment the line below if you want to generate optimal substats
-# using the default ranges of rolls
-// substats default
+# using the default ranges of rolls:
+    // substats default
 # Also, you can define your own rolls range:
-// substats range atk%=0:12 cr=0:10 cd=0:12 em=0:12 er=0:12
+    // substats range atk%=0:12 cr=0:10 cd=0:12 em=0:12 er=0:12
+# And you can define minimum values for substats:
+    // substats min atk%=5 cr=3 cd=3 em=3 er=3
+# And general rolls configuration:
+    // substats tier 3   // use max rolls
+    // substats tier avg // use average rolls
+    // substats total 25 // optimize 25 rolls
+# By default, the substats optimization is disabled., which means
+# that it will be used the values defined in the artifacts.
+# Any of the commands above will enable the substats optimization.
 
 
 weapon 4* rank=1,5            # optimize all 4* weapons at rank 1 and 5

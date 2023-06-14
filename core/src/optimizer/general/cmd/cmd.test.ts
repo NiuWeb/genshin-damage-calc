@@ -18,7 +18,6 @@ describe("Substats and filters are applied only when enabled", () => {
         const group = cmd.Groups()[0]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).not.toBeDefined()
-            expect(combi.artifact.filter).not.toBeDefined()
         }
     })
 
@@ -34,7 +33,6 @@ describe("Substats and filters are applied only when enabled", () => {
         const group = cmd.Groups()[0]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).toBeDefined()
-            expect(combi.artifact.filter).toBeDefined()
         }
     })
 
@@ -50,7 +48,6 @@ describe("Substats and filters are applied only when enabled", () => {
         const group = cmd.Groups()[0]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).toBeDefined()
-            expect(combi.artifact.filter).toBeDefined()
         }
     })
 
@@ -65,7 +62,6 @@ describe("Substats and filters are applied only when enabled", () => {
         const group = cmd.Groups()[0]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).toBeDefined()
-            expect(combi.artifact.filter).toBeDefined()
         }
 
         console.log("\n" + cmd.Program.Log)
@@ -86,13 +82,11 @@ describe("Substats and filters are applied only when enabled", () => {
         let group = cmd.Groups()[0]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).toBeDefined()
-            expect(combi.artifact.filter).toBeDefined()
         }
 
         group = cmd.Groups()[1]
         for (const combi of Combinator.Generate(group)) {
             expect(combi.artifact.substats).not.toBeDefined()
-            expect(combi.artifact.filter).not.toBeDefined()
         }
     })
 
