@@ -1,4 +1,5 @@
 import { OptimizerConfig } from "../type"
+import { Combination } from "./combinator"
 
 /** base config for the optimizer */
 export interface BaseConfig {
@@ -14,4 +15,8 @@ export interface Config extends BaseConfig, OptimizerConfig { }
 /**
  * A single result for the general optimizer
  */
-export type Result = number
+export interface Result {
+    combination: Combination
+    damage: number
+    relative: number
+}
