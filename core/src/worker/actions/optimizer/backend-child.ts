@@ -2,13 +2,15 @@ import { Logger } from "@src/cmd2"
 import { Optimizer } from "@src/optimizer/optimizer"
 import { OptimizerConfig } from "@src/optimizer/type"
 import { BackendAction } from "@src/worker/action"
-import { FromWorker, paths, Register, ToChildWorker, ToWorker } from "./config"
+import { FromWorker, WORKER_PATHS, Register, ToChildWorker, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
+
+SetThreadType(THREAD_TYPE.CHILD_WORKER)
 
 export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWorker> {
     constructor() {
         super({
-            [paths.BACKEND_CHILD_RUN + "/init"]: (id, data) => this.Init(id, data),
-            [paths.BACKEND_CHILD_RUN + "/run"]: (id, data) => this.Run(id, data)
+            [WORKER_PATHS.BACKEND_CHILD_RUN + "/init"]: (id, data) => this.Init(id, data),
+            [WORKER_PATHS.BACKEND_CHILD_RUN + "/run"]: (id, data) => this.Run(id, data)
         })
     }
 
@@ -23,7 +25,7 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
         optimizer.Init(data.config as never)
 
         console.log("[CHILD WORKER] Child worker initialized")
-        this.Post(paths.FRONTEND_CHILD_RUN + "/init", { id } as FromWorker)
+        this.Post(WORKER_PATHS.FRONTEND_CHILD_RUN + "/init", { id } as FromWorker)
     }
 
     Run(id: string, data: ToChildWorker) {
@@ -36,7 +38,7 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
         }
         const result = this.optimizer.Get() as FromWorker["result"]
 
-        this.Post(paths.FRONTEND_CHILD_RUN + "/run", {
+        this.Post(WORKER_PATHS.FRONTEND_CHILD_RUN + "/run", {
             id,
             result,
         })

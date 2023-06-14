@@ -1,5 +1,5 @@
 import { FrontendAction } from "@src/worker/action"
-import { FromWorker, paths, Register, ToWorker } from "./config"
+import { FromWorker, WORKER_PATHS, Register, ToWorker } from "./config"
 
 
 export type OptimizerKey = keyof Register
@@ -23,12 +23,12 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
     Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<FromWorker<Tool>["result"]> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
         return new Promise<FromWorker<Tool>["result"]>((resolve, reject) => {
-            const id1 = this.worker.Post(paths.BACKEND_RUN, {
+            const id1 = this.worker.Post(WORKER_PATHS.BACKEND_RUN, {
                 tool, config,
                 children: this.Children,
                 chunk: this.Chunk
             })
-            const listener = this.worker.AddListener(paths.FRONTEND_RUN, (_, { id, result, progress, total }) => {
+            const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN, (_, { id, result, progress, total }) => {
                 if (id !== id1) {
                     if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
                         this.OnProgress(progress || 0, total || 0)

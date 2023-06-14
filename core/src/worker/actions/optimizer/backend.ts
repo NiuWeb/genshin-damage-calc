@@ -1,13 +1,15 @@
 import { Logger } from "@src/cmd2"
 import { GenerateChunks } from "@src/utils/generator/chunks"
 import { BackendAction } from "@src/worker/action"
-import { FromWorker, paths, Register, ToWorker } from "./config"
+import { FromWorker, WORKER_PATHS, Register, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
 import { OptimizerChild } from "./frontend-child"
+
+SetThreadType(THREAD_TYPE.MAIN_WORKER)
 
 export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
     constructor() {
         super({
-            [paths.BACKEND_RUN]: (id, data) => this.Run(id, data)
+            [WORKER_PATHS.BACKEND_RUN]: (id, data) => this.Run(id, data)
         })
     }
 
@@ -19,7 +21,7 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         const optimizer = new Register[data.tool]()
         optimizer.Init(data.config as never)
         const total = optimizer.GetTotal()
-        this.Post(paths.FRONTEND_RUN, { id: "progress:" + id, result: [], progress: 0, total })
+        this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress: 0, total })
 
         const CHUNKS = data.chunk
 
@@ -50,12 +52,12 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
             }
             progress += chunk.length
 
-            this.Post(paths.FRONTEND_RUN, { id: "progress:" + id, result: [], progress, total })
+            this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress, total })
         }
         const result = optimizer.Get()
 
         children.forEach(child => child.Kill())
-        this.Post(paths.FRONTEND_RUN, { id, result })
+        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result })
     }
 
 

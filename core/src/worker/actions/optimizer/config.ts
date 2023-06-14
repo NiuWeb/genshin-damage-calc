@@ -61,21 +61,32 @@ export interface FromWorker<Tool extends keyof Register = keyof Register> {
     total?: number
 }
 
-export enum paths {
+export enum WORKER_PATHS {
     BACKEND_RUN = "backend:optimizer/run",
     BACKEND_CHILD_RUN = "backend:optimizer/run/child",
     FRONTEND_RUN = "frontend:optimizer/run",
     FRONTEND_CHILD_RUN = "frontend:optimizer/run/child"
 }
 
-/*
-The optimizer workers are connected as shown on this diagram:
 
-                                         <------> [Child Worker]
-[Main thread] <------> [Main Worker] <----------> [Child Worker]
-                                         <------> [Child Worker]
+export enum THREAD_TYPE {
+    MAIN_THREAD,
+    MAIN_WORKER,
+    CHILD_WORKER
+}
 
-the main worker send chunks of rows to each child to be evaluated,
-then each child returns the evaluated results to the main worker,
-who instert and sorts them to finally returns the result to the main thread.
-*/
+let threadType = THREAD_TYPE.MAIN_THREAD
+
+/**
+ * Gets the current thread type
+ */
+export function GetThreadType(): THREAD_TYPE {
+    return threadType
+}
+
+/**
+ * Sets the current thread type
+ */
+export function SetThreadType(type: THREAD_TYPE) {
+    threadType = type
+}
