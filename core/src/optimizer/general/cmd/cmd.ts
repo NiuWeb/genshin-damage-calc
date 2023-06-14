@@ -3,10 +3,10 @@ import { stats } from "@src/core"
 import { CombinationGroup, Combinator } from "../combinator"
 import { parseArtifactArgs } from "./artifact"
 import { CombinatorSubstats } from "./substats"
-import { parseWeaponArgs } from "./weapon"
+import { WeaponParser } from "./weapon"
 
 /**
- * Configures combinations via command
+ * A program that configures combinations via commands.
  */
 export class CombinatorCmd {
     public readonly Program = new Program(this)
@@ -15,7 +15,14 @@ export class CombinatorCmd {
 
     public Substats = new CombinatorSubstats()
 
-    constructor() {
+    /**
+     * Creates a combinator command program.
+     * @param weaponType The weapon type to use for weapon commands. If not provided,
+     * all weapons will be used.
+     */
+    constructor(weaponType?: number) {
+        const parser = new WeaponParser(weaponType)
+
         this.Program.Set({
             "add": {
                 description: "Saves the current combinations group and starts a new one.",
@@ -36,7 +43,7 @@ export class CombinatorCmd {
                     "- Conditions and auras can also be lists, e.g. `aura=pyro,hydro`.\n",
                 arguments: ["name", "opts..."],
                 compile: ({ Log }, args) => {
-                    const combi = parseWeaponArgs(args)
+                    const combi = parser.Parse(args)
                     return () => {
                         this.combinator.addWeapon(combi)
                         Log.Logf(

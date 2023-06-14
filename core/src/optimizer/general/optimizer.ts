@@ -20,7 +20,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
     protected init(config: Config): void {
         this.constants = this.getConstants()
 
-        const cmd = new CombinatorCmd()
+        const cmd = new CombinatorCmd(this.target?.GetCharacter().Options.Weapon)
         cmd.Program.Log = new Logger()
         cmd.Program.Log.Out = () => void 0
         cmd.Program.CompileString(config.ConfigCmd, {
