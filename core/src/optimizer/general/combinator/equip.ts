@@ -6,7 +6,14 @@ import { Artifacts, Combination, Effect, Weapon } from "./type"
  * Creates a command to equip a combination.
  */
 export function equipCombinationCmd(combination: Combination): string {
-    return equipWeaponCmd(combination.weapon) + "\n" + equipArtifactsCmd(combination.artifact)
+    let result = ""
+    if (!combination.weapon.empty) {
+        result += equipWeaponCmd(combination.weapon) + "\n"   
+    }
+    if (!combination.artifact.empty) {
+        result += equipArtifactsCmd(combination.artifact)
+    }
+    return result
 }
 
 function equipWeaponCmd(weapon: Weapon): string {
