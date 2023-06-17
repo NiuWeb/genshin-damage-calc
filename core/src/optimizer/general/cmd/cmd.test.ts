@@ -81,6 +81,23 @@ describe("combinations generation", () => {
         const combi = Array.from(Combinator.Generate(...cmd.Groups()))
         expect(combi.length).toBe(4)
     }) 
+
+    test("two groups of single combinations", () => {
+        const cmd = createCmd()
+        cmd.Program.CompileString(`
+            weapon sacrificial
+            artifact main=atk%,hydro,cr
+            add
+
+            weapon jade
+            artifact main=er,hydro,cd
+            add
+        `)()
+
+        
+        const combi = Array.from(Combinator.Generate(...cmd.Groups()))
+        expect(combi.length).toBe(2)
+    })
        
     test("no combinations will work", () => {
         const cmd = createCmd()

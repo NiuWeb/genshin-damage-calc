@@ -25,6 +25,16 @@ export function parseArtifactArgs(args: string[]): ArrayObject<Artifacts> {
         )
     const [sands, goblet, circlet] = mains
 
+    if (!sands) {
+        throw new Error("Main stat sands not found")
+    }
+    if (!goblet) {
+        throw new Error("Main stat goblet not found")
+    }
+    if (!circlet) {
+        throw new Error("Main stat circlet not found")
+    }
+
     const set = argsmap.get("set")?.map(x => parseSetNames(x))
 
     const result: ArrayObject<Artifacts> = { sands, goblet, circlet, ...getEffectArgs(argsmap) }
