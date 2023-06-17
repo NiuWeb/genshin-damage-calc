@@ -17,6 +17,7 @@ export const JadeCutter = weapon.Factory({
                 .Values(0.2, 0.25, 0.3, 0.35, 0.4)
                 .Next()
 
+                .observe.Target(stats.stat.HP_PERCENT, stats.stat.HP_FLAT, stats.stat.HP_BASE)
                 .stat
                 .Char(stats.stat.ATK_FLAT)
                 .Values(0.012, 0.015, 0.018, 0.021, 0.024)
