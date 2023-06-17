@@ -29,6 +29,8 @@ export interface Config extends OptimizerConfig, BaseConfig { }
 
 /** Substats optimizer result */
 export interface Result {
+    /** substat ids */
+    optimized: number[]
     /** Number of rolls of each substat */
     rolls: number[]
     /** Final value of each substat */

@@ -17,6 +17,7 @@ export interface Config extends BaseConfig, OptimizerConfig { }
  * A single result for the general optimizer
  */
 export interface Result {
+    cmd: string
     combination: Combination
     damage: number
     relative: number

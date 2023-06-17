@@ -9,7 +9,7 @@ import { CombinatorCmd } from "./cmd"
 import { Combination, Combinator, equipCombinationCmd } from "./combinator"
 import { Config, Result } from "./type"
 
-export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
+export class GeneralOptimizer extends Optimizer<Combination, Result | undefined, Config> {
     private generator: Generator<Combination> | undefined = undefined
     private constants: Constants = {}
 
@@ -44,12 +44,12 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         yield* this.generator!
     }
-    Evaluate(combination: Combination): Result {
+    Evaluate(combination: Combination): Result | undefined {
         const runner = this.GetRunner()
         const target = this.GetTarget()
         runner.Scenario.Character = target
 
-        const cmd = equipCombinationCmd(combination)
+        let cmd = equipCombinationCmd(combination)
         const config = runner.Program.CompileString(cmd, this.constants)
         config()
 
@@ -57,12 +57,21 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
         let substats: SubstatsResult | undefined = undefined
         if (combination.artifact.substats) {
             const subsOptimizer = new SubstatsOptimizer()
-            subsOptimizer.Init({ ...this.GetConfig(), ...combination.artifact.substats })
+            subsOptimizer.SetParty(this.GetParty())
+            subsOptimizer.SetTarget(this.GetTarget())
+            subsOptimizer.SetRotation(this.GetRotation())
+            subsOptimizer.Init({ ...combination.artifact.substats })
             for (const combi of subsOptimizer.Generate()) {
                 subsOptimizer.Insert(subsOptimizer.Evaluate(combi))
             }
             substats = subsOptimizer.Get()[0]
+            if (!substats) {
+                return undefined
+            }
             damage = substats.damage
+            cmd += "\n" + subsOptimizer.EquipCmd(substats)
+
+            subsOptimizer.Clear()
         } else {
             damage = this.Run()
         }
@@ -74,9 +83,12 @@ export class GeneralOptimizer extends Optimizer<Combination, Result, Config> {
             Import(this.initState!, target)
         }
 
-        return { combination, ...substats, damage, relative }
+        return { cmd, combination, ...substats, damage, relative }
     }
-    Insert(result: Result): void {
+    Insert(result: Result | undefined): void {
+        if (!result) {
+            return
+        }
         this.results.Push(result, result.damage)
     }
     Get(): Result[] {

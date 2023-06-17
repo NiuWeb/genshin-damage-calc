@@ -63,9 +63,11 @@ export class SubstatsOptimizer extends Optimizer<number[], Result, Config> {
         ))
 
         const subs: number[] = []
+        const optimized: number[] = []
         mods.forEach(mod => {
             const stat = mod.GetProp()
             subs.push(target.GetCharacter().Get(stat))
+            optimized.push(stat)
         })
         const basic = [
             target.GetCharacter().Get(stats.stat.ATK),
@@ -78,9 +80,10 @@ export class SubstatsOptimizer extends Optimizer<number[], Result, Config> {
                 return {
                     rolls,
                     stats: subs,
+                    optimized,
                     damage: -1,
                     relative: 0,
-                    basic
+                    basic,
                 }
             }
         }
@@ -89,6 +92,7 @@ export class SubstatsOptimizer extends Optimizer<number[], Result, Config> {
         return {
             rolls,
             stats: subs,
+            optimized,
             damage,
             relative: damage / this.initDamage,
             basic
@@ -150,5 +154,10 @@ export class SubstatsOptimizer extends Optimizer<number[], Result, Config> {
             }))
             .reduce((a, b) => a + stats.stat.Name(b.stat) + " " + b.rolls + " ", "")
         return cmd
+    }
+
+    /** Disables all the modifiers used by the optimizer */
+    Clear() {
+        this.modifiers?.forEach(mod => mod.Disable())
     }
 }
