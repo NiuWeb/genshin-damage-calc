@@ -24,7 +24,8 @@ function equipWeaponCmd(weapon: Weapon): string {
 
     const lines = [
         `weapon set ${weapon.name}`,
-        `weapon rank ${weapon.rank}`
+        `weapon rank ${weapon.rank}`,
+        "weapon level 90"
     ]
     for (const ef of factory.Effects) {
         lines.push(
