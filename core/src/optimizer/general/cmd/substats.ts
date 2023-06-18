@@ -55,7 +55,7 @@ export class CombinatorSubstats {
         for (const [name, value] of argsmap) {
             const stat = getStat(name)
             if (!stat) throw new Error(`Substat "${name}" not found`)
-            let min = 0
+            let min = Infinity
             let max = 0
             value.forEach(x => {
                 const value = parseFloat(x)
