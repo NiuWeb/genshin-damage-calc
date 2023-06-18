@@ -4,6 +4,7 @@ import { useCalc } from "@src/genshin/context"
 import { RunOptimizer } from "@src/genshin/run/optimizer"
 import { GetString } from "@src/strings/strings"
 import { PrettyMs } from "@src/utils/pretty-ms"
+import { genshin } from "@src/genshin/core"
 
 export function Config() {
   const [calc, exec] = useCalc()
@@ -23,7 +24,13 @@ export function Config() {
       }))
     })
 
-    console.log(result)
+    if (result) {
+      const opt = genshin.optimizer.general.GeneralOptimizer.Format(result)
+      console.log(opt.toString())
+      result.forEach(r => {
+        r && console.log(r.cmd)
+      })
+    }
   }
 
   return <div className="flex flex-col gap-1">

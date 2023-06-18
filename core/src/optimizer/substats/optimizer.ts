@@ -1,4 +1,4 @@
-import { artbox, scaling, stats } from "@src/core"
+import { scaling, stats } from "@src/core"
 import { Modifier } from "@src/core/subject"
 import { strings } from "@src/strings"
 import { Table } from "@src/strings/table"
@@ -25,9 +25,7 @@ export class SubstatsOptimizer extends Optimizer<number[], Result, Config> {
         const arts = (() => {
             const arts = target.GetArtifacts()
             if (!arts) {
-                const a = new artbox.Artbox(target)
-                target.SetArtifacts(a)
-                return a
+                throw new Error("Cannot optimize substats without artifacts")
             }
             return arts
         })()

@@ -52,7 +52,7 @@ function equipArtifactsCmd(artifacts: Artifacts): string {
     ]
 
     if (artifacts.set) {
-        lines.push("artifact set " + artifacts.set.join(" "))
+        lines.push("artifact sets " + artifacts.set.join(" "))
         if (artifacts.set[0] === artifacts.set[1]) {
             const factory = sets.FindByName(artifacts.set[0])
             if (!factory) {

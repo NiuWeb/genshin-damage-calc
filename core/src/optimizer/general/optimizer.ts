@@ -1,5 +1,5 @@
 import { Constants, Logger } from "@src/cmd2"
-import { Exported, Export, Import } from "@src/core/charbox"
+import { ExportParty, ImportParty, ExportedParty } from "@src/core/charbox"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { GetThreadType, THREAD_TYPE } from "@src/worker/actions/optimizer/config"
@@ -7,6 +7,7 @@ import { Optimizer } from "../optimizer"
 import { SubstatsOptimizer, Result as SubstatsResult } from "../substats"
 import { CombinatorCmd } from "./cmd"
 import { Combination, Combinator, equipCombinationCmd } from "./combinator"
+import { formatResults } from "./format"
 import { Config, Result } from "./type"
 
 export class GeneralOptimizer extends Optimizer<Combination, Result | undefined, Config> {
@@ -14,7 +15,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
     private constants: Constants = {}
 
     private initDamage = 0
-    private initState?: Exported
+    private initState?: ExportedParty
 
     private results = new PriorityQueue<Result>()
 
@@ -31,8 +32,8 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         this.generator = Combinator.Generate(...cmd.Groups())
         this.setTotal(Combinator.Count(...cmd.Groups()))
 
-        if (this.target) {
-            this.initState = Export(this.target)
+        if (this.party) {
+            this.initState = ExportParty(this.party)
             this.initDamage = this.Run()
         }
 
@@ -66,24 +67,25 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
             }
             substats = subsOptimizer.Get()[0]
             if (!substats) {
+                subsOptimizer.Clear()
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                ImportParty(this.initState!, this.party!)
+
                 return undefined
             }
             damage = substats.damage
             cmd += "\n" + subsOptimizer.EquipCmd(substats)
 
             subsOptimizer.Clear()
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            ImportParty(this.initState!, this.party!)
         } else {
             damage = this.Run()
         }
 
         const relative = damage / this.initDamage
 
-        if (combination.artifact.substats) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            Import(this.initState!, target)
-        }
-
-        return { cmd, combination, ...substats, damage, relative }
+        return { cmd, combination, substats, damage, relative }
     }
     Insert(result: Result | undefined): void {
         if (!result) {
@@ -95,8 +97,11 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         return this.results.Extract()
     }
     Format(results: Result[]): Table {
-        void results
-        throw new Error("Method not implemented.")
+        return GeneralOptimizer.Format(results)
     }
 
+    static Format(results: (Result | undefined)[]): Table {
+        const filtered = results.filter(result => result !== undefined) as Result[]
+        return formatResults(filtered)
+    }
 }
