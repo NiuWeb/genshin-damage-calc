@@ -3,7 +3,7 @@
 This tool allows to make a cross-comparison between different weapons, main stats, substats and artifacts sets, finding the combination with the highest damage.
 
 ## Defining combinations
-The combinations are defined via command. This is a particular command environment so you won't have access to most commands like the ones seen in the [Use of commands](../../index.md) section.
+The combinations are defined via command. This is a particular command environment so you won't have access to most commands like the ones seen in the [Use of commands](../../index.md) section. However, the optimizer-specific constants are available, read more about them in the [Optimizer constants](../constants.md) section.
 
 The two basic commands to define combinations are `weapon` and `artifact`:
 

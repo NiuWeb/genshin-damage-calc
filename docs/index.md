@@ -12,3 +12,4 @@ Useful information about [genshin-damage-calc](https://niuweb.github.io/genshin-
     - [Code constants](./optimize/constants.md)
     - Tools
         - [Substats optimizer](./optimize/substats/index.md)
+        - [General optimizer](./optimize/general/index.md)
