@@ -175,3 +175,88 @@ add
 # note that the weapons in the first group are not 
 # crossed with the artifacts in the second group (and viceversa)
 ```
+
+## Optimizing substats
+By default, the optimizer will use the substats defined in the application. However, you can choose to generate an optimal substats configuration for each combination, using the `substats` command. The logic of this process can be read in the [Substats optimizer](../substats/index.md) section.
+
+As in the substats optimizer, the `substats` command can be used to configure the total rolls, to optimize, the tier of those rolls, the range of each substat, and the filters. For example:
+
+```shell
+substats total 25 # 25 rolls to distribute
+
+substats tier 4   # use average rolls
+substats tier avg # same as above
+substats tier 3   # use max rolls
+substats tier 0  # use min rolls
+
+# Define the range of each substat:
+substats range atk%=2:12 er=2:12 cr=2:10 cd=2:12
+# atk% will be between 2 and 12
+# energy recharge will be between 2 and 12
+# crit rate will be between 2 and 10
+# crit dmg will be between 2 and 12
+
+# Apply minimum filters:
+substats min er=180% cr=50% cd=100% em=50
+# energy recharge will be at least 180%
+# crit rate will be at least 50%
+# crit dmg will be at least 100%
+
+# NOTE: If the stat is percentage, remember
+# to include the % symbol in the filter value,
+# or write the value as a decimal number instead:
+substats min er=1.8 cr=0.5 cd=1.0 em=50
+```
+
+You can also reset the substats configuration to the default values with the `substats default` command. It will set the total, tier and range to the values found in the application by default, in the substats optimizer section.
+
+When you run any of the `substats` commands, all combinations defined after that will replace the substats of the artifacts for the optimized ones. For example:
+
+```shell
+weapon jadecutter
+artifact main=atk%/em,pyro,cr # this will use the substats defined in the application
+
+substats default # use substats optimizer default values
+artifact main=atk%/em,pyro,cr # this will use the generated substats
+```
+
+You can disable the substats optimization with the `substats disable` command. This will make the optimizer use the substats defined in the application for the next combinations. For example:
+
+```shell
+weapon jadecutter
+artifact main=atk%/em,pyro,cr # this will use the substats defined in the application
+
+substats default # use substats optimizer default values
+artifact main=atk%/em,pyro,cr # this will use the generated substats
+
+substats disable
+artifact main=atk%/em,pyro,cd # this will use the substats defined in the application
+```
+
+You can change the configuration at any line, so it is possible to define certain combinations with one configuration, and other combinations with a different configuration. For example:
+
+```shell
+substats default # default configuration
+substats min er=150%
+
+# Optimize weapons with no crit rate as substat,
+# we will use a crit rate circlet, so the range
+# for crit rate will be lower.
+substats range atk%=2:12 er=2:12 cr=2:10 cd=2:12
+weapon summitshapper
+weapon sacrificial
+artifact main=atk%/em/er,pyro,cr
+add
+
+# Optimize weapons with crit rate as substat,
+# we will use a crit damage circlet, so the range
+# for crit dmg will be lower.
+substats range atk%=2:12 er=2:12 cr=2:12 cd=2:10
+weapon jadecutter
+weapon blacksword
+artifact main=atk%/em/er,pyro,cd
+add
+
+# Note that, as the filter is not changed, it will
+# be applied to all combinations, in both groups.
+```
