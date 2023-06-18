@@ -5871,6 +5871,7 @@
   "PATH:/optimize": "Optimize",
   "PATH:/optimize/artifacts": "Artifacts",
   "PATH:/optimize/food": "Food",
+  "PATH:/optimize/general": "General",
   "PATH:/optimize/mainstat": "Mainstat",
   "PATH:/optimize/nextroll": "Next roll",
   "PATH:/optimize/set": "Artifact set",
