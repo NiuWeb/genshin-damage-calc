@@ -10,6 +10,7 @@ export class CalcResults {
     NextRoll?: genshin.optimizer.nextroll.Result[]
     Set?: genshin.optimizer.set.Result[]
     Weapon?: genshin.optimizer.weapon.Result[]
+    General?: genshin.optimizer.general.Result[]
     Artifacts?: (genshin.optimizer.artifacts.Result | undefined)[]
     Food?: genshin.optimizer.food.Result[]
 }

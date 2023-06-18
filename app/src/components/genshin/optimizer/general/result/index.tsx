@@ -1,15 +1,14 @@
 import { Calc } from "@src/genshin/calc"
-import { StarsBgColor } from "@src/genshin/utils/colors"
 import { genshin } from "@src/genshin/core"
 import { GetString } from "@src/strings/strings"
-import { classes } from "@src/utils/classes"
 import { useMemo } from "react"
 import { ResultsTable } from "../../table"
+import { mapCell, mapHeader } from "./map"
 
-const optimizer = new genshin.optimizer.weapon.WeaponOptimizer()
+const optimizer = genshin.optimizer.general.GeneralOptimizer
 
-export function WeaponResult({ results }: {
-  results: genshin.optimizer.weapon.Result[]
+export function GeneralResult({ results }: {
+  results: genshin.optimizer.general.Result[]
 }) {
   const format = useMemo(() => {
     if (!results || results.length === 0) { return undefined }
@@ -28,7 +27,7 @@ export function WeaponResult({ results }: {
   }
   async function equip(index: number) {
     if (!results) { return }
-    const cmd = optimizer.EquipCmd(results[index])
+    const cmd = results[index].cmd
     await Calc.RunConfirm(cmd)
   }
 
@@ -36,38 +35,6 @@ export function WeaponResult({ results }: {
     {...format}
     action={equip}
     actionLabel={GetString("LABEL.EQUIP")}
-    mapHeader={header => GetString("LABEL." + header)}
+    mapHeader={mapHeader}
     mapCell={mapCell} />
-}
-
-function mapCell(cell: string, header: string) {
-  if (header === genshin.strings.labels.WEAPON) {
-    return mapCellWeapon(cell)
-  } else {
-    return <div className="text-center px-2">
-      {mapCellString(cell, header)}
-    </div>
-  }
-}
-
-function mapCellString(cell: string, header: string) {
-  if (header === genshin.strings.labels.CONDITION) {
-    if (cell.trim() === "") {
-      return ""
-    }
-    return GetString("CONDITION." + cell)
-  }
-  return cell
-}
-function mapCellWeapon(cell: string) {
-  const match = cell.match(/(.*?)\(R(\d+)\)/)
-  const name = (match?.[1] || cell).trim()
-  const weapon = genshin.weapons.FindByName(name)
-  if (!weapon) {
-    return cell
-  }
-  const rank = match?.[2] || 1
-  return <div className={classes("px-2 py-1 text-black", StarsBgColor(weapon.Stars))}>
-    {GetString("ITEM." + weapon.Name) + ` (R${rank})`}
-  </div>
 }
