@@ -5792,6 +5792,15 @@
     ],
     "title": "Optimize food"
   },
+  "OPTIMIZER.GENERAL": {
+    "description": [
+      "This tool allows to make a cross-comparison between different weapons, main stats,",
+      "substats and artifacts sets, finding the combination with the highest damage.\n",
+      "All combinations in this optimizer are configured through commands, you can read",
+      "the documentation for more information."
+    ],
+    "title": "General optimizer"
+  },
   "OPTIMIZER.MAINSTAT": {
     "description": [
       "This tool evaluates all the different combination of mainstats for Sands,",

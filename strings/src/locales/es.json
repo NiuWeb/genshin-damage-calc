@@ -5594,6 +5594,16 @@
     ],
     "title": "Optimizar comida"
   },
+  "OPTIMIZER.GENERAL": {
+    "description": [
+      "Esta herramienta permite realizar comparaciones cruzadas entre armas, estadísticas",
+      "principales, conjuntos de artefactos y estadísticas secundarias, para encontrar",
+      "la combinación con mayor daño.\n",
+      "Las combinaciones en este optimizador se configuran todas a través de comandos,",
+      "puede leer la documentación para más información."
+    ],
+    "title": "Optimizador general"
+  },
   "OPTIMIZER.MAINSTAT": {
     "description": [
       "Esta herramienta evalúa todas las diferentes combinaciones de estadística",
