@@ -26,7 +26,7 @@ export function Config() {
     const { time, result, error } = await RunOptimizer("GeneralOptimizer", {
       Target: calc.Get().Scenario.Character?.GetCharacter().Options.Name,
       ...calc.Config.General,
-    }, { chunk: 10 })
+    }, { chunk: 1 })
 
     exec(calc => {
       calc.Log("[WORKER] General optimizer:", GetString("LABEL.PROCESS_ENDED_TIME_X", {
