@@ -27,7 +27,9 @@ export function PageGeneralOptimizer() {
         description={
           <Markdown components={{
             li: e => <li {...e} className="mx-6 my-1 list-disc" />,
-            a: e => <a {...e} className="text-blue-300 hover:underline hover:text-blue-400" />
+            a: e => <a {...e}
+              target="_blank"
+              className="text-blue-300 hover:underline hover:text-blue-400" />
           }}>
             {GetString("OPTIMIZER.GENERAL", { description: true })}
           </Markdown>
