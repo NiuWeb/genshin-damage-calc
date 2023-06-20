@@ -5797,7 +5797,8 @@
       "This tool allows to make a cross-comparison between different weapons, main stats,",
       "substats and artifacts sets, finding the combination with the highest damage.\n",
       "All combinations in this optimizer are configured through commands, you can read",
-      "the documentation for more information."
+      "the documentation for more information.",
+      "[Click here to read the documentation](https://github.com/NiuWeb/genshin-damage-calc/blob/master/docs/optimize/general/index.md)"
     ],
     "title": "General optimizer"
   },

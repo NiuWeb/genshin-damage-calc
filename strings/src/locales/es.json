@@ -5600,7 +5600,8 @@
       "principales, conjuntos de artefactos y estadísticas secundarias, para encontrar",
       "la combinación con mayor daño.\n",
       "Las combinaciones en este optimizador se configuran todas a través de comandos,",
-      "puede leer la documentación para más información."
+      "puede leer la documentación para más información.",
+      "[Click aquí para leer la documentación](https://github.com/NiuWeb/genshin-damage-calc/blob/master/docs/optimize/general/index.md)"
     ],
     "title": "Optimizador general"
   },
