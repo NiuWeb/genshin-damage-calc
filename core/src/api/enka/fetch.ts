@@ -10,11 +10,20 @@ const EnkaUrl = "https://enka.network"
  */
 export async function FetchEnka(uid: string | number): Promise<Enka | undefined> {
     try {
-        const request = await fetch(EnkaUrl + "/api/uid/" + uid)
+        const request = await fetch(GetEnkaUrl(uid))
         const json = await request.json()
         return json
     } catch (e) {
         console.error("[ENKA ERROR]", e)
     }
     return undefined
+}
+
+/**
+ * Gets player showcase URL for Enka.Network service
+ * @param uid Player in-game UID
+ * @returns Player showcase URL
+ */
+export function GetEnkaUrl(uid: string | number): string {
+    return EnkaUrl + "/api/uid/" + uid
 }

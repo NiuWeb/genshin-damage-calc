@@ -5483,6 +5483,7 @@
   "LABEL.ENEMY_AURA": "Enemigo afectado por",
   "LABEL.ENEMY_LEVEL": "Nivel enemigo",
   "LABEL.ENEMY_RES": "RES enemiga",
+  "LABEL.ENKA_IMPORT_MANUAL": "Ve a  [@url](@url),\nluego copia y pega el contenido en el siguiente campo:",
   "LABEL.EQUIP": "Equipar",
   "LABEL.EXPECTED_VALUE": "Valor esperado",
   "LABEL.FILTERS": "Filtros",

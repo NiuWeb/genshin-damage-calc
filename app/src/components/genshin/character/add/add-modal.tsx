@@ -5,13 +5,12 @@ import { Pagination } from "@src/components/pagination/pagination"
 import { useCalc } from "@src/genshin/context"
 import { genshin } from "@src/genshin/core"
 import { useSearch } from "@src/hooks/search"
-import { Alert } from "@src/popup/alert"
-import { Loading } from "@src/popup/loading"
-import { Prompt } from "@src/popup/prompt"
 import { GetString } from "@src/strings/strings"
 import { useState } from "react"
 import { AddMultipleLoaded } from "./add-multiple-loaded"
 import { CharacterUnloaded } from "./item-unloaded"
+import { EnkaModalButton } from "./enka/button"
+import { ImportButton } from "./enka/parts"
 
 const characters = [...genshin.characters.GetList()]
 
@@ -36,31 +35,6 @@ export function AddCharacterModal({ show, onClose }: { show: boolean, onClose():
   function add(char: genshin.charbox.Generator) {
     exec(calc => calc.Run("character add " + char.Name))
     onClose()
-  }
-
-  async function enka() {
-    const uid = await Prompt({
-      title: GetString("ACTION.ENKA_IMPORT"),
-      placeholder: "UID",
-      content: <div className="text-center p-1">
-        Powered by <a
-          className="text-blue-400 hover:text-blue-500"
-          href="https://enka.network"
-          target="_blank">Enka.Network</a>
-      </div>
-    })
-    if (!uid) { return }
-    const loading = new Loading()
-    try {
-      const chars = await genshin.api.enka.GetEnka(uid)
-      loading.End()
-      setFromEnka(chars)
-    } catch (e) {
-      loading.End()
-      Alert({
-        content: String(e).valueOf()
-      })
-    }
   }
 
   function importEnka() {
@@ -89,9 +63,7 @@ export function AddCharacterModal({ show, onClose }: { show: boolean, onClose():
       </ModalHeader>
       <ModalBody>
         <div className="p-1 flex justify-center">
-          <button onClick={enka} className="p-2 text-black bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700">
-            {GetString("ACTION.ENKA_IMPORT")}
-          </button>
+          <EnkaModalButton onLoad={setFromEnka} />
         </div>
         <div className="flex flex-col gap-1">
           <div className="flex justify-center">
@@ -125,9 +97,7 @@ export function AddCharacterModal({ show, onClose }: { show: boolean, onClose():
         }
       </ModalBody>
       <ModalFooter>
-        <button onClick={importEnka} className="p-1 text-black bg-green-600 hover:bg-green-700 active:bg-green-800">
-          {GetString("ACTION.IMPORT")}
-        </button>
+        <ImportButton onClick={importEnka} />
       </ModalFooter>
     </Modal>
   </>

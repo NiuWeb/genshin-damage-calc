@@ -5676,6 +5676,7 @@
   "LABEL.ENEMY_AURA": "Enemy affected by",
   "LABEL.ENEMY_LEVEL": "Enemy level",
   "LABEL.ENEMY_RES": "Enemy RES",
+  "LABEL.ENKA_IMPORT_MANUAL": "Go to [@url](@url),\nthen copy and paste the content in the following field:",
   "LABEL.EQUIP": "Equip",
   "LABEL.EXPECTED_VALUE": "Expected value",
   "LABEL.FILTERS": "Filters",
