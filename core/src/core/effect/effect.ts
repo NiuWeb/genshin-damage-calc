@@ -86,7 +86,7 @@ export class Effect {
      * Applies the effect to multiple targets
      * @returns the number of targets that were applied to
      */
-    ApplyMultiple(targets: Charbox[]): number {
+    ApplyMultiple(targets: readonly Charbox[]): number {
         const set = new Set(targets)
         if (!this.Options.ApplyOther) {
             const hasSelf = set.has(this.Owner)
