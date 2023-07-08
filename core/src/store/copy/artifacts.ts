@@ -33,7 +33,10 @@ export function CopyArtifacts(copyFrom: charbox.Charbox, copyTo: charbox.Charbox
     const targets = (() => {
         const targets = new Map<string, readonly charbox.Charbox[]>()
         artifactsFrom.GetEffects().forEach((effect) => {
-            targets.set(effect.Options.Name, effect.GetTargets())
+            const list = effect.GetTargets().map(char => (
+                char === copyFrom ? copyTo : char
+            ))
+            targets.set(effect.Options.Name, list)
         })
         return targets
     })()

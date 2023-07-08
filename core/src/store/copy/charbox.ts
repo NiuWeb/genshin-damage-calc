@@ -11,6 +11,11 @@ import { CopyWeapon } from "./weapon"
  * Constellations from the origin won't be copied.
  */
 export function CopyCharbox(copyFrom: charbox.Charbox, copyTo: charbox.Charbox) {
+
+    // copy level
+    copyTo.GetCharacter().SetLevel(copyFrom.GetCharacter().GetLevel())
+    copyTo.GetCharacter().SetAscension(copyFrom.GetCharacter().GetAscension())
+
     CopyTalents(copyFrom, copyTo)
     CopyWeapon(copyFrom, copyTo)
     CopyArtifacts(copyFrom, copyTo)

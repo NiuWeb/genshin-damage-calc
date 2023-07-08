@@ -11,6 +11,7 @@ import { AddMultipleLoaded } from "./add-multiple-loaded"
 import { CharacterUnloaded } from "./item-unloaded"
 import { EnkaModalButton } from "./enka/button"
 import { ImportButton } from "./enka/parts"
+import { EnkaAdd } from "./enka/add"
 
 const characters = [...genshin.characters.GetList()]
 
@@ -40,12 +41,8 @@ export function AddCharacterModal({ show, onClose }: { show: boolean, onClose():
   function importEnka() {
     setFromEnka(undefined)
     if (!toImport.length) { return }
-    exec(calc => {
-      for (const char of toImport) {
-        calc.Get().Scenario.Party.Add(char)
-      }
-      calc.Run("character set " + toImport[0].GetCharacter().Options.Name)
-    })
+    EnkaAdd(toImport)
+    exec()
   }
 
   return <>
