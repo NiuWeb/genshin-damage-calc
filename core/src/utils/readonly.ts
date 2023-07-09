@@ -6,8 +6,8 @@ export type ReadOnlyRecord<T extends Key> = {
     readonly [k in keyof T]: T[k] extends Key ? ReadOnly<T[k]> : T[k]
 }
 
-export type ReadOnly<T extends Key> = (
-    T extends readonly (infer T)[] ? readonly ReadOnly<T>[] : (
+export type ReadOnly<T> = (
+    T extends readonly (infer R)[] ? readonly ReadOnly<R>[] : (
         T extends KeyRecord ? ReadOnlyRecord<T> : T
     )
 )
