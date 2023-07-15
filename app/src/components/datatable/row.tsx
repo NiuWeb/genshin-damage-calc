@@ -8,7 +8,8 @@ export function DataTableRow({ cells, cellClassName }: {
   return <tr
     className={classes(
       "border-bollapse border border-black",
-      "hover:bg-black/50"
+      "hover:bg-black/50",
+      "odd:bg-black/25",
     )}>
     {cells.map((c, i) => (
       <td key={i} className={classes(
