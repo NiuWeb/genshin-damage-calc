@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "npm run build",
     "build": "lib-build -e src/index.ts -o lib -t tsconfig.build.json",
-    "dev": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -w",
+    "dev": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -w 1",
     "circular": "npx madge --circular --extensions ts ./src/"
   },
   "repository": {
