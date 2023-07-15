@@ -88,4 +88,46 @@ export class Table {
         }
         return result
     }
+
+    /**
+     * Removes the entire column at the given index
+     */
+    RemoveColumn(index: number): Table {
+        for (const row of this.rows) {
+            row.splice(index, 1)
+        }
+        this.n_cols--
+        return this
+    }
+
+    /**
+     * Removes multiple columns
+     */
+    RemoveColumns(...indexes: number[]): Table {
+        indexes.sort((a, b) => b - a)
+        for (const index of indexes) {
+            this.RemoveColumn(index)
+        }
+        return this
+    }
+
+    /**
+     * Removes all columns that are empty
+     */
+    RemoveEmptyColumns(): Table {
+        const cols = this.n_cols
+        for (let col = cols - 1; col >= 0; col--) {
+            let empty = true
+            for (let row = 1; row < this.rows.length; row++) {
+                if (this.rows[row][col]) {
+                    empty = false
+                    break
+                }
+            }
+            if (empty) {
+                this.RemoveColumn(col)
+            }
+        }
+        return this
+    }
 }

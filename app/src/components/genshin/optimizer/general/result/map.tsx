@@ -6,7 +6,7 @@ import { classes } from "@src/utils/classes"
 const allPieces = genshin.stats.piece.Values().map(p => genshin.stats.piece.Name(p))
 const allStats = genshin.stats.stat.Values().map(s => genshin.stats.stat.Name(s))
 
-export type HeaderType = "weapon" | "set" | "piece" | "stat" | "other"
+export type HeaderType = "weapon" | "condition" | "set" | "piece" | "stat" | "other"
 
 /**
  * Classifies a header by its name
@@ -15,6 +15,7 @@ export function getHeaderType(header: string): HeaderType {
     switch (header) {
         case "WEAPON": return "weapon"
         case "SET": return "set"
+        case "CONDITION": return "condition"
     }
     if (allPieces.includes(header)) return "piece"
     if (allStats.includes(header)) return "stat"
@@ -30,6 +31,7 @@ export function mapHeader(header: string): string {
         case "weapon":
         case "set":
         case "other":
+        case "condition":
             return GetString("LABEL." + header)
         case "piece":
             return GetString("ARTIFACT." + header)
@@ -54,6 +56,8 @@ export function mapCell(cell: string, header: string) {
             return mapCellSet(cell)
         case "piece":
             return mapCellNormal(GetString("STAT." + cell))
+        case "condition":
+            return mapCellNormal(GetString("CONDITION." + cell.toUpperCase()))
     }
 }
 /**

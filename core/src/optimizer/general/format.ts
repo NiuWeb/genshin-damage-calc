@@ -22,18 +22,40 @@ export function formatResults(results: Result[]): Table {
     })
 
     const table = new Table(
-        "WEAPON", "SANDS", "GOBLET", "CIRCLET", "SET", "ATK", "DEF", "HP",
+        "WEAPON", "STACKS", "CONDITION", "AURA",
+        "SANDS", "GOBLET", "CIRCLET",
+        "SET", "STACKS", "CONDITION", "AURA",
+        "ATK", "DEF", "HP",
         ...substatNames, "DAMAGE", "RELATIVE"
     )
 
     for (const { combination, substats, damage, relative } of results) {
-        let weapon = ""
+        const weapon = {
+            name: "",
+            stacks: "",
+            condition: "",
+            aura: ""
+        }
+        const set = {
+            name: "",
+            stacks: "",
+            condition: "",
+            aura: ""
+        }
         if (!combination.weapon.empty) {
-            weapon = combination.weapon.name + ` (R${combination.weapon.rank})`
+            weapon.name = combination.weapon.name + ` (R${combination.weapon.rank})`
+            if (Number.isFinite(combination.weapon.stacks)) {
+                weapon.stacks = combination.weapon.stacks === 0 ? "" : combination.weapon.stacks + ""
+            }
+            if (combination.weapon.condition) {
+                weapon.condition = combination.weapon.condition.join(", ")
+            }
+            if (combination.weapon.aura) {
+                weapon.aura = combination.weapon.aura.join(", ")
+            }
         }
 
         let artifacts = makeCells(3)
-        let sets = ""
         if (!combination.artifact.empty) {
             const mains = [combination.artifact.sands, combination.artifact.goblet, combination.artifact.circlet]
             artifacts = mains.map(main => stats.stat.Name(main))
@@ -44,7 +66,17 @@ export function formatResults(results: Result[]): Table {
                     pieces.push(set, set)
                 }
                 const [grouped] = CountSets(pieces)
-                sets = grouped.map(([name, count]) => `${name} (${count})`).join(" + ")
+                set.name = grouped.map(([name, count]) => `${name} (${count})`).join(" + ")
+            }
+
+            if (Number.isFinite(combination.artifact.stacks)) {
+                set.stacks = combination.artifact.stacks === 0 ? "" : combination.artifact.stacks + ""
+            }
+            if (combination.artifact.condition) {
+                set.condition = combination.artifact.condition.join(", ")
+            }
+            if (combination.artifact.aura) {
+                set.aura = combination.artifact.aura.join(", ")
             }
         }
 
@@ -64,15 +96,22 @@ export function formatResults(results: Result[]): Table {
             substats.basic.forEach((value, i) => basic[i] = toPlaces(value, 0))
         }
         table.AddRow(
-            weapon,
+            weapon.name,
+            weapon.stacks,
+            weapon.condition,
+            weapon.aura,
             ...artifacts,
-            sets,
+            set.name,
+            set.stacks,
+            set.condition,
+            set.aura,
             ...basic,
             ...substatsLabels,
             toPlaces(damage, 0),
             toPlaces(relative * 100, 2) + "%"
         )
     }
+    table.RemoveEmptyColumns()
 
     return table
 }
