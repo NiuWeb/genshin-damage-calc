@@ -5537,6 +5537,7 @@
   "LABEL.WEAPON_RANK": "Rango del arma",
   "LABEL.WORKERS": "Workers",
   "LABEL.X_HIT": "@name (Golpe)",
+  "LABEL.COLUMNS": "Columnas",
   "LANGUAGE.EN": "English",
   "LANGUAGE.ES": "Español",
   "MSG.ALERT_ROTATION_DB": [

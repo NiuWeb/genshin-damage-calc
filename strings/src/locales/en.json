@@ -5730,6 +5730,7 @@
   "LABEL.WEAPON_RANK": "Weapon rank",
   "LABEL.WORKERS": "Workers",
   "LABEL.X_HIT": "@name (Hit)",
+  "LABEL.COLUMNS": "Columns",
   "LANGUAGE.EN": "English",
   "LANGUAGE.ES": "Español",
   "MSG.ALERT_ROTATION_DB": [
