@@ -1,7 +1,7 @@
-import { classes } from "@src/utils/classes"
 import { ReactNode } from "react"
 import { usePagination } from "../pagination/hook"
 import { Pagination } from "../pagination/pagination"
+import { DataTableRow } from "./row"
 
 export interface DataTableProps {
   headers?: ReactNode[]
@@ -27,17 +27,11 @@ export function DataTable({ headers, rows, ...props }: DataTableProps) {
           </tr>
         </thead>
         <tbody>
-          {pagination.Get().map((cell, i) => (
-            <tr key={i} className="border-bollapse border border-black">
-              {cell.map((c, i) => (
-                <td key={i} className={classes(
-                  "border-bollapse border border-black",
-                  props.cellClassName
-                )}>
-                  {c}
-                </td>
-              ))}
-            </tr>
+          {pagination.Get().map((row, i) => (
+            <DataTableRow
+              key={i}
+              cells={row}
+              cellClassName={props.cellClassName} />
           ))}
         </tbody>
       </table>
