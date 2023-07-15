@@ -4,7 +4,7 @@
   "description": "Advanced damage calculator for genshin impact (core logic)",
   "main": "lib/index.js",
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "npx ts-patch install && npm run build",
     "test": "jest src",
     "build": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -x @bygdle/javascript-lp-solver",
     "dev": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -w true -x @bygdle/javascript-lp-solver",
@@ -42,6 +42,7 @@
     "madge": "^5.0.1",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
+    "ts-patch": "^2.0.2",
     "tsconfig-paths": "^4.1.0",
     "typescript": "^4.5.4",
     "typescript-transform-paths": "^3.4.4"
