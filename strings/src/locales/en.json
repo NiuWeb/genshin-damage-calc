@@ -7,6 +7,7 @@
   "ACTION.ARTIFACT_ROLLS_SUMMARY_VIEW": "View rolls summary",
   "ACTION.ARTIFACT_ROLLS_VIEW": "View rolls",
   "ACTION.CANCEL": "Cancel",
+  "ACTION.CHANGE_PAGE_SIZE": "Change page size",
   "ACTION.CHARACTER_ADD": "Add character",
   "ACTION.CHARACTER_REMOVE": "Remove character",
   "ACTION.CLEAR": "Clear",

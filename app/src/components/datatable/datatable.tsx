@@ -1,10 +1,11 @@
-import { ReactNode, useRef } from "react"
+import { ReactNode, useState, useRef, useEffect } from "react"
 import { usePagination } from "../pagination/hook"
 import { Pagination } from "../pagination/pagination"
 import { SelectColumnsDropdown } from "./columns/control"
 import { useColumns } from "./columns/hook"
 import { ExportDropdown } from "./export/control"
 import { DataTableRow } from "./row"
+import { PageSizeButton } from "./settings/control"
 
 export interface DataTableProps {
   headers?: ReactNode[]
@@ -13,9 +14,12 @@ export interface DataTableProps {
   cellClassName?: string
 }
 export function DataTable({ headers, rows, ...props }: DataTableProps) {
-  const pagination = usePagination(rows || [], props.pageSize || 30)
+  const [pageSize, setPageSize] = useState(props.pageSize || 30)
+  const pagination = usePagination(rows || [], pageSize)
   const columns = useColumns(headers || [])
   const ref = useRef<HTMLTableElement>(null)
+
+  useEffect(() => void setPageSize(props.pageSize || 30), [props.pageSize])
 
   return <div className="datatable flex flex-col gap-1 h-full">
     <div className="flex justify-between">
@@ -23,7 +27,10 @@ export function DataTable({ headers, rows, ...props }: DataTableProps) {
         <SelectColumnsDropdown model={columns} />
         <ExportDropdown element={ref.current} />
       </div>
-      <Pagination model={pagination} />
+      <div className="flex gap-1">
+        <PageSizeButton value={pageSize} onChange={setPageSize} />
+        <Pagination model={pagination} />
+      </div>
     </div>
     <div className="grow overflow-auto border-t border-b border-black">
       <table ref={ref} className="datatable w-full border-collapse bg-neutral-800">
