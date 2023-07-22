@@ -1,5 +1,7 @@
 /**
-Weapons comparison for Xiangling in a vaporize team
+Weapons and sets comparison for Xiangling in a vaporize team.
+Only Emblem of Severed Fate and Crimson Witch of Flames sets
+are included to the comparison.
 */
 substats tier avg    # Use average rolls
 substats total 25    # Optimize 25 rolls
@@ -8,7 +10,7 @@ substats min er=180% # Minimum energy recharge
 # Weapons without Crit Rate as substat will use Crit Rate circlet.
 # For this reason, total Crit Rate rolls will be reduced by two.
 substats range atk%=2 em=2 er=2:12 cr=2:10 cd=2:12
-artifact main=er/em,pyro,cr
+artifact main=er/em,pyro,cr set=emblem*4,crimson*4 # Compare sands AND sets
 weapon TheCatch rank=5
 weapon DragonsBane rank=1,5
 weapon WavebreakerFin rank=1,5
@@ -21,7 +23,7 @@ add # This is important
 # Weapons with Crit Rate as substat will use Crit Dmg circlet,
 # so total Crit Dmg rolls will be reduced by two.
 substats range atk%=2 em=2 er=2:12 cr=2:12 cd=2:10
-artifact main=er/em,pyro,cd
+artifact main=er/em,pyro,cd set=emblem*4,crimson*4 # Compare sands AND sets
 weapon Deathmatch rank=1,5 condition=enemy_1,enemy_2
 weapon StaffOfTheScarletSands stacks=0,1
 add # Also this must be included
