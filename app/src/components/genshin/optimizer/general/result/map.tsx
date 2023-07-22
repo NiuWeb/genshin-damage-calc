@@ -57,7 +57,12 @@ export function mapCell(cell: string, header: string) {
         case "piece":
             return mapCellNormal(GetString("STAT." + cell))
         case "condition":
-            return mapCellNormal(GetString("CONDITION." + cell.toUpperCase()))
+            return mapCellNormal(
+                cell.split(",").map(c => (
+                    GetString("CONDITION." + c.trim().toUpperCase())
+                )
+                ).join(", ")
+            )
     }
 }
 /**
