@@ -7,6 +7,7 @@ export function SelectColumnsDropdown({ model }: { model: SelectedColumns }) {
   return <Dropdown
     className="p-1 bg-blue-600"
     multiple
+    hideSearch
     values={model.indexes()}
     onChange={model.set}
     title={GetString("LABEL.COLUMNS")}>

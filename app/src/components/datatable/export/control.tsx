@@ -17,6 +17,7 @@ export function ExportDropdown({ element }: { element?: HTMLElement | null }) {
   }
 
   return <Dropdown
+    hideSearch
     className="p-1 bg-gray-600"
     title={GetString("ACTION.EXPORT")}
     onChange={run}
