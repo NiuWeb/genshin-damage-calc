@@ -1,4 +1,5 @@
 import { Program } from "@src/cmd2"
+import { ReadOnly } from "@src/utils"
 import { toNumber } from "@src/utils/conversions"
 import { ResourceList, resourcePool } from "./pool"
 
@@ -154,5 +155,12 @@ export class ResourceCmd {
      */
     public GetUpgrades(stars: number) {
         return this.pool.upgrades[stars]
+    }
+
+    /**
+     * Gets the entire data pool as read-only
+     */
+    public GetPool(): ReadOnly<typeof this.pool> {
+        return this.pool
     }
 }

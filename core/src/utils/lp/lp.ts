@@ -211,4 +211,33 @@ export class Lp {
             .join(" + ")
             .replace(/\+\s*-/g, "-")
     }
+
+    /**
+     * Converts an array of items to a dictionary of variables.
+     * For example:
+     * ```
+     * Lp.Vars(["a", "b", "c"], (item, i) => [item, i])
+     * // This will return:
+     * {a: 0, b: 1, c: 2}
+     * ```
+     * @param arr The array of items
+     * @param fn A function that returns the name and value of each item
+     * @returns An object in the form `{[name]: value}`
+     */
+    public static Vars<T>(arr: T[], fn: VarsFn<T>): Vars {
+        const vars: Vars = {}
+        arr.forEach((item, i) => {
+            const res = fn(item, i)
+            if (!res) { return }
+
+            const [name, value] = res
+            if (!Number.isFinite(value)) { return }
+
+            vars[name] = value
+        })
+
+        return vars
+    }
 }
+
+type VarsFn<T> = (item: T, index: number) => [name: string, value: number] | undefined
