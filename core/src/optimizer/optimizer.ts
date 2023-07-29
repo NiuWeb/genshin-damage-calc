@@ -12,6 +12,12 @@ import type { OptimizerConfig } from "./type"
  * @template Result the value resulting of evaluating a row
  */
 export abstract class Optimizer<Row, Result, Config extends OptimizerConfig> {
+    /**
+     * Maximum number of rows to be grouped in a single chunk
+     * to be evaluated in parallel. Set to `Infinity` to allow
+     * any number of rows to be grouped.
+     */
+    public readonly MAX_CHUNK_SIZE = Infinity
     /** Optimizer configuration */
     protected config?: Config
     protected runner?: Runner

@@ -40,7 +40,7 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         const total = optimizer.GetTotal()
         this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress: 0, total })
 
-        const CHUNKS = data.chunk
+        const CHUNKS = Math.min(data.chunk, optimizer.MAX_CHUNK_SIZE)
 
         console.log(`[WORKER] Spawning ${data.children} child workers`)
 
