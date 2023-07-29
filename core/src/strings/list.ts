@@ -1,6 +1,6 @@
 /** Typed object with strings */
 export type StringList<strings extends string> = {
-    [k in strings]: string
+    readonly [k in strings]: string
 }
 
 /** Create an typed object with strings */
