@@ -23,4 +23,6 @@ export interface UpgradeData {
     type: number
     /** upgrade value */
     value: number
+    /** upgrade visible value */
+    visible: number
 }

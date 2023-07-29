@@ -34,13 +34,15 @@ function getLevelUpgrades(entity: {
         return [{
             target: entity.Options.Name,
             type: isChar ? Upgrade.CHARACTER_LEVEL : Upgrade.WEAPON_LEVEL,
-            value: maxlevel
+            value: maxlevel,
+            visible: maxlevel
         }]
     } else if (ascension < 6) {
         return [{
             target: entity.Options.Name,
             type: isChar ? Upgrade.CHARACTER_ASCENSION : Upgrade.WEAPON_ASCENSION,
-            value: ascension + 1
+            value: ascension + 1,
+            visible: ascension + 1
         }]
     }
 
@@ -54,9 +56,13 @@ const TALENTS = [1, 1, 2, 4, 6, 8, 10]
 export function getTalentUpgrades(char: character.Character): UpgradeData[] {
     const ascension = char.GetAscension()
 
-    const normal = char.Get(stats.stat.NORMAL_ATTACK_LEVEL) - char.Get(stats.stat.NORMAL_ATTACK_LEVEL_UP)
-    const skill = char.Get(stats.stat.ELEMENTAL_SKILL_LEVEL) - char.Get(stats.stat.ELEMENTAL_SKILL_LEVEL_UP)
-    const burst = char.Get(stats.stat.ELEMENTAL_BURST_LEVEL) - char.Get(stats.stat.ELEMENTAL_BURST_LEVEL_UP)
+    const normalUp = char.Get(stats.stat.NORMAL_ATTACK_LEVEL_UP)
+    const skillUp = char.Get(stats.stat.ELEMENTAL_SKILL_LEVEL_UP)
+    const burstUp = char.Get(stats.stat.ELEMENTAL_BURST_LEVEL_UP)
+
+    const normal = char.Get(stats.stat.NORMAL_ATTACK_LEVEL) - normalUp
+    const skill = char.Get(stats.stat.ELEMENTAL_SKILL_LEVEL) - skillUp
+    const burst = char.Get(stats.stat.ELEMENTAL_BURST_LEVEL) - burstUp
 
     const upgrades: UpgradeData[] = []
 
@@ -64,7 +70,8 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.NORMAL_ATTACK_LEVEL,
-            value: normal + 1
+            value: normal + 1,
+            visible: normal + 1 + normalUp
         })
     }
 
@@ -72,7 +79,8 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.ELEMENTAL_SKILL_LEVEL,
-            value: skill + 1
+            value: skill + 1,
+            visible: skill + 1 + skillUp
         })
     }
 
@@ -80,7 +88,8 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.ELEMENTAL_BURST_LEVEL,
-            value: burst + 1
+            value: burst + 1,
+            visible: burst + 1 + burstUp
         })
     }
 
