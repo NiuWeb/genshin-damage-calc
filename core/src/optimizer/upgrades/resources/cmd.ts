@@ -1,7 +1,7 @@
 import { Program } from "@src/cmd2"
 import { ReadOnly } from "@src/utils"
 import { toNumber } from "@src/utils/conversions"
-import { ResourceList, resourcePool } from "./pool"
+import { ResourceList, ResourcePool, resourcePool } from "./pool"
 
 export class ResourceCmd {
     public readonly Program = new Program(this)
@@ -160,7 +160,7 @@ export class ResourceCmd {
     /**
      * Gets the entire data pool as read-only
      */
-    public GetPool(): ReadOnly<typeof this.pool> {
+    public GetPool(): ReadOnly<ResourcePool> {
         return this.pool
     }
 }
