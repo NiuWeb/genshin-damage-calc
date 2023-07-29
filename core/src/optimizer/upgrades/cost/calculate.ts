@@ -1,5 +1,6 @@
 import { Lp } from "@src/utils/lp"
 import { ResourceList, ResourcePool } from "../resources/pool"
+import { CostResult, CostList } from "./type"
 
 /**
  * Calculates the cost and runs required to obtain
@@ -10,7 +11,7 @@ import { ResourceList, ResourcePool } from "../resources/pool"
  * @returns an object containing the upgrades and their costs/runs
  */
 export function CalculateCost(pool: ResourcePool, stars: number, ...upgrades: string[]) {
-    const result: { [upgrade: string]: ResourceList } = {}
+    const result: CostList = {}
 
     for (const upgrade of upgrades) {
         const resources = pool.upgrades[stars]?.[upgrade]
@@ -30,7 +31,7 @@ export function CalculateCost(pool: ResourcePool, stars: number, ...upgrades: st
  * @param pool The resource pool
  * @param upgrade The resources to obtain
  */
-function calculateCost(pool: ResourcePool, upgrade: ResourceList): ResourceList {
+function calculateCost(pool: ResourcePool, upgrade: ResourceList): CostResult {
     const resources = Object.keys(upgrade)
     const domains = Object.keys(pool.domains)
 
