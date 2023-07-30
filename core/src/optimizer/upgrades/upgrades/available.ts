@@ -24,7 +24,8 @@ export function GetUpgrades(charbox: charbox.Charbox): UpgradeData[] {
  */
 function getLevelUpgrades(target: string, entity: {
     GetLevel(): number,
-    GetAscension(): number
+    GetAscension(): number,
+    Options: { Stars: number }
 }, isChar = true): UpgradeData[] {
     const level = entity.GetLevel()
     const ascension = entity.GetAscension()
@@ -34,6 +35,7 @@ function getLevelUpgrades(target: string, entity: {
         return [{
             target,
             type: isChar ? Upgrade.CHARACTER_LEVEL : Upgrade.WEAPON_LEVEL,
+            stars: entity.Options.Stars,
             value: maxlevel,
             visible: maxlevel
         }]
@@ -41,6 +43,7 @@ function getLevelUpgrades(target: string, entity: {
         return [{
             target,
             type: isChar ? Upgrade.CHARACTER_ASCENSION : Upgrade.WEAPON_ASCENSION,
+            stars: entity.Options.Stars,
             value: ascension + 1,
             visible: ascension + 1
         }]
@@ -70,6 +73,7 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.NORMAL_ATTACK_LEVEL,
+            stars: char.Options.Stars,
             value: normal + 1,
             visible: normal + 1 + normalUp
         })
@@ -79,6 +83,7 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.ELEMENTAL_SKILL_LEVEL,
+            stars: char.Options.Stars,
             value: skill + 1,
             visible: skill + 1 + skillUp
         })
@@ -88,6 +93,7 @@ export function getTalentUpgrades(char: character.Character): UpgradeData[] {
         upgrades.push({
             target: char.Options.Name,
             type: Upgrade.ELEMENTAL_BURST_LEVEL,
+            stars: char.Options.Stars,
             value: burst + 1,
             visible: burst + 1 + burstUp
         })

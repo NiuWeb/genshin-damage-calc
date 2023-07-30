@@ -1,9 +1,11 @@
 import { OptimizerConfig } from "../type"
-import { CostList } from "./cost/type"
+import { CostList, CostResult } from "./cost/type"
+import { Criteria, CriteriaValues } from "./criteria"
 import { UpgradeData } from "./upgrades/upgrades"
 /** base config for upgrades  */
 export interface BaseConfig {
     resourceCmd: string
+    criteria: Criteria
     costs?: {
         [stars: number]: CostList
     }
@@ -18,8 +20,10 @@ export interface Row {
     cmd: string
 }
 
-export interface Result {
+export interface Result extends CriteriaValues {
+    cmd: string
+    costData: CostResult
     upgrade: UpgradeData
-    damage: number
     relative: number
+    increase: number
 }

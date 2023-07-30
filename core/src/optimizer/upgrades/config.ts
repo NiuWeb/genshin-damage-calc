@@ -3,7 +3,8 @@ import { defaultUpgrades } from "./resources/default/upgrades"
 import { BaseConfig } from "./type"
 
 export const defaultConfig = (): BaseConfig => ({
-    resourceCmd: info + "\n" + defaultDomains + "\n" + defaultUpgrades
+    resourceCmd: info + "\n" + defaultDomains + "\n" + defaultUpgrades,
+    criteria: "damage"
 })
 
 

@@ -5,6 +5,7 @@ test("Equip command for talent levels with constellation", () => {
     const cmd = EquipUpgrade({
         target: "Amber",
         type: Upgrade.NORMAL_ATTACK_LEVEL,
+        stars: 4,
         value: 2,
         visible: 5
     })

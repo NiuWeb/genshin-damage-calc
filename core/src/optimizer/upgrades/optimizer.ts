@@ -1,8 +1,10 @@
-import { Logger } from "@src/cmd2"
 import { charbox } from "@src/core"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { Optimizer } from "../optimizer"
+import { FindCost } from "./cost/find"
+import { CostList } from "./cost/type"
+import { Criteria, CriteriaValues } from "./criteria"
 import { ResourceCmd } from "./resources/cmd"
 import { Config, Result, Row } from "./type"
 import { GetUpgrades } from "./upgrades/available"
@@ -18,6 +20,12 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     private id = 0
     private prevId = this.id
     private initDamage = 0
+    private prevDamage = 0
+
+    private costs: { [stars: number]: CostList } = {}
+    private criteria = Criteria.damage
+
+    private result: Result[][] = []
 
     protected init(config: Config): void {
         if (!config.costs) {
@@ -26,10 +34,9 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
             config.costs = resourceCmd.CalculateCost()
         }
 
-        this.initDamage = this.Run()
-
-        const runner = this.GetRunner()
-        runner.Program.Log = new Logger()
+        this.prevDamage = this.initDamage = this.Run()
+        this.costs = config.costs
+        this.criteria = Criteria[config.criteria]
     }
 
     /**
@@ -59,22 +66,30 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
         this.prevId = this.id
 
-        const [res] = this.queue.Extract()
+        const result = this.queue.Extract()
+        this.result.push(result)
 
+        const top = result[0]
         return {
             id: this.id,
             step: "upgrade",
-            upgrade: res.upgrade,
-            cmd: EquipUpgrade(res.upgrade)
+            upgrade: top.upgrade,
+            cmd: EquipUpgrade(top.upgrade)
         } as Row
     }
 
+    // When a message is recieved, the optimizer
+    // will equip the upgrade to change its
+    // state to the next upgrade. 
     override RecieveMessage(msg: Row | undefined): void {
         if (!msg || msg.step !== "upgrade") { return }
         const cmd = EquipUpgrade(msg.upgrade)
         const runner = this.GetRunner()
         runner.Program.CompileString(cmd)()
     }
+
+    // Keep generating upgrades until there are no more
+    // upgrades available.
 
     *Generate() {
         let upgrades: UpgradeData[]
@@ -92,6 +107,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
             this.id++
         } while (upgrades.length > 0)
     }
+
     Evaluate(row: Row): Result {
         const party = this.GetParty()
         const state = charbox.ExportParty(party)
@@ -99,17 +115,33 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const runner = this.GetRunner()
         runner.Program.CompileString(row.cmd)()
         const damage = this.Run()
-
         charbox.ImportParty(state, party)
 
+        const cost = FindCost(this.costs[row.upgrade.stars], row.upgrade)
+        const criteriaValues: CriteriaValues = {} as CriteriaValues
+        for (const [name, criteria] of Object.entries(Criteria)) {
+            criteriaValues[name as Criteria] = criteria.fn(damage, cost)
+        }
+
+        const increase = damage / this.prevDamage - 1
+        this.prevDamage = damage
+
         return {
+            ...criteriaValues,
+            cmd: row.cmd,
+            costData: cost,
             upgrade: row.upgrade,
-            damage,
-            relative: damage / this.initDamage
+            relative: damage / this.initDamage,
+            increase
         }
     }
+
     Insert(result: Result): void {
-        this.queue.Push(result, result.damage)
+        const value = result[this.GetConfig().criteria] * (
+            this.criteria.criteria === "max" ? 1 : -1
+        )
+
+        this.queue.Push(result, value)
     }
     Get(): Result[] {
         return this.queue.Extract()

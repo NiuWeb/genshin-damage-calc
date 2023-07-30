@@ -19,6 +19,8 @@ export const Upgrade = StatList(
 export interface UpgradeData {
     /** character being upgraded */
     target: string
+    /** stars of the upgrade */
+    stars: number
     /** upgrade type */
     type: number
     /** upgrade value */
