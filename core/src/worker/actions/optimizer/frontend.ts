@@ -5,6 +5,7 @@ import { FromWorker, WORKER_PATHS, Register, ToWorker } from "./config"
 export type OptimizerKey = keyof Register
 export type OptimizerConfig<Tool extends OptimizerKey> = ToWorker<Tool>["config"]
 export type OptimizerResult<Tool extends OptimizerKey> = FromWorker<Tool>["result"]
+export type OptimizerTransform<Tool extends OptimizerKey> = FromWorker<Tool>["transform"]
 
 /**
  * The optimizer client is meant to run in the main thread,
@@ -25,9 +26,15 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
      * @param config The tool-specific configuration object
      * @returns a promise that resolves with the final optimizer result
      */
-    Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<FromWorker<Tool>["result"]> {
+    Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<{
+        result: FromWorker<Tool>["result"],
+        transform?: FromWorker<Tool>["transform"]
+    }> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
-        return new Promise<FromWorker<Tool>["result"]>((resolve, reject) => {
+        return new Promise<{
+            result: FromWorker<Tool>["result"],
+            transform?: FromWorker<Tool>["transform"]
+        }>((resolve, reject) => {
             // send the optimization request to the worker
             const id1 = this.worker.Post(WORKER_PATHS.BACKEND_RUN, {
                 tool, config,
@@ -36,16 +43,20 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
             })
 
             // listen for the result
-            const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN, (_, { id, result, progress, total }) => {
-                if (id !== id1) {
-                    if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
-                        this.OnProgress(progress || 0, total || 0)
+            const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN,
+                (_, { id, result, transform, progress, total }) => {
+                    if (id !== id1) {
+                        if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
+                            this.OnProgress(progress || 0, total || 0)
+                        }
+                        return
                     }
-                    return
-                }
-                resolve(result as FromWorker<Tool>["result"])
-                this.worker.RemoveListener(listener)
-            })
+                    resolve({
+                        result: result as FromWorker<Tool>["result"],
+                        transform: transform as FromWorker<Tool>["transform"]
+                    })
+                    this.worker.RemoveListener(listener)
+                })
 
             // listen for errors
             const errListener = this.worker.AddErrorListener((error) => {

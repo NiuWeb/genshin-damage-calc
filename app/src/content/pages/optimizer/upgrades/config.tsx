@@ -15,10 +15,12 @@ export function Config() {
   }
 
   async function optimize() {
-    const { time, result, error } = await RunOptimizer("UpgradesOptimizer", {
+    const { time, result, transform, error } = await RunOptimizer("UpgradesOptimizer", {
       Target: calc.Get().Scenario.Character?.GetCharacter().Options.Name,
       ...calc.Config.Upgrades,
     }, { chunk: 1, terminate: false })
+
+    console.log(transform)
 
     exec(calc => {
       calc.Log("[WORKER] Upgrades optimizer:", GetString("LABEL.PROCESS_ENDED_TIME_X", {

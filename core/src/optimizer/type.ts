@@ -42,6 +42,13 @@ export type GetOptimizerResult<Class> =
 export type GetOptimizerMessage<Class> =
     Class extends new () => Optimizer<unknown, unknown, OptimizerConfig, infer M> ? M : never
 
+
+/**
+ * Gets the type of transform value for an optimizer tool
+ */
+export type GetOptimizerTransformValue<Class> =
+    Class extends new () => Optimizer<unknown, unknown, OptimizerConfig, unknown, infer T> ? T : never
+
 /** Gets a generic Optimizer<P,Q,R> from a concrete optimizer class */
 export type GetOptimizerClassGeneric<Class> =
     Class extends new () => Optimizer<infer P, infer Q, infer R> ? new () => Optimizer<P, Q, R> : never

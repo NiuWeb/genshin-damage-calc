@@ -10,8 +10,15 @@ import type { OptimizerConfig } from "./type"
  * @template Row the value of a single row generated, 
  * a single "combination" for the optimizer to evaluate
  * @template Result the value resulting of evaluating a row
+ * @template Config the configuration object for the optimizer
+ * @template Message the type of the message sent from the parent
+ * to the child workers
+ * @template TransformValue After getting all the results, this type
+ * is used to transform the results into another type. For example,
+ * it can be used to transform the results into a table instead of
+ * an array of results.
  */
-export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Message = Row> {
+export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Message = Row, TransformValue = Result[]> {
     /**
      * Maximum number of rows to be grouped in a single chunk
      * to be evaluated in parallel. Set to `Infinity` to allow
@@ -24,6 +31,12 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
      * to allow any number of child workers to be spawned.
      */
     public readonly MAX_CHILDREN = Infinity
+
+    /**
+     * If true, the Transform method will be called after all the
+     * results have been generated and evaluated. 
+     */
+    public readonly TRANSFORM: boolean = false
 
     /** Optimizer configuration */
     protected config?: Config
@@ -149,6 +162,14 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
             this.Insert(this.Evaluate(row))
         }
         return this.Get()
+    }
+
+    /**
+     * Takes a list of results and transforms them into another type.
+     */
+    Transform(results: Result[]): TransformValue {
+        void results
+        throw new Error("Method not implemented.")
     }
 
     /**

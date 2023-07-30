@@ -11,7 +11,8 @@ import { GetUpgrades } from "./upgrades/available"
 import { EquipUpgrade } from "./upgrades/equip"
 import { UpgradeData } from "./upgrades/upgrades"
 
-export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | undefined> {
+export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | undefined, Result[][]> {
+    public override TRANSFORM = true
     public override MAX_CHUNK_SIZE = 1
     //public override MAX_CHILDREN = 1
 
@@ -145,6 +146,20 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     }
     Get(): Result[] {
         return this.queue.Extract()
+    }
+
+    override Transform(): Result[][] {
+        return this.result
+            // remove empty or non-increasing rows
+            .filter(row => row.length > 0 && row[0].increase > 0)
+            // remove duplicates inside each row
+            .map(row => row.filter((value, i, arr) => {
+                // two values are equal if they have the same cmd
+                const found = arr.findIndex(v => v.cmd === value.cmd)
+                // if the value index isn't the same as the first
+                // coincidence of the same cmd, then it's a duplicate
+                return found === i
+            }))
     }
     Format(): Table {
         throw new Error("Method not implemented.")

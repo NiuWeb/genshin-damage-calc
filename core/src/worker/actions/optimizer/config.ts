@@ -1,4 +1,4 @@
-import { GetOptimizerConfig, GetOptimizerResult, GetOptimizerRow, GetOptimizerList, GetOptimizerMessage } from "@src/optimizer/type"
+import { GetOptimizerConfig, GetOptimizerResult, GetOptimizerRow, GetOptimizerList, GetOptimizerMessage, GetOptimizerTransformValue } from "@src/optimizer/type"
 import { SubstatsOptimizer } from "@src/optimizer/substats/optimizer"
 import { MainstatOptimizer } from "@src/optimizer/mainstat/optimizer"
 import { NextRollOptimizer } from "@src/optimizer/nextroll/optimizer"
@@ -61,6 +61,11 @@ export interface FromWorker<Tool extends keyof Register = keyof Register> {
      * A chunk of sorted results
      */
     result: GetOptimizerResult<Register[Tool]>[]
+
+    /**
+     * transformed value
+     */
+    transform?: GetOptimizerTransformValue<Register[Tool]>
 
     /** Sends the number of rows currently evaluated */
     progress?: number

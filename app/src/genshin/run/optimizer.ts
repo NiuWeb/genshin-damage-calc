@@ -8,6 +8,7 @@ import { genshin } from "../core"
 
 export interface Result<Tool extends genshin.worker.OptimizerKey> {
     result?: genshin.worker.OptimizerResult<Tool>
+    transform?: genshin.worker.OptimizerTransform<Tool>
     time: number
     error: boolean
 }
@@ -52,9 +53,12 @@ export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...
     }
 
     let result: genshin.worker.OptimizerResult<Tool> | undefined = undefined
+    let transform: genshin.worker.OptimizerTransform<Tool> | undefined = undefined
     let error = false
     try {
-        result = await worker.Run(tool, Config)
+        const res = await worker.Run(tool, Config)
+        result = res.result
+        transform = res.transform
     } catch (e) {
         error = true
         if (typeof e === "string") {
@@ -68,5 +72,5 @@ export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...
     }
     const time = loading.End()
 
-    return { result, time, error }
+    return { result, transform, time, error }
 }

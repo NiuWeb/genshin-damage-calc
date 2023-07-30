@@ -103,8 +103,15 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         }
         const result = optimizer.Get()
 
+        const transform = (() => {
+            if (optimizer.TRANSFORM) {
+                return optimizer.Transform(result as never)
+            }
+            return undefined
+        })()
+
         children.forEach(child => child.Kill())
-        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result })
+        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result, transform })
     }
 }
 
