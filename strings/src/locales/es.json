@@ -5446,6 +5446,8 @@
   "LABEL.CONFIRM": "Confirmar",
   "LABEL.CONSTANT": "Constante",
   "LABEL.COPIED": "Copiado",
+  "LABEL.COST": "Costo",
+  "LABEL.COST_DETAILS": "Detalles de costo",
   "LABEL.DAMAGE": "Daño",
   "LABEL.DAMAGE_AVG": "Promedio",
   "LABEL.DAMAGE_CHARACTER": "Daño del personaje",

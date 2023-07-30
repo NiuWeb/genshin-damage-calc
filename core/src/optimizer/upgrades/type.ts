@@ -21,6 +21,7 @@ export interface Row {
 }
 
 export interface Result extends CriteriaValues {
+    criteria: Criteria
     cmd: string
     costData: CostResult
     upgrade: UpgradeData

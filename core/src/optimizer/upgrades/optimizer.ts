@@ -125,6 +125,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
 
         return {
+            criteria: this.GetConfig().criteria,
             ...criteriaValues,
             cmd: row.cmd,
             costData: cost,

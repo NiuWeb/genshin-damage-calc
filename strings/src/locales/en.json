@@ -5639,6 +5639,8 @@
   "LABEL.CONFIRM": "Confirm",
   "LABEL.CONSTANT": "Constant",
   "LABEL.COPIED": "Copied",
+  "LABEL.COST": "Cost",
+  "LABEL.COST_DETAILS": "Cost details",
   "LABEL.DAMAGE": "Damage",
   "LABEL.DAMAGE_AVG": "Average",
   "LABEL.DAMAGE_CHARACTER": "Character damage",
