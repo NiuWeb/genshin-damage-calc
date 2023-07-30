@@ -75,7 +75,6 @@ export const cmd_weapon = RunnerCmd(() => ({
                 }
                 wp.SetLevel(level)
                 wp.SetAscension(ascension)
-                wp.SetAscension(0)
                 Log.Logf("Weapon level set to %d%s", wp.GetLevel(), wp.IsAscended() ? "+" : "")
             }
         }
