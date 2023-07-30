@@ -1,4 +1,4 @@
-import { GetOptimizerConfig, GetOptimizerResult, GetOptimizerRow, GetOptimizerList } from "@src/optimizer/type"
+import { GetOptimizerConfig, GetOptimizerResult, GetOptimizerRow, GetOptimizerList, GetOptimizerMessage } from "@src/optimizer/type"
 import { SubstatsOptimizer } from "@src/optimizer/substats/optimizer"
 import { MainstatOptimizer } from "@src/optimizer/mainstat/optimizer"
 import { NextRollOptimizer } from "@src/optimizer/nextroll/optimizer"
@@ -45,6 +45,11 @@ export interface ToChildWorker<Tool extends keyof Register = keyof Register> ext
     /** rows to be evaluated by the child worker */
     rows: GetOptimizerRow<Register[Tool]>[]
 }
+
+/**
+ * Data to send as message to a child optimizer worker from a main optimizer worker
+ */
+export type MsgToChildWorker<Tool extends keyof Register = keyof Register> = GetOptimizerMessage<Register[Tool]>
 
 /** Data to be recieved from a worker */
 export interface FromWorker<Tool extends keyof Register = keyof Register> {

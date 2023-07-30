@@ -1,6 +1,8 @@
 import { Program } from "@src/cmd2"
 import { ReadOnly } from "@src/utils"
 import { toNumber } from "@src/utils/conversions"
+import { CalculateCost } from "../cost/calculate"
+import { CostList } from "../cost/type"
 import { ResourceList, ResourcePool, resourcePool } from "./pool"
 
 export class ResourceCmd {
@@ -162,5 +164,17 @@ export class ResourceCmd {
      */
     public GetPool(): ReadOnly<ResourcePool> {
         return this.pool
+    }
+
+    /**
+     * Calculates the cost of all upgrades in all stars
+     */
+    public CalculateCost() {
+        const result: { [stars: number]: CostList } = {}
+        for (const _stars of Object.keys(this.pool.upgrades)) {
+            const stars = toNumber(_stars)
+            result[stars] = CalculateCost(this.GetPool(), stars, ...Object.keys(this.pool.upgrades[stars]))
+        }
+        return result
     }
 }

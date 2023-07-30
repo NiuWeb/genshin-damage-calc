@@ -11,7 +11,7 @@ import type { OptimizerConfig } from "./type"
  * a single "combination" for the optimizer to evaluate
  * @template Result the value resulting of evaluating a row
  */
-export abstract class Optimizer<Row, Result, Config extends OptimizerConfig> {
+export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Message = Row> {
     /**
      * Maximum number of rows to be grouped in a single chunk
      * to be evaluated in parallel. Set to `Infinity` to allow
@@ -142,6 +142,36 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig> {
             this.Insert(this.Evaluate(row))
         }
         return this.Get()
+    }
+
+    /**
+     * This method is designed for worker-distributed optimizers, where a 
+     * parent worker generates combinations and multiple child workers 
+     * evaluate them. After a chunk of combinations is generated, sent 
+     * to the child workers, evaluated, and the results are inserted 
+     * in the parent optimizer, this method is executed. The method 
+     * returns a message that will be sent from the parent to all 
+     * the child workers. The parent then waits until all the child 
+     * workers have confirmed that they have received the message 
+     * before proceeding to generate the next chunk of combinations.
+     * 
+     * By default, this method is undefined, and the parent worker
+     * will not send any message to the child workers.
+     * 
+     * You have to override this method if you want to send a message
+     * to all the child workers after each chunk of combinations is
+     * evaluated and inserted.
+     */
+    public SendMessage?: () => Message
+
+    /**
+     * When a message is sent from the parent worker to the child workers,
+     * this method is executed in the child workers. The message is passed
+     * as an argument. By default, this method does nothing, so you have
+     * to override it if you want to do something with the message.
+     */
+    public RecieveMessage(msg: Message): void {
+        void msg
     }
 
     /** gets optimizer-provided constants for commands */

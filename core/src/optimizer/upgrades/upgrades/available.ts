@@ -5,7 +5,7 @@ import { Upgrade, UpgradeData } from "./upgrades"
 /**
  * Gets the available upgrades for the given character
  */
-export function getUpgrades(charbox: charbox.Charbox): UpgradeData[] {
+export function GetUpgrades(charbox: charbox.Charbox): UpgradeData[] {
     const char = charbox.GetCharacter()
     const weapon = charbox.GetWeapon()
 

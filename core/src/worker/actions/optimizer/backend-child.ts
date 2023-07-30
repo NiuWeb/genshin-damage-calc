@@ -2,7 +2,7 @@ import { Logger } from "@src/cmd2"
 import { Optimizer } from "@src/optimizer/optimizer"
 import { OptimizerConfig } from "@src/optimizer/type"
 import { BackendAction } from "@src/worker/action"
-import { FromWorker, WORKER_PATHS, Register, ToChildWorker, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
+import { FromWorker, WORKER_PATHS, Register, ToChildWorker, ToWorker, SetThreadType, THREAD_TYPE, MsgToChildWorker } from "./config"
 
 /**
  * The child workers will recieve a "fragment" of the
@@ -16,7 +16,8 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
     constructor() {
         super({
             [WORKER_PATHS.BACKEND_CHILD_RUN + "/init"]: (id, data) => this.Init(id, data),
-            [WORKER_PATHS.BACKEND_CHILD_RUN + "/run"]: (id, data) => this.Run(id, data)
+            [WORKER_PATHS.BACKEND_CHILD_RUN + "/run"]: (id, data) => this.Run(id, data),
+            [WORKER_PATHS.BACKEND_CHILD_RUN + "/msg"]: (id, data) => this.Msg(id, data as never),
         })
     }
 
@@ -55,5 +56,18 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
             id,
             result,
         })
+    }
+
+    Msg(id: string, data: MsgToChildWorker) {
+        // check if the optimizer is initialized
+        if (!this.optimizer) {
+            throw new Error("[CHILD WORKER] Optimizer not set in the child worker")
+        }
+
+        // send the message to the optimizer
+        this.optimizer.RecieveMessage(data)
+
+        // send confirmation to the main thread
+        this.Post(WORKER_PATHS.FRONTEND_CHILD_RUN + "/msg", { id } as FromWorker)
     }
 }

@@ -1,5 +1,5 @@
 import { Runner } from "@src/runner"
-import { getUpgrades } from "./available"
+import { GetUpgrades } from "./available"
 import { Upgrade } from "./upgrades"
 
 describe("Available Upgrades are detected correcly", () => {
@@ -17,7 +17,7 @@ describe("Available Upgrades are detected correcly", () => {
         // - normal attack level 2
         // - elemental skill level 10
 
-        const upgrades = getUpgrades(char)
+        const upgrades = GetUpgrades(char)
         expect(upgrades).toHaveLength(3)
 
         // assert correct upgrades
@@ -58,7 +58,7 @@ describe("Available Upgrades are detected correcly", () => {
         // - normal attack level 2
         // - elemental skill level 10
 
-        const upgrades = getUpgrades(char)
+        const upgrades = GetUpgrades(char)
         expect(upgrades).toHaveLength(2)
 
         // assert correct upgrades

@@ -36,6 +36,23 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         const optimizer = new Register[data.tool]()
         optimizer.Init(data.config as never)
 
+        // create message sender function
+        const sender = (() => {
+            const sender = optimizer.SendMessage
+            if (!sender) {
+                return () => void 0
+            }
+
+            return async () => {
+                const message = sender()
+                await Promise.all(
+                    children.map(child => (
+                        child.SendMessage(message)
+                    ))
+                )
+            }
+        })()
+
         // send initialization message to main thread including the total number of rows
         const total = optimizer.GetTotal()
         this.Post(WORKER_PATHS.FRONTEND_RUN, { id: "progress:" + id, result: [], progress: 0, total })
@@ -73,6 +90,9 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
             for (const result of results) {
                 optimizer.Insert(result as never)
             }
+
+            // send a message to all the children
+            await sender()
 
             // send the progress to the main thread
             progress += chunk.length
