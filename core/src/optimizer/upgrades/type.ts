@@ -29,3 +29,5 @@ export interface Result extends CriteriaValues {
     increase: number
     selected?: boolean
 }
+
+export type Curve = [cost: number, damage: number][]

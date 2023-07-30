@@ -6,7 +6,7 @@ import { FindCost } from "./cost/find"
 import { CostList } from "./cost/type"
 import { Criteria, CriteriaValues } from "./criteria"
 import { ResourceCmd } from "./resources/cmd"
-import { Config, Result, Row } from "./type"
+import { Config, Result, Row, Curve } from "./type"
 import { GetUpgrades } from "./upgrades/available"
 import { EquipUpgrade } from "./upgrades/equip"
 import { UpgradeData } from "./upgrades/upgrades"
@@ -163,5 +163,27 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     }
     Format(): Table {
         throw new Error("Method not implemented.")
+    }
+
+    /**
+     * Transforms a table of results into a x,y curve,
+     * where one axis is the accumulated cost and the
+     * other is the total damage.
+     * @param table the table of results
+     * @returns a curve of the results
+     */
+    static Curve(table: Result[][]): Curve {
+        const curve: Curve = []
+        let cost = 0
+
+        for (const [first] of table) {
+            const costData = first.costData
+
+            cost += costData.cost
+
+            curve.push([cost, first.damage])
+        }
+
+        return curve
     }
 }
