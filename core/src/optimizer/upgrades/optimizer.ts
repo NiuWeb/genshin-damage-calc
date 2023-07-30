@@ -152,7 +152,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
             // remove duplicates inside each row
             .map(row => row.filter((value, i, arr) => {
                 // remove values with no increase
-                // if (value.increase < 1e-6) return false
+                if (value.increase < 1e-6) return false
                 // two values are equal if they have the same cmd
                 const found = arr.findIndex(v => v.cmd === value.cmd)
                 // if the value index isn't the same as the first
