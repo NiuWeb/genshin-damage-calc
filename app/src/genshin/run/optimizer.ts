@@ -4,6 +4,7 @@ import { Loading } from "@src/popup/loading"
 import { GetString } from "@src/strings/strings"
 import { Calc } from "../calc"
 import { genshin } from "../core"
+import { errorMsgDiv } from "./errormsg"
 
 
 export interface Result<Tool extends genshin.worker.OptimizerKey> {
@@ -64,7 +65,7 @@ export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...
         if (typeof e === "string") {
             console.warn("[WORKER]", e)
         } else Alert({
-            content: String(e).valueOf()
+            content: errorMsgDiv(String(e).valueOf())
         })
     }
     if (terminate) {
