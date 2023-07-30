@@ -1,21 +1,25 @@
 import { MonacoEditor } from "@src/components/monaco/monaco"
-import { genshin } from "@src/genshin/core"
+import { UpgradesConfigContext, UpgradesConfigProps } from "./context"
+import { CriteriaConfig } from "./criteria"
 
-export function UpgradesConfig({ config, onChange }: {
-  config: genshin.optimizer.upgrades.BaseConfig
-  onChange?(config: genshin.optimizer.upgrades.BaseConfig): void
-}) {
-  return <div className="general-config flex flex-col gap-1">
-    <div className="h-[640px]">
-      <MonacoEditor
-        path="/optimizer/general/config"
-        language="genshin-cmd-upgrades-optimizer"
-        theme="genshin-cmd-theme"
-        value={config.resourceCmd}
-        onChange={value => {
-          config.resourceCmd = value
-          onChange?.(config)
-        }} />
+export function UpgradesConfig({ config, onChange }: UpgradesConfigProps) {
+
+  return <UpgradesConfigContext.Provider value={{ config, onChange }}>
+    <div className="general-config flex flex-col gap-1">
+      <div className="flex justify-center">
+        <CriteriaConfig />
+      </div>
+      <div className="h-[640px]">
+        <MonacoEditor
+          path="/optimizer/general/config"
+          language="genshin-cmd-upgrades-optimizer"
+          theme="genshin-cmd-theme"
+          value={config.resourceCmd}
+          onChange={value => {
+            config.resourceCmd = value
+            onChange?.(config)
+          }} />
+      </div>
     </div>
-  </div>
+  </UpgradesConfigContext.Provider>
 }

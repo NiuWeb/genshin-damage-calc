@@ -5591,6 +5591,7 @@
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_0": "Evaluar combinaciones sin conjuntos",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_2": "Evaluar combinaciones con conjuntos de 2 piezas",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_4": "Evaluar combinaciones con conjuntos de 4 piezas",
+  "OPTIMIZER.CRITERIA": "Criterio de optimización",
   "OPTIMIZER.FOOD": {
     "description": [
       "Esta herramienta evalúa todas las combinaciones entre comida ofensiva, defensiva",
@@ -5665,6 +5666,20 @@
     ],
     "title": "Optimizar secundarias"
   },
+  "OPTIMIZER.UPGRADES": {
+    "description": [
+      "Esta herramienta permite encontrar el orden óptimo de mejoras de personaje, arma y talentos",
+      "entre los miembros del equipo, bajo uno de los siguientes criterios:\n",
+      "- **Daño total:** maximizar el daño total del equipo por cada mejora.\n",
+      "- **Costo:** minimizar el costo total de resina por cada mejora.\n",
+      "- **Eficiencia:** maximizar el aumento de daño total por unidad de resina gastada en cada mejora.\n",
+      "Los costos de resina se calculan con base en la configuración de dominios y recursos realizada"
+    ],
+    "title": "Optimizar mejoras"
+  },
+  "OPTIMIZER.UPGRADES.CRITERIA.COST": "Minimizar costo de resina",
+  "OPTIMIZER.UPGRADES.CRITERIA.DAMAGE": "Maximizar daño total",
+  "OPTIMIZER.UPGRADES.CRITERIA.EFFICIENCY": "Maximizar eficiencia (aumento de daño/resina)",
   "OPTIMIZER.WEAPON": {
     "description": [
       "Esta herramienta evalúa todas las diferentes armas con configuraciones diferentes,",
@@ -5686,6 +5701,7 @@
   "PATH:/optimize/nextroll": "Siguiente roll",
   "PATH:/optimize/set": "Conjuntos",
   "PATH:/optimize/substats": "Secundarias",
+  "PATH:/optimize/upgrades": "Mejoras",
   "PATH:/optimize/weapon": "Armas",
   "PATH:/rotation": "Rotaciones",
   "PATH:/rotation/editor": "Editor",

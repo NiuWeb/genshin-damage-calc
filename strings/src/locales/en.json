@@ -5789,6 +5789,7 @@
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_0": "Evaluate combinations with no set effects",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_2": "Evaluate combinations with 2-piece set effects",
   "OPTIMIZER.ARTIFACTS_ALLOW_PIECE_4": "Evaluate combinations with 4-piece set effects",
+  "OPTIMIZER.CRITERIA": "Optimization criteria",
   "OPTIMIZER.FOOD": {
     "description": [
       "This tool evaluates all the combination between offensive, defensive and elemental",
@@ -5861,6 +5862,20 @@
     ],
     "title": "Optimize substats"
   },
+  "OPTIMIZER.UPGRADES": {
+    "description": [
+      "This tool allows you to find the optimal order of character, weapon and talent upgrades",
+      "among the members of your team, under one of the following criteria:\n",
+      "- **Total damage:** maximize the total damage of the team for each upgrade.\n",
+      "- **Cost:** minimize the total resin cost for each upgrade.\n",
+      "- **Efficiency:** maximize the total damage increase per resin spent for each upgrade.\n",
+      "The resin costs are calculated based on the domain and resource configuration made"
+    ],
+    "title": "Upgrades optimizer"
+  },
+  "OPTIMIZER.UPGRADES.CRITERIA.COST": "Minimize resin cost",
+  "OPTIMIZER.UPGRADES.CRITERIA.DAMAGE": "Maximize total damage",
+  "OPTIMIZER.UPGRADES.CRITERIA.EFFICIENCY": "Maximize efficiency (damage increase/cost)",
   "OPTIMIZER.WEAPON": {
     "description": [
       "This tool evaluates all the different available weapons with different configurations",
@@ -5882,6 +5897,7 @@
   "PATH:/optimize/nextroll": "Next roll",
   "PATH:/optimize/set": "Artifact set",
   "PATH:/optimize/substats": "Substats",
+  "PATH:/optimize/upgrades": "Upgrades",
   "PATH:/optimize/weapon": "Weapons",
   "PATH:/rotation": "Rotations",
   "PATH:/rotation/editor": "Editor",
