@@ -5,6 +5,7 @@ import { GetString } from "@src/strings/strings"
 import { PrettyMs } from "@src/utils/pretty-ms"
 import { genshin } from "@src/genshin/core"
 import { Confirm } from "@src/popup/confirm"
+import { UpgradesConfig } from "@src/components/genshin/optimizer/upgrades/config"
 
 export function Config() {
   const [calc, exec] = useCalc()
@@ -15,12 +16,11 @@ export function Config() {
   }
 
   async function optimize() {
-    const { time, result, transform, error } = await RunOptimizer("UpgradesOptimizer", {
+    const { time, transform, error } = await RunOptimizer("UpgradesOptimizer", {
       Target: calc.Get().Scenario.Character?.GetCharacter().Options.Name,
       ...calc.Config.Upgrades,
     }, { chunk: 1, terminate: false })
 
-    console.log(transform)
 
     exec(calc => {
       calc.Log("[WORKER] Upgrades optimizer:", GetString("LABEL.PROCESS_ENDED_TIME_X", {
@@ -30,7 +30,7 @@ export function Config() {
       }))
     })
 
-    calc.Results.Upgrades = result?.filter(r => r !== undefined) as genshin.optimizer.upgrades.Result[]
+    calc.Results.Upgrades = transform as genshin.optimizer.upgrades.Result[][]
 
     if (!error) {
       show()
@@ -48,5 +48,6 @@ export function Config() {
       onShow={show}
       onClear={clear}
       show={!!calc.Results.Upgrades} />
+    <UpgradesConfig config={calc.Config.Upgrades} />
   </div>
 }

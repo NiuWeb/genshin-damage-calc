@@ -6,22 +6,22 @@ export const Criteria = criteria({
     /** maximizes the damage */
     damage: {
         criteria: "max",
-        fn(damage) {
+        fn(_, damage) {
             return damage
         },
     },
     /** minimizes the cost */
     cost: {
         criteria: "min",
-        fn(_, cost) {
+        fn(cost) {
             return cost.cost
         }
     },
-    /** maximizes the damage per cost unit */
+    /** maximizes the increase damage per cost unit */
     efficiency: {
         criteria: "max",
-        fn(damage, cost) {
-            return damage / cost.cost
+        fn(cost, _, increase) {
+            return increase / cost.cost
         }
     }
 })
@@ -39,7 +39,7 @@ export type CriteriaValues = {
  * Function that calculates a criteria value
  */
 export type CriteriaFn =
-    (damage: number, costs: CostResult) => number
+    (costs: CostResult, damage: number, increase: number) => number
 /**
  * Generic list of criteria
  */
