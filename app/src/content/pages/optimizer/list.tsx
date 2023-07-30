@@ -5,6 +5,7 @@ import { PageMainstatsOptimizer } from "./mainstats"
 import { PageNextRollOptimizer } from "./nextroll"
 import { PageSetOptimizer } from "./set"
 import { PageSubstatsOptimizer } from "./substats"
+import { PageUpgradesOptimizer } from "./upgrades"
 import { PageWeaponOptimizer } from "./weapon"
 
 export const OptimizerList = [
@@ -32,6 +33,11 @@ export const OptimizerList = [
     path: "weapon",
     string: "OPTIMIZER.WEAPON",
     element: <PageWeaponOptimizer />
+  },
+  {
+    path: "upgrades",
+    string: "OPTIMIZER.UPGRADES",
+    element: <PageUpgradesOptimizer />
   },
   {
     path: "general",

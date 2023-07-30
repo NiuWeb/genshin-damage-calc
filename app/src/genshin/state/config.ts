@@ -8,6 +8,7 @@ export const calcConfig = () => ({
     Set: genshin.optimizer.set.defaultConfig(),
     Weapon: genshin.optimizer.weapon.defaultConfig(),
     General: genshin.optimizer.general.defaultConfig(),
+    Upgrades: genshin.optimizer.upgrades.defaultConfig(),
     Artifacts: genshin.optimizer.artifacts.defaultConfig(),
     Inventory: {
         filters: [] as genshin.store.ArtifactFilter[],

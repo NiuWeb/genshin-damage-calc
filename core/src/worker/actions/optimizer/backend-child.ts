@@ -59,6 +59,7 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
     }
 
     Msg(id: string, data: MsgToChildWorker) {
+        SetThreadType(THREAD_TYPE.CHILD_WORKER)
         // check if the optimizer is initialized
         if (!this.optimizer) {
             throw new Error("[CHILD WORKER] Optimizer not set in the child worker")

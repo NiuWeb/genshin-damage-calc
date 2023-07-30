@@ -7,6 +7,7 @@ import { WeaponOptimizer } from "@src/optimizer/weapon/optimizer"
 import { ArtifactsOptimizer } from "@src/optimizer/artifacts/optimizer"
 import { FoodOptimizer } from "@src/optimizer/food"
 import { GeneralOptimizer } from "@src/optimizer/general/optimizer"
+import { UpgradesOptimizer } from "@src/optimizer/upgrades/optimizer"
 
 /** Registered optimizers */
 export const Register = register({
@@ -17,7 +18,8 @@ export const Register = register({
     WeaponOptimizer,
     ArtifactsOptimizer,
     FoodOptimizer,
-    GeneralOptimizer
+    GeneralOptimizer,
+    UpgradesOptimizer
 })
 
 function register<Reg extends Record<string, unknown>>(obj: Reg): GetOptimizerList<Reg> {

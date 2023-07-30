@@ -14,6 +14,7 @@ export interface Result<Tool extends genshin.worker.OptimizerKey> {
 export interface WorkerConfig {
     // Size of chunks to send to the child workers
     chunk?: number
+    terminate?: boolean
 }
 
 export type Params<Tool extends genshin.worker.OptimizerKey> = [
@@ -22,7 +23,7 @@ export type Params<Tool extends genshin.worker.OptimizerKey> = [
     workerConfig: WorkerConfig
 ]
 
-export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...[tool, config, wconfig]: Params<Tool>): Promise<Result<Tool>> {
+export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...[tool, config, { chunk, terminate = true }]: Params<Tool>): Promise<Result<Tool>> {
     const scenario = Calc.Get().Scenario
     const Cmd = Calc.Editor.GetFile("rotation_editor")
     const Party = genshin.charbox.ExportParty(scenario.Party)
@@ -35,7 +36,7 @@ export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...
 
     const worker = new genshin.worker.Optimizer()
     worker.Children = Calc.Config.Workers || 1
-    worker.Chunk = wconfig.chunk || 100
+    worker.Chunk = chunk || 100
 
     const loading = new Loading()
     worker.OnProgress = (current, total) => {
@@ -62,7 +63,9 @@ export async function RunOptimizer<Tool extends genshin.worker.OptimizerKey>(...
             content: String(e).valueOf()
         })
     }
-    worker.Kill()
+    if (terminate) {
+        worker.Kill()
+    }
     const time = loading.End()
 
     return { result, time, error }

@@ -45,6 +45,7 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
 
             return async () => {
                 const message = sender()
+                optimizer.RecieveMessage(message as never)
                 await Promise.all(
                     children.map(child => (
                         child.SendMessage(message)
