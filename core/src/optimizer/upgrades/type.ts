@@ -18,6 +18,7 @@ export interface Row {
     step: "upgrade" | "evaluate"
     upgrade: UpgradeData
     cmd: string
+    damage?: number
 }
 
 export interface Result extends CriteriaValues {

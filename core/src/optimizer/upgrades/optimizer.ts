@@ -75,7 +75,8 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
             id: this.id,
             step: "upgrade",
             upgrade: top.upgrade,
-            cmd: EquipUpgrade(top.upgrade)
+            cmd: EquipUpgrade(top.upgrade),
+            damage: top.damage
         } as Row
     }
 
@@ -83,10 +84,11 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     // will equip the upgrade to change its
     // state to the next upgrade. 
     override RecieveMessage(msg: Row | undefined): void {
-        if (!msg || msg.step !== "upgrade") { return }
+        if (!msg || msg.step !== "upgrade" || !msg.damage) { return }
         const cmd = EquipUpgrade(msg.upgrade)
         const runner = this.GetRunner()
         runner.Program.CompileString(cmd)()
+        this.prevDamage = msg.damage
     }
 
     // Keep generating upgrades until there are no more
@@ -125,7 +127,6 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
 
         const increase = damage / this.prevDamage - 1
-        this.prevDamage = damage
 
         return {
             ...criteriaValues,
