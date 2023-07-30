@@ -1,5 +1,3 @@
-import { WorkersSelect } from "@src/components/genshin/optimizer/workers"
-import { PartySelect } from "@src/components/genshin/party/select"
 import { ToolGridVertical } from "@src/components/layout/tool-grid-vertical"
 import { Markdown } from "@src/components/markdown/markdown"
 import { GetString } from "@src/strings/strings"
@@ -13,13 +11,6 @@ export function PageUpgradesOptimizer() {
         title={<div className="flex gap-4 items-center">
           <span>{GetString("OPTIMIZER.UPGRADES")}</span>
         </div>}
-        side={
-          <div className="flex items-center gap-2">
-            <span>{GetString("LABEL.TARGET")}</span>
-            <PartySelect />
-            <WorkersSelect />
-          </div>
-        }
         config={<Config />}
         description={
           <Markdown components={{

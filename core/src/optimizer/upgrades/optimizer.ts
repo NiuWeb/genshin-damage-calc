@@ -14,7 +14,7 @@ import { UpgradeData } from "./upgrades/upgrades"
 export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | undefined, Result[][]> {
     public override TRANSFORM = true
     public override MAX_CHUNK_SIZE = 1
-    //public override MAX_CHILDREN = 1
+    public override MAX_CHILDREN = 1
 
     private queue = new PriorityQueue<Result>()
 
