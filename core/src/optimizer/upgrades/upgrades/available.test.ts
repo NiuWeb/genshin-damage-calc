@@ -1,6 +1,8 @@
+import { stats } from "@src/core"
 import { Runner } from "@src/runner"
 import { GetUpgrades } from "./available"
-import { Upgrade } from "./upgrades"
+import { EquipUpgrade } from "./equip"
+import { Upgrade, UpgradeData } from "./upgrades"
 
 describe("Available Upgrades are detected correcly", () => {
     test("character and talent levels with no constellation", () => {
@@ -75,5 +77,40 @@ describe("Available Upgrades are detected correcly", () => {
                 expect(upgrade.value).toBe(10)
             }
         }
+    })
+
+    test("character level and ascension from low level", () => {
+        const runner = new Runner()
+        runner.Program.CompileString(`
+            character add xiangling
+            character level 1
+            character talent 1 1 1
+            weapon set thecatch
+            weapon level 1
+        `)()
+        const char = runner.Scenario.GetChar()
+
+        let upgrades: UpgradeData[]
+        do {
+            upgrades = GetUpgrades(char)
+            for (const upgrade of upgrades) {
+                const cmd = EquipUpgrade(upgrade)
+                console.log({upgrade, cmd})
+                runner.Program.CompileString(cmd)()
+            }
+        } while (upgrades.length > 0)
+
+        const charr = char.GetCharacter()
+        expect(charr.GetLevel()).toBe(90)
+        expect(charr.GetAscension()).toBe(6)
+        expect(charr.Get(stats.stat.NORMAL_ATTACK_LEVEL)).toBe(10)
+        expect(charr.Get(stats.stat.ELEMENTAL_SKILL_LEVEL)).toBe(10)
+        expect(charr.Get(stats.stat.ELEMENTAL_BURST_LEVEL)).toBe(10)
+
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const weapon = char.GetWeapon()!
+        expect(weapon.GetLevel()).toBe(90)
+        expect(weapon.GetAscension()).toBe(6)
+
     })
 })
