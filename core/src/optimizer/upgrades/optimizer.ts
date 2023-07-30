@@ -118,15 +118,14 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const runner = this.GetRunner()
         runner.Program.CompileString(row.cmd)()
         const damage = this.Run()
+        const increase = damage / this.prevDamage - 1 
         charbox.ImportParty(state, party)
 
         const cost = FindCost(this.costs[row.upgrade.stars], row.upgrade)
         const criteriaValues: CriteriaValues = {} as CriteriaValues
         for (const [name, criteria] of Object.entries(Criteria)) {
-            criteriaValues[name as Criteria] = criteria.fn(damage, cost)
+            criteriaValues[name as Criteria] = criteria.fn(cost, damage, increase)
         }
-
-        const increase = damage / this.prevDamage - 1
 
         return {
             ...criteriaValues,
