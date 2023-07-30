@@ -41,6 +41,18 @@ export class PriorityQueue<T> {
     }
 
     /**
+     * Returns the top element of the queue
+     * @returns [item, priority]
+     */
+    public Top(): [T, number] {
+        const top = this.queue.top()
+        if (!top) {
+            throw new Error("Priority queue is empty")
+        }
+        return [top.item, top.priority]
+    }
+
+    /**
      * Adds an element to the queue
      * @param object The object to add
      * @param priority The priority of the object
