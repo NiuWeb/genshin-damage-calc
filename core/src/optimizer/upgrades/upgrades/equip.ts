@@ -1,3 +1,4 @@
+import { getMaxLevel } from "@src/utils/ascension"
 import { Upgrade, UpgradeData } from "./upgrades"
 
 /**
@@ -6,6 +7,7 @@ import { Upgrade, UpgradeData } from "./upgrades"
 export function EquipUpgrade(upgrade: UpgradeData): string {
     let str = "character set " + upgrade.target + "\n"
     const upgradeName = Upgrade.Name(upgrade.type)
+    const levelAsc = getMaxLevel(upgrade.visible - 1)
     switch (upgrade.type) {
         case Upgrade.NORMAL_ATTACK_LEVEL:
         case Upgrade.ELEMENTAL_SKILL_LEVEL:
@@ -16,13 +18,13 @@ export function EquipUpgrade(upgrade: UpgradeData): string {
             str += `character level ${upgrade.visible}\n`
             break
         case Upgrade.CHARACTER_ASCENSION:
-            str += `character ascension ${upgrade.visible}\n`
+            str += `character level ${levelAsc}+\n`
             break
         case Upgrade.WEAPON_LEVEL:
             str += `weapon level ${upgrade.visible}\n`
             break
         case Upgrade.WEAPON_ASCENSION:
-            str += `weapon ascension ${upgrade.visible}\n`
+            str += `weapon level ${levelAsc}+\n`
             break
     }
     return str

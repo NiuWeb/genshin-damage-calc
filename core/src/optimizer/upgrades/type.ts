@@ -15,6 +15,7 @@ export interface Row {
     id: number
     step: "upgrade" | "evaluate"
     upgrade: UpgradeData
+    cmd: string
 }
 
 export interface Result {

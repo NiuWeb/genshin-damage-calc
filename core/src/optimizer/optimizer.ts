@@ -18,6 +18,13 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
      * any number of rows to be grouped.
      */
     public readonly MAX_CHUNK_SIZE = Infinity
+
+    /**
+     * Maximum number of child workers to spawn. Set to `Infinity`
+     * to allow any number of child workers to be spawned.
+     */
+    public readonly MAX_CHILDREN = Infinity
+
     /** Optimizer configuration */
     protected config?: Config
     protected runner?: Runner

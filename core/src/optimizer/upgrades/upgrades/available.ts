@@ -8,10 +8,11 @@ import { Upgrade, UpgradeData } from "./upgrades"
 export function GetUpgrades(charbox: charbox.Charbox): UpgradeData[] {
     const char = charbox.GetCharacter()
     const weapon = charbox.GetWeapon()
+    const name = char.Options.Name
 
-    const upgrades = getLevelUpgrades(char)
+    const upgrades = getLevelUpgrades(name, char)
     if (weapon) {
-        upgrades.push(...getLevelUpgrades(weapon, false))
+        upgrades.push(...getLevelUpgrades(name, weapon, false))
     }
 
     upgrades.push(...getTalentUpgrades(char))
@@ -21,10 +22,9 @@ export function GetUpgrades(charbox: charbox.Charbox): UpgradeData[] {
 /**
  * Gets the level/ascension upgrades for the given entity
  */
-function getLevelUpgrades(entity: {
+function getLevelUpgrades(target: string, entity: {
     GetLevel(): number,
     GetAscension(): number
-    Options: { Name: string }
 }, isChar = true): UpgradeData[] {
     const level = entity.GetLevel()
     const ascension = entity.GetAscension()
@@ -32,14 +32,14 @@ function getLevelUpgrades(entity: {
 
     if (level < maxlevel) {
         return [{
-            target: entity.Options.Name,
+            target,
             type: isChar ? Upgrade.CHARACTER_LEVEL : Upgrade.WEAPON_LEVEL,
             value: maxlevel,
             visible: maxlevel
         }]
     } else if (ascension < 6) {
         return [{
-            target: entity.Options.Name,
+            target,
             type: isChar ? Upgrade.CHARACTER_ASCENSION : Upgrade.WEAPON_ASCENSION,
             value: ascension + 1,
             visible: ascension + 1

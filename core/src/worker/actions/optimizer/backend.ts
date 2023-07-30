@@ -60,10 +60,12 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
 
         const CHUNKS = Math.min(data.chunk, optimizer.MAX_CHUNK_SIZE)
 
-        console.log(`[WORKER] Spawning ${data.children} child workers`)
+        const childCount = Math.min(data.children, optimizer.MAX_CHILDREN)
+
+        console.log(`[WORKER] Spawning ${childCount} child workers`)
 
         // spawn all the child workers before continuing
-        const children = Spawn(data.children)
+        const children = Spawn(childCount)
         await Promise.all(children.map(child => child.Init({ ...data, rows: [] })))
 
         // the optimizer initialized in this main worker will be in charge of

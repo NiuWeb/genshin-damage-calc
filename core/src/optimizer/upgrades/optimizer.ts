@@ -1,7 +1,7 @@
+import { Logger } from "@src/cmd2"
 import { charbox } from "@src/core"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
-import { GetThreadType, THREAD_TYPE } from "@src/worker/actions/optimizer/config"
 import { Optimizer } from "../optimizer"
 import { ResourceCmd } from "./resources/cmd"
 import { Config, Result, Row } from "./type"
@@ -11,6 +11,7 @@ import { UpgradeData } from "./upgrades/upgrades"
 
 export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | undefined> {
     public override MAX_CHUNK_SIZE = 1
+    //public override MAX_CHILDREN = 1
 
     private queue = new PriorityQueue<Result>()
 
@@ -26,6 +27,9 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
 
         this.initDamage = this.Run()
+
+        const runner = this.GetRunner()
+        runner.Program.Log = new Logger()
     }
 
     /**
@@ -55,14 +59,13 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
         this.prevId = this.id
 
-        const [res] = this.queue.Top()
-
-        console.warn("selected upgrade is: ", EquipUpgrade(res.upgrade))
+        const [res] = this.queue.Extract()
 
         return {
             id: this.id,
             step: "upgrade",
-            upgrade: res.upgrade
+            upgrade: res.upgrade,
+            cmd: EquipUpgrade(res.upgrade)
         } as Row
     }
 
@@ -71,23 +74,19 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const cmd = EquipUpgrade(msg.upgrade)
         const runner = this.GetRunner()
         runner.Program.CompileString(cmd)()
-        if (GetThreadType() === THREAD_TYPE.MAIN_WORKER) {
-            console.log(">>recieving from main worker", cmd)
-        } else {
-            console.log("<<recieving from child worker", cmd)
-        }
     }
 
     *Generate() {
         let upgrades: UpgradeData[]
         do {
             upgrades = this.getUpgrades()
+
             for (const upgrade of upgrades) {
-                console.log("evaluated upgrade is: ", EquipUpgrade(upgrade))
                 yield {
                     id: this.id,
                     step: "evaluate",
-                    upgrade
+                    upgrade,
+                    cmd: EquipUpgrade(upgrade)
                 } as Row
             }
             this.id++
@@ -98,7 +97,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const state = charbox.ExportParty(party)
 
         const runner = this.GetRunner()
-        runner.Program.CompileString(EquipUpgrade(row.upgrade))()
+        runner.Program.CompileString(row.cmd)()
         const damage = this.Run()
 
         charbox.ImportParty(state, party)
