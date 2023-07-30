@@ -6,13 +6,21 @@ import { PrettyMs } from "@src/utils/pretty-ms"
 import { genshin } from "@src/genshin/core"
 import { Confirm } from "@src/popup/confirm"
 import { UpgradesConfig } from "@src/components/genshin/optimizer/upgrades/config"
+import { UpgradesResults } from "@src/components/genshin/optimizer/upgrades/result/result"
+import { Alert } from "@src/popup/alert"
 
 export function Config() {
   const [calc, exec] = useCalc()
 
   function show() {
     if (!calc.Results.Upgrades) { return }
-    console.log(calc.Results.Upgrades)
+
+    Alert({
+      full: true,
+      title: GetString("LABEL.RESULTS"),
+      content: <UpgradesResults
+        results={calc.Results.Upgrades} />
+    })
   }
 
   async function optimize() {

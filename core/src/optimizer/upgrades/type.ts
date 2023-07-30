@@ -26,4 +26,5 @@ export interface Result extends CriteriaValues {
     upgrade: UpgradeData
     relative: number
     increase: number
+    selected?: boolean
 }

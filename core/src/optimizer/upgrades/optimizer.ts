@@ -68,6 +68,8 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         this.result.push(result)
 
         const top = result[0]
+        top.selected = true
+
         return {
             step: "upgrade",
             upgrade: top.upgrade,
@@ -146,9 +148,11 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     override Transform(): Result[][] {
         return this.result
             // remove empty or non-increasing rows
-            .filter(row => row.length > 0 && row[0].increase > 0)
+            .filter(row => row.length > 0 && row[0].increase > 1e-6)
             // remove duplicates inside each row
             .map(row => row.filter((value, i, arr) => {
+                // remove values with no increase
+                // if (value.increase < 1e-6) return false
                 // two values are equal if they have the same cmd
                 const found = arr.findIndex(v => v.cmd === value.cmd)
                 // if the value index isn't the same as the first

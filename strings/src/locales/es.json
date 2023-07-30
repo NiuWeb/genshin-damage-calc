@@ -5494,6 +5494,7 @@
   "LABEL.FILTERS_N": "Filtros (@n)",
   "LABEL.GITHUB": "Github",
   "LABEL.HELP": "Ayuda",
+  "LABEL.INCREASE": "Incremento",
   "LABEL.INSTANCE": "Instancia",
   "LABEL.INSTANCE_BURSTS": "Habilidades definitivas",
   "LABEL.INSTANCE_EXTRA": "Daño extra",
@@ -5508,6 +5509,7 @@
   "LABEL.NAME": "Nombre",
   "LABEL.NONE": "Ninguno",
   "LABEL.OF_X": "de @x",
+  "LABEL.OPTIMAL": "Óptimo",
   "LABEL.OWNER": "Dueño",
   "LABEL.PROCESS_ENDED_TIME_X": "Proceso terminado en @time",
   "LABEL.PROJECTS_GOTO_SAVED": "Ir a proyectos guardados",
@@ -5768,6 +5770,8 @@
   "STAT.BLOOM_DMG": "Daño de Florecimiento",
   "STAT.BURGEON_DMG": "Daño de Crepitar",
   "STAT.BURNING_DMG": "Daño de Quemadura",
+  "STAT.CHARACTER_ASCENSION": "Ascensión de personaje",
+  "STAT.CHARACTER_LEVEL": "Nivel de personaje",
   "STAT.CHARGED_AIMED_SHOT_ATK_FLAT": "ATQ Plano de Disparo Preciso (carga completa)",
   "STAT.CHARGED_AIMED_SHOT_ATK_PERCENT": "ATQ% de Disparo Preciso (carga completa)",
   "STAT.CHARGED_AIMED_SHOT_CRIT_DMG": "Daño CRIT de Disparo Preciso (carga completa)",
@@ -5909,5 +5913,7 @@
   "STAT.SPREAD_DMG": "Daño de Propagación",
   "STAT.SUPERCONDUCT_DMG": "Daño de Superconductor",
   "STAT.SWIRL_DMG": "Daño de Torbellino",
-  "STAT.VAPORIZE_DMG": "Daño de Vaporizado"
+  "STAT.VAPORIZE_DMG": "Daño de Vaporizado",
+  "STAT.WEAPON_ASCENSION": "Ascensión de arma",
+  "STAT.WEAPON_LEVEL": "Nivel de arma"
 }

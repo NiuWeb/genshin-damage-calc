@@ -5687,6 +5687,7 @@
   "LABEL.FILTERS_N": "Filters (@n)",
   "LABEL.GITHUB": "Github",
   "LABEL.HELP": "Help",
+  "LABEL.INCREASE": "Increase",
   "LABEL.INSTANCE": "Instance",
   "LABEL.INSTANCE_BURSTS": "Elemental Bursts",
   "LABEL.INSTANCE_EXTRA": "Extra damage",
@@ -5701,6 +5702,7 @@
   "LABEL.NAME": "Name",
   "LABEL.NONE": "None",
   "LABEL.OF_X": "of @x",
+  "LABEL.OPTIMAL": "Optimal",
   "LABEL.OWNER": "Owner",
   "LABEL.PROCESS_ENDED_TIME_X": "Process ended in @time",
   "LABEL.PROJECTS_GOTO_SAVED": "Go to saved projects",
@@ -5935,6 +5937,8 @@
   "STAT.BLOOM_DMG": "Bloom DMG",
   "STAT.BURGEON_DMG": "Burgeon DMG",
   "STAT.BURNING_DMG": "Burning DMG",
+  "STAT.CHARACTER_ASCENSION": "Character ascension",
+  "STAT.CHARACTER_LEVEL": "Character level",
   "STAT.CHARGED_AIMED_SHOT_ATK_FLAT": "Charged Aimed Shot ATK flat",
   "STAT.CHARGED_AIMED_SHOT_ATK_PERCENT": "Charged Aimed Shot ATK%",
   "STAT.CHARGED_AIMED_SHOT_CRIT_DMG": "Charged Aimed Shot CRIT DMG",
@@ -6076,5 +6080,7 @@
   "STAT.SPREAD_DMG": "Spread DMG",
   "STAT.SUPERCONDUCT_DMG": "Superconduct DMG",
   "STAT.SWIRL_DMG": "Swirl DMG",
-  "STAT.VAPORIZE_DMG": "Vaporize DMG"
+  "STAT.VAPORIZE_DMG": "Vaporize DMG",
+  "STAT.WEAPON_ASCENSION": "Weapon ascension",
+  "STAT.WEAPON_LEVEL": "Weapon level"
 }
