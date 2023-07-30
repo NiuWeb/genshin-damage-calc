@@ -18,8 +18,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
 
     private queue = new PriorityQueue<Result>()
 
-    private id = 0
-    private prevId = this.id
+    private levelCount = 0
     private initDamage = 0
     private prevDamage = 0
 
@@ -62,17 +61,14 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     // have been evaluated.
 
     override SendMessage = () => {
-        if (this.prevId === this.id) {
+        if (this.queue.Length() < this.levelCount) {
             return undefined
         }
-        this.prevId = this.id
-
         const result = this.queue.Extract()
         this.result.push(result)
 
         const top = result[0]
         return {
-            id: this.id,
             step: "upgrade",
             upgrade: top.upgrade,
             cmd: EquipUpgrade(top.upgrade),
@@ -98,16 +94,15 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         let upgrades: UpgradeData[]
         do {
             upgrades = this.getUpgrades()
+            this.levelCount = upgrades.length
 
             for (const upgrade of upgrades) {
                 yield {
-                    id: this.id,
                     step: "evaluate",
                     upgrade,
                     cmd: EquipUpgrade(upgrade)
                 } as Row
             }
-            this.id++
         } while (upgrades.length > 0)
     }
 
@@ -118,7 +113,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const runner = this.GetRunner()
         runner.Program.CompileString(row.cmd)()
         const damage = this.Run()
-        const increase = damage / this.prevDamage - 1 
+        const increase = damage / this.prevDamage - 1
         charbox.ImportParty(state, party)
 
         const cost = FindCost(this.costs[row.upgrade.stars], row.upgrade)

@@ -14,7 +14,6 @@ export interface BaseConfig {
 export interface Config extends OptimizerConfig, BaseConfig { }
 
 export interface Row {
-    id: number
     step: "upgrade" | "evaluate"
     upgrade: UpgradeData
     cmd: string
