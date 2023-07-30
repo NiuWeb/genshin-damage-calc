@@ -18,7 +18,11 @@ export function CalculateCost(pool: ResourcePool, stars: number, ...upgrades: st
         if (!resources) {
             throw new Error(`Upgrade ${upgrade} not found for ${stars} stars`)
         }
-        result[upgrade] = calculateCost(pool, resources)
+        try {
+            result[upgrade] = calculateCost(pool, resources)
+        } catch (e) {
+            throw new Error(`cannot calculate cost for upgrade ${upgrade} at ${stars} stars: \n${e}`)
+        }
     }
 
     return result
@@ -69,6 +73,13 @@ function calculateCost(pool: ResourcePool, upgrade: ResourceList): CostResult {
 
     // solve the problem
     const solution = lp.Solve("min")
+
+    if (!solution.feasible) {
+        throw new Error(
+            "cannot calculate cost because the problem is infeasible. " +
+            "Check that the required resources are obtainable from the given domains."
+        )
+    }
 
     // the solution contains the number of times each domain must be run,
     // and the total cost of running all the domains.
