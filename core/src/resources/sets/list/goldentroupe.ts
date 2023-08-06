@@ -25,7 +25,7 @@ export const GoldenTroupe = artifact.Set({
                 .Char(stats.stat.ELEMENTAL_SKILL_DMG)
                 .Values(0.25)
                 .Next()
-                .Where({ effect: { conditions: ["ON_FIELD"] } })
+                .Where({ effect: { conditions: ["OFF_FIELD"] } })
                 .stat
                 .Char(stats.stat.ELEMENTAL_SKILL_DMG)
                 .Values(0.25)
