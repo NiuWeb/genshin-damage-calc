@@ -2056,6 +2056,20 @@
     ],
     "title": "Gladiator's Finale (4)"
   },
+  "ITEM.GoldenTroupe": "Golden Troupe",
+  "ITEM.GoldenTroupe2": {
+    "description": "Increases Elemental Skill DMG by 20%.",
+    "title": "Golden Troupe (2)"
+  },
+  "ITEM.GoldenTroupe4": {
+    "description": [
+      "Increases Elemental Skill DMG by 25%. Additionally,",
+      "when not on the field, Elemental Skill DMG will be",
+      "further increased by 25%. This effect will be cleared",
+      "2s after taking the field."
+    ],
+    "title": "Golden Troupe (4)"
+  },
   "ITEM.Gorou": {
     "title": "Gorou"
   },
@@ -2990,6 +3004,18 @@
       "10s. Max 2 stacks.  "
     ],
     "title": "Mappa Mare (1)"
+  },
+  "ITEM.MarechausseeHunter": "Marechaussee Hunter",
+  "ITEM.MarechausseeHunter2": {
+    "description": "Normal and Charged Attack DMG +15%",
+    "title": "Marechaussee Hunter (2)"
+  },
+  "ITEM.MarechausseeHunter4": {
+    "description": [
+      "When current HP increases or decreases,",
+      "CRIT Rate will be increased by 12% for 5s. Max 3 stacks."
+    ],
+    "title": "Marechaussee Hunter (4)"
   },
   "ITEM.MartialArtist": {
     "title": "Martial Artist"

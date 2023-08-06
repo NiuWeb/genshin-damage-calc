@@ -1,3 +1,5 @@
+export { MarechausseeHunter } from "./list/marechaussee"
+export { GoldenTroupe } from "./list/goldentroupe"
 export { VourukashasGlow } from "./list/vourukashasglow"
 export { NymphsDream } from "./list/nymphsdream"
 export { FlowerOfParadiseLost } from "./list/paradise"

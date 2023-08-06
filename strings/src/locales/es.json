@@ -1993,6 +1993,20 @@
     ],
     "title": "Final del Gladiador (4)"
   },
+  "ITEM.GoldenTroupe": "Compañía Dorada",
+  "ITEM.GoldenTroupe2": {
+    "description": "Daño de Habilidad Elemental +20%.",
+    "title": "Compañía Dorada (2)"
+  },
+  "ITEM.GoldenTroupe4": {
+    "description": [
+      "Aumenta en un 25% el daño infligido con la Habilidad Elemental.",
+      "Además, cuando el personaje está en tu equipo pero no en combate,",
+      "el daño de dicha habilidad aumenta en un 25% adicional. Este efecto",
+      "se anula 2s después de entrar en el campo de batalla."
+    ],
+    "title": "Compañía Dorada (4)"
+  },
   "ITEM.Gorou": "Gorou",
   "ITEM.GorouA1": {
     "description": [
@@ -2902,6 +2916,18 @@
       "durante 10 s. Puede acumularse hasta 2 veces. "
     ],
     "title": "Carta Náutica (1)"
+  },
+  "ITEM.MarechausseeHunter": "Cazador Fantasmal",
+  "ITEM.MarechausseeHunter2": {
+    "description": "Daño de Ataque Normal y Cargado +15%.",
+    "title": "Cazador Fantasmal (2)"
+  },
+  "ITEM.MarechausseeHunter4": {
+    "description": [
+      "Cuando la Vida del personaje aumenta o disminuye, la Prob. CRIT",
+      "aumenta en un 12%. Este efecto dura 5s y puede acumularse hasta 3 veces."
+    ],
+    "title": "Cazador Fantasmal (4)"
   },
   "ITEM.MartialArtist": "Artista Marcial",
   "ITEM.MartialArtist2": {
