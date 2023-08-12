@@ -4594,6 +4594,19 @@
     ],
     "title": "The Exile (4)"
   },
+  "ITEM.TheFirstGreatMagic": "The First Great Magic",
+  "ITEM.TheFirstGreatMagic1": {
+    "description": [
+      "DMG dealt by Charged Attacks increased by **#rank{16|20|24|28|32}%**. For every party member",
+      "with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick",
+      "stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack.",
+      "When the wielder has 1/2/3 or more Gimmick stacks, ATK will be increased by ",
+      "**#rank{16|20|24|28|32}%**/**#rank{32|40|48|56|64}%**/**#rank{48|60|72|84|96}%**.",
+      "When the wielder has 1/2/3 or more Theatrics stacks, Movement SPD will be increased by",
+      "**#rank{4|6|8|10|12}%**/**#rank{7|9|11|13|15}%**/**#rank{10|12|14|16|18}%**."
+    ],
+    "title": "The First Great Magic (1)"
+  },
   "ITEM.TheFlute": {
     "title": "The Flute"
   },

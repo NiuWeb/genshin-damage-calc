@@ -1,3 +1,4 @@
+export { TheFirstGreatMagic } from "./bows/thefirstgreatmagic"
 export { BlackcliffWarbow } from "./bows/blackcliff"
 export { IbisPiercer } from "./bows/ibispiercer"
 export { JadefallSplendor } from "./catalysts/jadefall"

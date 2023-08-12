@@ -4414,6 +4414,20 @@
     ],
     "title": "Exiliado (4)"
   },
+  "ITEM.TheFirstGreatMagic": "El Primer Gran Número de Magia",
+  "ITEM.TheFirstGreatMagic1": {
+    "description": [
+      "El daño de Ataque Cargado aumenta en un **#rank{16|20|24|28|32}%**. Por cada personaje del",
+      "equipo del mismo tipo elemental que el portador de esta arma (esto incluye a dicho portador),",
+      "otorga 1 carga de “ardid”. Por otro lado, por cada personaje de distinto tipo elemental al",
+      "portador de esta arma, otorga 1 carga de “teatralidad”. Con 1/2/3 o más cargas de ardid, el",
+      "ATQ aumenta en un",
+      "**#rank{16|20|24|28|32}%**/**#rank{32|40|48|56|64}%**/**#rank{48|60|72|84|96}%**, y con 1/2/3",
+      "o más cargas de teatralidad, la Vel. Movimiento aumenta en un",
+      "**#rank{4|6|8|10|12}%**/**#rank{7|9|11|13|15}%**/**#rank{10|12|14|16|18}%**."
+    ],
+    "title": "El Primer Gran Número de Magia (1)"
+  },
   "ITEM.TheFlute": "Flauta",
   "ITEM.TheFlute1": {
     "description": [
