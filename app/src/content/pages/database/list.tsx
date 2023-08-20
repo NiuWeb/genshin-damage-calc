@@ -35,7 +35,11 @@ export function PageDbList({ list }: { list: "weapons" | "sets" }) {
           </div>
         </div>
         <div className="p-1">
-          <Markdown linebreak>
+          <Markdown
+            components={{
+              strong: ({ children }) => <span className="text-yellow-500">{children}</span>
+            }}
+            linebreak>
             {description}
           </Markdown>
         </div>
