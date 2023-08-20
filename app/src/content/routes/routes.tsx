@@ -11,6 +11,7 @@ import { PageEffects } from "../pages/scenario/effects"
 import { RoutesFromTree, RouteTree } from "./route"
 import { PageScenario } from "../pages/scenario"
 import { PageProjects } from "../pages/inventory/projects"
+import { PageDbList } from "../pages/database/list"
 
 export const AppRouteTree: RouteTree = {
   path: "/",
@@ -64,6 +65,20 @@ export const AppRouteTree: RouteTree = {
         {
           path: "artifacts",
           element: <PageInventoryArtifacts />
+        }
+      ]
+    },
+    {
+      path: "database",
+      element: <Navigate to="/database/weapons" replace />,
+      children: [
+        {
+          path: "weapons",
+          element: <PageDbList list="weapons" />
+        },
+        {
+          path: "sets",
+          element: <PageDbList list="sets" />
         }
       ]
     }

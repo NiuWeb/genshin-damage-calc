@@ -645,7 +645,7 @@
     ],
     "title": "Estilo Kamisato: Jardín ácueo"
   },
-  "ITEM.BOW": "Bow",
+  "ITEM.BOW": "Arco",
   "ITEM.BalladOfTheFjords": "Balada de los Fiordos",
   "ITEM.BalladOfTheFjords1": {
     "description": [
@@ -891,8 +891,8 @@
     ],
     "title": "Corazón Valiente (4)"
   },
-  "ITEM.CATALYST": "Catalyst",
-  "ITEM.CLAYMORE": "Claymore",
+  "ITEM.CATALYST": "Catalizador",
+  "ITEM.CLAYMORE": "Mandoble",
   "ITEM.CalamityQueller": "Pacificadora del Desastre",
   "ITEM.CalamityQueller1": {
     "description": [
@@ -3527,7 +3527,7 @@
     ],
     "title": "Historias de Otros Mundos (1)"
   },
-  "ITEM.POLEARM": "Polearm",
+  "ITEM.POLEARM": "Lanza",
   "ITEM.PaleFlame": "Llamas Albinas",
   "ITEM.PaleFlame2": {
     "description": "Bono de Daño Físico: +25%. ",
@@ -3884,7 +3884,7 @@
     ],
     "title": "Herrumbre (1)"
   },
-  "ITEM.SWORD": "Sword",
+  "ITEM.SWORD": "Espada",
   "ITEM.SacrificialBow": "Arco del Sacrificio",
   "ITEM.SacrificialBow1": {
     "description": [
@@ -5853,6 +5853,9 @@
     ],
     "title": "Optimizar armas"
   },
+  "PATH:/database": "Base de datos",
+  "PATH:/database/sets": "Conjuntos",
+  "PATH:/database/weapons": "Armas",
   "PATH:/inventory": "Inventario",
   "PATH:/inventory/artifacts": "Artefactos",
   "PATH:/inventory/projects": "Proyectos",

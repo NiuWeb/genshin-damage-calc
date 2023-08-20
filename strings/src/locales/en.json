@@ -6050,6 +6050,9 @@
     ],
     "title": "Optimize weapons"
   },
+  "PATH:/database": "Database",
+  "PATH:/database/sets": "Sets",
+  "PATH:/database/weapons": "Weapons",
   "PATH:/inventory": "Inventory",
   "PATH:/inventory/artifacts": "Artifacts",
   "PATH:/inventory/projects": "Projects",
