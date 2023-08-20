@@ -2,6 +2,7 @@ albedo-1.txt
 beidou-c0-1.txt
 collei-c0-1.txt
 fischl-c6-2.txt
+fischl-c6-3.txt
 kazuha-c0-1.txt
 ningguang-1.txt
 rosaria-2.txt
