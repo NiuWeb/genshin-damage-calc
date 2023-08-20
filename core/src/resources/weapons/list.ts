@@ -1,3 +1,8 @@
+export { WolfFang } from "./swords/wolffang"
+export { SacrificialJade } from "./catalysts/sacrificialjade"
+export { ScionOfTheBlazingSun } from "./bows/scionoftheblazingsun"
+export { TalkingStick } from "./claymores/talkingstick"
+export { BalladOfTheFjords } from "./polearms/balladofthefjords"
 export { TheFirstGreatMagic } from "./bows/thefirstgreatmagic"
 export { BlackcliffWarbow } from "./bows/blackcliff"
 export { IbisPiercer } from "./bows/ibispiercer"
