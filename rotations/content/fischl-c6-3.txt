@@ -1,0 +1,18 @@
+/*
+@title: Fischl C6 aggravate: Q + 11x Oz + 13x A4 + 6x C6
+@characters: Fischl C6
+@description:
+Rotation for Fischl C6 in aggravate teams. Assuming:
+- 4/11 Oz attacks can trigger aggravate.
+- 0 C6 attacks can trigger aggravate.
+- All of A4 attacks triggers aggravate.
+*/
+rotation duration 15
+rotation do enemy aura electro quicken
+
+
+rotation hit Fischl C4
+rotation hit Fischl Q
+rotation hit Fischl Oz *11 reaction=0.363
+rotation hit Fischl A4 *13
+rotation hit Fischl C6 *6  reaction=0
