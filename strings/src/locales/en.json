@@ -59,10 +59,12 @@
   "CONDITION.BURGEON": "Burgeon",
   "CONDITION.BURNING": "Burning",
   "CONDITION.CAST_BURST": "Cast burst",
+  "CONDITION.CAST_SKILL": "Cast E",
   "CONDITION.DMG_TAKEN": "Damage taken",
   "CONDITION.ENEMY_1": "1 Enemy",
   "CONDITION.ENEMY_2": "2+ Enemies",
   "CONDITION.FAR": "Far",
+  "CONDITION.HEALED": "Healed",
   "CONDITION.HIT_CHARGED": "Charged Hits",
   "CONDITION.HIT_NORMAL": "Normal Hits",
   "CONDITION.HIT_SKILL": "Skill hits",
@@ -635,6 +637,14 @@
     "title": "Kamisato Art: Suiyuu"
   },
   "ITEM.BOW": "Bow",
+  "ITEM.BalladOfTheFjords": "Ballad of the Fjords",
+  "ITEM.BalladOfTheFjords1": {
+    "description": [
+      "When there are at least 3 different Elemental Types in your party,",
+      "Elemental Mastery will be increased by **#rank{120|150|180|210|240}**."
+    ],
+    "title": "Ballad of the Fjords (1)"
+  },
   "ITEM.BeaconOfTheReedSea": "Beacon of the Reed Sea",
   "ITEM.BeaconOfTheReedSea1": {
     "description": [
@@ -1759,6 +1769,17 @@
     ],
     "title": "Fillet Blade (1)"
   },
+  "ITEM.FinaleOfTheDeep": "Finale of the Deep",
+  "ITEM.FinaleOfTheDeep1": {
+    "description": [
+      "When using an Elemental Skill, ATK will be increased by",
+      "**#rank{12|15|18|21|24}%** for 15s, and a Bond of Life worth 25% of Max HP will be granted.",
+      "This effect can be triggered once every 10s. When the Bond of Life is cleared,",
+      "a maximum of **#rank{150|187.5|225|262.5|300}** ATK will be gained based on",
+      "**#rank{2.4|3|3.6|4.2|4.8}%** of the total amount of the Life Bond cleared, lasting for 15s."
+    ],
+    "title": "Finale of the Deep (1)"
+  },
   "ITEM.Fischl": "Fischl",
   "ITEM.Fischl.HIT_A1": "Stellar Predator",
   "ITEM.Fischl.HIT_A4": "Undone Be Thy Sinful Hex",
@@ -1829,6 +1850,15 @@
     ],
     "title": "Evernight Raven"
   },
+  "ITEM.FleuveCendreFerryman": "Fleuve Cendre Ferryman",
+  "ITEM.FleuveCendreFerryman1": {
+    "description": [
+      "Increases Elemental Skill CRIT Rate by **#rank{8|10|12|14|16}%**.",
+      "Additionally, increases Energy Recharge by **#rank{16|20|24|28|32}%**",
+      "for 5s after using an Elemental Skill."
+    ],
+    "title": "Fleuve Cendre Ferryman (1)"
+  },
   "ITEM.FlowerOfParadiseLost": "Flower of Paradise Lost",
   "ITEM.FlowerOfParadiseLost2": {
     "description": "Increases Elemental Mastery by 80.",
@@ -1844,6 +1874,18 @@
       "this can still trigger its effects when not on the field."
     ],
     "title": "Flower of Paradise Lost (4)"
+  },
+  "ITEM.FlowingPurity": "Flowing Purity",
+  "ITEM.FlowingPurity1": {
+    "description": [
+      "When using an Elemental Skill, All Elemental DMG Bonus will be increased by",
+      "**#rank{8|10|12|14|16}%** for 15s, and a Bond of Life worth 24% of Max HP will",
+      "be granted. This effect can be triggered once every 10s. When the Bond of Life",
+      "is cleared, every 1,000 HP cleared in the process will provide **#rank{2|2.5|3|3.5|4}%**",
+      "All Elemental DMG Bonus, up to a maximum of **#rank{12|15|18|21|24}%**.",
+      "This effect lasts 15s."
+    ],
+    "title": "Flowing Purity (1)"
   },
   "ITEM.ForestRegalia": "Forest Regalia",
   "ITEM.ForestRegalia1": {
@@ -3853,6 +3895,14 @@
     ],
     "title": "Retracing Bolide (4)"
   },
+  "ITEM.RightfulReward": "Rightful Reward",
+  "ITEM.RightfulReward1": {
+    "description": [
+      "When the wielder is healed, restore **#rank{8|10|12|14|16} Energy.",
+      "This effect can be triggered once every 10s, and can occur even when the character is not on the field."
+    ],
+    "title": "Rightful Reward (1)"
+  },
   "ITEM.Rosaria": {
     "title": "Rosaria"
   },
@@ -4005,6 +4055,15 @@
     ],
     "title": "Sacrificial Greatsword (1)"
   },
+  "ITEM.SacrificialJade": "Sacrificial Jade",
+  "ITEM.SacrificialJade1": {
+    "description": [
+      "When not on the field for more than 5s, Max HP will be increased by **#rank{32|40|48|56|64}%**",
+      "and Elemental Mastery will be increased by **#rank{40|50|60|70|80}**. These effects will be",
+      "canceled after the wielder has been on the field for 10s."
+    ],
+    "title": "Sacrificial Jade (1)"
+  },
   "ITEM.SacrificialSword": {
     "title": "Sacrificial Sword"
   },
@@ -4088,6 +4147,17 @@
       "only occur once every 3s. "
     ],
     "title": "Scholar (4)"
+  },
+  "ITEM.ScionOfTheBlazingSun": "Scion of the Blazing Sun",
+  "ITEM.ScionOfTheBlazingSun1": {
+    "description": [
+      "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the",
+      "opponent hit, dealing **#rank{60|75|90|105|120}%** ATK as DMG, and applying the",
+      "Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents",
+      "affected by Heartsearer take **#rank{28|35|42|49|56}%** more Charged Attack DMG",
+      "from the wielder. A Sunfire Arrow can be triggered once every 10s."
+    ],
+    "title": "Scion of the Blazing Sun (1)"
   },
   "ITEM.SerpentSpine": {
     "title": "Serpent Spine"
@@ -4370,6 +4440,14 @@
     ],
     "title": "Song of Broken Pines (2)"
   },
+  "ITEM.SongOfStillness": "Song of Stillness",
+  "ITEM.SongOfStillness1": {
+    "description": [
+      "After the wielder is healed, they will deal **#rank{16|20|24|28|32}%** more DMG for 8s.",
+      "This can be triggered even when the character is not on the field."
+    ],
+    "title": "Song of Stillness (1)"
+  },
   "ITEM.StaffOfHoma": {
     "title": "Staff of Homa"
   },
@@ -4477,6 +4555,16 @@
       "is increased by 66. "
     ],
     "title": "Sword of Descension (1)"
+  },
+  "ITEM.TalkingStick": "Talking Stick",
+  "ITEM.TalkingStick1": {
+    "description": [
+      "ATK will be increased by **#rank{16|20|24|28|32}%** for 15s after being affected by Pyro.",
+      "This effect can be triggered once every 12s. All Elemental DMG Bonus will be increased by",
+      "**#rank{12|15|18|21|24}%** for 15s after being affected by Hydro, Cryo, Electro, or Dendro.",
+      "This effect can be triggered once every 12s."
+    ],
+    "title": "Talking Stick (1)"
   },
   "ITEM.Tartaglia": {
     "title": "Tartaglia"
@@ -4756,6 +4844,14 @@
       "35%. "
     ],
     "title": "Thundersoother (4)"
+  },
+  "ITEM.TidalShadow": "Tidal Shadow",
+  "ITEM.TidalShadow1": {
+    "description": [
+      "After the wielder is healed, ATK will be increased by **#rank{24|30|36|42|48}%** for 8s.",
+      "This can be triggered even when the character is not on the field."
+    ],
+    "title": "Tidal Shadow (1)"
   },
   "ITEM.ToukabouShigure": "Toukabou Shigure",
   "ITEM.ToukabouShigure1": {
@@ -5104,6 +5200,29 @@
       "by **#rank{20|25|30|35|40}%** for 5s.  "
     ],
     "title": "Wine and Song (1)"
+  },
+  "ITEM.WolfFang": "Wolf-Fang",
+  "ITEM.WolfFang1": {
+    "description": [
+      "DMG dealt by Elemental Skill and Elemental Burst is increased by",
+      "**#rank{16|20|24|28|32}%**."
+    ],
+    "title": "Wolf-Fang (1)"
+  },
+  "ITEM.WolfFang2": {
+    "description": [
+      "When an Elemental Skill hits an opponent, its CRIT Rate will be increased by",
+      "**#rank{2|2.5|3|3.5|4}%**."
+    ],
+    "title": "Wolf-Fang (2)"
+  },
+  "ITEM.WolfFang3": {
+    "description": [
+      "When an Elemental Burst hits an opponent, its CRIT Rate will be increased by",
+      "**#rank{2|2.5|3|3.5|4}%**. Both of these effects last 10s separately, have 4",
+      "max stacks, and can be triggered once every 0.1s."
+    ],
+    "title": "Wolf-Fang (3)"
   },
   "ITEM.WolfsGravestone": {
     "title": "Wolf's Gravestone"
