@@ -160,6 +160,18 @@ export const Weapons = ReadOnly({
     359484419: "TulaytullahsRemembrance",
     426363739: "WanderingEvenstar",
     143051931: "XiphosMoonlight",
+    449192923: "BalladOfTheFjords",
+    800766043: "FinaleOfTheDeep",
+    1921306659: "FleuveCendreFerryman",
+    2432865507: "FlowingPurity",
+    4158971171: "RightfulReward",
+    2275710883: "SacrificialJade",
+    2958179435: "ScionOfTheBlazingSun",
+    2600875323: "SongOfStillness",
+    3459616011: "TalkingStick",
+    2988480723: "TheFirstGreatMagic",
+    2077869763: "TidalShadow",
+    2265792579: "WolfFang"
 })
 
 export const Sets = ReadOnly({
@@ -199,7 +211,9 @@ export const Sets = ReadOnly({
     3094139291: "FlowerOfParadiseLost",
     2538235187: "DesertPavilionChronicle",
     1925210475: "NymphsDream",
-    235897163: "VourukashasGlow"
+    235897163: "VourukashasGlow",
+    3410220315: "GoldenTroupe",
+    1249831867: "MarechausseeHunter"
 })
 
 export const Props = ReadOnly({
