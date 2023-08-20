@@ -59,10 +59,12 @@
   "CONDITION.BURGEON": "Crepitar",
   "CONDITION.BURNING": "Quemadura",
   "CONDITION.CAST_BURST": "Lanzar Q",
+  "CONDITION.CAST_SKILL": "Lanzar E",
   "CONDITION.DMG_TAKEN": "Daño recibido",
   "CONDITION.ENEMY_1": "1 Enemigo",
   "CONDITION.ENEMY_2": "2+ Enemigos",
   "CONDITION.FAR": "Lejos",
+  "CONDITION.HEALED": "Curación recibida",
   "CONDITION.HIT_CHARGED": "Golpes cargados",
   "CONDITION.HIT_NORMAL": "Golpes normales",
   "CONDITION.HIT_SKILL": "Golpes de habilidad",
@@ -644,6 +646,14 @@
     "title": "Estilo Kamisato: Jardín ácueo"
   },
   "ITEM.BOW": "Bow",
+  "ITEM.BalladOfTheFjords": "Balada de los Fiordos",
+  "ITEM.BalladOfTheFjords1": {
+    "description": [
+      "Cuando en el equipo hay al menos tres personajes de distinto tipo elemental,",
+      "la Maestría Elemental aumenta en **#rank{120|150|180|210|240}** pts."
+    ],
+    "title": "Balada de los Fiordos (1)"
+  },
   "ITEM.BeaconOfTheReedSea": "Emblema del Mar de Juncos",
   "ITEM.BeaconOfTheReedSea1": {
     "description": [
@@ -1713,6 +1723,17 @@
     ],
     "title": "Hoja de Filetear (1)"
   },
+  "ITEM.FinaleOfTheDeep": "Réquiem Abisal",
+  "ITEM.FinaleOfTheDeep1": {
+    "description": [
+      "Al usar la Habilidad Elemental, el ATQ aumenta en un **#rank{12|15|18|21|24}%** durante 15 s",
+      "y otorga al personaje un “pacto vital” del 25% de su Vida Máx. Este efecto solo puede",
+      "activarse una vez cada 10 s. Cuando el pacto vital se elimina, el ATQ aumenta durante 15 s",
+      "en un **#rank{2.4|3|3.6|4.2|4.8}%** de la cantidad eliminada, hasta un máximo de",
+      "**#rank{150|187.5|225|262.5|300}** pts. de ATQ."
+    ],
+    "title": "Réquiem Abisal (1)"
+  },
   "ITEM.Fischl": "Fischl",
   "ITEM.Fischl.HIT_A1": "Cuervo devoraestrellas",
   "ITEM.Fischl.HIT_A4": "Juicio de los pecadores",
@@ -1783,6 +1804,14 @@
     ],
     "title": "Ave de la Noche Eterna"
   },
+  "ITEM.FleuveCendreFerryman": "Vado del Río Ceniciento",
+  "ITEM.FleuveCendreFerryman1": {
+    "description": [
+      "La Prob. CRIT de la Habilidad Elemental aumenta en un **#rank{8|10|12|14|16}%**.",
+      "Además, tras usar dicha habilidad, la Recarga de Energía aumenta en un **#rank{16|20|24|28|32}%** durante 5 s."
+    ],
+    "title": "Vado del Río Ceniciento (1)"
+  },
   "ITEM.FlowerOfParadiseLost": "Flor Olvidada del Paraíso",
   "ITEM.FlowerOfParadiseLost2": {
     "description": "Increases Elemental Mastery by 80.",
@@ -1799,6 +1828,18 @@
       "equipo pero no en combate."
     ],
     "title": "Flor Olvidada del Paraíso (4)"
+  },
+  "ITEM.FlowingPurity": "Fluencia Impoluta",
+  "ITEM.FlowingPurity1": {
+    "description": [
+      "Al usar la Habilidad Elemental, se obtiene un Bono de Daño Elemental del **#rank{8|10|12|14|16}%**",
+      "para todos los elementos durante 15 s, y otorga al personaje un “pacto vital” del 24% de su Vida Máx.",
+      "Este efecto solo puede activarse una vez cada 10 s. Cuando el pacto vital se elimina, otorga un Bono",
+      "de Daño Elemental del **#rank{2|2.5|3|3.5|4}%** a todos los elementos por cada 1000 pts. de Vida",
+      "consumidos de dicho pacto. Como máximo, de esta manera se puede obtener un **#rank{12|15|18|21|24}%**",
+      "de Bono de Daño Elemental para todos los elementos durante 15 s."
+    ],
+    "title": "Fluencia Impoluta (1)"
   },
   "ITEM.ForestRegalia": "Espada Real del Bosque",
   "ITEM.ForestRegalia1": {
@@ -3756,6 +3797,15 @@
     ],
     "title": "Retroceso del Meteorito (4)"
   },
+  "ITEM.RightfulReward": "Retribución de la Justicia",
+  "ITEM.RightfulReward1": {
+    "description": [
+      "Al recibir curación, el personaje recupera **#rank{8|10|12|14|16} pts. de Energía Elemental.",
+      "Este efecto solo se puede activar una vez cada 10 s y puede ocurrir incluso cuando el",
+      "personaje está en tu equipo pero no en combate."
+    ],
+    "title": "Retribución de la Justicia (1)"
+  },
   "ITEM.Rosaria": "Rosaría",
   "ITEM.RosariaA1": {
     "description": [
@@ -3865,6 +3915,16 @@
     ],
     "title": "Gran Espada de Sacrificio (1)"
   },
+  "ITEM.SacrificialJade": "Jade Sacrificial",
+  "ITEM.SacrificialJade1": {
+    "description": [
+      "Cuando el personaje está en tu equipo pero no en combate durante más de 5 s, su Vida Máx.",
+      "aumenta en un **#rank{32|40|48|56|64}%** y su Maestría Elemental aumenta en **#rank{40|50|60|70|80}** pts.",
+      "Este efecto se anulará cuando el portador de esta arma entre en el campo de batalla y",
+      "permanezca en él durante 10 s."
+    ],
+    "title": "Jade Sacrificial (1)"
+  },
   "ITEM.SacrificialSword": "Espada del Sacrificio",
   "ITEM.SacrificialSword1": {
     "description": [
@@ -3947,6 +4007,17 @@
       "una vez cada 3 s. "
     ],
     "title": "Erudita (4)"
+  },
+  "ITEM.ScionOfTheBlazingSun": "Descendientes del Sol Abrasador",
+  "ITEM.ScionOfTheBlazingSun1": {
+    "description": [
+      "Tras golpear a un enemigo con un Ataque Cargado, sobre él cae una “flecha rayosolar”",
+      "que inflige daño en una cantidad equivalente al **#rank{60|75|90|105|120}%** del ATQ,",
+      "y que le aplica el efecto de “corazón ferviente” durante 10 s. El daño que recibe el",
+      "enemigo afectado por corazón ferviente de los Ataques Cargados del portador de esta arma",
+      "aumenta en un **#rank{28|35|42|49|56}%**. Solo puede caer una flecha rayosolar cada 10 s."
+    ],
+    "title": "Descendientes del Sol Abrasador (1)"
   },
   "ITEM.SerpentSpine": "Médula de la Serpiente Marina",
   "ITEM.SerpentSpine1": {
@@ -4210,6 +4281,14 @@
     ],
     "title": "Oda de los Pinos (2)"
   },
+  "ITEM.SongOfStillness": "Serenata del Sosiego",
+  "ITEM.SongOfStillness1": {
+    "description": [
+      "Tras recibir curación, el daño infligido aumenta en un **#rank{16|20|24|28|32}%** durante 8 s.",
+      "Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en combate."
+    ],
+    "title": "Serenata del Sosiego (1)"
+  },
   "ITEM.StaffOfHoma": "Báculo de Homa",
   "ITEM.StaffOfHoma1": {
     "description": [
@@ -4313,6 +4392,16 @@
       "aumenta en 66 pts. "
     ],
     "title": "Espada del Descenso (1)"
+  },
+  "ITEM.TalkingStick": "Garrote del Diálogo",
+  "ITEM.TalkingStick1": {
+    "description": [
+      "Tras ser afectado por Pyro, el ATQ aumenta en un **#rank{16|20|24|28|32}%** durante 15 s.",
+      "Tras ser afectado por Hydro, Cryo, Electro o Dendro, todos los Bonos de Daño Elemental",
+      "aumentan en un **#rank{12|15|18|21|24}%** durante 15 s. Cada uno de estos efectos solo se",
+      "puede activar una vez cada 12 s."
+    ],
+    "title": "Garrote del Diálogo (1)"
   },
   "ITEM.Tartaglia": "Tartaglia",
   "ITEM.Tartaglia.HIT_Q_MELEE": "Habilidad Definitiva (cuerpo a cuerpo)",
@@ -4562,6 +4651,14 @@
       "Electro un 35%. "
     ],
     "title": "Domador de Truenos (4)"
+  },
+  "ITEM.TidalShadow": "Sombra de la Marea",
+  "ITEM.TidalShadow1": {
+    "description": [
+      "Tras recibir curación, el ATQ aumenta en un **#rank{24|30|36|42|48}%** durante 8 s.",
+      "Este efecto puede activarse incluso cuando el personaje está en tu equipo pero no en combate."
+    ],
+    "title": "Sombra de la Marea (1)"
   },
   "ITEM.ToukabouShigure": "Diluvio Florífero",
   "ITEM.ToukabouShigure1": {
@@ -4907,6 +5004,26 @@
       "**#rank{20|25|30|35|40}%** durante 5 s. "
     ],
     "title": "Vino y Poesía (1)"
+  },
+  "ITEM.WolfFang": "Colmillo Lupino",
+  "ITEM.WolfFang1": {
+    "description": [
+      "Aumenta en un **#rank{16|20|24|28|32}%** el daño de la Habilidad Elemental y la Habilidad Definitiva."
+    ],
+    "title": "Colmillo Lupino (1)"
+  },
+  "ITEM.WolfFang2": {
+    "description": [
+      "Tras golpear a un enemigo con la Habilidad Elemental, su Prob. CRIT aumenta en un **#rank{2|2.5|3|3.5|4}%**."
+    ],
+    "title": "Colmillo Lupino (2)"
+  },
+  "ITEM.WolfFang3": {
+    "description": [
+      "Tras golpearlo con la Habilidad Definitiva, la Prob. CRIT de esta habilidad aumenta en un **#rank{2|2.5|3|3.5|4}%**.",
+      "Cada uno de estos efectos dura 10 s, se puede acumular hasta 4 veces y se puede activar una vez cada 0.1 s."
+    ],
+    "title": "Colmillo Lupino (3)"
   },
   "ITEM.WolfsGravestone": "Lápida del Lobo",
   "ITEM.WolfsGravestone1": {
