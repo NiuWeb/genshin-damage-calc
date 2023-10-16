@@ -304,5 +304,5 @@ export const Characters = ReadOnly({
     10000076: "Faruzan",
     10000078: "Alhaitham",
     10000080: "Mika",
-    1504902330: "Neuvillette"
+    10000087: "Neuvillette"
 })
