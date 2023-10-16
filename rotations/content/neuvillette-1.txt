@@ -1,0 +1,134 @@
+/*
+@title: Neuvillette Q > 8x CA > E > 8x CA > 8x CA
+@characters: Neuvillette C0
+@description:
+Simple rotation for Neuvillette solo damage. 
+
+- Includes Marechaussee Hunter (set) and Tome Of The Eternal 
+  Flow (weapon) stacks increase over time. 
+- Includes HP drain, fixed at NA lv. 8 (12.5%).
+
+Stacking and HP drain behaviors should be rewritten based on the particular team.
+*/
+rotation duration 18
+
+character set Neuvillette
+
+rotation hit Neuvillette Q
+rotation hit Neuvillette Q_DOT *2
+
+rotation do character stat set HP_CURRENT 100% # HP drain affects A4
+
+# First CA round
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 0
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 0
+
+rotation hit Neuvillette Charged_2 *2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 1
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 1
+
+rotation do character stat set HP_CURRENT 87.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 2
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 2
+
+rotation do character stat set HP_CURRENT 75% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 3
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 3
+
+rotation do character stat set HP_CURRENT 62.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do character stat set HP_CURRENT 50% # HP drain affects 
+rotation hit Neuvillette Charged_2 *3
+
+# End of CA round
+rotation hit Neuvillette E
+rotation hit Neuvillette E_DOT
+
+# Second CA round
+rotation do character stat set HP_CURRENT 100% # HP drain affects A4
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 0
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 0
+
+rotation hit Neuvillette Charged_2 *2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 1
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 1
+
+rotation do character stat set HP_CURRENT 87.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 2
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 2
+
+rotation do character stat set HP_CURRENT 75% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 3
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 3
+
+rotation do character stat set HP_CURRENT 62.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do character stat set HP_CURRENT 50% # HP drain affects 
+rotation hit Neuvillette Charged_2 *3
+# End of CA round
+
+# Third CA round
+rotation do character stat set HP_CURRENT 100% # HP drain affects A4
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 0
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 0
+
+rotation hit Neuvillette Charged_2 *2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 1
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 1
+
+rotation do character stat set HP_CURRENT 87.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 2
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 2
+
+rotation do character stat set HP_CURRENT 75% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do effect set MarechausseeHunter4
+rotation do effect stacks 3
+rotation do effect set TomeOfTheEternalFlow1
+rotation do effect stacks 3
+
+rotation do character stat set HP_CURRENT 62.5% # HP drain affects A4
+rotation hit Neuvillette Charged_2
+
+rotation do character stat set HP_CURRENT 50% # HP drain affects 
+rotation hit Neuvillette Charged_2 *3
