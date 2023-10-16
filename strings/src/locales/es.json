@@ -3278,6 +3278,51 @@
     ],
     "title": "Illusory Heart"
   },
+  "ITEM.Neuvillette": "Neuvillette",
+  "ITEM.Neuvillette.HIT_CHARGED_2": "Ataque Cargado: Sentencia ecuánime",
+  "ITEM.Neuvillette.HIT_CHARGED_C6": "Ataque Cargado: Sentencia ecuánime",
+  "ITEM.NeuvilletteA1": {
+    "description": [
+      "Cuando un personaje del equipo causa una reacción de Vaporización, Congelado,",
+      "Electrocargado, Florecimiento, Torbellino Hydro o Cristalización Hydro, Neuvillette",
+      "obtiene una carga de “gloria del legado dacroniano” durante 30 s. Este efecto puede",
+      "acumularse hasta 3 veces y hace que el Ataque Cargado: Sentencia ecuánime inflija,",
+      "respectivamente, un 110/125/160% de su daño original.",
+      "Los efectos de gloria del legado dacroniano obtenidos con cada Reacción Elemental",
+      "son independientes unos de otros."
+    ],
+    "title": "Legatario de toda agua"
+  },
+  "ITEM.NeuvilletteA4": {
+    "description": [
+      "Por cada 1% de Vida por encima del 30% de su Vida Máx., Neuvillette obtiene un 0.6%",
+      "de Bono de Daño Hydro. Este bono solo puede aumentar hasta un 30% de esta forma."
+    ],
+    "title": "Arbitrador supremo"
+  },
+  "ITEM.NeuvilletteC2": {
+    "description": [
+      "Fortalece el talento pasivo “Legatario de toda agua”, de modo que por cada carga de gloria",
+      "del legado dacroniano, el Daño CRIT del Ataque Cargado: Sentencia ecuánime aumenta en un",
+      "14%, hasta un máximo del 42%.",
+      "Es necesario desbloquear el talento pasivo “Legatario de toda agua”."
+    ],
+    "title": "Mandato legal"
+  },
+  "ITEM.NeuvilletteC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Ataque Normal: Remanso acuático +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Ficción pretérita"
+  },
+  "ITEM.NeuvilletteC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Retorno mareal +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Fallo axiomático"
+  },
   "ITEM.Nilou": "Nilou",
   "ITEM.Nilou.HIT_E_1_1": "Daño de 1er golpe de danza de espadas",
   "ITEM.Nilou.HIT_E_1_2": "Daño de 1er golpe de danza espiral",
