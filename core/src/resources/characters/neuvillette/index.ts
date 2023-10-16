@@ -10,7 +10,7 @@ export const Neuvillette = charbox.Factory({
     Stars: 5,
     Element: stats.stat.HYDRO_DMG,
     Weapon: stats.weapon.CATALYST,
-    StatBonus: stats.stat.CRIT_RATE,
+    StatBonus: stats.stat.CRIT_DMG,
     BurstCost: 0,
     Region: stats.region.FONTAINE,
     HpBase: [1143.984, 4697.8169],

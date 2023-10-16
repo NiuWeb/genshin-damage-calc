@@ -57,7 +57,7 @@ export const Normals: charbox.PartialInstanceOptions[] = [
         Scaling: [
             {
                 Stat: stats.stat.HP,
-                Scaling: scaling.TalentScaling.ELEMENTAL_1A,
+                Scaling: scaling.TalentScaling.PHYSICAL_1,
                 Initial: 0.0732
             }
         ]
