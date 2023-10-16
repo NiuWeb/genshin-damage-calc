@@ -4705,6 +4705,17 @@
     ],
     "title": "Sombra de la Marea (1)"
   },
+  "ITEM.TomeOfTheEternalFlow": "Escrituras del Fluir Sempiterno",
+  "ITEM.TomeOfTheEternalFlow1": {
+    "description": [
+      "Otorga un **#rank{16|20|24|28|32}%** más de Vida. Cuando la Vida aumenta o disminuye, el daño de los",
+      "Ataques Cargados aumenta en un **#rank{14|18|22|26|30}%**. Este efecto dura 4 s, puede acumularse",
+      "hasta 3 veces y solo se puede activar una vez cada 0.3 s. Al alcanzar 3 acumulaciones o al reiniciar",
+      "su duración, regenera 8 pts. de Energía Elemental. Solo se puede regenerar Energía Elemental una vez",
+      "cada 12 s de esta forma."
+    ],
+    "title": "Escrituras del Fluir Sempiterno (1)"
+  },
   "ITEM.ToukabouShigure": "Diluvio Florífero",
   "ITEM.ToukabouShigure1": {
     "description": [
