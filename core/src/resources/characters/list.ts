@@ -1,3 +1,4 @@
+export { Furina } from "./furina"
 export { Neuvillette } from "./neuvillette"
 export { Mika } from "./mika"
 export { Dehya } from "./dehya"
