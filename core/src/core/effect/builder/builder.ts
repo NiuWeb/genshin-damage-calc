@@ -81,7 +81,7 @@ export class Builder implements BuilderType {
             }
             // observe enemy changes
             reg.Observer(tgenemy.Event.CreateObserver(EnemyEvent.CHANGE_AURA, update))
-            return () => 0
+            return update
         }
     }
 
