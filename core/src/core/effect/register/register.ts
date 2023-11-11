@@ -137,6 +137,13 @@ export class Register {
         return this
     }
 
+    /** Removes an specific observer */
+    RemoveObserver(obs: Observer): Register {
+        obs.Remove()
+        this.observers.delete(obs)
+        return this
+    }
+
 
     /** 
      * Sets the query to register the next objects with.
