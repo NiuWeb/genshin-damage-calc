@@ -95,77 +95,6 @@
   "FOOD_TYPE_0": "Offensive",
   "FOOD_TYPE_1": "Defensive",
   "FOOD_TYPE_3": "Elemental",
-  "ITEM.FurinaC1": {
-    "description": [
-      "When using Let the People Rejoice, Furina will gain 150 Fanfare.",
-      "Additionally, Furina's Fanfare limit is increased by 100."
-    ],
-    "title": "Love Is a Rebellious Bird That None Can Tame"
-  },
-  "ITEM.FurinaC2": {
-    "description": [
-      "While Let the People Rejoice lasts, Furina's Fanfare gain from",
-      "increases or decreases in nearby characters' HP is increased",
-      "by 250%. Each point of Fanfare above the limit will increase",
-      "Furina's Max HP by 0.35%. Her maximum Max HP increase is 140%."
-    ],
-    "title": "A Woman Adapts Like Duckweed in Water"
-  },
-  "ITEM.FurinaC3": {
-    "description": [
-      "Increases the Level of Let the People Rejoice by 3.",
-      "Maximum upgrade level is 15."
-    ],
-    "title": "My Secret Is Hidden Within Me, No One Will Know My Name"
-  },
-  "ITEM.FurinaC4": {
-    "description": [
-      "When the Salon Members from Salon Solitaire hit an opponent,",
-      "or the Singer of Many Waters restores HP to the active",
-      "character, Furina will restore 4 Energy. This effect triggers",
-      "once every 5s."
-    ],
-    "title": "They Know Not Life, Who Dwelt in the Netherworld Not!"
-  },
-  "ITEM.FurinaC5": {
-    "description": [
-      "Increases the Level of Salon Solitaire by 3.",
-      "Maximum upgrade level is 15."
-    ],
-    "title": "His Name I Now Know, It Is...!"
-  },
-  "ITEM.FurinaC6": {
-    "description": [
-      "When using Salon Solitaire, Furina gains 'Center of Attention' for",
-      "10s. Throughout the duration, Furina's Normal Attacks, Charged",
-      "Attacks, and Plunging Attacks are converted into Hydro DMG which",
-      "cannot be overridden by any other elemental infusion. DMG is",
-      "also increased by an amount equivalent to 18% of Furina's max HP.",
-      "Throughout the duration, Furina's Normal Attacks (not including",
-      "Arkhe: Seats Sacred and Secular Attacks), Charged Attacks, and the",
-      "impact of Plunging Attacks will cause different effects up to",
-      "every 0.1s after hitting opponents depending on her current Arkhe",
-      "alignment:",
-      "\n",
-      "Arkhe: Ousia\n",
-      "Every 1s, all nearby characters in the party will be healed by 4%",
-      "of Furina's max HP, for a duration of 2.9s. Triggering this effect",
-      "again will extend its duration.\n",
-      "Arkhe: Pneuma\n",
-      "This Normal Attack (not including Arkhe: Seats Sacred and Secular",
-      "Attacks), Charged Attack, or Plunging Attack ground impact DMG",
-      "will be further increased by an amount equivalent to 25% of",
-      "Furina's max HP. When any of the attacks mentioned previously hit",
-      "an opponent, all nearby characters in the party will consume 1% of",
-      "their current HP.",
-      "\n",
-      "During the duration of each instance of 'Center of Attention,' the",
-      "above effects can be triggered up to 6 times. 'Center of Attention'",
-      "will end when its effects have triggered 6 times or when the",
-      "duration expires."
-    ],
-    "title": "Hear Me — Let Us Raise the Chalice of Love!"
-  },
   "HIT_AGGRAVATE": "Aggravate",
   "HIT_AIMED_CHARGED": "Fully-Charged Aimed Shot",
   "HIT_AIMED_NORMAL": "Aimed Shot",
@@ -2072,6 +2001,77 @@
       "Will decrease active character healing interval of the Singer of Many Waters by 0.4%, up to a maximum of 16%."
     ],
     "title": "Unheard Confession"
+  },
+  "ITEM.FurinaC1": {
+    "description": [
+      "When using Let the People Rejoice, Furina will gain 150 Fanfare.",
+      "Additionally, Furina's Fanfare limit is increased by 100."
+    ],
+    "title": "Love Is a Rebellious Bird That None Can Tame"
+  },
+  "ITEM.FurinaC2": {
+    "description": [
+      "While Let the People Rejoice lasts, Furina's Fanfare gain from",
+      "increases or decreases in nearby characters' HP is increased",
+      "by 250%. Each point of Fanfare above the limit will increase",
+      "Furina's Max HP by 0.35%. Her maximum Max HP increase is 140%."
+    ],
+    "title": "A Woman Adapts Like Duckweed in Water"
+  },
+  "ITEM.FurinaC3": {
+    "description": [
+      "Increases the Level of Let the People Rejoice by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "My Secret Is Hidden Within Me, No One Will Know My Name"
+  },
+  "ITEM.FurinaC4": {
+    "description": [
+      "When the Salon Members from Salon Solitaire hit an opponent,",
+      "or the Singer of Many Waters restores HP to the active",
+      "character, Furina will restore 4 Energy. This effect triggers",
+      "once every 5s."
+    ],
+    "title": "They Know Not Life, Who Dwelt in the Netherworld Not!"
+  },
+  "ITEM.FurinaC5": {
+    "description": [
+      "Increases the Level of Salon Solitaire by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "His Name I Now Know, It Is...!"
+  },
+  "ITEM.FurinaC6": {
+    "description": [
+      "When using Salon Solitaire, Furina gains 'Center of Attention' for",
+      "10s. Throughout the duration, Furina's Normal Attacks, Charged",
+      "Attacks, and Plunging Attacks are converted into Hydro DMG which",
+      "cannot be overridden by any other elemental infusion. DMG is",
+      "also increased by an amount equivalent to 18% of Furina's max HP.",
+      "Throughout the duration, Furina's Normal Attacks (not including",
+      "Arkhe: Seats Sacred and Secular Attacks), Charged Attacks, and the",
+      "impact of Plunging Attacks will cause different effects up to",
+      "every 0.1s after hitting opponents depending on her current Arkhe",
+      "alignment:",
+      "\n",
+      "Arkhe: Ousia\n",
+      "Every 1s, all nearby characters in the party will be healed by 4%",
+      "of Furina's max HP, for a duration of 2.9s. Triggering this effect",
+      "again will extend its duration.\n",
+      "Arkhe: Pneuma\n",
+      "This Normal Attack (not including Arkhe: Seats Sacred and Secular",
+      "Attacks), Charged Attack, or Plunging Attack ground impact DMG",
+      "will be further increased by an amount equivalent to 25% of",
+      "Furina's max HP. When any of the attacks mentioned previously hit",
+      "an opponent, all nearby characters in the party will consume 1% of",
+      "their current HP.",
+      "\n",
+      "During the duration of each instance of 'Center of Attention,' the",
+      "above effects can be triggered up to 6 times. 'Center of Attention'",
+      "will end when its effects have triggered 6 times or when the",
+      "duration expires."
+    ],
+    "title": "Hear Me — Let Us Raise the Chalice of Love!"
   },
   "ITEM.FurinaE": {
     "description": [
@@ -4605,6 +4605,28 @@
       "This can be triggered even when the character is not on the field."
     ],
     "title": "Song of Stillness (1)"
+  },
+  "ITEM.SplendorOfTranquilWaters": "Splendor of Tranquil Waters",
+  "ITEM.SplendorOfTranquilWaters1": {
+    "description": [
+      "When the equipping character's current HP increases or",
+      "decreases, Elemental Skill DMG dealt will be increased",
+      "by **#rank{8|10|12|14|16}%** for 6s. Max 3 stacks. This",
+      "effect can be triggered once every 0.2s."
+    ],
+    "title": "Splendor of Tranquil Waters (1)"
+  },
+  "ITEM.SplendorOfTranquilWaters2": {
+    "description": [
+      "When other",
+      "party members' current HP increases or decreases, the",
+      "equipping character's Max HP will be increased by",
+      "**#rank{14|17.5|21|24.5|28}%** for 6s. Max 2 stacks. This",
+      "effect can be triggered once every 0.2s. The",
+      "aforementioned effects can be triggered even if the",
+      "wielder is off-field."
+    ],
+    "title": "Splendor of Tranquil Waters (2)"
   },
   "ITEM.StaffOfHoma": {
     "title": "Staff of Homa"

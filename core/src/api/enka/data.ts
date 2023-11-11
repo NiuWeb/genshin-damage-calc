@@ -172,7 +172,8 @@ export const Weapons = ReadOnly({
     2988480723: "TheFirstGreatMagic",
     2077869763: "TidalShadow",
     2265792579: "WolfFang",
-    4176923379: "TomeOfTheEternalFlow"
+    4176923379: "TomeOfTheEternalFlow",
+    1473399443: "SplendorOfTranquilWaters"
 })
 
 export const Sets = ReadOnly({
