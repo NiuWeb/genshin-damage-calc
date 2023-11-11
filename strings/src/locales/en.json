@@ -95,6 +95,77 @@
   "FOOD_TYPE_0": "Offensive",
   "FOOD_TYPE_1": "Defensive",
   "FOOD_TYPE_3": "Elemental",
+  "ITEM.FurinaC1": {
+    "description": [
+      "When using Let the People Rejoice, Furina will gain 150 Fanfare.",
+      "Additionally, Furina's Fanfare limit is increased by 100."
+    ],
+    "title": "Love Is a Rebellious Bird That None Can Tame"
+  },
+  "ITEM.FurinaC2": {
+    "description": [
+      "While Let the People Rejoice lasts, Furina's Fanfare gain from",
+      "increases or decreases in nearby characters' HP is increased",
+      "by 250%. Each point of Fanfare above the limit will increase",
+      "Furina's Max HP by 0.35%. Her maximum Max HP increase is 140%."
+    ],
+    "title": "A Woman Adapts Like Duckweed in Water"
+  },
+  "ITEM.FurinaC3": {
+    "description": [
+      "Increases the Level of Let the People Rejoice by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "My Secret Is Hidden Within Me, No One Will Know My Name"
+  },
+  "ITEM.FurinaC4": {
+    "description": [
+      "When the Salon Members from Salon Solitaire hit an opponent,",
+      "or the Singer of Many Waters restores HP to the active",
+      "character, Furina will restore 4 Energy. This effect triggers",
+      "once every 5s."
+    ],
+    "title": "They Know Not Life, Who Dwelt in the Netherworld Not!"
+  },
+  "ITEM.FurinaC5": {
+    "description": [
+      "Increases the Level of Salon Solitaire by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "His Name I Now Know, It Is...!"
+  },
+  "ITEM.FurinaC6": {
+    "description": [
+      "When using Salon Solitaire, Furina gains 'Center of Attention' for",
+      "10s. Throughout the duration, Furina's Normal Attacks, Charged",
+      "Attacks, and Plunging Attacks are converted into Hydro DMG which",
+      "cannot be overridden by any other elemental infusion. DMG is",
+      "also increased by an amount equivalent to 18% of Furina's max HP.",
+      "Throughout the duration, Furina's Normal Attacks (not including",
+      "Arkhe: Seats Sacred and Secular Attacks), Charged Attacks, and the",
+      "impact of Plunging Attacks will cause different effects up to",
+      "every 0.1s after hitting opponents depending on her current Arkhe",
+      "alignment:",
+      "\n",
+      "Arkhe: Ousia\n",
+      "Every 1s, all nearby characters in the party will be healed by 4%",
+      "of Furina's max HP, for a duration of 2.9s. Triggering this effect",
+      "again will extend its duration.\n",
+      "Arkhe: Pneuma\n",
+      "This Normal Attack (not including Arkhe: Seats Sacred and Secular",
+      "Attacks), Charged Attack, or Plunging Attack ground impact DMG",
+      "will be further increased by an amount equivalent to 25% of",
+      "Furina's max HP. When any of the attacks mentioned previously hit",
+      "an opponent, all nearby characters in the party will consume 1% of",
+      "their current HP.",
+      "\n",
+      "During the duration of each instance of 'Center of Attention,' the",
+      "above effects can be triggered up to 6 times. 'Center of Attention'",
+      "will end when its effects have triggered 6 times or when the",
+      "duration expires."
+    ],
+    "title": "Hear Me — Let Us Raise the Chalice of Love!"
+  },
   "HIT_AGGRAVATE": "Aggravate",
   "HIT_AIMED_CHARGED": "Fully-Charged Aimed Shot",
   "HIT_AIMED_NORMAL": "Aimed Shot",
@@ -1986,6 +2057,47 @@
       "character is off-field."
     ],
     "title": "Fruit of Fulfillment (1)"
+  },
+  "ITEM.Furina": "Furina",
+  "ITEM.Furina.HIT_ARKHE": "Spiritbreath Thorn/Surging Blade DMG",
+  "ITEM.Furina.HIT_E": "Ousia Bubble DMG",
+  "ITEM.Furina.HIT_E_1": "Gentilhomme Usher",
+  "ITEM.Furina.HIT_E_2": "Surintendante Chevalmarin",
+  "ITEM.Furina.HIT_E_3": "Mademoiselle Crabaletta",
+  "ITEM.FurinaA4": {
+    "description": [
+      "Every 1,000 points of Furina's Max HP can buff the different Arkhe-aligned Salon Solitaire\n",
+      "in the following ways:\n",
+      "Will increase Salon Member DMG dealt by 0.7%, up to a maximum of 28%.\n",
+      "Will decrease active character healing interval of the Singer of Many Waters by 0.4%, up to a maximum of 16%."
+    ],
+    "title": "Unheard Confession"
+  },
+  "ITEM.FurinaE": {
+    "description": [
+      "Ousia\n",
+      "Foaming bubbles like celebrants shall dance, dealing AoE Hydro DMG based on Furina's",
+      "Max HP and summoning 3 Salon Members: the Ball Octopus-shaped Gentilhomme Usher,",
+      "the Bubbly Seahorse-shaped Surintendante Chevalmarin, and the Armored Crab-shaped",
+      "Mademoiselle Crabaletta.\n",
+      "They will attack nearby opponents at intervals, prioritizing the target of the active",
+      "character, dealing Hydro DMG based on Max HP.\n",
+      "When they attack, if character(s) with more than 50% HP are nearby, the Members will",
+      "increase their current attack's power based on the number of such characters, and",
+      "consume said characters' HP. If 1/2/3/4 (or more) characters meet these requirements,",
+      "the Members' attacks will deal 110%/120%/130%/140% of their original DMG."
+    ],
+    "title": "Salon Solitaire"
+  },
+  "ITEM.FurinaQ": {
+    "description": [
+      "Rouses the impulse to revel, creating a stage of foam that will deal AoE Hydro DMG",
+      "based on Furina's Max HP and cause nearby party members to enter the Universal Revelry",
+      "state: During this time, when nearby party members' HP increases or decreases, 1 Fanfare",
+      "point will be granted to Furina for each percentage point of their Max HP by which their",
+      "HP changes."
+    ],
+    "title": "Let the People Rejoice"
   },
   "ITEM.Gambler": {
     "title": "Gambler"

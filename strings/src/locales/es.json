@@ -1926,6 +1926,134 @@
     ],
     "title": "Fruto de la Culminación (1)"
   },
+  "ITEM.Furina": "Furina",
+  "ITEM.Furina.HIT_ARKHE": "Daño de espina halitoespiritual/filo fluyente",
+  "ITEM.FurinaA4": {
+    "description": [
+      "Por cada 1000 pts. de Vida Máx. que tenga Furina, la habilidad",
+      "Salón Solitaire de los diferentes tipos de arjé de Furina",
+      "obtiene distintas bonificaciones:\n",
+      "- El daño de los miembros del salón aumenta en un 0.7%. Su",
+      "daño puede aumentar hasta un 28% de esta manera.\n",
+      "- El intervalo de tiempo en el que el juglar de las aguas",
+      "restaura Vida a los personajes en uso cercanos se reduce en",
+      "un 0.4%. Este intervalo de tiempo se puede reducir hasta un",
+      "16% de esta manera."
+    ],
+    "title": "Confesión inaudible"
+  },
+  "ITEM.FurinaC1": {
+    "description": [
+      "Al usar ¡Que el mundo entero festeje!, Furina obtiene 150 pts.",
+      "de algarabía. Además, el máximo de puntos de algarabía que",
+      "Furina puede poseer aumenta en 100 pts."
+    ],
+    "title": "El amor es como un pájaro rebelde"
+  },
+  "ITEM.FurinaC2": {
+    "description": [
+      "Mientras la habilidad ¡Que el mundo entero festeje! está",
+      "activa, Furina obtiene un 250% más de puntos de algarabía con",
+      "el aumento o disminución de la Vida de los personajes cercanos",
+      "del equipo. Por cada punto de algarabía más allá del límite",
+      "máximo, la Vida Máx. de Furina aumenta en un 0.35%, hasta un",
+      "máximo de un 140%."
+    ],
+    "title": "Una mujer cambiante como el agua"
+  },
+  "ITEM.FurinaC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de ¡Que el mundo entero festeje!",
+      "+3. Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Escondo secretos que nadie conoce"
+  },
+  "ITEM.FurinaC4": {
+    "description": [
+      "Furina obtiene 4 pts. de Energía Elemental cuando los miembros",
+      "del salón de Salón Solitaire golpean a un enemigo o cuando el",
+      "juglar de las aguas restaura Vida a los personajes en uso",
+      "cercanos. Este efecto solo se puede activar una vez cada 5 s."
+    ],
+    "title": "Vive el infierno y apreciarás la vida"
+  },
+  "ITEM.FurinaC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Salón Solitaire +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Ahora sé su nombre, y es..."
+  },
+  "ITEM.FurinaC6": {
+    "description": [
+      "Al usar Salón Solitaire, Furina obtiene el efecto de “atención",
+      "del pueblo” durante 10 s. Mientras este efecto está activo, el",
+      "daño de los Ataques Normales, Cargados y Descendentes de Furina",
+      "se transforma en Daño Hydro, el cual no puede sustituirse",
+      "imbuyéndose de otro elemento. Además, el daño que inflige con",
+      "dichos ataques aumenta en una cantidad equivalente al 18% de su",
+      "Vida Máx. Mientras el efecto de atención del pueblo está",
+      "activo, cada 0.1 s, cuando Furina golpea a un enemigo con un",
+      "Ataque Normal (esto no incluye los ataques de arjé: sacralidad",
+      "y secularidad), Cargado o Descendente, se producen distintos",
+      "efectos dependiendo de su tipo de arjé actual:",
+      "\n",
+      "Arjé: ousía\n",
+      "Restaura Vida cada segundo a todos los miembros del equipo",
+      "cercanos en una cantidad equivalente al 4% de la Vida Máx. de",
+      "Furina durante 2.9 s. Activar esto repetidamente prolongará la",
+      "duración del efecto.\n",
+      "Arjé: pneuma\n",
+      "El daño del siguiente Ataque Normal (esto no incluye los",
+      "ataques de arjé: sacralidad y secularidad), Cargado o",
+      "Descendente aumenta adicionalmente en una cantidad equivalente",
+      "al 25% de la Vida Máx. de Furina. Al golpear a un enemigo con",
+      "alguno de dichos ataques, todos los miembros del equipo",
+      "cercanos perderán un 1% de su Vida actual.",
+      "\n",
+      "Los efectos anteriormente mencionados se pueden activar hasta 6",
+      "veces a lo largo de la duración de atención del pueblo, y se",
+      "eliminarán cuando se haya alcanzado ese número de veces o cuando",
+      "termine su duración."
+    ],
+    "title": "¡Escuchen mis alabanzas y alcemos nuestras copas de amor!"
+  },
+  "ITEM.FurinaE": {
+    "description": [
+      "Convida a los huéspedes del Salón Solitaire para que se unan al equipo y",
+      "aviven el espectáculo de Furina. En función del tipo de arjé actual de",
+      "Furina, convidará a los miembros del salón o al juglar de las aguas.\n",
+      "Ousía\n",
+      "Esparce un festín de burbujas que infligen Daño Hydro en el AdE en función ",
+      "de la Vida Máx. de Furina, e invoca a los tres miembros del salón: el",
+      "Gentilhombre Usher, con forma de Esferoctópodo; Madame Chevalmarine, con",
+      "forma de Caballito Burbumarino, y Mademoiselle Crabaletta, con forma de",
+      "Cangrejo Acorazado.\n",
+      "Los miembros del salón atacarán cada cierto tiempo a los enemigos cercanos,",
+      "con prioridad en los objetivos a los que estén atacando los personajes en uso,",
+      "y les infligirán Daño Hydro en función de la Vida Máx.",
+      "Los ataques de los miembros del salón se volverán más fuertes en función de la",
+      "cantidad de personajes cercanos del equipo con más del 50% de Vida, y estos",
+      "ataques harán que dichos personajes pierdan Vida. Cuando 1/2/3/4 o más personajes",
+      "del equipo cumplen con esta condición, el siguiente ataque de los miembros del",
+      "salón inflige respectivamente un 110/120/130/140% del daño original."
+    ],
+    "title": "Salón Solitaire"
+  },
+  "ITEM.FurinaQ": {
+    "description": [
+      "Concentra un gran júbilo para crear un escenario de agua y espuma que inflige Daño",
+      "Hydro en el AdE en función de la Vida Máx. de Furina, y que hace que los miembros",
+      "del equipo cercanos entren en el estado de “jolgorio ecuménico”. Mientras este estado",
+      "está activo, si la Vida de los personajes aumenta o disminuye, Furina obtiene 1 pt.",
+      "de “algarabía” por cada 1% que varíe la Vida de dichos personajes en función de la",
+      "Vida Máx. del personaje.\n",
+      "Además, el daño que infligen todos los miembros del equipo cercanos y su Bono de",
+      "Curación recibida aumentarán según los puntos de algarabía que tenga Furina.",
+      "Al terminar el estado de jolgorio ecuménico, Furina pierde todos los pts. de algarabía."
+    ],
+    "title": "¡Que el mundo entero festeje!"
+  },
   "ITEM.Gambler": "Jugadora",
   "ITEM.Gambler2": {
     "description": [
