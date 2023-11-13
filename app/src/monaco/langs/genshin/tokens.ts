@@ -13,6 +13,9 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 // comments starts with # or //
                 [/(#|\/\/).*/, "comment"],
 
+                // quote open
+                [/"/, {token: "string", next: "@string"}],
+
                 // constants
                 [/\$[a-z_](\w)*/, "constant"],
 
@@ -39,11 +42,17 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 [/@symbols/, "operator"],
 
 
-                [/{/, { token: "delimiter.bracket", next: "exprLang" }],
+                [/\{/, { token: "delimiter.bracket", next: "exprLang" }],
+            ],
+
+            string: [
+                [/\{/, { token: "delimiter.bracket", next: "exprLang" }],
+                [/"/, { token: "string", next: "@pop" }],
+                [/[^"{]+/, "string"],
             ],
 
             exprLang: [
-                [/\}/, { token: "delimiter.bracket", next: "root" }],
+                [/\}/, { token: "delimiter.bracket", next: "@pop" }],
 
                 // function
                 [/[a-z_]\w*(?=\()/, "function"],

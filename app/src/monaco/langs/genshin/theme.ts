@@ -14,6 +14,7 @@ monaco.editor.defineTheme("genshin-cmd-theme", {
         { token: "command", foreground: "eb5fb4" },
         { token: "delimiter.bracket", foreground: "00ff00" },
         { token: "function", foreground: "dee76c" },
+        { token: "string", foreground: "1bc867" },
     ],
     colors: {}
 })

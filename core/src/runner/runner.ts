@@ -77,7 +77,7 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
             },
             "echo": {
                 name: "echo",
-                arguments: "any...",
+                arguments: "[*=] any...",
                 description: "Prints the arguments to the console",
                 compile({ parts }, { logger }) {
                     const str = parts.join(" ")
