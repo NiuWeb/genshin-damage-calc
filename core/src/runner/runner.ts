@@ -81,8 +81,12 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 description: "Prints the arguments to the console",
                 compile({ parts }, { logger }) {
                     const str = parts.join(" ")
+                    const line = logger.line
                     return function echo() {
+                        const curLine = logger.line
+                        logger.setLine(line)
                         logger.logf(str)
+                        logger.setLine(curLine)
                     }
                 }
             }

@@ -40,14 +40,31 @@ export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, V
                     evaluate: ({ values: [, value], expressions: [nameNode] }) => {
                         const name = nameNode.token.value
                         const current = parser.getVar(name)
-                        if(current === undefined) {
+                        if (current === undefined) {
                             throw new Error(`Variable ${name} is not defined`)
                         }
                         const result = current + value
                         parser.setVar(name, result)
                         return result
                     }
-                }
+                },
+                "multiply": {
+                    name: "multiply",
+                    arguments: [
+                        { name: "variable", description: "name of the variable to multiply", expression: true },
+                        { name: "value", description: "value to multiply the variable by" }
+                    ],
+                    evaluate: ({ values: [, value], expressions: [nameNode] }) => {
+                        const name = nameNode.token.value
+                        const current = parser.getVar(name)
+                        if (current === undefined) {
+                            throw new Error(`Variable ${name} is not defined`)
+                        }
+                        const result = current * value
+                        parser.setVar(name, result)
+                        return result
+                    }
+                },
             }
         })
         const parser = new ExprParser(context)
