@@ -48,6 +48,7 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 // function
                 [/[a-z_]\w*(?=\()/, "function"],
 
+                [/\$[a-z_](\w)*/, "constant"],
                 [/[a-z_](\w)*/, "variable"],
 
                 // numbers
