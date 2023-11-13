@@ -9,6 +9,7 @@ import { cmd_enka } from "./enka/enka"
 import { cmd_food } from "./food/food"
 import { cmd_rotation } from "./rotation/rotation"
 import { Scenario } from "./scenario"
+import { cmd_stat } from "./stat/stat"
 import { cmd_state } from "./state/state"
 import { cmd_weapon } from "./weapon/weapon"
 
@@ -23,6 +24,11 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 name: "character",
                 description: "Controls characters in the party",
                 children: cmd_character()
+            },
+            "stat": {
+                name: "stat",
+                description: "Shortcut for `character stat` subcommands",
+                children: cmd_stat()
             },
             "weapon": {
                 name: "weapon",
@@ -89,7 +95,18 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                         logger.setLine(curLine)
                     }
                 }
-            }
+            },
+            "void": {
+                name: "void",
+                arguments: "[*=] any...",
+                description: "Does nothing, can be used to include expression blocks without printing the result",
+                example: "void { 1 + 1 }",
+                compile() {
+                    return function void_() { 
+                        // do nothing
+                    }
+                }
+            },
         })
 
         super(program)
