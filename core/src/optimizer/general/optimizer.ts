@@ -1,3 +1,4 @@
+import { Logger } from "@bygdle/cmdlang"
 import { ExportParty, ImportParty, ExportedParty } from "@src/core/charbox"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
@@ -18,16 +19,16 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
     private results = new PriorityQueue<Result>()
 
     protected init(config: Config): void {
-        const constants = this.getConstants()
-
         const cmd = new CombinatorCmd(this.target?.GetCharacter().Options.Weapon)
-        cmd.Program.Log = new Logger()
-        cmd.Program.Log.Out = () => void 0
+        cmd.program.logger = new Logger()
+        cmd.program.logger.out = () => void 0
 
+        const constants = this.getConstants()
+        for(const name in constants) {
+            cmd.constants.set(name, constants[name])
+        }
 
-        cmd.Program.CompileString(config.ConfigCmd, {
-            constants: this.constants
-        })()
+        cmd.compileString(config.ConfigCmd)()
 
         this.generator = Combinator.Generate(...cmd.Groups())
         this.setTotal(Combinator.Count(...cmd.Groups()))
@@ -38,7 +39,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         }
 
         if (GetThreadType() === THREAD_TYPE.MAIN_WORKER) {
-            console.log("[MAIN WORKER INIT LOG]\n" + cmd.Program.Log)
+            console.log("[MAIN WORKER INIT LOG]\n" + cmd.program.logger.toString())
         }
     }
     *Generate() {
@@ -51,7 +52,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         runner.Scenario.Character = target
 
         let cmd = equipCombinationCmd(combination)
-        const config = runner.compileString(cmd, this.constants)
+        const config = runner.compileString(cmd)
         config()
 
         let damage = 0
