@@ -1,12 +1,11 @@
-import { Program } from "@src/cmd2"
 import { ReadOnly } from "@src/utils"
 import { toNumber } from "@src/utils/conversions"
 import { CalculateCost } from "../cost/calculate"
 import { CostList } from "../cost/type"
 import { ResourceList, ResourcePool, resourcePool } from "./pool"
+import { Compiler, Program } from "@bygdle/cmdlang"
 
-export class ResourceCmd {
-    public readonly Program = new Program(this)
+export class ResourceCmd extends Compiler<ResourcePool, void> {
     private readonly pool = resourcePool()
 
     private stars = [5]
@@ -14,26 +13,30 @@ export class ResourceCmd {
     private name?: string
 
     constructor() {
-        this.Program.Set({
+        super({} as Program<ResourcePool, void>)
+        this.catch = false
+        this.program = new Program(this.pool, {
             "domain": {
+                name: "domain",
                 description: "Sets the current domain to add resources to.",
-                arguments: ["name"],
-                compile: ({ Log }, [name]) => {
+                arguments: "name",
+                compile: ({ values: [name] }, { logger }) => {
                     return () => {
                         if (!this.pool.domains[name]) {
                             this.pool.domains[name] = {}
                         }
                         this.pointer = "domains"
                         this.name = name
-                        Log.Log(`Domain set to ${name}`)
+                        logger.log(`Domain set to ${name}`)
                     }
                 }
             },
             "upgrade": {
+                name: "upgrade",
                 description: "Sets the current upgrade to add resources to," +
                     "in the currently selected stars with the `stars` command.",
-                arguments: ["name"],
-                compile: ({ Log }, [name]) => {
+                arguments: "name",
+                compile: ({ values: [name] }, { logger }) => {
                     return () => {
                         for (const s of this.stars) {
                             if (!this.pool.upgrades[s][name]) {
@@ -42,14 +45,15 @@ export class ResourceCmd {
                         }
                         this.pointer = "upgrades"
                         this.name = name
-                        Log.Log(`Upgrade set to ${name}`)
+                        logger.log(`Upgrade set to ${name}`)
                     }
                 }
             },
             "stars": {
+                name: "stars",
                 description: "Sets the current stars to add upgrades to.",
-                arguments: ["stars..."],
-                compile: ({ Log }, strvalues) => {
+                arguments: "stars...",
+                compile: ({ values: strvalues }, { logger }) => {
                     const stars = strvalues.map(toNumber)
                     return () => {
                         for (const s of stars) {
@@ -58,35 +62,37 @@ export class ResourceCmd {
                             }
                         }
                         this.stars = stars
-                        Log.Log(`Stars set to ${stars}`)
+                        logger.log(`Stars set to ${stars}`)
                     }
                 }
             },
             "cost": {
+                name: "cost",
                 description: "Sets the resin cost for the current domain.",
-                arguments: ["cost"],
-                compile: ({ Log }, [strval]) => {
+                arguments: "cost",
+                compile: ({ values: [strval] }, { logger }) => {
                     const cost = toNumber(strval)
                     return () => {
                         const list = this.getLists()
                         for (const l of list) {
                             l.cost = cost
                         }
-                        Log.Log(`Resin cost set to ${cost}`)
+                        logger.log(`Resin cost set to ${cost}`)
                     }
                 }
             },
             "resource": {
+                name: "resource",
                 description: "Adds a resource to the current domain or upgrade.",
-                arguments: ["name", "value"],
-                compile: ({ Log }, [name, strval]) => {
+                arguments: "name value",
+                compile: ({ values: [name, strval] }, { logger }) => {
                     const value = toNumber(strval)
                     return () => {
                         const list = this.getLists()
                         for (const l of list) {
                             l[name] = value
                         }
-                        Log.Log(`Resource ${value} set to ${name}`)
+                        logger.log(`Resource ${value} set to ${name}`)
                     }
                 }
             }

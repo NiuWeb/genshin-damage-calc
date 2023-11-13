@@ -3,7 +3,7 @@ import { CalculateCost } from "./calculate"
 
 test("Calculate the total cost of getting upgrades", () => {
     const cmd = new ResourceCmd()
-    cmd.Program.CompileString(`
+    cmd.compileString(`
         domain domain1
         cost 100 
         resource gold 10

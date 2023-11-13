@@ -6,11 +6,10 @@ const adeptus = foods.FindByName("adeptustemptation")!
 describe("Foods in a party", () => {
     const runner = new Runner()
     const party = runner.Scenario.Party
-    const prog = runner.Program
 
     const foods = party.GetFoods()
 
-    prog.CompileString(`
+    runner.compileString(`
         character add bennett
         character add xiangling
         character add xingqiu

@@ -30,7 +30,7 @@ describe("Talent levels copy", () => {
 
 function createOrigin() {
     const runner = new Runner()
-    runner.Program.CompileString(`
+    runner.compileString(`
         character add hutao
         character talent 5 6 7
     `)()
@@ -39,7 +39,7 @@ function createOrigin() {
 
 function createTarget() {
     const runner = new Runner()
-    runner.Program.CompileString(`
+    runner.compileString(`
         character add hutao
         effect set hutaoc3
         effect enable

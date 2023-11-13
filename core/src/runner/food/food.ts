@@ -5,65 +5,67 @@ import { RunnerCmd } from "../cmd"
 
 export const cmd_food = RunnerCmd(() => ({
     "list": {
+        name: "list",
         description: "Lists all the registered foods",
-        arguments: [],
-        compile({ Log }) {
+        compile(_, { logger }) {
             const list = foods.GetList()
             const str = strings.Food(...list)
 
             return function food_list() {
-                Log.Log("\n" + str)
+                logger.log("\n" + str)
             }
         }
     },
     "add": {
+        name: "add",
+        arguments: "name rank",
         description: "Adds a food to the party. Rank is the food quality (1 = suspicious, 2 = normal, 3 = delicious)",
-        arguments: ["name", "rank"],
         example: "food add adeptustemptation 3",
-        compile({ Value, Log }, [name, _rank]) {
+        compile({ values: [name, _rank] }, { context, logger }) {
             const gen = foods.FindByName(name)
             const rank = Math.floor(toNumber(_rank))
             if (!gen) {
-                throw Log.Throwf("Cannot find food %s", name)
+                throw new Error("Cannot find food: " + name)
             }
             return function food_add() {
-                const foods = Value.Party.GetFoods()
+                const foods = context.Party.GetFoods()
                 const food = foods.Add(gen)
                 food.SetRank(rank)
-                Log.Logf("Food %s added", gen.Name)
+                logger.logf("Food %s added", gen.Name)
             }
         }
     },
     "remove": {
+        name: "remove",
         description: "Removes a food from the party",
-        arguments: ["name"],
+        arguments: "name",
         example: "food remove adeptustemptation",
-        compile({ Value, Log }, [name]) {
+        compile({ values: [name] }, { context, logger }) {
             return function food_remove() {
-                const foods = Value.Party.GetFoods()
+                const foods = context.Party.GetFoods()
                 foods.Remove(name)
-                Log.Logf("Food %s removed", name)
+                logger.logf("Food %s removed", name)
             }
         }
     },
     "show": {
+        name: "show",
         description: "Shows the currently added foods",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function food_show() {
-                const foods = Value.Party.GetFoods().GetAll()
-                Log.Log("\n" + strings.Food(...foods))
+                const foods = context.Party.GetFoods().GetAll()
+                logger.log("\n" + strings.Food(...foods))
             }
         }
     },
     "clear": {
+        name: "clear",
         description: "Clears all the foods from the party",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function food_clear() {
-                const foods = Value.Party.GetFoods()
+                const foods = context.Party.GetFoods()
                 foods.Clear()
-                Log.Log("Cleared all foods")
+                logger.log("Cleared all foods")
             }
         }
     }

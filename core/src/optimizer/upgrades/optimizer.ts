@@ -30,7 +30,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
     protected init(config: Config): void {
         if (!config.costs) {
             const resourceCmd = new ResourceCmd()
-            resourceCmd.Program.CompileString(config.resourceCmd)()
+            resourceCmd.compileString(config.resourceCmd)()
             config.costs = resourceCmd.CalculateCost()
         }
 
@@ -85,7 +85,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         if (!msg || msg.step !== "upgrade" || !msg.damage) { return }
         const cmd = EquipUpgrade(msg.upgrade)
         const runner = this.GetRunner()
-        runner.Program.CompileString(cmd)()
+        runner.compileString(cmd)()
         this.prevDamage = msg.damage
     }
 
@@ -113,7 +113,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         const state = charbox.ExportParty(party)
 
         const runner = this.GetRunner()
-        runner.Program.CompileString(row.cmd)()
+        runner.compileString(row.cmd)()
         const damage = this.Run()
         const increase = damage / this.prevDamage - 1
         charbox.ImportParty(state, party)

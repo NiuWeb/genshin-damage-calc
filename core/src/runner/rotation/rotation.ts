@@ -4,104 +4,96 @@ import { RunnerCmd } from "../cmd"
 
 export const cmd_rotation = RunnerCmd(() => ({
     "clear": {
+        name: "clear",
         description: "Clears all the rotation actions",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function rotation_clear() {
-                Value.Rotation.Clear()
-                Log.Log("Rotation cleared")
+                context.Rotation.Clear()
+                logger.log("Rotation cleared")
             }
         }
     },
     "run": {
+        name: "run",
         description: "Runs the rotation",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function rotation_run() {
-                Log.Warn("Running rotation...")
-                Value.Rotation.SetCharacters(...Value.Party.GetMembers())
-                const damage = Value.Rotation.Run()
-                Log.Logf("Rotation damage: %d", damage)
+                logger.warn("Running rotation...")
+                context.Rotation.SetCharacters(...context.Party.GetMembers())
+                const damage = context.Rotation.Run()
+                logger.logf("Rotation damage: %d", damage)
             }
         }
     },
     "log": {
+        name: "log",
         description: "Controls rotation logs",
         children: {
             "enable": {
+                name: "enable",
                 description: "Enables the rotation logs",
-                arguments: [],
-                compile({ Value, Log }) {
+                compile(_, { context, logger }) {
                     return function rotation_log_enable() {
-                        Value.Rotation.Log = Log
-                        Log.Log("Rotation log enabled")
+                        context.Rotation.Log = logger
+                        logger.log("Rotation log enabled")
                     }
                 }
             },
             "disable": {
+                name: "disable",
                 description: "Disables the rotation logs",
-                arguments: [],
-                compile({ Value, Log }) {
+                compile(_, { context, logger }) {
                     return function rotation_log_disable() {
-                        Value.Rotation.Log = undefined
-                        Log.Log("Rotation log disabled")
+                        context.Rotation.Log = undefined
+                        logger.log("Rotation log disabled")
                     }
                 }
             },
         }
     },
     "summary": {
+        name: "summary",
         description: "Prints a summary of the last rotation run",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function rotation_summary() {
-                Log.Log("\n" + strings.Rotation(Value.Rotation.GetSummary()))
+                logger.log("\n" + strings.Rotation(context.Rotation.GetSummary()))
             }
         }
     },
     "hit": {
-        description:
-            "Adds a hit to the rotation. Arguments in the form:\n" +
-            "\t`rotation hit [character_name] [hit_name] [extra...]`.\n\n" +
-            "Where `[extra...]` can be one or more of the following:\n" +
-            "\t- a multiplier in the form `*3`, `*0.5`, etc.\n" +
-            "\t- `aura=x` to set the aura uptime, where `0 <= x <= 1`.\n" +
-            "\t- `reaction=x` to set the reaction uptime, where `0 <= x <= aura`.\n\n" +
-            "If no values provided for `aura` or `reaction`, they will be set to 1 by default.\n\n" +
-            "If `reaction` is greater than `aura`, it will be set to the value of `aura`.\n\n" +
-            "DO NOT include the prefix \"hit_\" for the hit name, it will be automatically added.",
+        name: "hit",
+        arguments: "charname hitname [aura=] [reaction=] multipliers...",
+        description: "Adds a hit to the rotation.",
         example:
             "rotation hit Hutao Charged *9 // 9 charged attacks from Hu Tao\n" +
             "rotation hit Hutao N1 aura=90% reaction=40% // hutao normal attack 1 with 90% aura and 40% reaction uptime",
-        arguments: ["charname", "hitname", "extra..."],
-        compile({ Value, Log }, [charname, hitname, ...extra]) {
+        docs: {
+            charname: "the name of the character",
+            hitname: "the name of the hit, without the prefix `hit_`",
+            aura: "the aura uptime, where `0 <= x <= 1`",
+            reaction: "the reaction uptime, where `0 <= x <= aura`",
+            multipliers: "a multiplier in the form `*3`, `*0.5`, etc.",
+        },
+        compile({ values: [charname, hitname, ...multipliers], named }, { context, logger }) {
             hitname = "HIT_" + hitname
             let multiplier = 1
-            let aura = 1
-            let reaction = 1
+            const aura = toNumber(named["aura"] ?? 1)
+            const reaction = toNumber(named["reaction"] ?? 1)
 
-            extra.forEach(param => {
+            multipliers.forEach(param => {
                 const multiplier_match = param.match(MULTIPLIER_EXP)
-                if (multiplier_match) {
-                    const value = toNumber(multiplier_match[1])
-                    multiplier *= value
+                if (!multiplier_match) {
                     return
                 }
-                const param_match = param.match(PARAM_EXP)
-                if (param_match) {
-                    const key = param_match[1].toLowerCase()
-                    const val = toNumber(param_match[2])
-                    if (key === "aura") {
-                        aura = val
-                    } else if (key === "reaction") {
-                        reaction = val
-                    }
-                }
+                const value = toNumber(multiplier_match[1])
+                multiplier *= value
             })
 
+            const line = logger.line
+
             return function rotation_hit() {
-                Value.Rotation.AddHit(charname, hitname, multiplier, reaction, aura, Log.Line)
-                Log.Logf("Added hit %s (%s) to rotation with multiplier=%.2f, aura=%.2f, reaction=%.2f",
+                context.Rotation.AddHit(charname, hitname, multiplier, reaction, aura, line)
+                logger.logf("Added hit %s (%s) to rotation with multiplier=%.2f, aura=%.2f, reaction=%.2f",
                     hitname,
                     charname,
                     multiplier,
@@ -112,30 +104,35 @@ export const cmd_rotation = RunnerCmd(() => ({
         }
     },
     "do": {
+        name: "do",
         description: "Saves a command to be executed as a rotation action.",
         example: "rotation do effect stacks 9",
-        compile(program, args) {
-            const { Value, Log } = program
-            const cmd = program.Compile(args, { line: Log.Line })
+        compile({ parts }, { context, logger }) {
+            const line = logger.line
+            const cmd = context.GetCompiler().compileString(
+                parts.join(" "),
+                { line }
+            )
 
             return function rotation_do() {
-                Value.Rotation.AddFn(cmd, Log.Line)
-                Log.Logf("Added action to rotation: `%s`", args.join(" "))
+                context.Rotation.AddFn(cmd, line)
+                logger.logf("Added action to rotation: `%s`", parts.join(" "))
             }
         }
     },
     "duration": {
+        name: "duration",
+        arguments: "duration",
         description: "Sets the rotation duration, in seconds.",
         example: "rotation duration 22 // 22 seconds",
-        compile({ Value, Log }, [duration]) {
+        compile({ values: [duration] }, { context, logger }) {
             const t = toNumber(duration)
             return function rotation_duration() {
-                Value.Rotation.Duration = t
-                Log.Logf("Rotation duration set to %.2f seconds.", t)
+                context.Rotation.Duration = t
+                logger.logf("Rotation duration set to %.2f seconds.", t)
             }
         }
     }
 }))
 
 const MULTIPLIER_EXP = /^\*([0-9]+(?:\.[0-9]+)?%?)$/i
-const PARAM_EXP = /^(reaction|aura)=([0-9]+(?:\.[0-9]+)?%?)$/i

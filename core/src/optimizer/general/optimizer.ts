@@ -1,4 +1,3 @@
-import { Constants, Logger } from "@src/cmd2"
 import { ExportParty, ImportParty, ExportedParty } from "@src/core/charbox"
 import { Table } from "@src/strings/table"
 import { PriorityQueue } from "@src/utils/priority/queue"
@@ -12,7 +11,6 @@ import { Config, Result } from "./type"
 
 export class GeneralOptimizer extends Optimizer<Combination, Result | undefined, Config> {
     private generator: Generator<Combination> | undefined = undefined
-    private constants: Constants = {}
 
     private initDamage = 0
     private initState?: ExportedParty
@@ -20,11 +18,13 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
     private results = new PriorityQueue<Result>()
 
     protected init(config: Config): void {
-        this.constants = this.getConstants()
+        const constants = this.getConstants()
 
         const cmd = new CombinatorCmd(this.target?.GetCharacter().Options.Weapon)
         cmd.Program.Log = new Logger()
         cmd.Program.Log.Out = () => void 0
+
+
         cmd.Program.CompileString(config.ConfigCmd, {
             constants: this.constants
         })()
@@ -51,7 +51,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         runner.Scenario.Character = target
 
         let cmd = equipCombinationCmd(combination)
-        const config = runner.Program.CompileString(cmd, this.constants)
+        const config = runner.compileString(cmd, this.constants)
         config()
 
         let damage = 0

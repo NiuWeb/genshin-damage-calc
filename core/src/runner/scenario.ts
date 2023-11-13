@@ -1,8 +1,11 @@
 import { charbox, effect, rotation } from "@src/core"
 import { scenarioConfig } from "./config"
+import { Compiler } from "@bygdle/cmdlang"
 
 /** Runner scenario */
 export class Scenario {
+    private compiler?: Compiler<Scenario, void>
+
     State?: charbox.ExportedParty
     Party = new charbox.Party()
     Rotation = new rotation.Rotation()
@@ -45,5 +48,18 @@ export class Scenario {
             throw new Error("Cannot set scenario character: character not in party")
         }
         this.Character = char
+    }
+
+    /** Sets the scenario compiler */
+    SetCompiler(compiler: Compiler<Scenario, void>): void {
+        this.compiler = compiler
+    }
+
+    /** Gets the scenario compiler */
+    GetCompiler(): Compiler<Scenario, void> {
+        if (!this.compiler) {
+            throw new Error("Scenario compiler not set")
+        }
+        return this.compiler
     }
 }

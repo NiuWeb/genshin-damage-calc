@@ -29,8 +29,8 @@ describe(`
 `, () => {
     test("Initial party loads correctly", () => {
         const runner = new Runner()
-        runner.Program.Log.Out = () => void 0
-        runner.Program.CompileString(initCmd)()
+        runner.program.logger.out = () => void 0
+        runner.compileString(initCmd)()
         const party = runner.Scenario.Party
         const { xingqiu, yelan } = getFromParty(party)
 
@@ -42,14 +42,14 @@ describe(`
 
     test("Bug should not occurr when initial-loading the same party twice", () => {
         const runner1 = new Runner()
-        runner1.Program.Log.Out = () => void 0
-        runner1.Program.CompileString(initCmd)()
+        runner1.program.logger.out = () => void 0
+        runner1.compileString(initCmd)()
         const party1 = runner1.Scenario.Party
         const p1 = getFromParty(party1)
         console.log(">>>>>>> CREATE ANOTHER RUNNER")
         const runner2 = new Runner()
-        runner2.Program.Log.Out = () => void 0
-        runner2.Program.CompileString(initCmd)()
+        runner2.program.logger.out = () => void 0
+        runner2.compileString(initCmd)()
         const party2 = runner2.Scenario.Party
         const p2 = getFromParty(party2)
 
@@ -72,8 +72,8 @@ describe(`
 
     test("Bug should not occur when unapplying and re-applying the effects", () => {
         const runner = new Runner()
-        runner.Program.Log.Out = () => void 0
-        runner.Program.CompileString(initCmd)()
+        runner.program.logger.out = () => void 0
+        runner.compileString(initCmd)()
         const party = runner.Scenario.Party
         const { xingqiu, yelan, Xingqiu, Yelan } = getFromParty(party)
 
@@ -101,8 +101,8 @@ describe(`
 
     test("Bug should not occur when copying the party with `store.PartyFrom`", () => {
         const runner = new Runner()
-        runner.Program.Log.Out = () => void 0
-        runner.Program.CompileString(initCmd)()
+        runner.program.logger.out = () => void 0
+        runner.compileString(initCmd)()
         const party = runner.Scenario.Party
 
         console.log(">>>>>>> CREATE COPY PARTY")
@@ -117,8 +117,8 @@ describe(`
 
     test("Bug should not occur when re-creating another party and loading with `ImportParty`", () => {
         const runner = new Runner()
-        runner.Program.Log.Out = () => void 0
-        runner.Program.CompileString(initCmd)()
+        runner.program.logger.out = () => void 0
+        runner.compileString(initCmd)()
         const party = runner.Scenario.Party
 
         console.log(">>>>>>> CREATE COPY PARTY MANUALLY")

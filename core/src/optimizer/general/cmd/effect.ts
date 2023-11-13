@@ -1,11 +1,14 @@
+import { Dictionary } from "@bygdle/cmdlang"
+import { SplitString2D } from "@src/utils/strlist"
+
 /**
  * Formats effect arguments
  */
-export function getEffectArgs(argsmap: Map<string, string[]>) {
-    const stacks = (argsmap.get("stacks") ?? ["0"]).map(x => parseInt(x))
-    const condition = (argsmap.get("condition") ?? [""]).map(x => x.split(";"))
-    const aura = (argsmap.get("aura") ?? [""]).map(x => x.split(";"))
-    const target = (argsmap.get("target") ?? [""]).map(x => x.split(";"))
+export function getEffectArgs(args: Dictionary) {
+    const stacks = SplitString2D(args["stacks"] ?? "0", x => parseInt(x))[0]
+    const condition = SplitString2D(args["condition"] ?? "", x => x)
+    const aura = SplitString2D(args["aura"] ?? "", x => x)
+    const target = SplitString2D(args["target"] ?? "", x => x)
 
     return { stacks, condition, aura, target }
 }

@@ -1,8 +1,8 @@
-import { Logger } from "@src/cmd2"
 import { GenerateChunks } from "@src/utils/generator/chunks"
 import { BackendAction } from "@src/worker/action"
 import { FromWorker, WORKER_PATHS, Register, ToWorker, SetThreadType, THREAD_TYPE } from "./config"
 import { OptimizerChild } from "./frontend-child"
+import { Logger } from "@bygdle/cmdlang"
 
 /**
  * The main worker will spawn a number of child workers
@@ -29,8 +29,8 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
         SetThreadType(THREAD_TYPE.MAIN_WORKER)
 
         // disable logs
-        Logger.Global.SaveLogs = false
-        Logger.Global.Out = () => void 0
+        Logger.Global.save = false
+        Logger.Global.out = () => void 0
 
         // initialize the requested optimizer
         const optimizer = new Register[data.tool]()

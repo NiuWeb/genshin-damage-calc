@@ -1,9 +1,9 @@
-import { Constants } from "@src/cmd2"
 import { charbox, rotation, stats } from "@src/core"
 import { Runner } from "@src/runner"
 import { store } from "@src/store"
 import { Table } from "@src/strings/table"
 import type { OptimizerConfig } from "./type"
+import { Dictionary } from "@bygdle/cmdlang"
 
 /**
  * Template for an optimizer class
@@ -74,12 +74,12 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
             this.party = scenario.Party
         }
         if (config.Cmd) {
-            this.runner.Program.CompileString(config.Cmd)()
+            this.runner.compileString(config.Cmd)()
             this.rotation = scenario.Rotation
             this.rotation.Log = undefined // disable rotation logs
         }
         if (config.Target) {
-            this.runner.Program.Compile(["character", "set", config.Target])()
+            this.runner.compileString("character set " + config.Target)()
             this.target = scenario.Character
         }
 
@@ -203,8 +203,8 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
     }
 
     /** gets optimizer-provided constants for commands */
-    protected getConstants(): Constants {
-        const list: Constants = {}
+    protected getConstants(): Dictionary {
+        const list: Dictionary = {}
 
         if (this.target) {
             list["target_name"] = this.target.GetCharacter().Options.Name

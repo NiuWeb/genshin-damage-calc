@@ -115,11 +115,11 @@ describe(
 
 function newRunner() {
     const runner = new Runner()
-    runner.Program.Log.Out = () => void 0
-    runner.Program.CompileString(initCmd)()
+    runner.program.logger.out = () => void 0
+    runner.compileString(initCmd)()
     const scenario = runner.Scenario
     const party = scenario.Party
-    const cmd = runner.Program
+    const cmd = runner.program
     const Xingqiu = party.GetMembers().find(s => s.GetCharacter().Options.Name === "Xingqiu")
     const Yelan = party.GetMembers().find(s => s.GetCharacter().Options.Name === "Yelan")
     if (!Xingqiu) {

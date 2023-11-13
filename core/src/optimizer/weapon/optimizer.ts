@@ -1,4 +1,3 @@
-import { Constants, SplitCases } from "@src/cmd2"
 import { effect } from "@src/core"
 import { effects, weapons } from "@src/resources"
 import { strings } from "@src/strings"
@@ -12,15 +11,23 @@ import { Config, Result, Row } from "./type"
 export class WeaponOptimizer extends Optimizer<Row, Result, Config> {
     private cases = new Map<string, string[]>()
     private combinations: Row[] = []
-    private constants: Constants = {}
     private initDamage = 0
     private queue = new PriorityQueue<Result>()
 
     protected init(config: Config): void {
         this.Combinate(config)
         this.setTotal(this.combinations.length)
-        this.constants = this.getConstants()
+        const constants = this.getConstants()
+
+        const runner = this.GetRunner()
+
+        for (const name in constants) {
+            runner.constants.set(name, constants[name])
+        }
+
         this.initDamage = this.Run()
+
+
     }
 
     Combinate(config: Config) {
@@ -88,7 +95,7 @@ export class WeaponOptimizer extends Optimizer<Row, Result, Config> {
             throw new Error("Cannot equip the weapon: " + row.weapon)
         }
 
-        const config = runner.Program.CompileString(row.cmd, { constants: this.constants })
+        const config = runner.compileString(row.cmd)
         config()
 
         // configure the weapon effects
@@ -108,7 +115,7 @@ export class WeaponOptimizer extends Optimizer<Row, Result, Config> {
 
             let str = ""
             for (const cmd of config) {
-                const fn = runner.Program.CompileString(cmd, { constants: this.constants })
+                const fn = runner.compileString(cmd)
                 fn()
                 str += fn.String() + "\n"
             }

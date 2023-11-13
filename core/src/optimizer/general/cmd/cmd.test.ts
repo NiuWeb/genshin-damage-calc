@@ -3,13 +3,13 @@ import { CombinatorCmd } from "./cmd"
 
 const createCmd = () => {
     const cmd = new CombinatorCmd()
-    cmd.Program.Log.Out = () => void 0
+    cmd.program.logger.out = () => void 0
     return cmd
 }
 describe("combinations generation", () => {
     test("can generate if no artifacts defined", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1,5
             add
         `)()
@@ -19,7 +19,7 @@ describe("combinations generation", () => {
     })    
     test("can generate if no weapon defined", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             artifact main=atk%,atk%,cr/cd
             add
         `)()
@@ -30,7 +30,7 @@ describe("combinations generation", () => {
     
     test("can generate single weapon", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1
             add
         `)()
@@ -40,7 +40,7 @@ describe("combinations generation", () => {
     })  
     test("can generate single artifact", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             artifact main=atk%,atk%,cr
             add
         `)()
@@ -50,7 +50,7 @@ describe("combinations generation", () => {
     })    
     test("can generate single weapon and artifact", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1
             artifact main=atk%,atk%,cr
             add
@@ -61,7 +61,7 @@ describe("combinations generation", () => {
     })    
     test("can generate multiple weapons and single artifact", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1,5
             artifact main=atk%,atk%,cr
             add
@@ -72,7 +72,7 @@ describe("combinations generation", () => {
     })     
     test("can generate single weapon and multiple artifacts", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1
             artifact main=atk%/em,atk%,cr/cd
             add
@@ -84,7 +84,7 @@ describe("combinations generation", () => {
 
     test("two groups of single combinations", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon sacrificial
             artifact main=atk%,hydro,cr
             add
@@ -101,7 +101,7 @@ describe("combinations generation", () => {
        
     test("no combinations will work", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             add
         `)()
 
@@ -114,7 +114,7 @@ describe("combinations generation", () => {
 describe("Substats and filters are applied only when enabled", () => {
     test("disabled by default", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             weapon thecatch rank=1
             add
         `)()
@@ -128,7 +128,7 @@ describe("Substats and filters are applied only when enabled", () => {
 
     test("enabled at start", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             substats enable
             artifact main=atk%,atk%,atk%
             add
@@ -143,7 +143,7 @@ describe("Substats and filters are applied only when enabled", () => {
 
     test("enabled by defining range", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             substats range cr=0:10 cd=0:12
             artifact main=atk%,atk%,atk%
             add
@@ -157,7 +157,7 @@ describe("Substats and filters are applied only when enabled", () => {
 
     test("enabled by defining default", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             substats default
             artifact main=atk%,atk%,atk%
             add
@@ -168,12 +168,12 @@ describe("Substats and filters are applied only when enabled", () => {
             expect(combi.artifact.substats).toBeDefined()
         }
 
-        console.log("\n" + cmd.Program.Log)
+        console.log("\n" + cmd.program.logger)
     })
 
     test("enabled by defining range and then disabling", () => {
         const cmd = createCmd()
-        cmd.Program.CompileString(`
+        cmd.compileString(`
             substats range cr=0:10 cd=0:12
             artifact main=atk%,atk%,atk%
             add
