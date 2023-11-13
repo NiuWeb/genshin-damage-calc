@@ -74,6 +74,17 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 name: "enka",
                 description: "Imports characters from Enka.Network service",
                 children: cmd_enka()
+            },
+            "echo": {
+                name: "echo",
+                arguments: "any...",
+                description: "Prints the arguments to the console",
+                compile({ parts }, { logger }) {
+                    const str = parts.join(" ")
+                    return function echo() {
+                        logger.logf(str)
+                    }
+                }
             }
         })
 

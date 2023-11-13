@@ -13,8 +13,8 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 // comments starts with # or //
                 [/(#|\/\/).*/, "comment"],
 
-                // variables
-                [/\$[a-z_](\w)*/, "variable"],
+                // constants
+                [/\$[a-z_](\w)*/, "constant"],
 
                 // whitespace
                 { include: "@whitespace" },
@@ -36,7 +36,25 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 // numbers can accept percentages and start with "x"
                 [/x?[0-9]+(?:\.[0-9]+)?%?/, "number"],
 
-                [/@symbols/, "operator"]
+                [/@symbols/, "operator"],
+
+
+                [/{/, { token: "delimiter.bracket", next: "exprLang" }],
+            ],
+
+            exprLang: [
+                [/\}/, { token: "delimiter.bracket", next: "root" }],
+
+                // function
+                [/[a-z_]\w*(?=\()/, "function"],
+
+                [/[a-z_](\w)*/, "variable"],
+
+                // numbers
+                [/[0-9]+(?:\.[0-9]+)?e(?:\+|-)?[0-9]+(?:\.[0-9]+)?/, "number"],
+                [/[0-9]+(?:\.[0-9]+)?/, "number"],
+
+                [/@exprSymbols/, "operator"],
             ],
 
             comment: [
@@ -54,6 +72,8 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
         ...groups,
 
         keywords: ["const", "case", "all", "none", "help"],
-        symbols: /=|<|>/
+        symbols: /=|<|>/,
+
+        exprSymbols: /[+\-*/()=<>%]/,
     })
 }
