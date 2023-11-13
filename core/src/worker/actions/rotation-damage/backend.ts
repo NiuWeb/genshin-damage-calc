@@ -12,15 +12,16 @@ export class RotationDamageBackend extends BackendAction<ToWorker, FromWorker> {
     }
 
     Run(id: string, data: ToWorker): void {
-        const runner = new Runner()
         Logger.Global.out = () => void 0
+        Logger.Global.save = true
 
         const party = store.PartyFrom(data.party)
+        const runner = new Runner()
         runner.Scenario.Party = party
+        runner.catch = false
 
         try {
             runner.compileString(data.command)()
-
             const rotation = runner.Scenario.Rotation
 
             runner.compileString("rotation log enable")()
@@ -32,6 +33,7 @@ export class RotationDamageBackend extends BackendAction<ToWorker, FromWorker> {
             this.Post(paths.FRONTEND_RUN, { result: { summary, details, log: Logger.Global.toString() }, id })
         } catch (e) {
             this.Post(paths.FRONTEND_RUN, { result: { log: Logger.Global.toString() }, id })
+            console.error(e)
         }
     }
 }

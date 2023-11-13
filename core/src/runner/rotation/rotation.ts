@@ -105,6 +105,10 @@ export const cmd_rotation = RunnerCmd(() => ({
     },
     "do": {
         name: "do",
+        arguments: "commands...",
+        docs: {
+            commands: "a list of commands to be executed as a rotation action",
+        },
         description: "Saves a command to be executed as a rotation action.",
         example: "rotation do effect stacks 9",
         compile({ parts }, { context, logger }) {

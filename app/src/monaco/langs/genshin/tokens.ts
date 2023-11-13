@@ -2,7 +2,7 @@ import { genshin } from "@bygdle/genshin-calculator-core"
 import * as monaco from "monaco-editor"
 import { getGroups } from "./data"
 
-export function registerGenshinTokens(langName: string, program: genshin.cmd2.Program<unknown>) {
+export function registerGenshinTokens(langName: string, program: genshin.cmd.Program<unknown>) {
     const { groups } = getGroups(program)
 
     // Register a tokens provider for the language
