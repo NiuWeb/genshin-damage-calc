@@ -18,7 +18,6 @@ export class RotationDamageBackend extends BackendAction<ToWorker, FromWorker> {
         const party = store.PartyFrom(data.party)
         const runner = new Runner()
         runner.Scenario.Party = party
-        runner.catch = false
 
         try {
             runner.compileString(data.command)()
