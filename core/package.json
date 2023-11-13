@@ -22,7 +22,7 @@
   "author": "@Bygdle#8333",
   "license": "MIT",
   "dependencies": {
-    "@bygdle/cmdlang": "^0.9.3",
+    "@bygdle/cmdlang": "^0.9.5",
     "@bygdle/javascript-lp-solver": "^0.4.25",
     "@bygdle/search-js": "github:NiuWeb/search-js",
     "@js-sdsl/priority-queue": "^4.3.0",

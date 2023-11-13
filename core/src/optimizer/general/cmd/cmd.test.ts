@@ -20,7 +20,7 @@ describe("combinations generation", () => {
     test("can generate if no weapon defined", () => {
         const cmd = createCmd()
         cmd.compileString(`
-            artifact main=atk%,atk%,cr/cd
+            artifact sands=atk% goblet=atk% circlet=cr,cd
             add
         `)()
 
@@ -41,7 +41,7 @@ describe("combinations generation", () => {
     test("can generate single artifact", () => {
         const cmd = createCmd()
         cmd.compileString(`
-            artifact main=atk%,atk%,cr
+            artifact sands=atk% goblet=atk% circlet=cr
             add
         `)()
 
@@ -52,7 +52,7 @@ describe("combinations generation", () => {
         const cmd = createCmd()
         cmd.compileString(`
             weapon thecatch rank=1
-            artifact main=atk%,atk%,cr
+            artifact sands=atk% goblet=atk% circlet=cr
             add
         `)()
 
@@ -63,7 +63,7 @@ describe("combinations generation", () => {
         const cmd = createCmd()
         cmd.compileString(`
             weapon thecatch rank=1,5
-            artifact main=atk%,atk%,cr
+            artifact sands=atk% goblet=atk% circlet=cr
             add
         `)()
 
@@ -74,7 +74,7 @@ describe("combinations generation", () => {
         const cmd = createCmd()
         cmd.compileString(`
             weapon thecatch rank=1
-            artifact main=atk%/em,atk%,cr/cd
+            artifact sands=atk%,em goblet=atk% circlet=cr,cd
             add
         `)()
 
@@ -86,11 +86,11 @@ describe("combinations generation", () => {
         const cmd = createCmd()
         cmd.compileString(`
             weapon sacrificial
-            artifact main=atk%,hydro,cr
+            artifact sands=atk% goblet=hydro circlet=cr
             add
 
             weapon jade
-            artifact main=er,hydro,cd
+            artifact sands=er goblet=hydro circlet=cd
             add
         `)()
 
@@ -130,7 +130,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.compileString(`
             substats enable
-            artifact main=atk%,atk%,atk%
+            artifact sands=atk% goblet=atk% circlet=atk%
             add
         `)()
 
@@ -145,7 +145,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.compileString(`
             substats range cr=0:10 cd=0:12
-            artifact main=atk%,atk%,atk%
+            artifact sands=atk% goblet=atk% circlet=atk%
             add
         `)()
 
@@ -159,7 +159,7 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.compileString(`
             substats default
-            artifact main=atk%,atk%,atk%
+            artifact sands=atk% goblet=atk% circlet=atk%
             add
         `)()
 
@@ -175,11 +175,11 @@ describe("Substats and filters are applied only when enabled", () => {
         const cmd = createCmd()
         cmd.compileString(`
             substats range cr=0:10 cd=0:12
-            artifact main=atk%,atk%,atk%
+            artifact sands=atk% goblet=atk% circlet=atk%
             add
 
             substats disable
-            artifact main=atk%,atk%,atk%
+            artifact sands=atk% goblet=atk% circlet=atk%
             add
         `)()
 

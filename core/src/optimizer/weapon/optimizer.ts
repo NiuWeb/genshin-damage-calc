@@ -6,6 +6,7 @@ import { toPlaces } from "@src/utils/numbers"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { Optimizer } from "../optimizer"
 import { CombinateEffects } from "../utils/effects"
+import { SplitCases } from "../utils/splitcases"
 import { Config, Result, Row } from "./type"
 
 export class WeaponOptimizer extends Optimizer<Row, Result, Config> {

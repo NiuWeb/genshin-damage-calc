@@ -8,6 +8,7 @@ import { getStat } from "./artifactnames"
 import { toNumber } from "@src/utils/conversions"
 import { SubstatTier } from "@src/core/scaling"
 import { Command, Dictionary } from "@bygdle/cmdlang"
+import { SplitString2D } from "@src/utils/strlist"
 
 /**
  * Stores config for substats in a combination
@@ -47,17 +48,18 @@ export class CombinatorSubstats {
      * Sets the substat ranges from the given arguments.
      * @returns a table of substat names to their ranges
      */
-    public ParseRange(args: string[]): string {
+    public ParseRange(args: Dictionary): string {
         const table = new Table(labels.STAT, labels.MIN, labels.MAX)
         const substats: BaseConfig["substats"] = []
-        const argsmap = parseArgsmap(args)
-        for (const [name, value] of argsmap) {
+
+        for (const name in args) {
+            const value = SplitString2D(args[name], x => x)[0]
             const stat = getStat(name)
             if (!stat) throw new Error(`Substat "${name}" not found`)
             let min = Infinity
             let max = 0
             value.forEach(x => {
-                const value = parseFloat(x)
+                const value = toNumber(x)
                 if (value < min) min = value
                 if (value > max) max = value
             })
@@ -74,12 +76,12 @@ export class CombinatorSubstats {
      * Sets the substat minimums from the given arguments.
      * @returns a table of substat names to their minimums
      */
-    public ParseMin(args: string[]): Table {
+    public ParseMin(args: Dictionary): Table {
         const table = new Table(labels.STAT, labels.MIN)
         const filter: BaseConfig["filter"] = []
-        const argsmap = parseArgsmap(args)
 
-        for (const [name, value] of argsmap) {
+        for (const name in args) {
+            const value = SplitString2D(args[name], x => x)[0]
             const stat = getStat(name)
             if (!stat) throw new Error(`Substat "${name}" not found`)
             if (value.length !== 1) {
@@ -169,15 +171,16 @@ export class CombinatorSubstats {
                 }
             },
             "range": {
+                name: "range",
+                arguments: "[stat*=min:max]",
                 description: "Defines the range of substats to be used in optimization " +
                     "in the form:\n\n" +
                     "`range <stat>=<min>:<max> [stat2=<min>:<max> ...]`\n\n" +
                     "When executed, the substats optimization will be enabled.",
-                arguments: ["..."],
                 example: "substats range atk=2:12 cr=2:10 cd=2:12 em=2:12 // standard range",
-                compile: ({ Log }, args) => {
+                compile: ({ named }, { logger }) => {
                     return () => {
-                        const table = this.ParseRange(args)
+                        const table = this.ParseRange(named)
                         logger.log("Substat optimization ranges:")
                         logger.log("\n" + table.toString())
 
@@ -187,13 +190,14 @@ export class CombinatorSubstats {
                 }
             },
             "min": {
+                name: "min",
+                arguments: "[stat*=min]",
                 description: "Adds a minimum value for a substat in the form:\n\n" +
                     "`min <stat>=<min> [stat2=<min> ...]`\n\n" +
                     "When executed, the substats optimization will be enabled.",
-                arguments: ["..."],
-                compile: ({ Log }, args) => {
+                    compile: ({ named }, { logger }) => {
                     return () => {
-                        const table = this.ParseMin(args)
+                        const table = this.ParseMin(named)
                         logger.log("Substat optimization minimums:")
                         logger.log("\n" + table.toString())
 
