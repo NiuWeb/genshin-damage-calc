@@ -41,7 +41,7 @@ export function parseArtifactArgs(args: Dictionary): ArrayObject<Artifacts> {
     const set = SplitString2D(args["set"] ?? "", x => x)[0]
         .map(name => parseSetNames(name))
 
-    if (set) {
+    if (args["set"]) {
         result.set = set
     }
 
