@@ -1,4 +1,5 @@
-import { Compiler, Program } from "@bygdle/cmdlang"
+import { Program } from "@bygdle/cmdlang"
+import { ExtendedCompiler } from "@src/compiler/Compiler"
 import { cmd_artifacts } from "./artifacts/artifacts"
 import { cmd_pieces } from "./artifacts/pieces"
 import { cmd_character } from "./character/character"
@@ -12,7 +13,7 @@ import { cmd_state } from "./state/state"
 import { cmd_weapon } from "./weapon/weapon"
 
 /** creates a genshin command runner */
-export class Runner extends Compiler<Scenario, void> {
+export class Runner extends ExtendedCompiler<Scenario, void> {
     public Scenario: Scenario
     /** creates a genshin command runner */
     constructor() {

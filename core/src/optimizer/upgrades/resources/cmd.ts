@@ -3,9 +3,10 @@ import { toNumber } from "@src/utils/conversions"
 import { CalculateCost } from "../cost/calculate"
 import { CostList } from "../cost/type"
 import { ResourceList, ResourcePool, resourcePool } from "./pool"
-import { Compiler, Program } from "@bygdle/cmdlang"
+import { Program } from "@bygdle/cmdlang"
+import { ExtendedCompiler } from "@src/compiler/Compiler"
 
-export class ResourceCmd extends Compiler<ResourcePool, void> {
+export class ResourceCmd extends ExtendedCompiler<ResourcePool, void> {
     private readonly pool = resourcePool()
 
     private stars = [5]

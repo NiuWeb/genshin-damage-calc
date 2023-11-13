@@ -1,4 +1,5 @@
-import { Compiler, Program } from "@bygdle/cmdlang"
+import { Program } from "@bygdle/cmdlang"
+import { ExtendedCompiler } from "@src/compiler/Compiler"
 import { stats } from "@src/core"
 import { CombinationGroup, Combinator } from "../combinator"
 import { parseArtifactArgs } from "./artifact"
@@ -8,7 +9,7 @@ import { WeaponParser } from "./weapon"
 /**
  * A program that configures combinations via commands.
  */
-export class CombinatorCmd extends Compiler<Combinator, void> {
+export class CombinatorCmd extends ExtendedCompiler<Combinator, void> {
     private readonly combinator = new Combinator()
     private readonly groups: CombinationGroup[] = []
 
