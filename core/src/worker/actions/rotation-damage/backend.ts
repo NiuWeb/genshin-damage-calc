@@ -3,6 +3,7 @@ import { store } from "@src/store"
 import { BackendAction } from "@src/worker/action"
 import { FromWorker, ToWorker, paths } from "./config"
 import { Logger } from "@bygdle/cmdlang"
+import { GetConstants } from "@src/utils/constants"
 
 export class RotationDamageBackend extends BackendAction<ToWorker, FromWorker> {
     constructor() {
@@ -18,6 +19,11 @@ export class RotationDamageBackend extends BackendAction<ToWorker, FromWorker> {
         const party = store.PartyFrom(data.party)
         const runner = new Runner()
         runner.Scenario.Party = party
+
+        const constants = GetConstants(party)
+        for(const name in constants) {
+            runner.constants.set(name, constants[name])
+        }
 
         try {
             runner.compileString(data.command)()

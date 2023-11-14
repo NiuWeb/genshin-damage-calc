@@ -4,6 +4,7 @@ import { store } from "@src/store"
 import { Table } from "@src/strings/table"
 import type { OptimizerConfig } from "./type"
 import { Dictionary } from "@bygdle/cmdlang"
+import { GetConstants } from "@src/utils/constants"
 
 /**
  * Template for an optimizer class
@@ -220,6 +221,9 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
                 list[prefix + "_element"] = stats.stat.Name(char.Options.Element)
                 list[prefix + "_element_aura"] = stats.aura.Name(stats.DmgToAura(char.Options.Element))
             })
+
+            const extra = GetConstants(this.party)
+            Object.assign(list, extra)
         }
 
         return list
