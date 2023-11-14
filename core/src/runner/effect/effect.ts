@@ -85,10 +85,10 @@ export const cmd_effect = RunnerCmd(() => ({
 
                     effect.UnapplyAll()
 
-                    for (const name of targets) {
-                        const char = context.Party.FindMember(name)
+                    for (const targetName of targets) {
+                        const char = context.Party.FindMember(targetName)
                         if (!char) {
-                            logger.errorf("Cannot find target %s", name)
+                            logger.errorf("Cannot find target %s", targetName)
                             return
                         }
                         if (effect.Apply(char)) {
@@ -109,10 +109,10 @@ export const cmd_effect = RunnerCmd(() => ({
                         return
                     }
 
-                    for (const name of targets) {
-                        const char = context.Party.FindMember(name)
+                    for (const targetName of targets) {
+                        const char = context.Party.FindMember(targetName)
                         if (!char) {
-                            logger.errorf("Cannot find target %s", name)
+                            logger.errorf("Cannot find target %s", targetName)
                             return
                         }
                         if (effect.Apply(char)) {
@@ -133,14 +133,14 @@ export const cmd_effect = RunnerCmd(() => ({
                         return
                     }
 
-                    for (const charName of targets) {
-                        const char = context.Party.FindMember(charName)
+                    for (const targetName of targets) {
+                        const char = context.Party.FindMember(targetName)
                         if (!char) {
-                            logger.errorf("Cannot find target %s", charName)
+                            logger.errorf("Cannot find target %s", targetName)
                             return
                         }
                         effect.Lock(char)
-                        logger.logf("Effect %s locked for target %s", charName, char.GetCharacter().Options.Name)
+                        logger.logf("Effect %s locked for target %s", name, char.GetCharacter().Options.Name)
                     }
                 }
             }
