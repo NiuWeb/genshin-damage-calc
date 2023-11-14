@@ -68,6 +68,7 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
             ],
 
             comment: [
+                [/\x40[a-z][a-z0-9_]*:?/, "keyword"],
                 [/[^/*]+/, "comment"],
                 [/\/\*/, "comment", "@push"],    // nested comment
                 ["\\*/", "comment", "@pop"],
