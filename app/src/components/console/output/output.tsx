@@ -14,7 +14,21 @@ export function ConsoleOutput({ show }: { show?: boolean }) {
     if (!box || !pre) { return }
 
     calc.OnLog = (log) => {
-      pre.innerHTML = AnsiToHtml(log.replace(/</g, "&lt;").replace(/</g, "&gt;"))
+      const ansi = log
+      .replace(/</g, "&lt;")
+      .replace(/</g, "&gt;")
+      .replace(/^\s*\[(log|error|warn)([^\]]*)\]/img, (_, type: string, log: string) => {
+        type = type.toLowerCase()
+
+        const color = {
+          log: "34",
+          warn: "93",
+          error: "33"
+        }[type]
+
+        return `\x1b[${color}m[${type.toUpperCase()}${log}]\x1b[0m`
+      })
+      pre.innerHTML = AnsiToHtml(ansi)
       box.scrollTop = box.scrollHeight
     }
     calc.OnLog(calc.GetLog())
