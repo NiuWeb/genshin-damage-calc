@@ -105,7 +105,7 @@ export const cmd_rotation = RunnerCmd(() => ({
     },
     "do": {
         name: "do",
-        arguments: "commands...",
+        arguments: "[*=] commands...",
         docs: {
             commands: "a list of commands to be executed as a rotation action",
         },
