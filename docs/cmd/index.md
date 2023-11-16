@@ -133,6 +133,14 @@ const $my_cmd add xiangling
 character $my_cmd // equivalent to `character add xiangling`
 ```
 
-## 6. More reading
+## 6. Embedded expressions
+
+You can run mathemetical operations in a command by using the following syntax:
+```js
+character stat set hp_current { 1/2 + sqrt(0.0125) } 
+```
+
+
+## 7. More reading
 - Documentation about writting rotations in code [here](./rotations.md).
 - You can find some code examples [here](./examples/index.md).
