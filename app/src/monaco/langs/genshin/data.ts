@@ -17,8 +17,8 @@ export const auras = genshin.stats.aura.Values()
  * Gets the groups of tokens for the language
  * @param commands The program to get the commands from
  */
-export function getGroups(program: genshin.cmd2.Program<unknown>) {
-    const commands = Object.keys(program.Get())
+export function getGroups(program: genshin.cmd.Program<unknown>) {
+    const commands = Object.keys(program.commands)
     const groups: { [x: string]: string[] } = {
         characters,
         stats,

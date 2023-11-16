@@ -8,9 +8,13 @@ monaco.editor.defineTheme("genshin-cmd-theme", {
         { token: "resource", foreground: "f38036" },
         { token: "effect", foreground: "a0bf3a" },
         { token: "stat", foreground: "cca029" },
-        { token: "variable", foreground: "45b4f4" },
+        { token: "constant", foreground: "45b4f4" },
+        { token: "variable", foreground: "9dd6f3" },
         { token: "operator", foreground: "ff7b72" },
         { token: "command", foreground: "eb5fb4" },
+        { token: "delimiter.bracket", foreground: "00ff00" },
+        { token: "function", foreground: "dee76c" },
+        { token: "string", foreground: "1bc867" },
     ],
     colors: {}
 })

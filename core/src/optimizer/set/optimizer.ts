@@ -1,4 +1,3 @@
-import { Constants, SplitCases } from "@src/cmd2"
 import { artifact, effect } from "@src/core"
 import { effects, sets } from "@src/resources"
 import { strings } from "@src/strings"
@@ -7,6 +6,7 @@ import { toPlaces } from "@src/utils/numbers"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { Optimizer } from "../optimizer"
 import { CombinateEffects } from "../utils/effects"
+import { SplitCases } from "../utils/splitcases"
 import { Config, Result, Row } from "./type"
 
 const allSets = sets.GetList()
@@ -14,7 +14,6 @@ const allSets = sets.GetList()
 export class SetOptimizer extends Optimizer<Row, Result, Config> {
     private cases = new Map<string, string[]>()
     private combinations: Row[] = []
-    private constants: Constants = {}
     private initDamage = 0
     private initState?: artifact.Exported[]
     private queue = new PriorityQueue<Result>()
@@ -23,7 +22,13 @@ export class SetOptimizer extends Optimizer<Row, Result, Config> {
         this.Combinate(config)
         this.setTotal(this.combinations.length)
 
-        this.constants = this.getConstants()
+        const constants = this.getConstants()
+        const runner = this.GetRunner()
+
+        for (const name in constants) {
+            runner.constants.set(name, constants[name])
+        }
+
         this.initDamage = this.Run()
 
         const target = this.GetTarget()
@@ -131,7 +136,7 @@ export class SetOptimizer extends Optimizer<Row, Result, Config> {
 
             let str = ""
             for (const cmd of config) {
-                const fn = runner.Program.CompileString(cmd, { constants: this.constants })
+                const fn = runner.compileString(cmd)
                 fn()
                 str += fn.String() + "\n"
             }

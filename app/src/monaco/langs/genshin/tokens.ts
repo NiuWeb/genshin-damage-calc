@@ -2,7 +2,7 @@ import { genshin } from "@bygdle/genshin-calculator-core"
 import * as monaco from "monaco-editor"
 import { getGroups } from "./data"
 
-export function registerGenshinTokens(langName: string, program: genshin.cmd2.Program<unknown>) {
+export function registerGenshinTokens(langName: string, program: genshin.cmd.Program<unknown>) {
     const { groups } = getGroups(program)
 
     // Register a tokens provider for the language
@@ -13,8 +13,11 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd2.Pr
                 // comments starts with # or //
                 [/(#|\/\/).*/, "comment"],
 
-                // variables
-                [/\$[a-z_](\w)*/, "variable"],
+                // quote open
+                [/"/, {token: "string", next: "@string"}],
+
+                // constants
+                [/\$[a-z_](\w)*/, "constant"],
 
                 // whitespace
                 { include: "@whitespace" },
@@ -36,10 +39,36 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd2.Pr
                 // numbers can accept percentages and start with "x"
                 [/x?[0-9]+(?:\.[0-9]+)?%?/, "number"],
 
-                [/@symbols/, "operator"]
+                [/@symbols/, "operator"],
+
+
+                [/\{/, { token: "delimiter.bracket", next: "exprLang" }],
+            ],
+
+            string: [
+                [/\{/, { token: "delimiter.bracket", next: "exprLang" }],
+                [/"/, { token: "string", next: "@pop" }],
+                [/[^"{]+/, "string"],
+            ],
+
+            exprLang: [
+                [/\}/, { token: "delimiter.bracket", next: "@pop" }],
+
+                // function
+                [/[a-z_]\w*(?=\()/, "function"],
+
+                [/\$[a-z_](\w)*/, "constant"],
+                [/[a-z_](\w)*/, "variable"],
+
+                // numbers
+                [/[0-9]+(?:\.[0-9]+)?e(?:\+|-)?[0-9]+(?:\.[0-9]+)?/, "number"],
+                [/[0-9]+(?:\.[0-9]+)?/, "number"],
+
+                [/@exprSymbols/, "operator"],
             ],
 
             comment: [
+                [/\x40[a-z][a-z0-9_]*:?/, "keyword"],
                 [/[^/*]+/, "comment"],
                 [/\/\*/, "comment", "@push"],    // nested comment
                 ["\\*/", "comment", "@pop"],
@@ -54,6 +83,8 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd2.Pr
         ...groups,
 
         keywords: ["const", "case", "all", "none", "help"],
-        symbols: /=|<|>/
+        symbols: /=|<|>/,
+
+        exprSymbols: /[+\-*/()=<>%]/,
     })
 }

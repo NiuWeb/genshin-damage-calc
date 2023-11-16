@@ -7,7 +7,7 @@ import { Upgrade, UpgradeData } from "./upgrades"
 describe("Available Upgrades are detected correcly", () => {
     test("character and talent levels with no constellation", () => {
         const runner = new Runner()
-        runner.Program.CompileString(`
+        runner.compileString(`
             character add xiangling
             character level 85
             character talent 1 9 10
@@ -44,7 +44,7 @@ describe("Available Upgrades are detected correcly", () => {
 
     test("character and talent levels with constellation #1", () => {
         const runner = new Runner()
-        runner.Program.CompileString(`
+        runner.compileString(`
             character add xiangling
             character level 80+
 
@@ -89,10 +89,10 @@ describe("Available Upgrades are detected correcly", () => {
             }
         }
     })
-    
+
     test("character and talent levels with constellation", () => {
         const runner = new Runner()
-        runner.Program.CompileString(`
+        runner.compileString(`
             character add xiangling
             character level 90
             character talent 1 9 10
@@ -129,7 +129,7 @@ describe("Available Upgrades are detected correcly", () => {
 
     test("character level and ascension from low level", () => {
         const runner = new Runner()
-        runner.Program.CompileString(`
+        runner.compileString(`
             character add xiangling
             character level 1
             character talent 1 1 1
@@ -143,8 +143,8 @@ describe("Available Upgrades are detected correcly", () => {
             upgrades = GetUpgrades(char)
             for (const upgrade of upgrades) {
                 const cmd = EquipUpgrade(upgrade)
-                console.log({upgrade, cmd})
-                runner.Program.CompileString(cmd)()
+                console.log({ upgrade, cmd })
+                runner.compileString(cmd)()
             }
         } while (upgrades.length > 0)
 

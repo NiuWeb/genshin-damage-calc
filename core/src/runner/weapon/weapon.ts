@@ -6,9 +6,9 @@ import { RunnerCmd } from "../cmd"
 
 export const cmd_weapon = RunnerCmd(() => ({
     "list": {
+        name: "list",
         description: "List all registered weapons",
-        arguments: [],
-        compile({ Log }) {
+        compile(_, { logger }) {
             const testbox = characters.Bennett()
             const list = weapons.GetList()
             const table = new strings.Table(
@@ -33,32 +33,34 @@ export const cmd_weapon = RunnerCmd(() => ({
             table.DecimalPlaces = 4
             const str = table.String()
             return function weapon_list() {
-                Log.Logf("Total weapons: %d", list.length)
-                Log.Log("\n" + str)
+                logger.logf("Total weapons: %d", list.length)
+                logger.log("\n" + str)
             }
         }
     },
     "set": {
+        name: "set",
         description: "Sets the weapon of the current character",
         example: "weapon set StaffOfHoma",
-        arguments: ["name"],
-        compile({ Value, Log }, [name]) {
+        arguments: "name",
+        compile({ values: [name] }, { context, logger }) {
             const wp = weapons.FindByName(name)
             if (!wp) {
-                throw Log.Throwf("Cannot find weapon %s", name)
+                throw new Error("Cannot find weapon: " + name)
             }
             return function weapon_set() {
-                const char = Value.GetChar()
+                const char = context.GetChar()
                 char.SetWeapon(wp)
-                Log.Logf("Weapon set to %s", wp.Name)
+                logger.logf("Weapon set to %s", wp.Name)
             }
         }
     },
     "level": {
+        name: "level",
         description: "Sets the level of the current character's weapon",
         example: "weapon level 70\nweapon level 80+ //level 80 ascended",
-        arguments: ["level"],
-        compile({ Value, Log }, [str]) {
+        arguments: "level",
+        compile({ values: [str] }, { context, logger }) {
             let strval = str
             const ascend = str.endsWith("+")
             if (ascend) {
@@ -68,42 +70,43 @@ export const cmd_weapon = RunnerCmd(() => ({
             const ascension = ascend ? 6 : 0
 
             return function weapon_level() {
-                const wp = Value.GetChar().GetWeapon()
+                const wp = context.GetChar().GetWeapon()
                 if (!wp) {
-                    Log.Error("Character weapon is not set")
+                    logger.error("Character weapon is not set")
                     return
                 }
                 wp.SetLevel(level)
                 wp.SetAscension(ascension)
-                Log.Logf("Weapon level set to %d%s", wp.GetLevel(), wp.IsAscended() ? "+" : "")
+                logger.logf("Weapon level set to %d%s", wp.GetLevel(), wp.IsAscended() ? "+" : "")
             }
         }
     },
     "rank": {
+        name: "rank",
         description: "Sets the rank of the current character's weapon",
         example: "weapon rank 5",
-        arguments: ["rank"],
-        compile({ Value, Log }, [str]) {
+        arguments: "rank",
+        compile({ values: [str] }, { context, logger }) {
             const rank = toNumber(str)
             return function weapon_rank() {
-                const wp = Value.GetChar().GetWeapon()
+                const wp = context.GetChar().GetWeapon()
                 if (!wp) {
-                    Log.Error("Character weapon is not set")
+                    logger.error("Character weapon is not set")
                     return
                 }
                 wp.SetRank(rank)
-                Log.Logf("Weapon rank set to %d", wp.GetRank())
+                logger.logf("Weapon rank set to %d", wp.GetRank())
             }
         }
     },
     "remove": {
+        name: "remove",
         description: "Removes the character weapon",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function weapon_remove() {
-                const wp = Value.GetChar()
+                const wp = context.GetChar()
                 wp.SetWeapon(undefined)
-                Log.Log("Weapon removed")
+                logger.log("Weapon removed")
             }
         }
     }

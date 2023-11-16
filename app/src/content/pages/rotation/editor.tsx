@@ -20,7 +20,7 @@ export function PageRotationEditor() {
     const party = calc.Get().Scenario.Party
     try {
       const { log, summary, details } = await worker.Run(party, calc.Editor.GetFile(EDITOR_FNAME))
-      worker.Kill()
+      //worker.Kill()
       const time = loading.End()
 
       exec((calc) => {

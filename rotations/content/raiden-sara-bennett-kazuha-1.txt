@@ -24,12 +24,7 @@ const $electro 80% // Electro Aura uptime of 80%
 */
 
 # Disable Raiden E
-rotation do character set Raiden
-  rotation do effect set RaidenE
-    rotation do effect disable
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Raiden RaidenE enable=0
 
 # Disable Bennett buffs
 /*
@@ -40,49 +35,19 @@ the configuration done in the application.
 So if you don't explicitly activate C1/C6, they won't be forcely 
 enabled within the rotations
 */
-rotation do character set Bennett
-  rotation do effect set BennettQ // Disable Bennett Q
-    rotation do effect disable
 
-  rotation do effect set BennettC1 // Unapply Bennett C1 from all members
-    rotation do effect unapply all
-
-  rotation do effect set BennettC6 // Unapply Bennett C6 from all members
-    rotation do effect unapply all
-  
-  rotation do effect set NoblesseOblige4 // Disable Noblesse 4
-    rotation do effect disable
-
-  rotation do effect unset
-rotation do character unset
-
+rotation do effect config Bennett BennettQ enable=0
+rotation do effect config Bennett BennettC6 target=none
+rotation do effect config Bennett NoblesseOblige4 enable=0
 
 # Disable Kazuha buffs
-rotation do character set Kazuha
-  rotation do effect set ViridescentVenerer4 // Disable 4VV
-    rotation do effect unapply all
-    rotation do effect disable
-
-  rotation do effect set KazuhaA4
-    rotation do effect unapply all // Disable Kazuha A4
-    rotation do effect disable
-
-  rotation do effect set KazuhaC2
-    rotation do effect unapply all // Unapply Kazuha C2 from all the team
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Kazuha ViridescentVenerer4 target=none
+rotation do effect config Kazuha KazuhaA4 target=none
+rotation do effect config Kazuha KazuhaC2 target=none
 
 # Disable Sara buffs
-rotation do character set Sara
-  rotation do effect set SaraE
-    rotation do effect disable
-
-  rotation do effect set SaraC6
-    rotation do effect unapply all
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Sara SaraE enable=0
+rotation do effect config Sara SaraC6 target=none
 
 /*
 ===================================
@@ -94,92 +59,43 @@ rotation do character unset
 rotation hit Raiden E aura=$electro
 
 # Enable Raiden E buff for the entire party
-rotation do character set Raiden
-  rotation do effect set RaidenE
-    rotation do effect apply all
-    rotation do effect enable
-
-    rotation do effect unset
-rotation do character unset
+rotation do effect config Raiden RaidenE enable=1 target=all
 
 # Raiden E applies electro
 rotation do enemy aura electro
 
 # Here Bennett casts his Q
 # Bennett buffs are applied to himself
-rotation do character set Bennett
-  rotation do effect set BennettQ   // Configure Bennett Q
-    rotation do effect enable        // Enable Bennett Q buff
-    rotation do effect apply Bennett // Apply Bennett Q to himself
+rotation do effect config Bennett BennettQ enable=1 target=Bennett
 
-  rotation do effect set BennettC1  // Configure Bennett C1
-    rotation do effect apply Bennett // Apply Bennett C1 to himself
-    // Look that i'm not enabling the constellation, so it will
-    // stay disabled if that's how it was configured in the app.
+// Look that i'm not enabling the constellation, so it will
+// stay disabled if that's how it was configured in the app.
+rotation do effect config Bennett BennettC6 target=Bennett 
 
-  rotation do effect set BennettC6  // Configure Bennett C6
-    rotation do effect apply Bennett // Apply Bennett C6 to himself
-    // Again, C6 is not being forcely enabled
-
-  rotation do effect set NoblesseOblige4 // Configure Noblesse 4
-    rotation do effect apply all          // Noblesse 4 applies to everyone
-    rotation do effect enable
-
-  rotation do effect unset
-rotation do character unset
+// Noblesse applies to everyone
+rotation do effect config Bennett NoblesseOblige4 enable=1 target=all
 
 # Bennett Q hits the enemy
 rotation hit Bennett Q             aura=$electro
 rotation hit Bennett Overload      aura=$electro // Bennett Q triggers an Overload
 rotation hit Raiden  E_coordinated aura=$electro // Bennett Q triggers raiden E
 
-
 # Swap to Kazuha and applies Bennett buff to him
-rotation do character set Bennett
-  rotation do effect set BennettQ     // Configure Bennett Q
-    rotation do effect apply Kazuha 
-
-  rotation do effect set BennettC1    // Configure Bennett C1
-    rotation do effect apply Kazuha
-
-  rotation do effect set BennettC6    // Configure Bennett C6
-    rotation do effect apply Kazuha 
-
-  rotation do effect unset
-rotation do character unset
-
+rotation do effect Bennett BennettQ target=Kazuha
+rotation do effect Bennett BennettC6 target=Kazuha
 
 # Kazuha cast Q here
 # The electro swirl activates kazuha buffs
-rotation do character set Kazuha
-  rotation do effect set ViridescentVenerer4
-    rotation do effect aura electro
-    rotation do effect apply all
-    rotation do effect enable
-
-  rotation do effect set KazuhaA4
-    rotation do effect aura electro
-    rotation do effect apply Raiden Bennett Kazuha // Kazuha A4 doesn't apply to Fischl because she snapshotted on cast
-    rotation do effect enable
-
-  rotation do effect set KazuhaC2
-    rotation do effect apply all
-    // Kazuha C2 won't be forcely enabled
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Kazuha ViridescentVenerer4 enable=1 aura=electro target=all
+rotation do effect config Kazuha KazuhaA4 enable=1 aura=electro target=all
+rotation do effect config Kazuha KazuhaC2 aura=electro target=all // Kazuha C2 won't be forcely enabled
 
 # Kazuha Q hits
 rotation hit Kazuha Q aura=$electro
 rotation hit Kazuha Swirl_Electro aura=$electro
 
 # Kazuha Q absorbs pyro
-rotation do character set Kazuha
-  rotation do effect set KazuhaQ
-    rotation do effect aura pyro
-    rotation do effect enable
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Kazuha KazuhaQ enable=1 aura=pyro
 
 # Raiden coordinated E
 rotation hit Raiden E_coordinated aura=$electro // Kazuha E triggers Raiden E
@@ -193,18 +109,12 @@ rotation hit kazuha Q_Additional *5 aura=$electro
 rotation hit kazuha Overload     *5 aura=$electro
 
 # Swap to Sara and applies Bennett buff to her
-rotation do character set Bennett
-  rotation do effect set BennettQ     // Configure Bennett Q
-    rotation do effect apply Sara 
+rotation do effect config Bennett BennettQ target=Sara
+rotation do effect config Bennett BennettC6 target=Sara
 
-  rotation do effect set BennettC1    // Configure Bennett C1
-    rotation do effect apply Sara
-
-  rotation do effect set BennettC6    // Configure Bennett C6
-    rotation do effect apply Sara
-
-  rotation do effect unset
-rotation do character unset
+# Apply sara buffs to herself
+rotation do effect config Sara SaraE enable=1 target=Sara
+rotation do effect config Sara SaraC6 target=Sara
 
 # Sara Q hits
 rotation hit Sara Q     aura=$electro
@@ -213,32 +123,12 @@ rotation hit Sara Q_DoT aura=$electro *6
 
 # Swap to Raiden and applies Bennett buff to her
 rotation do character set Bennett
-  rotation do effect set BennettQ     // Configure Bennett Q
-    rotation do effect apply Raiden    // Apply to Raiden
-
-  rotation do effect set BennettC1    // Configure Bennett C1
-    rotation do effect apply Raiden    // Apply to Raiden
-
-  rotation do effect set BennettC6    // Configure Bennett C6
-    rotation do effect apply Raiden    // Apply to Raiden
-
-    // won't unapply from Kazuha because his attacks snapshots the buff
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Bennett BennettQ target=Raiden
+rotation do effect config Bennett BennettC6 target=Raiden
 
 # Apply sara buffs to Raiden
-rotation do character set Sara
-  rotation do effect set SaraE
-    rotation do effect apply Raiden
-    rotation do effect enable
-  
-  rotation do effect set SaraC6
-    rotation do effect apply Raiden
-  
-  rotation do effect unset
-rotation do character unset
-
+rotation do effect config Sara SaraE target_add=Raiden
+rotation do effect config Sara SaraC6 target_add=Raiden
 
 
 # Raiden Q + 4x(N1C)
@@ -249,31 +139,12 @@ rotation hit Raiden Charged_2_Q   *4 aura=$electro
 rotation hit Raiden E_Coordinated *4 aura=$electro
 
 # Bennett buff ends
-rotation do character set Bennett
-  rotation do effect set BennettQ
-    rotation do effect unapply all
-
-  rotation do effect set BennettC1
-    rotation do effect unapply all
-
-  rotation do effect set BennettC6
-    rotation do effect unapply all
-
-  rotation do effect unset
-rotation do character unset
+rotation do effect config Bennett BennettQ target=none
+rotation do effect config Bennett BennettC6 target=none
 
 # Sara buffs ends
-rotation do character set Sara
-  rotation do effect set SaraE
-    rotation do effect unapply all
-  
-  rotation do effect set SaraC6
-    rotation do effect unapply all
-  
-  rotation do effect unset
-rotation do character unset
-
-
+rotation do effect config Sara SaraE target=none
+rotation do effect config Sara SaraC6 target=none
 
 # Raiden remaining attacks: 2x(N1C)
 rotation hit Raiden N1_Q          *2 aura=$electro

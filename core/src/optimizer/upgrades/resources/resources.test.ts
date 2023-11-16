@@ -2,7 +2,7 @@ import { ResourceCmd } from "./cmd"
 
 test("Resources cmd loads the domains correctly", () => {
     const cmd = new ResourceCmd()
-    cmd.Program.CompileString(`
+    cmd.compileString(`
         domain mora_ley_line
         cost 20
         resource mora 60000
@@ -35,7 +35,7 @@ test("Resources cmd loads the domains correctly", () => {
 test("Resources cmd loads the upgrades correctly", () => {
 
     const cmd = new ResourceCmd()
-    cmd.Program.CompileString(`
+    cmd.compileString(`
         upgrade only_for_5_star
         resource mora 40000
 

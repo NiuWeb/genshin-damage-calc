@@ -1,5 +1,12 @@
-import { RemoveComments } from "./comments"
-import { DEFINE_CASE_EXP } from "./expr"
+import { RemoveComments } from "@bygdle/cmdlang"
+
+/** find cases in the form:
+ * ```
+ * case v1, v2, ...:
+ *  code
+ * ```
+ */
+export const DEFINE_CASE_EXP = /case([^:]*):/g
 
 /**
  * Split a command string into multiple cases in the form:

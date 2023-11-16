@@ -1,7 +1,8 @@
-import { parseArgsmap } from "@src/cmd2/parsearg"
+import { Dictionary } from "@bygdle/cmdlang"
 import { weapons } from "@src/resources"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
 import { searchSimilarStrings } from "@src/utils/search/similarity"
+import { SplitString2D } from "@src/utils/strlist"
 import { Weapon } from "../combinator"
 import { getEffectArgs } from "./effect"
 
@@ -32,13 +33,11 @@ export class WeaponParser {
     /**
      * Creates a weapon combination from the given arguments.
      */
-    public Parse([name, ...args]: string[]): ArrayObject<Weapon> {
-        const argsmap = parseArgsmap(args)
+    public Parse(name: string, args: Dictionary): ArrayObject<Weapon> {
         const names = this.parseName(name)
+        const rank = SplitString2D(args["rank"] ?? "1", x => parseInt(x))[0]
 
-        const rank = (argsmap.get("rank") ?? ["1"]).map(x => parseInt(x))
-
-        return { name: names, rank, ...getEffectArgs(argsmap) }
+        return { name: names, rank, ...getEffectArgs(args) }
     }
 
     /**

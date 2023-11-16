@@ -3,7 +3,7 @@ import { Instance } from "@core/instance"
 import { Rotation as RotationFormula } from "@core/formula"
 import type { Action, Details, Register, Summary } from "./type"
 import { MapList } from "@src/utils/lists/list"
-import { Logger } from "@src/cmd2"
+import { Logger } from "@bygdle/cmdlang"
 
 
 /** rotation is a sequence of hits and actions that results in a damage value */
@@ -36,13 +36,13 @@ export class Rotation {
     Run(): number {
         let prevline = -1
         if (this.Log) {
-            prevline = this.Log.Line
+            prevline = this.Log.line
         }
         this.damage = 0
         this.details = []
         this.actions.forEach(action => this.runAction(action))
         if (this.Log) {
-            this.Log.Line = prevline
+            this.Log.setLine(prevline)
         }
         return this.damage
     }
@@ -162,7 +162,7 @@ export class Rotation {
         const char = this.characters.Find(name)
         if (!char) {
             if (this.Log) {
-                this.Log.Errorf("Character not found: %s", name)
+                this.Log.errorf("Character not found: %s", name)
             }
         }
         return char
@@ -177,7 +177,7 @@ export class Rotation {
         const ins = char.FindInstance(insname)
         if (!ins) {
             if (this.Log) {
-                this.Log.Errorf("Instance %s not found in character %s", insname, charname)
+                this.Log.errorf("Instance %s not found in character %s", insname, charname)
             }
         }
         return ins
@@ -194,7 +194,7 @@ export class Rotation {
     /** runs a single action */
     private runAction(action: Action) {
         if (action.line && this.Log) {
-            this.Log.Line = action.line
+            this.Log.setLine(action.line)
         }
         if (action.fn) {
             action.fn()
@@ -249,7 +249,7 @@ export class Rotation {
         })
 
         if (this.Log) {
-            this.Log.Logf("%s hit %s did (%.2f * %.2f) = %.2f damage", charname, hitname, hit.multiplier, singleDamage, damage)
+            this.Log.logf("%s hit %s did (%.2f * %.2f) = %.2f damage", charname, hitname, hit.multiplier, singleDamage, damage)
         }
     }
 }

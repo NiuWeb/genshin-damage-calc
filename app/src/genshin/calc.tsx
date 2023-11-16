@@ -10,7 +10,7 @@ import { CalcResults } from "./state/results"
 import { CalcInventory } from "./state/inventory"
 import { CalcProjects } from "./projects/projects"
 
-const globalLog = genshin.cmd2.Logger.Global
+const globalLog = genshin.cmd.Logger.Global
 
 /** Global scenario for this app */
 export const Calc = new (class Runner {
@@ -18,12 +18,14 @@ export const Calc = new (class Runner {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     globalThis.__GENSHIN = this.runner
-    globalLog.Out = () => this.OnLog(globalLog.String())
+    globalLog.out = () => this.OnLog(globalLog.toString())
 
     this.runner = new genshin.Runner()
+    this.docs = new genshin.cmd.ProgramDocs(this.runner.program)
     this.Projects.Open("Untitled", this.runner.Scenario.Party)
   }
   private runner: genshin.Runner
+  private docs: genshin.cmd.ProgramDocs
 
   /** Calc open projects */
   readonly Projects = new CalcProjects(party => {
@@ -70,15 +72,15 @@ export const Calc = new (class Runner {
 
     const helpMatch = command.match(/^\s*help(.*?)$/i)
     if (helpMatch) {
-      const parts = helpMatch[1].trim().replace(/\s+/g, " ").split(/\s/)
-      const help = this.runner.Program.Help(parts)
+      const parts = helpMatch[1]
+      const help = this.docs.markdown(parts)
       Alert({
         title: GetString("LABEL.HELP"),
         content: <HelpComponent help={help} />
       })
     } else {
       try {
-        this.runner.Program.CompileString(command)()
+        this.runner.compileString(command)()
       } catch (e) {
         console.error(e)
       }
@@ -102,16 +104,16 @@ export const Calc = new (class Runner {
 
   /** custom log save */
   Log(...args: unknown[]): void {
-    globalLog.Log(args.map(arg => String(arg).valueOf()).join(" "))
-    this.OnLog(globalLog.String())
+    globalLog.log(args.map(arg => String(arg).valueOf()).join(" "))
+    this.OnLog(globalLog.toString())
   }
   /** Gets the current log value */
   GetLog(): string {
-    return globalLog.String()
+    return globalLog.toString()
   }
   /** Clears the log */
   Clear(): void {
-    globalLog.Clear()
-    this.OnLog(globalLog.String())
+    globalLog.clear()
+    this.OnLog(globalLog.toString())
   }
 })

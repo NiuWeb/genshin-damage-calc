@@ -1,4 +1,4 @@
-import { SplitCases, Compiled } from "@src/cmd2"
+import { Compiled } from "@bygdle/cmdlang"
 import { artbox, artifact, scaling, stats, subject } from "@src/core"
 import { CountSets } from "@src/core/artbox/count"
 import { Table } from "@src/strings/table"
@@ -6,6 +6,7 @@ import { ReadOnly } from "@src/utils"
 import { PriorityQueue } from "@src/utils/priority/queue"
 import { Filter } from "../filter"
 import { Optimizer } from "../optimizer"
+import { SplitCases } from "../utils/splitcases"
 import { Config, Result, Row } from "./type"
 import { FilterSets } from "./utils"
 
@@ -17,7 +18,7 @@ type Group = [
 const mainsAndSubs = [...stats.Mainstats, ...stats.Substats]
 
 export class ArtifactsOptimizer extends Optimizer<Row | undefined, Result | undefined, Config> {
-    private compiled = new Map<string, Compiled>()
+    private compiled = new Map<string, Compiled<void[]>>()
     private groups: { [piece: number]: Group[] } = []
     private mods = new Map<number, subject.Modifier>()
     private initDamage = 0
@@ -29,15 +30,20 @@ export class ArtifactsOptimizer extends Optimizer<Row | undefined, Result | unde
         // create a copy of the original array to avoid index mutations
         config.artifacts = [...config.artifacts]
 
-        const program = this.GetRunner().Program
         const parsed = SplitCases(config.ConfigCmd || "")
+        const program = this.GetRunner()
+        const constants = this.getConstants()
+
+        for (const name in constants) {
+            program.constants.set(name, constants[name])
+        }
+
+
 
         // compile all config commands
         for (const [k, v] of parsed) {
             const cmd = "effect set " + k + "\n" + v.join("\n") + "\neffect unset"
-            const compiled = program.CompileString(cmd, {
-                constants: this.getConstants()
-            })
+            const compiled = program.compileString(cmd)
             this.compiled.set(k, compiled)
         }
 

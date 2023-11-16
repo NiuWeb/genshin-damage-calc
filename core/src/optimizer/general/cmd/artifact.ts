@@ -1,7 +1,8 @@
-import { parseArgsmap } from "@src/cmd2/parsearg"
+import { Dictionary } from "@bygdle/cmdlang"
 import { sets } from "@src/resources"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
 import { searchSimilarStrings } from "@src/utils/search/similarity"
+import { SplitString2D } from "@src/utils/strlist"
 import { Artifacts } from "../combinator"
 import { getStat } from "./artifactnames"
 import { getEffectArgs } from "./effect"
@@ -11,34 +12,36 @@ const setNames = sets.GetList().map(x => x.Name.toLowerCase())
 /**
  * Creates a weapon combination from the given arguments.
  */
-export function parseArtifactArgs(args: string[]): ArrayObject<Artifacts> {
-    const argsmap = parseArgsmap(args)
+export function parseArtifactArgs(args: Dictionary): ArrayObject<Artifacts> {
 
-    const mains = (argsmap.get("main") || ["atk%", "atk%", "atk%"])
-        .map(x => x.split("/"))
-        .map(names =>
-            names.map(name => {
-                const value = getStat(name)
-                if (!value) throw new Error(`Main stat "${name}" not found`)
-                return value
-            })
-        )
-    const [sands, goblet, circlet] = mains
 
-    if (!sands) {
-        throw new Error("Main stat sands not found")
-    }
-    if (!goblet) {
-        throw new Error("Main stat goblet not found")
-    }
-    if (!circlet) {
-        throw new Error("Main stat circlet not found")
-    }
+    const sands = SplitString2D(args["sands"] ?? "", x => x)[0]
+        .map(name => {
+            const value = getStat(name)
+            if (!value) throw new Error(`Main stat "${name}" not found`)
+            return value
+        })
 
-    const set = argsmap.get("set")?.map(x => parseSetNames(x))
+    const goblet = SplitString2D(args["goblet"] ?? "", x => x)[0]
+        .map(name => {
+            const value = getStat(name)
+            if (!value) throw new Error(`Main stat "${name}" not found`)
+            return value
+        })
 
-    const result: ArrayObject<Artifacts> = { sands, goblet, circlet, ...getEffectArgs(argsmap) }
-    if (set) {
+    const circlet = SplitString2D(args["circlet"] ?? "", x => x)[0]
+        .map(name => {
+            const value = getStat(name)
+            if (!value) throw new Error(`Main stat "${name}" not found`)
+            return value
+        })
+
+    const result: ArrayObject<Artifacts> = { sands, goblet, circlet, ...getEffectArgs(args) }
+
+    const set = SplitString2D(args["set"] ?? "", x => x)[0]
+        .map(name => parseSetNames(name))
+
+    if (args["set"]) {
         result.set = set
     }
 

@@ -13,7 +13,7 @@ effect apply hutao
 describe("Effects with `MaxTargets` are not exported/imported with party loaders", () => {
     test("Initial run should apply the effect correctly", () => {
         const rn = new Runner()
-        rn.Program.CompileString(initCmd)()
+        rn.compileString(initCmd)()
         const ef = rn.Scenario.Effect!
 
         const applied = ef.GetTargets().map(s => s.GetCharacter().Options.Name)
@@ -21,11 +21,11 @@ describe("Effects with `MaxTargets` are not exported/imported with party loaders
     })
     test("Imported party should apply the effect correctly", () => {
         const rn = new Runner()
-        rn.Program.CompileString(initCmd)()
+        rn.compileString(initCmd)()
 
         const copy = store.PartyFrom(charbox.ExportParty(rn.Scenario.Party))
         rn.Scenario.Party = copy
-        rn.Program.CompileString("character set yelan\neffect set yelanA4")()
+        rn.compileString("character set yelan\neffect set yelanA4")()
         const ef = rn.Scenario.Effect!
 
         const applied = ef.GetTargets().map(s => s.GetCharacter().Options.Name)

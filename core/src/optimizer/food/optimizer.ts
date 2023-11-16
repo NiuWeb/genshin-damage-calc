@@ -30,7 +30,7 @@ export class FoodOptimizer extends Optimizer<Row, Result, OptimizerConfig> {
             "food add " + name + " 3"
         )).join("\n")
 
-        runner.Program.CompileString(cmd)()
+        runner.compileString(cmd)()
 
         const damage = this.Run()
 

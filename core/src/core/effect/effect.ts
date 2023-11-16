@@ -4,8 +4,8 @@ import { Observer, Subject } from "@core/subject"
 import { Register } from "./register/register"
 import { EffectEvent } from "./events"
 import { Horizontal } from "@src/strings/horizontal"
-import { Logger } from "@src/cmd2"
 import { AuraToDmg } from "../stats"
+import { Logger } from "@bygdle/cmdlang"
 
 /**
  * An effect groups modifiers, observers and other objects
@@ -71,7 +71,7 @@ export class Effect {
     Lock(target: Charbox): Effect {
         const reg = this.register.get(target)
         if (!reg) {
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Cannot lock effect %s for target %s because its not applied.",
                 this.Options.Name,
                 target.GetCharacter().Options.Name
@@ -95,7 +95,7 @@ export class Effect {
             if (hasSelf) {
                 set.add(this.Owner)
                 if (length > 1) {
-                    Logger.Global.Warnf(
+                    Logger.Global.warnf(
                         "Effect \"%s\" can only be applied to its owner: \"%s\"",
                         this.Options.Name,
                         this.Owner.GetCharacter().Options.Name
@@ -105,7 +105,7 @@ export class Effect {
         }
         if (!this.Options.ApplySelf) {
             set.delete(this.Owner)
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Effect \"%s\" CANNOT be applied to its owner: \"%s\"",
                 this.Options.Name,
                 this.Owner.GetCharacter().Options.Name,
@@ -118,7 +118,7 @@ export class Effect {
                 deletions++
             }
             if (deletions > 0) {
-                Logger.Global.Warnf(
+                Logger.Global.warnf(
                     "Effect \"%s\" maximum targets is %d.",
                     this.Options.Name,
                     this.Options.MaxTargets
@@ -148,7 +148,7 @@ export class Effect {
                     .find(e => e.Options.Name === this.Options.Name)
 
                 if (applied) {
-                    Logger.Global.Warnf(
+                    Logger.Global.warnf(
                         "Cannot apply effect \"%s\" to target \"%s\". Another instance of this effect is already applied to the target",
                         this.Options.Name,
                         target.GetCharacter().Options.Name,
@@ -160,7 +160,7 @@ export class Effect {
 
 
         if (!this.Options.ApplySelf && target === this.Owner) {
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Cannot apply effect \"%s\" to target \"%s\". Effect CANNOT be applied to its owner: \"%s\"",
                 this.Options.Name,
                 target.GetCharacter().Options.Name,
@@ -169,7 +169,7 @@ export class Effect {
             return false
         }
         if (!this.Options.ApplyOther && target !== this.Owner) {
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Cannot apply effect \"%s\" to target \"%s\". Effect can only be applied to its owner: \"%s\"",
                 this.Options.Name,
                 target.GetCharacter().Options.Name,
@@ -178,7 +178,7 @@ export class Effect {
             return false
         }
         if (this.Options.MaxTargets > 0 && this.targets.size >= this.Options.MaxTargets) {
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Cannot apply effect \"%s\" to target \"%s\". Effect is applied to its maximum number of targets: %d",
                 this.Options.Name,
                 target.GetCharacter().Options.Name,
@@ -187,7 +187,7 @@ export class Effect {
             return false
         }
         if (this.targets.has(target)) {
-            Logger.Global.Warnf(
+            Logger.Global.warnf(
                 "Cannot apply effect \"%s\" to target \"%s\". Effect is applied to this target",
                 this.Options.Name,
                 target.GetCharacter().Options.Name,

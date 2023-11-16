@@ -1,14 +1,14 @@
-import { CommandList } from "@src/cmd2"
-import { parseArgsmap } from "@src/cmd2/parsearg"
 import { stats } from "@src/core"
 import { defaultConfig, BaseConfig } from "@src/optimizer/substats"
 import { labels } from "@src/strings/labels"
 import { Table } from "@src/strings/table"
 import { ArrayObject } from "@src/utils/combinations/array_objects"
-import { Artifacts } from "../combinator"
+import { Artifacts, Combinator } from "../combinator"
 import { getStat } from "./artifactnames"
 import { toNumber } from "@src/utils/conversions"
 import { SubstatTier } from "@src/core/scaling"
+import { Command, Dictionary } from "@bygdle/cmdlang"
+import { SplitString2D } from "@src/utils/strlist"
 
 /**
  * Stores config for substats in a combination
@@ -48,17 +48,18 @@ export class CombinatorSubstats {
      * Sets the substat ranges from the given arguments.
      * @returns a table of substat names to their ranges
      */
-    public ParseRange(args: string[]): string {
+    public ParseRange(args: Dictionary): string {
         const table = new Table(labels.STAT, labels.MIN, labels.MAX)
         const substats: BaseConfig["substats"] = []
-        const argsmap = parseArgsmap(args)
-        for (const [name, value] of argsmap) {
+
+        for (const name in args) {
+            const value = SplitString2D(args[name], x => x)[0]
             const stat = getStat(name)
             if (!stat) throw new Error(`Substat "${name}" not found`)
             let min = Infinity
             let max = 0
             value.forEach(x => {
-                const value = parseFloat(x)
+                const value = toNumber(x)
                 if (value < min) min = value
                 if (value > max) max = value
             })
@@ -75,12 +76,12 @@ export class CombinatorSubstats {
      * Sets the substat minimums from the given arguments.
      * @returns a table of substat names to their minimums
      */
-    public ParseMin(args: string[]): Table {
+    public ParseMin(args: Dictionary): Table {
         const table = new Table(labels.STAT, labels.MIN)
         const filter: BaseConfig["filter"] = []
-        const argsmap = parseArgsmap(args)
 
-        for (const [name, value] of argsmap) {
+        for (const name in args) {
+            const value = SplitString2D(args[name], x => x)[0]
             const stat = getStat(name)
             if (!stat) throw new Error(`Substat "${name}" not found`)
             if (value.length !== 1) {
@@ -95,55 +96,61 @@ export class CombinatorSubstats {
     }
 
     /** creates the subcommands for configuring substats */
-    public Cmd(): CommandList<unknown> {
+    public Cmd(): Dictionary<Command<Combinator, void>> {
         return {
             "enable": {
+                name: "enable",
                 description: "Enables substat optimization. When enabled, " +
                     "substats currently in artifacts will be removed, and replaced with " +
                     "an optimal combination of substats based on the ranges defined.",
-                arguments: [],
-                compile: ({ Log }) => {
+                compile: (_, { logger }) => {
                     return () => {
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                         this.Enabled = true
                     }
                 }
             },
             "disable": {
+                name: "disable",
                 description: "Disables substat optimization. When disabled, " +
                     "substats currently in artifacts will be kept.",
-                arguments: [],
-                compile: ({ Log }) => {
+                compile: (_, { logger }) => {
                     return () => {
                         this.Enabled = false
-                        Log.Log("Substat optimization disabled")
+                        logger.log("Substat optimization disabled")
                     }
                 }
             },
             "total": {
+                name: "total",
                 description: "Sets the total substat rolls to optimize. " +
                     "Values must be between 0 and 45.",
-                arguments: ["total"],
+                arguments: "total",
                 example: "substats total 25 // optimize for 25 substat rolls",
-                compile: ({ Log }, [strval]) => {
+                compile: ({ values: [strval] }, { logger }) => {
                     const total = parseInt(strval)
                     if (isNaN(total) || total < 0 || total > 45) {
                         throw new Error("Total must be between 0 and 45")
                     }
                     return () => {
                         this.Value.total = total
-                        Log.Log(`Substat optimization total set to ${total}`)
+                        logger.log(`Substat optimization total set to ${total}`)
                         this.Enabled = true
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                     }
                 }
             },
             "tier": {
+                name: "tier",
                 description: "Sets the tier of substat rolls to optimize. \n",
-                arguments: ["0 | 1 | 2 | 3 | avg = 4"],
+                arguments: "tier",
+                docs: {
+                    tier: "a number from 0 to 4, where 0 is the lowest tier and 3 is the highest tier." +
+                        "Also, the number 4 or the word `avg` can be used to set the tier to the average."
+                },
                 example: "substats tier 3 // optimize max-rolls\n" +
                     "substats tier avg // optimize average rolls",
-                compile: ({ Log }, [str]) => {
+                compile: ({ values: [str] }, { logger }) => {
                     let tier: number
                     let msg: string
 
@@ -157,55 +164,57 @@ export class CombinatorSubstats {
 
                     return () => {
                         this.Value.tier = tier
-                        Log.Logf("Substat optimization tier set to %s", msg)
+                        logger.logf("Substat optimization tier set to %s", msg)
                         this.Enabled = true
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                     }
                 }
             },
             "range": {
+                name: "range",
+                arguments: "[stat*=min:max]",
                 description: "Defines the range of substats to be used in optimization " +
                     "in the form:\n\n" +
                     "`range <stat>=<min>:<max> [stat2=<min>:<max> ...]`\n\n" +
                     "When executed, the substats optimization will be enabled.",
-                arguments: ["..."],
                 example: "substats range atk=2:12 cr=2:10 cd=2:12 em=2:12 // standard range",
-                compile: ({ Log }, args) => {
+                compile: ({ named }, { logger }) => {
                     return () => {
-                        const table = this.ParseRange(args)
-                        Log.Log("Substat optimization ranges:")
-                        Log.Log("\n" + table.toString())
+                        const table = this.ParseRange(named)
+                        logger.log("Substat optimization ranges:")
+                        logger.log("\n" + table.toString())
 
                         this.Enabled = true
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                     }
                 }
             },
             "min": {
+                name: "min",
+                arguments: "[stat*=min]",
                 description: "Adds a minimum value for a substat in the form:\n\n" +
                     "`min <stat>=<min> [stat2=<min> ...]`\n\n" +
                     "When executed, the substats optimization will be enabled.",
-                arguments: ["..."],
-                compile: ({ Log }, args) => {
+                    compile: ({ named }, { logger }) => {
                     return () => {
-                        const table = this.ParseMin(args)
-                        Log.Log("Substat optimization minimums:")
-                        Log.Log("\n" + table.toString())
+                        const table = this.ParseMin(named)
+                        logger.log("Substat optimization minimums:")
+                        logger.log("\n" + table.toString())
 
                         this.Enabled = true
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                     }
                 }
             },
             "default": {
+                name: "default",
                 description: "Resets the substat ranges to the default values.",
-                arguments: [],
-                compile: ({ Log }) => {
+                compile: (_, { logger }) => {
                     return () => {
                         const table = this.DefaultRange()
-                        Log.Log("Substat optimization ranges reset to default:\n" + table)
+                        logger.log("Substat optimization ranges reset to default:\n" + table)
                         this.Enabled = true
-                        Log.Log("Substat optimization enabled")
+                        logger.log("Substat optimization enabled")
                     }
                 }
             }

@@ -1,8 +1,8 @@
-import { Logger } from "@src/cmd2"
 import { Optimizer } from "@src/optimizer/optimizer"
 import { OptimizerConfig } from "@src/optimizer/type"
 import { BackendAction } from "@src/worker/action"
 import { FromWorker, WORKER_PATHS, Register, ToChildWorker, ToWorker, SetThreadType, THREAD_TYPE, MsgToChildWorker } from "./config"
+import { Logger } from "@bygdle/cmdlang"
 
 /**
  * The child workers will recieve a "fragment" of the
@@ -27,8 +27,8 @@ export class OptimizerChildBackend extends BackendAction<ToChildWorker, FromWork
         SetThreadType(THREAD_TYPE.CHILD_WORKER)
 
         // disable logs
-        Logger.Global.SaveLogs = false
-        Logger.Global.Out = () => void 0
+        Logger.Global.save = false
+        Logger.Global.out = () => void 0
 
         // initialize the requested optimizer
         const optimizer = this.optimizer = new Register[data.tool]()

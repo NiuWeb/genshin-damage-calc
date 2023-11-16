@@ -6,25 +6,34 @@ import { RunnerCmd } from "../cmd"
 
 export const cmd_artifacts_rolls = RunnerCmd(() => ({
     "show": {
+        name: "show",
         description: "Shows the rolls of the character artifacts",
-        arguments: [],
-        compile({ Value, Log }) {
+        compile(_, { context, logger }) {
             return function artifact_rolls_show() {
-                const char = Value.GetChar()
+                const char = context.GetChar()
                 const arts = char.GetArtifacts()
                 if (!arts) {
-                    Log.Error("Current character has no artifacts")
+                    logger.error("Current character has no artifacts")
                     return
                 }
-                Log.Log("\n" + arts.GetArtifacts().map(art => strings.ArtifactRolls(art)).join("\n"))
+                logger.log(
+                    "\n" + arts.GetArtifacts()
+                        .map(art => strings.ArtifactRolls(art))
+                        .join("\n")
+                )
             }
         }
     },
     "tier": {
+        name: "tier",
+        arguments: "tier",
         description: "Sets the rolls tier to equip.`",
-        example: "artifact rolls tier avg",
-        arguments: ["0 | 1 | 2 | 3 | avg = 4"],
-        compile({ Value, Log }, [str]) {
+        example: "artifact rolls tier 3",
+        docs: {
+            tier: "a number from 0 to 4, where 0 is the lowest tier and 3 is the highest tier." +
+                "Also, the number 4 or the word `avg` can be used to set the tier to the average."
+        },
+        compile({ values: [str] }, { context, logger }) {
             let tier: number
             let msg: string
 
@@ -36,17 +45,19 @@ export const cmd_artifacts_rolls = RunnerCmd(() => ({
                 msg = tier + ""
             }
             return function artifact_rolls_tier() {
-                Value.Config.substats.tier = tier
-                Log.Logf("Rolls tier set to %s", msg)
+                context.Config.substats.tier = tier
+                logger.logf("Rolls tier set to %s", msg)
             }
         }
     },
     "equip": {
+        name: "equip",
+        arguments: "stat rolls more...",
         description:
             "Equips the given rolls to the artifacts." +
             "Arguments in the form `[stat] [rolls] [stat] [rolls] ...`.",
         example: "artifact rolls equip crit_rate 10 crit_dmg 12 elemental_mastery 3",
-        compile({ Value, Log }, args) {
+        compile({ values: args }, { context, logger }) {
             const toequip: [stat: number, value: number][] = []
             for (let i = 0; i < args.length; i += 2) {
                 const sname = args[i].toUpperCase()
@@ -54,28 +65,28 @@ export const cmd_artifacts_rolls = RunnerCmd(() => ({
                 const name = stats.stat.Name(stat)
                 const strv = args[i + 1]
                 if (!strv) {
-                    throw Log.Throwf("Missing # of rolls for stat %s", name)
+                    throw new Error("Missing # of rolls for stat " + name)
                 }
                 const val = Math.max(0, Math.floor(toNumber(strv)))
                 toequip.push([stat, val])
             }
             return function artifact_rolls_equip() {
-                const arts = Value.GetChar().GetArtifacts()
+                const arts = context.GetChar().GetArtifacts()
                 if (!arts) {
-                    throw Log.Throw("Current character has no artifacts")
+                    throw new Error("Current character has no artifacts")
                 }
                 const ok = arts.EquipRolls({
                     substats: toequip,
-                    tier: Value.Config.substats.tier,
+                    tier: context.Config.substats.tier,
                 })
                 if (ok) {
-                    if (Value.Config.substats.tier === SubstatTier.ROLL_AVG) {
-                        Log.Logf("Equipped rolls of tier %s", "AVERAGE")
+                    if (context.Config.substats.tier === SubstatTier.ROLL_AVG) {
+                        logger.logf("Equipped rolls of tier %s", "AVERAGE")
                     } else {
-                        Log.Logf("Equipped rolls of tier %d", Value.Config.substats.tier)
+                        logger.logf("Equipped rolls of tier %d", context.Config.substats.tier)
                     }
                 } else {
-                    Log.Error("Rolls could not be equipped")
+                    logger.error("Rolls could not be equipped")
                 }
             }
         }

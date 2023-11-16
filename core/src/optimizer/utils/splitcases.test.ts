@@ -1,4 +1,4 @@
-import { SplitCases } from "./cases"
+import { SplitCases } from "./splitcases"
 describe("Split code in cases", () => {
     const cases = SplitCases(`
         case value1:
