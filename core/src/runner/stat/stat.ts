@@ -34,7 +34,7 @@ export const cmd_stat = RunnerCmd(() => ({
             const characters = _characters.filter(x => !exclude.includes(x))
 
             return function stat_set() {
-                const party = context.GetChar().GetParty()
+                const party = context.Party
                 const allMembers = party ? party.GetMembers() : [context.GetChar()]
 
                 const members = allMembers.filter(x => {
