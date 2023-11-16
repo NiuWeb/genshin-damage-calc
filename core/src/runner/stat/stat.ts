@@ -15,9 +15,8 @@ export const cmd_stat = RunnerCmd(() => ({
             value: "value to set the stat to. Can be a percentage like 10% or 0.1",
             exclude: "name of the characters to exclude from the set. Can be a comma-separated list of names."
         },
-        compile({ values: [_character, _stat, _value], named: { exclude: _exclude } }, { context, logger }) {
+        compile({ values: [_character, _stat], named: { exclude: _exclude }, get }, { context, logger }) {
             const stat = stats.stat.Get(_stat.toUpperCase())
-            const value = toNumber(_value)
 
             const all = _character === "all"
             const _characters = SplitString2D(_character, x => x)[0]
@@ -28,12 +27,11 @@ export const cmd_stat = RunnerCmd(() => ({
 
             const exclude = SplitString2D(_exclude || "", x => x)[0]
 
-            console.log(_exclude, exclude)
-
             // exclude characters
             const characters = _characters.filter(x => !exclude.includes(x))
 
             return function stat_set() {
+                const value = get.number(2)
                 const party = context.Party
                 const allMembers = party ? party.GetMembers() : [context.GetChar()]
 

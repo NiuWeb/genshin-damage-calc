@@ -1,6 +1,5 @@
 import { stats } from "@src/core"
 import { strings } from "@src/strings"
-import { toNumber } from "@src/utils/conversions"
 import { SplitString2D } from "@src/utils/strlist"
 import { RunnerCmd } from "../cmd"
 
@@ -22,7 +21,7 @@ export const cmd_effect = RunnerCmd(() => ({
                 "Read more about this in the `effect lock` command."
         },
         example: "effect config Yelan YelanQ stacks=9 target=Hutao",
-        compile({ values: [ownerName, effectName], named }, { context, logger }) {
+        compile({ values: [ownerName, effectName], named, get }, { context, logger }) {
             return function effect_config() {
                 const owner = context.Party.FindMember(ownerName)
                 if (!owner) {
@@ -49,7 +48,7 @@ export const cmd_effect = RunnerCmd(() => ({
                 }
 
                 if (named["stacks"] !== undefined) {
-                    const stacks = toNumber(named["stacks"])
+                    const stacks = get.number("stacks")
                     effect.SetStacks(stacks)
                     logger.logf("Effect %s stacks set to %d", name, effect.GetStacks())
                 }
@@ -337,9 +336,9 @@ export const cmd_effect = RunnerCmd(() => ({
         description: "Sets the current effect's stacks",
         example: "effect stacks 9",
         arguments: "stacks",
-        compile({ values: [strval] }, { context, logger }) {
-            const stacks = toNumber(strval)
+        compile({ get }, { context, logger }) {
             return function effect_stacks() {
+                const stacks = get.number(0)
                 const ef = context.GetEffect()
                 ef.SetStacks(stacks)
                 logger.logf("Effect stacks set to %f", ef.GetStacks())

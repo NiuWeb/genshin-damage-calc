@@ -1,10 +1,10 @@
-import { Compiler, ExprParser, Program } from "@bygdle/cmdlang"
+import { Compiler, Dictionary, ExprParser, Program } from "@bygdle/cmdlang"
 
 /**
  * Compiler with extended language functions
  */
 export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, Value> {
-    constructor(program: Program<Context, Value>) {
+    constructor(program: Program<Context, Value>, variables: Dictionary<number> = {}) {
         super(program)
 
         const context = ExprParser.Contexts("math", "logic", {
@@ -67,6 +67,8 @@ export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, V
                 },
             }
         })
+        context.variables = variables
+        
         const parser = new ExprParser(context)
 
         this.exprParser = parser

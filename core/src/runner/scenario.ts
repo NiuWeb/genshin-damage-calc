@@ -1,6 +1,6 @@
-import { charbox, effect, rotation } from "@src/core"
+import { charbox, effect, rotation, stats } from "@src/core"
 import { scenarioConfig } from "./config"
-import { Compiler } from "@bygdle/cmdlang"
+import { Compiler, Dictionary } from "@bygdle/cmdlang"
 
 /** Runner scenario */
 export class Scenario {
@@ -13,6 +13,54 @@ export class Scenario {
     Effect: effect.Effect | undefined
 
     Config = scenarioConfig()
+
+    public Variables: Dictionary<number> = {}
+    /**
+     * A proxy for the scenario variables that will
+     * be used by the compiler
+     */
+    readonly VarProxy = new Proxy<Dictionary<number>>({}, {
+        get: (_, _prop) => {
+            const prop = _prop.toString()
+            const parts = prop.split("_")
+
+            // variables in the form `characterName_stat` will be
+            // reserved, replaced by the character stat at runtime.
+            if (parts.length > 1) {
+                const name = parts.shift() || ""
+                const statName = parts.join("_").toUpperCase()
+
+                const stat = stats.stat.Get(statName)
+
+                const member = this.Party.FindMember(name)
+                if (member) {
+                    return member.GetCharacter().Get(stat)
+                }
+            }
+
+
+            return this.Variables[prop]
+        },
+        set: (_, _prop, value) => {
+            const prop = _prop.toString()
+            const parts = prop.split("_")
+            
+            // variables in the form `characterName_stat` will be
+            // reserved, replaced by the character stat at runtime.
+            // So they cannot be set.
+            if (parts.length > 1) {
+                const name = parts.shift() || ""
+
+                const member = this.Party.FindMember(name)
+                if (member) {
+                    throw new Error(`Cannot set variable ${prop}: reserved for character stats`)
+                }
+            }
+
+            this.Variables[prop] = value
+            return true
+        }
+    })
 
     Reset(): void {
         this.Party = new charbox.Party()

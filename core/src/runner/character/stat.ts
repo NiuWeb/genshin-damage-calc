@@ -1,6 +1,5 @@
 import { stats } from "@src/core"
 import { strings } from "@src/strings"
-import { toNumber } from "@src/utils/conversions"
 import { RunnerCmd } from "../cmd"
 
 export const cmd_character_stat = RunnerCmd(() => ({
@@ -42,10 +41,10 @@ export const cmd_character_stat = RunnerCmd(() => ({
         description: "Sets the value of a stat in the current character",
         example: "character stat set atk_percent 45%",
         arguments: "stat value",
-        compile({ values: [_stat, _value] }, { context, logger }) {
+        compile({ values: [_stat], get }, { context, logger }) {
             const stat = stats.stat.Get(_stat.toUpperCase())
-            const value = toNumber(_value)
             return function artifact_stat_set() {
+                const value = get.number(1)
                 const box = context.GetChar()
                 const char = box.GetCharacter()
                 if (stat === stats.stat.HP_CURRENT || stat === stats.stat.ENERGY_CURRENT) {
@@ -63,11 +62,11 @@ export const cmd_character_stat = RunnerCmd(() => ({
         description: "Adds to the value of a stat in the current character",
         example: "character stat add atk_percent 10%",
         arguments: "stat value",
-        compile({ values: [_stat, _value] }, { context, logger }) {
+        compile({ values: [_stat], get }, { context, logger }) {
             const stat = stats.stat.Get(_stat.toUpperCase())
-            const value = toNumber(_value)
 
             return function character_stat_add() {
+                const value = get.number(1)
                 const box = context.GetChar()
                 const char = box.GetCharacter()
                 box.AddModifier(char.CreateModifier(stat, value))

@@ -85,13 +85,22 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 name: "echo",
                 arguments: "[*=] any...",
                 description: "Prints the arguments to the console",
-                compile({ parts }, { logger }) {
-                    const str = parts.join(" ")
+                compile({ parts, expressions }, { logger }) {
                     const line = logger.line
                     return function echo() {
                         const curLine = logger.line
                         logger.setLine(line)
-                        logger.logf(str)
+
+                        const str = parts.map((part, i) => {
+                            const expr = expressions[i]
+                            if (expr) {
+                                return expr.evaluate(expr.length - 1).toString()
+                            }
+                            return part
+                        })
+
+                        logger.log(str.join(""))
+
                         logger.setLine(curLine)
                     }
                 }
@@ -102,14 +111,14 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 description: "Does nothing, can be used to include expression blocks without printing the result",
                 example: "void { 1 + 1 }",
                 compile() {
-                    return function void_() { 
+                    return function void_() {
                         // do nothing
                     }
                 }
             },
         })
 
-        super(program)
+        super(program, scenario.VarProxy)
         this.Scenario = scenario
 
         this.Scenario.SetCompiler(this)
