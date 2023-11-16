@@ -52,6 +52,9 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
             ],
 
             exprLang: [
+                [/(#|\/\/).*/, "comment"],
+
+                { include: "@whitespace" },
                 [/\}/, { token: "delimiter.bracket", next: "@pop" }],
 
                 // function
