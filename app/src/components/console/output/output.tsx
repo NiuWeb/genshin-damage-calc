@@ -22,8 +22,8 @@ export function ConsoleOutput({ show }: { show?: boolean }) {
 
         const color = {
           log: "34",
-          warn: "93",
-          error: "33"
+          warn: "33",
+          error: "31"
         }[type]
 
         return `\x1b[${color}m[${type.toUpperCase()}${log}]\x1b[0m`
