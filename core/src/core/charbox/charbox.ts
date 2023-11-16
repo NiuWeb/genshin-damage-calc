@@ -8,6 +8,7 @@ import type { Artbox } from "@core/artbox/artbox"
 import { Modifier, Subject } from "@core/subject"
 import { CharboxEvent } from "./event"
 import { MapList } from "@src/utils/lists/list"
+import { stats } from ".."
 
 /**
  * Options to create a charbox from static method
@@ -41,6 +42,10 @@ export class Charbox {
     private weapon: Weapon | undefined
     private artifacts: Artbox | undefined
     private modifiers: Modifier[] = []
+
+    private uniqueModifiers = new Map<number, Modifier>()
+    private allModifiers: Modifier[] = []
+
     readonly Event = new Subject(CharboxEvent.Length(), "CHARBOX_EVENT")
 
     /** Creates a charbox with given instances and effects */
@@ -312,18 +317,60 @@ export class Charbox {
         this.modifiers.unshift(mod)
         return this
     }
+
+    /**
+     * Sets the stat of the character to a given value.
+     * @returns the value of the stat after the change
+     */
+    SetStat(stat: number, value: number): number {
+        const char = this.GetCharacter()
+        if (stat === stats.stat.HP_CURRENT || stat === stats.stat.ENERGY_CURRENT) {
+            char.Set(stat, value)
+        } else {
+            const current = char.Get(stat)
+            let mod = this.uniqueModifiers.get(stat)
+            if (!mod) {
+                mod = char.CreateModifier(stat, value - current)
+                this.uniqueModifiers.set(stat, mod)
+            } else {
+                const modVal = mod.GetValue()
+                mod.SetValue(value - current + modVal)
+            }
+        }
+        return char.Get(stat)
+    }
+
+    /**
+     * Adds the given value to the stat of the character.
+     */
+    AddStat(stat: number, value: number): number {
+        const char = this.GetCharacter()
+        const current = char.Get(stat)
+        return this.SetStat(stat, current + value)
+    }
+
     /** Removes a modifier from the box */
     RemoveModifier(mod: Modifier): Charbox {
         const index = this.modifiers.indexOf(mod)
         if (index >= 0) {
             mod.Disable()
             this.modifiers.splice(index, 1)
+        } else {
+            for (const [stat, m] of this.uniqueModifiers) {
+                if (m === mod) {
+                    this.uniqueModifiers.delete(stat)
+                    break
+                }
+            }
         }
         return this
     }
     /** List the saved modifiers */
     GetModifiers(): readonly Modifier[] {
-        return this.modifiers
+        this.allModifiers.splice(0, this.allModifiers.length)
+        this.allModifiers.push(...this.modifiers)
+        this.allModifiers.push(...this.uniqueModifiers.values())
+        return this.allModifiers
     }
     /** removes all modifiers */
     ClearModifiers(): Charbox {

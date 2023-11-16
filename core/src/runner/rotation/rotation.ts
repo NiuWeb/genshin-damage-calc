@@ -97,8 +97,8 @@ export const cmd_rotation = RunnerCmd(() => ({
                     hitname,
                     charname,
                     multiplier,
-                    reaction,
                     aura,
+                    reaction,
                 )
             }
         }
@@ -111,12 +111,13 @@ export const cmd_rotation = RunnerCmd(() => ({
         },
         description: "Saves a command to be executed as a rotation action.",
         example: "rotation do effect stacks 9",
-        compile({ parts }, { context, logger }) {
+        compile({ parts, expressions }, { context, logger }) {
             const line = logger.line
-            const cmd = context.GetCompiler().compileString(
-                parts.join(" "),
-                { line }
-            )
+
+            const cmd = context.GetCompiler().compileParts(parts, line, expressions)
+            if (!cmd) {
+                throw new Error(`Could not compile command for rotation action at ${line}`)
+            }
 
             return function rotation_do() {
                 context.Rotation.AddFn(cmd, line)

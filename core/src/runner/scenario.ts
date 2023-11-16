@@ -1,6 +1,7 @@
 import { charbox, effect, rotation, stats } from "@src/core"
 import { scenarioConfig } from "./config"
 import { Compiler, Dictionary } from "@bygdle/cmdlang"
+import { toNumber } from "@src/utils/conversions"
 
 /** Runner scenario */
 export class Scenario {
@@ -28,12 +29,11 @@ export class Scenario {
             // reserved, replaced by the character stat at runtime.
             if (parts.length > 1) {
                 const name = parts.shift() || ""
-                const statName = parts.join("_").toUpperCase()
+                const member = name === "char" ? this.Character : this.Party.FindMember(name)
 
-                const stat = stats.stat.Get(statName)
-
-                const member = this.Party.FindMember(name)
                 if (member) {
+                    const statName = parts.join("_").toUpperCase()
+                    const stat = stats.stat.Get(statName)
                     return member.GetCharacter().Get(stat)
                 }
             }
@@ -44,16 +44,25 @@ export class Scenario {
         set: (_, _prop, value) => {
             const prop = _prop.toString()
             const parts = prop.split("_")
-            
+
             // variables in the form `characterName_stat` will be
             // reserved, replaced by the character stat at runtime.
             // So they cannot be set.
             if (parts.length > 1) {
                 const name = parts.shift() || ""
 
-                const member = this.Party.FindMember(name)
+                const member = name === "char" ? this.Character : this.Party.FindMember(name)
                 if (member) {
-                    throw new Error(`Cannot set variable ${prop}: reserved for character stats`)
+                    const statName = parts.join("_").toUpperCase()
+                    const stat = stats.stat.Get(statName)
+                    const numval = typeof value === "number" ? value : toNumber(String(value).valueOf())
+                    if (!Number.isFinite(numval)) {
+                        throw new Error(`Cannot set variable ${prop} to ${value}: value is not a number`)
+                    }
+                    member.SetStat(stat, numval)
+                    this.compiler?.program.logger.logf("Character %s stat %s set to %.4f",
+                        member.GetCharacter().Options.Name, stats.stat.Name(stat), numval
+                    )
                 }
             }
 

@@ -43,19 +43,11 @@ export const cmd_stat = RunnerCmd(() => ({
                     return characters.includes(lowerName)
                 })
 
-                const names = members.map(x => x.GetCharacter().Options.Name)
-
                 for (const member of members) {
-                    const char = member.GetCharacter()
-                    if (stat === stats.stat.HP_CURRENT || stat === stats.stat.ENERGY_CURRENT) {
-                        char.Set(stat, value)
-                    } else {
-                        const current = char.Get(stat)
-                        member.AddModifier(char.CreateModifier(stat, value - current))
-                    }
+                    const charName = member.GetCharacter().Options.Name
+                    const result = member.SetStat(stat, value)
+                    logger.logf("Set stat %s=%.2f for %s", stats.stat.Name(stat), result, charName)
                 }
-
-                logger.logf("Set stat %s=%.2f for %s", stats.stat.Name(stat), value, names.join(", "))
             }
         }
     },
@@ -101,15 +93,12 @@ export const cmd_stat = RunnerCmd(() => ({
                     return characters.includes(lowerName)
                 })
 
-                const names = members.map(x => x.GetCharacter().Options.Name)
-
                 for (const member of members) {
-                    const char = member.GetCharacter()
-                    member.AddModifier(char.CreateModifier(stat, value))
+                    const charName = member.GetCharacter().Options.Name
+                    const result = member.AddStat(stat, value)
+                    logger.logf("Added stat %s+=%.2f for %s", stats.stat.Name(stat), result, charName)
 
                 }
-
-                logger.logf("Added stat %s+=%.2f for %s", stats.stat.Name(stat), value, names.join(", "))
             }
         }
     }

@@ -46,14 +46,8 @@ export const cmd_character_stat = RunnerCmd(() => ({
             return function artifact_stat_set() {
                 const value = get.number(1)
                 const box = context.GetChar()
-                const char = box.GetCharacter()
-                if (stat === stats.stat.HP_CURRENT || stat === stats.stat.ENERGY_CURRENT) {
-                    char.Set(stat, value)
-                } else {
-                    const current = char.Get(stat)
-                    box.AddModifier(char.CreateModifier(stat, value - current))
-                }
-                logger.logf("Character stat %s set to %.4f", stats.stat.Name(stat), value)
+                const result = box.SetStat(stat, value)
+                logger.logf("Character stat %s set to %.4f", stats.stat.Name(stat), result)
             }
         }
     },
@@ -68,9 +62,8 @@ export const cmd_character_stat = RunnerCmd(() => ({
             return function character_stat_add() {
                 const value = get.number(1)
                 const box = context.GetChar()
-                const char = box.GetCharacter()
-                box.AddModifier(char.CreateModifier(stat, value))
-                logger.logf("Modified %s + %.4f = %.4f", stats.stat.Name(stat), value, char.Get(stat))
+                const result = box.AddStat(stat, value)
+                logger.logf("Modified %s + %.4f = %.4f", stats.stat.Name(stat), value, result)
             }
         }
     },

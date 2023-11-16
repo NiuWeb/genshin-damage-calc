@@ -94,7 +94,8 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                         const str = parts.map((part, i) => {
                             const expr = expressions[i]
                             if (expr) {
-                                return expr.evaluate(expr.length - 1).toString()
+                                const res = expr.evaluateAll()
+                                return res.pop()
                             }
                             return part
                         })
@@ -110,18 +111,51 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                 arguments: "[*=] any...",
                 description: "Does nothing, can be used to include expression blocks without printing the result",
                 example: "void { 1 + 1 }",
-                compile() {
+                compile({ expressions }) {
                     return function void_() {
-                        // do nothing
+                        for (const expr of expressions) {
+                            if (!expr) continue
+                            expr.evaluateAll()
+                        }
                     }
                 }
             },
         })
 
-        super(program, scenario.VarProxy)
+        super(program)
         this.Scenario = scenario
-
         this.Scenario.SetCompiler(this)
+
+        this.exprParser.context.variables = this.Scenario.VarProxy
+        this.exprParser.context.functions = {
+            ...this.exprParser.context.functions,
+            "foreachcharacter": {
+                name: "foreachcharacter",
+                description: "Executes the expression for each character in the party. " +
+                    "Returns the sum of the results of each expression.",
+                arguments: [
+                    {
+                        name: "expression",
+                        description: "expression to evaluate for each character",
+                        expression: true,
+                    }
+                ],
+                evaluate: ({ expressions: [expr] }) => {
+                    const members = scenario.Party.GetMembers()
+
+                    const char = scenario.Character
+                    let reduced = 0
+                    for (const member of members) {
+                        scenario.SetChar(member)
+                        reduced += expr.evaluate?.() ?? 0
+                    }
+                    scenario.SetChar(char)
+
+                    return reduced
+
+                }
+            }
+        }
     }
 
 }

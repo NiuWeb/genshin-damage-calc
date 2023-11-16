@@ -1,10 +1,10 @@
-import { Compiler, Dictionary, ExprParser, Program } from "@bygdle/cmdlang"
+import { Compiler, ExprParser, Program } from "@bygdle/cmdlang"
 
 /**
  * Compiler with extended language functions
  */
 export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, Value> {
-    constructor(program: Program<Context, Value>, variables: Dictionary<number> = {}) {
+    constructor(program: Program<Context, Value>) {
         super(program)
 
         const context = ExprParser.Contexts("math", "logic", {
@@ -37,11 +37,11 @@ export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, V
                         { name: "variable", description: "name of the variable to add to", expression: true },
                         { name: "value", description: "value to add to the variable" }
                     ],
-                    evaluate: ({ values: [, value], expressions: [nameNode] }) => {
+                    evaluate: ({ values: [, value], expressions: [nameNode], location }) => {
                         const name = nameNode.token.value
                         const current = parser.getVar(name)
                         if (current === undefined) {
-                            throw new Error(`Variable ${name} is not defined`)
+                            throw new Error(`Variable ${name} is not defined at ${location}`)
                         }
                         const result = current + value
                         parser.setVar(name, result)
@@ -67,7 +67,7 @@ export class ExtendedCompiler<Context, Value = void> extends Compiler<Context, V
                 },
             }
         })
-        context.variables = variables
+        context.ignoreCase = true
         
         const parser = new ExprParser(context)
 
