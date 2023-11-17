@@ -36,7 +36,18 @@ export const Calc = new (class Runner {
   })
 
   /** console is visible or not */
-  ConsoleVisible = false
+  private _ConsoleVisible = false
+
+  public get ConsoleVisible(): boolean {
+    return this._ConsoleVisible
+  }
+
+  public set ConsoleVisible(value: boolean) {
+    this._ConsoleVisible = value
+    if (value) {
+      this.OnLog(globalLog.toString())
+    }
+  }
 
   /** editor is visible or not */
   EditorVisible = false

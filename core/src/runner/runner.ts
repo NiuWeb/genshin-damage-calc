@@ -129,6 +129,22 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
         this.exprParser.context.variables = this.Scenario.VarProxy
         this.exprParser.context.functions = {
             ...this.exprParser.context.functions,
+            "print": {
+                name: "print",
+                description: "Prints the arguments to the console",
+                arguments: [
+                    "..."
+                ],
+                evaluate: ({ values, location }) => {
+                    const line = program.logger.line
+
+                    program.logger.setLine(location[0])
+                    program.logger.log(values.join(", "))
+                    program.logger.setLine(line)
+
+                    return values[0] ?? 0
+                }
+            },
             "foreachcharacter": {
                 name: "foreachcharacter",
                 description: "Executes the expression for each character in the party. " +
@@ -140,18 +156,28 @@ export class Runner extends ExtendedCompiler<Scenario, void> {
                         expression: true,
                     }
                 ],
-                evaluate: ({ expressions: [expr] }) => {
+                evaluate: ({ expressions: [node] }) => {
                     const members = scenario.Party.GetMembers()
 
+                    const expr = (() => {
+                        if (node.evaluate) {
+                            return [node.evaluate]
+                        }
+
+                        return node.children.map(node => node.evaluate || (() => 0))
+                    })()
+
                     const char = scenario.Character
-                    let reduced = 0
+                    let result = 0
                     for (const member of members) {
                         scenario.SetChar(member)
-                        reduced += expr.evaluate?.() ?? 0
+                        for (const e of expr) {
+                            result += e()
+                        }
                     }
                     scenario.SetChar(char)
 
-                    return reduced
+                    return result
 
                 }
             }
