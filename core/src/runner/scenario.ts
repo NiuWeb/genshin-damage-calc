@@ -33,8 +33,24 @@ export class Scenario {
 
                 if (member) {
                     const statName = parts.join("_").toUpperCase()
-                    const stat = stats.stat.Get(statName)
-                    return member.GetCharacter().Get(stat)
+
+                    switch (statName) {
+                        case "MAX_CONSTELLATIONS":
+                            // eslint-disable-next-line no-case-declarations
+                            let max = 0
+                            for (let i = 1; i <= 6; i++) {
+                                const ef = member.FindEffect(`${name}C${i}`)
+                                if (ef && ef.Enabled()) {
+                                    max = i
+                                }
+                            }
+                            return max
+
+                        default:
+                            // eslint-disable-next-line no-case-declarations
+                            const stat = stats.stat.Get(statName)
+                            return member.GetCharacter().Get(stat)
+                    }
                 }
             }
 
