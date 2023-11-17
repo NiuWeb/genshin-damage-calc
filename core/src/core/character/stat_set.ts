@@ -65,6 +65,12 @@ export function statSet(subject: Subject, stat: number, value: number): void {
             subject.Set(stats.ASCENSION, asc)
             break
 
+        case stats.HP_CURRENT:
+        case stats.ENERGY_CURRENT:
+            value = Math.max(0, Math.min(1, value))
+            subject.Set(stat, value)
+            break
+
         default:
             subject.Set(stat, value)
             break
