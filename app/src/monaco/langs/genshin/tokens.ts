@@ -42,7 +42,7 @@ export function registerGenshinTokens(langName: string, program: genshin.cmd.Pro
                 [/@symbols/, "operator"],
 
 
-                [/\{/, { token: "delimiter.bracket", next: "exprLang" }],
+                [/\{\x40?/, { token: "delimiter.bracket", next: "exprLang" }],
             ],
 
             string: [
