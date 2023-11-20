@@ -140,6 +140,13 @@ You can run mathemetical operations in a command by using the following syntax:
 character stat set hp_current { 1/2 + sqrt(0.0125) } 
 ```
 
+By default, the expressions are preprocessed, which means that the values are replaced before the command is executed. However, if you need to re-evaluate the expression every time the command is executed, you can use the `@` symbol before the expression:
+```js
+character stat set hp_current {@ char_hp_current * 0.7 }
+```
+
+The expressions language includes arithmetic operations, functions, constants and variables. Also, some reserved variables are included to control the character stats directly. Read more about the expressions [here](./expressions/index.md).
+
 
 ## 7. More reading
 - Documentation about writting rotations in code [here](./rotations.md).
