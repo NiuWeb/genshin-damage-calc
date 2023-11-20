@@ -78,3 +78,5 @@ tao-c0-2.txt
 xiangling-4.txt
 yelan-c0-1.txt
 neuvillette-1.txt
+furina-1.txt
+hutao-furina-yelan-jean-1.txt

@@ -1,0 +1,418 @@
+/*
+@title: Furina EQ > Yelan EQ > Jean EQ > Hu Tao 9x N1C
+@characters: Hu Tao C1, Furina C0, Yelan C0, Jean C0
+@description:
+
+Complete hit-by-hit rotation for double hydro Hu Tao with Furina and Yelan.
+Includes:
+
+- All character effects are enabled at their corresponding moment in the rotation.
+- HP draining and fanfare points increase from Furina.
+- Furina C2 detection for increased fanfare points.
+- Jean burst and continuous healing (considering only Jean's total ATK and healing bonus).
+- Yelan stacks increase over time.
+- Yelan C2 hits (will be included only if her C2 is enabled).
+
+Also, it includes configuration for Elegy in Yelan, VV in Jean and Splendor in Furina. If your builds 
+doesn't have one of those, that configuration will just be ignored. The code will work for any build.
+
+However, note that for any other effect (such as Yelan C4 or other equipment effects), there is no run-time
+configuration. The setup you do in the editor will persist for the entire rotation.
+*/
+
+# Furina HP drain
+const $drain1 2.4%
+const $drain2 1.6%
+const $drain3 3.6%
+
+# Furina C2 multiplier
+const $furi_c2 { furina_max_constellations >= 2 }
+const $furi_stacks_multiplier { 100*if($furi_c2, 3.5, 1) }
+echo "Furina C2 stacks multiplier = " $furi_stacks_multiplier "%"
+
+# Hu Tao combo config
+const $aura 90%
+const $n1_reaction 40%
+const $ca_reaction 90%
+const $q_reaction 90%
+
+# Jean healing values
+const $jean_scaling_elemental { 
+  pick(jean_elemental_burst_level, 1, 1.075, 1.15, 1.25, 1.325, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.125, 2.25, 2.375) 
+}
+const $jean_scaling_flat {
+  pick(jean_elemental_burst_level, 1, 1.1, 1.208, 1.325, 1.45, 1.583, 1.725, 1.875, 2.033, 2.2, 2.375, 2.559, 2.75, 2.95, 3.159)
+}
+const $jean_q_healing_percent { 2.512 * $jean_scaling_elemental }
+const $jean_q_healing_flat { 1540.32 * $jean_scaling_flat }
+const $jean_dot_healing_percent { $jean_q_healing_percent/10 }
+const $jean_dot_healing_flat { $jean_q_healing_flat/10 }
+
+echo "Jean Q healing: " {100*$jean_q_healing_percent} "% of ATK + " {$jean_q_healing_flat}
+echo "Jean DoT healing: " {100*$jean_dot_healing_percent} "% of ATK + " {$jean_dot_healing_flat}
+
+# Utility functions
+void { 
+  // total hp that has changed
+  var(hp_changed, 0),
+  // heals the entire party a % value and accumulates the changed hp
+  func(healAll, (heal), 
+    forEachCharacter((
+      var(initial, char_hp_current),
+      add(char_hp_current, 
+        // Only drain H
+        if(heal > 0 || char_hp_current > 0.5, 
+          heal,
+          0
+        )
+      ),
+      add(hp_changed, abs(char_hp_current - initial))
+    ))
+  ),
+
+  // Gets Furina stacks based on the team changed hp
+  func(getFurinaStacks, 0, $furi_stacks_multiplier*hp_changed),
+
+  // Gets Furina C2 stacks based on the team changed hp
+  func(getFurinaStacksC2, 0, max(0, call(getFurinaStacks) - 400) ),
+
+  // Calculates Jean healing
+  func(getJeanHealing, (percent, flat), (percent*jean_atk + flat) * (1 + jean_healing_bonus)),
+
+  // Heals Hu Tao (the on-field character) with Jean continuous healing
+  func(healOnField, 0, (
+      var(initial, hutao_hp_current),
+      add(hutao_hp_current, call(getJeanHealing, $jean_dot_healing_percent, $jean_dot_healing_flat)/hutao_hp),
+      add(hp_changed, abs(hutao_hp_current - initial))  
+  ))
+}
+
+# ========================== ROTATION START ==========================
+
+rotation duration 20
+
+# Disable all effects at the start of the rotation
+rotation do effect config HuTao HuTaoE enable=0
+
+rotation do effect config Furina FurinaQ enable=0 stacks=0
+rotation do effect config Furina FurinaC2 stacks=0
+rotation do effect config Furina SplendorOfTranquilWaters1 stacks=0
+rotation do effect config Furina SplendorOfTranquilWaters2 stacks=0
+
+rotation do effect config Yelan YelanA4 enable=0 stacks=0
+rotation do effect config Yelan ElegyForTheEnd2 enable=0 target=none
+
+# Furina EQ
+rotation hit Furina E 
+rotation do enemy aura hydro
+
+// All salon members hit the first time at once
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+
+rotation do effect config Furina SplendorOfTranquilWaters1 stacks=1
+rotation do effect config Furina SplendorOfTranquilWaters2 stacks=2
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do effect config Furina SplendorOfTranquilWaters1 stacks=2
+
+rotation hit Furina E_3
+rotation do void {@ call(healAll, -$drain3) } // drain HP to the team
+
+rotation do effect config Furina SplendorOfTranquilWaters1 stacks=3
+
+// hit and enable Q buff
+rotation hit Furina Q
+rotation do effect config Furina FurinaQ enable=1 target=all
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Yelan EQ 
+rotation hit Yelan E
+
+rotation hit Yelan Q
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Swap to Jean
+rotation do effect config Yelan YelanA4 target=Jean stacks=3
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Jean EQ
+rotation hit Jean E
+// Jean applies VV
+rotation do effect config Jean ViridescentVenerer4 enable=1 target=all aura=hydro
+
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+rotation hit Furina E_3
+rotation do void {@ call(healAll, -$drain3) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+rotation hit Jean Q
+
+// Jean Q heals the entire party
+rotation do void {@ 
+
+  // calculate the healed HP pts. 
+  var(healing, 
+    call(getJeanHealing, $jean_q_healing_percent, $jean_q_healing_flat)
+  ),
+
+  // heal all characters
+  forEachCharacter((
+    // transform the pts. in %
+    var(relative, healing / char_hp),
+    // and change the % of hp current
+    var(initial, char_hp_current),
+    add(char_hp_current, relative),
+    add(hp_changed, abs(char_hp_current - initial))
+  ))
+}
+
+rotation do echo "Jean healed the party by " {@ healing } " pts."
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Swap to Hu Tao
+rotation do effect config Yelan YelanA4 target=HuTao stacks=5
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Hu Tao E
+rotation do effect config HuTao HuTaoE enable=1
+rotation do effect config Yelan YelanA4 stacks=6
+
+rotation do void {@
+  multiply(hutao_hp_current, 0.7) // drain Hu Tao HP
+}
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Enable Elegy
+rotation do effect config Yelan ElegyForTheEnd2 enable=1 target=all
+
+# Hu Tao combo
+
+## ========= 1x N1C =========
+
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit Yelan C2
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=7
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 2x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=8
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+rotation hit Furina E_3
+rotation do void {@ call(healAll, -$drain3) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 3x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit Yelan C2
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=9
+
+rotation do void {@ call(healOnField) }
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 4x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=10
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 5x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit Yelan C2
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=11
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 6x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=12
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 7x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit Yelan C2
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=13
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+rotation hit Furina E_3
+rotation do void {@ call(healAll, -$drain3) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 8x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=14
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= 9x N1C =========
+rotation hit HuTao N1 aura=$aura reaction=$n1_reaction
+rotation hit Yelan Q *3
+rotation hit Yelan C2
+rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
+
+rotation do effect config Yelan YelanA4 stacks=15
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+
+rotation do void {@ call(healOnField) }
+
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+## ========= End of N1C =========
+
+rotation do effect config Yelan YelanA4 stacks=0
+
+rotation hit HuTao Q aura=$aura reaction=$q_reaction
+
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
+
+# Swap to Jean
+rotation do effect config Yelan YelanA4 target=Jean stacks=5
+rotation hit Jean E
+
+rotation hit Furina E_1
+rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
+rotation hit Furina E_2
+rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
+// Apply Furina stacks
+rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
+rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }

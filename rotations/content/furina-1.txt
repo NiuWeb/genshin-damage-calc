@@ -1,0 +1,11 @@
+/**
+@title: Furina E + Q + 7x E1 + 16x E2 + 4x E3
+@characters: Furina C0
+@description: Simple rotation for Furina solo damage.
+*/
+rotation duration 20
+rotation do enemy aura hydro
+
+rotation hit Furina E_1 *7
+rotation hit Furina E_2 *16
+rotation hit Furina E_3 *4
