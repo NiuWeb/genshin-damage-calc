@@ -312,6 +312,8 @@ rotation hit Yelan Q *3
 rotation hit Yelan C2
 rotation hit HuTao Charged aura=$aura reaction=$ca_reaction
 
+rotation hit HuTao E
+
 rotation do effect config Yelan YelanA4 stacks=11
 
 rotation hit Furina E_2
@@ -400,6 +402,7 @@ rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
 rotation do effect config Yelan YelanA4 stacks=0
 
 rotation hit HuTao Q aura=$aura reaction=$q_reaction
+rotation hit HuTao E
 
 rotation hit Furina E_2
 rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
