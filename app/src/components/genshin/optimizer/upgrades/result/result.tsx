@@ -4,6 +4,7 @@ import { GetString } from "@src/strings/strings"
 import { useRef } from "react"
 import { UpgradesChart } from "./chart/chart"
 import { UpgradesTable } from "./table/table"
+import { UpgradeList } from "./table/list"
 
 export function UpgradesResults({ results }: { results: genshin.optimizer.upgrades.Result[][] }) {
 
@@ -19,6 +20,7 @@ export function UpgradesResults({ results }: { results: genshin.optimizer.upgrad
     <div className="flex justify-center">
       <UpgradesChart results={results} />
     </div>
+    <UpgradeList results={results} />
     <button onClick={exportImg} className="bg-gray-600 hover:bg-gray-700">
       {GetString("ACTION.EXPORT.IMAGE")}
     </button>

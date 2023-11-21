@@ -1,21 +1,14 @@
 import { Tooltip } from "@src/components/tooltip/tooltip"
 import { genshin } from "@src/genshin/core"
-import { ElementBgColor } from "@src/genshin/utils/colors"
 import { GetString } from "@src/strings/strings"
 import { classes } from "@src/utils/classes"
-import { useMemo } from "react"
 import { StarFill } from "react-bootstrap-icons"
+import { TargetLabel } from "./target"
 
 export function ItemHeader({ item }: { item: genshin.optimizer.upgrades.Result }) {
   const { upgrade } = item
 
   const title = genshin.optimizer.upgrades.Upgrade.Name(upgrade.type)
-  const elementBg = useMemo(() => {
-    const factory = genshin.characters.FindByName(upgrade.target)
-    if (!factory) return "bg-slate-700"
-
-    return ElementBgColor(factory.Element)
-  }, [upgrade.target])
 
   const starId = Math.random().toString()
 
@@ -24,12 +17,7 @@ export function ItemHeader({ item }: { item: genshin.optimizer.upgrades.Result }
     item.selected ? " bg-yellow-600/50" : "bg-slate-700"
   )}>
     <div className="flex justify-between items-center">
-      <div className={classes(
-        "text-sm px-1 rounded-sm text-black",
-        elementBg
-      )}>
-        {GetString("ITEM." + upgrade.target)}
-      </div>
+      <TargetLabel upgrade={upgrade} />
       {!item.selected || (
         <>
           <span data-tooltip={starId} className="text-yellow-500" >
