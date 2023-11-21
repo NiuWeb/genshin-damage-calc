@@ -1,4 +1,3 @@
-import { Code } from "@src/components/console/code"
 import { exportImage } from "@src/components/datatable/export/image"
 import { MonacoEditor } from "@src/components/monaco/monaco"
 import { useCalc } from "@src/genshin/context"
@@ -7,27 +6,19 @@ import { Alert } from "@src/popup/alert"
 import { Loading } from "@src/popup/loading"
 import { GetString } from "@src/strings/strings"
 import { PrettyMs } from "@src/utils/pretty-ms"
-import { useEffect } from "react"
+import { editor } from "monaco-editor"
 import { ArrowReturnRight, Camera } from "react-bootstrap-icons"
 import { createRoot } from "react-dom/client"
 import { useNavigate } from "react-router"
 
 const EDITOR_FNAME = "rotation_editor"
 
-const imageRoot = document.createElement("div")
-document.body.appendChild(imageRoot)
+const imageRoot = document.createElement("pre")
 imageRoot.id = "rotation-editor-image-root"
-imageRoot.setAttribute("style", "position: absolute; top: 0; left: 0; width: 100%")
+imageRoot.setAttribute("style", "position: absolute; top: 0; left: 0; width: 100%; background: #1e1e1e")
+imageRoot.setAttribute("data-lang", "genshin-cmd")
 
-
-function Render({ children, onRender }: { children: React.ReactNode, onRender?: () => void }) {
-
-  useEffect(() => {
-    onRender?.()
-  }, [])
-
-  return <>{children}</>
-}
+document.body.appendChild(imageRoot)
 
 export function PageRotationEditor() {
   const [calc, exec] = useCalc()
@@ -70,10 +61,10 @@ export function PageRotationEditor() {
 
     const root = createRoot(imageRoot)
 
-    await new Promise<void>((resolve) => {
-      root.render(<Render onRender={resolve}>
-        <Code pre>{code}</Code>
-      </Render>)
+    imageRoot.innerHTML = code
+
+    await editor.colorizeElement(imageRoot, {
+      theme: "genshin-cmd-theme",
     })
 
     await new Promise<void>(resolve => setTimeout(resolve, 100))
