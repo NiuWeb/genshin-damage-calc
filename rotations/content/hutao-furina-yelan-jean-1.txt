@@ -25,8 +25,10 @@ const $drain1 2.4%
 const $drain2 1.6%
 const $drain3 3.6%
 
-# Furina C2 multiplier
+# Furina constellation effects
+const $furi_c1 { furina_max_constellations >= 1 }
 const $furi_c2 { furina_max_constellations >= 2 }
+const $furi_max_stacks { if($furi_c1, 400, 300) }
 const $furi_stacks_multiplier { 100*if($furi_c2, 3.5, 1) }
 echo "Furina C2 stacks multiplier = " $furi_stacks_multiplier "%"
 
@@ -60,7 +62,7 @@ void {
     forEachCharacter((
       var(initial, char_hp_current),
       add(char_hp_current, 
-        // Only drain H
+        // Only drain HP if greater than 50%
         if(heal > 0 || char_hp_current > 0.5, 
           heal,
           0
@@ -71,10 +73,10 @@ void {
   ),
 
   // Gets Furina stacks based on the team changed hp
-  func(getFurinaStacks, 0, $furi_stacks_multiplier*hp_changed),
+  func(getFurinaStacks, 0, min($furi_stacks_multiplier*hp_changed, $furi_max_stacks)),
 
   // Gets Furina C2 stacks based on the team changed hp
-  func(getFurinaStacksC2, 0, max(0, call(getFurinaStacks) - 400) ),
+  func(getFurinaStacksC2, 0, max(0, $furi_stacks_multiplier*hp_changed - 400) ),
 
   // Calculates Jean healing
   func(getJeanHealing, (percent, flat), (percent*jean_atk + flat) * (1 + jean_healing_bonus)),
@@ -413,6 +415,3 @@ rotation hit Furina E_1
 rotation do void {@ call(healAll, -$drain1) } // drain HP to the team
 rotation hit Furina E_2
 rotation do void {@ call(healAll, -$drain2) } // drain HP to the team
-// Apply Furina stacks
-rotation do effect config Furina FurinaQ stacks={@ call(getFurinaStacks) }
-rotation do effect config Furina FurinaC2 stacks={@ call(getFurinaStacksC2) }
