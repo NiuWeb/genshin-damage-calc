@@ -3,7 +3,7 @@ import { Normals } from "./normals"
 import { Skills, eBouns } from "./skills"
 import { Bursts, qBonus } from "./bursts"
 import { a4 } from "./passives"
-import { c2, c3, c5, c6 } from "./constellations"
+import { c1, c2, c3, c5, c6 } from "./constellations"
 
 export const Furina = charbox.Factory({
     Name: "Furina",
@@ -22,6 +22,7 @@ export const Furina = charbox.Factory({
         eBouns,
         qBonus,
         a4,
+        c1,
         c2,
         c3,
         c5,

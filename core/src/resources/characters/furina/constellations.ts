@@ -1,4 +1,26 @@
 import { effect, stats } from "@src/core"
+import { EffectEvent } from "@src/core/effect"
+
+export const c1 = effect.Factory({
+    Name: "FurinaC1",
+    OnApply(char, ef, reg) {
+
+        function update() {
+            const q = char.FindEffect("FurinaQ")
+            if(!q) {
+                return
+            }
+            q.SetStacks(q.GetStacks())
+        }
+
+        update()
+
+        reg.Observer(ef.CreateObserver(EffectEvent.ENABLE, update))
+        reg.Observer(ef.CreateObserver(EffectEvent.DISABLE, update))
+
+        return () => 0
+    }
+})
 
 export const c2 = effect.Factory({
     Name: "FurinaC2",
