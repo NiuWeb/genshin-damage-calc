@@ -28,6 +28,7 @@ const $drain3 3.6%
 # Furina constellation effects
 const $furi_c1 { furina_max_constellations >= 1 }
 const $furi_c2 { furina_max_constellations >= 2 }
+const $furi_initial_stacks { if($furi_c1, 150, 0) }
 const $furi_max_stacks { if($furi_c1, 400, 300) }
 const $furi_stacks_multiplier { 100*if($furi_c2, 3.5, 1) }
 echo "Furina C2 stacks multiplier = " $furi_stacks_multiplier "%"
@@ -73,10 +74,10 @@ void {
   ),
 
   // Gets Furina stacks based on the team changed hp
-  func(getFurinaStacks, 0, min($furi_stacks_multiplier*hp_changed, $furi_max_stacks)),
+  func(getFurinaStacks, 0, min($furi_initial_stacks + $furi_stacks_multiplier*hp_changed, $furi_max_stacks)),
 
   // Gets Furina C2 stacks based on the team changed hp
-  func(getFurinaStacksC2, 0, max(0, $furi_stacks_multiplier*hp_changed - 400) ),
+  func(getFurinaStacksC2, 0, max(0, $furi_initial_stacks + $furi_stacks_multiplier*hp_changed - 400) ),
 
   // Calculates Jean healing
   func(getJeanHealing, (percent, flat), (percent*jean_atk + flat) * (1 + jean_healing_bonus)),
