@@ -7,14 +7,25 @@ export function UpgradeList({ results }: { results: genshin.optimizer.upgrades.R
         .map(row => row.find(item => item.selected))
         .filter(item => item) as genshin.optimizer.upgrades.Result[]
 
+    const totalIncrease = (() => {
+
+        const final = optimal[optimal.length - 1]?.damage ?? 0
+        const initial = optimal[0] ? optimal[0].damage / (1 + optimal[0].increase) : 0
+
+        return (final - initial) / initial
+
+    })()
+
     return <div className="flex justify-center">
         <div className="max-w-[1280px]">
             {optimal.map((item, i) => (
                 <UpgradeItem
                     key={i}
-                    item={item}
-                    last={i === optimal.length - 1} />
+                    item={item} />
             ))}
+            <div className="inline-block text-sm px-1 text-black rounded-sm bg-green-500">
+                Total increase: +{toPlaces(totalIncrease * 100, 2)}%
+            </div>
         </div>
     </div>
 }
