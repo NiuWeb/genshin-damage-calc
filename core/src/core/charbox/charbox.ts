@@ -324,19 +324,39 @@ export class Charbox {
      */
     SetStat(stat: number, value: number): number {
         const char = this.GetCharacter()
-        if (stat === stats.stat.HP_CURRENT || stat === stats.stat.ENERGY_CURRENT) {
-            char.Set(stat, value)
-        } else {
-            const current = char.Get(stat)
-            let mod = this.uniqueModifiers.get(stat)
-            if (!mod) {
-                mod = char.CreateModifier(stat, value - current)
-                this.uniqueModifiers.set(stat, mod)
-            } else {
-                const modVal = mod.GetValue()
-                mod.SetValue(value - current + modVal)
-            }
+
+        switch (stat) {
+            case stats.stat.ATK:
+                throw new Error("Cannot set Total ATK directly.")
+            case stats.stat.HP:
+                throw new Error("Cannot set Total HP directly.")
+            case stats.stat.DEF:
+                throw new Error("Cannot set Total DEF directly")
+
+            case stats.stat.NORMAL_ATTACK_LEVEL:
+            case stats.stat.ELEMENTAL_SKILL_LEVEL:
+            case stats.stat.ELEMENTAL_BURST_LEVEL:
+            case stats.stat.LEVEL:
+            case stats.stat.ASCENSION:
+            case stats.stat.HP_CURRENT:
+            case stats.stat.ENERGY_CURRENT:
+                char.Set(stat, value)
+                break
+
+            default:
+                // eslint-disable-next-line no-case-declarations
+                const current = char.Get(stat)
+                // eslint-disable-next-line no-case-declarations
+                let mod = this.uniqueModifiers.get(stat)
+                if (!mod) {
+                    mod = char.CreateModifier(stat, value - current)
+                    this.uniqueModifiers.set(stat, mod)
+                } else {
+                    const modVal = mod.GetValue()
+                    mod.SetValue(value - current + modVal)
+                }
         }
+
         return char.Get(stat)
     }
 
