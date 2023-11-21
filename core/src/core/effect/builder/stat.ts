@@ -154,6 +154,7 @@ export class StatBuilder extends BuilderPart {
         let rank: number
         if (this.rankFn) {
             rank = this.rankFn(target, ef, reg)
+            if(rank < 1) rank = 1
         } else {
             rank = ef.GetRank()
         }
