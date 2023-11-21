@@ -24,7 +24,7 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         cmd.program.logger.out = () => void 0
 
         const constants = this.getConstants()
-        for(const name in constants) {
+        for (const name in constants) {
             cmd.constants.set(name, constants[name])
         }
 
@@ -60,9 +60,12 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         if (combination.artifact.substats) {
             const subsOptimizer = new SubstatsOptimizer()
             subsOptimizer.SetParty(this.GetParty())
-            subsOptimizer.SetTarget(this.GetTarget())
+            subsOptimizer.SetTarget(target)
             subsOptimizer.SetRotation(this.GetRotation())
             subsOptimizer.Init({ ...combination.artifact.substats })
+            subsOptimizer.variables = { ...this.variables }
+            subsOptimizer.SetRunner(runner)
+
             for (const combi of subsOptimizer.Generate()) {
                 subsOptimizer.Insert(subsOptimizer.Evaluate(combi))
             }

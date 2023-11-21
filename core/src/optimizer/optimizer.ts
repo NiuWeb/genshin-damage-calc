@@ -47,8 +47,9 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
     protected rotation?: rotation.Rotation
     protected total = 0
 
-    protected variables?: Dictionary<number>
+    public variables?: Dictionary<number>
 
+    
     /** changes the optimizer config without initializing */
     SetConfig(config: Config): void {
         this.config = config
@@ -65,6 +66,10 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
     /** sets the optimizer rotation */
     SetRotation(rotation: rotation.Rotation): void {
         this.rotation = rotation
+    }
+
+    SetRunner(runner: Runner): void {
+        this.runner = runner
     }
 
     /** Initializes the optimizer */
