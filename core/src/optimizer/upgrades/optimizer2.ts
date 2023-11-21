@@ -6,19 +6,14 @@ import { FindCost } from "./cost/find"
 import { CostList } from "./cost/type"
 import { Criteria, CriteriaValues } from "./criteria"
 import { ResourceCmd } from "./resources/cmd"
-import { Config, Result, Row, Curve } from "./type"
+import { Config, Curve, Result, Row } from "./type"
 import { GetUpgrades } from "./upgrades/available"
 import { EquipUpgrade } from "./upgrades/equip"
 import { UpgradeData } from "./upgrades/upgrades"
 
-export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | undefined, Result[][]> {
-    public override TRANSFORM = true
-    public override MAX_CHUNK_SIZE = 1
-    public override MAX_CHILDREN = 1
-
+export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
     private queue = new PriorityQueue<Result>()
 
-    private levelCount = 0
     private initDamage = 0
     private prevDamage = 0
 
@@ -39,8 +34,26 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         this.criteria = Criteria[config.criteria]
     }
 
+    *Generate() {
+        let upgrades: UpgradeData[]
+        let i = 0
+        do {
+            i++
+            upgrades = this.getUpgrades()
+
+            const rows = upgrades.map(upgrade => ({
+                step: "upgrade",
+                upgrade,
+                cmd: EquipUpgrade(upgrade)
+            } as Row))
+
+            yield rows
+
+        } while (upgrades.length > 0 && i < 5)
+    }
+
     /**
-     * gets the current available upgrades
+     * gets the current available upgrades on the party
      */
     private getUpgrades(): UpgradeData[] {
         const result: UpgradeData[] = []
@@ -55,60 +68,7 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         return result
     }
 
-    // messages are sent for all children to select
-    // the optimal upgrade each run. A run ends
-    // when all the currently available upgrades
-    // have been evaluated.
-
-    override SendMessage = () => {
-        if (this.queue.Length() < this.levelCount) {
-            return undefined
-        }
-        const result = this.queue.Extract()
-        this.result.push(result)
-
-        const top = result[0]
-        top.selected = true
-
-        return {
-            step: "upgrade",
-            upgrade: top.upgrade,
-            cmd: EquipUpgrade(top.upgrade),
-            damage: top.damage
-        } as Row
-    }
-
-    // When a message is recieved, the optimizer
-    // will equip the upgrade to change its
-    // state to the next upgrade. 
-    override RecieveMessage(msg: Row | undefined): void {
-        if (!msg || msg.step !== "upgrade" || !msg.damage) { return }
-        const cmd = EquipUpgrade(msg.upgrade)
-        const runner = this.GetRunner()
-        runner.compileString(cmd)()
-        this.prevDamage = msg.damage
-    }
-
-    // Keep generating upgrades until there are no more
-    // upgrades available.
-
-    *Generate() {
-        let upgrades: UpgradeData[]
-        do {
-            upgrades = this.getUpgrades()
-            this.levelCount = upgrades.length
-
-            for (const upgrade of upgrades) {
-                yield {
-                    step: "evaluate",
-                    upgrade,
-                    cmd: EquipUpgrade(upgrade)
-                } as Row
-            }
-        } while (upgrades.length > 0)
-    }
-
-    Evaluate(row: Row): Result {
+    private evaluateRow(row: Row): Result {
         const party = this.GetParty()
         const state = charbox.ExportParty(party)
 
@@ -135,31 +95,33 @@ export class UpgradesOptimizer extends Optimizer<Row, Result, Config, Row | unde
         }
     }
 
-    Insert(result: Result): void {
-        const value = result[this.GetConfig().criteria] * (
-            this.criteria.criteria === "max" ? 1 : -1
-        )
+    Evaluate(rows: Row[]): Result[] {
+        this.queue.Extract()
 
-        this.queue.Push(result, value)
-    }
-    Get(): Result[] {
-        return this.queue.Extract()
-    }
+        for (const row of rows) {
+            const result = this.evaluateRow(row)
+            const value = result[this.GetConfig().criteria] * (
+                this.criteria.criteria === "max" ? 1 : -1
+            )
+            this.queue.Push(result, value)
+        }
 
-    override Transform(): Result[][] {
+        const sorted = this.queue.Extract()
+
+        return sorted
+    }
+    Insert(result: Result[]): void {
+        const decided = result[0]
+        if (decided) { // equip the decided upgrade
+            const runner = this.GetRunner()
+            runner.compileString(decided.cmd)()
+            this.prevDamage = this.Run()
+            decided.selected = true
+        }
+        this.result.push(result)
+    }
+    Get(): Result[][] {
         return this.result
-            // remove empty or non-increasing rows
-            .filter(row => row.length > 0 && row[0].increase > 1e-6)
-            // remove duplicates inside each row
-            .map(row => row.filter((value, i, arr) => {
-                // remove values with no increase
-                if (value.increase < 1e-6) return false
-                // two values are equal if they have the same cmd
-                const found = arr.findIndex(v => v.cmd === value.cmd)
-                // if the value index isn't the same as the first
-                // coincidence of the same cmd, then it's a duplicate
-                return found === i
-            }))
     }
     Format(): Table {
         throw new Error("Method not implemented.")

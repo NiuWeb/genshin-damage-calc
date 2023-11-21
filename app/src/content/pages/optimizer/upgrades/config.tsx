@@ -1,13 +1,12 @@
 import { OptimizerButton } from "@src/components/genshin/optimizer/button"
 import { useCalc } from "@src/genshin/context"
-import { RunOptimizer } from "@src/genshin/run/optimizer"
 import { GetString } from "@src/strings/strings"
 import { PrettyMs } from "@src/utils/pretty-ms"
-import { genshin } from "@src/genshin/core"
 import { Confirm } from "@src/popup/confirm"
 import { UpgradesConfig } from "@src/components/genshin/optimizer/upgrades/config"
 import { UpgradesResults } from "@src/components/genshin/optimizer/upgrades/result/result"
 import { Alert } from "@src/popup/alert"
+import { RunUpgradesOptimizer } from "@src/genshin/run/upgrades-optimizer"
 
 export function Config() {
   const [calc, exec] = useCalc()
@@ -24,10 +23,10 @@ export function Config() {
   }
 
   async function optimize() {
-    const { time, transform, error } = await RunOptimizer("UpgradesOptimizer", {
+    const { time, result, error } = await RunUpgradesOptimizer({
       Target: calc.Get().Scenario.Character?.GetCharacter().Options.Name,
       ...calc.Config.Upgrades,
-    }, { chunk: 1, terminate: false })
+    }, { terminate: false })
 
 
     exec(calc => {
@@ -38,7 +37,7 @@ export function Config() {
       }))
     })
 
-    calc.Results.Upgrades = transform as genshin.optimizer.upgrades.Result[][]
+    calc.Results.Upgrades = result
 
     if (!error) {
       show()

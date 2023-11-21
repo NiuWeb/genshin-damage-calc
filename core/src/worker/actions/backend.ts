@@ -3,11 +3,13 @@ import { VirtualWorker, WorkerPoster } from "../worker"
 import { OptimizerBackend } from "./optimizer/backend"
 import { OptimizerChildBackend } from "./optimizer/backend-child"
 import { RotationDamageBackend } from "./rotation-damage/backend"
+import { UpgradesOptimizerBackend } from "./upgrades-optimizer/backend"
 
 const backendActions = [
     RotationDamageBackend,
     OptimizerBackend,
-    OptimizerChildBackend
+    OptimizerChildBackend,
+    UpgradesOptimizerBackend
 ]
 
 /** Creates a worker to be executed in the backend, with all the registered actions */
