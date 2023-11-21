@@ -40,19 +40,20 @@ const $ca_reaction 90%
 const $q_reaction 90%
 
 # Jean healing values
-const $jean_scaling_elemental { 
-  pick(jean_elemental_burst_level, 1, 1.075, 1.15, 1.25, 1.325, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.125, 2.25, 2.375) 
+void {
+  func(jean_scaling_elemental, 0,
+    pick(jean_elemental_burst_level, 1, 1.075, 1.15, 1.25, 1.325, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.125, 2.25, 2.375) 
+  ),
+  func(jean_scaling_flat, 0,
+    pick(jean_elemental_burst_level, 1, 1.1, 1.208, 1.325, 1.45, 1.583, 1.725, 1.875, 2.033, 2.2, 2.375, 2.559, 2.75, 2.95, 3.159)
+  ),
+  func(jean_q_healing_percent, 0, 2.512 * call(jean_scaling_elemental)),
+  func(jean_q_healing_flat, 0, 1540.32 * call(jean_scaling_flat)),
+  func(jean_dot_healing_percent, 0, call(jean_q_healing_percent)/10),
+  func(jean_dot_healing_flat, 0, call(jean_q_healing_flat)/10)
 }
-const $jean_scaling_flat {
-  pick(jean_elemental_burst_level, 1, 1.1, 1.208, 1.325, 1.45, 1.583, 1.725, 1.875, 2.033, 2.2, 2.375, 2.559, 2.75, 2.95, 3.159)
-}
-const $jean_q_healing_percent { 2.512 * $jean_scaling_elemental }
-const $jean_q_healing_flat { 1540.32 * $jean_scaling_flat }
-const $jean_dot_healing_percent { $jean_q_healing_percent/10 }
-const $jean_dot_healing_flat { $jean_q_healing_flat/10 }
-
-echo "Jean Q healing: " {100*$jean_q_healing_percent} "% of ATK + " {$jean_q_healing_flat}
-echo "Jean DoT healing: " {100*$jean_dot_healing_percent} "% of ATK + " {$jean_dot_healing_flat}
+rotation do echo "Jean Q healing: " {@ 100*call(jean_q_healing_percent) } "% of ATK + " {@ call(jean_q_healing_flat) }
+rotation do echo "Jean DoT healing: " {@ 100*call(jean_dot_healing_percent) } "% of ATK + " {@ call(jean_dot_healing_flat) }
 
 # Utility functions
 void { 
@@ -85,7 +86,11 @@ void {
   // Heals Hu Tao (the on-field character) with Jean continuous healing
   func(healOnField, 0, (
       var(initial, hutao_hp_current),
-      add(hutao_hp_current, call(getJeanHealing, $jean_dot_healing_percent, $jean_dot_healing_flat)/hutao_hp),
+      add(hutao_hp_current, 
+        call(getJeanHealing, 
+          call(jean_dot_healing_percent), 
+          call(jean_dot_healing_flat)
+        )/hutao_hp),
       add(hp_changed, abs(hutao_hp_current - initial))  
   ))
 }
@@ -179,7 +184,7 @@ rotation do void {@
 
   // calculate the healed HP pts. 
   var(healing, 
-    call(getJeanHealing, $jean_q_healing_percent, $jean_q_healing_flat)
+    call(getJeanHealing, call(jean_q_healing_percent), call(jean_q_healing_flat))
   ),
 
   // heal all characters
