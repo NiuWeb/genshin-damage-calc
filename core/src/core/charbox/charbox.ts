@@ -375,6 +375,7 @@ export class Charbox {
     /** removes all modifiers */
     ClearModifiers(): Charbox {
         this.modifiers.forEach(mod => mod.Disable())
+        this.uniqueModifiers.forEach(mod => mod.Disable())
         this.modifiers.splice(0, this.modifiers.length)
         return this
     }

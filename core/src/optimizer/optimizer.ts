@@ -47,6 +47,8 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
     protected rotation?: rotation.Rotation
     protected total = 0
 
+    protected variables?: Dictionary<number>
+
     /** changes the optimizer config without initializing */
     SetConfig(config: Config): void {
         this.config = config
@@ -83,6 +85,8 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
             this.runner.compileString("character set " + config.Target)()
             this.target = scenario.Character
         }
+
+        this.variables = { ... this.runner.Scenario.Variables }
 
         this.init(config)
     }
@@ -140,6 +144,10 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
         if (!this.rotation) {
             throw new Error("Rotation not set for this optimizer. Try to run `.Init()` first")
         }
+        if (!this.runner) {
+            throw new Error("Runner not set for this optimizer. Try to run `.Init()` first")
+        }
+        this.runner.Scenario.Variables = { ... this.variables } // reset variables
         const state = charbox.ExportParty(this.GetParty())
         this.rotation.SetCharacters(...this.GetParty().GetMembers())
         const result = this.rotation.Run()
