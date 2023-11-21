@@ -116,7 +116,7 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
             this.prevDamage = this.Run()
             decided.selected = true
         }
-        this.result.push(result.filter(result => result.increase > 1e-8))
+        this.result.push(result.filter(result => result.increase > Number.EPSILON))
     }
     Get(): Result[][] {
         return this.result
@@ -135,6 +135,11 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
     static Curve(table: Result[][]): Curve {
         const curve: Curve = []
         let cost = 0
+
+        if (table[0] && table[0][0]) {
+            const first = table[0][0]
+            curve.push([0, first.damage / (1 + first.increase)])
+        }
 
         for (const [first] of table) {
             if (!first) continue
