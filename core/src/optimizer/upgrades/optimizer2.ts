@@ -36,9 +36,7 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
 
     *Generate() {
         let upgrades: UpgradeData[]
-        let i = 0
         do {
-            i++
             upgrades = this.getUpgrades()
 
             const rows = upgrades.map(upgrade => ({
@@ -49,7 +47,7 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
 
             yield rows
 
-        } while (upgrades.length > 0 && i < 5)
+        } while (upgrades.length > 0)
     }
 
     /**
@@ -118,7 +116,7 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
             this.prevDamage = this.Run()
             decided.selected = true
         }
-        this.result.push(result)
+        this.result.push(result.filter(result => result.increase > 1e-8))
     }
     Get(): Result[][] {
         return this.result
@@ -139,6 +137,7 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
         let cost = 0
 
         for (const [first] of table) {
+            if (!first) continue
             const costData = first.costData
 
             cost += costData.cost
