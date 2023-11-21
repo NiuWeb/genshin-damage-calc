@@ -10,8 +10,9 @@ const criteria = ["damage", "cost", "efficiency"] as const
 function format(label: typeof labels[number], value: number) {
   switch (label) {
     case "increase":
-    case "efficiency":
       return toPlaces(value * 100, 4) + "%"
+    case "efficiency":
+      return toPlaces(value * 100 * 100, 4) + " bp"
     case "damage":
     case "cost":
       return toPlaces(value, 0)

@@ -16,7 +16,9 @@ export function UpgradesResults({ results }: { results: genshin.optimizer.upgrad
   }
 
   return <div className="upgrades-result flex flex-col gap-1">
-    <UpgradesChart results={results} />
+    <div className="flex justify-center">
+      <UpgradesChart results={results} />
+    </div>
     <button onClick={exportImg} className="bg-gray-600 hover:bg-gray-700">
       {GetString("ACTION.EXPORT.IMAGE")}
     </button>

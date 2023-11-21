@@ -3,7 +3,7 @@ import { ItemBody } from "./body"
 import { ItemHeader } from "./header"
 
 export function ResultItem({ item }: { item: genshin.optimizer.upgrades.Result }) {
-  return <div className="result-item-card flex flex-col min-w-[192px]">
+  return <div className="result-item-card flex flex-col min-w-[240px]">
     <ItemHeader item={item} />
     <ItemBody item={item} />
   </div>
