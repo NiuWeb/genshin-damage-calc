@@ -60,7 +60,7 @@ function UpgradeItem({ item, last }: { item: genshin.optimizer.upgrades.Result, 
     </div>
 }
 
-function valueLabel(upgrade: genshin.optimizer.upgrades.UpgradeData): string {
+export function valueLabel(upgrade: genshin.optimizer.upgrades.UpgradeData): string {
 
     switch (upgrade.type) {
         case genshin.optimizer.upgrades.Upgrade.NORMAL_ATTACK_LEVEL:
