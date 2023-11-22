@@ -109,6 +109,7 @@ rotation do effect config Furina SplendorOfTranquilWaters2 stacks=0
 
 rotation do effect config Yelan YelanA4 enable=0 stacks=0
 rotation do effect config Yelan ElegyForTheEnd2 enable=0 target=none
+rotation do effect config Jean ViridescentVenerer4 enable=0 target=none
 
 # Furina EQ
 rotation hit Furina E 
