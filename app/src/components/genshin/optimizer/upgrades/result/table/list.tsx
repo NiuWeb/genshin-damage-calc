@@ -1,6 +1,7 @@
 import { genshin } from "@src/genshin/core"
 import { TargetLabel } from "../item/target"
 import { toPlaces } from "@src/utils/number"
+import { classes } from "@src/utils/classes"
 
 export function UpgradeList({ results }: { results: genshin.optimizer.upgrades.Result[][] }) {
     const optimal = results
@@ -33,11 +34,25 @@ export function UpgradeList({ results }: { results: genshin.optimizer.upgrades.R
 function UpgradeItem({ item, last }: { item: genshin.optimizer.upgrades.Result, last?: boolean }) {
     const { upgrade } = item
 
+    let strval = toPlaces(item.increase * 100, 1) + "%"
+    if (item.increase > 0) strval = "+" + strval
+
+    const isZero = Math.abs(item.increase) < 1e-12
+
+    if (isZero) {
+        strval = "0%"
+    }
+
     return <div className="inline-flex gap-1 items-center mr-1">
         <TargetLabel upgrade={upgrade} />
         <span>{valueLabel(upgrade)}</span>
-        <span className="text-xs bg-gray-300 p-0.5 rounded-sm text-black">
-            +{toPlaces(item.increase * 100, 1)}%
+        <span className={classes(
+            "text-xs p-0.5 rounded-sm text-black",
+            isZero ? "bg-gray-300" : (
+                item.increase > 1e-12 ? "bg-[#74ff39]" : "bg-[#eb574c]"
+            )
+        )}>
+            {strval}
         </span>
         {!last && (
             <span className="text-xl font-bold">&gt;</span>

@@ -116,7 +116,10 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
             this.prevDamage = this.Run()
             decided.selected = true
         }
-        this.result.push(result.filter(result => result.increase > Number.EPSILON))
+        if (result.length > 1) {
+            result = result.filter((result, i) => i === 0 || result.increase > 1e-12)
+        }
+        this.result.push(result)
     }
     Get(): Result[][] {
         return this.result
