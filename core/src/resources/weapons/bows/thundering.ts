@@ -4,7 +4,7 @@ export const ThunderingPulse = weapon.Factory({
     Name: "ThunderingPulse",
     Stars: 5,
     Type: stats.weapon.BOW,
-    Scaling: scaling.WeaponScaling.TYPE_48,
+    Scaling: scaling.WeaponScaling.TYPE_46,
     Substat: stats.stat.CRIT_DMG,
 
     Effects: [
