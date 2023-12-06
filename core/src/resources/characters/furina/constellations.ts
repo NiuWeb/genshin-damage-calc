@@ -1,6 +1,8 @@
 import { effect, stats } from "@src/core"
 import { EffectEvent } from "@src/core/effect"
 
+
+
 export const c1 = effect.Factory({
     Name: "FurinaC1",
     OnApply(char, ef, reg) {
@@ -9,11 +11,24 @@ export const c1 = effect.Factory({
             throw new Error("FurinaC1: could not find FurinaQ")
         }
 
-        const update = () => {
-            if (!ef.Enabled() && q.GetStacks() > 300) {
-                q.SetStacks(300)
+        let lastValue = 0
+        let lastEnabled = ef.Enabled()
 
+        const update = () => {
+            const stacks = q.GetStacks()
+
+            if(!ef.Enabled()) {
+                if(stacks > 300) {
+                    lastValue = stacks
+                    q.SetStacks(300)
+                }
+            } else {
+                if(!lastEnabled && stacks < lastValue) {
+                    q.SetStacks(lastValue)
+                }
             }
+
+            lastEnabled = ef.Enabled()
         }
 
         update()
