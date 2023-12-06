@@ -20,6 +20,7 @@ export const c1 = effect.Factory({
 
         reg.Observer(ef.CreateObserver(EffectEvent.ENABLE, update))
         reg.Observer(ef.CreateObserver(EffectEvent.DISABLE, update))
+        // limiter should work even if C1 is disabled, so won't add to registry
         q.CreateObserver(EffectEvent.CHANGE_STACKS, update)
 
         return () => 0
