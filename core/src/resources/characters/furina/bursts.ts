@@ -30,13 +30,6 @@ export const qBonus = effect.Factory({
         .Map((stacks, _, ef) => {
             const char = ef.Owner
 
-            const c1 = char.FindEffect("FurinaC1")
-            if(!c1 || !c1.Enabled()) {
-                if(ef.GetStacks() > 300) {
-                    ef.SetStacks(300)
-                }
-            }
-
             let r = 0.05 + 0.02 * char.GetCharacter().Get(stats.stat.ELEMENTAL_BURST_LEVEL)
             r = r * stacks / 100
             return r

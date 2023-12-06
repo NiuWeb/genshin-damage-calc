@@ -4,19 +4,23 @@ import { EffectEvent } from "@src/core/effect"
 export const c1 = effect.Factory({
     Name: "FurinaC1",
     OnApply(char, ef, reg) {
+        const q = char.FindEffect("FurinaQ")
+        if (!q) {
+            throw new Error("FurinaC1: could not find FurinaQ")
+        }
 
-        function update() {
-            const q = char.FindEffect("FurinaQ")
-            if(!q) {
-                return
+        const update = () => {
+            if (!ef.Enabled() && q.GetStacks() > 300) {
+                q.SetStacks(300)
+
             }
-            q.SetStacks(q.GetStacks())
         }
 
         update()
 
         reg.Observer(ef.CreateObserver(EffectEvent.ENABLE, update))
         reg.Observer(ef.CreateObserver(EffectEvent.DISABLE, update))
+        q.CreateObserver(EffectEvent.CHANGE_STACKS, update)
 
         return () => 0
     }
