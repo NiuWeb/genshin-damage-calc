@@ -62,6 +62,12 @@ interface builderQuery {
     effect?: AuraQuery & {
         /** effect should have at least one of these conditions */
         conditions?: string[]
+
+        /** 
+         * mode of matching conditions: some conditions (or) or every condition (and)
+         * @default "some"
+         * */
+        conditionQuery?: "some" | "every"
     }
 }
 /** custom query function  */
@@ -172,7 +178,8 @@ function runQuery(q: builderQuery, owner: Character, target: Character, ef: Effe
             return false
         }
         if (q.effect.conditions && q.effect.conditions.length > 0) {
-            const some = q.effect.conditions.some(cond => ef.HasCondition(cond))
+            const mode = q.effect.conditionQuery || "some"
+            const some = q.effect.conditions[mode](cond => ef.HasCondition(cond))
             if (!some) {
                 return false
             }
