@@ -1,3 +1,5 @@
+export { NighttimeWhispersInTheEchoingWoods } from "./list/echoingwoods"
+export { SongOfDaysPast } from "./list/songofdayspast"
 export { MarechausseeHunter } from "./list/marechaussee"
 export { GoldenTroupe } from "./list/goldentroupe"
 export { VourukashasGlow } from "./list/vourukashasglow"

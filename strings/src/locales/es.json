@@ -54,12 +54,15 @@
   "AURA.QUICKEN": "Aceleración",
   "CONDITION.AGGRAVATE": "Intensificación",
   "CONDITION.ARIA": "Aria (Daño%)",
+  "CONDITION.ARKHE_OUSIA": "Arjé Ousia",
+  "CONDITION.ARKHE_PNEUMA": "Arjé Pneuma",
   "CONDITION.AVERAGE": "Promedio",
   "CONDITION.BLOOM": "Florecimiento",
   "CONDITION.BURGEON": "Crepitar",
   "CONDITION.BURNING": "Quemadura",
   "CONDITION.CAST_BURST": "Lanzar Q",
   "CONDITION.CAST_SKILL": "Lanzar E",
+  "CONDITION.CRYSTALLIZE": "Cristalización",
   "CONDITION.DMG_TAKEN": "Daño recibido",
   "CONDITION.ENEMY_1": "1 Enemigo",
   "CONDITION.ENEMY_2": "2+ Enemigos",
@@ -3454,6 +3457,20 @@
     ],
     "title": "Fallo axiomático"
   },
+  "ITEM.NighttimeWhispersInTheEchoingWoods": "Murmullo del Bosque Reverberante",
+  "ITEM.NighttimeWhispersInTheEchoingWoods2": {
+    "description": "ATQ +18%.",
+    "title": "Murmullo del Bosque Reverberante (2)"
+  },
+  "ITEM.NighttimeWhispersInTheEchoingWoods4": {
+    "description": [
+      "Tras usar la Habilidad Elemental, el personaje obtiene un 20% de Bono de Daño Geo",
+      "durante 10 s. Si está protegido por un escudo creado mediante la reacción de",
+      "Cristalización, el Bono de Daño Geo aumenta adicionalmente en un 150%. Este aumento",
+      "adicional se eliminará 1 s después de perder el escudo creado mediante Cristalización."
+    ],
+    "title": "Murmullo del Bosque Reverberante (4)"
+  },
   "ITEM.Nilou": "Nilou",
   "ITEM.Nilou.HIT_E_1_1": "Daño de 1er golpe de danza de espadas",
   "ITEM.Nilou.HIT_E_1_2": "Daño de 1er golpe de danza espiral",
@@ -4456,6 +4473,28 @@
       "acumularán con otros efectos del mismo tipo. "
     ],
     "title": "Oda de los Pinos (2)"
+  },
+  "ITEM.SongOfDaysPast": "Son de Antaño",
+  "ITEM.SongOfDaysPast2": {
+    "description": "Bono de Curación +15%.",
+    "title": "Son de Antaño (2)"
+  },
+  "ITEM.SongOfDaysPast4": {
+    "description": [
+      "Cuando el portador de este conjunto realiza una curación, crea el efecto de “añoranza”",
+      "durante 6 s, el cual registra la cantidad de Vida recuperada (incluyendo el exceso de",
+      "curación). Al terminar la duración, el efecto de añoranza se convierte en el de “marea",
+      "de antaño”, de manera que cuando tu personaje en uso golpea a un enemigo con un Ataque",
+      "Normal, Cargado o Descendente o con su Habilidad Elemental o Definitiva, el daño que",
+      "inflige dicho personaje aumenta en una cantidad equivalente al 8% de la cantidad de Vida",
+      "recuperada y registrada por añoranza. El efecto de marea de antaño se elimina tras",
+      "activarse 5 veces o después de 10 s. Por su parte, el efecto de añoranza solo puede",
+      "registrar un máximo de 15 000 pts. de Vida recuperada y solo puede existir uno al",
+      "mismo tiempo, pero puede registrar la Vida recuperada por varios portadores de",
+      "este conjunto. Este efecto se puede activar incluso cuando el portador está en",
+      "tu equipo pero no en uso."
+    ],
+    "title": "Son de Antaño (4)"
   },
   "ITEM.SongOfStillness": "Serenata del Sosiego",
   "ITEM.SongOfStillness1": {
@@ -5784,7 +5823,7 @@
   "LABEL.ALERT": "Alerta",
   "LABEL.ALL": "Todos",
   "LABEL.ANY": "Cualquiera",
-  "LABEL.APPLIES_TO": "Applica a",
+  "LABEL.APPLIES_TO": "Aplica a",
   "LABEL.ARTIFACT_FILTER_ONLY_LOCKED": "Solo artefactos bloqueados",
   "LABEL.ARTIFACT_FILTER_ONLY_PIECES": "Solo piezas específicas",
   "LABEL.ARTIFACT_FILTER_ONLY_UNLOCKED": "Solo artefactos desbloqueados",

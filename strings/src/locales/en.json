@@ -54,12 +54,15 @@
   "AURA.QUICKEN": "Quicken",
   "CONDITION.AGGRAVATE": "Aggravate",
   "CONDITION.ARIA": "Aria (DMG%)",
+  "CONDITION.ARKHE_OUSIA": "Arkhe Ousia",
+  "CONDITION.ARKHE_PNEUMA": "Arkhe Pneuma",
   "CONDITION.AVERAGE": "Average",
   "CONDITION.BLOOM": "Bloom",
   "CONDITION.BURGEON": "Burgeon",
   "CONDITION.BURNING": "Burning",
   "CONDITION.CAST_BURST": "Cast burst",
   "CONDITION.CAST_SKILL": "Cast E",
+  "CONDITION.CRYSTALLIZE": "Crystallize",
   "CONDITION.DMG_TAKEN": "Damage taken",
   "CONDITION.ENEMY_1": "1 Enemy",
   "CONDITION.ENEMY_2": "2+ Enemies",
@@ -3528,6 +3531,19 @@
     ],
     "title": "Axiomatic Judgment"
   },
+  "ITEM.NighttimeWhispersInTheEchoingWoods": "Nighttime Whispers in the Echoing Woods",
+  "ITEM.NighttimeWhispersInTheEchoingWoods2": {
+    "description": "ATK +18%.",
+    "title": "Nighttime Whispers in the Echoing Woods (2)"
+  },
+  "ITEM.NighttimeWhispersInTheEchoingWoods4": {
+    "description": [
+      "After using an Elemental Skill, gain a 20% Geo DMG Bonus for 10s. While under a",
+      "shield granted by the Crystallize reaction, the above effect will be increased by",
+      "150%, and this additional increase disappears 1s after that shield is lost."
+    ],
+    "title": "Nighttime Whispers in the Echoing Woods (4)"
+  },
   "ITEM.Nilou": "Nilou",
   "ITEM.Nilou.HIT_E_1_1": "Sword Dance 1-Hit DMG",
   "ITEM.Nilou.HIT_E_1_2": "Whirling Steps 1-Hit DMG",
@@ -4597,6 +4613,27 @@
       "buffs of the same type will not stack. "
     ],
     "title": "Song of Broken Pines (2)"
+  },
+  "ITEM.SongOfDaysPast": "Song of Days Past",
+  "ITEM.SongOfDaysPast2": {
+    "description": "Healing Bonus +15%.",
+    "title": "Song of Days Past (2)"
+  },
+  "ITEM.SongOfDaysPast4": {
+    "description": [
+      "When the equipping character heals a party member, the Yearning effect",
+      "will be created for 6s, which records the total amount of healing provided",
+      "(including overflow healing). When the duration expires, the Yearning effect",
+      "will be transformed into the \"Waves of Days Past\" effect: When your active",
+      "party member hits an opponent with a Normal Attack, Charged Attack, Plunging",
+      "Attack, Elemental Skill, or Elemental Burst, the DMG dealt will be increased",
+      "by 8% of the total healing amount recorded by the Yearning effect. The \"Waves",
+      "of Days Past\" effect is removed after it has taken effect 5 times or after 10s.",
+      "A single instance of the Yearning effect can record up to 15,000 healing, and only",
+      "a single instance can exist at once, but it can record the healing from multiple",
+      "equipping characters. Equipping characters on standby can still trigger this effect."
+    ],
+    "title": "Song of Days Past (4)"
   },
   "ITEM.SongOfStillness": "Song of Stillness",
   "ITEM.SongOfStillness1": {
