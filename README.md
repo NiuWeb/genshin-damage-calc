@@ -27,7 +27,8 @@ There are three projects in this repository:
 ```shell
 cd ./core
 npm install
-npm run build
+cd ../strings
+npm install
 cd ../app
 npm install
 npm run dev
