@@ -1,3 +1,4 @@
+export { Navia } from "./navia"
 export { Furina } from "./furina"
 export { Neuvillette } from "./neuvillette"
 export { Mika } from "./mika"
