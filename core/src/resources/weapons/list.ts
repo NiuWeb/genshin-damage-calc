@@ -1,3 +1,4 @@
+export { Veredict } from "./claymores/veredict"
 export { SplendorOfTranquilWaters } from "./swords/splendoroftranquilwaters"
 export { TomeOfTheEternalFlow } from "./catalysts/tomeoftheeternalflow"
 export { RightfulReward } from "./polearms/rightfulreward"
