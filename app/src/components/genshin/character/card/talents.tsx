@@ -40,19 +40,36 @@ function SingleTalent({ character, talent, up }: {
     exec()
   }
 
+  const valueUp = character.Get(up)
+
   const talentId = "character-talent-" + genshin.stats.stat.Name(talent) + "-" + character.Options.Name
   return <>
     <Dropdown
       notEmpty
       tooltip={talentId}
       className="character-talent min-w-[48px] bg-slate-600"
-      title={character.Get(talent)}
+      title={valueUp === 0 ?
+        character.Get(talent) :
+        <span className="text-sky-300">
+          {character.Get(talent)}
+        </span>}
       values={[character.Get(talent)]}
       onChange={update}>
       {levels.map(level => (
-        <DropdownItem
+        (level - valueUp > 0) && <DropdownItem
           key={level}
-          value={level}>{level}</DropdownItem>
+          value={level}>
+          <div className="flex justify-between">
+            <span>{level}</span>
+            {valueUp > 0 && (
+              <span>
+                ({level - valueUp}
+                <span className="text-sky-300"> +{valueUp}</span>
+                )
+              </span>
+            )}
+          </div>
+        </DropdownItem>
       ))}
     </Dropdown>
     <Tooltip id={talentId}>

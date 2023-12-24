@@ -20,19 +20,24 @@ export function statSet(subject: Subject, stat: number, value: number): void {
         case stats.DEF:
             throw new Error("Cannot set Total DEF directly")
 
-        case stats.NORMAL_ATTACK_LEVEL:
-            value = Math.max(1, Math.floor(value))
-            subject.Set(stats.NORMAL_ATTACK_LEVEL, value - subject.Get(stats.NORMAL_ATTACK_LEVEL_UP))
+        case stats.NORMAL_ATTACK_LEVEL: {
+            const up = subject.Get(stats.NORMAL_ATTACK_LEVEL_UP)
+            value = Math.max(1 + up, Math.floor(value))
+            subject.Set(stats.NORMAL_ATTACK_LEVEL, value - up)
             break
-        case stats.ELEMENTAL_SKILL_LEVEL:
-            value = Math.max(1, Math.floor(value))
-            subject.Set(stats.ELEMENTAL_SKILL_LEVEL, value - subject.Get(stats.ELEMENTAL_SKILL_LEVEL_UP))
+        }
+        case stats.ELEMENTAL_SKILL_LEVEL: {
+            const up = subject.Get(stats.ELEMENTAL_SKILL_LEVEL_UP)
+            value = Math.max(1 + up, Math.floor(value))
+            subject.Set(stats.ELEMENTAL_SKILL_LEVEL, value - up)
             break
-        case stats.ELEMENTAL_BURST_LEVEL:
-            value = Math.max(1, Math.floor(value))
-            subject.Set(stats.ELEMENTAL_BURST_LEVEL, value - subject.Get(stats.ELEMENTAL_BURST_LEVEL_UP))
+        }
+        case stats.ELEMENTAL_BURST_LEVEL: {
+            const up = subject.Get(stats.ELEMENTAL_BURST_LEVEL_UP)
+            value = Math.max(1 + up, Math.floor(value))
+            subject.Set(stats.ELEMENTAL_BURST_LEVEL, value - up)
             break
-
+        }
         case stats.LEVEL:
             if (value > 90) {
                 value = 90
