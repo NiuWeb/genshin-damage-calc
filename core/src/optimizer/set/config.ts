@@ -11,6 +11,7 @@ in the application, but will be overrided by configurations done in the rotation
 */
 
 case 
+SongOfDaysPast4
 NoblesseOblige4
 TenacityOfTheMillelith4
 DeepwoodMemories4
