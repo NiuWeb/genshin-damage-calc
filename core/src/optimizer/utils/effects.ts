@@ -1,5 +1,6 @@
 import { effect } from "@src/core"
 import { CombinateArrays } from "@src/utils/combinations/arrays"
+import { CombinateValues } from "@src/utils/combinations/values"
 
 export type EffectCombination = {
     [effectName: string]: string[]
@@ -23,10 +24,14 @@ export function CombinateEffects(effects: readonly effect.Generator[], cases?: M
             const stacks = new Set([0])
             stacks.add(ef.MaxStacks || 0)
             stacks.add(Math.floor((ef.MaxStacks || 0) / 2))
-            const combis = Array.from(CombinateArrays(conditions, Array.from(stacks)))
 
-            return combis.map(([condition, stacks]) => [
-                "effect condition " + condition + "\n" +
+            const maxConditions = ef.MaxConditions || 1
+            const conditionCombis = Array.from(CombinateValues(conditions, maxConditions))
+
+            const combis = Array.from(CombinateArrays(conditionCombis, Array.from(stacks)))
+
+            return combis.map(([conditions, stacks]) => [
+                "effect condition " + conditions.join(" ") + "\n" +
                 "effect stacks " + stacks
             ])
         }

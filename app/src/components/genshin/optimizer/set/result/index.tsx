@@ -54,7 +54,8 @@ function mapName(input: string, header: string): ReactNode {
     if (input.trim() === "") {
       return ""
     }
-    return GetString("CONDITION." + input)
+    const conditions = input.split(",").map(c => c.trim())
+    return conditions.map(cond => GetString("CONDITION." + cond)).join(", ")
   }
 
   const name = input.replace(EXP, "").trim()
