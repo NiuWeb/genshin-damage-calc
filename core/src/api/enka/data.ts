@@ -173,7 +173,9 @@ export const Weapons = ReadOnly({
     2077869763: "TidalShadow",
     2265792579: "WolfFang",
     4176923379: "TomeOfTheEternalFlow",
-    1473399443: "SplendorOfTranquilWaters"
+    1473399443: "SplendorOfTranquilWaters",
+    933442195: "UltimateOverlordsMegaMagicSword",
+    3812523339: "Verdict",
 })
 
 export const Sets = ReadOnly({
@@ -215,7 +217,9 @@ export const Sets = ReadOnly({
     1925210475: "NymphsDream",
     235897163: "VourukashasGlow",
     3410220315: "GoldenTroupe",
-    1249831867: "MarechausseeHunter"
+    1249831867: "MarechausseeHunter",
+    2803305851: "SongOfDaysPast",
+    279470883: "NighttimeWhispersInTheEchoingWoods"
 })
 
 export const Props = ReadOnly({
@@ -306,5 +310,6 @@ export const Characters = ReadOnly({
     10000078: "Alhaitham",
     10000080: "Mika",
     10000087: "Neuvillette",
-    10000089: "Furina"
+    10000089: "Furina",
+    10000091: "Navia"
 })
