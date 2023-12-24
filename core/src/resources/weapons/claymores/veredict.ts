@@ -10,6 +10,7 @@ export const Veredict = weapon.Factory({
     Effects: [
         effect.Factory({
             Name: "Veredict1",
+            MaxRank: 5,
             MaxStacks: 2,
             OnApply: new effect.Builder()
                 .stat
