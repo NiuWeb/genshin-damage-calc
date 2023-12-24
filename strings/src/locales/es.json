@@ -3412,6 +3412,77 @@
     ],
     "title": "Illusory Heart"
   },
+  "ITEM.Navia": "Navia",
+  "ITEM.Navia.HIT_E_OUSIA": "Habilidad Elemental (Ousia)",
+  "ITEM.NaviaA1": {
+    "description": [
+      "Tras usar Etiqueta vidriopírica, el daño de los Ataques Normales, Cargados y Descendentes de Navia",
+      "se transforma durante 4 s en Daño Geo, el cual no puede sustituirse imbuyéndose de otro elemento,",
+      "y además, el daño de dichos ataques aumenta en un 40%."
+    ],
+    "title": "Canal no identificado"
+  },
+  "ITEM.NaviaA4": {
+    "description": [
+      "El ATQ de Navia aumenta en un 20% por cada personaje Pyro, Electro, Cryo o Hydro que haya en el equipo.",
+      "Este efecto puede acumularse hasta 2 veces."
+    ],
+    "title": "Red de apoyo mutuo"
+  },
+  "ITEM.NaviaC2": {
+    "description": [
+      "Al usar Etiqueta vidriopírica, la Prob. CRIT de dicha habilidad aumenta en un 12% por cada",
+      "fragmento de metralla consumido. La Prob. CRIT puede aumentar en un máximo de un 36% de esta manera.",
+      "Además, al alcanzar a un enemigo con un disparo de Etiqueta vidriopírica, en la ubicación de dicho",
+      "enemigo caerá una bomba de bombardeo auxiliar de Aluvión artillero. Solo puede caer una bomba de",
+      "bombardeo auxiliar cada vez que se use Etiqueta vidriopírica, y el daño del bombardeo auxiliar",
+      "activado de esta manera se considera daño de Habilidad Definitiva."
+    ],
+    "title": "Comandante bélica"
+  },
+  "ITEM.NaviaC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Etiqueta vidriopírica +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Visión de empresaria"
+  },
+  "ITEM.NaviaC4": {
+    "description": [
+      "Cuando un enemigo es alcanzado por Aluvión artillero, su RES Geo se reduce en un 20% durante 8 s."
+    ],
+    "title": "Tolerancia cero"
+  },
+  "ITEM.NaviaC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Aluvión artillero +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Negociante férrea"
+  },
+  "ITEM.NaviaC6": {
+    "description": [
+      "Si al usar Etiqueta vidriopírica se consumen más de 3 fragmentos de metralla,",
+      "cada fragmento por encima del tercero no solo aumenta en un 45% el Daño CRIT",
+      "de dicha habilidad, sino que también se recupera."
+    ],
+    "title": "Avezada presidenta de Spina di Rosula"
+  },
+  "ITEM.NaviaE": {
+    "description": [
+      "Al consumir 0/1/2/3 o más fragmentos de metralla, se dispararán respectivamente 5/7/9/11",
+      "vidriobalas rosáceas. Cuantas más vidriobalas alcancen a un enemigo, más daño recibirá.",
+      "Si un enemigo es alcanzado por 11 vidriobalas rosáceas, estas infligirán un 200% de su daño original."
+    ],
+    "title": "Etiqueta vidriopírica"
+  },
+  "ITEM.NaviaE2": {
+    "description": [
+      "Además, al consumir más de 3 fragmentos de metralla, cada fragmento por encima del tercero aumenta",
+      "en un 15% adicional el daño infligido por el próximo disparo."
+    ],
+    "title": "Etiqueta vidriopírica (2)"
+  },
   "ITEM.Neuvillette": "Neuvillette",
   "ITEM.Neuvillette.HIT_CHARGED_2": "Ataque Cargado: Sentencia ecuánime",
   "ITEM.Neuvillette.HIT_CHARGED_C6": "Ataque Cargado: Sentencia ecuánime",

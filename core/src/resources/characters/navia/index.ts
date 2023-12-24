@@ -3,7 +3,7 @@ import { Bursts } from "./bursts"
 import { c2, c3, c4, c5, c6 } from "./constellations"
 import { Normals } from "./normals"
 import { a1, a4 } from "./passives"
-import { eBonus, eBonus2, Skills } from "./skills"
+import { eBonus2, eBonus, Skills } from "./skills"
 
 export const Navia = charbox.Factory({
     Name: "Navia",

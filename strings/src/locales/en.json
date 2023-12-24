@@ -3485,6 +3485,81 @@
     ],
     "title": "Illusory Heart"
   },
+  "ITEM.Navia": "Navia",
+  "ITEM.Navia.HIT_E_OUSIA": "Elemental Skill (Ousia)",
+  "ITEM.NaviaA1": {
+    "description": [
+      "For 4s after using Ceremonial Crystalshot, the DMG dealt by Navia's Normal Attacks,",
+      "Charged Attacks, and Plunging Attacks will be converted into Geo DMG which cannot",
+      "be overridden by other Elemental infusions, and the DMG dealt by Navia's Normal Attacks,",
+      "Charged Attacks, and Plunging Attacks will be increased by 40%."
+    ],
+    "title": "Undisclosed Distribution Channels"
+  },
+  "ITEM.NaviaA4": {
+    "description": [
+      "For each Pyro/Electro/Cryo/Hydro party member, Navia gains 20% increased ATK.",
+      "This effect can stack up to 2 times."
+    ],
+    "title": "Mutual Assistance Network"
+  },
+  "ITEM.NaviaC2": {
+    "description": [
+      "Each charge of Crystal Shrapnel consumed will increase the CRIT Rate of this Ceremonial",
+      "Crystalshot instance by 12%. CRIT Rate can be increased by up to 36% in this way.",
+      "In addition, when Ceremonial Crystalshot hits an opponent, one Cannon Fire Support shot",
+      "from As the Sunlit Sky's Singing Salute will strike near the location of the hit. Up to",
+      "one instance of Cannon Fire Support can be triggered each time Ceremonial Crystalshot is",
+      "used, and DMG dealt by said Cannon Fire Support this way is considered Elemental Burst DMG."
+    ],
+    "title": "The President's Pursuit of Victory"
+  },
+  "ITEM.NaviaC3": {
+    "description": [
+      "Increases the Level of Ceremonial Crystalshot by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Businesswoman's Broad Vision"
+  },
+  "ITEM.NaviaC4": {
+    "description": [
+      "When As the Sunlit Sky's Singing Salute hits an opponent, that opponent's",
+      "Geo RES will be decreased by 20% for 8s."
+    ],
+    "title": "The Oathsworn Never Capitulate"
+  },
+  "ITEM.NaviaC5": {
+    "description": [
+      "Increases the Level of As the Sunlit Sky's Singing Salute by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Negotiator's Resolute Negotiations"
+  },
+  "ITEM.NaviaC6": {
+    "description": [
+      "If more than 3 charges of Crystal Shrapnel are consumed when using Ceremonial Crystalshot,",
+      "each charge consumed beyond the first 3 increases the CRIT DMG of that Ceremonial Crystalshot",
+      "by 45%, and any charges consumed beyond the first 3 are returned to Navia."
+    ],
+    "title": "The Flexible Finesse of the Spina's President"
+  },
+  "ITEM.NaviaE": {
+    "description": [
+      "When 0/1/2/3 or more charges of Crystal Shrapnel are consumed, 5/7/9/11 Rosula",
+      "Shardshots will be fired respectively. The more Rosula Shardshots that strike a",
+      "single opponent, the greater the DMG dealt to them. When all 11 Rosula Shardshots",
+      "strike, 200% of the original amount of DMG is dealt."
+    ],
+    "title": "Ceremonial Crystalshot"
+  },
+  "ITEM.NaviaE2": {
+    "description": [
+      "In addition, when more than 3 charges of Crystal Shrapnel are consumed, every",
+      "charge consumed beyond those 3 will increase the damage dealt by this Gunbrella",
+      "shot by an additional 15%."
+    ],
+    "title": "Ceremonial Crystalshot (2)"
+  },
   "ITEM.Neuvillette": "Neuvillette",
   "ITEM.Neuvillette.HIT_CHARGED_2": "Charged Attack: Equitable Judgment",
   "ITEM.Neuvillette.HIT_CHARGED_C6": "Charged Attack: Equitable Judgment",

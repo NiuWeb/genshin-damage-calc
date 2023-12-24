@@ -29,8 +29,8 @@ export const Skills: charbox.PartialInstanceOptions[] = [
 ]
 
 
-export const eBonus = effect.Factory({
-    Name: "NaviaE",
+export const eBonus2 = effect.Factory({
+    Name: "NaviaE2",
     MaxStacks: 6,
     OnApply: new effect.Builder()
         .stat
@@ -48,8 +48,8 @@ export const eBonus = effect.Factory({
         .Build()
 })
 
-export const eBonus2 = effect.Factory({
-    Name: "NaviaE2",
+export const eBonus = effect.Factory({
+    Name: "NaviaE",
     MaxStacks: 11,
     OnApply: new effect.Builder()
         .mv
