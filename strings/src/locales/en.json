@@ -39,19 +39,6 @@
   "ACTION.RUN": "Run",
   "ACTION.SAVE": "Save",
   "ACTION.UNLOCK": "Unlock",
-  "ITEM.Veredict": {
-    "title": "Veredict"
-  },
-  "ITEM.Veredict1": {
-    "title": "Veredict (1)",
-    "description": [
-      "Increases ATK by **#rank{20|25|30|35|40}%**. When characters in your party obtain Elemental",
-      "Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing",
-      "Elemental Skill DMG by **#rank{18|22.5|27|31.5|36}%**. The Seal lasts for 15s, and the",
-      "equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s",
-      "after their Elemental Skill deals DMG."
-    ]
-  },
   "ARTIFACT.CIRCLET": "Circlet",
   "ARTIFACT.FLOWER": "Flower",
   "ARTIFACT.GOBLET": "Goblet",
@@ -5213,6 +5200,15 @@
     ],
     "title": "Twin Nephrite (1)"
   },
+  "ITEM.UltimateOverlordsMegaMagicSword": "Ultimate Overlord’s Mega Magic Sword",
+  "ITEM.UltimateOverlordsMegaMagicSword1": {
+    "description": [
+      "ATK increased by **#rank{12|15|18|21|24}%**. That's not all! The support from all Melusines",
+      "you've helped in Merusea Village fills you with strength! Based on the number of them you've",
+      "helped, your ATK is increased by up to an additional **#rank{12|15|18|21|24}%**."
+    ],
+    "title": "Ultimate Overlord’s Mega Magic Sword (1)"
+  },
   "ITEM.Venti": {
     "title": "Venti"
   },
@@ -5270,6 +5266,19 @@
       "Elemental Absorption may only occur once per use."
     ],
     "title": "Wind’s Grand Ode (Elemental Absorption)"
+  },
+  "ITEM.Veredict": {
+    "title": "Veredict"
+  },
+  "ITEM.Veredict1": {
+    "description": [
+      "Increases ATK by **#rank{20|25|30|35|40}%**. When characters in your party obtain Elemental",
+      "Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing",
+      "Elemental Skill DMG by **#rank{18|22.5|27|31.5|36}%**. The Seal lasts for 15s, and the",
+      "equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s",
+      "after their Elemental Skill deals DMG."
+    ],
+    "title": "Veredict (1)"
   },
   "ITEM.VermillionHereafter": "Vermillion Hereafter",
   "ITEM.VermillionHereafter2": {

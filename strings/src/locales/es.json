@@ -5022,6 +5022,15 @@
     ],
     "title": "Nefrita Gemela (1)"
   },
+  "ITEM.UltimateOverlordsMegaMagicSword": "Superespada Mágica Suprema",
+  "ITEM.UltimateOverlordsMegaMagicSword1": {
+    "description": [
+      "El ATQ aumenta en un **#rank{12|15|18|21|24}%**. ¡Pero aún hay más! Las melusinas de la Aldea",
+      "Espumarina te ofrecen todo su apoyo, de manera que, en función de la cantidad de melusinas que",
+      "hayas ayudado, el ATQ aumenta en un máximo de un **#rank{12|15|18|21|24}%** adicional."
+    ],
+    "title": "Superespada Mágica Suprema (1)"
+  },
   "ITEM.Venti": "Venti",
   "ITEM.Venti.HIT_C1": "Vendaval feroz",
   "ITEM.Venti.HIT_CHARGED_C1": "Vendaval feroz (cargado)",
@@ -5078,6 +5087,20 @@
       "El cambio elemental solo puede ocurrir una vez por uso."
     ],
     "title": "Gran Oda del Viento (cambio elemental)"
+  },
+  "ITEM.Veredict": {
+    "title": "Sentenciadora"
+  },
+  "ITEM.Veredict1": {
+    "description": [
+      "El ATQ aumenta en un **#rank{20|25|30|35|40}%**. Cuando un personaje del equipo recoge un",
+      "fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1",
+      "“sello promisorio”, el cual aumenta en un **#rank{18|22.5|27|31.5|36}%** el daño de la",
+      "Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al",
+      "mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta",
+      "arma inflija daño con su Habilidad Elemental."
+    ],
+    "title": "Sentenciadora (1)"
   },
   "ITEM.VermillionHereafter": "Deceso del Cinabrio",
   "ITEM.VermillionHereafter2": {
@@ -5888,20 +5911,6 @@
       "20%. Este efecto no puede acumularse. "
     ],
     "title": "Escudo de Jade"
-  },
-  "ITEM.Veredict": {
-    "title": "Sentenciadora"
-  },
-  "ITEM.Veredict1": {
-    "title": "Sentenciadora (1)",
-    "description": [
-      "El ATQ aumenta en un **#rank{20|25|30|35|40}%**. Cuando un personaje del equipo recoge un",
-      "fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1",
-      "“sello promisorio”, el cual aumenta en un **#rank{18|22.5|27|31.5|36}%** el daño de la",
-      "Habilidad Elemental. El sello promisorio dura 15 s y se pueden poseer un máximo de 2 al",
-      "mismo tiempo. Todos los sellos se eliminarán 0.2 s después de que el portador de esta",
-      "arma inflija daño con su Habilidad Elemental."
-    ]
   },
   "ITEM.__party__": "(Equipo)",
   "LABEL.ACTION": "Acción",
