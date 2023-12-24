@@ -55,7 +55,8 @@ function mapCellString(cell: string, header: string) {
     if (cell.trim() === "") {
       return ""
     }
-    return GetString("CONDITION." + cell)
+    const conditions = cell.split(",").map(c => c.trim())
+    return conditions.map(cond => GetString("CONDITION." + cond)).join(", ")
   }
   return cell
 }
