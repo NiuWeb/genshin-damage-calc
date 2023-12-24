@@ -39,6 +39,19 @@
   "ACTION.RUN": "Run",
   "ACTION.SAVE": "Save",
   "ACTION.UNLOCK": "Unlock",
+  "ITEM.Veredict": {
+    "title": "Veredict"
+  },
+  "ITEM.Veredict1": {
+    "title": "Veredict (1)",
+    "description": [
+      "Increases ATK by **#rank{20|25|30|35|40}%**. When characters in your party obtain Elemental",
+      "Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing",
+      "Elemental Skill DMG by **#rank{18|22.5|27|31.5|36}%**. The Seal lasts for 15s, and the",
+      "equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s",
+      "after their Elemental Skill deals DMG."
+    ]
+  },
   "ARTIFACT.CIRCLET": "Circlet",
   "ARTIFACT.FLOWER": "Flower",
   "ARTIFACT.GOBLET": "Goblet",
