@@ -1,5 +1,6 @@
 import { charbox, stats } from "@src/core"
 import { Bursts } from "./bursts"
+import { c2, c3, c4, c5, c6 } from "./constellations"
 import { Normals } from "./normals"
 import { a1, a4 } from "./passives"
 import { eBonus, eBonus2, Skills } from "./skills"
@@ -19,5 +20,15 @@ export const Navia = charbox.Factory({
     Skills,
     Bursts,
     Extra: [],
-    Effects: [eBonus, eBonus2, a1, a4],
+    Effects: [
+        eBonus, 
+        eBonus2, 
+        a1, 
+        a4,
+        c2,
+        c3,
+        c4,
+        c5,
+        c6
+    ],
 })		

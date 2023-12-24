@@ -15,7 +15,7 @@ export const Skills: charbox.PartialInstanceOptions[] = [
         ],
     },
     {
-        Name: strings.hits.HIT_E_DOT,
+        Name: strings.hits.HIT_E + "_OUSIA",
         Element: stats.stat.GEO_DMG,
         Talent: stats.stat.ELEMENTAL_SKILL_DMG,
         Scaling: [
