@@ -1,7 +1,7 @@
 import { effect, scaling, stats, weapon } from "@src/core"
 
 
-const MaxStacks = 12
+const MaxStacks = 4
 
 export const UltimateOverlordsMegaMagicSword = weapon.Factory({
     Name: "UltimateOverlordsMegaMagicSword",
