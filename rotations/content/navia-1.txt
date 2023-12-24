@@ -1,3 +1,8 @@
+/*
+@title: Navia Q + 17x Q hits + 2x(EN4)
+@characters: Navia C0
+@description: Simple rotation for Navia solo damage
+*/
 rotation duration 15
 
 rotation hit Navia Q
