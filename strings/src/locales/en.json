@@ -5267,10 +5267,10 @@
     ],
     "title": "Wind’s Grand Ode (Elemental Absorption)"
   },
-  "ITEM.Veredict": {
-    "title": "Veredict"
+  "ITEM.Verdict": {
+    "title": "Verdict"
   },
-  "ITEM.Veredict1": {
+  "ITEM.Verdict1": {
     "description": [
       "Increases ATK by **#rank{20|25|30|35|40}%**. When characters in your party obtain Elemental",
       "Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing",
@@ -5278,7 +5278,7 @@
       "equipper may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s",
       "after their Elemental Skill deals DMG."
     ],
-    "title": "Veredict (1)"
+    "title": "Verdict (1)"
   },
   "ITEM.VermillionHereafter": "Vermillion Hereafter",
   "ITEM.VermillionHereafter2": {

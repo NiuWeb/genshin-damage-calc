@@ -1,5 +1,5 @@
 export { UltimateOverlordsMegaMagicSword } from "./claymores/melusine"
-export { Veredict } from "./claymores/veredict"
+export { Verdict as Veredict } from "./claymores/verdict"
 export { SplendorOfTranquilWaters } from "./swords/splendoroftranquilwaters"
 export { TomeOfTheEternalFlow } from "./catalysts/tomeoftheeternalflow"
 export { RightfulReward } from "./polearms/rightfulreward"

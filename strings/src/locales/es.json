@@ -5088,10 +5088,10 @@
     ],
     "title": "Gran Oda del Viento (cambio elemental)"
   },
-  "ITEM.Veredict": {
+  "ITEM.Verdict": {
     "title": "Sentenciadora"
   },
-  "ITEM.Veredict1": {
+  "ITEM.Verdict1": {
     "description": [
       "El ATQ aumenta en un **#rank{20|25|30|35|40}%**. Cuando un personaje del equipo recoge un",
       "fragmento creado con la reacción de Cristalización, el portador de esta arma obtiene 1",
