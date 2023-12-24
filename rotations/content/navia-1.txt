@@ -1,0 +1,11 @@
+rotation duration 15
+
+rotation hit Navia Q
+rotation hit Navia Q_DOT *17
+
+rotation hit Navia E       *2
+rotation hit Navia E_Ousia *2
+rotation hit Navia N1      *2
+rotation hit Navia N2      *2
+rotation hit Navia N3      *2
+rotation hit Navia N4      *2

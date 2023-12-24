@@ -80,3 +80,4 @@ yelan-c0-1.txt
 neuvillette-1.txt
 furina-1.txt
 hutao-furina-yelan-jean-1.txt
+navia-1.txt
