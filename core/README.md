@@ -18,9 +18,9 @@ npm install @bygdle/genshin-damage-calc-core
 It exports both CommonJS and ES modules, so you can import it in your project like this:
 
 ```javascript
-import * as genshin from '@bygdle/genshin-damage-calc-core'
+import { genshin } from '@bygdle/genshin-damage-calc-core'
 ```
 or
 ```javascript
-const genshin = require('@bygdle/genshin-damage-calc-core')
+const { genshin } = require('@bygdle/genshin-damage-calc-core')
 ```
