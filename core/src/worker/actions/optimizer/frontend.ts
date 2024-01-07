@@ -28,7 +28,8 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
      */
     Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<{
         result: FromWorker<Tool>["result"],
-        transform?: FromWorker<Tool>["transform"]
+        transform?: FromWorker<Tool>["transform"],
+        formatted?: FromWorker<Tool>["formatted"]
     }> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
         return new Promise<{
