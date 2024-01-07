@@ -1,5 +1,5 @@
 {
-  "name": "genshin-calculator",
+  "name": "@bygdle/genshin-damage-calc",
   "version": "4.20.0",
   "type": "module",
   "scripts": {
@@ -20,10 +20,9 @@
   "author": "@Bygdle#8333",
   "license": "MIT",
   "dependencies": {
-    "@bygdle/genshin-calculator-core": "file:../core",
-    "@bygdle/genshin-calculator-strings": "file:../strings",
+    "@bygdle/genshin-damage-calc-core": "file:../core",
+    "@bygdle/genshin-damage-calc-strings": "file:../strings",
     "@bygdle/search-js": "github:NiuWeb/search-js",
-    "@types/papaparse": "^5.3.7",
     "ansi-to-html": "^0.7.2",
     "apexcharts": "^3.36.3",
     "html-react-parser": "^2.0.0",
@@ -41,6 +40,7 @@
     "vite-plugin-monaco-editor": "^1.1.0"
   },
   "devDependencies": {
+    "@types/papaparse": "^5.3.7",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",

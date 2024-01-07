@@ -1,4 +1,4 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
+import { genshin } from "@bygdle/genshin-damage-calc-core"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const context: Worker = self as any

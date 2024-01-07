@@ -1,4 +1,4 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
+import { genshin } from "@bygdle/genshin-damage-calc-core"
 import GenshinWorker from "./worker?worker"
 
 genshin.worker.SetGenerator(() => {

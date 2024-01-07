@@ -1,4 +1,4 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
+import { genshin } from "@src/genshin/core"
 import { StarsBgColor } from "@src/genshin/utils/colors"
 import { GetString } from "@src/strings/strings"
 import { classes } from "@src/utils/classes"

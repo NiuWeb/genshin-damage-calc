@@ -1,4 +1,4 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
+import { genshin } from "@src/genshin/core"
 import { createContext, useState } from "react"
 
 

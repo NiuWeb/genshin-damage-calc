@@ -1,4 +1,4 @@
-import { genshin } from "@bygdle/genshin-calculator-core"
+import { genshin } from "@src/genshin/core"
 import * as monaco from "monaco-editor"
 import { getGroups } from "./data"
 

@@ -1,1 +1,1 @@
-export * from "@bygdle/genshin-calculator-strings"
+export * from "@bygdle/genshin-damage-calc-strings"
