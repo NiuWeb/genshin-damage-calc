@@ -130,4 +130,23 @@ export class Table {
         }
         return this
     }
+
+    /**
+     * Serializes the table into a 2d array of strings
+     */
+    Serialize(): string[][] {
+        return this.rows.map(row => row.map(cell => String(cell).valueOf() || ""))
+    }
+
+    /**
+     * Deserializes a 2d array of strings into a table
+     */
+    static Deserialize(data: string[][]): Table {
+        const headers = data.shift() || []
+        const table = new Table(...headers)
+        for (const row of data) {
+            table.AddRow(...row)
+        }
+        return table
+    }
 }

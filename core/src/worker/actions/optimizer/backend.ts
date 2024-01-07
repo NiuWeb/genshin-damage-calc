@@ -110,8 +110,17 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
             return undefined
         })()
 
+        const formatted = (() => {
+            try {
+                return optimizer.Format(result as never).Serialize()
+            } catch (e) {
+                console.error("Could not format optimizer results", e)
+                return undefined
+            }
+        })()
+
         children.forEach(child => child.Kill())
-        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result, transform })
+        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result, transform, formatted })
     }
 }
 

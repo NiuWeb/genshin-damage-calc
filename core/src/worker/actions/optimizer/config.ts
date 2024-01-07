@@ -65,6 +65,11 @@ export interface FromWorker<Tool extends keyof Register = keyof Register> {
      */
     transform?: GetOptimizerTransformValue<Register[Tool]>
 
+    /**
+     * Formatted results
+     */
+    formatted?: string[][]
+
     /** Sends the number of rows currently evaluated */
     progress?: number
     /** Sends the total (or estimate total) of rows to evaluate */
