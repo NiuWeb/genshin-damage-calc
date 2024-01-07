@@ -34,7 +34,8 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
         return new Promise<{
             result: FromWorker<Tool>["result"],
-            transform?: FromWorker<Tool>["transform"]
+            transform?: FromWorker<Tool>["transform"],
+            formatted?: FromWorker<Tool>["formatted"]
         }>((resolve, reject) => {
             // send the optimization request to the worker
             const id1 = this.worker.Post(WORKER_PATHS.BACKEND_RUN, {
@@ -45,7 +46,7 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
 
             // listen for the result
             const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN,
-                (_, { id, result, transform, progress, total }) => {
+                (_, { id, result, transform, formatted, progress, total }) => {
                     if (id !== id1) {
                         if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
                             this.OnProgress(progress || 0, total || 0)
@@ -54,7 +55,8 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
                     }
                     resolve({
                         result: result as FromWorker<Tool>["result"],
-                        transform: transform as FromWorker<Tool>["transform"]
+                        transform: transform as FromWorker<Tool>["transform"],
+                        formatted: formatted as FromWorker<Tool>["formatted"]
                     })
                     this.worker.RemoveListener(listener)
                 })
