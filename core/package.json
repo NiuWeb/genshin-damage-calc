@@ -1,6 +1,6 @@
 {
   "name": "@bygdle/genshin-damage-calc-core",
-  "version": "4.20.1",
+  "version": "4.20.2",
   "description": "Advanced damage calculator for genshin impact (core logic)",
   "main": "lib/index.js",
   "exports": {
