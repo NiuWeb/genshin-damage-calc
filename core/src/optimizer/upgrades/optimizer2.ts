@@ -155,4 +155,8 @@ export class UpgradesOptimizer extends Optimizer<Row[], Result[], Config> {
 
         return curve
     }
+
+    override EquipCmd(): string {
+        throw new Error("Method not implemented.")
+    }
 }

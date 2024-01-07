@@ -61,6 +61,11 @@ export interface FromWorker<Tool extends keyof Register = keyof Register> {
     result: GetOptimizerResult<Register[Tool]>[]
 
     /**
+     * A command to equip each result
+     */
+    cmd?: string[]
+
+    /**
      * transformed value
      */
     transform?: GetOptimizerTransformValue<Register[Tool]>

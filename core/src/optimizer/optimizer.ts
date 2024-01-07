@@ -170,6 +170,8 @@ export abstract class Optimizer<Row, Result, Config extends OptimizerConfig, Mes
     abstract Get(): Result[]
     /** Converts an array of results to a formatted table */
     abstract Format(results: Result[]): Table
+
+    abstract EquipCmd(result: Result): string
     /** Generates, evaluates and inserts all the combinations in a single step */
     Optimize(): Result[] {
         for (const row of this.Generate()) {

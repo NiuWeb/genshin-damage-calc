@@ -59,4 +59,8 @@ export class FoodOptimizer extends Optimizer<Row, Result, OptimizerConfig> {
         return table
     }
 
+    override EquipCmd(result: Result): string {
+        return result.cmd
+    }
+
 }

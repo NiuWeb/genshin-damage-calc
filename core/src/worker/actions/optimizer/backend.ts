@@ -119,8 +119,16 @@ export class OptimizerBackend extends BackendAction<ToWorker, FromWorker> {
             }
         })()
 
+        const cmd = result.map(r => {
+            try {
+                return optimizer.EquipCmd(r as never)
+            } catch (e) {
+                return "// " + String(e).valueOf()
+            }
+        })
+
         children.forEach(child => child.Kill())
-        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result, transform, formatted })
+        this.Post(WORKER_PATHS.FRONTEND_RUN, { id, result, transform, cmd, formatted })
     }
 }
 

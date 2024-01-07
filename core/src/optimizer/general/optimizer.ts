@@ -108,4 +108,8 @@ export class GeneralOptimizer extends Optimizer<Combination, Result | undefined,
         const filtered = results.filter(result => result !== undefined) as Result[]
         return formatResults(filtered)
     }
+
+    override EquipCmd(result: Result | undefined): string {
+        return result?.cmd || ""
+    }
 }

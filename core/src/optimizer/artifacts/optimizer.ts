@@ -253,4 +253,8 @@ export class ArtifactsOptimizer extends Optimizer<Row | undefined, Result | unde
             .filter(i => i >= 0)
             .map(i => artifacts[i])
     }
+
+    override EquipCmd(result: Result | undefined): string {
+        return result?.cmd || ""
+    }
 }

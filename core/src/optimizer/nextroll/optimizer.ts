@@ -75,4 +75,8 @@ export class NextRollOptimizer extends Optimizer<Row, Result, Config> {
         return table
     }
 
+    override EquipCmd(): string {
+        throw new Error("Method not implemented.")
+    }
+
 }

@@ -26,17 +26,9 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
      * @param config The tool-specific configuration object
      * @returns a promise that resolves with the final optimizer result
      */
-    Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<{
-        result: FromWorker<Tool>["result"],
-        transform?: FromWorker<Tool>["transform"],
-        formatted?: FromWorker<Tool>["formatted"]
-    }> {
+    Run<Tool extends keyof Register>(tool: Tool, config: ToWorker<Tool>["config"]): Promise<FromWorker<Tool>> {
         console.log("[CLIENT] Running optimizer worker for tool: " + tool)
-        return new Promise<{
-            result: FromWorker<Tool>["result"],
-            transform?: FromWorker<Tool>["transform"],
-            formatted?: FromWorker<Tool>["formatted"]
-        }>((resolve, reject) => {
+        return new Promise<FromWorker<Tool>>((resolve, reject) => {
             // send the optimization request to the worker
             const id1 = this.worker.Post(WORKER_PATHS.BACKEND_RUN, {
                 tool, config,
@@ -46,18 +38,15 @@ export class Optimizer extends FrontendAction<FromWorker, ToWorker> {
 
             // listen for the result
             const listener = this.worker.AddListener(WORKER_PATHS.FRONTEND_RUN,
-                (_, { id, result, transform, formatted, progress, total }) => {
+                (_, recieved) => {
+                    const { id, progress, total } = recieved
                     if (id !== id1) {
                         if (id === "progress:" + id1 && Number.isFinite(progress) && Number.isFinite(total)) {
                             this.OnProgress(progress || 0, total || 0)
                         }
                         return
                     }
-                    resolve({
-                        result: result as FromWorker<Tool>["result"],
-                        transform: transform as FromWorker<Tool>["transform"],
-                        formatted: formatted as FromWorker<Tool>["formatted"]
-                    })
+                    resolve(recieved)
                     this.worker.RemoveListener(listener)
                 })
 
