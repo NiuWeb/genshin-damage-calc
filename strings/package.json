@@ -1,17 +1,21 @@
 {
-  "name": "@bygdle/genshin-calculator-strings",
-  "version": "4.0.0",
+  "name": "@bygdle/genshin-damage-calc-strings",
+  "version": "4.20.0",
   "description": "Strings for damage calculator",
   "main": "lib/index.js",
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
   "scripts": {
     "prepare": "npm run build",
-    "build": "lib-build -e src/index.ts -o lib -t tsconfig.build.json",
+    "build": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -cjs 1",
     "dev": "lib-build -e src/index.ts -o lib -t tsconfig.build.json -w 1",
     "circular": "npx madge --circular --extensions ts ./src/"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/NiuWeb/genshin-damage-calc/strings"
+    "url": "https://github.com/NiuWeb/genshin-damage-calc.git"
   },
   "keywords": [
     "genshin",
