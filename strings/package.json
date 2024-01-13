@@ -1,6 +1,6 @@
 {
   "name": "@bygdle/genshin-damage-calc-strings",
-  "version": "4.20.0",
+  "version": "4.21.0",
   "description": "Strings for damage calculator",
   "main": "lib/index.js",
   "exports": {
