@@ -24,6 +24,8 @@ interface CharacterQuery {
     ascension?: number
     /** character should have the at least one of these weapons */
     weapon?: number[]
+    /** character element should one of these */
+    element?: number[]
     /** Current hp must match the condition */
     hp?: RelationQuery,
     /** Current energy must match the condition */
@@ -106,6 +108,14 @@ function runCharacterQuery(character: Character, owner: Character, q: CharacterQ
             }
         }
     }
+
+    if (q.element && q.element.length > 0) {
+        const some = q.element.some(el => character.Options.Element === el)
+        if (!some) {
+            return false
+        }
+    }
+
     if (character.GetAscension() < (q.ascension || 0)) {
         return false
     }
