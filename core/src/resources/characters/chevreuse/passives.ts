@@ -1,6 +1,6 @@
 import { effect, stats } from "@src/core"
 
-export const ChevreuseA1 = effect.Factory({
+export const a1 = effect.Factory({
     Name: "ChevreuseA1",
     Conditions: ["HIT_OVERLOAD"],
     ApplyOther: true,
@@ -13,7 +13,7 @@ export const ChevreuseA1 = effect.Factory({
         .Build()
 })
 
-export const ChevreuseA4 = effect.Factory({
+export const a4 = effect.Factory({
     Name: "ChevreuseA4",
     ApplyOther: true,
     MaxConditions: 1,

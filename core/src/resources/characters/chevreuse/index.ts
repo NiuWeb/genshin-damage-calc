@@ -1,7 +1,8 @@
 import { charbox, stats } from "@src/core"
 import { Bursts } from "./bursts"
+import { c2, c3, c5, c6 } from "./constellations"
 import { Normals } from "./normals"
-import { ChevreuseA1, ChevreuseA4 } from "./passives"
+import { a1, a4 } from "./passives"
 import { Skills } from "./skills"
 
 export const Chevreuse = charbox.Factory({
@@ -20,7 +21,11 @@ export const Chevreuse = charbox.Factory({
     Bursts,
     Extra: [],
     Effects: [
-        ChevreuseA1,
-        ChevreuseA4,
+        a1,
+        a4,
+        c2,
+        c3,
+        c5,
+        c6,
     ]
 })
