@@ -910,6 +910,64 @@
     ],
     "title": "Pacificadora del Desastre (1)"
   },
+  "ITEM.Chevreuse": "Chevreuse",
+  "ITEM.Chevreuse.HIT_E_HOLD_2": "Daño de bala de punta sobrecargada",
+  "ITEM.Chevreuse.HIT_E_OUSIA": "Daño de filo fluyente",
+  "ITEM.Chevreuse.HIT_Q_1": "Daño de granada explosiva",
+  "ITEM.Chevreuse.HIT_Q_2": "Daño de bombas secundarias",
+  "ITEM.ChevreuseA1": {
+    "description": [
+      "Si el equipo está formado únicamente por personajes Pyro y Electro y hay al menos un personaje",
+      "Pyro y uno Electro en él, Chevreuse otorga el efecto de “maniobra coordinada” a los miembros del",
+      "equipo cercanos. Cuando un personaje bajo este efecto causa una reacción de Sobrecarga, la RES Pyro",
+      "y Electro del enemigo afectado por dicha reacción se reduce en un 40% durante 6 s.",
+      "El efecto de maniobra coordinada desaparecerá cuando el tipo elemental de los miembros de tu equipo",
+      "no cumpla con los requisitos del talento pasivo."
+    ],
+    "title": "Vigilancia coordinada"
+  },
+  "ITEM.ChevreuseA4": {
+    "description": [
+      "Cuando Chevreuse dispara una bala de punta sobrecargada de Fuego rápido de proximidad e intercepción,",
+      "el ATQ de todos los personajes Pyro y Electro cercanos del equipo aumenta en un 1% durante 30 s por",
+      "cada 1000 pts. de Vida Máx. que tenga Chevreuse. El ATQ puede aumentar en un máximo de un 40% de esta manera."
+    ],
+    "title": "Formación lineal integral"
+  },
+  "ITEM.ChevreuseC2": {
+    "description": [
+      "Al mantener pulsada la habilidad Fuego rápido de proximidad e intercepción y alcanzar a un objetivo",
+      "con un disparo, cerca de la ubicación del objetivo tienen lugar 2 explosiones encadenadas, cada una",
+      "de las cuales inflige Daño Pyro en una cantidad equivalente al 120% del ATQ de Chevreuse. Este efecto",
+      "solo puede ocurrir una vez cada 10 s, y el daño infligido de esta forma se considera daño de Habilidad",
+      "Elemental."
+    ],
+    "title": "Detonación de francotirador"
+  },
+  "ITEM.ChevreuseC3": {
+    "description": [
+      "Aumenta el nivel de habilidad de Fuego rápido de proximidad e intercepción +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Recarga artificiosa"
+  },
+  "ITEM.ChevreuseC5": {
+    "description": [
+      "Aumenta el nivel de habilidad de Bombardeo radial +3.",
+      "Puede ser aumentado hasta Niv. 15."
+    ],
+    "title": "Potencia de fuego incremental"
+  },
+  "ITEM.ChevreuseC6": {
+    "description": [
+      "Tras haber transcurrido 12 s del efecto curativo de Fuego rápido de proximidad e intercepción, todos los",
+      "personajes del equipo cercanos regeneran Vida una vez en una cantidad equivalente al 10% de la Vida Máx. de Chevreuse.",
+      "Después de que un personaje reciba curación a causa de Fuego rápido de proximidad e intercepción, obtiene un 20%",
+      "de Bono de Daño Pyro y de Bono de Daño Electro. Este efecto dura 8 s y puede acumularse hasta 3 veces. Cada",
+      "acumulación tendrá su propia duración individual."
+    ],
+    "title": "Persecución fenecedora del mal"
+  },
   "ITEM.Chongyun": "Chongyun",
   "ITEM.Chongyun.HIT_C1": "Ventisca desatada",
   "ITEM.ChongyunA4": {

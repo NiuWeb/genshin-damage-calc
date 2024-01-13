@@ -924,6 +924,63 @@
     ],
     "title": "Calamity Queller (1)"
   },
+  "ITEM.Chevreuse": "Chevreuse",
+  "ITEM.Chevreuse.HIT_E_HOLD_2": "Overcharged Ball DMG",
+  "ITEM.Chevreuse.HIT_E_OUSIA": "Surging Blade DMG",
+  "ITEM.Chevreuse.HIT_Q_1": "Explosive Grenade DMG",
+  "ITEM.Chevreuse.HIT_Q_2": "Secondary Explosive Shell DMG",
+  "ITEM.ChevreuseA1": {
+    "description": [
+      "When the Elemental Type of all party members is Pyro or Electro and there is at least",
+      "one Pyro and one Electro characters each in the party:\n",
+      "Chevreuse grants \"Coordinated Tactics\" to nearby party members: After a character",
+      "triggers the Overloaded reaction, the Pyro and Electro RES of the opponent(s) affected",
+      "by this Overloaded reaction will be decreased by 40% for 6s.\n",
+      "The \"Coordinated Tactics\" effect will be removed when the Elemental Types of the characters",
+      "in the party do not meet the basic requirements for the Passive Talent."
+    ],
+    "title": "Vanguard's Coordinated Tactics"
+  },
+  "ITEM.ChevreuseA4": {
+    "description": [
+      "Chevreuse fires an Overcharged Ball using Short-Range Rapid Interdiction Fire, nearby Pyro and",
+      "Electro characters in the party gain 1% increased ATK for every 1,000 Max HP Chevreuse has for 30s.",
+      "ATK can be increased by up to 40% in this way."
+    ],
+    "title": "Vertical Force Coordination"
+  },
+  "ITEM.ChevreuseC2": {
+    "description": [
+      "After Holding Short-Range Rapid Interdiction Fire and hitting a target, 2 chain explosions will be",
+      "triggered near the location where said target is hit. Each explosion deals Pyro DMG equal to 120%",
+      "of Chevreuse's ATK. This effect can be triggered up to once every 10s, and DMG dealt this way is",
+      "considered Elemental Skill DMG."
+    ],
+    "title": "Sniper Induced Explosion"
+  },
+  "ITEM.ChevreuseC3": {
+    "description": [
+      "Increases the Level of Short-Range Rapid Interdiction Fire by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Practiced Field Stripping Technique"
+  },
+  "ITEM.ChevreuseC5": {
+    "description": [
+      "Increases the Level of Ring of Bursting Grenades by 3.",
+      "Maximum upgrade level is 15."
+    ],
+    "title": "Enhanced Incendiary Firepower"
+  },
+  "ITEM.ChevreuseC6": {
+    "description": [
+      "After 12s of the healing effect from Short-Range Rapid Interdiction Fire, all nearby party members",
+      "recover HP equivalent to 10% of Chevreuse's Max HP once.\n",
+      "After a party member is healed by Short-Range Rapid Interdiction Fire, they gain a 20% Pyro DMG Bonus",
+      "and Electro DMG Bonus for 8s. Max 3 stacks. Each stack's duration is counted independently."
+    ],
+    "title": "In Pursuit of Ending Evil"
+  },
   "ITEM.Chongyun": {
     "title": "Chongyun"
   },
