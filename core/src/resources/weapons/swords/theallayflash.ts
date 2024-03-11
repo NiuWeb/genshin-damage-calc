@@ -4,7 +4,7 @@ export const TheAlleyFlash = weapon.Factory({
     Name: "TheAlleyFlash",
     Stars: 4,
     Type: stats.weapon.SWORD,
-    Scaling: scaling.WeaponScaling.TYPE_44,
+    Scaling: scaling.WeaponScaling.TYPE_45,
     Substat: stats.stat.ELEMENTAL_MASTERY,
 
     Effects: [
