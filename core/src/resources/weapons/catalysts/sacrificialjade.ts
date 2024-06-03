@@ -5,7 +5,7 @@ export const SacrificialJade = weapon.Factory({
     Stars: 4,
     Type: stats.weapon.CATALYST,
     Substat: stats.stat.CRIT_RATE,
-    Scaling: scaling.WeaponScaling.TYPE_42,
+    Scaling: scaling.WeaponScaling.TYPE_41,
 
     Effects: [
         effect.Factory({
